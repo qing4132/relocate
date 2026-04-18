@@ -3,21 +3,17 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=1200" />
-<title>样稿 C · Console — 日本 HSP 路径评估</title>
+<title>日本 · 高度人材 · 技術系 — 路径评估</title>
 <style>
   :root{
-    --ink:#0b0c0e;
-    --ink-soft:#31343a;
-    --ink-faint:#6b7078;
-    --rule:#e5e7eb;
-    --rule-soft:#eff0f2;
-    --bg:#ffffff;
-    --accent:#d64545;
-    --accent-soft:#fcecec;
-    --ok:#1d7a47;
+    --ink:#111;
+    --ink-soft:#3a3a3a;
+    --ink-faint:#8a8a8a;
+    --rule:#e7e7e7;
+    --bg:#fff;
     --serif:"Source Han Serif SC","Noto Serif SC",Georgia,"Times New Roman",serif;
     --sans:"Inter","PingFang SC",-apple-system,"Helvetica Neue",Arial,sans-serif;
-    --mono:"JetBrains Mono","SFMono-Regular","Menlo",Consolas,monospace;
+    --mono:"SFMono-Regular","Menlo",Consolas,monospace;
   }
   *{box-sizing:border-box}
   html,body{margin:0;padding:0}
@@ -26,309 +22,208 @@
     color:var(--ink);
     font-family:var(--sans);
     font-size:14px;
-    line-height:1.6;
+    line-height:1.65;
     -webkit-font-smoothing:antialiased;
   }
+
   header.head{
-    padding:18px 40px;
-    border-bottom:1px solid var(--ink);
-    display:grid;
-    grid-template-columns:auto 1fr auto;
-    gap:24px;
-    align-items:center;
+    padding:18px 48px;
+    border-bottom:1px solid var(--rule);
+    display:flex;
+    justify-content:space-between;
+    align-items:baseline;
+    font-family:var(--mono);
     font-size:12px;
-  }
-  header.head .brand{
-    font-family:var(--mono);
-    font-weight:700;
-    letter-spacing:0.08em;
-  }
-  header.head .brand em{
-    font-style:normal;
     color:var(--ink-faint);
-    font-weight:400;
-    margin-left:6px;
   }
-  header.head .crumbs{
-    color:var(--ink-faint);
-    font-family:var(--mono);
-  }
-  header.head .crumbs strong{color:var(--ink)}
-  header.head .right{
-    font-family:var(--mono);
-    color:var(--ink-faint);
-    text-align:right;
-  }
+  header.head .brand{color:var(--ink);letter-spacing:0.04em}
+  header.head .right span{margin-left:22px}
 
   .wrap{
-    max-width:1100px;
+    max-width:960px;
     margin:0 auto;
-    padding:36px 40px 100px;
+    padding:56px 48px 120px;
   }
 
-  .title-row{
-    display:grid;
-    grid-template-columns:1fr auto;
-    gap:24px;
-    align-items:start;
-    padding-bottom:18px;
-    border-bottom:2px solid var(--ink);
-    margin-bottom:28px;
-  }
-  .title-row h1{
+  h1.title{
     font-family:var(--serif);
     font-size:30px;
     font-weight:700;
-    line-height:1.2;
-    margin:0 0 6px;
+    line-height:1.25;
     letter-spacing:-0.005em;
+    margin:0 0 4px;
   }
-  .title-row .kicker{
-    font-family:var(--mono);
-    font-size:10px;
-    letter-spacing:0.12em;
-    color:var(--accent);
-    margin-bottom:6px;
-    text-transform:uppercase;
-  }
-  .title-row .subject{
-    font-family:var(--sans);
+  .subject{
     color:var(--ink-soft);
-    margin-top:2px;
-    font-size:13px;
+    font-size:13.5px;
+    margin:0 0 36px;
   }
-  .title-row .subject code{
+  .subject code{
     font-family:var(--mono);
-    background:var(--rule-soft);
-    padding:1px 6px;
-    font-size:11.5px;
-  }
-  .title-row .meta{
-    font-family:var(--mono);
-    font-size:11px;
-    color:var(--ink-faint);
-    text-align:right;
-    min-width:180px;
-  }
-  .title-row .meta div{margin:2px 0}
-  .title-row .meta .ok{color:var(--ok)}
-
-  .sample-tag{
-    display:inline-block;
-    font-family:var(--mono);
-    font-size:10px;
-    letter-spacing:0.1em;
-    padding:2px 6px;
-    background:var(--accent-soft);
-    color:var(--accent);
-    border:1px solid var(--accent);
-    margin-bottom:14px;
+    font-size:12px;
+    color:var(--ink);
   }
 
-  /* 三卡片 */
   .triple{
     display:grid;
     grid-template-columns:1fr 1fr 1fr;
-    gap:1px;
-    background:var(--ink);
-    border:1px solid var(--ink);
-    margin:0 0 40px;
+    border-top:1px solid var(--ink);
+    border-bottom:1px solid var(--ink);
+    margin:0 0 56px;
   }
   .cell{
-    background:#fff;
     padding:22px 24px 20px;
-    position:relative;
+    border-right:1px solid var(--rule);
   }
-  .cell .label{
+  .cell:last-child{border-right:none}
+  .cell .k{
     font-family:var(--mono);
-    font-size:10px;
-    letter-spacing:0.15em;
+    font-size:10.5px;
+    letter-spacing:0.12em;
     color:var(--ink-faint);
     text-transform:uppercase;
-    margin-bottom:10px;
-    display:flex;
-    justify-content:space-between;
+    margin-bottom:14px;
   }
-  .cell .label .tag{
-    background:var(--ink);
-    color:#fff;
-    padding:1px 6px;
-    font-weight:600;
-  }
-  .cell .big{
+  .cell .v{
     font-family:var(--serif);
-    font-size:44px;
+    font-size:38px;
     font-weight:700;
     line-height:1;
     letter-spacing:-0.015em;
-    margin:0 0 2px;
   }
-  .cell .big .small{
+  .cell .v .u{
     font-family:var(--sans);
-    font-size:15px;
-    color:var(--ink-faint);
+    font-size:13px;
     font-weight:400;
+    color:var(--ink-faint);
     margin-left:6px;
+    letter-spacing:0;
   }
-  .cell .insight{
-    font-family:var(--serif);
-    font-style:italic;
-    font-size:14px;
+  .cell .note{
+    margin-top:12px;
     color:var(--ink-soft);
-    line-height:1.55;
-    margin-top:10px;
+    font-size:13px;
   }
-  .cell .minibar{
-    display:flex;
-    gap:2px;
-    align-items:flex-end;
-    height:8px;
-    margin:14px 0 0;
-  }
-  .cell .minibar span{
-    flex:1;
-    background:var(--rule);
-    height:100%;
-  }
-  .cell .minibar span.on{background:var(--ink)}
-  .cell .minibar span.hit{background:var(--accent)}
 
-  /* section */
-  section.block{
-    padding:28px 0;
-    border-top:1px solid var(--rule);
-  }
-  section.block > h2{
+  section{margin:0 0 56px}
+  section h2{
     font-family:var(--mono);
     font-size:11px;
-    letter-spacing:0.2em;
-    text-transform:uppercase;
+    letter-spacing:0.18em;
     color:var(--ink-faint);
-    margin:0 0 4px;
+    text-transform:uppercase;
     font-weight:600;
+    margin:0 0 10px;
+    padding-bottom:10px;
+    border-bottom:1px solid var(--ink);
   }
-  section.block > h2 .roman{color:var(--ink);margin-right:10px}
-  section.block > .sec-title{
-    font-family:var(--serif);
-    font-size:22px;
-    font-weight:700;
-    margin:0 0 14px;
-    line-height:1.3;
-  }
+  section h2 .n{color:var(--ink);margin-right:14px}
 
   table.grid{
     width:100%;
     border-collapse:collapse;
-    font-size:13px;
-    font-family:var(--sans);
+    font-size:13.5px;
   }
-  table.grid th,table.grid td{
-    padding:9px 12px;
+  table.grid th,
+  table.grid td{
+    padding:10px 2px;
     border-bottom:1px solid var(--rule);
     text-align:left;
     vertical-align:top;
   }
   table.grid th{
     font-family:var(--mono);
-    font-size:10px;
-    color:var(--ink-faint);
+    font-size:10.5px;
     letter-spacing:0.1em;
     text-transform:uppercase;
     font-weight:600;
-    border-bottom:1px solid var(--ink);
-    background:transparent;
+    color:var(--ink-faint);
+  }
+  table.grid td .sub{
+    display:block;
+    color:var(--ink-faint);
+    font-size:12px;
+    margin-top:2px;
   }
   table.grid td.num{
     font-family:var(--mono);
     text-align:right;
+    white-space:nowrap;
   }
-  table.grid td .sub{display:block;color:var(--ink-faint);font-size:11.5px}
   table.grid tr.tot td{
+    border-top:1px solid var(--ink);
+    border-bottom:none;
     font-weight:700;
-    font-family:var(--mono);
-    border-top:1px solid var(--ink);
-    background:var(--rule-soft);
+    padding-top:12px;
   }
-  table.grid td .src{
-    display:inline-block;
-    font-family:var(--mono);
-    font-size:10px;
-    color:var(--ink-faint);
-    background:var(--rule-soft);
-    padding:1px 5px;
-    margin-left:6px;
-    text-decoration:none;
-    border:1px solid var(--rule);
-  }
-  table.grid td .src:hover{color:var(--ink);border-color:var(--ink)}
-
-  /* timeline */
-  .timeline{
-    display:grid;
-    grid-template-columns:80px 1fr 1fr;
-    gap:0;
-    font-family:var(--mono);
-    font-size:12px;
-    border-top:1px solid var(--ink);
-    border-bottom:1px solid var(--ink);
-    margin:8px 0;
-  }
-  .timeline .row{display:contents}
-  .timeline .row > div{
-    padding:12px 14px;
-    border-bottom:1px solid var(--rule);
-  }
-  .timeline .row:last-child > div{border-bottom:none}
-  .timeline .row .col0{
-    background:var(--rule-soft);
-    font-weight:700;
-    font-family:var(--serif);
-    font-size:18px;
-  }
-  .timeline .row .col2{color:var(--ink-faint);font-family:var(--sans)}
-
-  /* provenance strip */
-  .prov{
-    margin:24px 0 0;
-    border-top:1px solid var(--ink);
-    padding-top:14px;
+  table.grid a.cite{
     font-family:var(--mono);
     font-size:11px;
     color:var(--ink-faint);
+    text-decoration:none;
+    margin-left:6px;
+    vertical-align:1px;
   }
-  .prov .row{
-    display:grid;
-    grid-template-columns:60px 1fr 130px 150px;
-    gap:16px;
-    padding:6px 0;
-    border-bottom:1px dashed var(--rule);
-    align-items:center;
-  }
-  .prov .row:last-child{border-bottom:none}
-  .prov .idx{color:var(--ink);font-weight:700}
-  .prov .auth{color:var(--ink);font-family:var(--sans);font-weight:600;font-size:12px}
-  .prov .sha{color:var(--ink-faint);letter-spacing:0.02em;word-break:break-all}
-  .prov .date{color:var(--ok)}
-  .prov a{color:var(--ink-soft);text-decoration:none}
-  .prov a:hover{color:var(--ink);text-decoration:underline}
+  table.grid a.cite:hover{color:var(--ink)}
 
-  /* disclosure bar */
-  .promise{
-    margin:40px 0 0;
-    padding:16px 20px;
-    border:1px solid var(--ink);
-    background:var(--rule-soft);
-    font-size:13px;
+  table.tl{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13.5px;
+  }
+  table.tl td{
+    padding:10px 2px;
+    border-bottom:1px solid var(--rule);
+    vertical-align:top;
+  }
+  table.tl td:first-child{
+    font-family:var(--mono);
+    width:90px;
     color:var(--ink-soft);
   }
-  .promise strong{color:var(--ink)}
+  table.tl td:last-child{
+    color:var(--ink-faint);
+    width:42%;
+  }
 
-  footer.pf{
-    margin-top:40px;
-    padding-top:12px;
+  ol.prov{
+    list-style:none;
+    margin:0;
+    padding:0;
+    font-size:13px;
+  }
+  ol.prov li{
+    display:grid;
+    grid-template-columns:32px 1fr 130px;
+    gap:18px;
+    padding:10px 0;
+    border-bottom:1px solid var(--rule);
+  }
+  ol.prov li:last-child{border-bottom:none}
+  ol.prov .i{font-family:var(--mono);color:var(--ink-faint)}
+  ol.prov .doc .auth{font-weight:600}
+  ol.prov .doc .title{color:var(--ink-soft)}
+  ol.prov .doc .sha{
+    display:block;
+    font-family:var(--mono);
+    font-size:11px;
+    color:var(--ink-faint);
+    margin-top:3px;
+    word-break:break-all;
+  }
+  ol.prov .date{
+    font-family:var(--mono);
+    font-size:11.5px;
+    color:var(--ink-faint);
+    text-align:right;
+  }
+
+  footer{
+    margin-top:80px;
+    padding-top:14px;
     border-top:1px solid var(--rule);
     font-family:var(--mono);
-    font-size:10px;
+    font-size:11px;
     color:var(--ink-faint);
     display:flex;
     justify-content:space-between;
@@ -338,208 +233,162 @@
 <body>
 
 <header class="head">
-  <div class="brand">RELOCATE <em>· internal codename</em></div>
-  <div class="crumbs">paths › japan › <strong>jp-hsp-1-b-engineer</strong></div>
+  <div class="brand">relocate</div>
   <div class="right">
-    snapshot version v0.1 · rev 2026-04-10
+    <span>jp-hsp-1-b-engineer</span>
+    <span>rules 2025-10-08</span>
+    <span>reviewed 2026-04-10</span>
   </div>
 </header>
 
 <main class="wrap">
 
-  <div class="title-row">
-    <div>
-      <div class="kicker">PATH EVALUATION · JP-HSP</div>
-      <h1>日本 · 高度人材 · 技術系</h1>
-      <div class="subject">
-        评估对象 <code>age=34 · edu=bachelor · role=swe · jpy=180万</code>
-      </div>
-    </div>
-    <div class="meta">
-      <div>rule version · <span>2025-10-08</span></div>
-      <div>last reviewed · <span>2026-04-10</span></div>
-      <div>days to review · <span>172</span></div>
-      <div class="ok">fields verified · 18 / 18</div>
-    </div>
-  </div>
+  <h1 class="title">日本 · 高度人材 · 技術系</h1>
+  <p class="subject">评估对象　<code>age=34 · edu=bachelor · role=swe · jpy=180万 · ja=N2</code></p>
 
-  <div class="sample-tag">SAMPLE · 非产品 · 所有数字为占位</div>
-
-  <!-- 三维度卡片 -->
   <div class="triple">
     <div class="cell">
-      <div class="label"><span>I · FEASIBILITY</span><span class="tag">HARD</span></div>
-      <div class="big">65<span class="small">/ 70 pts · HSP</span></div>
-      <div class="minibar" title="65/70">
-        <span class="on"></span><span class="on"></span><span class="on"></span>
-        <span class="on"></span><span class="on"></span><span class="on"></span>
-        <span class="on"></span><span class="on"></span><span class="on"></span>
-        <span class="on"></span><span class="on"></span><span class="on"></span>
-        <span class="on"></span><span class="hit"></span>
-      </div>
-      <div class="insight">差 5 分到 70 分组。门槛是硬切线。</div>
+      <div class="k">可行性</div>
+      <div class="v">65<span class="u">/ 70 分</span></div>
+      <div class="note">差 5 分达到 70 分组。</div>
     </div>
     <div class="cell">
-      <div class="label"><span>II · AFFORDABILITY</span><span class="tag">NET/MO</span></div>
-      <div class="big">+¥24万<span class="small">/ 月 · 东京 23 区</span></div>
-      <div class="insight">基于官方职业分层收入中位数与总务省房租统计 · 税后。</div>
+      <div class="k">月度净现金流</div>
+      <div class="v">+24万<span class="u">円 · 东京 23 区</span></div>
+      <div class="note">税后，1LDK 中位房租。</div>
     </div>
     <div class="cell">
-      <div class="label"><span>III · RETURN PERIOD</span><span class="tag">YEARS</span></div>
-      <div class="big">3 <span class="small">年 · 永居 (70 分)</span></div>
-      <div class="insight">80 分组缩短至 1 年 · 规则文本原字。</div>
+      <div class="k">永居最短等待</div>
+      <div class="v">3<span class="u">年 · 70 分组</span></div>
+      <div class="note">80 分组为 1 年。</div>
     </div>
   </div>
 
-  <!-- I -->
-  <section class="block">
-    <h2><span class="roman">§ I</span>FEASIBILITY · 可行性</h2>
-    <div class="sec-title">65 / 70 — 积分表逐项核对</div>
+  <section>
+    <h2><span class="n">I</span>积分明细</h2>
     <table class="grid">
       <thead>
-        <tr>
-          <th>子项</th>
-          <th>依据</th>
-          <th style="text-align:right">分</th>
-        </tr>
+        <tr><th>子项</th><th>依据</th><th style="text-align:right">分</th></tr>
       </thead>
       <tbody>
         <tr>
-          <td>学历<span class="sub">学士 · Bachelor</span></td>
-          <td>ポイント計算表 I-①<a class="src" href="#s1">src 1</a></td>
+          <td>学历<span class="sub">学士</span></td>
+          <td>ポイント計算表 I-①<a class="cite" href="#s1">[1]</a></td>
           <td class="num">10</td>
         </tr>
         <tr>
           <td>职务年限<span class="sub">7 年</span></td>
-          <td>ポイント計算表 II-②<a class="src" href="#s1">src 1</a></td>
+          <td>同表 II-②<a class="cite" href="#s1">[1]</a></td>
           <td class="num">10</td>
         </tr>
         <tr>
-          <td>年収 / 年齢<span class="sub">¥180 万 × 34 歳</span></td>
-          <td>別表第一<a class="src" href="#s1">src 1</a></td>
+          <td>年收 × 年龄<span class="sub">180 万円 × 34 歳</span></td>
+          <td>別表第一<a class="cite" href="#s1">[1]</a></td>
           <td class="num">25</td>
         </tr>
         <tr>
-          <td>年齢<span class="sub">34 歳</span></td>
-          <td>ポイント計算表 IV<a class="src" href="#s1">src 1</a></td>
+          <td>年龄<span class="sub">34 歳</span></td>
+          <td>同表 IV<a class="cite" href="#s1">[1]</a></td>
           <td class="num">10</td>
         </tr>
         <tr>
-          <td>日本語<span class="sub">N2 · 用户勾选 · 未核验</span></td>
-          <td>ポイント計算表 VI-①</td>
+          <td>日本语<span class="sub">N2 · 由用户声明，未核验</span></td>
+          <td>同表 VI-①</td>
           <td class="num">10</td>
         </tr>
-        <tr>
-          <td>其他加分项</td>
-          <td>—</td>
-          <td class="num">0</td>
+        <tr class="tot">
+          <td colspan="2">合计</td>
+          <td class="num">65</td>
         </tr>
-        <tr class="tot"><td colspan="2">SUBTOTAL</td><td class="num">65</td></tr>
       </tbody>
     </table>
   </section>
 
-  <!-- II -->
-  <section class="block">
-    <h2><span class="roman">§ II</span>AFFORDABILITY · 可负担性</h2>
-    <div class="sec-title">+¥240,000 / 月 · 东京 23 区 1LDK</div>
+  <section>
+    <h2><span class="n">II</span>月度现金流</h2>
     <table class="grid">
       <tbody>
         <tr>
-          <td>月収中位<span class="sub">ソフトウェア開発職 · 34 歳</span></td>
-          <td>厚生労働省 賃金構造基本統計 2025<a class="src" href="#s2">src 2</a></td>
-          <td class="num">+¥680,000</td>
+          <td>月收入中位<span class="sub">ソフトウェア開発職 · 34 歳</span></td>
+          <td>厚生労働省 賃金構造基本統計 2025<a class="cite" href="#s2">[2]</a></td>
+          <td class="num">+680,000</td>
         </tr>
         <tr>
-          <td>所得税 + 住民税 + 社保</td>
-          <td>国税庁 税率表 2025<a class="src" href="#s3">src 3</a></td>
-          <td class="num">−¥182,000</td>
+          <td>所得税 · 住民税 · 社保</td>
+          <td>国税庁 税率表 2025<a class="cite" href="#s3">[3]</a></td>
+          <td class="num">−182,000</td>
         </tr>
         <tr>
           <td>1LDK 房租中位<span class="sub">东京 23 区</span></td>
-          <td>総務省 小売物価統計 2025<a class="src" href="#s4">src 4</a></td>
-          <td class="num">−¥178,000</td>
+          <td>総務省 小売物価統計 2025<a class="cite" href="#s4">[4]</a></td>
+          <td class="num">−178,000</td>
         </tr>
         <tr>
-          <td>基础生活固定支出<span class="sub">交通 + 通信 + 食费</span></td>
-          <td>同上<a class="src" href="#s4">src 4</a></td>
-          <td class="num">−¥80,000</td>
+          <td>基础固定支出<span class="sub">交通 · 通信 · 食费</span></td>
+          <td>同上<a class="cite" href="#s4">[4]</a></td>
+          <td class="num">−80,000</td>
         </tr>
-        <tr class="tot"><td colspan="2">NET</td><td class="num">+¥240,000</td></tr>
+        <tr class="tot">
+          <td colspan="2">净额</td>
+          <td class="num">+240,000</td>
+        </tr>
       </tbody>
     </table>
   </section>
 
-  <!-- III -->
-  <section class="block">
-    <h2><span class="roman">§ III</span>RETURN PERIOD · 回报周期</h2>
-    <div class="sec-title">70 分 → 3 年 · 80 分 → 1 年</div>
-    <div class="timeline">
-      <div class="row">
-        <div class="col0">T+0</div>
-        <div>获签 · 入国</div>
-        <div class="col2">高度専門職 1 号ロ 开始计时</div>
-      </div>
-      <div class="row">
-        <div class="col0">T+1y</div>
-        <div>80 分组可申请永居</div>
-        <div class="col2">出入国在留管理庁 · 入管法 § 22-2</div>
-      </div>
-      <div class="row">
-        <div class="col0">T+3y</div>
-        <div>70 分组可申请永居</div>
-        <div class="col2">同上</div>
-      </div>
-      <div class="row">
-        <div class="col0">T+5y</div>
-        <div>可申请入籍（另一套条件）</div>
-        <div class="col2">法務省 · 国籍法 § 5（独立评估）</div>
-      </div>
-    </div>
+  <section>
+    <h2><span class="n">III</span>时间表</h2>
+    <table class="tl">
+      <tbody>
+        <tr><td>T + 0</td><td>获签 · 入国（高度専門職 1 号ロ 起算）</td><td>入管法 § 7-1-2</td></tr>
+        <tr><td>T + 1 年</td><td>80 分组可申请永居</td><td>入管法 § 22-2</td></tr>
+        <tr><td>T + 3 年</td><td>70 分组可申请永居</td><td>同上</td></tr>
+        <tr><td>T + 5 年</td><td>可申请入籍（独立条件）</td><td>国籍法 § 5</td></tr>
+      </tbody>
+    </table>
   </section>
 
-  <!-- provenance -->
-  <section class="block">
-    <h2><span class="roman">§ IV</span>PROVENANCE · 引用与快照</h2>
-    <div class="prov">
-      <div class="row" id="s1">
-        <div class="idx">[1]</div>
-        <div><div class="auth">出入国在留管理庁</div>高度専門職ポイント計算表 · PDF</div>
-        <div class="date">fetched 2026-04-10</div>
-        <div class="sha">sha256 a1b2c3d4e5…</div>
-      </div>
-      <div class="row" id="s2">
-        <div class="idx">[2]</div>
-        <div><div class="auth">厚生労働省</div>賃金構造基本統計調査 2025 · XLSX</div>
-        <div class="date">fetched 2026-04-10</div>
-        <div class="sha">sha256 e5f6a7b8c9…</div>
-      </div>
-      <div class="row" id="s3">
-        <div class="idx">[3]</div>
-        <div><div class="auth">国税庁</div>所得税法 · 給与所得税率表 · PDF</div>
-        <div class="date">fetched 2026-03-22</div>
-        <div class="sha">sha256 c9d0e1f2a3…</div>
-      </div>
-      <div class="row" id="s4">
-        <div class="idx">[4]</div>
-        <div><div class="auth">総務省統計局</div>小売物価統計調査 · 東京 23 区 2025 · CSV</div>
-        <div class="date">fetched 2026-04-02</div>
-        <div class="sha">sha256 b3c4d5e6f7…</div>
-      </div>
-    </div>
+  <section>
+    <h2><span class="n">IV</span>引用</h2>
+    <ol class="prov">
+      <li id="s1">
+        <div class="i">[1]</div>
+        <div class="doc">
+          <span class="auth">出入国在留管理庁</span>　<span class="title">高度専門職ポイント計算表</span>
+          <span class="sha">sha256 a1b2c3d4e5f6…</span>
+        </div>
+        <div class="date">2026-04-10</div>
+      </li>
+      <li id="s2">
+        <div class="i">[2]</div>
+        <div class="doc">
+          <span class="auth">厚生労働省</span>　<span class="title">賃金構造基本統計調査 2025</span>
+          <span class="sha">sha256 e5f6a7b8c9d0…</span>
+        </div>
+        <div class="date">2026-04-10</div>
+      </li>
+      <li id="s3">
+        <div class="i">[3]</div>
+        <div class="doc">
+          <span class="auth">国税庁</span>　<span class="title">所得税 給与所得税率表</span>
+          <span class="sha">sha256 c9d0e1f2a3b4…</span>
+        </div>
+        <div class="date">2026-03-22</div>
+      </li>
+      <li id="s4">
+        <div class="i">[4]</div>
+        <div class="doc">
+          <span class="auth">総務省統計局</span>　<span class="title">小売物価統計調査 · 東京 23 区 2025</span>
+          <span class="sha">sha256 b3c4d5e6f7a8…</span>
+        </div>
+        <div class="date">2026-04-02</div>
+      </li>
+    </ol>
   </section>
 
-  <!-- promise -->
-  <div class="promise">
-    <strong>relocate 提供信息，不提供决定。</strong>
-    所有数值引自日本政府官方一手源；每项可回溯到源 PDF 的快照文件，sha256 全链一致。
-    政策规则每 180 天强制复核；超期字段打"待复核"徽章，不参与展示。
-    产品不对你的移民结果负责，不承接包办 / 陪跑 / 保过 / 咨询服务。
-  </div>
-
-  <footer class="pf">
-    <span>relocate · internal codename · pre-Phase 0</span>
-    <span>此页为视觉情感样稿 · 不包含任何真实数据</span>
+  <footer>
+    <span>relocate</span>
+    <span>示例页 · 数据为占位</span>
   </footer>
 
 </main>
