@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>relocate · 信息架构提案 v0.1</title>
+<style>
+  :root{
+    --ink:#141414;
+    --ink-soft:#3d3d3d;
+    --ink-faint:#8a8a8a;
+    --rule:#d8d8d8;
+    --rule-soft:#ebebeb;
+    --bg:#fdfbf7;
+    --serif:Georgia,"Source Han Serif SC","Noto Serif SC","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;
+    --mono:"SFMono-Regular","Menlo",Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:var(--serif);
+    font-size:16.5px;line-height:1.78;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+
+  header.top{
+    padding:14px 40px;border-bottom:1px solid var(--rule);
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em;
+    background:#fff;
+  }
+  header.top .l{color:var(--ink)}
+
+  .page{max-width:760px;margin:0 auto;padding:64px 32px 140px}
+
+  .kicker{
+    font-family:var(--mono);font-size:11px;letter-spacing:0.18em;
+    text-transform:uppercase;color:var(--ink-faint);margin:0 0 10px;
+  }
+  h1{font-size:30px;font-weight:700;line-height:1.3;letter-spacing:-0.005em;margin:0 0 10px}
+  .meta{
+    font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);
+    letter-spacing:0.04em;margin:0 0 36px;
+    padding-bottom:18px;border-bottom:1px solid var(--ink);
+  }
+  .meta span + span::before{content:" · ";margin:0 4px;color:var(--rule)}
+
+  section{margin:48px 0 0}
+  section > h2{font-size:21px;font-weight:700;line-height:1.35;margin:0 0 6px}
+  section > h2 .n{
+    font-family:var(--mono);font-size:12.5px;font-weight:400;
+    color:var(--ink-faint);letter-spacing:0.08em;margin-right:10px;
+  }
+  section > .lede{
+    font-family:var(--serif);font-style:italic;
+    color:var(--ink-soft);font-size:16px;line-height:1.7;margin:0 0 22px;
+  }
+
+  p{margin:0 0 1.05em}
+  h3{font-size:16.5px;font-weight:700;margin:30px 0 10px}
+  h3 .n{
+    font-family:var(--mono);font-size:11.5px;font-weight:400;
+    color:var(--ink-faint);letter-spacing:0.06em;margin-right:8px;
+  }
+
+  code.k{font-family:var(--mono);font-size:13.5px;background:var(--rule-soft);padding:1px 5px;border-radius:2px}
+  em.t{font-style:italic}
+  a.cite{font-family:var(--mono);font-size:11px;color:var(--ink-faint);text-decoration:none;margin-left:2px;vertical-align:2px}
+  a.cite:hover{color:var(--ink)}
+
+  /* ASCII 图块 */
+  pre.diagram{
+    margin:18px 0 24px;padding:18px 22px;
+    background:#fff;border:1px solid var(--rule);
+    font-family:var(--mono);font-size:12.5px;line-height:1.55;
+    color:var(--ink);overflow-x:auto;white-space:pre;
+  }
+
+  /* 页面规格表 */
+  .specs{margin:14px 0 24px}
+  .spec{
+    border-top:1px solid var(--rule);
+    padding:18px 0 14px;
+  }
+  .spec:last-child{border-bottom:1px solid var(--rule)}
+  .spec .id{
+    font-family:var(--mono);font-size:11px;
+    color:var(--ink-faint);letter-spacing:0.1em;text-transform:uppercase;
+  }
+  .spec .name{font-size:17px;font-weight:700;margin:2px 0 8px}
+  .spec dl{margin:0;font-family:var(--sans);font-size:13.5px;line-height:1.65}
+  .spec dl > div{
+    display:grid;grid-template-columns:84px 1fr;gap:14px;
+    padding:5px 0;
+  }
+  .spec dl dt{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    text-transform:uppercase;letter-spacing:0.08em;padding-top:3px;
+  }
+  .spec dl dd{margin:0;color:var(--ink-soft)}
+  .spec dl dd code{font-family:var(--mono);font-size:12px;color:var(--ink);background:var(--rule-soft);padding:1px 4px;border-radius:2px}
+  .spec .phase{
+    display:inline-block;font-family:var(--mono);font-size:10.5px;
+    letter-spacing:0.08em;padding:1px 6px;border:1px solid var(--ink);
+    margin-left:8px;color:var(--ink);vertical-align:2px;
+  }
+  .spec .phase.later{border-style:dashed;color:var(--ink-faint);border-color:var(--ink-faint)}
+
+  /* 二选一对比 */
+  .vs{
+    display:grid;grid-template-columns:1fr 1fr;gap:24px;
+    margin:18px 0 24px;
+  }
+  .vs > div{
+    background:#fff;border:1px solid var(--rule);
+    padding:18px 20px;font-family:var(--sans);font-size:13.5px;line-height:1.65;color:var(--ink-soft);
+  }
+  .vs h4{
+    font-family:var(--serif);font-size:15.5px;font-weight:700;
+    color:var(--ink);margin:0 0 8px;
+  }
+
+  /* 开放问题 */
+  ol.qs{margin:8px 0 0;padding:0 0 0 24px;font-family:var(--sans);font-size:14px;line-height:1.7}
+  ol.qs li{margin:0 0 10px;color:var(--ink-soft)}
+  ol.qs li strong{color:var(--ink);font-weight:700}
+
+  footer.btm{
+    margin-top:80px;padding-top:14px;border-top:1px solid var(--rule);
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    display:flex;justify-content:space-between;
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="l">relocate</div>
+  <div>internal · pre-Phase 0 · 2026-04-18</div>
+</header>
+
+<main class="page">
+
+  <p class="kicker">设计文档 · 不对外</p>
+  <h1>信息架构提案 v0.1</h1>
+  <p class="meta">
+    <span>对应 Phase 0</span>
+    <span>依据 RULES.md / README.md</span>
+    <span>状态 · 待拍板</span>
+  </p>
+
+  <!-- § 1 -->
+  <section>
+    <h2><span class="n">§ 1</span>把 Phase 0 的硬约束摆在桌上</h2>
+    <p class="lede">在画任何页之前，先把 RULES 里所有跟"网站长什么样"直接相关的硬约束抓出来——它们决定我们能做什么页、不能做什么页。</p>
+
+    <p>从 README 和 RULES 中过出来的、与信息架构直接绑死的约束有七条：</p>
+
+    <h3><span class="n">1.1</span>Phase 0 不做首页</h3>
+    <p>RULES § 9.1 列举本阶段不做：<em class="t">首页、i18n、AI 接入、空数据行、多路径扩展……</em>。这是我们最容易忽略的一条——"不做首页"意味着我们没有营销首屏、没有"产品介绍 → CTA"的常规漏斗，用户进站就直接落到一条具体路径。Phase 0 站内合法的页只有"路径本身"和"路径相关的页"。</p>
+
+    <h3><span class="n">1.2</span>验收动作就是"四步走"</h3>
+    <p>RULES § 9.1 把 Phase 0 验收定义为：<code class="k">输入条件 → 看到三输出 → 逐字段点开官方源核对 → 形成自用行动清单</code>。这四步本身就是页面骨架——网站至少要支撑这四个动作的连贯发生。</p>
+
+    <h3><span class="n">1.3</span>三件输出不变</h3>
+    <p>README 锁定了输出三件：<em class="t">可行性 / 可负担性 / 回报周期</em>。任何页都不得引入第四个维度（"教育"、"医疗"、"幸福指数"等都属于 § 3.1 拒绝的"再加一个比较维度"）。</p>
+
+    <h3><span class="n">1.4</span>付费前后字段一致</h3>
+    <p>RULES § 7.3 的"信息全免费 + 年费买'我的路径'保存 + 规则变动通知"决定：付费状态只影响"是否能保存 / 是否能收通知"，不影响任何字段是否可见。换言之，**网站没有"游客版"和"会员版"两套页面**，只有"已登录看到了一个'保存'按钮"和"未登录没看到"的差别。</p>
+
+    <h3><span class="n">1.5</span>"我们提供信息，不提供决定"必须三处可见</h3>
+    <p>RULES § 3.7.3 要求这句话在<em class="t">首屏 / 付费页 / 路径详情页</em>各一处显式可见。Phase 0 没有首页，于是这句话现阶段只能落在：路径详情页 + 测算入口处 + （未来的）付费页。</p>
+
+    <h3><span class="n">1.6</span>每个数字必须可点开看源</h3>
+    <p>RULES § 2.4.1 要求每个对外展示的数值，必须在至少一个可达交互里暴露 <code class="k">sourceURL + fetchedAt</code>。这意味着站内必须存在一类"字段溯源"的可达终点——可能是单独的字段详情页，也可能是路径页内的 popover，但不能没有。</p>
+
+    <h3><span class="n">1.7</span>结论先行，渐进披露</h3>
+    <p>RULES § 6.2 要求每页首屏一句人话结论。这条决定我们的页内结构：所有页都是"结论 → 证据 → 详情"的纵向序列，不是 dashboard 的横向并列。</p>
+  </section>
+
+  <!-- § 2 -->
+  <section>
+    <h2><span class="n">§ 2</span>站点地图</h2>
+    <p class="lede">基于上面七条约束推导出来的 Phase 0 最小可用站点。共 6 个站内页 + 1 个入口（不算 § 7.3 的"账户"相关，那留给 Phase 1 再画）。</p>
+
+<pre class="diagram">
+                         ┌──────────────────────────┐
+                         │   /  · 入口 · 路径列表    │  ← 没有"首页"
+                         │   ─ Phase 0 只有 1 张卡  │     只有"路径目录"
+                         │   ─ 暂未覆盖区显式列出   │
+                         └────────────┬─────────────┘
+                                      │ click "日本 · 高度専門職 1 号ロ"
+                                      ▼
+            ┌────────────────────────────────────────────────┐
+            │  /paths/jp-hsp-1-b-engineer  ·  路径介绍页      │
+            │  ─ 这条路径是什么、规则全文、阈值含义           │
+            │  ─ 通用文本，所有访客看到的内容一致              │
+            │  ─ 末尾 CTA → "想看自己几分？"                   │
+            └─────┬──────────────────────────────────┬───────┘
+                  │                                  │
+                  │ click 任一字段角标 [n]            │ click "测算我的"
+                  ▼                                  ▼
+       ┌──────────────────────────┐    ┌─────────────────────────────┐
+       │ /sources/<authority>/... │    │ /paths/.../assess           │
+       │   字段溯源页              │    │   测算页 · 几个输入框        │
+       │   ─ 一手源原文 + 快照     │    │   ─ 年龄/学历/年限/年收/JLPT │
+       │   ─ sha256 / 抓取日期     │    │   ─ 不存任何后台（v0）      │
+       └──────────────────────────┘    └────────────┬────────────────┘
+                                                    ▼
+                                  ┌────────────────────────────────────┐
+                                  │ /paths/.../result?...              │
+                                  │   测算结果页                        │
+                                  │   ─ 结构 = 介绍页 + 用户值代入      │
+                                  │   ─ 同样可点 [n] 跳字段溯源页       │
+                                  │   ─ 末尾 "保存我的路径"（占位）     │
+                                  └────────────────────────────────────┘
+
+       ┌──────────────────────────┐    ┌─────────────────────────────┐
+       │ /paths/.../changelog     │    │ /about                      │
+       │   规则变更日志            │    │   章程 / 数据诚实声明        │
+       │   ─ 每次复核一行          │    │   ─ README + RULES 对外版   │
+       │   ─ sha256 diff 摘要     │    │   ─ footer 入口             │
+       └──────────────────────────┘    └─────────────────────────────┘
+</pre>
+
+    <p>解读：站内只有<strong>三条主干路径</strong>——"看路径 → 看字段源"、"看路径 → 测自己"、"看路径 → 看变更日志"。一切跳转都从"路径介绍页"出发，介绍页是网站的<em class="t">事实首页</em>。</p>
+  </section>
+
+  <!-- § 3 -->
+  <section>
+    <h2><span class="n">§ 3</span>页面规格</h2>
+    <p class="lede">六个站内页 + 入口的逐页规格。每一页都标注了对应 Phase——Phase 0 必做的与可推迟的。</p>
+
+    <div class="specs">
+
+      <div class="spec">
+        <div class="id">P0 · entry</div>
+        <div class="name">/ · 入口（路径列表）<span class="phase">Phase 0</span></div>
+        <dl>
+          <div><dt>目的</dt><dd>让用户在 3 秒内知道"这是什么、可走的路径有几条"。</dd></div>
+          <div><dt>受众</dt><dd>所有访客。</dd></div>
+          <div><dt>看到</dt><dd>项目代号一行；下方 1 张路径卡（jp-hsp-1-b-engineer）；再下方"暂未覆盖：14 个目标国"的体面表达（§ 3.4）；footer 的 about 入口。</dd></div>
+          <div><dt>不看到</dt><dd>没有 hero、没有 CTA、没有数据条幅、没有 testimonial。</dd></div>
+          <div><dt>出口</dt><dd>只有一个：路径卡 → P1。</dd></div>
+        </dl>
+      </div>
+
+      <div class="spec">
+        <div class="id">P1 · path</div>
+        <div class="name">/paths/jp-hsp-1-b-engineer · 路径介绍页<span class="phase">Phase 0</span></div>
+        <dl>
+          <div><dt>目的</dt><dd>讲清楚这条路径"是什么、规则怎么算、阈值是什么、谁适用、谁不适用"。一切访客看到的内容完全一致。</dd></div>
+          <div><dt>受众</dt><dd>对这条路径感兴趣的访客（包括从未听说过 HSP 的人）。</dd></div>
+          <div><dt>看到</dt><dd>全文叙述（§1 是什么 / §2 打分表逐项 / §3 阈值 / §4 永居入籍时间表 / §5 一句"我们提供信息不提供决定" / §6 末尾 CTA "测我自己" / §7 引用与快照）。</dd></div>
+          <div><dt>关键点</dt><dd>这是网站的事实首页。所有"产品在做什么"的回答靠它承担。</dd></div>
+          <div><dt>出口</dt><dd>三处：字段角标 [n] → P2 字段溯源；末尾 CTA → P3 测算；footer → P5 changelog 与 P6 about。</dd></div>
+        </dl>
+      </div>
+
+      <div class="spec">
+        <div class="id">P2 · source</div>
+        <div class="name">/sources/&lt;authority&gt;/&lt;doc-id&gt; · 字段溯源页<span class="phase">Phase 0</span></div>
+        <dl>
+          <div><dt>目的</dt><dd>让任何一个数字都点得开它从哪来。这是 § 2.4.1 + § 2.7 的 UI 落地。</dd></div>
+          <div><dt>受众</dt><dd>从 P1 / P4 的角标 [n] 点过来的访客。</dd></div>
+          <div><dt>看到</dt><dd>该一手源的元信息（authority、doc-id、URL、fetchedAt、sha256、bytes）；rawQuote；该源在我们快照仓里的所有历史版本（按日期倒序）；指向官方原始 URL 的链接。</dd></div>
+          <div><dt>不看到</dt><dd>不展示我们对该源数据的"解读"——解读在 P1 里发生，这一页只承担"原件展示"。</dd></div>
+          <div><dt>出口</dt><dd>返回引用它的路径页；前往该源在 changelog 里的相关条目。</dd></div>
+        </dl>
+      </div>
+
+      <div class="spec">
+        <div class="id">P3 · assess</div>
+        <div class="name">/paths/.../assess · 测算页<span class="phase">Phase 0</span></div>
+        <dl>
+          <div><dt>目的</dt><dd>收集让用户能在这条路径上"算自己"的最小输入集。</dd></div>
+          <div><dt>受众</dt><dd>读完 P1、想算自己的访客。</dd></div>
+          <div><dt>看到</dt><dd>5 个左右的输入字段（年龄、学历、职务年限、年收、日语等级）；每个字段下方一句"为什么问这个"的解释，并指向 P1 中对应小节；提交按钮。</dd></div>
+          <div><dt>关键点</dt><dd>v0 不存后台、不要求登录。提交即把输入序列化进 URL（比如 <code>?age=34&amp;edu=bachelor&amp;...</code>），跳到 P4。这样"分享我的结果"就是分享一条 URL，无需账户系统，符合 § 7.3 的"付费状态不影响信息可见度"。</dd></div>
+          <div><dt>出口</dt><dd>提交 → P4。</dd></div>
+        </dl>
+      </div>
+
+      <div class="spec">
+        <div class="id">P4 · result</div>
+        <div class="name">/paths/.../result?…  · 测算结果页<span class="phase">Phase 0</span></div>
+        <dl>
+          <div><dt>目的</dt><dd>把 P1 的通用叙述"实例化"成这位用户的版本。</dd></div>
+          <div><dt>受众</dt><dd>从 P3 提交过来的用户（或拿到分享 URL 的人）。</dd></div>
+          <div><dt>看到</dt><dd>结构与 P1 完全一致——同样的 §1–§7——但所有"以 Alice 为例"的句子被替换为"以你为例"，每个分项有用户自己的取值与得分。结尾给出三件输出：<em class="t">可行性总分 / 月度净现金流 / 永居最短等待</em>。最后一段（占位）"保存这条路径"按钮，对应 § 7.3 的年费功能。</dd></div>
+          <div><dt>关键点</dt><dd>P4 ≠ "结果页"传统意义上的 dashboard。它仍然是一篇文章，只是主语换成了你。这一点是回答你问题"通用还是个性化"的核心：<strong>同一篇文章，两种实例</strong>。</dd></div>
+          <div><dt>出口</dt><dd>字段角标 [n] → P2；末尾 CTA → 保存（Phase 1 再启用）。</dd></div>
+        </dl>
+      </div>
+
+      <div class="spec">
+        <div class="id">P5 · changelog</div>
+        <div class="name">/paths/.../changelog · 规则变更日志<span class="phase">Phase 0</span></div>
+        <dl>
+          <div><dt>目的</dt><dd>对 § 5.2 复核机制的对外输出。每次复核留下的痕迹，是我们对"诚实"的实证。</dd></div>
+          <div><dt>受众</dt><dd>少数读到 P1 footer 的硬核用户，以及未来年费的"通知邮件"里链接来的人。</dd></div>
+          <div><dt>看到</dt><dd>表/列表：日期 / 字段 / 旧值 / 新值 / 旧 sha256 / 新 sha256 / 影响范围。最早的一条是 Phase 0 第一次录入。</dd></div>
+          <div><dt>出口</dt><dd>每条都指向 P2 的对应快照对比页。</dd></div>
+        </dl>
+      </div>
+
+      <div class="spec">
+        <div class="id">P6 · about</div>
+        <div class="name">/about · 章程 / 数据诚实声明<span class="phase">Phase 0</span></div>
+        <dl>
+          <div><dt>目的</dt><dd>把 README + RULES 的关键原则改写成对外可读的版本。让读者明白"我们为什么不做某些事"。</dd></div>
+          <div><dt>受众</dt><dd>任何一个怀疑"这站靠不靠谱"的人。</dd></div>
+          <div><dt>看到</dt><dd>段落式叙述：项目是什么 / 为谁做 / 为谁不做 / 数据原则 / 商业原则（信息免费）/ 不做清单。</dd></div>
+          <div><dt>出口</dt><dd>无主出口；是一个收口页。</dd></div>
+        </dl>
+      </div>
+
+      <div class="spec">
+        <div class="id">P7 · account</div>
+        <div class="name">/account/* · 我的路径 · 通知设置<span class="phase later">Phase 1+</span></div>
+        <dl>
+          <div><dt>目的</dt><dd>对应 § 7.3 年费——保存我的路径快照、订阅规则变更通知。</dd></div>
+          <div><dt>关键点</dt><dd>Phase 0 dogfood 不需要，<strong>本提案不展开</strong>。仅在 P4 末尾留一个不可点击的占位按钮表明这是后续承诺。</dd></div>
+        </dl>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- § 4 -->
+  <section>
+    <h2><span class="n">§ 4</span>关键回答 · 通用说明 vs 个性化结果</h2>
+    <p class="lede">你最直接的那个问题：这页要不要是详尽通用说明？还是个性化定制？答：两者都要，但它们是<em class="t">同一篇文章的两个实例</em>。</p>
+
+    <div class="vs">
+      <div>
+        <h4>P1 · 路径介绍页</h4>
+        <p>主语是"这条路径"。用 Alice 这个示例人物穿在叙述里，作为<em class="t">解释规则的工具</em>。任何访客看到的文字相同，包括"以 Alice 为例她拿了 70 分"这种段落。</p>
+      </div>
+      <div>
+        <h4>P4 · 测算结果页</h4>
+        <p>主语是"你"。叙述结构、章节顺序、引用与脚注完全沿用 P1，但凡 Alice 出现的地方都被换成"你"，凡示例数字都被换成你的输入。是 P1 的<em class="t">实例化渲染</em>，不是新页面。</p>
+      </div>
+    </div>
+
+    <p>这样做的三个好处：</p>
+    <p>第一，<strong>避免双重维护</strong>——只写一份文章模板，介绍页与结果页同源。第二，<strong>避免认知割裂</strong>——读完 P1 想算自己，跳到 P4 看到完全一样的章节结构，没有"重新学习一份新页面"的成本。第三，<strong>避免黑箱感</strong>——你看到自己的得分时，每一节都对照着规则解释为什么是这一档，跟 P1 上的写法是同一套语言。这正是你那条"我们没有黑箱、我们透明"的具体落地。</p>
+  </section>
+
+  <!-- § 5 -->
+  <section>
+    <h2><span class="n">§ 5</span>入口长什么样</h2>
+    <p class="lede">RULES 不让我们做首页，但用户进站总要先看到点什么。我们用最朴素的形态承担这个职责——一份"路径目录"。</p>
+
+    <p>入口（P0）的最小内容只有四块：</p>
+    <p>① 顶部一行：项目代号 + 当前 RULES 版本日期。② 一句话说明：<em class="t">"中文母语技术移民申请人的合法路径检索。"</em>——这是替代"hero copy"的一句人话，不带任何形容词、不带 CTA。③ 路径目录：当前唯一一张卡 <code class="k">jp-hsp-1-b-engineer</code>，副标题"日本 · 高度専門職 1 号ロ · 技術系"，再附一行"最近一次复核 2026-04-10"。④ 暂未覆盖区：列出我们承认能力天花板内的另外 14 个目标国名（不是无限多个、不是按"全球 200 国"假装）；每个都标"暂未覆盖"，不允许 hover 出"敬请期待"。</p>
+
+    <p>没有搜索框（一条路径不需要搜索），没有筛选器（同样原因），没有"个性化推荐"（§ 3.7 拒绝）。Phase 1 增加路径数量后，这一页演化为可筛选目录——但筛选维度永远不超过"目标国"和"用户画像类别"两个，绝不引入"宜居度"、"幸福指数"、"AI 推荐"。</p>
+  </section>
+
+  <!-- § 6 -->
+  <section>
+    <h2><span class="n">§ 6</span>需要你拍板的开放问题</h2>
+    <p class="lede">下面 5 个问题是这一版方案不能单独由我决定的——任何一个的答案都会改动 § 2 站点地图。</p>
+
+    <ol class="qs">
+      <li><strong>P3 测算页是必须的吗？</strong>另一种方案是干脆把"测算"做进 P1——用一个 sticky 侧栏让你边读边填，所有计算实时反映在文中。这样就没有 P3 → P4 的跳转，整个网站收敛为 4 个页（P0/P1/P2/P5/P6 减一个）。代价是 P1 变重，移动端不友好。</li>
+      <li><strong>P4 是独立 URL，还是 P1 的 query string 实例？</strong>如果是后者（如 <code class="k">/paths/.../?as=you&amp;age=34</code>），则不需要 P4 这个独立路由，"通用 vs 个性化"是同一 URL 上的两个状态。这种做法更彻底，但分享链接时要标得很清楚。</li>
+      <li><strong>P5 changelog 是路径维度还是字段维度？</strong>路径维度是"jp-hsp-1-b-engineer 的所有变更按时间排"；字段维度是"年薪 × 年龄表的所有变更按时间排"。两者都对，但 IA 不一样。</li>
+      <li><strong>"暂未覆盖"的 14 国列表，从哪儿来？</strong>RULES § 9.2 提到 ~15 国是"战略天花板，不是短期覆盖目标"。但具体哪 15 国，至今没有写进 README/RULES。是否需要我先列一份候选清单与你过一遍，落进 SOURCES.md？</li>
+      <li><strong>P6 是 1 页长文，还是分成"章程 / 数据原则 / 我们不做什么"三页？</strong>三页更便于检索，1 页更便于一次读完。</li>
+    </ol>
+  </section>
+
+  <footer class="btm">
+    <span>relocate · IA proposal v0.1</span>
+    <span>结构定后再画页面样稿</span>
+  </footer>
+
+</main>
+
+</body>
+</html>
