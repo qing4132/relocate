@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>relocate · 国家与路径覆盖草案 · v0.1</title>
+<title>relocate · 国家与路径覆盖草案 · v0.2</title>
 <style>
   :root{
     --ink:#141414; --ink-soft:#3d3d3d; --ink-faint:#8a8a8a;
@@ -38,6 +38,17 @@
   article.country > h3 .iso{font-family:var(--mono);font-size:11px;font-weight:400;color:var(--ink-faint);letter-spacing:0.06em;margin-left:10px;vertical-align:2px}
   article.country > .ctx{font-family:var(--sans);font-size:13.5px;line-height:1.7;color:var(--ink-soft);margin:0 0 12px}
 
+  .stages{
+    margin:0 0 14px;padding:10px 16px 12px;
+    background:#fff;border:1px solid var(--rule);
+    font-family:var(--sans);font-size:12.5px;line-height:1.7;
+    display:grid;grid-template-columns:78px 1fr;column-gap:14px;row-gap:2px;
+  }
+  .stages dt{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em;text-transform:uppercase;padding-top:3px}
+  .stages dd{margin:0;color:var(--ink-soft)}
+  .stages dd strong{color:var(--ink);font-weight:700}
+  .stages dd .tag{display:inline-block;font-family:var(--mono);font-size:10px;color:var(--ink-faint);border:1px solid var(--rule);padding:0 5px;margin-right:4px;vertical-align:1px}
+
   table.paths{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:13.5px;line-height:1.65;margin:6px 0 0}
   table.paths th,table.paths td{text-align:left;vertical-align:top;padding:9px 6px;border-bottom:1px solid var(--rule)}
   table.paths th{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em;text-transform:uppercase;font-weight:600;border-bottom:1px solid var(--ink)}
@@ -63,7 +74,7 @@
 
 <header class="top">
   <div class="l">relocate</div>
-  <div>internal · scoping survey · v0.1 · 2026-04-19</div>
+  <div>internal · scoping survey · v0.2 · 2026-04-20</div>
 </header>
 
 <main class="page">
@@ -73,13 +84,14 @@
   <p class="meta">
     <span>面向 Phase 1+ 路径扩张规划</span>
     <span>决定覆盖范围、不决定具体数值</span>
-    <span>v0.1 · 首轮扫图</span>
+    <span>v0.2 · 加入三阶段小结</span>
   </p>
 
   <div class="caveat">
-    <strong>这份文档是什么：</strong>一份"覆盖范围扫图"，用来决定未来 PathCard 列表里应该出现哪些路径（无论是 covered 还是 uncovered）。
+    <strong>这份文档是什么：</strong>一份"覆盖范围扫图"，用来决定未来路径卡片列表里应该出现哪些路径（无论是已覆盖还是未覆盖）。
     <strong>不是什么：</strong>这不是一手源数据——此处的路径名、大致门槛、时长全部<em>未经本项目的一手源核验</em>，只用于规划与讨论。任何一条被列的路径，在真正进入产品之前，都必须按 RULES § 2.1 重新从官方源抓取、快照、审阅。
     <strong>评级含义：</strong>是"对本项目核心画像（中文母语技术/知识工作者单干）的契合度 + 作为对照组的教育价值"综合判断，非"路径本身的优劣"。
+    <strong>v0.2 新增：</strong>每国下方的「工签 / 永居 / 入籍」三阶段小结，是对照 sitemap v0.3.1 的路径卡片字段结构做的首次压测——为了看清哪些信息属于"路径级"、哪些属于"国家级"、哪些得做成"混合"。同样非一手源，数字仅用于判断字段归属与工作量，不能作为用户可见内容。
   </div>
 
   <div class="legend">
@@ -102,6 +114,11 @@
     <article class="country">
       <h3>日本 <span class="iso">JP · jp</span></h3>
       <p class="ctx">Phase 0 唯一落地国。地理/文化近、技能签证规则条文化程度高、中文用户关注度最高。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd><strong>通道丰富</strong>：积分制 HSP（★★★）+ 常规工签 技人国（★★★）+ 创业 経営・管理。规则条文化程度在亚洲最高。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd>HSP 70 分 → 3 年；HSP 80 分 → 1 年；普通签 → 10 年。<strong>强路径耦合</strong>——永居年限是 HSP 的真正卖点。<span class="tag">路径级</span></dd>
+        <dt>入籍</dt><dd>归化 5 年 + 日语 + 放弃原国籍（日本不允许双重国籍）。<strong>对中国用户＝同时失去中国国籍</strong>。一套法条，所有路径共用。<span class="tag">国家级</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -120,7 +137,12 @@
     <!-- US -->
     <article class="country">
       <h3>美国 <span class="iso">US · us</span></h3>
-      <p class="ctx">中文用户关注度极高。系统的抽签 + 排期特性使它与日本 scoring type 完全不同——这是 PathCard 抽象必须兼容 lottery / queued type 的主要原因。</p>
+      <p class="ctx">中文用户关注度极高。系统的抽签 + 排期特性使它与日本的打分制完全不同——这是"路径卡片"数据结构必须兼容抽签制 / 排期制的主要原因。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd><strong>抽签 + 排期双重机制</strong>：H-1B 抽签、O-1/L-1 无抽签、EB-1/2/3 靠雇主排队。规则层级多（联邦法、USCIS 口径、月更排期表）。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd>绿卡本身就是永居。<strong>中国大陆出生者 EB-2/3 排期以十年计</strong>——这条在官方排期表上月更。<span class="tag">路径级</span></dd>
+        <dt>入籍</dt><dd>绿卡 5 年 → 公民（婚姻路径 3 年）。<strong>允许双重国籍</strong>（但中国单方面不承认）。入籍考试 + 宣誓。<span class="tag">国家级</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -141,7 +163,12 @@
     <!-- CA -->
     <article class="country">
       <h3>加拿大 <span class="iso">CA · ca</span></h3>
-      <p class="ctx">明确分制 + 入籍最快之一 + 中文存量大。和日本 HSP 同为 scoring type，schema 扩张成本低，战略优先级高。</p>
+      <p class="ctx">明确分制 + 入籍最快之一 + 中文存量大。和日本 HSP 同属打分制，数据结构的扩张成本低，战略优先级高。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>Express Entry（联邦打分池 CRS）+ 省提名（各省规则独立，是否每省一张卡是设计议题）+ 雇主担保。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd>EE/PNP 多为"直接指向永居"的路径，无需先工签。居住 1095 天维持。<strong>条件基本国家级统一</strong>。<span class="tag">国家级 为主</span></dd>
+        <dt>入籍</dt><dd>永居后 3 年（1095 天）+ 语言 + 考试。<strong>允许双重国籍</strong>。对中文用户是"入籍最快档位"之一。<span class="tag">国家级</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -160,7 +187,12 @@
     <!-- AU -->
     <article class="country">
       <h3>澳大利亚 <span class="iso">AU · au</span></h3>
-      <p class="ctx">与加拿大类似的打分 + EOI 池模型。打分 + 职业清单 + 技术评估三段式比较复杂。</p>
+      <p class="ctx">与加拿大类似的打分 + 候选池模型。打分 + 职业清单 + 技术评估三段式比较复杂。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>189/190/491（直接指向永居的三档）+ 482 雇主担保。打分 + 职业清单 + 技术评估三段式。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd>189/190 申请时就是永居；491 需偏远 3 年后转 PR。居住测试用于入籍计时。<span class="tag">混合</span></dd>
+        <dt>入籍</dt><dd>PR 4 年（含 1 年永居）+ 入籍考试（英语+公民知识）。<strong>允许双重国籍</strong>。<span class="tag">国家级</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -178,7 +210,12 @@
     <!-- SG -->
     <article class="country">
       <h3>新加坡 <span class="iso">SG · sg</span></h3>
-      <p class="ctx">永居与入籍极不透明是核心特征——"拿到工签容易，但拿 PR 完全黑盒"。PathCard 的 <code>permanentResidencyMonths</code> 字段在这里是 <em>null + 附说明</em>的典型场景。</p>
+      <p class="ctx">永居与入籍极不透明是核心特征——"拿到工签容易，但拿 PR 完全黑盒"。"永居最短月数"字段在这里是<em>空值 + 附说明</em>的典型场景。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>EP / ONE Pass（高薪通道）/ Tech.Pass / EntrePass 等分层清晰，COMPASS 积分+最低月薪。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd><strong>核心痛点：完全黑盒</strong>。官方不公开评审标准、不承诺时长、不说明被拒原因。字段只能填"不公开" + 坊间经验。<span class="tag">国家级 · 黑盒</span></dd>
+        <dt>入籍</dt><dd>PR 后 2 年可申，但受理率同样黑盒。<strong>不允许双重国籍</strong>——入籍即放弃中国国籍。<span class="tag">国家级</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -196,6 +233,11 @@
     <article class="country">
       <h3>德国 <span class="iso">DE · de</span></h3>
       <p class="ctx">欧盟最大经济体 + 明确的 Blue Card 通道 + 近年对中文技术人才实际放宽。适合作 Tier A 欧盟代表。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>Blue Card（薪资门槛）+ Skilled Worker 法定主通道 + 机会卡（积分求职签）+ 自雇/自由职业。条文化程度高。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd>Blue Card 21/27/33 月（按 B1/A1 德语阶梯）；普通工签 5 年；永居欧盟版本可跨欧盟流动。<span class="tag">路径级 为主</span></dd>
+        <dt>入籍</dt><dd>2024 新法：一般 5 年（原 8 年），优秀融入者 3 年。<strong>新法已允许双重国籍</strong>——对中文用户是重大政策拐点。<span class="tag">国家级</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -213,7 +255,12 @@
     <!-- UK -->
     <article class="country">
       <h3>英国 <span class="iso">GB · uk</span></h3>
-      <p class="ctx">脱欧后重构为积分型体系。Global Talent 与 Skilled Worker 是两大主通道。5 年 ILR。</p>
+      <p class="ctx">脱欧后重构为积分型体系。Global Talent 与 Skilled Worker 是两大主通道。5 年可申永居（ILR）。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>Skilled Worker（雇主担保 + 薪资）+ Global Talent（背书制，不需雇主）+ HPI（Top 大学 2 年）+ Innovator Founder。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd>多数路径 5 年 ILR；Global Talent 3-5 年依子类。语言 + Life in the UK 考试。<span class="tag">路径级 为主</span></dd>
+        <dt>入籍</dt><dd>ILR 后 1 年可申（婚姻 0 等待）+ 语言 + 英国生活考试 + 宣誓。<strong>允许双重国籍</strong>。<span class="tag">国家级</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -240,6 +287,11 @@
     <article class="country">
       <h3>新西兰 <span class="iso">NZ · nz</span></h3>
       <p class="ctx">Green List + SMC 分制。整体门槛近几年上调。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>SMC 6 分制（2023 改版，学历/职业登记/薪资）+ AEWV 雇主担保 + Green List 紧缺职业直通。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd>SMC 直通永居；Work to Residence 工作 24 月后 PR。<span class="tag">混合</span></dd>
+        <dt>入籍</dt><dd>PR 后 5 年（居住十分严格）+ 语言 + 品行。<strong>允许双重国籍</strong>。<span class="tag">国家级</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -255,6 +307,11 @@
     <article class="country">
       <h3>荷兰 <span class="iso">NL · nl</span></h3>
       <p class="ctx">Highly Skilled Migrant 程序在欧盟内门槛偏低 + 英语可用 + 30% ruling 税收优惠曾为亮点。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>高技能移民（认可雇主 + 薪资门槛）+ Blue Card + Zoekjaar 求职签。成熟。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd>5 年连续居留 + 语言 A2。基本国家级统一。<span class="tag">国家级 为主</span></dd>
+        <dt>入籍</dt><dd>5 年 + 语言 + 融入考试 + 宣誓。<strong>原则上不允许双重国籍</strong>（对声明重多航程、投资重大贡献等有例外）。<span class="tag">国家级</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -271,6 +328,11 @@
     <article class="country">
       <h3>爱尔兰 <span class="iso">IE · ie</span></h3>
       <p class="ctx">欧盟内英语国、税收友好、大厂欧洲总部集中。入籍 5 年 + 可能保留中国国籍（中国单方面不承认，是个风险点）。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>Critical Skills Permit（紧缺清单 + 薪资）+ General Employment Permit。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd>Stamp 4 5 年后续长期居留。<span class="tag">混合</span></dd>
+        <dt>入籍</dt><dd>5 年 居住 + 品行 + 宣誓。<strong>允许双重国籍</strong>——理论上可保留中国国籍，但中国领事可能不受理。<span class="tag">国家级 · 重要</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -286,6 +348,11 @@
     <article class="country">
       <h3>瑞士 <span class="iso">CH · ch</span></h3>
       <p class="ctx">非欧盟国籍配额极严；年度 Quota 明显限流。收入天花板高但门槛也高。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>B Permit（年配额 + 雇主证明无欧盟候选人）+ L Permit 短期。创业极难。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd>通常 10 年 B Permit 后可转 C Permit。<span class="tag">国家级</span></dd>
+        <dt>入籍</dt><dd>通常 10 年居住 + 州/镇双重审批。<strong>允许双重国籍</strong>。入籍在欧盟最慢之一。<span class="tag">国家级</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -301,6 +368,11 @@
     <article class="country">
       <h3>法国 <span class="iso">FR · fr</span></h3>
       <p class="ctx">Talent Passport 系统相对整洁。法语非硬门槛（但对融入重要）。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>Passeport Talent（多子类：技术、研究、创业、艺术）4 年多次往返 + ICT 跨践。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd>5 年居留后申长期居留卡 10 年。<span class="tag">国家级</span></dd>
+        <dt>入籍</dt><dd>5 年 + 法语 B1 + 历史文化考试。<strong>允许双重国籍</strong>。<span class="tag">国家级</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -316,6 +388,11 @@
     <article class="country">
       <h3>韩国 <span class="iso">KR · kr</span></h3>
       <p class="ctx">地理/文化近，但永居/入籍对非韩裔中文用户不友好，长期路径弱。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>E-7（特定职业）+ F-2-7（积分制居留）+ D-10 求职 + D-8 投资。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd>F-5 永住权；条件复杂（居住 + 收入 + 韩语 + 投资/职业）。<span class="tag">混合</span></dd>
+        <dt>入籍</dt><dd>一般 5 年 + 韩语 + 品行 + 宣誓。<strong>不允许双重国籍</strong>（高级人才例外）。<span class="tag">国家级</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -332,6 +409,11 @@
     <article class="country">
       <h3>阿联酋 <span class="iso">AE · ae</span></h3>
       <p class="ctx">零所得税 + 永居概念弱 + Golden Visa 是稳定居留主通道。无入籍可能（实际上）。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>Standard Employment（2-3 年）+ Green Visa（5 年自雇/技术）+ Golden Visa（10 年）+ 自贸区 Freelancer。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd><strong>不存在欧美意义上的永居</strong>。Golden Visa 10 年为事实上的长续居留。<span class="tag">特殊</span></dd>
+        <dt>入籍</dt><dd><strong>几乎不对外人开放</strong>（除华裔 UAE 稀有情况或高端投资）。对中文用户实质无入籍路径。<span class="tag">国家级 · 关闭</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -355,6 +437,11 @@
     <article class="country">
       <h3>葡萄牙 <span class="iso">PT · pt</span></h3>
       <p class="ctx">Golden Visa 黄金签证的标志性国家，2023 改革后房地产档关闭。入籍 5 年 + 对中文用户是欧盟尾门代表。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>D7（被动收入）+ D8（数字游民）+ D3（高素质活动）+ D2（创业/自雇）+ Golden Visa。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd>5 年居留申永居。<span class="tag">国家级</span></dd>
+        <dt>入籍</dt><dd>5 年 + 葡葉牙语 A2 + 品行。<strong>允许双重国籍</strong>。<span class="tag">国家级</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -371,6 +458,11 @@
     <article class="country">
       <h3>西班牙 <span class="iso">ES · es</span></h3>
       <p class="ctx">2023 Startup Law 推出数字游民签。Golden Visa 2025 被宣布终止。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>数字游民签 + 非盈利签 + 高素质专业人签 + Entrepreneur。Beckham Law 税收优惠为亮点。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd>5 年居留后可申长期居留证。<span class="tag">国家级</span></dd>
+        <dt>入籍</dt><dd><strong>10 年居住</strong>（赵庭裔等特殊人群 2 年）+ 西班牙语考试。<strong>原则上不允许双重国籍</strong>（拉美等历史联系国例外）。<span class="tag">国家级</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -387,6 +479,11 @@
     <article class="country">
       <h3>香港 <span class="iso">HK · hk</span></h3>
       <p class="ctx">地缘与制度的特殊性：面向大陆同胞的通道在内地口径下"移居香港"与真正出境含义不同。项目可以覆盖，但需特别谨慎措辞。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>高才通 + 优才 + 专才 + 科技人才 + IANG（香港毕业生）。获签速度快是特征。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd>连续居住 7 年 → 永久性居留权（香港身份证）。<strong>国家级统一</strong>。<span class="tag">国家级</span></dd>
+        <dt>入籍</dt><dd>7 年永居后可申中华人民共和国香港特区护照。<strong>中国公民内部方案，非重新入籍</strong>——理论上可收回内地户口换特区护照。<span class="tag">国家级 · 特殊</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -404,6 +501,11 @@
     <article class="country">
       <h3>台湾 <span class="iso">TW · tw</span></h3>
       <p class="ctx">大陆籍与非大陆籍适用法规完全不同，<strong>这是唯一对大陆护照单独立法的目的地</strong>——规则在"两岸条例"而非一般外国人居留法。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>大陆籍：长期居留（依亲 / 投资 / 专业），通道窄。非大陆籍：就业金卡等，但<strong>大陆护照不适用</strong>。<span class="tag">路径级 · 分籍</span></dd>
+        <dt>永居</dt><dd>大陆籍长期居留通常 2-4 年后转定居。<span class="tag">混合</span></dd>
+        <dt>入籍</dt><dd>大陆籍定居后 1 年可申对民国身份证。<strong>需能证明放弃大陆户籍</strong>（实操上是痛点）。<span class="tag">国家级 · 特殊</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -417,6 +519,11 @@
     <article class="country">
       <h3>马来西亚 <span class="iso">MY · my</span></h3>
       <p class="ctx">MM2H 与 PVIP 是核心。2024 MM2H 大幅调高门槛后市场反应冷淡。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>MM2H（定期存款 + 月收入）4-20 年 + Employment Pass + DE Rantau 数字游民。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd>PR 对外国人极严，<strong>实质性黑盒</strong>；多数用户以长续 MM2H 代替。<span class="tag">国家级 · 黑盒</span></dd>
+        <dt>入籍</dt><dd><strong>对外国人几乎关闭</strong>（10 年居留 + 马来语 + 首相裁量）。<strong>不允许双重国籍</strong>。<span class="tag">国家级 · 关闭</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -432,6 +539,11 @@
     <article class="country">
       <h3>泰国 <span class="iso">TH · th</span></h3>
       <p class="ctx">LTR 是近年最受关注的亚太长期签之一。入籍极难。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>LTR（10 年长期居留）+ Elite / Privilege + SMART + DTV + Non-B/O。多档明晰。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd>外国人永居 3-5 年定居 + 配额（每年国籍配额 100）。<strong>实操极难</strong>。<span class="tag">国家级 · 几乎关闭</span></dd>
+        <dt>入籍</dt><dd>永居 10 年后 + 泰语 + 宣誓 + 配额极小。<strong>不允许双重国籍</strong>。<span class="tag">国家级 · 关闭</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -448,6 +560,11 @@
     <article class="country">
       <h3>北欧 · 瑞典 / 丹麦 / 挪威 / 芬兰 <span class="iso">SE · DK · NO · FI</span></h3>
       <p class="ctx">普遍"工作签容易，永居入籍严"；瑞典过去宽松近年收紧。应作为一组对照。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>各国方案类似：薪资门槛 + 技能清单 + 雇主担保。丹麦 Fast-Track 最快。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd>瑞典近年收紧到 5 年 + 自给条件；丹麦 8 年；挪威 3 年；芬兰 4 年。<span class="tag">国家级</span></dd>
+        <dt>入籍</dt><dd>5-9 年不等 + 语言。<strong>瑞典/芬兰允许双重国籍；丹麦 2015 后允许；挪威原则上不允许</strong>。<span class="tag">国家级 · 各国不同</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -462,7 +579,12 @@
     <!-- MT CY GR HU -->
     <article class="country">
       <h3>欧盟小国 · 马耳他 / 塞浦路斯 / 希腊 / 匈牙利 <span class="iso">MT · CY · GR · HU</span></h3>
-      <p class="ctx">投资居留/投资入籍为主。RULES 风向下政策变动剧烈，数据新鲜度是最大痛点。</p>
+      <p class="ctx">投资居留/投资入籍为主。章程风向下政策变动剧烈，数据新鲜度是最大痛点。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>投资/投资入籍为主：马耳他 MPRP / 希腊 Golden Visa / 塔浦路斯投资。条文易改。<span class="tag">路径级 · 波动</span></dd>
+        <dt>永居</dt><dd>多为投资维持即有永居（马 MPRP / 希 Golden Visa）。<span class="tag">国家级</span></dd>
+        <dt>入籍</dt><dd>马耳他换投资入籍 2020 前有马麦护照通道，后受限。希腊 7 年。塔浦路斯 5 年 + 希腊语。<strong>均允许双重国籍</strong>。<span class="tag">国家级</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -478,6 +600,11 @@
     <article class="country">
       <h3>以色列 <span class="iso">IL · il</span></h3>
       <p class="ctx">回归法对犹太血统或配偶开放，通道极宽；对非犹太裔中文用户几乎无路径。</p>
+      <dl class="stages">
+        <dt>工签</dt><dd>B/1 专家工签 + Innovation Visa。极窄。<span class="tag">路径级</span></dd>
+        <dt>永居</dt><dd>回归法线身份直接永居（不适用非犹太裔）。其他路径永居极难。<span class="tag">特殊</span></dd>
+        <dt>入籍</dt><dd>回归法线身份可直接入籍；其他 3 年居住，审批不透明。<strong>允许双重国籍</strong>。<span class="tag">国家级 · 血统导向</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -499,6 +626,9 @@
     <article class="country">
       <h3>小国投资入籍 · CBI <span class="iso">multi</span></h3>
       <p class="ctx">圣基茨、多米尼克、格林纳达、安提瓜和巴布达、瓦努阿图（护照项目 2022 被欧盟取消免签）、土耳其（40 万美元房产）、马耳他（高端）等。</p>
+      <dl class="stages">
+        <dt>整体</dt><dd><strong>单阶段商品</strong>：直接买护照，跳过工签与永居。与本项目"换生活地"的理念正面冲突——用户得到护照后通常并不真住过去。<span class="tag">与项目不相关</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -509,8 +639,9 @@
 
     <article class="country">
       <h3>俄罗斯 <span class="iso">RU · ru</span></h3>
-      <p class="ctx">出于地缘与汇兑现实，中国大陆用户讨论量极低。</p>
-      <table class="paths">
+      <p class="ctx">出于地缘与汇兑现实，中国大陆用户讨论量极低。</p>      <dl class="stages">
+        <dt>整体</dt><dd>工签（Work Patent / HQS）→ 居留 5 年→ 永居；入籍须 5-10 年 + 俄语。<strong>不允许双重国籍（除服兵服务者例外）</strong>。<span class="tag">各阶段侵权风险高</span></dd>
+      </dl>      <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
           <tr class="excluded"><td class="rating">—</td><td class="name">Work Patent / HQS</td><td class="desc"><strong>拟排除：</strong>地缘政治极不稳定 + 一手源获取困难 + 目标人群几乎不考虑。保留为灰卡。</td></tr>
@@ -521,6 +652,9 @@
     <article class="country">
       <h3>拉美 · 墨西哥 / 阿根廷 / 乌拉圭 / 巴拿马 <span class="iso">MX · AR · UY · PA</span></h3>
       <p class="ctx">移民路径存在但中文用户基数小、一手源语言成本高（西班牙语 + 各国法规差异大）。</p>
+      <dl class="stages">
+        <dt>整体</dt><dd>乌拉圭最特别：<strong>2 年可入籍</strong>、允许双重国籍。巴拿马中国不在 Friendly Nations 名单。墨西哥基于对美邻近有策略意义。<span class="tag">第三期+ 再议</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -535,6 +669,9 @@
     <article class="country">
       <h3>土耳其 <span class="iso">TR · tr</span></h3>
       <p class="ctx">40 万美元房产投资入籍曾是中文圈热点。地缘与政经风险为主要顾虑。</p>
+      <dl class="stages">
+        <dt>整体</dt><dd>投资 → 护照，跳过工签/永居；与 CBI 大类同质。土耳其允许双重国籍。<span class="tag">与项目不相关</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -546,6 +683,9 @@
     <article class="country">
       <h3>非洲、中东战乱区、其他 <span class="iso">multi</span></h3>
       <p class="ctx">用户基数与项目画像几乎无交集；一手源稳定性与安全成本高。</p>
+      <dl class="stages">
+        <dt>整体</dt><dd>默认不覆盖。需要时以"暂未覆盖"灰卡统一处理。朝鲜/古巴/伊朗出入境双向受阻，永不覆盖。<span class="tag">灰卡为主</span></dd>
+      </dl>
       <table class="paths">
         <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
         <tbody>
@@ -571,8 +711,8 @@
   </section>
 
   <footer class="btm">
-    <span>relocate · coverage survey v0.1</span>
-    <span>不是一手源数据 · 用于 scope 与 schema 压力测试</span>
+    <span>relocate · coverage survey v0.2</span>
+    <span>不是一手源数据 · 用于覆盖范围与字段结构压力测试</span>
   </footer>
 
 </main>

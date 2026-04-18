@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>relocate · 信息架构提案 v0.3 · 引入 PathCard 抽象</title>
+<title>relocate · 信息架构提案 v0.3.1 · 路径卡片 + 三阶段</title>
 <style>
   :root{
     --ink:#141414;
@@ -213,9 +213,9 @@
   <p class="kicker">设计文档 · 不对外</p>
   <h1>信息架构提案 v0.3</h1>
   <p class="meta">
-    <span>引入 PathCard 抽象</span>
+    <span>v0.3.1 · 引入路径卡片 + 三阶段拆分</span>
     <span>替代 v0.2（已废）</span>
-    <span>状态 · 结构与抽象方向已认可 · 字段/边界等细节进入点子簿，施工中磨合</span>
+    <span>状态 · 结构已认可 · 细节条目进入点子簿，施工中磨合</span>
   </p>
 
   <!-- § 1 -->
@@ -244,58 +244,119 @@
 
   <!-- § 2 —— 核心：PathCard 抽象 -->
   <section>
-    <h2><span class="n">§ 2</span>核心抽象 · PathCard</h2>
-    <p class="lede">把"路径"提升为整个站点唯一的一等公民。每个 PathCard 是一个具有稳定字段的对象；网站的几乎所有列表与详情都是它的不同视图。</p>
+    <h2><span class="n">§ 2</span>核心概念 · 路径卡片（PathCard）</h2>
+    <p class="lede">把"路径"做成整个网站唯一的核心对象。一张路径卡片=一条真实可走的移民路径；网站里几乎所有列表页与详情页都是同一张卡片在不同上下文下的呈现。</p>
 
-    <p>这层抽象同时解决三件事：</p>
-    <p>第一，<strong>降低用户心智负担</strong>——无论用户从"探索""国家页""目录""比较"哪条路进来，看到的都是<em class="t">同样形状的卡片</em>，只是上下文与筛选不同。视觉一致 = 学习成本一次性。</p>
-    <p>第二，<strong>压缩 IA</strong>——v0.2 里 P_explore / P_index / P_country 看似是三个不同页，本质上都是 <code class="k">PathCardListView</code> + 不同 filter 预设。我们只设计一个组件，三处复用。</p>
-    <p>第三，<strong>对齐 RULES § 3.7</strong>——卡片只是<em class="t">摆事实</em>（这条路径有什么属性、当前用户与门槛的相对位置），不打分、不排序、不推荐。filter 是机械的，"对你够格 / 差几步 / 远不够"是布尔判定，不是产品意见。</p>
+    <p>这层设计同时解决三件事：</p>
+    <p>第一，<strong>降低用户学习成本</strong>——无论用户从"我不知道去哪""我要去日本""你们覆盖了哪些"哪个入口进来，看到的都是<em class="t">同样形状的卡片</em>，只是当前套用的筛选条件不同。视觉一次学会、处处能用。</p>
+    <p>第二，<strong>压缩页面数量</strong>——早先版本里的"探索页 / 路径目录页 / 国家枢纽页"三个看似独立的页面，本质上都只是"同一种路径卡片列表 + 不同的默认筛选"。我们只设计一个列表组件，三处复用。</p>
+    <p>第三，<strong>对齐章程 § 3.7</strong>——卡片只负责摆事实（这条路径门槛多少、你目前与门槛的相对位置），不打分、不排序、不推荐。筛选是机械的条件命中，"够格 / 差几步 / 远不够"是条件判定，不是产品意见。</p>
 
-    <h3><span class="n">2.1</span>PathCard 的字段</h3>
-    <p>每个 PathCard 由两类字段构成：<em class="t">展示字段</em>（用户能看到、出现在卡片正面）和<em class="t">索引字段</em>（不一定显示，但可被 filter 引用）。所有字段都受 RULES § 2.1 约束——必须有一手源，禁止估算。</p>
+    <h3><span class="n">2.1</span>路径卡片不是单层的 · 它分三阶段</h3>
+    <p>移民这件事是一条链，至少包含三个阶段：<strong>工签</strong>（临时居留与工作许可）、<strong>永居</strong>（不受雇主摆布的独立居留权）、<strong>入籍</strong>（国籍）。三段规则性质完全不同——工签频繁变动、永居中等稳定、入籍极为稳定；用户对三段的关心点也完全不同。</p>
+    <p>所以一张路径卡片的内容分成三段独立存放，每段各自持有规则原文、门槛、最近复核日期。展开详情页时，用户能看到完整的时间链：从准入条件 → 续签节奏 → 多久能申永居 → 多久能申入籍。</p>
 
+    <h3><span class="n">2.2</span>路径级数据 vs 国家级数据</h3>
+    <p>这一刀很关键——它决定了整个项目的工作量倍率。</p>
+
+    <p><strong>路径级数据</strong>：跟着具体一条路径走，不同路径有不同值。典型是工签阶段——同一个日本，HSP 和技人国的门槛完全不同。</p>
+    <p><strong>国家级数据</strong>：全国统一、所有路径共享。典型是入籍阶段——日本所有路径最后都汇到同一套归化法，没必要在每张路径卡片里重复写 40 遍。</p>
+    <p>永居阶段是混合的：有的国家是路径级（日本 HSP 3 年、普通签 10 年——永居条件与走哪条路径强耦合），有的国家是国家级（加拿大无论走哪条路径拿到 PR 身份后，维持条件都一样）。</p>
+
+    <p>因此数据层有两种实体：</p>
+    <p>① <strong>国家对象</strong>（每国一份）：承载这个国家的入籍规则、双重国籍政策、对中国大陆护照的特殊处理等。<br>
+    ② <strong>路径卡片</strong>（每条路径一张）：承载工签阶段的全部细节；永居阶段看与国家耦合度，强耦合的写在卡片里，弱耦合的引用国家对象。</p>
+    <p>用户看到的永远是"路径卡片"一种东西；国家对象是后台的数据共享机制，用户无感。</p>
+
+    <h3><span class="n">2.3</span>路径卡片的字段清单（v0 草稿）</h3>
+    <p>下面这张表只是草稿——具体字段边界进入点子簿（§ 6），施工中调整。所有字段都受章程 § 2.1 约束：必须有官方一手源、禁止估算。</p>
+
+    <p><strong>· 基础信息（路径级）</strong></p>
     <table class="spec-tbl">
       <thead>
-        <tr><th>字段</th><th>类型</th><th>用途</th></tr>
+        <tr><th>字段</th><th>说明</th></tr>
       </thead>
       <tbody>
-        <tr><td><code>id</code></td><td>string</td><td>稳定标识符，如 <code>jp-hsp-1-b-engineer</code><span class="s">永不变。URL、引用、changelog 都靠它。</span></td></tr>
-        <tr><td><code>country</code></td><td>ISO-3166-1 alpha-2</td><td>所属国家，如 <code>jp</code>。<span class="s">filter 维度 · 国家。</span></td></tr>
-        <tr><td><code>name</code></td><td>i18n string</td><td>路径中文名 + 官方原文名。<span class="s">"日本 · 高度専門職 1 号ロ · 技術系"。</span></td></tr>
-        <tr><td><code>category</code></td><td>enum</td><td>路径类别：<code>skilled</code> / <code>investor</code> / <code>family</code> / <code>national</code> 等。<span class="s">v0 只覆盖 <code>skilled</code>，其余卡片可存在但标"暂未覆盖"。</span></td></tr>
-        <tr><td><code>summary</code></td><td>text · 一句话</td><td>卡片正面那一行说明。<span class="s">不是营销话术，是规则的中性概括。</span></td></tr>
-        <tr><td><code>fitProfile</code></td><td>enum[]</td><td>路径适配的画像标签：<code>tech</code> / <code>research</code> / <code>finance</code> / <code>medical</code> 等。<span class="s">filter 维度 · 适配人群。</span></td></tr>
-        <tr><td><code>thresholds</code></td><td>结构化</td><td>路径硬阈值，如 HSP 的 <code>{score: 70}</code> 与 <code>{score: 80}</code> 两档。<span class="s">驱动"够格 / 差几步 / 远不够"的布尔判定。</span></td></tr>
-        <tr><td><code>permanentResidencyMonths</code></td><td>int / range</td><td>从获签到可申请永居的最短月数。<span class="s">filter 维度 · 时限（如"5 年内可永居"）。</span></td></tr>
-        <tr><td><code>citizenshipMonths</code></td><td>int / range</td><td>到可申请入籍的最短月数。<span class="s">同上。</span></td></tr>
-        <tr><td><code>coverageStatus</code></td><td>enum</td><td><code>covered</code> / <code>uncovered</code> / <code>retired</code><span class="s">v0 唯一一张是 <code>covered</code>，其余明列 <code>uncovered</code>。filter 默认包含 uncovered，体现 § 3.4 的诚实。</span></td></tr>
-        <tr><td><code>lastReviewedAt</code></td><td>ISO-8601 date</td><td>RULES § 5.1 必备。<span class="s">超 180 天降级"待复核"。filter 维度 · 数据新鲜度。</span></td></tr>
-        <tr><td><code>sourcesRef</code></td><td>string[]</td><td>该路径所引用的所有一手源 docId 列表。<span class="s">是 P_source 与 changelog 的反向索引。</span></td></tr>
+        <tr><td>标识符</td><td>稳定不变的内部编号，形如 <code>jp-hsp-1-b-engineer</code>。用于网址、引用、变更日志索引。</td></tr>
+        <tr><td>国家</td><td>两位国家代码（<code>jp</code> / <code>us</code> 等）。筛选维度。</td></tr>
+        <tr><td>名称</td><td>中文命名 + 官方原文名。例："日本 · 高度専門職 1 号ロ · 技術系"。</td></tr>
+        <tr><td>类别</td><td>技术人才 / 创业投资 / 家庭团聚 / 血统回归 等。筛选维度。首期只覆盖"技术人才"。</td></tr>
+        <tr><td>一句话概述</td><td>卡片正面那一行说明。规则的中性概括，不是营销话术。</td></tr>
+        <tr><td>适配画像</td><td>技术 / 研究 / 医疗 / 金融 / 艺术 / 其他。筛选维度。首期只给极粗分类。</td></tr>
+        <tr><td>规则类型</td><td>积分制 / 抽签制 / 排期制 / 投资制 等。影响卡片内部如何呈现阈值，也决定了"差几步"怎么计算。</td></tr>
+        <tr><td>覆盖状态</td><td>已覆盖 / 暂未覆盖 / 已停用。首期一张"已覆盖"，其它按未来 N 国清单全部以"暂未覆盖"灰卡列出，兑现章程 § 3.4 的诚实。</td></tr>
+        <tr><td>上次复核日期</td><td>超过 180 天自动降级为"待复核"（章程 § 5.1）。</td></tr>
+        <tr><td>引用源列表</td><td>该路径所有一手源的文档编号清单。通向溯源页。</td></tr>
       </tbody>
     </table>
 
-    <h3><span class="n">2.2</span>PathCard 的视觉雏形</h3>
-    <p>作为参考，下面用真 HTML 摆三种状态的卡片：覆盖 / 差几步 / 暂未覆盖。这是<em class="t">骨架</em>而非视觉成品，但已能看出"统一视觉、不同上下文"的样子。</p>
+    <p><strong>· 第一段 · 工签</strong>（路径级 · 内容最深 · 采集工作量最大）</p>
+    <table class="spec-tbl">
+      <thead>
+        <tr><th>字段</th><th>说明</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>门槛</td><td>准入条件的结构化表达。积分制路径存打分表每一项与阈值；抽签制路径存抽签率与资格；排期制路径存等待队列节奏。这是引擎差异的核心，不同规则类型字段集不同。</td></tr>
+        <tr><td>有效期与续签</td><td>首次发签多少年、续签节奏、总次数上限。</td></tr>
+        <tr><td>雇主绑定</td><td>是否绑定特定雇主、换工作是否需要新签、雇主义务。</td></tr>
+        <tr><td>家属附签</td><td>配偶/子女可否一同申请、可否工作。</td></tr>
+        <tr><td>配额与抽签</td><td>年度名额、是否抽签、是否有优先类别。</td></tr>
+        <tr><td>限制与附加条件</td><td>职业清单、薪资下限、居住地约束等路径特有硬条件。</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>· 第二段 · 永居</strong>（路径级 / 国家级 混合）</p>
+    <table class="spec-tbl">
+      <thead>
+        <tr><th>字段</th><th>说明</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>最短居住月数</td><td>从获得首签到可申请永居的最短月份数。这是筛选维度（"五年内可永居"）。日本 HSP 这种路径级：70 分=36 月，80 分=12 月。</td></tr>
+        <tr><td>加速条件</td><td>满足何种额外条件可缩短时长。典型如 HSP 80 分加速线。</td></tr>
+        <tr><td>居住/税务/语言要求</td><td>申请永居所需的连续居住、纳税、语言水平等条件。</td></tr>
+        <tr><td>维持条件</td><td>获永居后需要保持什么（长期离境限制、税务关系等），避免被撤销。</td></tr>
+        <tr><td>与国家对象的链接</td><td>如该国永居规则全国统一，本字段指向国家对象；路径卡片里不重复写。</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>· 第三段 · 入籍</strong>（几乎完全国家级 · 路径卡片里只引用一次）</p>
+    <table class="spec-tbl">
+      <thead>
+        <tr><th>字段</th><th>说明</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>最短年数</td><td>从永居到可申入籍的连续居住年数。</td></tr>
+        <tr><td>语言 / 考试</td><td>入籍考试内容、语言证明要求。</td></tr>
+        <tr><td>效忠宣誓</td><td>是否要求宣誓、宣誓内容要点。</td></tr>
+        <tr><td>双重国籍政策</td><td>目的国是否允许双重国籍。<strong>这条字段对中文用户极其关键</strong>——因为中国不承认双重国籍，绝大多数用户入籍 = 同时放弃中国国籍。</td></tr>
+        <tr><td>特殊通道</td><td>血统回归、婚姻加速、功勋授予等非常规入籍途径。</td></tr>
+      </tbody>
+    </table>
+
+    <p>国家对象自己还持有一组与路径无关的信息：对中国大陆护照的特殊处理（条约国名单、抽签资格、出生地限制）、退籍实操口径（中国侧的护照收缴、退籍受理窗口），等等。这些因素影响多条路径，由国家对象统一承载。</p>
+
+    <h3><span class="n">2.4</span>路径卡片的视觉雏形</h3>
+    <p>作为参考，下面用真 HTML 摆三种状态的卡片：已覆盖 / 差几步 / 暂未覆盖。只是骨架，不是视觉成品，但能看出"同一种形状、不同上下文"的样子。</p>
 
     <!-- 状态 1：覆盖 + 用户够格 -->
     <div class="pcard">
       <div>
         <div class="row1">
           <span>日本 · jp</span>
-          <span>skilled</span>
-          <span>tech / research</span>
+          <span>技术人才</span>
+          <span>积分制</span>
         </div>
         <div class="name">高度専門職 1 号ロ · 技術系 <code>jp-hsp-1-b-engineer</code></div>
-        <p class="desc">由出入国在留管理庁主理的积分制签证。70 分准入，3 年永居；80 分加速线，1 年永居。</p>
+        <p class="desc">由出入国在留管理庁主理的积分制签证。工签门槛 70 分，符合即可申；进入永居阶段，70 分需 3 年、80 分仅需 1 年。入籍走日本统一归化法。</p>
       </div>
       <div class="badges">
         <b>已覆盖</b>
-        <span>永居最短 36 个月</span>
-        <span>复核 2026-04-10</span>
+        <span>工签 70 分</span>
+        <span>永居 36 个月</span>
+        <span>入籍 国家级</span>
       </div>
       <div class="footrow">
-        <span>对你的判定 · <b style="border:none;padding:0;color:var(--ink)">够格 · 70 分</b></span>
+        <span>对你的判定 · <b style="border:none;padding:0;color:var(--ink)">工签够格 · 76 分</b></span>
         <span>查看路径详情 →</span>
       </div>
     </div>
@@ -305,19 +366,20 @@
       <div>
         <div class="row1">
           <span>日本 · jp</span>
-          <span>skilled</span>
-          <span>tech / research</span>
+          <span>技术人才</span>
+          <span>积分制</span>
         </div>
         <div class="name">高度専門職 1 号ロ · 技術系 <code>jp-hsp-1-b-engineer</code></div>
-        <p class="desc">同上。同一张 PathCard 在不同用户上下文下呈现不同的"对你的判定"。</p>
+        <p class="desc">同上。同一张路径卡片在不同用户资料下呈现不同的"对你的判定"。</p>
       </div>
       <div class="badges">
         <b>已覆盖</b>
-        <span>永居最短 36 个月</span>
-        <span>复核 2026-04-10</span>
+        <span>工签 70 分</span>
+        <span>永居 36 个月</span>
+        <span>入籍 国家级</span>
       </div>
       <div class="footrow">
-        <span>对你的判定 · <b style="border:none;padding:0;color:var(--ink)">差 5 分到 70 档</b> · 看怎么补 →</span>
+        <span>对你的判定 · <b style="border:none;padding:0;color:var(--ink)">差 5 分到工签门槛</b> · 看怎么补 →</span>
         <span>查看路径详情 →</span>
       </div>
     </div>
@@ -327,11 +389,11 @@
       <div>
         <div class="row1">
           <span>德国 · de</span>
-          <span>skilled</span>
-          <span>tech</span>
+          <span>技术人才</span>
+          <span>薪资门槛制</span>
         </div>
         <div class="name">EU Blue Card <code>de-eu-bluecard</code></div>
-        <p class="desc">暂未覆盖：本路径所需一手源（移民局、税务局、统计局）尚未完成纳入。预计 Phase 2 起评估。</p>
+        <p class="desc">暂未覆盖：本路径所需一手源（移民局、税务局、统计局）尚未完成纳入。预计第二期起评估。</p>
       </div>
       <div class="badges">
         <b>暂未覆盖</b>
@@ -343,19 +405,19 @@
       </div>
     </div>
 
-    <p>三张卡共用同一份 HTML 骨架，差别只在数据与一个 CSS 修饰类。这就是"<em class="t">把每条路径抽象成 class 中的 object</em>"在 UI 层的直接落地。</p>
+    <p>三张卡共用同一份底层结构，差别只在内容与一个视觉样式标记。这就把"每条路径都是同一种形状的对象"这个想法，在界面层落到实处。右侧"工签/永居/入籍"三行小字永远同位同义，用户一扫就能比较。</p>
 
-    <h3><span class="n">2.3</span>filter 是产品的中枢操作</h3>
-    <p>一旦 PathCard 字段完整，所有"列表型"页面都退化成同一个组件 <code class="k">PathCardListView(filter, sort, context)</code> 的不同实例。三个参数：</p>
-    <p><strong>filter</strong>　是字段上的布尔/范围谓词组合。例：<code class="k">country = 'us'</code>、<code class="k">category = 'skilled'</code>、<code class="k">permanentResidencyMonths ≤ 60</code>、<code class="k">fitProfile ∈ {tech}</code>、<code class="k">coverageStatus = 'covered'</code>。多个 filter 之间默认 AND，同字段多值 OR。</p>
-    <p><strong>sort</strong>　Phase 0 不引入。RULES § 3.7 不替用户排序——任何"按推荐度排"都是产品意见。退而求其次允许的中性排序：按国名字典序、按复核日期倒序。除此以外不开放。</p>
-    <p><strong>context</strong>　是当前用户的属性快照（来自 P_explore 的输入或 URL query string）。卡片用它来计算"对你的判定"那一行（够格 / 差几步 / 远不够）。无 context 时不显示这一行。</p>
+    <h3><span class="n">2.5</span>筛选（Filter）是这个产品的核心操作</h3>
+    <p>一旦路径卡片的字段稳定，几乎所有"列表型"页面都退化成同一个组件——"路径卡片列表"——的不同实例，区别只在三件事：</p>
+    <p><strong>筛选条件</strong>　也就是字段上的过滤。例："国家 = 美国"、"类别 = 技术人才"、"五年内可永居"、"允许双重国籍"、"已覆盖"。多个条件默认同时成立，同一字段多值则为或关系。用户看到的"国家页"其实就是"国家=日本"的预设筛选，而非独立页面。</p>
+    <p><strong>排序</strong>　首期不引入自动排序。章程 § 3.7 不允许产品替用户排优先级，任何"按推荐度排"都是产品意见。允许的只有中性排序：按国名字典序、按最近复核日期倒序。除此之外不开放。</p>
+    <p><strong>用户资料</strong>　即当前用户的基本属性（年龄、学历、年薪、语言、当前国籍、出生地等）。路径卡片用它来算"对你的判定"那一行——够格 / 差几步 / 远不够。没有用户资料时，这一行不显示。</p>
   </section>
 
   <!-- § 3 -->
   <section>
-    <h2><span class="n">§ 3</span>站点地图（PathCard 视角重画）</h2>
-    <p class="lede">v0.2 的 P_explore / P_index / P_country 在引入 PathCard 之后塌缩为同一组件的不同 filter。整个站点收敛到 4 个真实页面 + 3 类末梢页 + 1 个 Phase 1 占位。</p>
+    <h2><span class="n">§ 3</span>站点地图（从路径卡片视角重画）</h2>
+    <p class="lede">v0.2 里的"探索页 / 路径目录页 / 国家枢纽页"在引入路径卡片之后，合并成同一个列表组件的三种默认筛选。整个站点收敛到 4 个真实页面 + 3 类末梢页 + 1 个第一期之后的占位。</p>
 
 <pre class="diagram">
                         ┌──────────────── / · 入口 ────────────────┐
@@ -369,191 +431,196 @@
                                            │
                                            ▼
                         ┌──────────────────────────────────────────┐
-                        │  PathCardListView                         │
+                        │  路径卡片列表                              │
                         │  (同一个组件 · 三种入路收敛于此)            │
                         │                                          │
-                        │  /explore       filter 由用户属性推导     │
-                        │  /list          无 filter 全列            │
-                        │  /list?...      URL filter，支持深链       │
+                        │  /explore       筛选由用户资料推导         │
+                        │  /list          无筛选，全列               │
+                        │  /list?...      筛选写在网址里，可分享     │
                         │                                          │
                         │  卡片状态：覆盖 / 差几步 / 远不够 / 暂未覆盖  │
                         └──────────────────┬───────────────────────┘
-                                           │ click any card
+                                           │ 点击任意卡片
                                            ▼
                         ┌──────────────────────────────────────────┐
-                        │  PathDetailView · /paths/<id>             │
-                        │  路径详情：规则全文 · 阈值 · 时间表           │
-                        │  (Alice 作为示例穿在叙述里)                │
+                        │  路径详情页 · /paths/<编号>                │
+                        │  规则全文 · 工签/永居/入籍 三段 · 时间表     │
+                        │  (示例人物 Alice 穿在叙述里)               │
                         └─┬──────────┬──────────┬─────────┬────────┘
                           │          │          │         │
                           ▼          ▼          ▼         ▼
                      ┌────────┐┌────────┐┌────────┐┌──────────┐
                      │ /plan  ││/cstr   ││/source ││/changelog│
                      │ 现状 vs ││出境/入  ││字段溯源 ││规则变更   │
-                     │ 阈值    ││境硬约束 ││快照     ││ 日志     │
+                     │ 门槛    ││境硬约束 ││快照     ││ 日志     │
                      │ 改造路  ││         ││         ││          │
                      └────────┘└────────┘└────────┘└──────────┘
 
       横向（任何卡片底栏 + 详情页底栏都能跳）：
-      → 同国其它路径（同 country、不同 path）
-      → 同类型隔壁国（同 category + fitProfile，不同 country）
+      → 同国其它路径（同国家、不同路径）
+      → 同类型隔壁国（同类别、不同国家）
 
-      末梢：/about（章程）  ·  /account/*（Phase 1+ · 我的路径 / 通知）
+      末梢：/about（章程）  ·  /account/*（第一期之后 · 我的路径 / 通知）
 </pre>
 
     <p>对比 v0.2，这版的塌缩：</p>
-    <p>① <code class="k">P_explore / P_index / P_country</code> 三页 → 一个 <code class="k">PathCardListView</code> 组件 + 三个 URL；② 每张卡的"对你的判定"由 context 自动计算，<strong>"探索"和"目录"在体验层不再是两件事</strong>，只是带不带 user context 的差别；③ "国家页"（/countries/jp）从枢纽降级为一个 filter 视图（<code class="k">/list?country=jp</code>），不再单独维护——因为"国家"的所有信息都自然摊到该国所有 PathCard 的内容里，无需独立的"国家介绍页"。</p>
+    <p>① 原本看似独立的三个页面（探索、路径目录、国家枢纽）合并为<strong>同一个路径卡片列表组件 + 三种默认筛选</strong>；② 每张卡的"对你的判定"由用户资料自动计算——"探索"和"目录"在体验层不再是两件事，只是带不带用户资料的区别；③ 独立的"国家页"（例如 /countries/jp）取消，降级为"筛选 = 国家为日本"的列表（<code class="k">/list?country=jp</code>），不再单独维护。该国的共享信息——入籍规则、双重国籍政策、对中国大陆护照的特殊处理——由后台的<strong>国家对象</strong>统一承载，在每张日本路径卡片的"入籍"段自然引用。</p>
   </section>
 
   <!-- § 4 -->
   <section>
     <h2><span class="n">§ 4</span>视图与页面规格</h2>
-    <p class="lede">区分两个层级：组件（PathCardListView / PathDetailView）和页面（具体 URL）。组件可被多页复用，页面是 URL × filter 预设的命名实例。</p>
+    <p class="lede">区分两个层级：组件（可复用的界面积木）和页面（具体网址）。同一组件可出现在多个页面上；每个页面 = "某个网址 × 某套默认筛选"。</p>
 
-    <h3><span class="n">4.1</span>组件层</h3>
+    <h3><span class="n">4.1</span>组件层 · 三块积木</h3>
 
     <div class="view">
-      <div class="id">CMP-1</div>
-      <div class="name">PathCard</div>
+      <div class="id">组件 1</div>
+      <div class="name">路径卡片</div>
       <dl>
-        <div><dt>责任</dt><dd>呈现一个路径的稳定卡片视图。Properties: <code>path</code> (PathCard object) 与可选的 <code>context</code> (user attribute snapshot)。</dd></div>
-        <div><dt>状态</dt><dd>四态：covered+context、covered+无 context、uncovered、retired。视觉差异由 CSS 修饰类控制。</dd></div>
-        <div><dt>不做</dt><dd>不打分、不排序、不带"推荐"标识。卡片是<em class="t">事实</em>容器，不是产品意见容器。</dd></div>
+        <div><dt>做什么</dt><dd>呈现一条路径的横条卡片。输入：一条路径数据；可选附上用户资料以计算"对你的判定"。</dd></div>
+        <div><dt>状态</dt><dd>四种视觉形态：已覆盖（有用户资料）、已覆盖（无用户资料）、暂未覆盖、已停用。差别只是一个样式标记。</dd></div>
+        <div><dt>不做什么</dt><dd>不打分、不排序、不带"推荐"标识。卡片只是事实的容器，不是产品意见的容器。</dd></div>
       </dl>
     </div>
 
     <div class="view">
-      <div class="id">CMP-2</div>
-      <div class="name">PathCardListView</div>
+      <div class="id">组件 2</div>
+      <div class="name">路径卡片列表</div>
       <dl>
-        <div><dt>责任</dt><dd>展示一组 PathCard。Properties: <code>filter</code>、<code>sort</code>、<code>context</code>。</dd></div>
-        <div><dt>头部</dt><dd>当前 filter 摘要（"国家 · 日本 / 类别 · 技术人才 / 你目前可走的"）；filter 编辑器（增删条件、不带"重置为推荐"按钮）。</dd></div>
-        <div><dt>列表</dt><dd>纵向排列的 PathCard。已覆盖卡在前，暂未覆盖在后；同组内按字典序。</dd></div>
-        <div><dt>空态</dt><dd>filter 命中 0 张时显示"当前条件下，本产品覆盖范围内无路径符合"——<strong>不显示"试试放宽筛选"</strong>，因为那是产品在替用户判断"应该放宽"。</dd></div>
+        <div><dt>做什么</dt><dd>展示一组路径卡片。输入三件事：筛选条件、排序规则、用户资料（均可为空）。</dd></div>
+        <div><dt>头部</dt><dd>当前筛选条件的摘要（"国家 · 日本 / 类别 · 技术人才 / 你目前可走的"）+ 筛选编辑器。<strong>没有"恢复推荐"按钮</strong>，因为本产品不做推荐。</dd></div>
+        <div><dt>列表</dt><dd>纵向排列的路径卡片。已覆盖在前、暂未覆盖在后；同组内按字典序。</dd></div>
+        <div><dt>空结果</dt><dd>筛选命中 0 张时显示"当前条件下，本产品覆盖范围内无路径符合"——<strong>不显示"试试放宽筛选"</strong>，因为那是产品在替用户判断"应该放宽"。</dd></div>
       </dl>
     </div>
 
     <div class="view">
-      <div class="id">CMP-3</div>
-      <div class="name">PathDetailView</div>
+      <div class="id">组件 3</div>
+      <div class="name">路径详情视图</div>
       <dl>
-        <div><dt>责任</dt><dd>呈现一条路径的全部叙述与规则。Properties: <code>path</code>、可选 <code>context</code>。</dd></div>
-        <div><dt>章节</dt><dd>§1 这是什么 / §2 打分表逐项（带 [n] 角标）/ §3 阈值含义 / §4 永居入籍时间表 / §5 一句"我们提供信息不提供决定"/ §6 "看怎么补 / 看硬约束" / §7 引用与快照。</dd></div>
-        <div><dt>个性化</dt><dd>有 context 时，叙述里的"以 Alice 为例"段落被替换为"以你为例"，但章节结构与文字不变。同一篇文章的两个实例。</dd></div>
+        <div><dt>做什么</dt><dd>呈现一条路径的全部叙述与规则，按工签/永居/入籍三段逐段展开。用户资料可选。</dd></div>
+        <div><dt>章节</dt><dd>① 这是什么 · ② 工签门槛逐项（带上标 [n] 引用）· ③ 永居时间线与条件 · ④ 入籍条件（多数情况指向国家对象）· ⑤ "我们提供信息不提供决定" · ⑥ 现状对照与可补路径入口 · ⑦ 引用与快照。</dd></div>
+        <div><dt>个性化</dt><dd>有用户资料时，叙述里的"以 Alice 为例"段落换成"以你为例"，其他章节结构与文字不变——就是同一篇文章的两个实例。</dd></div>
       </dl>
     </div>
 
-    <h3><span class="n">4.2</span>页面层</h3>
+    <h3><span class="n">4.2</span>页面层 · 具体网址</h3>
 
     <div class="view">
-      <div class="id">PAGE</div>
-      <div class="name">/ · 入口<span class="phase">Phase 0</span></div>
+      <div class="id">页面</div>
+      <div class="name">/ · 入口<span class="phase">第零期</span></div>
       <dl>
-        <div><dt>组件</dt><dd>无主组件，只有三种入路链接 + footer。</dd></div>
-        <div><dt>不看到</dt><dd>没有 hero、没有 CTA、没有"立即开始"。</dd></div>
-      </dl>
-    </div>
-
-    <div class="view">
-      <div class="id">PAGE</div>
-      <div class="name">/explore · 探索<span class="phase">Phase 0</span></div>
-      <dl>
-        <div><dt>组件</dt><dd>用户属性输入 → 构造 context → 用 context 推导 default filter（默认 covered + uncovered 都包含）→ 渲染 PathCardListView。</dd></div>
-        <div><dt>关键</dt><dd>本质是"先填几个字段，然后看一份带 context 的列表"。</dd></div>
+        <div><dt>用什么</dt><dd>无主组件，只有三种入路链接 + 页脚。</dd></div>
+        <div><dt>不出现</dt><dd>没有大标题横幅、没有"立即开始"、没有营销号召。</dd></div>
       </dl>
     </div>
 
     <div class="view">
-      <div class="id">PAGE</div>
-      <div class="name">/list · 路径列表<span class="phase">Phase 0</span></div>
+      <div class="id">页面</div>
+      <div class="name">/explore · 探索<span class="phase">第零期</span></div>
       <dl>
-        <div><dt>组件</dt><dd>PathCardListView，filter 来自 URL query string（<code>/list?country=jp</code>、<code>/list?category=skilled&amp;status=covered</code>）。无 context。</dd></div>
-        <div><dt>关键</dt><dd>这一个 URL 同时承担了 v0.2 的"路径目录"与"国家页"两件事。深链可分享、可加书签。</dd></div>
+        <div><dt>用什么</dt><dd>先让用户填几个字段组成用户资料，再用它推导默认筛选（默认同时包含已覆盖与暂未覆盖），最后呈现路径卡片列表。</dd></div>
+        <div><dt>关键</dt><dd>本质就是"填几个字段 → 看一份带判定的列表"，没有神秘感。</dd></div>
       </dl>
     </div>
 
     <div class="view">
-      <div class="id">PAGE</div>
-      <div class="name">/paths/&lt;id&gt; · 路径详情<span class="phase">Phase 0</span></div>
+      <div class="id">页面</div>
+      <div class="name">/list · 路径列表<span class="phase">第零期</span></div>
       <dl>
-        <div><dt>组件</dt><dd>PathDetailView。可选 <code>?as=you&amp;age=…</code> 注入 context 实现个性化实例。</dd></div>
+        <div><dt>用什么</dt><dd>路径卡片列表组件。筛选条件由网址参数提供（如 <code>/list?country=jp</code>）。不带用户资料。</dd></div>
+        <div><dt>关键</dt><dd>这一个网址同时承担"路径目录"与"国家页"两件事。网址可分享、可收藏。</dd></div>
       </dl>
     </div>
 
     <div class="view">
-      <div class="id">PAGE</div>
-      <div class="name">/paths/&lt;id&gt;/plan · 准备计划<span class="phase">Phase 0 · 关键</span></div>
+      <div class="id">页面</div>
+      <div class="name">/paths/&lt;编号&gt; · 路径详情<span class="phase">第零期</span></div>
       <dl>
-        <div><dt>组件</dt><dd>承袭 v0.2 P_plan：现状 vs 阈值 → 列出每条改造路径（语言、年薪、资格、学历），各自标 钱 / 时长 / 副作用。</dd></div>
-        <div><dt>关键</dt><dd>这是"改造路径列表"——它<strong>本身也是一份 PathCard 风格的列表</strong>，只不过卡片承载的是"补丁"而不是"路径"。我们可以复用 PathCard 的视觉骨架（不强求复用组件），让用户看到"改造一条 = 解锁一条主路径"的对应感。</dd></div>
+        <div><dt>用什么</dt><dd>路径详情视图。网址参数里可选带上用户资料，得到个性化叙述。</dd></div>
       </dl>
     </div>
 
     <div class="view">
-      <div class="id">PAGE</div>
-      <div class="name">/paths/&lt;id&gt;/constraints · 准入硬约束<span class="phase">Phase 0 · 关键</span></div>
+      <div class="id">页面</div>
+      <div class="name">/paths/&lt;编号&gt;/plan · 准备计划<span class="phase">第零期 · 关键</span></div>
       <dl>
-        <div><dt>组件</dt><dd>分两栏：出境侧（中国大陆护照管控、敏感行业、政审）+ 入境侧（目标国政治、犯罪、健康审查）。每条标"一手源 / 暂未覆盖"。</dd></div>
-        <div><dt>关键</dt><dd>大量"暂未覆盖"是必然。措辞克制（RULES § 8.4）。</dd></div>
+        <div><dt>用什么</dt><dd>现状 vs 门槛对照 → 列出每条可走的"补丁路径"（考语言、提高年薪、考资格、学历等），各自标 钱 / 时长 / 副作用。</dd></div>
+        <div><dt>关键</dt><dd>本质也是一份横条卡片列表，但每张承载的是"补丁"而不是一条移民路径。视觉复用让用户快速理解"补哪一条 = 解锁哪一条主路径"的对应关系。</dd></div>
       </dl>
     </div>
 
     <div class="view">
-      <div class="id">PAGE</div>
-      <div class="name">/sources/&lt;authority&gt;/&lt;doc-id&gt; · 字段溯源<span class="phase">Phase 0</span></div>
+      <div class="id">页面</div>
+      <div class="name">/paths/&lt;编号&gt;/constraints · 硬约束<span class="phase">第零期 · 关键</span></div>
       <dl>
-        <div><dt>组件</dt><dd>独立组件 SourceView。展示一手源元信息、rawQuote、历史快照列表。</dd></div>
+        <div><dt>用什么</dt><dd>分两栏：出境侧（中国大陆护照管控、敏感行业、政审）+ 入境侧（目标国政治、犯罪、健康审查）。每条标明"一手源"或"暂未覆盖"。</dd></div>
+        <div><dt>关键</dt><dd>大量"暂未覆盖"是必然。措辞保持克制（章程 § 8.4）。</dd></div>
       </dl>
     </div>
 
     <div class="view">
-      <div class="id">PAGE</div>
-      <div class="name">/paths/&lt;id&gt;/changelog · 规则变更日志<span class="phase">Phase 0</span></div>
+      <div class="id">页面</div>
+      <div class="name">/sources/&lt;机构&gt;/&lt;文档&gt; · 字段溯源<span class="phase">第零期</span></div>
       <dl>
-        <div><dt>组件</dt><dd>独立 ChangelogView。日期 / 字段 / 旧值 / 新值 / 旧 sha / 新 sha / 影响范围。</dd></div>
+        <div><dt>用什么</dt><dd>溯源视图：一手源元信息、原文摘录、历史快照列表。</dd></div>
       </dl>
     </div>
 
     <div class="view">
-      <div class="id">PAGE</div>
-      <div class="name">/about · 章程<span class="phase">Phase 0</span></div>
+      <div class="id">页面</div>
+      <div class="name">/paths/&lt;编号&gt;/changelog · 规则变更日志<span class="phase">第零期</span></div>
       <dl>
-        <div><dt>组件</dt><dd>纯文本叙述。RULES + README 的对外可读版本。</dd></div>
+        <div><dt>用什么</dt><dd>变更日志视图：日期 / 字段 / 旧值 / 新值 / 两次快照签名 / 影响范围。</dd></div>
       </dl>
     </div>
 
     <div class="view">
-      <div class="id">PAGE</div>
-      <div class="name">/account/* · 我的路径 / 通知<span class="phase later">Phase 1+</span></div>
+      <div class="id">页面</div>
+      <div class="name">/about · 章程<span class="phase">第零期</span></div>
       <dl>
-        <div><dt>组件</dt><dd>用户保存的 path id 列表 = "我收藏的 PathCard"——同一个组件再次复用。</dd></div>
+        <div><dt>用什么</dt><dd>纯文字叙述。README 与 RULES 的对外可读版本。</dd></div>
+      </dl>
+    </div>
+
+    <div class="view">
+      <div class="id">页面</div>
+      <div class="name">/account/* · 我的路径 / 通知<span class="phase later">第一期之后</span></div>
+      <dl>
+        <div><dt>用什么</dt><dd>用户收藏的路径编号列表 —— 就是"我保存的路径卡片"，路径卡片列表组件的又一次复用。</dd></div>
       </dl>
     </div>
   </section>
 
   <!-- § 5 -->
   <section>
-    <h2><span class="n">§ 5</span>抽象的代价 · 必须自陈</h2>
-    <p class="lede">每一层抽象都有代价。这里把 PathCard 抽象不能解决的问题写下，避免下一轮再被问出。</p>
+    <h2><span class="n">§ 5</span>这层设计的代价 · 必须自陈</h2>
+    <p class="lede">每一次把复杂事物统一成一种形状，都要付出代价。这里把"路径卡片"设计解决不了的问题写下，避免下一轮再被问出。</p>
 
     <div class="tension">
       <h4>① 路径的"故事感"会被卡片磨平吗？</h4>
-      <p>会，如果只看 /list。但用户从卡片点进去后到达的 PathDetailView 仍是衬线长读物——故事感留在详情层，列表层负责扫视。这是"<em class="t">概览统一 / 详情个性</em>"的常见取舍。</p>
+      <p>会，如果只看列表页。但用户从卡片点进去后到达的路径详情视图仍是衬线长读物——故事感留在详情层，列表层负责扫视。这是"概览统一、详情个性"的常见取舍。</p>
     </div>
 
     <div class="tension">
-      <h4>② 不同路径字段不一定同构（如积分制 vs 抽签制）</h4>
-      <p>美国 H-1B / EB 这类没有"积分阈值"的路径，<code>thresholds</code> 字段会是 <code>null</code> 或换成"抽签率 / 排期年数"。PathCard 的字段集需要做<em class="t">差异分支</em>而非"假装统一"。这要求我们在 schema 上引入<code class="k">type</code> 字段（<code>scoring</code> / <code>lottery</code> / <code>queued</code> / <code>investor</code> / …），不同 type 有不同的子字段集。Phase 0 只覆盖 <code>scoring</code>，但 schema 必须为其他 type 留口子，否则 Phase 1 加美国时整个数据层重写。</p>
+      <h4>② 不同路径的门槛不一定同构</h4>
+      <p>美国 H-1B / EB 这类路径没有"积分阈值"，无法套同一套打分字段。因此路径卡片在后台必须设有"规则类型"字段，不同类型对应不同门槛子字段：积分制存每项打分、抽签制存抽签率与资格、排期制存等待队列节奏、投资制存资金门槛与经营要求。第零期只做一条积分制路径，但字段结构必须为其他三种类型预留口子——否则第一期加美国时整个数据层要重写。这是"第零期先把字段骨架做对"的核心依据。</p>
     </div>
 
     <div class="tension">
-      <h4>③ "适合谁"的 fitProfile 标签由谁定义？</h4>
-      <p>这是隐藏的产品意见。tech / research / finance / medical 这种粗分类还行，但一旦细分到"前端工程师"或"半导体工艺工程师"，就会变成产品在替日本入管局的职业列表做翻译——RULES § 2.1.4 警告过这种行为。Phase 0 标签必须保持极粗，宁可让用户感到"分得不细"，也不要让用户感到"我们替他做了职业判断"。</p>
+      <h4>③ "适合谁"的标签由谁定义？</h4>
+      <p>这是隐藏的产品意见。"技术/研究/金融/医疗"这种粗分类还可以，但一旦细分到"前端工程师"或"半导体工艺工程师"，就变成我们在替目的国的职业分类表做翻译——章程 § 2.1.4 明确警告过这种行为。第零期标签必须保持极粗，宁可让用户感到"分得不细"，也不要让用户感到"我们替他做了职业判断"。</p>
     </div>
 
     <div class="tension">
-      <h4>④ filter 的字段集 = schema 的子集</h4>
-      <p>这点反过来反推 schema 设计：任何"用户可能想筛"的维度，背后都必须有对应字段，且字段必须满足 RULES § 2.1（一手源、五元组、有快照）。"是否对中国大陆护照宽松"这种维度，没有现成一手源量化，<strong>就不能成为 filter</strong>——这是抽象的硬边界，不是 UI 的偷懒。</p>
+      <h4>④ 可筛选维度受限于已有字段</h4>
+      <p>这点反过来约束数据层：任何"用户可能想筛"的维度，背后都必须已有对应字段，且字段必须满足章程 § 2.1（有一手源、有出处五元组、有快照）。"是否对中国大陆护照宽松"这种维度，目前没有现成一手源可量化，<strong>就不能成为筛选条件</strong>——这是边界，不是界面的偷懒。</p>
+    </div>
+
+    <div class="tension">
+      <h4>⑤ 路径级 vs 国家级 的归属线会反复挪动</h4>
+      <p>永居阶段的字段在"路径级"和"国家级"之间的归属，没有一刀切答案，要按国情单独判定（日本 HSP 永居属路径级、加拿大永居基本属国家级、新加坡永居则既挂路径又是黑盒）。第一次写错很正常，按国家逐一复盘即可——但要求我们留下足够的版本记录，让这种挪动可追溯。</p>
     </div>
   </section>
 
@@ -563,18 +630,20 @@
     <p class="lede">以下问题不在本阶段拍板。施工尚未开始，对移民路径全貌的掌握仍在加深；现在做的任何决定都不可能完美覆盖所有情况，反而会被早期不完整的认知锁死。先把好的点子和倾向意见记下来，等对应议题在落地中真正逼近时再回来挑。</p>
 
     <ol class="qs">
-      <li><strong>PathCard 字段集的粒度</strong> · 现列 11 个字段是首版草图，不是合同。最小风险点：<code>fitProfile</code> 标签集——一旦写进 i18n 就难改。倾向：v0 极粗（tech / research / medical / finance / arts / other 量级），宁可少而泛、不可早而细。<em class="t">施工中遇到第一条非 scoring type 路径时再补 schema 分支。</em></li>
-      <li><strong>filter 维度对外开放范围</strong> · 倾向：v0 只开放 country / category / coverageStatus / permanentResidencyMonths 四个；fitProfile 暂不开放，避免上一条风险。<em class="t">真正需要更细 filter 时（用户实际抱怨筛不出来），再开。</em></li>
-      <li><strong>"对你的判定" 是否进 Phase 0</strong> · 引入即需要 thresholds 比对引擎；Phase 0 只一条路径所以引擎极薄，但需要为未来 lottery / queued type 留泛化口子。<em class="t">先把卡片做出来在无 context 下能用，引擎与否在画 PathDetailView 样稿时再定。</em></li>
-      <li><strong>P_plan "改造路径" 与 PathCard 的关系</strong> · 倾向：复用视觉骨架、不复用组件；底层应是独立的 Patch object，不混入 Path 类。<em class="t">画到 P_plan 样稿时再具体定。</em></li>
-      <li><strong>~15 国战略天花板清单</strong> · 承袭 v0.2 §7 Q4。/list 一旦上线，uncovered 卡片至少要有 country / name / coverageStatus。<em class="t">不必现在确定具体名单——做出 /list 空骨架时随手补即可，初版三五张占位足以验证视觉。</em></li>
-      <li><strong>路径 type 系统</strong>（§5 衍生）· scoring / lottery / queued / investor 等。<em class="t">Phase 0 只实现 scoring，但 schema 字段名必须为 type 字段留好位置，避免 Phase 1 加美国时数据层重写。</em></li>
+      <li><strong>路径卡片字段的粒度</strong> · §2.3 草稿列的字段是首版轮廓，不是合同。最小风险点：\"适配画像\"标签集——一旦写进界面文案就难改。倾向：第零期极粗（技术 / 研究 / 医疗 / 金融 / 艺术 / 其他 这种量级），宁可少而泛、不可早而细。<em class="t">施工中遇到第一条非积分制路径时再补字段分支。</em></li>
+      <li><strong>筛选维度对外开放范围</strong> · 倾向：第零期只开放 国家 / 类别 / 覆盖状态 / 永居最短月数 四个；"适配画像"暂不对外开放，避免上一条风险。<em class="t">真正需要更细筛选时（用户实际抱怨筛不出来），再开。</em></li>
+      <li><strong>"对你的判定" 是否进第零期</strong> · 引入即需要做门槛比对引擎；第零期只一条路径所以引擎极薄，但需要为未来抽签制/排期制留泛化口子。<em class="t">先把卡片做出来在无用户资料下能用；引擎与否在画路径详情样稿时再定。</em></li>
+      <li><strong>准备计划页的补丁卡 与 路径卡片的关系</strong> · 倾向：复用视觉骨架、不复用组件；底层应是独立的"补丁数据"，不混入"路径数据"。<em class="t">画到准备计划样稿时再具体定。</em></li>
+      <li><strong>~15 国战略天花板清单</strong> · 承袭 v0.2 的未决项。路径列表页一旦上线，未覆盖卡片至少要有国家 / 名称 / 覆盖状态。<em class="t">不必现在确定具体名单——做出列表页空骨架时随手补即可，初版三五张占位足以验证视觉。</em></li>
+      <li><strong>"规则类型"系统</strong>（§5 衍生）· 积分制 / 抽签制 / 排期制 / 投资制 等。<em class="t">第零期只实现积分制，但字段结构必须为"规则类型"字段留好位置，避免第一期加美国时数据层重写。</em></li>
+      <li><strong>工签 / 永居 / 入籍 三阶段的字段归属</strong>（§2.2 衍生）· 哪些字段属路径级、哪些属国家级，随国家不同而不同。<em class="t">先按"工签必路径级 / 入籍几乎必国家级 / 永居看耦合度"的原则起步；每新增一国必做一次归属复盘。</em></li>
+      <li><strong>国家对象里"对中国大陆护照的特殊处理"字段怎么表达</strong> · 有的是出生地限制（EB 排期）、有的是条约国排除（E-2）、有的是抽签资格（DV）——这是一组异构信息。<em class="t">第零期日本没有这类特殊项，所以该字段空置不出现；Tier A 扩到美国时，它会是第一个压力测试。</em></li>
     </ol>
   </section>
 
   <footer class="btm">
-    <span>relocate · IA proposal v0.3</span>
-    <span>下一步 · 画 PathDetailView 样稿（仅日本 HSP 一条）</span>
+    <span>relocate · 信息架构提案 v0.3.1</span>
+    <span>下一步 · 画路径详情样稿（仅日本 HSP 一条）</span>
   </footer>
 
 </main>
