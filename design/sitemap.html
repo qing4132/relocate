@@ -215,7 +215,7 @@
   <p class="meta">
     <span>引入 PathCard 抽象</span>
     <span>替代 v0.2（已废）</span>
-    <span>状态 · 待拍板</span>
+    <span>状态 · 结构与抽象方向已认可 · 字段/边界等细节进入点子簿，施工中磨合</span>
   </p>
 
   <!-- § 1 -->
@@ -559,20 +559,22 @@
 
   <!-- § 6 -->
   <section>
-    <h2><span class="n">§ 6</span>需要你拍板的开放问题</h2>
+    <h2><span class="n">§ 6</span>点子簿 · 暂缓决策</h2>
+    <p class="lede">以下问题不在本阶段拍板。施工尚未开始，对移民路径全貌的掌握仍在加深；现在做的任何决定都不可能完美覆盖所有情况，反而会被早期不完整的认知锁死。先把好的点子和倾向意见记下来，等对应议题在落地中真正逼近时再回来挑。</p>
 
     <ol class="qs">
-      <li><strong>PathCard 的字段集 v0 锁哪几个？</strong>我列了 11 个。Phase 0 只覆盖 <code>scoring</code> type 的日本 HSP 一条；其余字段必须可空、可缺。最危险的是 <code>fitProfile</code>——它的标签集一旦写进 i18n 文件就难改。建议 v0 只引入 <code>tech</code>、<code>research</code>、<code>medical</code>、<code>finance</code>、<code>arts</code>、<code>other</code> 六个，宁少勿多。</li>
-      <li><strong>filter 维度对外开放哪几个？</strong>建议 v0 开放：country、category、coverageStatus、permanentResidencyMonths（"几年内可永居"）四个。fitProfile 不在 v0 开放（避免上一条的风险）。</li>
-      <li><strong>"对你的判定"是否进 v0？</strong>它要求实现 thresholds 比对引擎。Phase 0 只有一条路径，引擎会非常薄；但一旦引入，未来添加 lottery type 的路径时它要泛化到"抽签率与你画像的关系"。是否把这件事放到 Phase 1？放的话 v0 的 PathCard 在无 context 下也能用，缺一个用户最想看的卖点。</li>
-      <li><strong>P_plan 的"改造路径"是否复用 PathCard 视觉？</strong>建议复用骨架不复用组件——视觉一致让用户更容易理解，但底层数据模型是 Patch object（"考 N1 +5 分 · 6-12 月 · ¥10-30k"）而非 Path object，不应混到同一个类里。</li>
-      <li><strong>~15 国战略天花板的具体清单</strong>承袭 v0.2 §7 Q4。PathCard 抽象使这件事更迫切——/list 一上线，所有 uncovered 卡片都要有数据（哪怕只有 country / name / coverageStatus）。</li>
+      <li><strong>PathCard 字段集的粒度</strong> · 现列 11 个字段是首版草图，不是合同。最小风险点：<code>fitProfile</code> 标签集——一旦写进 i18n 就难改。倾向：v0 极粗（tech / research / medical / finance / arts / other 量级），宁可少而泛、不可早而细。<em class="t">施工中遇到第一条非 scoring type 路径时再补 schema 分支。</em></li>
+      <li><strong>filter 维度对外开放范围</strong> · 倾向：v0 只开放 country / category / coverageStatus / permanentResidencyMonths 四个；fitProfile 暂不开放，避免上一条风险。<em class="t">真正需要更细 filter 时（用户实际抱怨筛不出来），再开。</em></li>
+      <li><strong>"对你的判定" 是否进 Phase 0</strong> · 引入即需要 thresholds 比对引擎；Phase 0 只一条路径所以引擎极薄，但需要为未来 lottery / queued type 留泛化口子。<em class="t">先把卡片做出来在无 context 下能用，引擎与否在画 PathDetailView 样稿时再定。</em></li>
+      <li><strong>P_plan "改造路径" 与 PathCard 的关系</strong> · 倾向：复用视觉骨架、不复用组件；底层应是独立的 Patch object，不混入 Path 类。<em class="t">画到 P_plan 样稿时再具体定。</em></li>
+      <li><strong>~15 国战略天花板清单</strong> · 承袭 v0.2 §7 Q4。/list 一旦上线，uncovered 卡片至少要有 country / name / coverageStatus。<em class="t">不必现在确定具体名单——做出 /list 空骨架时随手补即可，初版三五张占位足以验证视觉。</em></li>
+      <li><strong>路径 type 系统</strong>（§5 衍生）· scoring / lottery / queued / investor 等。<em class="t">Phase 0 只实现 scoring，但 schema 字段名必须为 type 字段留好位置，避免 Phase 1 加美国时数据层重写。</em></li>
     </ol>
   </section>
 
   <footer class="btm">
     <span>relocate · IA proposal v0.3</span>
-    <span>结构 + 抽象定后再画详情页样稿</span>
+    <span>下一步 · 画 PathDetailView 样稿（仅日本 HSP 一条）</span>
   </footer>
 
 </main>
