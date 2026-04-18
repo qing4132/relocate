@@ -1,0 +1,628 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>relocate · 路径详情样稿 · 日本 高度専門職 1 号ロ · v0.1</title>
+<style>
+  :root{
+    --ink:#141414;
+    --ink-soft:#3d3d3d;
+    --ink-faint:#8a8a8a;
+    --rule:#d8d8d8;
+    --rule-soft:#ebebeb;
+    --bg:#fdfbf7;
+    --warn-bg:#fff6e7;
+    --warn-ink:#6a4d00;
+    --inherit-bg:#f1efe9;
+    --serif:Georgia,"Source Han Serif SC","Noto Serif SC","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;
+    --mono:"SFMono-Regular","Menlo",Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:var(--serif);font-size:16.5px;line-height:1.78;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+
+  header.top{
+    padding:14px 40px;border-bottom:1px solid var(--rule);
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em;
+    background:#fff;
+  }
+  header.top .l{color:var(--ink)}
+
+  .page{max-width:860px;margin:0 auto;padding:56px 32px 140px}
+
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 10px}
+  h1{font-size:30px;font-weight:700;line-height:1.25;letter-spacing:-0.005em;margin:0 0 6px}
+  .sub{font-family:var(--sans);font-size:14px;color:var(--ink-soft);margin:0 0 14px;letter-spacing:0.01em}
+  .sub code{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 6px;border-radius:2px;color:var(--ink)}
+  .meta{
+    font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);
+    letter-spacing:0.04em;margin:0 0 28px;
+    padding-bottom:18px;border-bottom:1px solid var(--ink);
+  }
+  .meta span + span::before{content:" · ";margin:0 4px;color:var(--rule)}
+
+  /* 免责块（强显示）*/
+  .caveat{
+    background:var(--warn-bg);border:1px solid var(--warn-ink);
+    padding:14px 20px;margin:0 0 32px;
+    font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--warn-ink);
+  }
+  .caveat strong{color:#3c2a00}
+  .caveat p{margin:0 0 6px}
+  .caveat p:last-child{margin:0}
+
+  /* 顶栏信息条（路径级元数据） */
+  .chip{
+    display:grid;grid-template-columns:repeat(6, 1fr);
+    gap:0;background:#fff;border:1px solid var(--ink);
+    font-family:var(--sans);margin:0 0 36px;
+  }
+  .chip > div{padding:12px 14px;border-right:1px solid var(--rule)}
+  .chip > div:last-child{border-right:none}
+  .chip dt{
+    font-family:var(--mono);font-size:10px;color:var(--ink-faint);
+    letter-spacing:0.09em;text-transform:uppercase;margin:0 0 3px;
+  }
+  .chip dd{margin:0;font-size:13.5px;color:var(--ink);font-weight:600}
+  .chip dd small{display:block;font-weight:400;font-size:11.5px;color:var(--ink-faint);margin-top:2px;font-family:var(--mono)}
+
+  /* 三段式锚点条 */
+  .stagenav{
+    display:grid;grid-template-columns:1fr 1fr 1fr;
+    gap:10px;margin:0 0 40px;
+    font-family:var(--sans);
+  }
+  .stagenav a{
+    display:block;padding:12px 14px;
+    background:#fff;border:1px solid var(--ink);
+    text-decoration:none;color:var(--ink);
+  }
+  .stagenav a .lbl{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:3px;
+  }
+  .stagenav a .t{font-size:15px;font-weight:700;display:block}
+  .stagenav a .b{font-size:12px;color:var(--ink-soft);display:block;margin-top:3px;font-family:var(--serif)}
+  .stagenav a .own{
+    display:inline-block;margin-top:6px;
+    font-family:var(--mono);font-size:10px;padding:1px 5px;
+    border:1px solid var(--ink-faint);color:var(--ink-faint);letter-spacing:0.05em;
+  }
+  .stagenav a.inherited{background:var(--inherit-bg);border-style:dashed}
+  .stagenav a.inherited .own{border-color:var(--ink);color:var(--ink)}
+
+  section{margin:56px 0 0}
+  section > h2{font-size:20px;font-weight:700;line-height:1.35;margin:0 0 4px}
+  section > h2 .n{
+    font-family:var(--mono);font-size:12px;font-weight:400;
+    color:var(--ink-faint);letter-spacing:0.08em;margin-right:10px;
+  }
+  section > h2 .own{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:0.06em;
+    padding:2px 7px;border:1px solid var(--ink-faint);color:var(--ink-faint);
+    font-weight:400;margin-left:10px;vertical-align:3px;
+  }
+  section > h2 .own.country{border-color:var(--ink);color:var(--ink);background:var(--inherit-bg)}
+  section > .lede{
+    font-family:var(--serif);font-style:italic;
+    color:var(--ink-soft);font-size:15.5px;line-height:1.7;margin:0 0 20px;
+  }
+
+  p{margin:0 0 1em}
+  h3{font-size:15.5px;font-weight:700;margin:26px 0 8px}
+  h3 .n{
+    font-family:var(--mono);font-size:11px;font-weight:400;
+    color:var(--ink-faint);letter-spacing:0.06em;margin-right:8px;
+  }
+
+  /* 判定板 */
+  .verdict{
+    background:#fff;border:1px solid var(--ink);
+    margin:14px 0 10px;padding:18px 22px;
+    font-family:var(--sans);font-size:14px;line-height:1.65;
+  }
+  .verdict .ptop{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding-bottom:8px;border-bottom:1px solid var(--rule-soft);margin-bottom:10px;
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em;
+  }
+  .verdict .big{font-family:var(--serif);font-size:22px;font-weight:700;color:var(--ink);line-height:1.3;margin:0 0 6px}
+  .verdict .big em{font-style:normal;color:var(--ink-faint);font-weight:400;font-size:15px;margin-left:6px}
+  .verdict .detail{color:var(--ink-soft);margin:0 0 10px}
+  .verdict dl.fake{
+    display:grid;grid-template-columns:140px 1fr;gap:6px 14px;
+    font-size:12.5px;color:var(--ink-soft);margin:0;
+    padding-top:10px;border-top:1px dashed var(--rule);
+  }
+  .verdict dl.fake dt{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.06em;text-transform:uppercase;padding-top:2px}
+  .verdict dl.fake dd{margin:0}
+
+  /* 字段展示表 */
+  table.fields{
+    width:100%;border-collapse:collapse;
+    font-family:var(--sans);font-size:13.5px;line-height:1.6;
+    margin:4px 0 18px;background:#fff;
+  }
+  table.fields th,table.fields td{
+    text-align:left;vertical-align:top;
+    padding:10px 12px;border-bottom:1px solid var(--rule);
+  }
+  table.fields th{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    letter-spacing:0.08em;text-transform:uppercase;font-weight:600;
+    border-bottom:1px solid var(--ink);width:160px;background:var(--rule-soft);
+  }
+  table.fields td code{font-family:var(--mono);font-size:12.5px;color:var(--ink);background:var(--rule-soft);padding:1px 5px;border-radius:2px}
+  table.fields td .hint{display:block;color:var(--ink-faint);font-size:12px;margin-top:4px;font-style:italic;font-family:var(--serif)}
+  table.fields td.todo{color:var(--ink-faint);font-style:italic}
+  table.fields td .src{
+    display:inline-block;margin-left:6px;font-family:var(--mono);font-size:10.5px;
+    color:var(--ink-faint);letter-spacing:0.04em;
+  }
+  table.fields td .src::before{content:"["}
+  table.fields td .src::after{content:"]"}
+
+  /* 积分表 */
+  table.points{
+    width:100%;border-collapse:collapse;background:#fff;
+    font-family:var(--sans);font-size:13px;line-height:1.55;
+    margin:6px 0 14px;
+  }
+  table.points th,table.points td{
+    padding:9px 10px;text-align:left;vertical-align:top;
+    border-bottom:1px solid var(--rule);
+  }
+  table.points thead th{
+    border-bottom:1px solid var(--ink);background:var(--rule-soft);
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    letter-spacing:0.08em;text-transform:uppercase;font-weight:600;
+  }
+  table.points td.cat{font-weight:600;color:var(--ink);width:150px}
+  table.points td.range{font-family:var(--mono);width:110px;color:var(--ink-faint);font-size:12.5px}
+  table.points td.note{color:var(--ink-soft)}
+  table.points tr.total td{
+    border-top:1px solid var(--ink);border-bottom:none;
+    background:var(--rule-soft);font-weight:700;color:var(--ink);
+  }
+
+  /* 继承自国家对象的块 */
+  .inherit-block{
+    background:var(--inherit-bg);border:1px dashed var(--ink);
+    padding:14px 20px;margin:6px 0 14px;
+    font-family:var(--sans);font-size:13.5px;line-height:1.7;color:var(--ink-soft);
+  }
+  .inherit-block h4{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink);
+    letter-spacing:0.1em;text-transform:uppercase;margin:0 0 8px;font-weight:600;
+  }
+  .inherit-block h4::before{content:"↳ ";color:var(--ink-faint)}
+  .inherit-block p{margin:0 0 6px}
+  .inherit-block p:last-child{margin:0}
+  .inherit-block strong{color:var(--ink)}
+
+  /* 永居加速线视觉 */
+  .speedlines{
+    background:#fff;border:1px solid var(--rule);
+    padding:16px 20px;margin:8px 0 16px;
+    font-family:var(--sans);font-size:13px;line-height:1.55;
+  }
+  .speedlines .line{
+    display:grid;grid-template-columns:120px 1fr 80px;gap:14px;
+    padding:8px 0;border-bottom:1px solid var(--rule-soft);align-items:center;
+  }
+  .speedlines .line:last-child{border-bottom:none}
+  .speedlines .line .tag{
+    font-family:var(--mono);font-size:11.5px;font-weight:700;
+    border:1px solid var(--ink);padding:2px 8px;text-align:center;
+  }
+  .speedlines .line .desc{color:var(--ink-soft);font-size:12.5px}
+  .speedlines .line .num{font-family:var(--mono);font-size:13px;color:var(--ink);text-align:right}
+
+  /* 来源清单 */
+  table.sources{
+    width:100%;border-collapse:collapse;background:#fff;
+    font-family:var(--sans);font-size:12.5px;line-height:1.55;
+    margin:10px 0 16px;
+  }
+  table.sources th,table.sources td{
+    padding:8px 10px;text-align:left;vertical-align:top;
+    border-bottom:1px solid var(--rule);
+  }
+  table.sources thead th{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    letter-spacing:0.08em;text-transform:uppercase;font-weight:600;
+    border-bottom:1px solid var(--ink);background:var(--rule-soft);
+  }
+  table.sources td.id code{font-family:var(--mono);font-size:11.5px;background:var(--rule-soft);padding:1px 6px;color:var(--ink)}
+  table.sources td.st{font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em;width:100px}
+  table.sources td.st.pending{color:var(--warn-ink)}
+
+  /* 自检块 */
+  .selfreport{
+    margin:18px 0 24px;background:#fff;border:1px solid var(--rule);
+    padding:18px 22px;font-family:var(--sans);font-size:13.5px;line-height:1.7;color:var(--ink-soft);
+  }
+  .selfreport h4{font-family:var(--serif);font-size:15px;font-weight:700;color:var(--ink);margin:0 0 8px}
+  .selfreport ul{margin:6px 0 0;padding:0 0 0 20px}
+  .selfreport li{margin:0 0 6px}
+  .selfreport li strong{color:var(--ink);font-weight:700}
+
+  ol.qs{margin:8px 0 0;padding:0 0 0 24px;font-family:var(--sans);font-size:14px;line-height:1.7}
+  ol.qs li{margin:0 0 12px;color:var(--ink-soft)}
+  ol.qs li strong{color:var(--ink);font-weight:700}
+
+  footer.btm{
+    margin-top:80px;padding-top:14px;border-top:1px solid var(--rule);
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    display:flex;justify-content:space-between;letter-spacing:0.04em;
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <span class="l">relocate · design · path-detail sample</span>
+  <span>internal · v0.1 · 2026-04-20</span>
+</header>
+
+<main class="page">
+
+  <p class="kicker">路径详情视图 · 第一张样稿</p>
+  <h1>日本 · 高度専門職 1 号ロ · 技術系</h1>
+  <p class="sub">
+    <code>jp-hsp-1-b-engineer</code> · 出入国在留管理庁主理的积分制签证
+  </p>
+  <p class="meta">
+    <span>version v0.1</span>
+    <span>2026-04-20</span>
+    <span>样稿 · 对照 sitemap v0.3.1 字段清单</span>
+    <span>对应 coverage-survey v0.2 · Tier A · JP</span>
+  </p>
+
+  <div class="caveat">
+    <p><strong>这份文件是什么：</strong>第一张路径详情视图的草稿，用来把 sitemap v0.3.1 的字段结构按真实路径摆出来——看哪些字段有真实内容、哪些字段会空、哪些字段强行摆进来会别扭。</p>
+    <p><strong>不是什么：</strong>这<em>不是</em>一手源成品页面。下面出现的所有数值（积分维度、永居月数、入籍年数、语言等级等）均属公开常识性信息级别，<strong>未经本项目按 RULES § 2.1 从官方源抓取、快照、双人审阅</strong>。任何数字在真正入库前都要置为 <code>null</code>，按来源清单逐条采集。</p>
+    <p><strong>阅读方式：</strong>重点看"形状"——字段的分段（工签 / 永居 / 入籍）、数据的归属（路径级 / 国家级）、对中文用户的旁注位置、未决字段的显示方式。</p>
+  </div>
+
+  <!-- ============ 路径级元数据条 ============ -->
+  <dl class="chip">
+    <div>
+      <dt>国家</dt>
+      <dd>日本 <small>jp</small></dd>
+    </div>
+    <div>
+      <dt>类别</dt>
+      <dd>技术人才</dd>
+    </div>
+    <div>
+      <dt>规则类型</dt>
+      <dd>积分制 <small>PBS</small></dd>
+    </div>
+    <div>
+      <dt>覆盖状态</dt>
+      <dd>已覆盖（样稿）</dd>
+    </div>
+    <div>
+      <dt>上次复核</dt>
+      <dd>— <small>未开始采集</small></dd>
+    </div>
+    <div>
+      <dt>引用源数</dt>
+      <dd>0 / 预估 8-12</dd>
+    </div>
+  </dl>
+
+  <!-- ============ 三段锚点 ============ -->
+  <nav class="stagenav">
+    <a href="#stage-work">
+      <span class="lbl">第一段</span>
+      <span class="t">工签</span>
+      <span class="b">70 分 / 1 年起步 · 续签灵活</span>
+      <span class="own">路径级 · 内容最深</span>
+    </a>
+    <a href="#stage-pr">
+      <span class="lbl">第二段</span>
+      <span class="t">永居</span>
+      <span class="b">70 分 → 3 年 / 80 分 → 1 年</span>
+      <span class="own">路径级 · 强耦合</span>
+    </a>
+    <a href="#stage-cz" class="inherited">
+      <span class="lbl">第三段</span>
+      <span class="t">入籍</span>
+      <span class="b">归化 5 年 · 不允许双重国籍</span>
+      <span class="own">国家级 · 继承</span>
+    </a>
+  </nav>
+
+  <!-- ============ 一句话概述 + 旁注 ============ -->
+  <section>
+    <h2><span class="n">§ 0</span>一句话概述</h2>
+    <p class="lede">
+      由出入国在留管理庁主理的高度人才积分制签证。工签门槛 70 分，通过学历、职历、年收、年龄、日语能力等维度累计。
+      进入永居阶段有强耦合的加速线：持续 70 分以上居住满 3 年、或持续 80 分以上满 1 年即可申请永居。
+      入籍仍走日本统一的归化程序（归化 5 年 · 不允许双重国籍），这一段与本路径无关，由"日本"国家对象承载。
+    </p>
+  </section>
+
+  <!-- ============ 对你的判定 ============ -->
+  <section>
+    <h2><span class="n">§ 1</span>对你的判定</h2>
+    <p class="lede">这一模块的内容完全取决于用户填写的资料。展示一个假用户以演示结构。</p>
+
+    <div class="verdict">
+      <div class="ptop">
+        <span>假定用户资料 · 仅为结构演示</span>
+        <span>算法 v0-draft</span>
+      </div>
+      <p class="big">工签门槛已过 <em>· 估算积分 76 / 70 · 差 4 分到 80 分加速线</em></p>
+      <p class="detail">
+        按你填写的资料（32 岁 · 硕士 · IT 工程 8 年 · 年收 900 万日元 · 日语 N2 · 无专利）估算，
+        当前接近 70 分门槛上沿。若在未来 12 个月内将日语提升至 N1（+5 分示意）、或年收跨过 1000 万日元档位，
+        有机会进入 80 分加速线，将永居等待从 3 年压缩为 1 年。
+      </p>
+      <dl class="fake">
+        <dt>输入字段</dt>
+        <dd>年龄 / 学历 / 本专业工作年限 / 年收区间 / 日语水平 / 研究实绩 / 加分项（大学排名、试点机构雇主、创业家等）</dd>
+        <dt>输出</dt>
+        <dd>① 是否够 70 分门槛 ② 是否够 80 分加速 ③ 离最近一档差几分 ④ 差额字段的可行补法提示</dd>
+        <dt>不做</dt>
+        <dd>不承诺审批结果 · 不替代官方自评表 · 不保存用户输入（仅浏览器本地）</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ 基础信息 ============ -->
+  <section>
+    <h2><span class="n">§ 2</span>基础信息<span class="own">路径级</span></h2>
+    <table class="fields">
+      <tr><th>标识符</th><td><code>jp-hsp-1-b-engineer</code></td></tr>
+      <tr><th>官方原文名</th><td>高度専門職 1 号ロ（技術系）<span class="hint">日本政府正式名称；"ロ"对应技术研究/技术经营/IT 技术等职种</span></td></tr>
+      <tr><th>中文命名</th><td>日本 · 高度専門職 1 号ロ · 技術系</td></tr>
+      <tr><th>适配画像</th><td>技术 · 研究 · 工程 <span class="hint">首期只给粗分类，不细化到具体工种</span></td></tr>
+      <tr><th>主理机关</th><td>出入国在留管理庁（出入国管理及び難民認定法主管）<span class="src">src-jp-01 未采集</span></td></tr>
+      <tr><th>法律依据</th><td class="todo">待采集：出入国管理及び難民認定法关于"高度専門職"的具体条款与施行细则 <span class="src">src-jp-02 未采集</span></td></tr>
+      <tr><th>覆盖状态</th><td>已覆盖（样稿） <span class="hint">入库前须完成来源清单全部条目，本字段才能标"已覆盖"</span></td></tr>
+      <tr><th>上次复核</th><td class="todo">— <span class="hint">超过 180 天自动降级为"待复核"（章程 § 5.1）</span></td></tr>
+    </table>
+  </section>
+
+  <!-- ============ 工签 ============ -->
+  <section id="stage-work">
+    <h2><span class="n">§ 3</span>第一段 · 工签<span class="own">路径级 · 内容最深</span></h2>
+    <p class="lede">这是整张卡片信息最密的一段——积分制的核心是一张维度表。其他国家的其他路径（抽签、排期、投资）在这一段会长出完全不同的字段结构。</p>
+
+    <h3><span class="n">3.1</span>门槛：积分维度</h3>
+    <p>积分制路径的门槛不是一个数字，而是一张结构化表。下表仅展示维度骨架——具体分值档位须从官方最新告示采集。维度名用日文原文以便一手源对照。</p>
+    <table class="points">
+      <thead>
+        <tr><th>维度</th><th>分值区间</th><th>说明</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="cat">学歴</td>
+          <td class="range">—</td>
+          <td class="note">博士 / 硕士 / 学士 · 双学位加分 · MBA/MOT 加分（待采集具体分值） <span class="src">src-jp-03</span></td>
+        </tr>
+        <tr>
+          <td class="cat">職歴</td>
+          <td class="range">—</td>
+          <td class="note">本专业工作年限梯度（3 / 5 / 7 / 10 年档位，具体待采集） <span class="src">src-jp-03</span></td>
+        </tr>
+        <tr>
+          <td class="cat">年収</td>
+          <td class="range">—</td>
+          <td class="note">与年龄交叉的二维表（30 岁以下 / 30-34 / 35-39 / 40+ × 年收档位） · 未达最低年收直接失去资格</td>
+        </tr>
+        <tr>
+          <td class="cat">年齢</td>
+          <td class="range">—</td>
+          <td class="note">越年轻加分越多 · 40 岁以上无分</td>
+        </tr>
+        <tr>
+          <td class="cat">日本語能力</td>
+          <td class="range">—</td>
+          <td class="note">JLPT N1 / N2 分档 · BJT 分档 · 日语学位可替代</td>
+        </tr>
+        <tr>
+          <td class="cat">研究実績</td>
+          <td class="range">—</td>
+          <td class="note">发明专利数 · 获外部竞争资金研究次数 · 论文数 · 其他实绩（择优取档）</td>
+        </tr>
+        <tr>
+          <td class="cat">加分项（ボーナス）</td>
+          <td class="range">—</td>
+          <td class="note">就职机关属契约机关 · 在先端项目名单内 · 毕业学校世界排名 · 离职创业家 · 一号馆外派等</td>
+        </tr>
+        <tr class="total">
+          <td class="cat">门槛</td>
+          <td class="range">≥ 70 / ≥ 80</td>
+          <td class="note">70 分 = 本路径资格线；80 分 = 永居 1 年加速线（详见 § 4）</td>
+        </tr>
+      </tbody>
+    </table>
+    <p style="font-size:12.5px;color:var(--ink-faint);font-family:var(--sans);font-style:italic">
+      以上分值区间留白不是疏漏，是有意为之——样稿阶段不编造具体分值。真实数值须严格按章程 § 2.1 从官方告示原文采集、截图留档、双人校对后入库。
+    </p>
+
+    <h3><span class="n">3.2</span>其他工签字段</h3>
+    <table class="fields">
+      <tr><th>首次有效期</th><td>5 年 <span class="hint">（公开常识，入库前仍须一手源校验） <span class="src">src-jp-04</span></span></td></tr>
+      <tr><th>续签节奏</th><td>可续签；满足永居条件时转 1 号ロ → 2 号 / 永住 <span class="src">src-jp-04</span></td></tr>
+      <tr><th>雇主绑定</th><td>绑定雇主 · 换工作须重新申请；但"高度専門職"在活动范围上比普通在留资格更宽（许可多种活动）<span class="src">src-jp-05</span></td></tr>
+      <tr><th>家属附签</th><td>配偶可工作 · 子女可随行；满足条件可雇佣家政工（日本一般在留不可）<span class="src">src-jp-06</span></td></tr>
+      <tr><th>父母随行</th><td>有条件允许父母随行（年幼子女抚育等场景，严格）<span class="src">src-jp-06</span></td></tr>
+      <tr><th>配额 / 抽签</th><td>无配额 · 非抽签 · 够分即审 <span class="hint">这一条是本路径相对其它国家的强优势字段</span></td></tr>
+      <tr><th>薪资下限</th><td class="todo">与年龄档位交叉决定 · 待采集 <span class="src">src-jp-03</span></td></tr>
+      <tr><th>居住地约束</th><td>无</td></tr>
+      <tr><th>医保 / 社保</th><td>入国后须加入国民健康保险或雇主健保；年金制度强制参加 <span class="hint">这两项其实更应在"日本"国家对象里承载，等 § 6 确认</span></td></tr>
+      <tr><th>典型费用</th><td class="todo">在留資格認定証明書申请费 + 在留卡手续费 · 金额待查 <span class="src">src-jp-07</span></td></tr>
+    </table>
+  </section>
+
+  <!-- ============ 永居 ============ -->
+  <section id="stage-pr">
+    <h2><span class="n">§ 4</span>第二段 · 永居<span class="own">路径级 · 强耦合</span></h2>
+    <p class="lede">日本 HSP 是"永居规则与路径强耦合"的典型样本。同一个国家的普通路径走永居要 10 年，HSP 可以压到 1-3 年。这种差异必须写在路径卡片里，不能塞进国家对象。</p>
+
+    <h3><span class="n">4.1</span>加速线</h3>
+    <div class="speedlines">
+      <div class="line">
+        <span class="tag">基线</span>
+        <span class="desc">普通路径（如就労在留）持续合法居住满 10 年，其中 5 年以上就労身份</span>
+        <span class="num">10 年</span>
+      </div>
+      <div class="line">
+        <span class="tag">HSP · 70 分</span>
+        <span class="desc">持续满足 70 分以上状态合法居住满 3 年</span>
+        <span class="num">3 年</span>
+      </div>
+      <div class="line">
+        <span class="tag">HSP · 80 分</span>
+        <span class="desc">持续满足 80 分以上状态合法居住满 1 年 · 目前日本给一般外国人最快的永居线</span>
+        <span class="num">1 年</span>
+      </div>
+    </div>
+
+    <h3><span class="n">4.2</span>其他永居字段</h3>
+    <table class="fields">
+      <tr><th>最短居住月数</th><td>36 / 12（依加速线）<span class="hint">这是筛选维度"X 年内可永居"的关键字段</span></td></tr>
+      <tr><th>连续性要求</th><td>申请时回溯 3 年（或 1 年）全程须维持该分数级别；中间分数跌落会打断计时 <span class="src">src-jp-08</span></td></tr>
+      <tr><th>纳税 / 年金</th><td>无欠缴 · 年金加入且缴纳有案可查是硬条件；2019 年后审查明显收紧 <span class="src">src-jp-09</span></td></tr>
+      <tr><th>居住实态</th><td>长期离境会影响连续性判断；具体口径入管裁量，非明文 <span class="hint">这种"非明文但事实上起效"的约束要在页面明示，避免用户误判</span></td></tr>
+      <tr><th>语言要求</th><td>HSP 路径无硬语言门槛（日语已在积分表内计算） <span class="hint">相较欧洲国家永居阶段另考 A2/B1，日本这里字段为空</span></td></tr>
+      <tr><th>担保人</th><td>需要日本国籍或永住者担保 <span class="src">src-jp-09</span></td></tr>
+      <tr><th>申请费 / 审理周期</th><td class="todo">金额与当前周期待采集 <span class="src">src-jp-07</span></td></tr>
+      <tr><th>失效条件</th><td>长期离境不返日 · 被判禁锢以上刑 · 其他违法行为 <span class="src">src-jp-10</span></td></tr>
+    </table>
+  </section>
+
+  <!-- ============ 入籍（国家对象继承） ============ -->
+  <section id="stage-cz">
+    <h2><span class="n">§ 5</span>第三段 · 入籍<span class="own country">继承自「日本」国家对象</span></h2>
+    <p class="lede">本段全部内容由"日本"国家对象承载。本路径不单独持有入籍规则——如果某天日本修改归化法，只需改国家对象一处，所有日本路径卡片同步生效。</p>
+
+    <div class="inherit-block">
+      <h4>来自 country:jp（节选 · 以国家对象为准）</h4>
+      <table class="fields" style="margin:0">
+        <tr><th>归化最短年数</th><td>一般归化 5 年连续居住 · 简易归化 3 年（日本配偶等）· 特别归化由国会裁决 <span class="src">src-jp-cz-01</span></td></tr>
+        <tr><th>日语要求</th><td>读写日常日语（小学三年级水平，官方基准）· 面试由法务局实施 <span class="src">src-jp-cz-02</span></td></tr>
+        <tr><th>品行条件</th><td>无前科 · 无重大税务违章 · 能独立维持生计</td></tr>
+        <tr><th>宣誓</th><td>许可后宣誓遵守日本宪法</td></tr>
+        <tr>
+          <th>双重国籍政策</th>
+          <td>
+            <strong>日本不允许双重国籍。</strong>归化许可同时要求放弃原国籍。
+            <span class="hint">对中文用户的影响：由于中国也不承认双重国籍，归化日本意味着按中国国籍法相应丧失中国国籍；具体退籍实操见 § 6。</span>
+            <span class="src">src-jp-cz-03</span>
+          </td>
+        </tr>
+        <tr><th>特殊通道</th><td>日本配偶简易归化 · 日侨/日裔身份 <span class="hint">本路径（HSP 技术系）不触发特殊通道</span></td></tr>
+      </table>
+    </div>
+
+    <p style="font-size:12.5px;color:var(--ink-faint);font-family:var(--sans);font-style:italic">
+      注：本段所有字段的源文档 <code>src-jp-cz-*</code> 归"日本"国家对象管辖，非本路径卡片持有。路径卡片变更日志不会记录这些字段的变动——它们出现在国家对象的变更日志里。
+    </p>
+  </section>
+
+  <!-- ============ 中文用户旁注（国家级） ============ -->
+  <section>
+    <h2><span class="n">§ 6</span>对中国大陆护照持有者的特殊处理<span class="own country">继承自「日本」国家对象</span></h2>
+    <p class="lede">这类信息跨所有日本路径共享一份；工签 / 永居 / 入籍三段都可能用到。由国家对象持有。</p>
+
+    <div class="inherit-block">
+      <h4>来自 country:jp · 对 cn 护照条目</h4>
+      <p><strong>签证互免 / 免签：</strong>中国大陆普通护照目前赴日须办理签证；旅游短签为多次或单次，工作来日须先取得在留資格認定証明書。</p>
+      <p><strong>在留申请材料：</strong>户籍公证 · 出生公证 · 结婚公证须经中国公证处并使领馆认证（中国未加入海牙公约的时期与加入后流程不同，须按当前节点采集）。 <span class="src">src-jp-cn-01</span></p>
+      <p><strong>退籍实操：</strong>入籍日本后按中国国籍法自动丧失中国国籍；当事人须办理护照收缴、中国户籍注销。办理窗口为户籍地公安或驻日本中国使领馆；实际周期、材料清单与地方口径存在差异，<strong>是最容易踩坑的一段</strong>。 <span class="src">src-jp-cn-02</span></p>
+      <p><strong>子女国籍：</strong>中日婚姻生育子女在日本出生时的国籍申报与选择机制（日本国籍法的 22 岁前国籍选择制度 × 中国父母子女国籍规定）。 <span class="src">src-jp-cn-03</span></p>
+      <p style="color:var(--ink-faint);font-size:12.5px;font-style:italic">
+        以上每一条都涉及两国协同，单看日本官方源或单看中国官方源都不够完整。采集时须双向对照——这正是把它们放在"国家对象对 cn 护照条目"里的原因：一个地方写一次，所有日本路径共享。
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ 来源清单 ============ -->
+  <section>
+    <h2><span class="n">§ 7</span>来源清单<span class="own">路径级 + 国家级</span></h2>
+    <p class="lede">章程 § 2.1：所有数值必须有官方一手源，且留档快照。下表是本路径预估需要的源——全部为"未采集"状态。</p>
+
+    <table class="sources">
+      <thead>
+        <tr><th>编号</th><th>主理方 / 文档名</th><th>覆盖字段</th><th>状态</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="id"><code>src-jp-01</code></td><td>出入国在留管理庁 · 高度専門職制度说明页</td><td>路径存在性 · 官方定义</td><td class="st pending">未采集</td></tr>
+        <tr><td class="id"><code>src-jp-02</code></td><td>出入国管理及び難民認定法 · 施行细则</td><td>法律依据条款</td><td class="st pending">未采集</td></tr>
+        <tr><td class="id"><code>src-jp-03</code></td><td>法務省告示 · 高度専門職ポイント計算表</td><td>积分维度与分值档位（最核心）</td><td class="st pending">未采集</td></tr>
+        <tr><td class="id"><code>src-jp-04</code></td><td>在留資格一覧 · 1 号ロ 有效期与活动范围</td><td>首次有效期 · 续签 · 活动范围</td><td class="st pending">未采集</td></tr>
+        <tr><td class="id"><code>src-jp-05</code></td><td>雇主变更 / 就労活动变更申请指南</td><td>雇主绑定口径</td><td class="st pending">未采集</td></tr>
+        <tr><td class="id"><code>src-jp-06</code></td><td>高度専門職优遇措施 · 配偶 · 父母 · 家政工</td><td>家属附签 · 父母 · 家政</td><td class="st pending">未采集</td></tr>
+        <tr><td class="id"><code>src-jp-07</code></td><td>入管手续费告示</td><td>各阶段申请费</td><td class="st pending">未采集</td></tr>
+        <tr><td class="id"><code>src-jp-08</code></td><td>永住许可指针 · HSP 项</td><td>70 分 3 年 / 80 分 1 年条件</td><td class="st pending">未采集</td></tr>
+        <tr><td class="id"><code>src-jp-09</code></td><td>永住审查要点 · 年金 / 纳税 / 担保</td><td>永居其他硬条件</td><td class="st pending">未采集</td></tr>
+        <tr><td class="id"><code>src-jp-10</code></td><td>永住取消 · 失效条件说明</td><td>维持条件</td><td class="st pending">未采集</td></tr>
+        <tr><td class="id"><code>src-jp-cz-01</code></td><td>国籍法 · 归化条件</td><td>入籍年数 · 简易归化</td><td class="st pending">未采集（国家级）</td></tr>
+        <tr><td class="id"><code>src-jp-cz-02</code></td><td>法務局 · 归化审查日语要求</td><td>入籍语言要求</td><td class="st pending">未采集（国家级）</td></tr>
+        <tr><td class="id"><code>src-jp-cz-03</code></td><td>国籍法 · 双重国籍禁止条款</td><td>放弃原国籍要求</td><td class="st pending">未采集（国家级）</td></tr>
+        <tr><td class="id"><code>src-jp-cn-01</code></td><td>在华日本国大使馆 · 签证 / 在留认证申请须知</td><td>大陆护照申请流程</td><td class="st pending">未采集（国家 × 护照）</td></tr>
+        <tr><td class="id"><code>src-jp-cn-02</code></td><td>中华人民共和国国籍法 + 驻日领事公告</td><td>退籍实操</td><td class="st pending">未采集（国家 × 护照）</td></tr>
+        <tr><td class="id"><code>src-jp-cn-03</code></td><td>国籍法 · 国籍选择 + 出生登记制度</td><td>子女国籍</td><td class="st pending">未采集（国家 × 护照）</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ============ 页面自检（字段结构压测结果） ============ -->
+  <section>
+    <h2><span class="n">§ 8</span>字段结构压测结果 · 自检</h2>
+    <p class="lede">画这张样稿的副产物——sitemap v0.3.1 的字段结构在"日本 HSP"上撑不住的地方、能撑住的地方、边界处的犹豫。</p>
+
+    <div class="selfreport">
+      <h4>撑住的</h4>
+      <ul>
+        <li><strong>三段式骨架合理。</strong>工签段塞得下积分制的深度，永居段能表达加速线这种强耦合，入籍段干净地从国家对象继承。三段各司其职，没有明显错位。</li>
+        <li><strong>国家对象做共享实体是对的。</strong>"归化 5 年 · 不允许双重国籍 · 对大陆护照的退籍实操"这些信息如果塞进每条日本路径，会重复 N 次且难同步更新；放国家对象一处写，所有路径继承。</li>
+        <li><strong>规则类型字段为第零期以外留了口子。</strong>积分制用一张维度表能表达；换到抽签制（美国 H-1B）只要换表头为"抽签率 / 资格"，卡片整体形状不变。</li>
+      </ul>
+      <h4>撑不住 / 需要调整的</h4>
+      <ul>
+        <li><strong>"医保 / 社保"字段归属不清。</strong>这些其实是国家级制度，但申请工签时又直接相关。当前放路径级显得重复；放国家级又在这一步看不到。倾向：国家对象持有全文，路径卡片里放一条提示性摘要 + 深链。</li>
+        <li><strong>"对大陆护照的特殊处理"覆盖面太广。</strong>签证办理、退籍、子女国籍三个子话题本不应混在一起，国家对象下还需再拆一层"签证 / 身份变更 / 家庭"。留作 § 6 点子簿第 9 条新增。</li>
+        <li><strong>"非明文但事实上起效的规则"没有专用字段。</strong>比如永居审查中对长期离境的裁量口径——不是明文法律，但严重影响实际结果。当前是塞在 hint 里，长期看要独立为"裁量提示"字段，标注非一手源但有证据链。</li>
+        <li><strong>积分制路径的"当前积分可算"高度依赖用户输入。</strong>§ 1 "对你的判定" 模块需要的输入字段比普通卡片多一大截——积分维度全部要问。首期或许只支持积分制路径做个性化判定，抽签/排期/投资制路径提供结构化说明即可。</li>
+      </ul>
+      <h4>边界犹豫</h4>
+      <ul>
+        <li><strong>"典型费用"的精度问题。</strong>汇率与政府告示变动频繁，数值保鲜代价大。候选：写金额 + 有效日期 + 来源快照编号，页面显示时标"截至 YYYY-MM 的官方告示值"。</li>
+        <li><strong>"加分项（ボーナス）"里的大学排名依据。</strong>日本官方引用的是特定世界大学排名（如 QS / THE / 上海交大 三榜之一进榜即加分）；这条依赖第三方排名数据，属于非官方一手源但被官方引用。归为"官方引用的第三方"一类。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ 下一步 ============ -->
+  <section>
+    <h2><span class="n">§ 9</span>下一步</h2>
+    <ol class="qs">
+      <li><strong>对照第二条路径画第二张样稿。</strong>建议选规则类型不同的——抽签制（美国 H-1B）或薪资门槛制（德国 EU Blue Card）——进一步压测字段结构的泛化能力。</li>
+      <li><strong>把 § 8 撑不住/需要调整的 4 条搬到 sitemap.html 的点子簿 § 6，新增为第 9-12 条。</strong></li>
+      <li><strong>先不做真实采集。</strong>字段结构稳定前进入官方源采集是浪费——数值会随字段重新切分而需要重新归类。样稿画到 2-3 条、结构收敛后，再开始第一条真实路径的一手源采集（§ 7 全部状态从"未采集"推进到"已采集 + 双审"）。</li>
+    </ol>
+  </section>
+
+  <footer class="btm">
+    <span>relocate · path-detail v0.1 · 日本 HSP 样稿</span>
+    <span>不是一手源数据 · 用于字段结构压力测试</span>
+  </footer>
+
+</main>
+
+</body>
+</html>
