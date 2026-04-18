@@ -1,0 +1,581 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>relocate · 国家与路径覆盖草案 · v0.1</title>
+<style>
+  :root{
+    --ink:#141414; --ink-soft:#3d3d3d; --ink-faint:#8a8a8a;
+    --rule:#d8d8d8; --rule-soft:#ebebeb; --bg:#fdfbf7;
+    --serif:Georgia,"Source Han Serif SC","Noto Serif SC","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;
+    --mono:"SFMono-Regular","Menlo",Consolas,monospace;
+  }
+  *{box-sizing:border-box} html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:16px;line-height:1.75;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+
+  header.top{padding:14px 40px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em;background:#fff}
+  header.top .l{color:var(--ink)}
+
+  .page{max-width:880px;margin:0 auto;padding:64px 32px 140px}
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 10px}
+  h1{font-size:30px;font-weight:700;line-height:1.3;letter-spacing:-0.005em;margin:0 0 10px}
+  .meta{font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);letter-spacing:0.04em;margin:0 0 28px;padding-bottom:18px;border-bottom:1px solid var(--ink)}
+  .meta span + span::before{content:" · ";margin:0 4px;color:var(--rule)}
+
+  .caveat{background:#fff;border:1px solid var(--ink);padding:16px 22px;margin:0 0 36px;font-family:var(--sans);font-size:13.5px;line-height:1.7;color:var(--ink-soft)}
+  .caveat strong{color:var(--ink)}
+
+  section.tier{margin:44px 0 0}
+  .tier-head{margin:0 0 16px;padding:6px 0 10px;border-bottom:1px solid var(--ink)}
+  .tier-head h2{font-size:22px;font-weight:700;margin:0 0 3px}
+  .tier-head h2 .n{font-family:var(--mono);font-size:12.5px;font-weight:400;color:var(--ink-faint);letter-spacing:0.08em;margin-right:10px}
+  .tier-head .sub{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:14.5px;margin:0}
+
+  article.country{margin:30px 0 0;padding:0 0 6px}
+  article.country > h3{font-size:19px;font-weight:700;margin:0 0 4px;line-height:1.3}
+  article.country > h3 .iso{font-family:var(--mono);font-size:11px;font-weight:400;color:var(--ink-faint);letter-spacing:0.06em;margin-left:10px;vertical-align:2px}
+  article.country > .ctx{font-family:var(--sans);font-size:13.5px;line-height:1.7;color:var(--ink-soft);margin:0 0 12px}
+
+  table.paths{width:100%;border-collapse:collapse;font-family:var(--sans);font-size:13.5px;line-height:1.65;margin:6px 0 0}
+  table.paths th,table.paths td{text-align:left;vertical-align:top;padding:9px 6px;border-bottom:1px solid var(--rule)}
+  table.paths th{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em;text-transform:uppercase;font-weight:600;border-bottom:1px solid var(--ink)}
+  table.paths th.w-rating{width:54px}
+  table.paths th.w-name{width:28%}
+  table.paths td.name{color:var(--ink);font-weight:600;font-family:var(--serif);font-size:14.5px;line-height:1.4}
+  table.paths td.name .orig{display:block;font-family:var(--mono);font-size:11px;color:var(--ink-faint);font-weight:400;margin-top:3px;letter-spacing:0.03em}
+  table.paths td.desc em{font-style:italic;color:var(--ink-faint)}
+  table.paths td.rating{font-family:var(--mono);font-size:13px;letter-spacing:0.08em;color:var(--ink);text-align:center}
+  table.paths tr.excluded td{color:var(--ink-faint)}
+  table.paths tr.excluded td.name{color:var(--ink-faint)}
+  table.paths tr.excluded td.rating{color:var(--ink-faint)}
+
+  .legend{margin:12px 0 4px;padding:14px 20px;background:#fff;border:1px solid var(--rule);font-family:var(--sans);font-size:13px;line-height:1.75}
+  .legend dl{margin:0;display:grid;grid-template-columns:90px 1fr;column-gap:16px;row-gap:4px}
+  .legend dt{font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.06em}
+  .legend dd{margin:0;color:var(--ink-soft)}
+
+  footer.btm{margin-top:80px;padding-top:14px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);display:flex;justify-content:space-between}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="l">relocate</div>
+  <div>internal · scoping survey · v0.1 · 2026-04-19</div>
+</header>
+
+<main class="page">
+
+  <p class="kicker">设计文档 · 不对外 · 非数据页</p>
+  <h1>国家与路径覆盖草案</h1>
+  <p class="meta">
+    <span>面向 Phase 1+ 路径扩张规划</span>
+    <span>决定覆盖范围、不决定具体数值</span>
+    <span>v0.1 · 首轮扫图</span>
+  </p>
+
+  <div class="caveat">
+    <strong>这份文档是什么：</strong>一份"覆盖范围扫图"，用来决定未来 PathCard 列表里应该出现哪些路径（无论是 covered 还是 uncovered）。
+    <strong>不是什么：</strong>这不是一手源数据——此处的路径名、大致门槛、时长全部<em>未经本项目的一手源核验</em>，只用于规划与讨论。任何一条被列的路径，在真正进入产品之前，都必须按 RULES § 2.1 重新从官方源抓取、快照、审阅。
+    <strong>评级含义：</strong>是"对本项目核心画像（中文母语技术/知识工作者单干）的契合度 + 作为对照组的教育价值"综合判断，非"路径本身的优劣"。
+  </div>
+
+  <div class="legend">
+    <dl>
+      <dt>★★★</dt><dd>高优先 · 核心画像强契合或教育价值极高，Phase 1-2 应落地</dd>
+      <dt>★★</dt><dd>中优先 · 存在可行窗口，门槛/语言/时长偏高，Phase 2-3 落地</dd>
+      <dt>★</dt><dd>低优先 · 窄适用或主要作对照/背景信息</dd>
+      <dt>—</dt><dd>拟排除 · 表中仍列，附排除理由</dd>
+    </dl>
+  </div>
+
+  <!-- ======================= TIER A ======================= -->
+  <section class="tier">
+    <div class="tier-head">
+      <h2><span class="n">Tier A</span>主流目的地 · 必覆盖</h2>
+      <p class="sub">面向"中文母语技术/知识工作者"的七个基石国家。路径覆盖丰富、一手源稳定、中文用户存量大。</p>
+    </div>
+
+    <!-- JP -->
+    <article class="country">
+      <h3>日本 <span class="iso">JP · jp</span></h3>
+      <p class="ctx">Phase 0 唯一落地国。地理/文化近、技能签证规则条文化程度高、中文用户关注度最高。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★★</td><td class="name">高度専門職 1 号ロ · 技術系<span class="orig">Highly Skilled Professional · Type I (b)</span></td><td class="desc">积分制，学历 + 年薪 + 年龄 + 日语 + 研究成绩等。70 分准入、80 分加速。3 年 / 1 年可申永居。<strong>Phase 0 覆盖的唯一路径。</strong></td></tr>
+          <tr><td class="rating">★★★</td><td class="name">高度専門職 1 号イ / ハ<span class="orig">HSP · Type I (a) / (c)</span></td><td class="desc">学术研究 / 经营管理。同属积分制。与ロ同引擎，字段集共享，扩张成本低。</td></tr>
+          <tr><td class="rating">★★★</td><td class="name">技術・人文知識・国際業務<span class="orig">Engineer / Specialist in Humanities / Intl. Services</span></td><td class="desc">最主流的工作签证。不走积分、走职位/学历/契约匹配。覆盖绝大多数日企就职场景，是 HSP 的替代/预备路径。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">特定活動 46 号<span class="orig">Designated Activities · No.46</span></td><td class="desc">本科以上 + N1 对部分跨专业就职开放。适合日语已达线但专业不匹配的人。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">経営・管理<span class="orig">Business Manager</span></td><td class="desc">开公司投资签。~500 万日元资本 + 实体办公 + 两名雇员要求。单干创业常见路径。</td></tr>
+          <tr><td class="rating">★</td><td class="name">J-Find / J-Skip<span class="orig">Future Creation Individual · 未来创造人材</span></td><td class="desc">2023 新设。Top 大学毕业生 2 年求职签 / 高年收者快速通道。窗口小但有战术价值。</td></tr>
+          <tr><td class="rating">★</td><td class="name">特定技能 1 号 / 2 号<span class="orig">Specified Skilled Worker</span></td><td class="desc">制造/建筑/护理等蓝领。不匹配核心画像，但应列以显示"我们选择不覆盖的原因"。</td></tr>
+          <tr><td class="rating">★</td><td class="name">配偶者签证 · 日本人の配偶者等<span class="orig">Spouse of Japanese National</span></td><td class="desc">家庭路径代表。列入以支持"我主路径不在这里但想了解"。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- US -->
+    <article class="country">
+      <h3>美国 <span class="iso">US · us</span></h3>
+      <p class="ctx">中文用户关注度极高。系统的抽签 + 排期特性使它与日本 scoring type 完全不同——这是 PathCard 抽象必须兼容 lottery / queued type 的主要原因。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★★</td><td class="name">H-1B · 专业人士工作签<span class="orig">H-1B Specialty Occupation</span></td><td class="desc">年度抽签。本科对口专业 + 雇主担保。中国大陆出生者后续 EB 排期极长是核心难点。</td></tr>
+          <tr><td class="rating">★★★</td><td class="name">O-1 · 杰出人才<span class="orig">O-1 Extraordinary Ability</span></td><td class="desc">学术/产业/艺术成就。无抽签、可续。近年技术从业者讨论度极高。</td></tr>
+          <tr><td class="rating">★★★</td><td class="name">EB-1A / EB-1B · 杰出人才/杰出研究<span class="orig">Employment-Based First Preference</span></td><td class="desc">直接指向绿卡。对中国大陆出生者有排期，但远短于 EB-2/3。</td></tr>
+          <tr><td class="rating">★★★</td><td class="name">EB-2 NIW · 国家利益豁免<span class="orig">EB-2 National Interest Waiver</span></td><td class="desc">硕士 + 国家利益论证。自主申请、不需雇主。中国大陆出生者排期是最大痛点。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">L-1A / L-1B · 跨国公司派遣<span class="orig">Intracompany Transferee</span></td><td class="desc">1 年以上海外母公司任职转调美国。L-1A 指向 EB-1C 绿卡。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">O-1 → EB-1A 组合路径</td><td class="desc">非独立路径，但事实标准。应作为"路径组合 / 战术"的首个案例。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">E-2 · 条约投资者<span class="orig">E-2 Treaty Investor</span></td><td class="desc">中国大陆护照<strong>不在条约国列表</strong>，需先持第三国护照。列入以显示"护照硬约束"是个独立维度。</td></tr>
+          <tr><td class="rating">★</td><td class="name">EB-5 · 投资移民<span class="orig">EB-5 Investor</span></td><td class="desc">80 万/105 万美元投资。资金门槛不匹配主画像，但作为"钱换时间"的对照必须列。</td></tr>
+          <tr><td class="rating">★</td><td class="name">F-1 → OPT → H-1B 学生路径<span class="orig">Student Track</span></td><td class="desc">低龄/在学用户的主路径。Phase 2 应覆盖，现阶段先列。</td></tr>
+          <tr><td class="rating">★</td><td class="name">DV 抽签<span class="orig">Diversity Visa Lottery</span></td><td class="desc">中国大陆出生者<strong>多年不在资格国</strong>。列入以展示"出生地硬约束"。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- CA -->
+    <article class="country">
+      <h3>加拿大 <span class="iso">CA · ca</span></h3>
+      <p class="ctx">明确分制 + 入籍最快之一 + 中文存量大。和日本 HSP 同为 scoring type，schema 扩张成本低，战略优先级高。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★★</td><td class="name">Express Entry · FSW 联邦技工<span class="orig">Federal Skilled Worker · CEC · FST</span></td><td class="desc">CRS 分数池 · 年龄 + 学历 + 英法语 + 工作经验 + 加分项。目前分数线偏高。Phase 1 核心覆盖。</td></tr>
+          <tr><td class="rating">★★★</td><td class="name">Express Entry · CEC 加境内工作经验<span class="orig">Canadian Experience Class</span></td><td class="desc">境内 1 年工作 + 语言。事实上是留学/工签 → PR 的主通道。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">PNP · 省提名<span class="orig">Provincial Nominee Program</span></td><td class="desc">各省独立规则池（BC / ON / SK / MB / AB 等）。PathCard 应为每个省单独列卡还是聚合？<em>设计议题。</em></td></tr>
+          <tr><td class="rating">★★</td><td class="name">Start-Up Visa<span class="orig">Start-Up Visa Program</span></td><td class="desc">获指定机构背书的创业团队。审批慢，近年因积压饱受质疑。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">Global Talent Stream · 工签<span class="orig">Global Talent Stream · LMIA-exempt</span></td><td class="desc">快速工签通道，2 周审批。雇主主导。</td></tr>
+          <tr><td class="rating">★</td><td class="name">魁北克 PEQ / QSW<span class="orig">Quebec Programs</span></td><td class="desc">法语门槛。对法语 B2+ 人群价值极高，对主画像窄。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Self-Employed · 自雇移民<span class="orig">Federal Self-Employed</span></td><td class="desc">仅限文化/体育领域。窄。</td></tr>
+          <tr><td class="rating">★</td><td class="name">大西洋 AIP / 偏远社区 RNIP<span class="orig">Atlantic / Rural Programs</span></td><td class="desc">偏远地区专用。作为"接受地域限制换低门槛"对照。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- AU -->
+    <article class="country">
+      <h3>澳大利亚 <span class="iso">AU · au</span></h3>
+      <p class="ctx">与加拿大类似的打分 + EOI 池模型。打分 + 职业清单 + 技术评估三段式比较复杂。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★★</td><td class="name">189 · 独立技术移民<span class="orig">Skilled Independent Visa</span></td><td class="desc">纯分数 + 职业清单（MLTSSL）。无州担保。门槛最高但最自由。</td></tr>
+          <tr><td class="rating">★★★</td><td class="name">190 · 州担保技术<span class="orig">Skilled Nominated Visa</span></td><td class="desc">州担保加分。州清单各异，是 189 差分者主流选择。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">491 · 偏远地区技术<span class="orig">Skilled Work Regional (Provisional)</span></td><td class="desc">5 年临居 → PR。用地域换低门槛。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">482 · 雇主担保工签<span class="orig">Temporary Skill Shortage</span></td><td class="desc">多数人 189/190 之前的过渡。2-4 年后可转 186 PR。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">186 · 雇主担保 PR<span class="orig">Employer Nomination Scheme</span></td><td class="desc">雇主直接担保 PR，通常是 482 转。</td></tr>
+          <tr><td class="rating">★</td><td class="name">858 · 全球人才<span class="orig">Global Talent Visa</span></td><td class="desc">原 GTI，现门槛显著提高。对标美国 O-1/EB-1A 窄口。</td></tr>
+          <tr><td class="rating">★</td><td class="name">188 · 商业创新与投资<span class="orig">Business Innovation and Investment</span></td><td class="desc">2024 年已被显著收紧/停发部分子类。列入并标注"政策中风险"。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- SG -->
+    <article class="country">
+      <h3>新加坡 <span class="iso">SG · sg</span></h3>
+      <p class="ctx">永居与入籍极不透明是核心特征——"拿到工签容易，但拿 PR 完全黑盒"。PathCard 的 <code>permanentResidencyMonths</code> 字段在这里是 <em>null + 附说明</em>的典型场景。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★★</td><td class="name">EP · 就业准证<span class="orig">Employment Pass</span></td><td class="desc">COMPASS 积分制（学历+薪资+多样性+技能短缺+战略行业）+ 最低月薪门槛。</td></tr>
+          <tr><td class="rating">★★★</td><td class="name">ONE Pass<span class="orig">Overseas Networks &amp; Expertise Pass</span></td><td class="desc">月薪 30k SGD + 或行业顶尖。5 年、绑定个人不绑雇主。对高薪工程师/创业者最友好。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">Tech.Pass<span class="orig">Tech.Pass</span></td><td class="desc">面向创业/科技高管。配额有限。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">EntrePass · 创业准证<span class="orig">EntrePass</span></td><td class="desc">获合格投资或创新标记的创业者。续签与 PR 挂钩模糊。</td></tr>
+          <tr><td class="rating">★</td><td class="name">S Pass<span class="orig">S Pass · 中级技能</span></td><td class="desc">中薪中技。名额紧张、配额制度。</td></tr>
+          <tr><td class="rating">★</td><td class="name">GIP · 全球投资者<span class="orig">Global Investor Programme</span></td><td class="desc">1000 万 SGD 起。窄，作为对照。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- DE -->
+    <article class="country">
+      <h3>德国 <span class="iso">DE · de</span></h3>
+      <p class="ctx">欧盟最大经济体 + 明确的 Blue Card 通道 + 近年对中文技术人才实际放宽。适合作 Tier A 欧盟代表。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★★</td><td class="name">EU Blue Card<span class="orig">EU Blue Card · Blaue Karte EU</span></td><td class="desc">学位 + 薪资阈值。21-33 月可申永居（视语言）。德国版本在欧盟内门槛最温和之一。</td></tr>
+          <tr><td class="rating">★★★</td><td class="name">Skilled Worker Visa<span class="orig">§ 18a/b AufenthG</span></td><td class="desc">2023 技术移民法改革后主通道。Blue Card 不达线但资格承认者走这里。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">Opportunity Card · 积分求职签<span class="orig">Chancenkarte</span></td><td class="desc">2024 新设。不需 offer，积分制入境求职。战略意义大。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">Freelance / Self-Employed<span class="orig">§ 21 AufenthG · Freiberufler</span></td><td class="desc">柏林特别受欢迎。自由职业者单干典型路径。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Job Seeker Visa（旧版）</td><td class="desc">Chancenkarte 推出后逐步替代。作为"政策变更"的典型案例。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Researcher Visa<span class="orig">§ 18d AufenthG</span></td><td class="desc">学术机构 offer。窄但清晰。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Family Reunification<span class="orig">Familiennachzug</span></td><td class="desc">配偶/子女。对照组。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- UK -->
+    <article class="country">
+      <h3>英国 <span class="iso">GB · uk</span></h3>
+      <p class="ctx">脱欧后重构为积分型体系。Global Talent 与 Skilled Worker 是两大主通道。5 年 ILR。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★★</td><td class="name">Skilled Worker Visa<span class="orig">Skilled Worker</span></td><td class="desc">雇主担保 + 职业清单 + 薪资阈值。5 年可申 ILR。主工签通道。</td></tr>
+          <tr><td class="rating">★★★</td><td class="name">Global Talent Visa<span class="orig">Global Talent</span></td><td class="desc">学术/艺术/数字科技背书通道（Tech Nation 结束后由 UKRI/Royal Society 等承担）。无雇主要求。3-5 年 ILR。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">High Potential Individual<span class="orig">HPI</span></td><td class="desc">Top 全球大学近 5 年毕业生 2 年求职签。窄窗口、高价值。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">Innovator Founder<span class="orig">Innovator Founder</span></td><td class="desc">获背书的创业路径。取代旧 Innovator / Start-up。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Scale-up Visa<span class="orig">Scale-up Worker</span></td><td class="desc">被认定规模化企业雇用。配额小。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Graduate Visa<span class="orig">Graduate Route</span></td><td class="desc">英国高校毕业 2-3 年工签。学生后延路径。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Investor Tier 1（旧）</td><td class="desc">2022 已关闭。列入以显示"政策会消失"。</td></tr>
+        </tbody>
+      </table>
+    </article>
+  </section>
+
+  <!-- ======================= TIER B ======================= -->
+  <section class="tier">
+    <div class="tier-head">
+      <h2><span class="n">Tier B</span>次主流 · Phase 2 覆盖</h2>
+      <p class="sub">中文用户关注度中等；路径成熟、一手源可获取；规模/语言/门槛有限制。</p>
+    </div>
+
+    <!-- NZ -->
+    <article class="country">
+      <h3>新西兰 <span class="iso">NZ · nz</span></h3>
+      <p class="ctx">Green List + SMC 分制。整体门槛近几年上调。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★★</td><td class="name">Skilled Migrant Category · Resident<span class="orig">SMC 6-point system</span></td><td class="desc">2023 改版为 6 分制（学历/职业登记/薪资）。直接指向 PR。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">Green List Straight / Work to Residence<span class="orig">Green List</span></td><td class="desc">紧缺职业直通/工作 24 月后 PR。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">Accredited Employer Work Visa<span class="orig">AEWV</span></td><td class="desc">雇主担保工签。主要过渡通道。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Active Investor Plus<span class="orig">AIP Visa</span></td><td class="desc">投资签 2022 重构。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- NL -->
+    <article class="country">
+      <h3>荷兰 <span class="iso">NL · nl</span></h3>
+      <p class="ctx">Highly Skilled Migrant 程序在欧盟内门槛偏低 + 英语可用 + 30% ruling 税收优惠曾为亮点。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★★</td><td class="name">Highly Skilled Migrant<span class="orig">Kennismigrant</span></td><td class="desc">认可雇主 + 薪资阈值。欧盟最成熟的技术移民项目之一。</td></tr>
+          <tr><td class="rating">★★★</td><td class="name">EU Blue Card (NL)</td><td class="desc">欧盟 Blue Card 荷兰版。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">Orientation Year Visa<span class="orig">Zoekjaar</span></td><td class="desc">荷兰高校或全球 Top 200 毕业生 1 年求职。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">Self-Employed / DAFT（美国公民专属）</td><td class="desc">DAFT 仅限美国护照；一般自雇签有严格工分。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Startup Visa</td><td class="desc">1 年创业签 → 自雇签。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- IE -->
+    <article class="country">
+      <h3>爱尔兰 <span class="iso">IE · ie</span></h3>
+      <p class="ctx">欧盟内英语国、税收友好、大厂欧洲总部集中。入籍 5 年 + 可能保留中国国籍（中国单方面不承认，是个风险点）。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★★</td><td class="name">Critical Skills Employment Permit</td><td class="desc">紧缺职业清单 + 薪资阈值。直接通道。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">General Employment Permit</td><td class="desc">非紧缺清单工作。要求劳动力市场测试。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">Stamp 0 / Stamp 4 长期居留</td><td class="desc">与 permit 配套。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Start-up Entrepreneur Programme · STEP</td><td class="desc">5 万欧元创业。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- CH -->
+    <article class="country">
+      <h3>瑞士 <span class="iso">CH · ch</span></h3>
+      <p class="ctx">非欧盟国籍配额极严；年度 Quota 明显限流。收入天花板高但门槛也高。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★</td><td class="name">B Permit · 工作居留<span class="orig">Aufenthaltsbewilligung B</span></td><td class="desc">雇主证明无欧盟候选人 + 年度州配额。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">L Permit · 短期居留</td><td class="desc">&lt;1 年过渡。</td></tr>
+          <tr><td class="rating">★</td><td class="name">C Permit · 永居</td><td class="desc">通常 10 年 B 后。入籍极慢。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Self-Employed（非欧盟）</td><td class="desc">极难，需对瑞士经济"实质贡献"论证。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- FR -->
+    <article class="country">
+      <h3>法国 <span class="iso">FR · fr</span></h3>
+      <p class="ctx">Talent Passport 系统相对整洁。法语非硬门槛（但对融入重要）。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★★</td><td class="name">Passeport Talent · 多子类<span class="orig">Talent Passport · Salarié Qualifié / Chercheur / etc.</span></td><td class="desc">4 年多次往返。2024 更名 "Talent - …"。主要技术移民通道。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">ICT · 跨国调派</td><td class="desc">欧盟指令落地版。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Profession Libérale · 自由职业</td><td class="desc">窄、材料复杂。</td></tr>
+          <tr><td class="rating">★</td><td class="name">French Tech Visa</td><td class="desc">认可创业公司雇员的 Talent 子类。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- KR -->
+    <article class="country">
+      <h3>韩国 <span class="iso">KR · kr</span></h3>
+      <p class="ctx">地理/文化近，但永居/入籍对非韩裔中文用户不友好，长期路径弱。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★</td><td class="name">E-7 · 特定职业</td><td class="desc">主工签。职业清单明确。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">F-2-7 · 积分制居留</td><td class="desc">积分达线转居留。</td></tr>
+          <tr><td class="rating">★</td><td class="name">D-8 · 企业投资</td><td class="desc">1 亿韩元起。</td></tr>
+          <tr><td class="rating">★</td><td class="name">F-5 · 永住权</td><td class="desc">条件复杂。</td></tr>
+          <tr><td class="rating">★</td><td class="name">D-10 · 求职</td><td class="desc">6 月 + 6 月。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- AE -->
+    <article class="country">
+      <h3>阿联酋 <span class="iso">AE · ae</span></h3>
+      <p class="ctx">零所得税 + 永居概念弱 + Golden Visa 是稳定居留主通道。无入籍可能（实际上）。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★★</td><td class="name">Golden Visa<span class="orig">10-year residence</span></td><td class="desc">技术/创业/投资多子类。10 年可续。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">Green Visa · 5 年</td><td class="desc">自雇或技术签的新通道。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">Standard Employment Visa</td><td class="desc">雇主担保，2-3 年。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Freelancer Permit（自贸区）</td><td class="desc">迪拜/阿布扎比自贸区独立签发。</td></tr>
+        </tbody>
+      </table>
+    </article>
+  </section>
+
+  <!-- ======================= TIER C ======================= -->
+  <section class="tier">
+    <div class="tier-head">
+      <h2><span class="n">Tier C</span>窄适用 · Phase 3+ 或仅作对照</h2>
+      <p class="sub">窗口较窄、或以投资/家庭/地理为主。作为"光谱完整"的背景列入。</p>
+    </div>
+
+    <!-- PT -->
+    <article class="country">
+      <h3>葡萄牙 <span class="iso">PT · pt</span></h3>
+      <p class="ctx">Golden Visa 黄金签证的标志性国家，2023 改革后房地产档关闭。入籍 5 年 + 对中文用户是欧盟尾门代表。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★★</td><td class="name">D7 · 被动收入居留</td><td class="desc">养老金/股息/租金可养活自己。对 FIRE/远程工作者友好。</td></tr>
+          <tr><td class="rating">★★★</td><td class="name">D8 · 数字游民签<span class="orig">Digital Nomad Visa</span></td><td class="desc">2022 新设。月收 4x 葡萄牙最低工资。远程工作者通道。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">Golden Visa · ARI（重构后）</td><td class="desc">基金/研发/文化投资。房产档已关。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">D3 · 高素质活动</td><td class="desc">技术岗 + 薪资阈值。</td></tr>
+          <tr><td class="rating">★</td><td class="name">D2 · 创业/自雇</td><td class="desc">实质商业计划。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- ES -->
+    <article class="country">
+      <h3>西班牙 <span class="iso">ES · es</span></h3>
+      <p class="ctx">2023 Startup Law 推出数字游民签。Golden Visa 2025 被宣布终止。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★★</td><td class="name">Digital Nomad Visa<span class="orig">Visado para teletrabajadores</span></td><td class="desc">远程工作 + Beckham 税收优惠。中文用户近两年讨论焦点。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">Non-Lucrative Visa<span class="orig">Visado No Lucrativo</span></td><td class="desc">被动收入 + 不工作。类似葡萄牙 D7。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">Highly Qualified Professional</td><td class="desc">薪资阈值 + 雇主。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Entrepreneur Visa</td><td class="desc">Startup Law 配套。</td></tr>
+          <tr><td class="rating">—</td><td class="name">Golden Visa · 50 万欧房产</td><td class="desc">2025 终止。列入以记录"政策关闭事件"。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- HK -->
+    <article class="country">
+      <h3>香港 <span class="iso">HK · hk</span></h3>
+      <p class="ctx">地缘与制度的特殊性：面向大陆同胞的通道在内地口径下"移居香港"与真正出境含义不同。项目可以覆盖，但需特别谨慎措辞。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★★</td><td class="name">高端人才通行证 · 高才通<span class="orig">Top Talent Pass Scheme</span></td><td class="desc">A/B/C 三档（高薪/Top 大学毕业）。2022 推出后大陆申请量激增。</td></tr>
+          <tr><td class="rating">★★★</td><td class="name">优秀人才入境计划 · 优才<span class="orig">Quality Migrant Admission Scheme</span></td><td class="desc">积分制，分综合与成就两套。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">输入内地人才计划 · 专才<span class="orig">ASMTP</span></td><td class="desc">雇主担保专业工作。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">科技人才入境计划</td><td class="desc">13 个指定科技领域雇主配额通道。</td></tr>
+          <tr><td class="rating">★</td><td class="name">非本地毕业生留港/回港就业</td><td class="desc">IANG。</td></tr>
+          <tr><td class="rating">★</td><td class="name">新资本投资者入境计划</td><td class="desc">2024 重启。3000 万港元。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- TW -->
+    <article class="country">
+      <h3>台湾 <span class="iso">TW · tw</span></h3>
+      <p class="ctx">大陆籍与非大陆籍适用法规完全不同，<strong>这是唯一对大陆护照单独立法的目的地</strong>——规则在"两岸条例"而非一般外国人居留法。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★</td><td class="name">长期居留 · 依亲/投资/专业</td><td class="desc">两岸条例路径。对大陆配偶/子女友好，纯技术通道窄。</td></tr>
+          <tr><td class="rating">★</td><td class="name">就业金卡（非大陆籍适用）</td><td class="desc">列入以强调"大陆护照不适用"的反面。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- MY -->
+    <article class="country">
+      <h3>马来西亚 <span class="iso">MY · my</span></h3>
+      <p class="ctx">MM2H 与 PVIP 是核心。2024 MM2H 大幅调高门槛后市场反应冷淡。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★</td><td class="name">MM2H · 我的第二家园</td><td class="desc">定期存款 + 月收入证明。2024 改革分三档。</td></tr>
+          <tr><td class="rating">★</td><td class="name">PVIP · 优才签证</td><td class="desc">20 年有效高端投资签。</td></tr>
+          <tr><td class="rating">★</td><td class="name">DE Rantau · 数字游民通行证</td><td class="desc">1-2 年。月收 $24k 起。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Employment Pass</td><td class="desc">雇主担保。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- TH -->
+    <article class="country">
+      <h3>泰国 <span class="iso">TH · th</span></h3>
+      <p class="ctx">LTR 是近年最受关注的亚太长期签之一。入籍极难。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★★</td><td class="name">LTR · Long-Term Resident</td><td class="desc">10 年居留，四子类（富裕公民/退休/远程工作者/高技能）。免税 + 免 90-day report。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">Thailand Elite Visa<span class="orig">Privilege Visa</span></td><td class="desc">会员费 5-200 万泰铢，5-20 年。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">SMART Visa</td><td class="desc">BOI 批准的科技/创业。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Non-Immigrant B / O</td><td class="desc">工作/家庭。短期。</td></tr>
+          <tr><td class="rating">★</td><td class="name">DTV · Destination Thailand Visa</td><td class="desc">2024 新设，5 年多次入境数字游民签。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- Nordics -->
+    <article class="country">
+      <h3>北欧 · 瑞典 / 丹麦 / 挪威 / 芬兰 <span class="iso">SE · DK · NO · FI</span></h3>
+      <p class="ctx">普遍"工作签容易，永居入籍严"；瑞典过去宽松近年收紧。应作为一组对照。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★</td><td class="name">Sweden · Work Permit</td><td class="desc">近年薪资门槛抬高；永居收紧。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">Denmark · Pay Limit Scheme / Fast-Track</td><td class="desc">高薪或认可公司。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Norway · Skilled Worker</td><td class="desc">薪资+学历+offer。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Finland · Specialist / Startup / D-visa</td><td class="desc">积分系统较新。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- MT CY GR HU -->
+    <article class="country">
+      <h3>欧盟小国 · 马耳他 / 塞浦路斯 / 希腊 / 匈牙利 <span class="iso">MT · CY · GR · HU</span></h3>
+      <p class="ctx">投资居留/投资入籍为主。RULES 风向下政策变动剧烈，数据新鲜度是最大痛点。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★★</td><td class="name">Malta · MPRP 永居</td><td class="desc">政府费 + 地产 + 捐款。</td></tr>
+          <tr><td class="rating">★★</td><td class="name">Greece · Golden Visa</td><td class="desc">2024 地产门槛上调（25 万 → 40/80 万）。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Cyprus · 永居与投资入籍</td><td class="desc">投资入籍 2020 已终止，列入以记录。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Hungary · Guest Investor Visa</td><td class="desc">2024 重启。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <!-- IL -->
+    <article class="country">
+      <h3>以色列 <span class="iso">IL · il</span></h3>
+      <p class="ctx">回归法对犹太血统或配偶开放，通道极宽；对非犹太裔中文用户几乎无路径。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr><td class="rating">★</td><td class="name">B/1 专家工签</td><td class="desc">雇主担保。</td></tr>
+          <tr><td class="rating">★</td><td class="name">Innovation Visa</td><td class="desc">创业窗口。</td></tr>
+          <tr><td class="rating">—</td><td class="name">Law of Return 回归法</td><td class="desc">仅限犹太裔。列入以显示"血统路径"的存在。</td></tr>
+        </tbody>
+      </table>
+    </article>
+  </section>
+
+  <!-- ======================= TIER D ======================= -->
+  <section class="tier">
+    <div class="tier-head">
+      <h2><span class="n">Tier D</span>拟排除 · 必须仍列并说明理由</h2>
+      <p class="sub">按 RULES § 3.4 精神——凡用户可能会想到的目的地，我们必须给出"不覆盖"的明确说明，而不是假装不存在。</p>
+    </div>
+
+    <article class="country">
+      <h3>小国投资入籍 · CBI <span class="iso">multi</span></h3>
+      <p class="ctx">圣基茨、多米尼克、格林纳达、安提瓜和巴布达、瓦努阿图（护照项目 2022 被欧盟取消免签）、土耳其（40 万美元房产）、马耳他（高端）等。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr class="excluded"><td class="rating">—</td><td class="name">CBI · 投资入籍各项目</td><td class="desc"><strong>拟排除：</strong>与项目定位正面冲突。它解决的是"换护照"，不是"换生活地"；用户群与我们面向的"技术/知识工作者靠自己"相反。<em>但必须在产品中以明确灰卡列出，避免用户以为我们遗漏。</em></td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="country">
+      <h3>俄罗斯 <span class="iso">RU · ru</span></h3>
+      <p class="ctx">出于地缘与汇兑现实，中国大陆用户讨论量极低。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr class="excluded"><td class="rating">—</td><td class="name">Work Patent / HQS</td><td class="desc"><strong>拟排除：</strong>地缘政治极不稳定 + 一手源获取困难 + 目标人群几乎不考虑。保留为灰卡。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="country">
+      <h3>拉美 · 墨西哥 / 阿根廷 / 乌拉圭 / 巴拿马 <span class="iso">MX · AR · UY · PA</span></h3>
+      <p class="ctx">移民路径存在但中文用户基数小、一手源语言成本高（西班牙语 + 各国法规差异大）。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr class="excluded"><td class="rating">—</td><td class="name">墨西哥 · Temporal / Permanente</td><td class="desc"><strong>Phase 3+ 再议：</strong>对美国邻近有战略意义。暂不覆盖以控制 scope。</td></tr>
+          <tr class="excluded"><td class="rating">—</td><td class="name">乌拉圭 · Legal Residence</td><td class="desc"><strong>Phase 3+：</strong>2 年可入籍的特殊存在，但资源分配优先级低。</td></tr>
+          <tr class="excluded"><td class="rating">—</td><td class="name">巴拿马 · Friendly Nations Visa</td><td class="desc"><strong>Phase 3+：</strong>中国不在友好国名单。</td></tr>
+          <tr class="excluded"><td class="rating">—</td><td class="name">阿根廷 · Rentista 等</td><td class="desc"><strong>Phase 3+。</strong></td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="country">
+      <h3>土耳其 <span class="iso">TR · tr</span></h3>
+      <p class="ctx">40 万美元房产投资入籍曾是中文圈热点。地缘与政经风险为主要顾虑。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr class="excluded"><td class="rating">—</td><td class="name">Turquoise Card / CBI by Investment</td><td class="desc"><strong>拟排除：</strong>更偏 CBI 属性。保留为灰卡。</td></tr>
+        </tbody>
+      </table>
+    </article>
+
+    <article class="country">
+      <h3>非洲、中东战乱区、其他 <span class="iso">multi</span></h3>
+      <p class="ctx">用户基数与项目画像几乎无交集；一手源稳定性与安全成本高。</p>
+      <table class="paths">
+        <thead><tr><th class="w-rating">评级</th><th class="w-name">路径</th><th>简介 / 适用性</th></tr></thead>
+        <tbody>
+          <tr class="excluded"><td class="rating">—</td><td class="name">毛里求斯 · Premium Visa</td><td class="desc"><strong>Phase 4+：</strong>数字游民签，存在感低。</td></tr>
+          <tr class="excluded"><td class="rating">—</td><td class="name">南非 · Critical Skills Visa</td><td class="desc"><strong>Phase 4+。</strong></td></tr>
+          <tr class="excluded"><td class="rating">—</td><td class="name">其他非洲、拉美、中东国家</td><td class="desc"><strong>默认不覆盖。</strong>需要时以"暂未覆盖"灰卡统一处理。</td></tr>
+          <tr class="excluded"><td class="rating">—</td><td class="name">朝鲜 / 古巴 / 伊朗等</td><td class="desc"><strong>永不覆盖：</strong>出境/入境双向受阻，不在合法常态移居光谱内。</td></tr>
+        </tbody>
+      </table>
+    </article>
+  </section>
+
+  <!-- 尾巴 -->
+  <section class="tier">
+    <div class="tier-head">
+      <h2><span class="n">§</span>使用提醒</h2>
+    </div>
+    <p style="font-family:var(--sans);font-size:14px;line-height:1.75;color:var(--ink-soft)">
+      这份扫图用来驱动两件事：① <strong>Phase 规划</strong>——Tier A 决定 Phase 1-2 的工作量；Tier B/C 决定 Phase 2-3；Tier D 决定哪些永远是灰卡。
+      ② <strong>数据 schema 压力测试</strong>——把这份表里最典型的几条（美国 H-1B 抽签、加拿大 PNP 分省、新加坡 PR 黑盒、香港两岸立法差异、以色列血统路径）拿去过一遍 PathCard schema，看能否承载；承载不了就调整 schema，这比直接做日本一条就上线更能让抽象经得住扩张。
+      任何进入真实产品的条目，数值、名称、阈值都必须按 RULES § 2.1 重新取证，不得从本文档直接照搬。
+    </p>
+  </section>
+
+  <footer class="btm">
+    <span>relocate · coverage survey v0.1</span>
+    <span>不是一手源数据 · 用于 scope 与 schema 压力测试</span>
+  </footer>
+
+</main>
+
+</body>
+</html>
