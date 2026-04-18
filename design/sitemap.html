@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>relocate · 信息架构提案 v0.2 · 从用户心智重做</title>
+<title>relocate · 信息架构提案 v0.3 · 引入 PathCard 抽象</title>
 <style>
   :root{
     --ink:#141414;
@@ -32,7 +32,7 @@
   }
   header.top .l{color:var(--ink)}
 
-  .page{max-width:760px;margin:0 auto;padding:64px 32px 140px}
+  .page{max-width:780px;margin:0 auto;padding:64px 32px 140px}
 
   .kicker{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 10px}
   h1{font-size:30px;font-weight:700;line-height:1.3;letter-spacing:-0.005em;margin:0 0 10px}
@@ -64,6 +64,70 @@
   code.k{font-family:var(--mono);font-size:13.5px;background:var(--rule-soft);padding:1px 5px;border-radius:2px}
   em.t{font-style:italic}
 
+  /* PathCard 视觉示意 —— 真实成品的雏形，不是产品稿 */
+  .pcard{
+    background:#fff;border:1px solid var(--ink);
+    margin:14px 0 8px;padding:16px 20px;
+    font-family:var(--sans);
+    display:grid;grid-template-columns:1fr auto;gap:12px;
+    align-items:start;
+  }
+  .pcard.diff{border-style:dashed;color:var(--ink-faint);background:transparent}
+  .pcard .row1{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    letter-spacing:0.1em;text-transform:uppercase;margin-bottom:4px;
+  }
+  .pcard .row1 span + span::before{content:" · ";margin:0 4px;color:var(--rule)}
+  .pcard .name{
+    font-family:var(--serif);font-size:17px;font-weight:700;line-height:1.3;
+    margin:0 0 6px;
+  }
+  .pcard .name code{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--ink-faint);margin-left:8px}
+  .pcard .desc{font-size:13.5px;line-height:1.6;color:var(--ink-soft);margin:0}
+  .pcard .badges{
+    display:flex;flex-direction:column;gap:6px;align-items:flex-end;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:0.06em;
+    color:var(--ink-faint);
+  }
+  .pcard .badges b{
+    color:var(--ink);font-weight:700;
+    border:1px solid var(--ink);padding:1px 6px;
+  }
+  .pcard.diff .badges b{border-color:var(--ink-faint);color:var(--ink-faint);border-style:dashed}
+  .pcard .footrow{
+    grid-column:1 / -1;
+    margin-top:10px;padding-top:10px;border-top:1px solid var(--rule-soft);
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    display:flex;justify-content:space-between;
+  }
+  .pcard.diff .footrow{border-top:1px dashed var(--rule)}
+
+  /* 字段表 */
+  table.spec-tbl{
+    width:100%;border-collapse:collapse;
+    font-family:var(--sans);font-size:13.5px;line-height:1.6;
+    margin:8px 0 10px;
+  }
+  table.spec-tbl th,table.spec-tbl td{
+    text-align:left;vertical-align:top;
+    padding:8px 4px;border-bottom:1px solid var(--rule);
+  }
+  table.spec-tbl th{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    letter-spacing:0.08em;text-transform:uppercase;font-weight:600;
+    border-bottom:1px solid var(--ink);
+  }
+  table.spec-tbl td code{font-family:var(--mono);font-size:12.5px;color:var(--ink);background:var(--rule-soft);padding:1px 5px;border-radius:2px}
+  table.spec-tbl td .s{display:block;color:var(--ink-faint);font-size:12px;margin-top:3px;font-family:var(--serif);font-style:italic}
+
+  /* ASCII 图 */
+  pre.diagram{
+    margin:18px 0 24px;padding:18px 22px;
+    background:#fff;border:1px solid var(--rule);
+    font-family:var(--mono);font-size:12.2px;line-height:1.55;
+    color:var(--ink);overflow-x:auto;white-space:pre;
+  }
+
   /* 用户独白 */
   blockquote.voice{
     margin:18px 0 24px;padding:14px 22px;
@@ -75,7 +139,7 @@
   blockquote.voice p{margin:0 0 0.6em}
   blockquote.voice p:last-child{margin:0}
 
-  /* 心智节点列表 */
+  /* 心智节点 */
   ol.mind{margin:8px 0 24px;padding:0;list-style:none;counter-reset:m}
   ol.mind > li{
     counter-increment:m;
@@ -95,34 +159,27 @@
     color:var(--ink-faint);letter-spacing:0.04em;
   }
 
-  /* ASCII 流图 */
-  pre.diagram{
-    margin:18px 0 24px;padding:18px 22px;
-    background:#fff;border:1px solid var(--rule);
-    font-family:var(--mono);font-size:12.2px;line-height:1.55;
-    color:var(--ink);overflow-x:auto;white-space:pre;
+  /* 视图清单 */
+  .view{
+    border-top:1px solid var(--rule);padding:18px 0 14px;
   }
-
-  /* 页面规格 */
-  .specs{margin:14px 0 24px}
-  .spec{border-top:1px solid var(--rule);padding:18px 0 14px}
-  .spec:last-child{border-bottom:1px solid var(--rule)}
-  .spec .id{font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.1em;text-transform:uppercase}
-  .spec .name{font-size:17px;font-weight:700;margin:2px 0 8px}
-  .spec dl{margin:0;font-family:var(--sans);font-size:13.5px;line-height:1.65}
-  .spec dl > div{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:5px 0}
-  .spec dl dt{
+  .view:last-of-type{border-bottom:1px solid var(--rule)}
+  .view .id{font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.1em;text-transform:uppercase}
+  .view .name{font-size:17px;font-weight:700;margin:2px 0 6px}
+  .view dl{margin:0;font-family:var(--sans);font-size:13.5px;line-height:1.65}
+  .view dl > div{display:grid;grid-template-columns:96px 1fr;gap:14px;padding:5px 0}
+  .view dl dt{
     font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
     text-transform:uppercase;letter-spacing:0.08em;padding-top:3px;
   }
-  .spec dl dd{margin:0;color:var(--ink-soft)}
-  .spec dl dd code{font-family:var(--mono);font-size:12px;color:var(--ink);background:var(--rule-soft);padding:1px 4px;border-radius:2px}
-  .spec .phase{
+  .view dl dd{margin:0;color:var(--ink-soft)}
+  .view dl dd code{font-family:var(--mono);font-size:12px;color:var(--ink);background:var(--rule-soft);padding:1px 4px;border-radius:2px}
+  .view .phase{
     display:inline-block;font-family:var(--mono);font-size:10.5px;
     letter-spacing:0.08em;padding:1px 6px;border:1px solid var(--ink);
     margin-left:8px;color:var(--ink);vertical-align:2px;
   }
-  .spec .phase.later{border-style:dashed;color:var(--ink-faint);border-color:var(--ink-faint)}
+  .view .phase.later{border-style:dashed;color:var(--ink-faint);border-color:var(--ink-faint)}
 
   /* 张力对照 */
   .tension{
@@ -133,7 +190,6 @@
   .tension p{margin:0 0 0.6em}
   .tension p:last-child{margin:0}
 
-  /* 开放问题 */
   ol.qs{margin:8px 0 0;padding:0 0 0 24px;font-family:var(--sans);font-size:14px;line-height:1.7}
   ol.qs li{margin:0 0 12px;color:var(--ink-soft)}
   ol.qs li strong{color:var(--ink);font-weight:700}
@@ -149,305 +205,374 @@
 
 <header class="top">
   <div class="l">relocate</div>
-  <div>internal · pre-Phase 0 · v0.2 · 2026-04-18</div>
+  <div>internal · pre-Phase 0 · v0.3 · 2026-04-18</div>
 </header>
 
 <main class="page">
 
   <p class="kicker">设计文档 · 不对外</p>
-  <h1>信息架构提案 v0.2</h1>
+  <h1>信息架构提案 v0.3</h1>
   <p class="meta">
-    <span>从用户心智重做</span>
-    <span>替代 v0.1（已废）</span>
+    <span>引入 PathCard 抽象</span>
+    <span>替代 v0.2（已废）</span>
     <span>状态 · 待拍板</span>
   </p>
 
   <!-- § 1 -->
   <section>
     <h2><span class="n">§ 1</span>用户心智的原话</h2>
-    <p class="lede">先把用户进站时脑子里的话原样写下。这是 IA 的唯一锚点。</p>
+    <p class="lede">承袭 v0.2 §1。从用户脑中的话出发，不是从产品功能出发。</p>
 
     <blockquote class="voice">
       <p>我想离开中国，可是去哪呢？哪里好？哪里适合我？哪里我能去呢？</p>
       <p>（或者是另一个我：我就是要去美国。）</p>
       <p>怎么去？需要什么？要做哪些准备？</p>
-      <p>我现在能去吗？我三年后能去吗？如果我现在不能去而三年后可能能去，我在这三年里要付出什么努力？找个跨国企业？读研？考雅思？学日语？还是什么？</p>
-      <p>有没有什么硬约束（比如某些公务员岗位会收护照之类的）？</p>
-      <p>我最好走哪条路径？别的国家我也想了解一下，我也想自己判断一下，看看自己适合哪里，万一我觉得自己更适合德国呢？</p>
+      <p>我现在能去吗？我三年后能去吗？如果我现在不能去而三年后可能能去，我在这三年里要付出什么努力？</p>
+      <p>有没有什么硬约束？我最好走哪条路径？别的国家我也想了解一下。</p>
     </blockquote>
 
-    <p>这段话里至少有 <strong>七个不同的心智节点</strong>，它们出现的顺序就是用户在站内移动的顺序。我们的 IA 不是去"教育"用户先做哪一步，而是<em class="t">让用户在每一个节点上都能找到下一个自然落点</em>。</p>
+    <ol class="mind">
+      <li><span class="q">"我想走，可是去哪？"</span> M01 · 探索：没目标，要全局看一眼。</li>
+      <li><span class="q">"我就是要去美国 / 德国 / 日本。"</span> M02 · 锁定国家。</li>
+      <li><span class="q">"怎么去？要做哪些准备？"</span> M03 · 沉到具体路径看规则。</li>
+      <li><span class="q">"现在能去吗？三年后呢？要付出什么？"</span> M04 · 现状 vs 阈值，差距与改造路径。</li>
+      <li><span class="q">"有没有硬约束？"</span> M05 · 出境侧 / 入境侧硬前置。</li>
+      <li><span class="q">"别的国家我也想看，自己比较一下。"</span> M06 · 横向对照。</li>
+      <li><span class="q">"我心里有数。"</span> M07 · 数据从哪来 / 没数据的诚实承认。</li>
+    </ol>
   </section>
 
-  <!-- § 2 -->
+  <!-- § 2 —— 核心：PathCard 抽象 -->
   <section>
-    <h2><span class="n">§ 2</span>把心智拆成节点</h2>
-    <p class="lede">每一节点对应"用户在那一刻想干的一件事"。后面的页面规格直接服务这些节点，而不是服务"产品逻辑"。</p>
+    <h2><span class="n">§ 2</span>核心抽象 · PathCard</h2>
+    <p class="lede">把"路径"提升为整个站点唯一的一等公民。每个 PathCard 是一个具有稳定字段的对象；网站的几乎所有列表与详情都是它的不同视图。</p>
 
-    <ol class="mind">
-      <li>
-        <span class="q">"我想走，可是去哪？"</span>
-        探索阶段。用户没有目标国，希望被引导：从他自己的几个属性出发，看哪些国家"够格 / 差一点 / 远不够"。
-        <span class="pages">→ P_explore</span>
-      </li>
-      <li>
-        <span class="q">"我就是要去美国 / 德国 / 日本。"</span>
-        目标已定，要直接看那一国的整体图景：有几条专业人才路径、各自规则有多苛、自己大致落在哪。
-        <span class="pages">→ P_country</span>
-      </li>
-      <li>
-        <span class="q">"怎么去？需要什么？要做哪些准备？"</span>
-        沉到一条具体路径里看规则全文：分数怎么打、阈值是什么、永居和入籍如何衔接。
-        <span class="pages">→ P_path</span>
-      </li>
-      <li>
-        <span class="q">"我现在能去吗？三年后能去吗？这三年我要付出什么？"</span>
-        当前现状 vs 阈值，差距是什么；填补每一条差距各自需要的钱、时间、动作（学语言、考资格、跨年薪档、读研）。
-        <span class="pages">→ P_plan（新增 · 这是过去缺失的核心）</span>
-      </li>
-      <li>
-        <span class="q">"有没有硬约束？"</span>
-        不是签证规则，而是"想申请/不能申请"的前置：护照管控（现役军公教 / 涉密岗位）、特定行业、特定经历。这一类我国一手源不一定好找，要诚实标"暂未覆盖"或"建议去某某查"。
-        <span class="pages">→ P_constraint（新增）</span>
-      </li>
-      <li>
-        <span class="q">"别的国家我也想看一下，我想自己比较。"</span>
-        从一国跳隔壁国，或者把两条不同国的路径对照着读。注意：不是"打分排序推荐"，是"把同一套字段的两份原文摆在一起，让用户自己看"。
-        <span class="pages">→ P_country / P_path 的横向链接 + 比较视图（Phase 1+）</span>
-      </li>
-      <li>
-        <span class="q">"我心里有数了。"</span>
-        哪怕我们答不全（很多问题超出 v0 能力），也要让用户知道——"这件事我们没数据，建议去 X 查"。RULES § 3.4 已经保护了这一点。
-        <span class="pages">→ 渗透在所有页的"暂未覆盖"显式表达</span>
-      </li>
-    </ol>
+    <p>这层抽象同时解决三件事：</p>
+    <p>第一，<strong>降低用户心智负担</strong>——无论用户从"探索""国家页""目录""比较"哪条路进来，看到的都是<em class="t">同样形状的卡片</em>，只是上下文与筛选不同。视觉一致 = 学习成本一次性。</p>
+    <p>第二，<strong>压缩 IA</strong>——v0.2 里 P_explore / P_index / P_country 看似是三个不同页，本质上都是 <code class="k">PathCardListView</code> + 不同 filter 预设。我们只设计一个组件，三处复用。</p>
+    <p>第三，<strong>对齐 RULES § 3.7</strong>——卡片只是<em class="t">摆事实</em>（这条路径有什么属性、当前用户与门槛的相对位置），不打分、不排序、不推荐。filter 是机械的，"对你够格 / 差几步 / 远不够"是布尔判定，不是产品意见。</p>
+
+    <h3><span class="n">2.1</span>PathCard 的字段</h3>
+    <p>每个 PathCard 由两类字段构成：<em class="t">展示字段</em>（用户能看到、出现在卡片正面）和<em class="t">索引字段</em>（不一定显示，但可被 filter 引用）。所有字段都受 RULES § 2.1 约束——必须有一手源，禁止估算。</p>
+
+    <table class="spec-tbl">
+      <thead>
+        <tr><th>字段</th><th>类型</th><th>用途</th></tr>
+      </thead>
+      <tbody>
+        <tr><td><code>id</code></td><td>string</td><td>稳定标识符，如 <code>jp-hsp-1-b-engineer</code><span class="s">永不变。URL、引用、changelog 都靠它。</span></td></tr>
+        <tr><td><code>country</code></td><td>ISO-3166-1 alpha-2</td><td>所属国家，如 <code>jp</code>。<span class="s">filter 维度 · 国家。</span></td></tr>
+        <tr><td><code>name</code></td><td>i18n string</td><td>路径中文名 + 官方原文名。<span class="s">"日本 · 高度専門職 1 号ロ · 技術系"。</span></td></tr>
+        <tr><td><code>category</code></td><td>enum</td><td>路径类别：<code>skilled</code> / <code>investor</code> / <code>family</code> / <code>national</code> 等。<span class="s">v0 只覆盖 <code>skilled</code>，其余卡片可存在但标"暂未覆盖"。</span></td></tr>
+        <tr><td><code>summary</code></td><td>text · 一句话</td><td>卡片正面那一行说明。<span class="s">不是营销话术，是规则的中性概括。</span></td></tr>
+        <tr><td><code>fitProfile</code></td><td>enum[]</td><td>路径适配的画像标签：<code>tech</code> / <code>research</code> / <code>finance</code> / <code>medical</code> 等。<span class="s">filter 维度 · 适配人群。</span></td></tr>
+        <tr><td><code>thresholds</code></td><td>结构化</td><td>路径硬阈值，如 HSP 的 <code>{score: 70}</code> 与 <code>{score: 80}</code> 两档。<span class="s">驱动"够格 / 差几步 / 远不够"的布尔判定。</span></td></tr>
+        <tr><td><code>permanentResidencyMonths</code></td><td>int / range</td><td>从获签到可申请永居的最短月数。<span class="s">filter 维度 · 时限（如"5 年内可永居"）。</span></td></tr>
+        <tr><td><code>citizenshipMonths</code></td><td>int / range</td><td>到可申请入籍的最短月数。<span class="s">同上。</span></td></tr>
+        <tr><td><code>coverageStatus</code></td><td>enum</td><td><code>covered</code> / <code>uncovered</code> / <code>retired</code><span class="s">v0 唯一一张是 <code>covered</code>，其余明列 <code>uncovered</code>。filter 默认包含 uncovered，体现 § 3.4 的诚实。</span></td></tr>
+        <tr><td><code>lastReviewedAt</code></td><td>ISO-8601 date</td><td>RULES § 5.1 必备。<span class="s">超 180 天降级"待复核"。filter 维度 · 数据新鲜度。</span></td></tr>
+        <tr><td><code>sourcesRef</code></td><td>string[]</td><td>该路径所引用的所有一手源 docId 列表。<span class="s">是 P_source 与 changelog 的反向索引。</span></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">2.2</span>PathCard 的视觉雏形</h3>
+    <p>作为参考，下面用真 HTML 摆三种状态的卡片：覆盖 / 差几步 / 暂未覆盖。这是<em class="t">骨架</em>而非视觉成品，但已能看出"统一视觉、不同上下文"的样子。</p>
+
+    <!-- 状态 1：覆盖 + 用户够格 -->
+    <div class="pcard">
+      <div>
+        <div class="row1">
+          <span>日本 · jp</span>
+          <span>skilled</span>
+          <span>tech / research</span>
+        </div>
+        <div class="name">高度専門職 1 号ロ · 技術系 <code>jp-hsp-1-b-engineer</code></div>
+        <p class="desc">由出入国在留管理庁主理的积分制签证。70 分准入，3 年永居；80 分加速线，1 年永居。</p>
+      </div>
+      <div class="badges">
+        <b>已覆盖</b>
+        <span>永居最短 36 个月</span>
+        <span>复核 2026-04-10</span>
+      </div>
+      <div class="footrow">
+        <span>对你的判定 · <b style="border:none;padding:0;color:var(--ink)">够格 · 70 分</b></span>
+        <span>查看路径详情 →</span>
+      </div>
+    </div>
+
+    <!-- 状态 2：覆盖 + 差几步 -->
+    <div class="pcard">
+      <div>
+        <div class="row1">
+          <span>日本 · jp</span>
+          <span>skilled</span>
+          <span>tech / research</span>
+        </div>
+        <div class="name">高度専門職 1 号ロ · 技術系 <code>jp-hsp-1-b-engineer</code></div>
+        <p class="desc">同上。同一张 PathCard 在不同用户上下文下呈现不同的"对你的判定"。</p>
+      </div>
+      <div class="badges">
+        <b>已覆盖</b>
+        <span>永居最短 36 个月</span>
+        <span>复核 2026-04-10</span>
+      </div>
+      <div class="footrow">
+        <span>对你的判定 · <b style="border:none;padding:0;color:var(--ink)">差 5 分到 70 档</b> · 看怎么补 →</span>
+        <span>查看路径详情 →</span>
+      </div>
+    </div>
+
+    <!-- 状态 3：暂未覆盖 -->
+    <div class="pcard diff">
+      <div>
+        <div class="row1">
+          <span>德国 · de</span>
+          <span>skilled</span>
+          <span>tech</span>
+        </div>
+        <div class="name">EU Blue Card <code>de-eu-bluecard</code></div>
+        <p class="desc">暂未覆盖：本路径所需一手源（移民局、税务局、统计局）尚未完成纳入。预计 Phase 2 起评估。</p>
+      </div>
+      <div class="badges">
+        <b>暂未覆盖</b>
+        <span>计划期 Phase 2</span>
+      </div>
+      <div class="footrow">
+        <span>—</span>
+        <span>不可点击</span>
+      </div>
+    </div>
+
+    <p>三张卡共用同一份 HTML 骨架，差别只在数据与一个 CSS 修饰类。这就是"<em class="t">把每条路径抽象成 class 中的 object</em>"在 UI 层的直接落地。</p>
+
+    <h3><span class="n">2.3</span>filter 是产品的中枢操作</h3>
+    <p>一旦 PathCard 字段完整，所有"列表型"页面都退化成同一个组件 <code class="k">PathCardListView(filter, sort, context)</code> 的不同实例。三个参数：</p>
+    <p><strong>filter</strong>　是字段上的布尔/范围谓词组合。例：<code class="k">country = 'us'</code>、<code class="k">category = 'skilled'</code>、<code class="k">permanentResidencyMonths ≤ 60</code>、<code class="k">fitProfile ∈ {tech}</code>、<code class="k">coverageStatus = 'covered'</code>。多个 filter 之间默认 AND，同字段多值 OR。</p>
+    <p><strong>sort</strong>　Phase 0 不引入。RULES § 3.7 不替用户排序——任何"按推荐度排"都是产品意见。退而求其次允许的中性排序：按国名字典序、按复核日期倒序。除此以外不开放。</p>
+    <p><strong>context</strong>　是当前用户的属性快照（来自 P_explore 的输入或 URL query string）。卡片用它来计算"对你的判定"那一行（够格 / 差几步 / 远不够）。无 context 时不显示这一行。</p>
   </section>
 
   <!-- § 3 -->
   <section>
-    <h2><span class="n">§ 3</span>站点地图（按心智流串起来）</h2>
-    <p class="lede">三种入路（探索 / 直奔某国 / 翻目录）都收敛到 P_country；从 P_country 沉到 P_path；P_path 再分出 P_plan / P_constraint / P_source。任何一页都能横向跳到隔壁国家。</p>
+    <h2><span class="n">§ 3</span>站点地图（PathCard 视角重画）</h2>
+    <p class="lede">v0.2 的 P_explore / P_index / P_country 在引入 PathCard 之后塌缩为同一组件的不同 filter。整个站点收敛到 4 个真实页面 + 3 类末梢页 + 1 个 Phase 1 占位。</p>
 
 <pre class="diagram">
-                       ┌────────────── / · 入口 ──────────────┐
-                       │                                      │
-                       │  一句话：我们做什么、不做什么          │
-                       │                                      │
-                       │  三种入路（不强制顺序）：              │
-                       │  ① 我还没想好 → P_explore             │
-                       │  ② 我想去 [国家] → P_country          │
-                       │  ③ 我想看你们覆盖了什么 → P_index     │
-                       └──────────────┬───────────────────────┘
-                                      │
-              ┌───────────────────────┼───────────────────────┐
-              ▼                       ▼                       ▼
-     ┌──────────────────┐   ┌──────────────────┐   ┌──────────────────┐
-     │  P_explore        │   │  P_index          │   │  P_country        │
-     │  探索：填几条      │──▶│  路径目录：覆盖     │──▶│  /countries/jp    │
-     │  自己的属性，回答  │   │  / 暂未覆盖 一目    │   │  这国有 N 条路径   │
-     │  "你够格 / 差几点 │   │  了然              │   │  + 适合谁          │
-     │  / 远不够"        │   └──────────────────┘   └────────┬─────────┘
-     └────────┬─────────┘                                    │
-              │ click 任一国家                                │
-              └───────────────────────────────────────────────┤
-                                                              ▼
-                                            ┌─────────────────────────────────┐
-                                            │  P_path                         │
-                                            │  /paths/jp-hsp-1-b-engineer     │
-                                            │  规则全文 · 阈值 · 时间表         │
-                                            │  通用叙述（Alice 作为示例）       │
-                                            └─┬──────────┬─────────────┬─────┘
-                                              │          │             │
-                       ┌──────────────────────┘          │             └──────────────────────┐
-                       ▼                                 ▼                                    ▼
-            ┌──────────────────┐               ┌──────────────────┐                ┌────────────────────┐
-            │  P_plan          │               │  P_constraint    │                │  P_source          │
-            │  现状 vs 阈值     │               │  护照 / 行业 /    │                │  字段溯源 · 快照    │
-            │  差距 · 改造路    │               │  经历前置         │                │  (从 [n] 角标)     │
-            │  钱/时/动作 三轴 │               │  + 诚实"暂未覆盖" │                └────────────────────┘
-            └──────────────────┘               └──────────────────┘
+                        ┌──────────────── / · 入口 ────────────────┐
+                        │                                          │
+                        │  一句话定位 + 三种入路（不强制顺序）：       │
+                        │                                          │
+                        │  ① 我还没想好  ─→ /explore                │
+                        │  ② 我就是要去  ─→ /list?country=…          │
+                        │  ③ 看你们覆盖  ─→ /list                    │
+                        └──────────────────┬───────────────────────┘
+                                           │
+                                           ▼
+                        ┌──────────────────────────────────────────┐
+                        │  PathCardListView                         │
+                        │  (同一个组件 · 三种入路收敛于此)            │
+                        │                                          │
+                        │  /explore       filter 由用户属性推导     │
+                        │  /list          无 filter 全列            │
+                        │  /list?...      URL filter，支持深链       │
+                        │                                          │
+                        │  卡片状态：覆盖 / 差几步 / 远不够 / 暂未覆盖  │
+                        └──────────────────┬───────────────────────┘
+                                           │ click any card
+                                           ▼
+                        ┌──────────────────────────────────────────┐
+                        │  PathDetailView · /paths/<id>             │
+                        │  路径详情：规则全文 · 阈值 · 时间表           │
+                        │  (Alice 作为示例穿在叙述里)                │
+                        └─┬──────────┬──────────┬─────────┬────────┘
+                          │          │          │         │
+                          ▼          ▼          ▼         ▼
+                     ┌────────┐┌────────┐┌────────┐┌──────────┐
+                     │ /plan  ││/cstr   ││/source ││/changelog│
+                     │ 现状 vs ││出境/入  ││字段溯源 ││规则变更   │
+                     │ 阈值    ││境硬约束 ││快照     ││ 日志     │
+                     │ 改造路  ││         ││         ││          │
+                     └────────┘└────────┘└────────┘└──────────┘
 
-      横向（任何一页底栏都能跳）：
-      P_path  ─────┬─── 同国其它路径（jp-hsp-1-i-research / jp-business-manager / …）
-                   └─── 同类型隔壁国（de-blue-card / nl-hsm / sg-tech-pass / …）
+      横向（任何卡片底栏 + 详情页底栏都能跳）：
+      → 同国其它路径（同 country、不同 path）
+      → 同类型隔壁国（同 category + fitProfile，不同 country）
 
-      末梢：P_changelog（规则变更日志）  ·  P_about（章程与不做清单）
-            P_account（Phase 1+ · 我的路径 / 通知订阅）
+      末梢：/about（章程）  ·  /account/*（Phase 1+ · 我的路径 / 通知）
 </pre>
 
-    <p>三个观察：</p>
-    <p>第一，<strong>没有"主页"，但有"入口"</strong>——入口承担三件事：交代我们做什么、给三种入路、收尾。RULES § 9.1 不让做"营销首页"，本入口只做导航。</p>
-    <p>第二，<strong>P_country 是真正的"枢纽"</strong>——所有路径都挂在它下面，一切横跳也以它为中转。Phase 0 只点亮一国，但骨架按"将来 N 国"设计。</p>
-    <p>第三，<strong>P_plan 是过去几版方案没有的</strong>——它直接对应你那条 "三年里要付出什么"，是网站从"匹配工具"走向"决策引擎"的关键页。</p>
+    <p>对比 v0.2，这版的塌缩：</p>
+    <p>① <code class="k">P_explore / P_index / P_country</code> 三页 → 一个 <code class="k">PathCardListView</code> 组件 + 三个 URL；② 每张卡的"对你的判定"由 context 自动计算，<strong>"探索"和"目录"在体验层不再是两件事</strong>，只是带不带 user context 的差别；③ "国家页"（/countries/jp）从枢纽降级为一个 filter 视图（<code class="k">/list?country=jp</code>），不再单独维护——因为"国家"的所有信息都自然摊到该国所有 PathCard 的内容里，无需独立的"国家介绍页"。</p>
   </section>
 
   <!-- § 4 -->
   <section>
-    <h2><span class="n">§ 4</span>逐页规格</h2>
-    <p class="lede">八个站内页 + 一个 Phase 1 占位。每一页都直接服务 § 2 中的某个心智节点，不绕。</p>
+    <h2><span class="n">§ 4</span>视图与页面规格</h2>
+    <p class="lede">区分两个层级：组件（PathCardListView / PathDetailView）和页面（具体 URL）。组件可被多页复用，页面是 URL × filter 预设的命名实例。</p>
 
-    <div class="specs">
+    <h3><span class="n">4.1</span>组件层</h3>
 
-      <div class="spec">
-        <div class="id">P0 · entry</div>
-        <div class="name">/ · 入口<span class="phase">Phase 0</span></div>
-        <dl>
-          <div><dt>服务心智</dt><dd>用户刚到，需要知道"这是什么、我下一步该点哪"。</dd></div>
-          <div><dt>看到</dt><dd>项目代号 + 一句话定位（"中文母语技术移民申请人的合法路径检索 · 不告诉你去哪、告诉你能去哪"）；三种入路按钮；底部 footer 到 P_about。</dd></div>
-          <div><dt>不看到</dt><dd>没有 hero、没有大数据条幅、没有 testimonial、没有"立即开始"。</dd></div>
-          <div><dt>关键</dt><dd>三种入路<strong>并列摆出，不暗示顺序</strong>。RULES § 3.7.1 不替用户判断，正始于此。</dd></div>
-        </dl>
-      </div>
+    <div class="view">
+      <div class="id">CMP-1</div>
+      <div class="name">PathCard</div>
+      <dl>
+        <div><dt>责任</dt><dd>呈现一个路径的稳定卡片视图。Properties: <code>path</code> (PathCard object) 与可选的 <code>context</code> (user attribute snapshot)。</dd></div>
+        <div><dt>状态</dt><dd>四态：covered+context、covered+无 context、uncovered、retired。视觉差异由 CSS 修饰类控制。</dd></div>
+        <div><dt>不做</dt><dd>不打分、不排序、不带"推荐"标识。卡片是<em class="t">事实</em>容器，不是产品意见容器。</dd></div>
+      </dl>
+    </div>
 
-      <div class="spec">
-        <div class="id">P_explore</div>
-        <div class="name">/explore · 探索<span class="phase">Phase 0</span></div>
-        <dl>
-          <div><dt>服务心智</dt><dd>M01 — 我想走，可是去哪？</dd></div>
-          <div><dt>看到</dt><dd>5–7 个最少必要属性的输入（年龄 / 学历 / 职业大类 / 当前年收 / 主要外语 / 家庭状况 / 护照状态）；提交后看到一张表：覆盖国 × 路径 × "你目前与门槛的相对关系"——三档：<em class="t">够格</em> / <em class="t">差几步</em> / <em class="t">远不够</em>，外加诚实的<em class="t">暂未覆盖</em>。</dd></div>
-          <div><dt>关键</dt><dd>不打分、不排序、不推荐。Phase 0 的实际数据只支撑"日本 HSP"那一行；其他国家行清楚标"暂未覆盖"，这种诚实本身就是产品差异。</dd></div>
-          <div><dt>出口</dt><dd>表里任意一行（含未覆盖行的国名）→ P_country；任意一行的"够格 / 差几步" → P_path 或 P_plan。</dd></div>
-        </dl>
-      </div>
+    <div class="view">
+      <div class="id">CMP-2</div>
+      <div class="name">PathCardListView</div>
+      <dl>
+        <div><dt>责任</dt><dd>展示一组 PathCard。Properties: <code>filter</code>、<code>sort</code>、<code>context</code>。</dd></div>
+        <div><dt>头部</dt><dd>当前 filter 摘要（"国家 · 日本 / 类别 · 技术人才 / 你目前可走的"）；filter 编辑器（增删条件、不带"重置为推荐"按钮）。</dd></div>
+        <div><dt>列表</dt><dd>纵向排列的 PathCard。已覆盖卡在前，暂未覆盖在后；同组内按字典序。</dd></div>
+        <div><dt>空态</dt><dd>filter 命中 0 张时显示"当前条件下，本产品覆盖范围内无路径符合"——<strong>不显示"试试放宽筛选"</strong>，因为那是产品在替用户判断"应该放宽"。</dd></div>
+      </dl>
+    </div>
 
-      <div class="spec">
-        <div class="id">P_index</div>
-        <div class="name">/index · 路径目录<span class="phase">Phase 0</span></div>
-        <dl>
-          <div><dt>服务心智</dt><dd>M01 / M06 — 我想看你们覆盖了什么 / 我想自己比较。</dd></div>
-          <div><dt>看到</dt><dd>表格：国家 × 路径名 × 适配画像 × 复核日期 × 状态（已覆盖 / 暂未覆盖）。Phase 0 只有 1 行"已覆盖"，其他国家以"暂未覆盖"明列——不是把它们藏起来。</dd></div>
-          <div><dt>关键</dt><dd>这是 RULES § 3.4 的最直接体现。"我们没做"比"假装覆盖"更可贵。</dd></div>
-          <div><dt>出口</dt><dd>已覆盖行 → P_country / P_path；未覆盖行 → 仅显示"暂未覆盖原因"（一手源不足 / 用户画像不匹配 / 待评估），不点击。</dd></div>
-        </dl>
-      </div>
+    <div class="view">
+      <div class="id">CMP-3</div>
+      <div class="name">PathDetailView</div>
+      <dl>
+        <div><dt>责任</dt><dd>呈现一条路径的全部叙述与规则。Properties: <code>path</code>、可选 <code>context</code>。</dd></div>
+        <div><dt>章节</dt><dd>§1 这是什么 / §2 打分表逐项（带 [n] 角标）/ §3 阈值含义 / §4 永居入籍时间表 / §5 一句"我们提供信息不提供决定"/ §6 "看怎么补 / 看硬约束" / §7 引用与快照。</dd></div>
+        <div><dt>个性化</dt><dd>有 context 时，叙述里的"以 Alice 为例"段落被替换为"以你为例"，但章节结构与文字不变。同一篇文章的两个实例。</dd></div>
+      </dl>
+    </div>
 
-      <div class="spec">
-        <div class="id">P_country</div>
-        <div class="name">/countries/&lt;cc&gt; · 国家页<span class="phase">Phase 0</span></div>
-        <dl>
-          <div><dt>服务心智</dt><dd>M02 — 我就是要去 X 国。</dd></div>
-          <div><dt>看到</dt><dd>该国对中文专业中产可走的所有路径（已覆盖 / 暂未覆盖一并列出）；每条路径配一段简介与一个"适合谁"标签；该国的整体生活成本 / 税制 / 永居入籍框架（一段长叙述，引用一手源）。</dd></div>
-          <div><dt>关键</dt><dd>Phase 0 日本页只点亮 HSP 一条；其他（経営・管理 / 特定技能 / 国籍法直系等）显式标"暂未覆盖"。</dd></div>
-          <div><dt>出口</dt><dd>路径卡 → P_path；底栏 → 同地区其他国家。</dd></div>
-        </dl>
-      </div>
+    <h3><span class="n">4.2</span>页面层</h3>
 
-      <div class="spec">
-        <div class="id">P_path</div>
-        <div class="name">/paths/&lt;path-id&gt; · 路径详情<span class="phase">Phase 0</span></div>
-        <dl>
-          <div><dt>服务心智</dt><dd>M03 — 怎么去？需要什么？要做哪些准备？</dd></div>
-          <div><dt>看到</dt><dd>大段叙述：这是什么路径、规则原文逐项讲解、阈值的含义、永居入籍时间表、一句"我们提供信息不提供决定"（§ 3.7.3）。Alice 作为<em class="t">示例</em>穿在叙述里，并非主角。</dd></div>
-          <div><dt>关键</dt><dd>这一页是网站的"知识主体"。文字密集、有衬线长读物气质。任何访客看到的内容相同。</dd></div>
-          <div><dt>出口</dt><dd>每个数字角标 [n] → P_source；末尾两个 CTA："看自己几分" → P_plan；"看硬约束" → P_constraint。</dd></div>
-        </dl>
-      </div>
+    <div class="view">
+      <div class="id">PAGE</div>
+      <div class="name">/ · 入口<span class="phase">Phase 0</span></div>
+      <dl>
+        <div><dt>组件</dt><dd>无主组件，只有三种入路链接 + footer。</dd></div>
+        <div><dt>不看到</dt><dd>没有 hero、没有 CTA、没有"立即开始"。</dd></div>
+      </dl>
+    </div>
 
-      <div class="spec">
-        <div class="id">P_plan</div>
-        <div class="name">/paths/&lt;id&gt;/plan · 准备计划<span class="phase">Phase 0 · 关键新增</span></div>
-        <dl>
-          <div><dt>服务心智</dt><dd>M04 — 我现在能去吗？三年后能去吗？要付出什么？</dd></div>
-          <div><dt>看到</dt><dd>用户输入自己的当前条件（与 P_explore 共享一份 schema）；按规则逐条比对，给出"你当前在哪一档、距下一档差多少、可以通过哪些动作填补"——每条改造路径独立列，标注预计成本（钱）、预计时长（月）、外溢副作用（如读研换签证类型）。</dd></div>
-          <div><dt>关键</dt><dd>这是把"决策引擎"从口号落到产品形态的页。RULES § 3.1 说"输出可执行的路径 + 概率 + 时间线 + 真实成本"——P_plan 是它的物化。<strong>同样，绝不替用户挑哪一条改造路</strong>，只把所有可改造路摊开。</dd></div>
-          <div><dt>风险</dt><dd>"填补成本"本身可能涉及第二层数据（语言学校学费 / JLPT 考试时长 / 国内研究生学费）——这些数据是否能找到一手源、是否进 schema，要按 RULES § 2.1.4 严判。Phase 0 可以只点亮"语言考试"和"年薪跨档"两条最容易找源的，其余明示"暂未覆盖"。</dd></div>
-          <div><dt>出口</dt><dd>每条改造路径 → 一个详情子页（Phase 1+，先用占位）；返回 P_path。</dd></div>
-        </dl>
-      </div>
+    <div class="view">
+      <div class="id">PAGE</div>
+      <div class="name">/explore · 探索<span class="phase">Phase 0</span></div>
+      <dl>
+        <div><dt>组件</dt><dd>用户属性输入 → 构造 context → 用 context 推导 default filter（默认 covered + uncovered 都包含）→ 渲染 PathCardListView。</dd></div>
+        <div><dt>关键</dt><dd>本质是"先填几个字段，然后看一份带 context 的列表"。</dd></div>
+      </dl>
+    </div>
 
-      <div class="spec">
-        <div class="id">P_constraint</div>
-        <div class="name">/paths/&lt;id&gt;/constraints · 准入硬约束<span class="phase">Phase 0 · 关键新增</span></div>
-        <dl>
-          <div><dt>服务心智</dt><dd>M05 — 公务员收护照之类的硬前置。</dd></div>
-          <div><dt>看到</dt><dd>分两类：<em class="t">出境侧</em>（中国大陆护照管控、敏感行业、政审、户籍等）与<em class="t">入境侧</em>（目标国对申请人的政治、犯罪、健康审查）。每一条都标"我国一手源 / 目标国一手源 / 暂未覆盖"。</dd></div>
-          <div><dt>关键</dt><dd>这是最容易"暂未覆盖"的一页——出境侧的相关规定散落在多个部门规章、地方性文件、内部规定里，未必有公开稳定一手源。诚实地说"我们查不到 / 这块你需要去 X 部门官网或问律师"，比塞东西强。</dd></div>
-          <div><dt>风险</dt><dd>RULES § 8.4 不跟"润学"灰色语境绑定——这一页措辞要尤其克制，只摆事实，不指导规避。</dd></div>
-        </dl>
-      </div>
+    <div class="view">
+      <div class="id">PAGE</div>
+      <div class="name">/list · 路径列表<span class="phase">Phase 0</span></div>
+      <dl>
+        <div><dt>组件</dt><dd>PathCardListView，filter 来自 URL query string（<code>/list?country=jp</code>、<code>/list?category=skilled&amp;status=covered</code>）。无 context。</dd></div>
+        <div><dt>关键</dt><dd>这一个 URL 同时承担了 v0.2 的"路径目录"与"国家页"两件事。深链可分享、可加书签。</dd></div>
+      </dl>
+    </div>
 
-      <div class="spec">
-        <div class="id">P_source</div>
-        <div class="name">/sources/&lt;authority&gt;/&lt;doc-id&gt; · 字段溯源<span class="phase">Phase 0</span></div>
-        <dl>
-          <div><dt>服务心智</dt><dd>M07 — 我心里有数（要看见数据从哪来）。</dd></div>
-          <div><dt>看到</dt><dd>一手源元信息（authority / URL / fetchedAt / sha256 / bytes / mediaType）；rawQuote；该源在快照仓中的所有历史版本；指向官方原始 URL 的链接。</dd></div>
-          <div><dt>关键</dt><dd>是 RULES § 2.4.1 + § 2.7 的 UI 落地。从产品任意角标 [n] 都能落到这一页。</dd></div>
-        </dl>
-      </div>
+    <div class="view">
+      <div class="id">PAGE</div>
+      <div class="name">/paths/&lt;id&gt; · 路径详情<span class="phase">Phase 0</span></div>
+      <dl>
+        <div><dt>组件</dt><dd>PathDetailView。可选 <code>?as=you&amp;age=…</code> 注入 context 实现个性化实例。</dd></div>
+      </dl>
+    </div>
 
-      <div class="spec">
-        <div class="id">P_changelog</div>
-        <div class="name">/paths/&lt;id&gt;/changelog · 规则变更日志<span class="phase">Phase 0</span></div>
-        <dl>
-          <div><dt>服务心智</dt><dd>M07 — 我心里有数（规则在变，谁在替我看着）。</dd></div>
-          <div><dt>看到</dt><dd>每次复核留下的痕迹：日期 / 字段 / 旧值 / 新值 / 旧 sha / 新 sha / 影响范围。最早一条是 Phase 0 的首录。</dd></div>
-        </dl>
-      </div>
+    <div class="view">
+      <div class="id">PAGE</div>
+      <div class="name">/paths/&lt;id&gt;/plan · 准备计划<span class="phase">Phase 0 · 关键</span></div>
+      <dl>
+        <div><dt>组件</dt><dd>承袭 v0.2 P_plan：现状 vs 阈值 → 列出每条改造路径（语言、年薪、资格、学历），各自标 钱 / 时长 / 副作用。</dd></div>
+        <div><dt>关键</dt><dd>这是"改造路径列表"——它<strong>本身也是一份 PathCard 风格的列表</strong>，只不过卡片承载的是"补丁"而不是"路径"。我们可以复用 PathCard 的视觉骨架（不强求复用组件），让用户看到"改造一条 = 解锁一条主路径"的对应感。</dd></div>
+      </dl>
+    </div>
 
-      <div class="spec">
-        <div class="id">P_about</div>
-        <div class="name">/about · 章程<span class="phase">Phase 0</span></div>
-        <dl>
-          <div><dt>服务心智</dt><dd>M07 — 这站靠不靠谱？</dd></div>
-          <div><dt>看到</dt><dd>项目是什么 / 为谁做 / 为谁不做 / 数据原则 / 商业原则 / 不做清单。RULES + README 的对外可读改写。</dd></div>
-        </dl>
-      </div>
+    <div class="view">
+      <div class="id">PAGE</div>
+      <div class="name">/paths/&lt;id&gt;/constraints · 准入硬约束<span class="phase">Phase 0 · 关键</span></div>
+      <dl>
+        <div><dt>组件</dt><dd>分两栏：出境侧（中国大陆护照管控、敏感行业、政审）+ 入境侧（目标国政治、犯罪、健康审查）。每条标"一手源 / 暂未覆盖"。</dd></div>
+        <div><dt>关键</dt><dd>大量"暂未覆盖"是必然。措辞克制（RULES § 8.4）。</dd></div>
+      </dl>
+    </div>
 
-      <div class="spec">
-        <div class="id">P_account</div>
-        <div class="name">/account/* · 我的路径 / 通知<span class="phase later">Phase 1+</span></div>
-        <dl>
-          <div><dt>服务心智</dt><dd>"我想保存我算的这一份 / 想知道规则变了。"</dd></div>
-          <div><dt>关键</dt><dd>RULES § 7.3 年费功能。Phase 0 不实现，仅在 P_plan 末尾留占位按钮。</dd></div>
-        </dl>
-      </div>
+    <div class="view">
+      <div class="id">PAGE</div>
+      <div class="name">/sources/&lt;authority&gt;/&lt;doc-id&gt; · 字段溯源<span class="phase">Phase 0</span></div>
+      <dl>
+        <div><dt>组件</dt><dd>独立组件 SourceView。展示一手源元信息、rawQuote、历史快照列表。</dd></div>
+      </dl>
+    </div>
 
+    <div class="view">
+      <div class="id">PAGE</div>
+      <div class="name">/paths/&lt;id&gt;/changelog · 规则变更日志<span class="phase">Phase 0</span></div>
+      <dl>
+        <div><dt>组件</dt><dd>独立 ChangelogView。日期 / 字段 / 旧值 / 新值 / 旧 sha / 新 sha / 影响范围。</dd></div>
+      </dl>
+    </div>
+
+    <div class="view">
+      <div class="id">PAGE</div>
+      <div class="name">/about · 章程<span class="phase">Phase 0</span></div>
+      <dl>
+        <div><dt>组件</dt><dd>纯文本叙述。RULES + README 的对外可读版本。</dd></div>
+      </dl>
+    </div>
+
+    <div class="view">
+      <div class="id">PAGE</div>
+      <div class="name">/account/* · 我的路径 / 通知<span class="phase later">Phase 1+</span></div>
+      <dl>
+        <div><dt>组件</dt><dd>用户保存的 path id 列表 = "我收藏的 PathCard"——同一个组件再次复用。</dd></div>
+      </dl>
     </div>
   </section>
 
   <!-- § 5 -->
   <section>
-    <h2><span class="n">§ 5</span>张力：用户想比较，Phase 0 只有一国</h2>
-    <p class="lede">这是新方案最大的诚实点：用户心智天然要比较，但我们 Phase 0 只能点亮日本一条路径。这两件事如何共存？</p>
+    <h2><span class="n">§ 5</span>抽象的代价 · 必须自陈</h2>
+    <p class="lede">每一层抽象都有代价。这里把 PathCard 抽象不能解决的问题写下，避免下一轮再被问出。</p>
 
     <div class="tension">
-      <h4>取舍</h4>
-      <p>IA 骨架按"未来覆盖 N 国"设计——P_explore 的表、P_index 的目录、P_country 的枢纽位置都是为多国预留的。Phase 0 不假装多国，而是在每一处显式列出"暂未覆盖"的国家清单（§ 9.2 提到的战略天花板的 ~15 国）。</p>
-      <p>这样做的代价是 Phase 0 上线时网站看上去 "<em class="t">很空</em>"——大半个 P_explore 表、大半个 P_index 目录都是"暂未覆盖"灰行。但这就是事实。RULES § 3.4 已经决定了"明确说我们还没做比假装覆盖更体面"。</p>
-      <p>这样做的好处是 IA 不会在 Phase 1 加第二国时被迫推倒重写——这正是 § 9.6 失败清单 F4 想避免的事。</p>
+      <h4>① 路径的"故事感"会被卡片磨平吗？</h4>
+      <p>会，如果只看 /list。但用户从卡片点进去后到达的 PathDetailView 仍是衬线长读物——故事感留在详情层，列表层负责扫视。这是"<em class="t">概览统一 / 详情个性</em>"的常见取舍。</p>
+    </div>
+
+    <div class="tension">
+      <h4>② 不同路径字段不一定同构（如积分制 vs 抽签制）</h4>
+      <p>美国 H-1B / EB 这类没有"积分阈值"的路径，<code>thresholds</code> 字段会是 <code>null</code> 或换成"抽签率 / 排期年数"。PathCard 的字段集需要做<em class="t">差异分支</em>而非"假装统一"。这要求我们在 schema 上引入<code class="k">type</code> 字段（<code>scoring</code> / <code>lottery</code> / <code>queued</code> / <code>investor</code> / …），不同 type 有不同的子字段集。Phase 0 只覆盖 <code>scoring</code>，但 schema 必须为其他 type 留口子，否则 Phase 1 加美国时整个数据层重写。</p>
+    </div>
+
+    <div class="tension">
+      <h4>③ "适合谁"的 fitProfile 标签由谁定义？</h4>
+      <p>这是隐藏的产品意见。tech / research / finance / medical 这种粗分类还行，但一旦细分到"前端工程师"或"半导体工艺工程师"，就会变成产品在替日本入管局的职业列表做翻译——RULES § 2.1.4 警告过这种行为。Phase 0 标签必须保持极粗，宁可让用户感到"分得不细"，也不要让用户感到"我们替他做了职业判断"。</p>
+    </div>
+
+    <div class="tension">
+      <h4>④ filter 的字段集 = schema 的子集</h4>
+      <p>这点反过来反推 schema 设计：任何"用户可能想筛"的维度，背后都必须有对应字段，且字段必须满足 RULES § 2.1（一手源、五元组、有快照）。"是否对中国大陆护照宽松"这种维度，没有现成一手源量化，<strong>就不能成为 filter</strong>——这是抽象的硬边界，不是 UI 的偷懒。</p>
     </div>
   </section>
 
   <!-- § 6 -->
   <section>
-    <h2><span class="n">§ 6</span>这版与 v0.1 的关键变化</h2>
-
-    <p><strong>1. 入口从"路径列表"改为"三种入路"</strong>——v0.1 假设用户已经选定要看路径，v0.2 承认"还没想好"是合法的初始状态。</p>
-    <p><strong>2. 增加 P_explore</strong>——直接服务"我想走，去哪"那一句心智。这是 v0.1 缺失的最大节点。</p>
-    <p><strong>3. 引入 P_country 作为枢纽</strong>——v0.1 把"路径"作为唯一一级，但用户脑中"国家"先于"路径"存在。</p>
-    <p><strong>4. 增加 P_plan</strong>——直接服务"三年后能去吗、要付出什么"。这是网站从"信息库"走向"决策引擎"的关键，也是过去几版被你诟病"沦为查询工具"的解法。</p>
-    <p><strong>5. 增加 P_constraint</strong>——直接服务"公务员收护照"那条。诚实地把出境侧硬约束摆出来，哪怕大量"暂未覆盖"。</p>
-    <p><strong>6. 横向跳转作为一等公民</strong>——P_country / P_path 底栏都能跳隔壁国家，对应"万一我更适合德国"那条心智。</p>
-    <p><strong>7. P_path 不再是"事实首页"</strong>——它退到第三层，是用户沉到具体路径里看规则全文的页，不再承担"承接所有访客"的职责。</p>
-  </section>
-
-  <!-- § 7 -->
-  <section>
-    <h2><span class="n">§ 7</span>需要你拍板的开放问题</h2>
+    <h2><span class="n">§ 6</span>需要你拍板的开放问题</h2>
 
     <ol class="qs">
-      <li><strong>Phase 0 是否实现 P_explore 与 P_index？</strong>这两个页骨架完整需要假设"未来 ~15 国清单"已确定。如果 Phase 0 只想以 P_country/jp + P_path/...（+ 必要末梢）上线，可以推迟到 Phase 1。但代价是 Phase 0 dogfood 期间没有"探索入路"。</li>
-      <li><strong>P_plan 的"改造路径"在 Phase 0 里点亮几条？</strong>我建议只点亮两条最有一手源支撑的——"考 N1 日语 +5 分"与"跨年薪档 +X 分"。其余（读研、考资格）显式"暂未覆盖"。这样不破 RULES § 2.1.4。</li>
-      <li><strong>P_constraint 的出境侧要不要做？</strong>如果做，要直面"我国一手源稀缺、可能大段空白、措辞要克制"的挑战。如果不做，至少要在 P_path 里加一行"出境侧准入约束不在本产品覆盖范围"——把缺席本身明示。</li>
-      <li><strong>~15 国战略天花板的具体清单</strong>，是否要先开一轮独立讨论敲定？这清单一旦确定，会出现在 P_explore 和 P_index 的"暂未覆盖"列表里，意味着我们对外承诺"这些国未来会做"。</li>
-      <li><strong>"暂未覆盖"是否进入产品 schema</strong>？也就是说，是否在数据层为每一条未覆盖路径预留一条记录（含"未覆盖原因"字段）。如果是，schema 就需要从 Phase 0 起就支持"路径状态"枚举。如果不是，UI 上的灰行只是 hardcoded 的列表，schema 不动。</li>
+      <li><strong>PathCard 的字段集 v0 锁哪几个？</strong>我列了 11 个。Phase 0 只覆盖 <code>scoring</code> type 的日本 HSP 一条；其余字段必须可空、可缺。最危险的是 <code>fitProfile</code>——它的标签集一旦写进 i18n 文件就难改。建议 v0 只引入 <code>tech</code>、<code>research</code>、<code>medical</code>、<code>finance</code>、<code>arts</code>、<code>other</code> 六个，宁少勿多。</li>
+      <li><strong>filter 维度对外开放哪几个？</strong>建议 v0 开放：country、category、coverageStatus、permanentResidencyMonths（"几年内可永居"）四个。fitProfile 不在 v0 开放（避免上一条的风险）。</li>
+      <li><strong>"对你的判定"是否进 v0？</strong>它要求实现 thresholds 比对引擎。Phase 0 只有一条路径，引擎会非常薄；但一旦引入，未来添加 lottery type 的路径时它要泛化到"抽签率与你画像的关系"。是否把这件事放到 Phase 1？放的话 v0 的 PathCard 在无 context 下也能用，缺一个用户最想看的卖点。</li>
+      <li><strong>P_plan 的"改造路径"是否复用 PathCard 视觉？</strong>建议复用骨架不复用组件——视觉一致让用户更容易理解，但底层数据模型是 Patch object（"考 N1 +5 分 · 6-12 月 · ¥10-30k"）而非 Path object，不应混到同一个类里。</li>
+      <li><strong>~15 国战略天花板的具体清单</strong>承袭 v0.2 §7 Q4。PathCard 抽象使这件事更迫切——/list 一上线，所有 uncovered 卡片都要有数据（哪怕只有 country / name / coverageStatus）。</li>
     </ol>
   </section>
 
   <footer class="btm">
-    <span>relocate · IA proposal v0.2</span>
-    <span>结构定后再画 P_path 的视觉样稿</span>
+    <span>relocate · IA proposal v0.3</span>
+    <span>结构 + 抽象定后再画详情页样稿</span>
   </footer>
 
 </main>
