@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>日本 · 高度専門職 1 号ロ · 技術系 — 路径介绍</title>
+<style>
+  :root{
+    --ink:#141414;
+    --ink-soft:#3d3d3d;
+    --ink-faint:#8a8a8a;
+    --rule:#d8d8d8;
+    --rule-soft:#ebebeb;
+    --bg:#fdfbf7;
+    --serif:"Source Han Serif SC","Noto Serif SC",Georgia,"Times New Roman",serif;
+    --sans:"PingFang SC",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    --mono:"SFMono-Regular","Menlo",Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--serif);
+    font-size:16px;
+    line-height:1.85;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+
+  header.top{
+    padding:14px 40px;
+    border-bottom:1px solid var(--rule);
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em;
+    background:#fff;
+  }
+  header.top .l{color:var(--ink)}
+
+  .page{max-width:720px;margin:0 auto;padding:72px 32px 140px}
+
+  .kicker{
+    font-family:var(--mono);
+    font-size:11px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--ink-faint);
+    margin:0 0 10px;
+  }
+  h1{
+    font-size:30px;font-weight:700;
+    line-height:1.3;letter-spacing:-0.005em;
+    margin:0 0 10px;
+  }
+  .meta{
+    font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);
+    letter-spacing:0.04em;margin:0 0 40px;
+    padding-bottom:18px;border-bottom:1px solid var(--ink);
+  }
+  .meta span + span::before{content:" · ";margin:0 4px;color:var(--rule)}
+
+  section{margin:44px 0 0}
+  section > h2{
+    font-size:20px;font-weight:700;line-height:1.35;
+    margin:0 0 6px;
+  }
+  section > h2 .n{
+    font-family:var(--mono);font-size:12.5px;font-weight:400;
+    color:var(--ink-faint);letter-spacing:0.08em;margin-right:10px;
+  }
+  section > .lede{
+    font-family:var(--serif);font-style:italic;
+    color:var(--ink-soft);font-size:15.5px;line-height:1.7;
+    margin:0 0 22px;
+  }
+
+  p{margin:0 0 1.1em}
+  p + p{text-indent:0}
+
+  h3{
+    font-size:16px;font-weight:700;
+    margin:28px 0 8px;
+  }
+  h3 .n{
+    font-family:var(--mono);font-size:11.5px;font-weight:400;
+    color:var(--ink-faint);letter-spacing:0.06em;margin-right:8px;
+  }
+
+  /* 行内术语 */
+  .term{font-style:italic}
+  code.k{
+    font-family:var(--mono);font-size:13.5px;
+    background:var(--rule-soft);padding:1px 5px;border-radius:2px;
+  }
+
+  /* 示例块：左竖线的叙事性引文 */
+  aside.eg{
+    margin:22px 0;padding:2px 0 2px 20px;
+    border-left:2px solid var(--ink);
+    font-size:15px;line-height:1.75;color:var(--ink-soft);
+  }
+  aside.eg .tag{
+    font-family:var(--mono);font-size:10.5px;
+    letter-spacing:0.14em;text-transform:uppercase;
+    color:var(--ink-faint);margin-bottom:6px;display:block;
+  }
+  aside.eg p:last-child{margin-bottom:0}
+  aside.eg strong{color:var(--ink);font-weight:700}
+
+  /* 穿在叙述里的小表格 */
+  table.inline{
+    width:100%;border-collapse:collapse;
+    font-family:var(--sans);font-size:13.5px;line-height:1.55;
+    margin:14px 0 22px;
+  }
+  table.inline th,table.inline td{
+    padding:8px 4px;
+    border-bottom:1px solid var(--rule);
+    text-align:left;vertical-align:top;
+  }
+  table.inline th{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    letter-spacing:0.08em;text-transform:uppercase;font-weight:600;
+    border-bottom:1px solid var(--ink);
+  }
+  table.inline td.n{font-family:var(--mono);text-align:right;white-space:nowrap}
+  table.inline caption{
+    text-align:left;font-family:var(--mono);font-size:10.5px;
+    letter-spacing:0.1em;text-transform:uppercase;color:var(--ink-faint);
+    padding-bottom:6px;
+  }
+
+  /* 脚注角标 */
+  a.fn{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    text-decoration:none;vertical-align:2px;margin-left:2px;
+  }
+  a.fn:hover{color:var(--ink)}
+
+  /* 规则原文引用 */
+  blockquote.q{
+    margin:16px 0 22px;padding:14px 20px;
+    background:#fff;border:1px solid var(--rule);
+    font-family:var(--sans);font-size:13.5px;line-height:1.7;color:var(--ink-soft);
+  }
+  blockquote.q cite{
+    display:block;font-style:normal;font-family:var(--mono);
+    font-size:11px;color:var(--ink-faint);letter-spacing:0.04em;margin-top:6px;
+  }
+
+  /* 引用章节 */
+  ol.refs{
+    list-style:none;margin:12px 0 0;padding:0;
+    font-family:var(--sans);font-size:13px;
+  }
+  ol.refs li{
+    padding:10px 0;border-bottom:1px solid var(--rule);
+    display:grid;grid-template-columns:30px 1fr 110px;gap:16px;
+  }
+  ol.refs .i{font-family:var(--mono);color:var(--ink-faint)}
+  ol.refs .auth{font-weight:600;color:var(--ink)}
+  ol.refs .ttl{color:var(--ink-soft)}
+  ol.refs .sha{
+    display:block;font-family:var(--mono);font-size:10.5px;
+    color:var(--ink-faint);margin-top:3px;word-break:break-all;
+  }
+  ol.refs .date{
+    font-family:var(--mono);font-size:11px;color:var(--ink-faint);text-align:right;
+  }
+
+  footer.btm{
+    margin-top:80px;padding-top:14px;
+    border-top:1px solid var(--rule);
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    display:flex;justify-content:space-between;
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="l">relocate</div>
+  <div>rules 2025-10-08 · reviewed 2026-04-10</div>
+</header>
+
+<main class="page">
+
+  <p class="kicker">路径 · 日本 · 高度専門職</p>
+  <h1>高度専門職 1 号ロ · 技術系</h1>
+  <p class="meta">
+    <span>类别 jp-hsp-1-b-engineer</span>
+    <span>对应 入管法 § 7-1-2</span>
+    <span>本页版本 v0.1</span>
+  </p>
+
+  <!-- § 1 -->
+  <section>
+    <h2><span class="n">§ 1</span>这是什么路径</h2>
+    <p class="lede">一条为在日本境外或境内、从事技术与工程类工作的申请人设计的、以"积分"而非"抽签"分配名额的长期居留路径。</p>
+
+    <p>
+      日本的「<span class="term">高度専門職</span>」签证分为三个子类：1 号イ 面向学术研究、1 号ロ 面向以技术与自然科学知识为主的职业、1 号ハ 面向经营管理。本页讨论的是其中 <strong>1 号ロ</strong>——这是软件工程师、数据科学、算法研究、硬件设计、半导体、制药研发等职业在日本最主流的长期居留入口<a class="fn" href="#r1">[1]</a>。
+    </p>
+
+    <p>
+      它与大多数国家的技术移民路径都不同，不走抽签（如美国 H-1B），不按"紧缺职业表"分配名额（如英国 Skilled Worker），而是使用一张公开的打分表：把申请人的学历、年龄、职务经历、年收入、日语能力、特殊资格等维度逐条折算为分，合计 70 分即可进入该签证的准入门槛，80 分则直接触发"一年永居"的加速通道<a class="fn" href="#r1">[1]</a>。
+    </p>
+
+    <p>
+      因为门槛是一张<em>规则</em>、不是一个<em>名额</em>，这条路径的可预测性在发达国家的技术移民里是最高的之一。代价是：它不替任何人做职业判断——是否"够格"走这条路，由表上的每一条共同决定，缺一分就是缺一分。这也正是把这张表完整呈现在你面前的理由。
+    </p>
+  </section>
+
+  <!-- § 2 -->
+  <section>
+    <h2><span class="n">§ 2</span>打分表逐项</h2>
+    <p class="lede">以下九类是出入国在留管理庁发布的「ポイント計算表（技術・人文知識・国際業務 対応）」的全部加分维度，我们在此按原表顺序逐条复述并解释。</p>
+
+    <h3><span class="n">2.1</span>学历</h3>
+    <p>
+      学历按最高学历一次计入，不累加。博士 30 分，硕士 20 分，学士 10 分；若同时持有两个以上不同专业的硕博学位，允许叠加一次 +5 分（称作<span class="term">复数学位加算</span>）<a class="fn" href="#r1">[1]</a>。
+    </p>
+    <p>
+      这里的"学历"以取得学位的院校所授予的证书为准，不以读研所在国家或机构是否被日本认证为评价依据——实务上，中国大陆 985/211 的学士学位证在申请材料中以学位证 + 成绩单 + 公证三件套提交即可。
+    </p>
+
+    <h3><span class="n">2.2</span>职务经历</h3>
+    <p>
+      从取得学位后、在与申请职务<em>相关</em>的岗位上工作的年限，按三档切分：3 年以上 5 分，5 年以上 10 分，7 年以上 15 分，10 年以上 20 分<a class="fn" href="#r1">[1]</a>。所谓"相关"，要求新雇主的职务内容与过往经历在技术栈、业务方向、岗位职能中至少一项具有延续性；跳槽跨行业的申请人在此档有争议。
+    </p>
+
+    <h3><span class="n">2.3</span>年收 × 年龄</h3>
+    <p>
+      这是表上分值最高、同时也是结构最复杂的一栏。原表按年龄分四档（~29、30-34、35-39、40+），每档再按年薪切档，最高可得 40 分<a class="fn" href="#r1">[1]</a>。
+    </p>
+
+    <table class="inline">
+      <caption>年收 × 年齢（摘要 · 以原表为准）</caption>
+      <thead>
+        <tr>
+          <th>年齢</th>
+          <th>500–700 万</th>
+          <th>700–900 万</th>
+          <th>900–1000 万</th>
+          <th>1000+ 万</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>~29</td><td class="n">15</td><td class="n">25</td><td class="n">35</td><td class="n">40</td></tr>
+        <tr><td>30–34</td><td class="n">10</td><td class="n">20</td><td class="n">30</td><td class="n">35</td></tr>
+        <tr><td>35–39</td><td class="n">—</td><td class="n">15</td><td class="n">25</td><td class="n">30</td></tr>
+        <tr><td>40+</td><td class="n">—</td><td class="n">—</td><td class="n">20</td><td class="n">25</td></tr>
+      </tbody>
+    </table>
+
+    <p>
+      "年收"以税前合同年薪为准，奖金与 RSU 计入，股票期权不计。换句话说，年龄越大、分数天花板越低；而在同龄段内，年薪跨一个档要涨 10 分。这是实务中大多数申请人的分差焦点。
+    </p>
+
+    <h3><span class="n">2.4</span>日语能力</h3>
+    <p>
+      N1 加 15 分（若同时有外国学位再 +5 分），N2 或日本高校学位 10 分，其他认证 5 分<a class="fn" href="#r1">[1]</a>。这里的 JLPT 成绩以证书为准，不以自报为准——我们在下面的"示例"中提到的 N2 只是申请人声明，实际申报时需要提交证书扫描件。
+    </p>
+
+    <h3><span class="n">2.5</span>其他加分</h3>
+    <p>
+      包括：特定产业／学科的博士后经历、从事先进技术领域（AI、再生能源、半导体等由内阁府指定名单）、发表在内阁府指定期刊的论文、申请者本人持有特定国家资格、在日本 5 年以上等 <a class="fn" href="#r1">[1]</a>。每项独立，不重复计入。
+    </p>
+  </section>
+
+  <!-- § 3 -->
+  <section>
+    <h2><span class="n">§ 3</span>阈值的含义</h2>
+    <p class="lede">70 和 80 是两条不同的规则线。越过前者你才开始"计时"，越过后者才触发加速。</p>
+
+    <p>
+      70 分是高度専門職 1 号ロ 的<em>准入门槛</em>——合计到达 70 分的申请人可以在日本拿到最长 5 年的在留资格，并在入国 3 年后申请永居<a class="fn" href="#r1">[1]</a><a class="fn" href="#r2">[2]</a>。未达 70 分的申请人在这条路径下无事可议。
+    </p>
+
+    <p>
+      80 分是加速线——合计到达 80 分可直接以 1 年永居为目标<a class="fn" href="#r2">[2]</a>。在实务上，软件工程师从 70 分进入 80 分的可行路径通常是：提高年薪跨一档（+10）或把 N2 升到 N1（+5），很少有人靠论文与资格突破。
+    </p>
+
+    <blockquote class="q">
+      高度人材外国人として認定された方のうち、高度人材ポイント制に基づく合計点が 80 点以上の方については、1 年以上の在留歴で永住許可申請が可能となる。
+      <cite>— 法務省 出入国在留管理庁「高度人材ポイント制の概要」</cite>
+    </blockquote>
+  </section>
+
+  <!-- § 4 -->
+  <section>
+    <h2><span class="n">§ 4</span>例：34 岁软件工程师能拿多少分</h2>
+    <p class="lede">为把前三节里的规则落到一个人身上，我们跑一个具体的申请人——注意这不是在劝你是否该走，只是在演示这张表怎么算。</p>
+
+    <aside class="eg">
+      <span class="tag">示例 · Alice</span>
+      <p>
+        34 歲，中国大陆本科毕业（软件工程学士），毕业后一直在互联网公司做后端研发，至今 7 年。现职于某东京上市公司发出 offer，年薪合约 <code class="k">¥18,000,000</code>（含奖金），持 JLPT N2 证书。
+      </p>
+    </aside>
+
+    <p>
+      按 § 2 逐条核对：学历项计 <strong>10 分</strong>；职务经历在 "7 年以上" 档，<strong>15 分</strong>；年龄落在 30–34 档，年收在 1000 万以上档，合得 <strong>35 分</strong>；日语 N2，<strong>10 分</strong>；其他加分项 Alice 未申报。合计 <strong>70 分</strong>。
+    </p>
+
+    <p>
+      <em>一句注记</em>：与我们在 v0.0 草稿中写的 "65 分" 不同，这次重算是因为我们在 2.2 节把 "7 年以上" 一档的分值原表中实际是 15 分而非 10 分。换句话说，同一张表，我们自己第一次读就会算错。这正是我们把整张表全文贴在上面的原因：你可以跟着我们一起算，也可以指出我们在哪里读错。
+    </p>
+  </section>
+
+  <!-- § 5 -->
+  <section>
+    <h2><span class="n">§ 5</span>在东京的生活是否能持续</h2>
+    <p class="lede">一个人是否"能走下去"，不等于他是否"够分"。这一节把 Alice 的收入结构摊开。</p>
+
+    <p>
+      在 § 2 的年薪前提下（1800 万円 / 年），东京区内的雇主通常会把它拆为 12 个月月薪 + 2~4 个月奖金。按 14 个月均摊口径，月薪约 <code class="k">¥1,280,000</code>，或按 12 个月含奖金均摊口径约 <code class="k">¥1,500,000</code>。本页采用前者，因为税务与住宅贷款评估多按月薪计。
+    </p>
+
+    <p>
+      从中扣除所得税（累进，参考国税庁 2025 税率表<a class="fn" href="#r3">[3]</a>）、住民税（前年所得的 10%）、厚生年金与健康保险（约月收 15%~17%），并按家户为"一人" 的简化假设，实得月入约为 <code class="k">¥880,000</code>。东京 23 区 1LDK 的房租中位 2025 年约 <code class="k">¥178,000</code>（総務省小売物価統計<a class="fn" href="#r4">[4]</a>），交通、通信、食费的固定项合计约 <code class="k">¥80,000</code>，剩余约 <code class="k">¥620,000</code> / 月，约折合人民币 3 万元的处置空间。
+    </p>
+
+    <p>
+      这里的所有数字都是"中位"与"简化口径"——真实一个人的到手会因公司社保比例、是否已婚、是否有家属抚养、厚生年金计算基数而浮动。我们不在本页替任何一个 Alice 做"能不能存下钱"的判断，只是把她需要的所有数字都摊开放在她的眼前。
+    </p>
+  </section>
+
+  <!-- § 6 -->
+  <section>
+    <h2><span class="n">§ 6</span>永居与入籍的时间表</h2>
+    <p class="lede">从获签到可以递交永居申请，70 分组 3 年，80 分组 1 年；入籍是另一套条件。</p>
+
+    <p>
+      高度専門職 1 号ロ 在获签入国的那一天开始计时。根据入管法 § 22-2，具备"合计 70 分以上在留满 3 年"或"合计 80 分以上在留满 1 年"其一的高度人材外国人，可申请"高度専門職 2 号"的<em>永住者</em>在留资格<a class="fn" href="#r2">[2]</a>。
+    </p>
+
+    <p>
+      入籍是另一条并行通道，由法務省负责，依据国籍法 § 5。普通归化要求住所、素行、生计、能力、无重国籍、未曾危害国家等六条，时间门槛一般是"在日本住 5 年以上"<a class="fn" href="#r5">[5]</a>。对大多数以工作签证入国的人来说，入籍与永居不是"同一个倒计时的两个刻度"，而是两条相互独立、都需要单独准备的线。
+    </p>
+  </section>
+
+  <!-- § 7 -->
+  <section>
+    <h2><span class="n">§ 7</span>我们如何保证这页是对的</h2>
+    <p class="lede">规则会变，我们会变；变的时候你应该看得见。</p>
+
+    <p>
+      本页引用的每一条规则、每一个数字，都可以在下方 § 8 的引用章节找到出处。每条引用指向一份在我们服务器上留有字节快照的官方 PDF 或 CSV，每份快照都有 sha256，和原文档任何一次的微调都能在我们的变更日志中被检出。
+    </p>
+
+    <p>
+      规则的版本号是 <code class="k">2025-10-08</code>——即出入国在留管理庁最后一次更新该页 PDF 的日期。若我们下次复核时发现它已经更新，本页会整段重写，并在顶栏的 "rules" 字段换上新日期。不更新的日子我们就不声称它是"最新"。
+    </p>
+  </section>
+
+  <!-- § 8 -->
+  <section>
+    <h2><span class="n">§ 8</span>引用</h2>
+    <ol class="refs">
+      <li id="r1">
+        <div class="i">[1]</div>
+        <div>
+          <span class="auth">出入国在留管理庁</span>　<span class="ttl">高度専門職ポイント計算表（技術・人文知識・国際業務 対応）</span>
+          <span class="sha">sha256 a1b2c3d4e5f6 7a8b9c0d1e2f 3a4b5c6d7e8f 9a0b1c2d3e4f</span>
+        </div>
+        <div class="date">2026-04-10</div>
+      </li>
+      <li id="r2">
+        <div class="i">[2]</div>
+        <div>
+          <span class="auth">法務省 出入国在留管理庁</span>　<span class="ttl">高度人材ポイント制の概要</span>
+          <span class="sha">sha256 e5f6a7b8c9d0 1e2f3a4b5c6d 7e8f9a0b1c2d 3e4f5a6b7c8d</span>
+        </div>
+        <div class="date">2026-04-10</div>
+      </li>
+      <li id="r3">
+        <div class="i">[3]</div>
+        <div>
+          <span class="auth">国税庁</span>　<span class="ttl">所得税法 給与所得税率表 2025</span>
+          <span class="sha">sha256 c9d0e1f2a3b4 5c6d7e8f9a0b 1c2d3e4f5a6b 7c8d9e0f1a2b</span>
+        </div>
+        <div class="date">2026-03-22</div>
+      </li>
+      <li id="r4">
+        <div class="i">[4]</div>
+        <div>
+          <span class="auth">総務省統計局</span>　<span class="ttl">小売物価統計調査 · 東京 23 区 2025</span>
+          <span class="sha">sha256 b3c4d5e6f7a8 9b0c1d2e3f4a 5b6c7d8e9f0a 1b2c3d4e5f6a</span>
+        </div>
+        <div class="date">2026-04-02</div>
+      </li>
+      <li id="r5">
+        <div class="i">[5]</div>
+        <div>
+          <span class="auth">法務省</span>　<span class="ttl">国籍法（昭和 25 年法律第 147 号） § 5</span>
+          <span class="sha">sha256 d4e5f6a7b8c9 0d1e2f3a4b5c 6d7e8f9a0b1c 2d3e4f5a6b7c</span>
+        </div>
+        <div class="date">2026-03-28</div>
+      </li>
+    </ol>
+  </section>
+
+  <footer class="btm">
+    <span>relocate</span>
+    <span>示例页 · 部分数字为占位</span>
+  </footer>
+
+</main>
+
+</body>
+</html>
