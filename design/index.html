@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<title>relocate · 视觉情感样稿</title>
+<style>
+  :root{
+    --ink:#111;--ink-soft:#444;--ink-faint:#777;--rule:#ddd;--bg:#fcfaf5;
+    --serif:"Source Han Serif SC","Noto Serif SC",Georgia,serif;
+    --sans:"PingFang SC",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+    --mono:"SFMono-Regular","Menlo",monospace;
+  }
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65}
+  .wrap{max-width:780px;margin:0 auto;padding:60px 32px 100px}
+  h1{font-family:var(--serif);font-size:36px;margin:0 0 6px;font-weight:700}
+  .sub{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:18px;margin:0 0 36px}
+  .note{
+    background:#fff;border:1px solid var(--rule);padding:16px 20px;
+    font-size:14px;color:var(--ink-soft);margin:0 0 40px;
+  }
+  .note strong{color:var(--ink)}
+  .card{
+    display:block;text-decoration:none;color:inherit;
+    border:1px solid var(--rule);background:#fff;
+    padding:24px 28px;margin:0 0 16px;
+    transition:border-color .15s;
+  }
+  .card:hover{border-color:var(--ink)}
+  .card .tag{
+    font-family:var(--mono);font-size:11px;letter-spacing:0.08em;
+    color:var(--ink-faint);text-transform:uppercase;margin-bottom:6px;
+  }
+  .card h2{
+    font-family:var(--serif);font-size:22px;margin:0 0 6px;font-weight:700;
+  }
+  .card p{margin:0;color:var(--ink-soft);font-size:14px;max-width:620px}
+  .card .desc{font-family:var(--serif);font-style:italic;margin-top:6px}
+  .meta{
+    display:flex;gap:16px;margin-top:10px;
+    font-family:var(--mono);font-size:11px;color:var(--ink-faint);
+  }
+  footer{margin-top:50px;padding-top:16px;border-top:1px solid var(--rule);
+    font-family:var(--mono);font-size:11px;color:var(--ink-faint)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>relocate · 视觉情感样稿</h1>
+  <p class="sub">三个风格方向，相同内容。挑一个，或指出都不对并说为什么。</p>
+
+  <div class="note">
+    <strong>这不是产品原型。</strong>所有数字为占位。这批 HTML 只用来确认情感方向，
+    不进 <code>apps/web/</code>，不参与 schema 推导（RULES §4.3）。
+    情感方向确认后仍按 B0 → B1 → B3 → C1 施工工序走。
+  </div>
+
+  <a class="card" href="hsp-result-A-longread.html">
+    <div class="tag">样稿 A</div>
+    <h2>Longread · 严肃长读物风</h2>
+    <p class="desc">参照：The Economist / NYT 长稿。衬线大标题 + 首字下沉 + pull quote。</p>
+    <p>单列窄排，叙述性强，适合一字一句读进去；代价是信息密度较低，一屏装不下三个维度。</p>
+    <div class="meta">
+      <span>Serif-heavy</span><span>780px</span><span>Paper tone</span>
+    </div>
+  </a>
+
+  <a class="card" href="hsp-result-B-archive.html">
+    <div class="tag">样稿 B</div>
+    <h2>Archive · 档案馆 / 百科风</h2>
+    <p class="desc">参照：Wikipedia 深化版 / MDN / 法规原文排版。三栏（目录 · 正文 · 元数据）。</p>
+    <p>强调引用编号 [1][2][3]、snapshot 路径外露、字段变更表，"档案感"最强；信息密度居中。</p>
+    <div class="meta">
+      <span>Balanced</span><span>3-column</span><span>Dense citations</span>
+    </div>
+  </a>
+
+  <a class="card" href="hsp-result-C-console.html">
+    <div class="tag">样稿 C</div>
+    <h2>Console · 研究报告 / 数据控风</h2>
+    <p class="desc">参照：Bloomberg Terminal 感 + 严肃研究所报告。三维度三块卡片首屏集中呈现。</p>
+    <p>信息密度最高，技术向用户友好；"冷工具"气质最强（对齐 §3.7）。</p>
+    <div class="meta">
+      <span>Dense</span><span>1100px</span><span>Mono accents</span>
+    </div>
+  </a>
+
+  <footer>
+    relocate · pre-Phase 0 · 视觉情感探索 · 非产品代码
+  </footer>
+</div>
+</body>
+</html>
