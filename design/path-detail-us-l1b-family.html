@@ -1,0 +1,953 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>relocate · 路径详情 · 美国 L-1B 家庭路径 · 到入籍为止</title>
+<style>
+  :root{
+    --ink:#141414;
+    --ink-soft:#3d3d3d;
+    --ink-faint:#8a8a8a;
+    --rule:#d8d8d8;
+    --rule-soft:#ebebeb;
+    --bg:#fdfbf7;
+    --warn-bg:#fff6e7;
+    --warn-ink:#6a4d00;
+    --inherit-bg:#f1efe9;
+    --branch-bg:#f5f2ea;
+    --serif:Georgia,"Source Han Serif SC","Noto Serif SC","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;
+    --mono:"SFMono-Regular","Menlo",Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:var(--serif);font-size:16.5px;line-height:1.78;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+
+  header.top{
+    padding:14px 40px;border-bottom:1px solid var(--rule);
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em;
+    background:#fff;
+  }
+  header.top .l{color:var(--ink)}
+
+  .page{max-width:920px;margin:0 auto;padding:56px 32px 140px}
+
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 10px}
+  h1{font-size:30px;font-weight:700;line-height:1.25;letter-spacing:-0.005em;margin:0 0 6px}
+  .sub{font-family:var(--sans);font-size:14px;color:var(--ink-soft);margin:0 0 14px;letter-spacing:0.01em}
+  .sub code{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 6px;border-radius:2px;color:var(--ink)}
+  .meta{
+    font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);
+    letter-spacing:0.04em;margin:0 0 28px;
+    padding-bottom:18px;border-bottom:1px solid var(--ink);
+  }
+  .meta span + span::before{content:" · ";margin:0 4px;color:var(--rule)}
+
+  .caveat{
+    background:var(--warn-bg);border:1px solid var(--warn-ink);
+    padding:14px 20px;margin:0 0 32px;
+    font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--warn-ink);
+  }
+  .caveat strong{color:#3c2a00}
+  .caveat p{margin:0 0 6px}
+  .caveat p:last-child{margin:0}
+
+  .chip{
+    display:grid;grid-template-columns:repeat(6, 1fr);
+    gap:0;background:#fff;border:1px solid var(--ink);
+    font-family:var(--sans);margin:0 0 36px;
+  }
+  .chip > div{padding:12px 14px;border-right:1px solid var(--rule)}
+  .chip > div:last-child{border-right:none}
+  .chip dt{
+    font-family:var(--mono);font-size:10px;color:var(--ink-faint);
+    letter-spacing:0.09em;text-transform:uppercase;margin:0 0 3px;
+  }
+  .chip dd{margin:0;font-size:13.5px;color:var(--ink);font-weight:600}
+  .chip dd small{display:block;font-weight:400;font-size:11.5px;color:var(--ink-faint);margin-top:2px;font-family:var(--mono)}
+
+  /* 段锚点条（六段） */
+  .stagenav{
+    display:grid;grid-template-columns:repeat(6, 1fr);
+    gap:6px;margin:0 0 40px;
+    font-family:var(--sans);
+  }
+  .stagenav a{
+    display:block;padding:10px 12px;
+    background:#fff;border:1px solid var(--ink);
+    text-decoration:none;color:var(--ink);
+  }
+  .stagenav a .lbl{
+    font-family:var(--mono);font-size:10px;color:var(--ink-faint);
+    letter-spacing:0.09em;text-transform:uppercase;display:block;margin-bottom:3px;
+  }
+  .stagenav a .t{font-size:14px;font-weight:700;display:block;line-height:1.3}
+  .stagenav a .b{font-size:11.5px;color:var(--ink-soft);display:block;margin-top:3px;font-family:var(--serif);line-height:1.45}
+
+  section{margin:56px 0 0}
+  section > h2{font-size:20px;font-weight:700;line-height:1.35;margin:0 0 4px}
+  section > h2 .n{
+    font-family:var(--mono);font-size:12px;font-weight:400;
+    color:var(--ink-faint);letter-spacing:0.08em;margin-right:10px;
+  }
+  section > h2 .tag{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:0.06em;
+    padding:2px 7px;border:1px solid var(--ink-faint);color:var(--ink-faint);
+    font-weight:400;margin-left:10px;vertical-align:3px;
+  }
+  section > .lede{
+    font-family:var(--serif);font-style:italic;
+    color:var(--ink-soft);font-size:15.5px;line-height:1.7;margin:0 0 20px;
+  }
+
+  p{margin:0 0 1em}
+  h3{font-size:15.5px;font-weight:700;margin:26px 0 8px}
+  h3 .n{
+    font-family:var(--mono);font-size:11px;font-weight:400;
+    color:var(--ink-faint);letter-spacing:0.06em;margin-right:8px;
+  }
+  h4{font-size:13.5px;font-weight:700;margin:18px 0 6px;font-family:var(--sans)}
+
+  /* 节点卡 */
+  .node{
+    background:#fff;border:1px solid var(--ink);
+    padding:18px 22px;margin:14px 0 18px;
+    font-family:var(--sans);font-size:13.5px;line-height:1.7;
+  }
+  .node .ntop{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding-bottom:8px;border-bottom:1px solid var(--rule-soft);margin-bottom:12px;
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em;
+  }
+  .node .ntop .who{
+    display:inline-block;padding:1px 6px;
+    border:1px solid var(--ink);color:var(--ink);
+    font-family:var(--mono);font-size:10px;letter-spacing:0.06em;margin-left:6px;
+  }
+  .node .ntop .who.derivative{border-color:var(--ink-faint);color:var(--ink-faint)}
+  .node .big{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink);line-height:1.35;margin:0 0 6px}
+  .node .big em{font-style:normal;color:var(--ink-faint);font-weight:400;font-size:14px;margin-left:6px}
+  .node p{margin:0 0 10px;color:var(--ink-soft)}
+  .node p strong{color:var(--ink);font-weight:700}
+  .node dl.kv{
+    display:grid;grid-template-columns:140px 1fr;gap:6px 14px;
+    font-size:12.5px;color:var(--ink-soft);margin:12px 0 0;
+    padding-top:10px;border-top:1px dashed var(--rule);
+  }
+  .node dl.kv dt{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.06em;text-transform:uppercase;padding-top:2px}
+  .node dl.kv dd{margin:0}
+  .node dl.kv dd code{font-family:var(--mono);font-size:11.5px;background:var(--rule-soft);padding:1px 5px;border-radius:2px;color:var(--ink)}
+  .node ul.where{
+    list-style:none;padding:0;margin:8px 0 0;
+    font-family:var(--sans);font-size:12.5px;line-height:1.6;
+  }
+  .node ul.where li{
+    padding:5px 0;border-top:1px solid var(--rule-soft);
+    display:grid;grid-template-columns:150px 1fr;gap:14px;color:var(--ink-soft);
+  }
+  .node ul.where li:first-child{border-top:1px solid var(--rule)}
+  .node ul.where li .label{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    letter-spacing:0.06em;text-transform:uppercase;
+  }
+  .node ul.where li code{font-family:var(--mono);font-size:11.5px;color:var(--ink);background:var(--rule-soft);padding:1px 5px;border-radius:2px}
+  .node ul.where li a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--ink-faint);text-underline-offset:2px}
+
+  /* 分支块 */
+  .branches{
+    background:var(--branch-bg);border-left:3px solid var(--ink);
+    padding:14px 20px;margin:12px 0 18px;
+    font-family:var(--sans);font-size:13px;line-height:1.7;
+  }
+  .branches h4{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink);
+    letter-spacing:0.1em;text-transform:uppercase;margin:0 0 10px;font-weight:600;
+  }
+  .branches h4::before{content:"↳ 分支 · "}
+  .branches ol{margin:0;padding:0 0 0 20px;counter-reset:b}
+  .branches ol > li{margin:0 0 10px;color:var(--ink-soft)}
+  .branches ol > li strong{color:var(--ink);font-weight:700}
+  .branches ol > li code{font-family:var(--mono);font-size:11.5px;background:#fff;padding:1px 5px;border:1px solid var(--rule);color:var(--ink)}
+
+  /* 家庭三线图 */
+  .familytrack{
+    background:#fff;border:1px solid var(--ink);margin:14px 0 18px;
+    font-family:var(--sans);font-size:12.5px;
+  }
+  .familytrack .row{
+    display:grid;grid-template-columns:130px 1fr;
+    border-bottom:1px solid var(--rule);
+  }
+  .familytrack .row:last-child{border-bottom:none}
+  .familytrack .row .l{
+    padding:14px;background:var(--rule-soft);border-right:1px solid var(--rule);
+    font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.06em;text-transform:uppercase;
+  }
+  .familytrack .row .l small{display:block;font-size:10px;color:var(--ink-faint);margin-top:3px;letter-spacing:0.04em}
+  .familytrack .row .r{padding:14px 18px;color:var(--ink-soft);line-height:1.65}
+  .familytrack .row .r strong{color:var(--ink)}
+  .familytrack .row .r em{font-style:normal;background:var(--rule-soft);padding:1px 6px;font-family:var(--mono);font-size:11px;color:var(--ink);margin-right:4px}
+
+  /* ASCII / 盒状路径总览图 */
+  .flowchart{
+    background:#fff;border:1px solid var(--ink);
+    padding:22px 24px;margin:10px 0 24px;
+    font-family:var(--mono);font-size:12.5px;line-height:1.8;
+    color:var(--ink);white-space:pre;overflow-x:auto;
+  }
+  .flowchart .hi{background:var(--rule-soft);padding:0 4px}
+  .flowchart .br{color:var(--ink-faint)}
+
+  /* 来源清单 */
+  table.sources{
+    width:100%;border-collapse:collapse;background:#fff;
+    font-family:var(--sans);font-size:12.5px;line-height:1.55;
+    margin:10px 0 16px;
+  }
+  table.sources th,table.sources td{
+    padding:8px 10px;text-align:left;vertical-align:top;
+    border-bottom:1px solid var(--rule);
+  }
+  table.sources thead th{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    letter-spacing:0.08em;text-transform:uppercase;font-weight:600;
+    border-bottom:1px solid var(--ink);background:var(--rule-soft);
+  }
+  table.sources td.id{width:80px}
+  table.sources td.id code{font-family:var(--mono);font-size:11px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+  table.sources td.iss{width:150px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em}
+  table.sources td a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--ink-faint);text-underline-offset:2px}
+
+  /* 风险块 */
+  .risk{
+    background:#fff;border:1px solid var(--warn-ink);
+    padding:14px 20px;margin:10px 0 16px;
+    font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--ink);
+  }
+  .risk h4{
+    font-family:var(--mono);font-size:10.5px;color:var(--warn-ink);
+    letter-spacing:0.1em;text-transform:uppercase;margin:0 0 8px;font-weight:600;
+  }
+  .risk h4::before{content:"! "}
+  .risk ul{margin:6px 0 0;padding:0 0 0 20px}
+  .risk li{margin:0 0 8px;color:var(--ink-soft)}
+  .risk li strong{color:var(--ink)}
+
+  /* inline 术语 */
+  .term{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+
+  /* 行内小提示 */
+  .hint{display:block;color:var(--ink-faint);font-size:12px;margin-top:3px;font-style:italic;font-family:var(--serif)}
+
+  footer.btm{
+    margin-top:80px;padding-top:14px;border-top:1px solid var(--rule);
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    display:flex;justify-content:space-between;letter-spacing:0.04em;
+  }
+
+  /* 链接基础 */
+  a{color:inherit}
+  .caveat a{color:var(--warn-ink)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <span class="l">relocate · design · path-detail · us · l1b-family</span>
+  <span>v0.1 · 2026-04-19</span>
+</header>
+
+<main class="page">
+
+  <p class="kicker">路径详情 · 家庭单位 · L-1B → 入籍</p>
+  <h1>美国 · L-1B 专门知识内部调动 · 家庭完整路径</h1>
+  <p class="sub">
+    <code>us-l1b-family-to-naturalization</code> · 含 L-2 配偶与未满 21 岁未婚子女的派生路径，一路推到入籍
+  </p>
+  <p class="meta">
+    <span>version v0.1</span>
+    <span>2026-04-19</span>
+    <span>家庭单位视角 · 亦可作为单人路径骨架（隐藏 L-2 与派生小节即可）</span>
+    <span>对应 sitemap · 路径详情视图</span>
+  </p>
+
+  <div class="caveat">
+    <p><strong>这份文件是什么：</strong>一份面向读者"从 L-1B 入境到拿美国护照"的路径地图。内容整理自 USCIS / 美国国务院 / 美国劳工部公开发布的规则、表格与政策手册；每一个节点都标出了可自行复核的官方出处。</p>
+    <p><strong>不是什么：</strong>不是法律意见，不替代律师。美国移民规则在执行层面有大量由 USCIS 裁量的细部口径（RFE 模板、面签口径、各服务中心审理差异），本文不展开这些可变量。做任何实际动作前，以文末"官方文件总表"中最新版本为准，并视情况聘请执照律师。</p>
+    <p><strong>读法：</strong>左侧信息条是这条路径的一眼画像，下面的六段锚点是时间轴。每个节点卡按"是什么 / 关键字段 / 官方依据与去哪里找 / 对家属的派生影响"的顺序给你。分支以 <em>↳ 分支</em> 块独立列出。不懂的术语在正文里会用普通话先解释一次。</p>
+  </div>
+
+  <dl class="chip">
+    <div>
+      <dt>国家</dt>
+      <dd>美国 <small>us</small></dd>
+    </div>
+    <div>
+      <dt>起点签证</dt>
+      <dd>L-1B <small>+ L-2 家属</small></dd>
+    </div>
+    <div>
+      <dt>终点身份</dt>
+      <dd>入籍 <small>N-400 归化</small></dd>
+    </div>
+    <div>
+      <dt>双重意图</dt>
+      <dd>允许 <small>可在工签期办绿卡</small></dd>
+    </div>
+    <div>
+      <dt>适用人群</dt>
+      <dd>跨国公司内部调动</dd>
+    </div>
+    <div>
+      <dt>典型总时长</dt>
+      <dd>依出生地差异大 <small>大陆出生常 7–15 年</small></dd>
+    </div>
+  </dl>
+
+  <nav class="stagenav">
+    <a href="#stage-overview">
+      <span class="lbl">§ 0</span>
+      <span class="t">全景图</span>
+      <span class="b">六段推进 · 一张盒图</span>
+    </a>
+    <a href="#stage-work">
+      <span class="lbl">§ 1</span>
+      <span class="t">L-1B / L-2 入境</span>
+      <span class="b">工签与家属签 · 表格 I-129、DS-160</span>
+    </a>
+    <a href="#stage-maintain">
+      <span class="lbl">§ 2</span>
+      <span class="t">工签维持与切换</span>
+      <span class="b">续签 · L-1A 升级 · H-1B 过桥</span>
+    </a>
+    <a href="#stage-gc">
+      <span class="lbl">§ 3</span>
+      <span class="t">职业移民绿卡</span>
+      <span class="b">EB-1 / EB-2 / EB-3 · PERM · I-140 · 排期</span>
+    </a>
+    <a href="#stage-final">
+      <span class="lbl">§ 4</span>
+      <span class="t">绿卡收尾</span>
+      <span class="b">I-485 调整身份 vs. 领事处理</span>
+    </a>
+    <a href="#stage-lpr">
+      <span class="lbl">§ 5</span>
+      <span class="t">LPR 期间 + 入籍</span>
+      <span class="b">维持居民 · N-400 · 子女自动入籍</span>
+    </a>
+  </nav>
+
+  <!-- ============ § 0 全景图 ============ -->
+  <section id="stage-overview">
+    <h2><span class="n">§ 0</span>全景图</h2>
+    <p class="lede">先看形状。下面这张盒图是一次"家庭三人"从开始到取得美国公民身份的所有主要节点与分支。后续章节逐节展开。</p>
+
+<div class="flowchart">
+<span class="br">[ 入境前 · 在海外 ]</span>
+
+  海外关联雇主与美国雇主须为母公司/子公司/分公司/关联公司关系
+  主申请人在过去 3 年内为该雇主连续工作满 1 年
+  │
+  ├─① 常规路径：美国雇主递交 <span class="hi">I-129（L 分类）</span>，USCIS 批准后主申在海外使馆办 <span class="hi">L-1B 签证</span>
+  │
+  └─② Blanket L：大型跨国雇主已批 <span class="hi">I-129S</span>，主申直接在使馆办签证
+
+<span class="br">[ § 1 · 入境 ]</span>  主申：L-1B   配偶：L-2S   子女：L-2
+
+<span class="br">[ § 2 · 工签维持 ]</span>
+
+  L-1B 累计不超过 5 年（新办公室首期 1 年 → 延为 3 年 → 再延 1 次 2 年）
+  │
+  ├─(a) 续签（I-129 延期）
+  ├─(b) 升级 L-1A（管理/高管）上限变 7 年——常见绿卡前置动作
+  ├─(c) 改走 H-1B（需抽签；抽中后转换身份）
+  └─(d) 海外连续 1 年重置 L-1B/L-1A 五/七年计时
+
+<span class="br">[ § 3 · 启动绿卡 ]</span>  主申为排期主体，家属派生
+
+  选分类 ──┬─ EB-1A  非凡能力           ┐
+           ├─ EB-1B  杰出教授/研究员     │ 无需 PERM
+           ├─ EB-1C  跨国高管/经理       │ 常由 L-1A 自然延伸
+           ├─ EB-2 NIW  国家利益豁免     ┘
+           ├─ EB-2   高等学历 / 特殊能力 ┐ 需 PERM 劳工证
+           └─ EB-3   技术工 / 专业人员   ┘
+
+  流程：<span class="hi">[PERM by DOL]</span> → <span class="hi">[I-140 by USCIS]</span> → 拿到"优先日"
+  再按出生地查 <span class="hi">Visa Bulletin</span> 排期，等优先日"当前"
+
+<span class="br">[ § 4 · 绿卡收尾 ]</span>
+
+  优先日到 → 二选一：
+    ┌─ 境内：<span class="hi">I-485</span> 调整身份  ± I-765 EAD ± I-131 AP
+    └─ 境外：在使馆做 <span class="hi">DS-260</span> 领事处理
+
+  家属（配偶 + 未满 21 岁未婚子女）同步递交派生申请
+  CSPA 为子女年龄"冻龄"，避免排期过长龄挂
+
+<span class="br">[ § 5 · LPR 期间 ]</span>
+
+  取得 <span class="hi">I-551 绿卡</span>（EB-1/2/3 一般为 10 年无条件）
+  维持实体居住 / 纳税 / 出境管理
+  长期离境 → 申请 <span class="hi">I-131 回美证</span>（最长 2 年）
+  为了入籍"连续居住"不中断 → 可另外申请 <span class="hi">N-470</span>
+
+<span class="br">[ § 终点 · 入籍 ]</span>
+
+  取得绿卡满 <span class="hi">5 年</span>（一般规则）
+    · 连续居住 5 年、其中实体在美满 30 个月
+    · 申请 <span class="hi">N-400</span> · 英语 + 公民学测试 + 面试 + 宣誓
+    · 主申入籍后：18 岁以下且与其共住的 LPR 子女按
+      <span class="hi">Child Citizenship Act of 2000</span> 自动成为美国公民，办 N-600 取证明
+    · 配偶需单独走自己的 N-400（因其 LPR 来源同为 5 年规则）
+</div>
+  </section>
+
+  <!-- ============ § 1 入境 ============ -->
+  <section id="stage-work">
+    <h2><span class="n">§ 1</span>第一段 · L-1B 入境（含 L-2 家属）<span class="tag">主申 + 派生</span></h2>
+    <p class="lede">这一段把家庭三个人同时带进美国。主申持 L-1B，配偶持 L-2S（美国境内 L-2 配偶签注 S 字尾，自动享工作许可），21 岁以下未婚子女持 L-2。</p>
+
+    <h3><span class="n">1.1</span>主申请人：L-1B 签证</h3>
+
+    <div class="node">
+      <div class="ntop"><span>节点 · L-1B 专门知识内部调动</span><span class="who">主申</span></div>
+      <p class="big">L-1B <em>· 非移民工作签证 · 允许"双重意图"</em></p>
+      <p><strong>是什么：</strong>跨国雇主把具备"专门知识"的员工从海外关联机构调到美国关联机构工作。"专门知识"指对雇主的产品、服务、研究、设备、技术、管理或程序具有的特殊知识，或对企业运营有高级专业知识（定义见 INA §214(c)(2)(B)）。</p>
+      <p><strong>硬性前置条件：</strong></p>
+      <dl class="kv">
+        <dt>雇主关系</dt><dd>美国公司与海外派出公司须为 <em>母公司 / 子公司 / 分支机构 / 关联公司（qualifying relationship）</em>。由 USCIS 审核组织架构与持股。</dd>
+        <dt>主申工龄</dt><dd>申请前 3 年内，在海外关联雇主处连续全职工作至少 <code>12 个月</code>。</dd>
+        <dt>岗位性质</dt><dd>在美岗位必须需要与主申本人所持"专门知识"相匹配。</dd>
+        <dt>意图属性</dt><dd>L 分类明确允许"双重意图"：持 L 签证期间同时申请绿卡，不构成签证拒绝理由（8 CFR 214.2(l)(16)）。</dd>
+        <dt>效期上限</dt><dd><strong>累计最多 5 年</strong>（L-1A 管理/高管最多 7 年）。新办公室首期仅给 <code>1 年</code>，满 1 年后视业务落地情况延期。</dd>
+        <dt>配额</dt><dd>无年度配额，不抽签。</dd>
+      </dl>
+      <h4>两种申请路径（一个分支）</h4>
+      <ul class="where">
+        <li><span class="label">路径 A · 个案</span><span>美国雇主向 USCIS 递交 <code>Form I-129</code> + L 补充表，批准后主申人在海外美国使领馆办签证</span></li>
+        <li><span class="label">路径 B · Blanket L</span><span>大型跨国雇主一次性取得 <code>Form I-129S</code> 批准后，主申人可在使领馆直接申签，免去单案 I-129。适用于同时有多名调派、符合 Blanket 资格门槛的雇主</span></li>
+      </ul>
+      <h4>官方依据与去哪里找</h4>
+      <ul class="where">
+        <li><span class="label">法律条款</span><span>INA §101(a)(15)(L)、§214(c)（Cornell LII / govinfo.gov 可查 Title 8 U.S.C.）</span></li>
+        <li><span class="label">联邦法规</span><span><code>8 CFR 214.2(l)</code>（eCFR 官网 ecfr.gov 按标号检索）</span></li>
+        <li><span class="label">USCIS 说明页</span><span>L-1B Intracompany Transferee Specialized Knowledge（uscis.gov 官网搜索 "L-1B"）</span></li>
+        <li><span class="label">政策手册</span><span>USCIS Policy Manual · Volume 2 · Part L（Intracompany Transferees）</span></li>
+        <li><span class="label">主表格</span><span>Form I-129 · Petition for a Nonimmigrant Worker（uscis.gov/i-129；Blanket L 用 <code>Form I-129S</code>）</span></li>
+        <li><span class="label">签证申请</span><span>DS-160 在线非移民签证申请（ceac.state.gov/genniv）· 使领馆清单 travel.state.gov</span></li>
+      </ul>
+    </div>
+
+    <h3><span class="n">1.2</span>配偶：L-2S 家属签证</h3>
+
+    <div class="node">
+      <div class="ntop"><span>节点 · L-2S 配偶</span><span class="who derivative">派生 · 配偶</span></div>
+      <p class="big">L-2S <em>· 工作许可"随身份自动"</em></p>
+      <p><strong>是什么：</strong>L-1 主申请人的合法婚姻配偶随其取得 L-2 身份。自 2022 年 1 月 USCIS 政策生效后，L-2 配偶（I-94 上签注为 <em>"L-2S"</em>）<strong>无需再单独申请 EAD 工作许可即可合法工作</strong>，其未过期的 I-94 即为工作授权凭证。</p>
+      <dl class="kv">
+        <dt>工作权</dt><dd>I-94 签注 <code>L-2S</code> 者：凭 I-94 即可为任意美国雇主工作（对 I-9 雇佣审查的替代规则见 USCIS/DHS 公告）。</dd>
+        <dt>历史遗留</dt><dd>2022 年 1 月前或 I-94 未带 S 字尾的 L-2 配偶，仍可选择或需要申请 <code>Form I-765</code> 类别 <code>(a)(18)</code> 取得 EAD 卡。</dd>
+        <dt>社安码</dt><dd>凭 L-2S I-94 可直接向 SSA 申请 SSN；否则凭 EAD 申请。</dd>
+        <dt>效期</dt><dd>与主申 L-1B 同步；主申延期，配偶同步延期。</dd>
+      </dl>
+      <h4>官方依据与去哪里找</h4>
+      <ul class="where">
+        <li><span class="label">法律条款</span><span>INA §101(a)(15)(L) 末句（配偶与子女同享）</span></li>
+        <li><span class="label">政策文件</span><span>USCIS Policy Alert / Policy Manual · 关于 L-2 配偶 "employment authorization incident to status"（2021 年 11 月发布，2022 年 1 月起实施）</span></li>
+        <li><span class="label">USCIS 说明页</span><span>"L-2 Spouse" / "Employment Authorization for Certain H-4, E, and L Nonimmigrant Dependent Spouses"</span></li>
+        <li><span class="label">表格（仅历史遗留）</span><span>Form I-765 类别 <code>(a)(18)</code>（uscis.gov/i-765）</span></li>
+        <li><span class="label">身份证据</span><span>带 L-2S 签注的 <code>Form I-94</code> 可从 CBP I-94 网站 i94.cbp.dhs.gov 下载电子版</span></li>
+      </ul>
+    </div>
+
+    <h3><span class="n">1.3</span>子女：L-2 未成年</h3>
+
+    <div class="node">
+      <div class="ntop"><span>节点 · L-2 子女</span><span class="who derivative">派生 · 子女</span></div>
+      <p class="big">L-2 <em>· 未满 21 岁 · 未婚 · 不允许工作</em></p>
+      <p><strong>是什么：</strong>主申的未满 21 岁未婚子女。可在美国 K-12 公立学校就读（与美国居民相同，按学区规则）。公立大学在本州学费待遇须按各州法律判定，通常 L-2 仍按国际学生对待。</p>
+      <dl class="kv">
+        <dt>工作权</dt><dd>无。需转换 F-1 等学生身份后按其身份规则就业。</dd>
+        <dt>读书</dt><dd>K-12 公立免学费；大学按国际生学费为主。</dd>
+        <dt>21 岁 / 结婚</dt><dd>任一事件发生 → <strong>L-2 身份自动失效</strong>，须在此之前切换身份（F-1 / H-1B / 自行走职业移民等），否则出身份。</dd>
+        <dt>绿卡衔接</dt><dd>若此时主申的 I-140 已批、优先日可期，可用 CSPA 规则"冻龄"，详见 § 3.5。</dd>
+      </dl>
+      <h4>官方依据与去哪里找</h4>
+      <ul class="where">
+        <li><span class="label">法律条款</span><span>INA §101(a)(15)(L) · 关于子女"unmarried, under 21"</span></li>
+        <li><span class="label">USCIS 说明页</span><span>"Change of Status" 指引（为未来身份切换做准备）</span></li>
+        <li><span class="label">表格</span><span>Form I-539 · Application to Extend/Change Nonimmigrant Status（境内切换或延期时使用）</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 2 工签维持 ============ -->
+  <section id="stage-maintain">
+    <h2><span class="n">§ 2</span>第二段 · 工签维持与切换<span class="tag">主申为主，家属同步</span></h2>
+    <p class="lede">L-1B 天花板是 5 年，而大陆出生者的绿卡排期常远不止 5 年。这一段的核心是"在绿卡拿到前，用什么身份把时间续下去"。绿卡流程（§ 3）与工签维持是并行推进的两条线。</p>
+
+    <h3><span class="n">2.1</span>续签：同一身份延期</h3>
+    <div class="node">
+      <div class="ntop"><span>节点 · L-1B 延期</span><span class="who">主申</span></div>
+      <p><strong>是什么：</strong>原岗位未变，通过雇主再递一次 <code>Form I-129</code> 为主申延期。首期到期前递交即可（通常提前 6 个月）。L-2 家属可同案或分案递 <code>Form I-539</code> 延期。</p>
+      <dl class="kv">
+        <dt>累计上限</dt><dd>L-1B 累计 5 年 · L-1A 累计 7 年（不含海外工作时间）</dd>
+        <dt>Recapture</dt><dd>在 L-1 期间出境的日子可"找回"来（Recapture of Time Spent Outside U.S.），须逐次保留登机牌/I-94 记录</dd>
+      </dl>
+      <h4>官方依据与去哪里找</h4>
+      <ul class="where">
+        <li><span class="label">法规</span><span><code>8 CFR 214.2(l)(15)</code> · 关于 L 总时长上限与延期</span></li>
+        <li><span class="label">政策手册</span><span>USCIS Policy Manual · Volume 2 · Part L · Chapter 5（Period of Stay）</span></li>
+        <li><span class="label">表格</span><span>Form I-129 / I-129S 延期（主申）· Form I-539（L-2 家属延期）</span></li>
+      </ul>
+    </div>
+
+    <div class="branches">
+      <h4>五年帽逼近时的常见处置</h4>
+      <ol>
+        <li><strong>切 L-1A。</strong>若岗位演进到"管理/高管"职能，可递交 I-129 变更为 L-1A，<code>从 5 年抬到 7 年</code>。审查关注"是否实质管理他人 / 重大组织职能"。—— 官方依据：<code>8 CFR 214.2(l)(1)(ii)(B)–(C)</code> + USCIS Policy Manual Vol.2 Part L。</li>
+        <li><strong>切 H-1B。</strong>L-1B 与 H-1B 不排斥，可递 I-129 把身份改为 H-1B，<strong>但 H-1B 受年度配额抽签限制</strong>（雇主每年 3 月底前注册抽签）。抽中后办身份切换。若此时已有 I-140 批准，H-1B 七年上限可按 <em>AC21 §104(c)</em> 或 <em>§106(a)</em> 无限续，为绿卡排期兜底。</li>
+        <li><strong>海外 1 年重置。</strong>在美 L 累计时长到顶后，连续离境满 1 年可重置 L-1B / L-1A 的计时，重新进入新的一轮上限。少用，适合主申愿意在海外关联机构外派 1 年以上的情形。</li>
+        <li><strong>改走其他分类。</strong>O-1、E-1/E-2 等按雇主与个人条件适配，偏少见，不在本路径主线。</li>
+      </ol>
+    </div>
+
+    <h3><span class="n">2.2</span>切 H-1B 的配套风险</h3>
+    <div class="risk">
+      <h4>H-1B 抽签 = 不可控风险点</h4>
+      <ul>
+        <li><strong>抽签是概率事件。</strong>每财年 3 月 H-1B 注册抽签，中签率历年波动显著。单次未中可翌年再战，但 L-1B 5 年帽不等人。</li>
+        <li><strong>H-4 家属工作权较窄。</strong>配偶切 H-1B 后，配偶其原 L-2S 自动工作权失效，改为 H-4 身份；H-4 配偶仅在主申 I-140 已批准且符合 AC21 §106(a)/(c) 条件下才能申请 H-4 EAD。这是"家庭工作收入"层面与 L-2S 的重大差异。</li>
+        <li><strong>缓冲期有限。</strong>H-1B 中签到生效日在当年 10 月 1 日；若 L-1B 于此前到期，须计算能否承接。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 3 绿卡 ============ -->
+  <section id="stage-gc">
+    <h2><span class="n">§ 3</span>第三段 · 职业移民绿卡<span class="tag">主申主体 · 家属派生</span></h2>
+    <p class="lede">职业移民绿卡分为 EB-1 / EB-2 / EB-3 三大优先类别。不同类别决定了"要不要做 PERM 劳工证"、"典型审理时长"、以及（关键）"大陆出生申请人要等多久的签证排期"。这一段所有节点都以主申为申请主体，配偶与子女作为派生申请人走相同类别。</p>
+
+    <h3><span class="n">3.1</span>分类选择（决策节点）</h3>
+    <div class="node">
+      <div class="ntop"><span>决策 · 绿卡分类</span><span class="who">主申</span></div>
+      <p><strong>选分类的本质：</strong>在"愿意/能拿到的最好分类"和"对应流程难度与等待"之间选。对 L-1B 家庭而言，最自然的两种走法是 <code>L-1A → EB-1C</code>（若岗位可升管理）与 <code>EB-2 NIW</code>（若主申有独立国家利益论证材料）；两者共同优点是 <em>免 PERM</em>，直接从 I-140 起步。</p>
+      <dl class="kv">
+        <dt>EB-1A</dt><dd>非凡能力（Extraordinary Ability）· 自我申请（无雇主担保要求）· 10 选 3 证据标准 · 无 PERM · <code>I-140</code></dd>
+        <dt>EB-1B</dt><dd>杰出教授/研究员 · 须雇主担保 · 面向终身教职或同等研究岗 · 无 PERM · <code>I-140</code></dd>
+        <dt>EB-1C</dt><dd>跨国公司管理者/高管 · 须雇主担保 · 通常由 L-1A 自然延伸 · 无 PERM · <code>I-140</code></dd>
+        <dt>EB-2 NIW</dt><dd>高等学历 + "国家利益豁免" · 自我申请 · 需要完整 NIW 三要素论证（Matter of Dhanasar 框架）· 无 PERM · <code>I-140</code></dd>
+        <dt>EB-2</dt><dd>高等学历或特殊能力 · 雇主担保 · <em>要 PERM</em> · 之后 <code>I-140</code></dd>
+        <dt>EB-3</dt><dd>技术工 / 专业人员 / 其他工人 · 雇主担保 · <em>要 PERM</em> · 之后 <code>I-140</code> · 大陆出生排期常比 EB-2 更长</dd>
+      </dl>
+      <h4>官方依据与去哪里找</h4>
+      <ul class="where">
+        <li><span class="label">法律条款</span><span>INA §203(b)(1)(A)(B)(C) · §203(b)(2)(A)(B) · §203(b)(3)</span></li>
+        <li><span class="label">法规</span><span><code>8 CFR 204.5</code></span></li>
+        <li><span class="label">政策手册</span><span>USCIS Policy Manual · Volume 6 · Parts F（EB-1）· G（EB-2）· H（EB-3）</span></li>
+        <li><span class="label">USCIS 说明页</span><span>"Employment-Based Immigration: First / Second / Third Preference"</span></li>
+        <li><span class="label">NIW 判例</span><span>Matter of Dhanasar, 26 I&amp;N Dec. 884 (AAO 2016)（可在 justice.gov/eoir 判例检索）</span></li>
+      </ul>
+    </div>
+
+    <h3><span class="n">3.2</span>PERM 劳工证（仅 EB-2 非 NIW / EB-3 需要）</h3>
+    <div class="node">
+      <div class="ntop"><span>节点 · PERM</span><span class="who">雇主主理</span></div>
+      <p><strong>是什么：</strong>由美国雇主向美国劳工部（DOL）证明"对该岗位没有合格且愿意接受工资条件的美国工人"。通过后拿到 <em>经认证的 ETA Form 9089</em>，作为后续 I-140 的附件。</p>
+      <p><strong>主要流程：</strong>① 雇主先申 <em>Prevailing Wage Determination（PWD）</em>；② 按规定在本地招聘广告、内部张贴、州职介等渠道进行真实招聘；③ 招聘完成后通过 <em>FLAG 系统</em> 在线递交 ETA-9089；④ DOL 审查或审计后发出认证。</p>
+      <dl class="kv">
+        <dt>关键日期</dt><dd>DOL 收到 ETA-9089 的日期即 <strong>"优先日"</strong>——绿卡排队的号码。优先日之后不能被该案件改变，除非重新开案。</dd>
+        <dt>雇主责任</dt><dd>广告费、律师费不得由雇员承担（DOL 硬规）</dd>
+        <dt>典型周期</dt><dd>PWD + 招聘 + ETA-9089 审批，历年波动大，数月到一年多不等</dd>
+      </dl>
+      <h4>官方依据与去哪里找</h4>
+      <ul class="where">
+        <li><span class="label">法规</span><span><code>20 CFR Part 656</code>（DOL PERM 程序）</span></li>
+        <li><span class="label">DOL 主页</span><span>Office of Foreign Labor Certification（dol.gov/agencies/eta/foreign-labor）</span></li>
+        <li><span class="label">系统</span><span>FLAG · Foreign Labor Application Gateway（flag.dol.gov）</span></li>
+        <li><span class="label">表格</span><span>Form ETA-9089（PERM 申请）· Form ETA-9141（PWD 申请）</span></li>
+      </ul>
+    </div>
+
+    <h3><span class="n">3.3</span>I-140 移民申请</h3>
+    <div class="node">
+      <div class="ntop"><span>节点 · I-140</span><span class="who">雇主（或本人，如 EB-1A / NIW）</span></div>
+      <p><strong>是什么：</strong>向 USCIS 证明主申符合所选分类的实体要件。EB-1A / NIW 由申请人本人递交；其余类别由雇主递交。批准后即确立"优先日 + 移民分类"两项核心状态。</p>
+      <dl class="kv">
+        <dt>加急</dt><dd>目前 I-140 支持 Premium Processing（I-907），多数服务中心 15 个工作日内给结果</dd>
+        <dt>优先日保留</dt><dd>I-140 一经批准，<strong>优先日可带到同类/更优分类的新 I-140 上</strong>（8 CFR 204.5(e)），即使换雇主也可保留，除非原批准被撤销</dd>
+        <dt>跨分类移植</dt><dd>EB-3 批准后，若排期对 EB-2 更优，可重新做 EB-2 PERM + I-140，并携带 EB-3 的优先日</dd>
+      </dl>
+      <h4>官方依据与去哪里找</h4>
+      <ul class="where">
+        <li><span class="label">法规</span><span><code>8 CFR 204.5</code></span></li>
+        <li><span class="label">USCIS 页面</span><span>Form I-140 · Immigrant Petition for Alien Workers（uscis.gov/i-140）</span></li>
+        <li><span class="label">加急</span><span>Form I-907 · Request for Premium Processing Service（uscis.gov/i-907）</span></li>
+        <li><span class="label">政策手册</span><span>USCIS Policy Manual · Volume 6</span></li>
+      </ul>
+    </div>
+
+    <h3><span class="n">3.4</span>Visa Bulletin 排期</h3>
+    <div class="node">
+      <div class="ntop"><span>节点 · 排期</span><span class="who">主申</span></div>
+      <p><strong>是什么：</strong>美国每年在职业移民各分类上有名额配额，各国再按"出生国"受 7% 单国上限约束。所以主申的排队号 = <em>优先日 + 出生国 + 分类</em>。<strong>大陆出生者在 EB-2 / EB-3 上常年有数年到十余年的显著排期；EB-1 对大陆出生者近年也出现排期</strong>。具体月度进度由国务院 Visa Bulletin 发布。</p>
+      <dl class="kv">
+        <dt>两张表</dt><dd>每月 Visa Bulletin 发布两张表：<em>Final Action Dates（A 表）</em> = 决定能真正批绿卡的日期；<em>Dates for Filing（B 表）</em> = 决定能否递 I-485 的日期（USCIS 每月单独公告采用哪张表）</dd>
+        <dt>跨分类切换</dt><dd>排期发生反转时，可在 EB-2 ↔ EB-3 之间"下转"或"上移"，以抢更好排期。需新 I-140，但可保留原优先日</dd>
+        <dt>出生国可选</dt><dd>夫妻任一方在更优排期国出生时，可用其出生国"跨分类派生"（Cross-Chargeability）——这是家庭单位的一个关键优化项</dd>
+      </dl>
+      <h4>官方依据与去哪里找</h4>
+      <ul class="where">
+        <li><span class="label">法律条款</span><span>INA §202（per-country 限额）· INA §203（b）配额分配</span></li>
+        <li><span class="label">发布方</span><span>U.S. Department of State · Visa Bulletin（travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html）</span></li>
+        <li><span class="label">USCIS 月度公告</span><span>USCIS "When to File" 页面，宣布本月采用 A 表还是 B 表（uscis.gov/visabulletininfo）</span></li>
+        <li><span class="label">Cross-Chargeability</span><span>22 CFR 42.12 · INA §202(b)</span></li>
+      </ul>
+    </div>
+
+    <h3><span class="n">3.5</span>CSPA 子女年龄锁定</h3>
+    <div class="node">
+      <div class="ntop"><span>节点 · CSPA</span><span class="who derivative">派生 · 子女</span></div>
+      <p class="big">Child Status Protection Act <em>· 给排期中的孩子冻龄</em></p>
+      <p><strong>是什么：</strong>由于排期长，许多孩子在"可以递 I-485 / DS-260"时已过 21 岁——按原规则就不再是派生受益人。CSPA 允许把 <em>I-140 的待审时长</em> 从孩子生物年龄中扣减，扣减后仍 &lt; 21 岁者保留派生资格。</p>
+      <p><strong>公式（职业移民线常用表达）：</strong><code>CSPA 年龄 = 签证名额可用时的生物年龄 − I-140 待审月数</code>。并且，子女需在签证名额可用后 <em>1 年内</em> "seek to acquire"（递交 I-485 或 DS-260），否则 CSPA 保护失效。</p>
+      <dl class="kv">
+        <dt>判定节点</dt><dd>按 USCIS 2023 年 2 月政策更新，<em>Dates for Filing（B 表）</em> 可被用作 CSPA 判定"签证名额可用"的时间点，大幅放宽了锁龄窗口</dd>
+        <dt>风险</dt><dd>1 年"seek to acquire"规则可因特殊情况申请豁免，但通常不宽</dd>
+      </dl>
+      <h4>官方依据与去哪里找</h4>
+      <ul class="where">
+        <li><span class="label">法律</span><span>Child Status Protection Act（Public Law 107-208, 2002）· INA §203(h)</span></li>
+        <li><span class="label">政策手册</span><span>USCIS Policy Manual · Volume 7 · Part A · Chapter 7（CSPA）</span></li>
+        <li><span class="label">2023 更新</span><span>USCIS Policy Alert PA-2023-02 · 将 Dates for Filing 纳入 CSPA 判定</span></li>
+      </ul>
+    </div>
+
+    <div class="branches">
+      <h4>这一段里常见的分支/优化</h4>
+      <ol>
+        <li><strong>L-1A → EB-1C</strong> 是 L 分类家庭最顺的主干：岗位从专门知识走向管理，I-140 直接按 EB-1C 递，跳过 PERM。</li>
+        <li><strong>EB-2 NIW 并行</strong>：主申学术/技术影响力允许时，NIW 可与雇主主导的 EB-2/EB-3 并行递两份 I-140，先批者先用；两份可共享 PWD 基础事实但独立论证。</li>
+        <li><strong>EB-3 下转 → EB-2 上移</strong>：当排期反转时（历史上多次出现 EB-2 比 EB-3 更慢），可在类别间重新 PERM + I-140 并携带优先日。</li>
+        <li><strong>配偶作为备份申请主体</strong>：若配偶教育/岗位也符合职业移民门槛，可由配偶独立开案做 I-140，主申改为派生。家庭内谁更快谁牵头。</li>
+        <li><strong>工签叠绿卡递交</strong>：I-140 批准 + 优先日可用（或 B 表开放）→ 立即递 I-485，叠加申请 EAD（I-765）与回美证（I-131），此后即使 L-1B 到期，也有 I-485 待审身份 + EAD + AP 兜底。见 § 4.1。</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ § 4 绿卡收尾 ============ -->
+  <section id="stage-final">
+    <h2><span class="n">§ 4</span>第四段 · 绿卡收尾<span class="tag">主申 + 家属同案</span></h2>
+    <p class="lede">优先日到（按 USCIS 当月公告的 A 表或 B 表），最后这一步在两条路里选：境内递 I-485 调整身份、境外走使馆领事处理。两者殊途同归，都给你一张 I-551 绿卡。</p>
+
+    <h3><span class="n">4.1</span>境内 · I-485 调整身份</h3>
+    <div class="node">
+      <div class="ntop"><span>节点 · I-485</span><span class="who">主申 + 家属同案</span></div>
+      <p><strong>是什么：</strong>在美国境内将非移民身份直接"调"为永久居民。家属（L-2S 配偶、L-2 子女）一并递各自的 I-485 作为派生申请人。</p>
+      <p><strong>可并递的附表：</strong><code>I-765</code>（EAD 工作许可，开放雇主）·<code>I-131</code>（Advance Parole 回美证，允许在 I-485 待审期间出境返美而不放弃案件）· <code>I-693</code>（民事体检）。</p>
+      <dl class="kv">
+        <dt>递交时机</dt><dd>I-140 批准或并递（concurrent filing）<strong>且</strong>优先日按 USCIS 公告可用。并递 I-140 + I-485 仅 EB 部分分类允许</dd>
+        <dt>待审身份</dt><dd>I-485 受理后，申请人合法留美身份以 I-485 pending 为底；可同时继续持 L-1B 身份工作，或改用 EAD。EAD + AP 生效后，有无 L-1B 都能工作与出入境</dd>
+        <dt>I-140 可携带性</dt><dd>I-485 待审满 <code>180 天</code>后，申请人可按 AC21 §106(c) 换到"同类或相似职业"的新雇主而不影响 I-485 批准（雇主支持信须更新）</dd>
+        <dt>面试</dt><dd>各地 USCIS 办公室可能安排面试；也可能免面直接批</dd>
+      </dl>
+      <h4>官方依据与去哪里找</h4>
+      <ul class="where">
+        <li><span class="label">法律条款</span><span>INA §245</span></li>
+        <li><span class="label">法规</span><span><code>8 CFR 245</code></span></li>
+        <li><span class="label">表格</span><span>Form I-485（uscis.gov/i-485）· Form I-765 类别 <code>(c)(9)</code>· Form I-131 · Form I-693（密封交到 USCIS）</span></li>
+        <li><span class="label">AC21 移植</span><span>USCIS Policy Manual · Volume 7 · Part E（Employment-Based AOS）</span></li>
+      </ul>
+    </div>
+
+    <h3><span class="n">4.2</span>境外 · 领事处理（DS-260）</h3>
+    <div class="node">
+      <div class="ntop"><span>节点 · 领事处理</span><span class="who">主申 + 家属同案</span></div>
+      <p><strong>是什么：</strong>申请人（主申与家属）在美国境外经 <em>国家签证中心（NVC）</em> 收齐材料，到美国使领馆面签，取得 IV（移民签证），持 IV 入境时成为永久居民（I-551 stamp，绿卡后寄送）。</p>
+      <dl class="kv">
+        <dt>适用场景</dt><dd>主申一直在海外 / 已离开美国 / 主申偏好一次到位不想走 I-485</dd>
+        <dt>流程</dt><dd>I-140 批准 → 案件转 NVC → 提交 <code>DS-260</code>、民事文件、财力文件 → NVC 审核 → 使领馆面签 → 入境</dd>
+        <dt>与 I-485 的差别</dt><dd>无 EAD / AP 过渡产物；一旦错失面签窗口（比如优先日回退），须等下一个窗口。反之流程线性、变量少</dd>
+      </dl>
+      <h4>官方依据与去哪里找</h4>
+      <ul class="where">
+        <li><span class="label">法律条款</span><span>INA §221 · §222（签证签发）</span></li>
+        <li><span class="label">国务院页面</span><span>"Immigrant Visa Process"（travel.state.gov）</span></li>
+        <li><span class="label">系统</span><span>CEAC · Consular Electronic Application Center（ceac.state.gov）</span></li>
+        <li><span class="label">表格</span><span>Form DS-260 · Immigrant Visa Application</span></li>
+      </ul>
+    </div>
+
+    <div class="branches">
+      <h4>条件绿卡 / 无条件绿卡（澄清）</h4>
+      <ol>
+        <li><strong>EB-1 / EB-2 / EB-3 获批的是无条件绿卡</strong>（10 年有效，到期换证）。条件绿卡（2 年）只出现在 <code>EB-5 投资</code> 与 <code>婚姻不满 2 年获绿卡</code> 两类情形，与本家庭路径无关。</li>
+        <li><strong>家属绿卡与主申同性质</strong>。主申拿无条件，家属同样无条件。</li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ § 5 LPR + 入籍 ============ -->
+  <section id="stage-lpr">
+    <h2><span class="n">§ 5</span>第五段 · LPR 期间与入籍<span class="tag">主申 · 配偶 · 子女 三线</span></h2>
+    <p class="lede">拿到绿卡只是半程。入籍对"连续居住"和"实体在场"有硬指标，而绿卡期间的出入境管理直接决定这些指标。家庭三人因年龄/入籍触发点不同，走三条略有分叉的线。</p>
+
+    <h3><span class="n">5.1</span>维持永久居民身份</h3>
+    <div class="node">
+      <div class="ntop"><span>节点 · LPR 维持</span><span class="who">全家三人</span></div>
+      <dl class="kv">
+        <dt>实体居住</dt><dd>以美国为主要居住地。长期（&gt; 6 个月）离境会被推定"放弃永久居民身份"；&gt; 1 年几乎必然判定放弃（除非另有例外）</dd>
+        <dt>税务</dt><dd>LPR 按美国居民纳税（全球收入申报）· 居住天数不影响此身份纳税义务</dd>
+        <dt>选民登记</dt><dd>LPR <strong>不是</strong>美国公民，不得登记选民或投票，否则严重影响后续入籍与身份</dd>
+        <dt>刑事</dt><dd>某些轻罪即可构成"不可入境罪行"或"可驱逐罪行"，LPR 身份脆弱于想象</dd>
+      </dl>
+      <h4>官方依据与去哪里找</h4>
+      <ul class="where">
+        <li><span class="label">法律条款</span><span>INA §101(a)(20) 定义 LPR · INA §212（可拒入境）· §237（可驱逐）</span></li>
+        <li><span class="label">IRS</span><span>Publication 519 · U.S. Tax Guide for Aliens</span></li>
+      </ul>
+    </div>
+
+    <h3><span class="n">5.2</span>长期离境预案</h3>
+    <div class="node">
+      <div class="ntop"><span>节点 · 出境管理</span><span class="who">主申 + 家属</span></div>
+      <ul class="where">
+        <li><span class="label">&lt; 6 个月</span><span>一般无影响</span></li>
+        <li><span class="label">6–12 个月</span><span>入境时 CBP 可能盘问；若能证明 ties 未变，通常过关</span></li>
+        <li><span class="label">1–2 年</span><span>离境前应申请 <code>Form I-131 Reentry Permit</code>（回美证），最长 2 年，离境前需在美完成生物信息采集</span></li>
+        <li><span class="label">&gt; 2 年</span><span>即使持回美证，通常须办 <em>Returning Resident Visa（SB-1）</em> 或面对放弃绿卡的后果</span></li>
+        <li><span class="label">为入籍保连续</span><span>在海外为美国公司 / 美国政府 / 某些研究机构工作时，可申 <code>Form N-470</code> · Application to Preserve Residence for Naturalization Purposes</span></li>
+      </ul>
+      <h4>官方依据与去哪里找</h4>
+      <ul class="where">
+        <li><span class="label">法律条款</span><span>INA §316(b)（N-470 所据）· INA §223（回美证）</span></li>
+        <li><span class="label">表格</span><span>Form I-131 · Form N-470（uscis.gov/n-470）</span></li>
+      </ul>
+    </div>
+
+    <h3><span class="n">5.3</span>入籍 · N-400</h3>
+    <div class="node">
+      <div class="ntop"><span>节点 · N-400 归化</span><span class="who">主申（之后配偶）</span></div>
+      <p><strong>是什么：</strong>成为美国公民的唯一一般通道。走完后宣誓、领取 Certificate of Naturalization，之后可申请美国护照。</p>
+      <p><strong>一般规则门槛（对本家庭适用的那一条）：</strong></p>
+      <dl class="kv">
+        <dt>永久居民</dt><dd>取得绿卡满 <code>5 年</code>。可在满 5 年前 <code>90 天</code> 内递交 N-400</dd>
+        <dt>连续居住</dt><dd>过去 5 年连续以美国为居住地，单次离境 &gt; 6 个月会中断（除非书面申诉并接受）· 单次 &gt; 1 年直接中断（除非走 N-470）</dd>
+        <dt>实体在场</dt><dd>过去 5 年中在美累计实际停留至少 <code>30 个月</code>（每 2 天算一次 1 天，简言之"一半"）</dd>
+        <dt>居住地</dt><dd>申请前 3 个月在受理 USCIS 办公室辖区内居住</dd>
+        <dt>良好品行</dt><dd>过去 5 年，并非绝对——严重罪行之前亦可计入；不实选民登记、逃税、家庭支持违约等均为扣分项</dd>
+        <dt>语言</dt><dd>简单英语读、写、说。50 岁以上 + LPR 20 年、55 岁以上 + LPR 15 年者可用母语考公民学，豁免英语</dd>
+        <dt>公民学测试</dt><dd>100 题题库，现场抽 10 题答对 6 题即过（若 2025 年后改版以 USCIS 最新通告为准）</dd>
+        <dt>宣誓</dt><dd>放弃效忠外国、拥护美国宪法</dd>
+      </dl>
+      <p><strong>另一路径：美籍配偶 3 年规则</strong>——本家庭不适用（家庭成员同步来美，不存在外部美籍配偶）。仅作提示保留。</p>
+      <h4>官方依据与去哪里找</h4>
+      <ul class="where">
+        <li><span class="label">法律条款</span><span>INA §316（一般归化）· INA §319（配偶特例）· INA §312（英语与公民学）</span></li>
+        <li><span class="label">法规</span><span><code>8 CFR 316</code> · <code>8 CFR 319</code> · <code>8 CFR 312</code></span></li>
+        <li><span class="label">政策手册</span><span>USCIS Policy Manual · Volume 12 · Citizenship and Naturalization</span></li>
+        <li><span class="label">表格</span><span>Form N-400（uscis.gov/n-400）</span></li>
+        <li><span class="label">学习资料</span><span>USCIS Civics Test 题库与官方学习指南（uscis.gov/citizenship）</span></li>
+      </ul>
+    </div>
+
+    <h3><span class="n">5.4</span>子女自动入籍 · Child Citizenship Act of 2000</h3>
+    <div class="node">
+      <div class="ntop"><span>节点 · CCA 2000</span><span class="who derivative">派生 · 子女</span></div>
+      <p><strong>是什么：</strong>主申 <em>或</em> 配偶任意一方先于子女入籍美国时，只要孩子同时满足以下三条，<strong>入籍当日自动成为美国公民，无需单独递 N-400</strong>：</p>
+      <ul class="where">
+        <li><span class="label">① 未满 18 岁</span><span>以自然生日计</span></li>
+        <li><span class="label">② 合法永久居民</span><span>已持绿卡</span></li>
+        <li><span class="label">③ 随父母共住</span><span>在已入籍父母的法律与实际监护下</span></li>
+      </ul>
+      <p><strong>取得证明：</strong>自动入籍发生于法律层面；为获得书面证明，可申请 <code>Form N-600 Certificate of Citizenship</code>，或直接为孩子办美国护照（国务院护照办事处会按 CCA 原件审核）。</p>
+      <h4>官方依据与去哪里找</h4>
+      <ul class="where">
+        <li><span class="label">法律</span><span>Child Citizenship Act of 2000（Public Law 106-395）· INA §320</span></li>
+        <li><span class="label">法规</span><span><code>8 CFR 320</code></span></li>
+        <li><span class="label">政策手册</span><span>USCIS Policy Manual · Volume 12 · Part H（Children of U.S. Citizens）</span></li>
+        <li><span class="label">表格</span><span>Form N-600（uscis.gov/n-600）</span></li>
+      </ul>
+    </div>
+
+    <h3><span class="n">5.5</span>配偶入籍</h3>
+    <div class="node">
+      <div class="ntop"><span>节点 · 配偶 N-400</span><span class="who derivative">派生 · 配偶</span></div>
+      <p>配偶的绿卡来源同为职业移民派生，本人不是美籍配偶，故适用一般 <strong>5 年规则</strong>。入籍后果如常——配偶独立获得公民身份。</p>
+      <p class="hint">不适用 INA §319(a) 的"美籍配偶 3 年"——那是另一套事实场景（绿卡是靠婚姻取得 + 美籍配偶 + 满 3 年）。本家庭三人都走职业移民，不是婚姻线。</p>
+    </div>
+  </section>
+
+  <!-- ============ § 6 家庭三线图 ============ -->
+  <section>
+    <h2><span class="n">§ 6</span>家庭三线时序图</h2>
+    <p class="lede">主申、配偶、子女在每一段上该做什么，一眼图。三行之间的时序差是正常的——CSPA 的设计就是补偿这种差。</p>
+
+    <div class="familytrack">
+      <div class="row">
+        <div class="l">主申<small>Principal</small></div>
+        <div class="r">
+          <em>§ 1</em>I-129 批准 → 使馆 L-1B 签证 → 入境获 L-1B I-94 <br>
+          <em>§ 2</em>在美工作 · 视情况转 L-1A / H-1B · 续签 <br>
+          <em>§ 3</em>发起绿卡：选分类 → PERM（如需）→ I-140 → 优先日 <br>
+          <em>§ 4</em>优先日可用 → I-485（境内）或 DS-260（境外） <br>
+          <em>§ 5</em>获 I-551 绿卡 → 维持居住 + 纳税 + 出境管理 → 满 5 年递 N-400 → 入籍
+        </div>
+      </div>
+      <div class="row">
+        <div class="l">配偶<small>Spouse</small></div>
+        <div class="r">
+          <em>§ 1</em>使馆 L-2 签证 → 入境获 L-2S I-94 · 凭 I-94 即可工作 <br>
+          <em>§ 2</em>维持 L-2S · 主申身份变更时同步变更（L-2 → H-4，工作权可能变窄） <br>
+          <em>§ 3</em>作为主申 I-140 的"派生受益人"等排期 <br>
+          <em>§ 4</em>与主申同案递 I-485 或 DS-260 <br>
+          <em>§ 5</em>拿绿卡后独立计算 5 年 → 自己递 N-400 入籍
+        </div>
+      </div>
+      <div class="row">
+        <div class="l">子女<small>Child</small></div>
+        <div class="r">
+          <em>§ 1</em>L-2 入境 · K-12 就读 <br>
+          <em>§ 2</em>接近 21 岁前：注意身份切换（F-1 / 其他）；留意 CSPA 冻龄条件是否成立 <br>
+          <em>§ 3</em>父母 I-140 批准 + 优先日 → CSPA 公式锁龄 <br>
+          <em>§ 4</em>与父母同案递 I-485 / DS-260 <br>
+          <em>§ 5</em>父母先入籍 + 自身 &lt; 18 岁 + LPR + 共住 → <strong>按 CCA 2000 自动成为公民</strong>；办 N-600 取证明或直接申美国护照。若 &gt; 18 岁才满足入籍条件则需自行走 N-400 满 5 年（或 3 年若后续与美籍配偶婚姻获绿卡——不在本路径假设）
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 7 风险汇总 ============ -->
+  <section>
+    <h2><span class="n">§ 7</span>核心风险点</h2>
+    <p class="lede">家庭单位视角下，不是每一个成员在每一段都安全。下面是最容易被忽视的几类。</p>
+
+    <div class="risk">
+      <h4>L-1B 五年帽 × 绿卡排期错位</h4>
+      <ul>
+        <li><strong>大陆出生者 EB-2/EB-3 排期常远超 5 年。</strong>L-1B 到顶前若 I-485 尚未受理（优先日不可用），身份会断。应对：提前转 L-1A（升至 7 年）、提前 H-1B 备胎、或海外 1 年重置。</li>
+        <li><strong>I-485 未受理时 L-1B 到期 = 必须离境或切身份。</strong>一旦离境，在美期间攒的 Recapture 时间意义骤降。</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>子女年龄过线（age-out）</h4>
+      <ul>
+        <li><strong>CSPA 不是"万岁锁龄"。</strong>只能把"I-140 待审时长"从生物年龄减掉；若减掉后仍 ≥ 21 岁，孩子即失派生资格。</li>
+        <li><strong>"seek to acquire"1 年窗口。</strong>优先日可用（或 B 表开放）后 1 年内必须 <em>采取实质动作</em>（递 I-485 或付 DS-260 费用等），否则 CSPA 保护失效。</li>
+        <li><strong>替代方案：</strong>孩子 21 岁前转 F-1，父母绿卡后为其独立递 F2B（LPR 未婚成年子女）排期——排期很长。或等父母入籍后递 F1（公民未婚成年子女）。</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>配偶切 H-4 时的工作权窄化</h4>
+      <ul>
+        <li><strong>L-2S 配偶凭 I-94 即可工作；H-4 配偶只有在主申 I-140 已批并符合 AC21 条件时才能申请 H-4 EAD。</strong>家庭整体收入结构高度依赖配偶工作时，由 L-1B 切 H-1B 前须先核算此影响。</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>绿卡期间长期离境 → 放弃身份</h4>
+      <ul>
+        <li><strong>&gt; 6 个月推定、&gt; 1 年基本坐实。</strong>即使持回美证 I-131 也无法把入籍的"连续居住"时钟一并保留——两者规则不同。</li>
+        <li><strong>入籍连续居住需单独保护。</strong>为海外工作（跨国雇主派驻、美国政府/宗教机构等）可申 N-470；普通海外旅居不受保护。</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>"双重国籍"一侧的提示</h4>
+      <ul>
+        <li><strong>美国不禁止双重国籍</strong>——但入籍宣誓中须"放弃对原国的效忠"（属个人意思表示，不自动触发原国国籍丧失）。</li>
+        <li><strong>对持中华人民共和国护照的主申：</strong>按《中华人民共和国国籍法》，<em>定居外国并自愿加入外国国籍的</em>自动丧失中国国籍。实际办理涉及中国驻美使领馆退籍、户籍注销等，需按中国方当时的公开指引办理，不在本文路径节点内展开。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 8 官方文件总表 ============ -->
+  <section>
+    <h2><span class="n">§ 8</span>官方文件总表</h2>
+    <p class="lede">上文每个节点都就地指了源。这里再做一份一站式目录，便于直接照着清单去 bookmark。仅使用"发布机构 + 文档名 + 发布机构官网入口"三项——避免深链失效时找不到。</p>
+
+    <h3><span class="n">8.1</span>法律条款（Statute）</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>发布</th><th>条款 / 文件</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>s-ina-l</code></td><td class="iss">Congress · U.S.C.</td><td>INA §101(a)(15)(L) · §214(c) — L 分类定义与要件<br><span class="hint">美国国会编纂于 8 U.S.C. §1101、§1184；原文可在 <a href="https://www.govinfo.gov">govinfo.gov</a> 或 Cornell LII（law.cornell.edu/uscode/text/8）查</span></td></tr>
+        <tr><td class="id"><code>s-ina-eb</code></td><td class="iss">Congress · U.S.C.</td><td>INA §203(b) · §202 — 职业移民分类与国别配额（8 U.S.C. §1153, §1152）</td></tr>
+        <tr><td class="id"><code>s-ina-245</code></td><td class="iss">Congress · U.S.C.</td><td>INA §245 — 境内身份调整（8 U.S.C. §1255）</td></tr>
+        <tr><td class="id"><code>s-ina-nat</code></td><td class="iss">Congress · U.S.C.</td><td>INA §316 · §319 · §320 · §312 — 归化、CCA、语言与公民学（8 U.S.C. §1427, §1430, §1431, §1423）</td></tr>
+        <tr><td class="id"><code>s-cspa</code></td><td class="iss">Congress · Public Law</td><td>Child Status Protection Act of 2002 · Pub. L. 107-208</td></tr>
+        <tr><td class="id"><code>s-cca</code></td><td class="iss">Congress · Public Law</td><td>Child Citizenship Act of 2000 · Pub. L. 106-395</td></tr>
+        <tr><td class="id"><code>s-ac21</code></td><td class="iss">Congress · Public Law</td><td>American Competitiveness in the Twenty-first Century Act (AC21) · Pub. L. 106-313 · §104(c)、§106(a)(c)</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">8.2</span>联邦法规（CFR）</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>发布</th><th>条款 / 文件</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>r-214l</code></td><td class="iss">DHS · 8 CFR</td><td>8 CFR 214.2(l) — L 分类实施细则（L-1B 核心）· <a href="https://www.ecfr.gov">ecfr.gov</a></td></tr>
+        <tr><td class="id"><code>r-214h</code></td><td class="iss">DHS · 8 CFR</td><td>8 CFR 214.2(h) — H 分类细则（切 H-1B 时查）</td></tr>
+        <tr><td class="id"><code>r-2045</code></td><td class="iss">DHS · 8 CFR</td><td>8 CFR 204.5 — 职业移民 I-140 程序</td></tr>
+        <tr><td class="id"><code>r-245</code></td><td class="iss">DHS · 8 CFR</td><td>8 CFR 245 — 身份调整程序</td></tr>
+        <tr><td class="id"><code>r-nat</code></td><td class="iss">DHS · 8 CFR</td><td>8 CFR 316 · 319 · 320 · 312 — 归化与儿童自动入籍</td></tr>
+        <tr><td class="id"><code>r-perm</code></td><td class="iss">DOL · 20 CFR</td><td>20 CFR Part 656 — PERM 劳工证</td></tr>
+        <tr><td class="id"><code>r-cross</code></td><td class="iss">DOS · 22 CFR</td><td>22 CFR 42.12 — Cross-Chargeability（跨配偶出生国派生）</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">8.3</span>行政政策手册与说明页</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>发布</th><th>文档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>p-uscis-pm</code></td><td class="iss">USCIS</td><td>USCIS Policy Manual（全部卷章）· <a href="https://www.uscis.gov/policy-manual">uscis.gov/policy-manual</a><br><span class="hint">本路径涉及的重点卷章：Vol 2 Part L（L）· Vol 6 Parts F–H（EB-1/2/3）· Vol 7（AOS）· Vol 12（归化与 CCA）</span></td></tr>
+        <tr><td class="id"><code>p-uscis-l1b</code></td><td class="iss">USCIS</td><td>"L-1B Intracompany Transferee Specialized Knowledge" 说明页</td></tr>
+        <tr><td class="id"><code>p-uscis-l2</code></td><td class="iss">USCIS</td><td>"Employment Authorization for Certain H-4, E, and L Nonimmigrant Dependent Spouses"（2022 政策）</td></tr>
+        <tr><td class="id"><code>p-uscis-cspa</code></td><td class="iss">USCIS</td><td>Policy Alert PA-2023-02 · CSPA 采用 Dates for Filing</td></tr>
+        <tr><td class="id"><code>p-dos-vb</code></td><td class="iss">DOS</td><td>Visa Bulletin（月刊）· <a href="https://travel.state.gov/content/travel/en/legal/visa-law0/visa-bulletin.html">travel.state.gov</a></td></tr>
+        <tr><td class="id"><code>p-uscis-vb</code></td><td class="iss">USCIS</td><td>"When to File Your Adjustment of Status Application" · 每月宣布采用 A 表还是 B 表</td></tr>
+        <tr><td class="id"><code>p-dol-perm</code></td><td class="iss">DOL · OFLC</td><td>Office of Foreign Labor Certification 主页· <a href="https://www.dol.gov/agencies/eta/foreign-labor">dol.gov/agencies/eta/foreign-labor</a>；系统入口 <a href="https://flag.dol.gov">flag.dol.gov</a></td></tr>
+        <tr><td class="id"><code>p-irs</code></td><td class="iss">IRS</td><td>Publication 519 · U.S. Tax Guide for Aliens（LPR 纳税规则）</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">8.4</span>表格（Forms）</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>发布</th><th>表格 / 用途</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>f-i129</code></td><td class="iss">USCIS</td><td>Form I-129 · 非移民工作人员申请（L-1B / L-1A / H-1B 共用此表 + 对应补充）· uscis.gov/i-129</td></tr>
+        <tr><td class="id"><code>f-i129s</code></td><td class="iss">USCIS</td><td>Form I-129S · Blanket L 个人传递表 · uscis.gov/i-129s</td></tr>
+        <tr><td class="id"><code>f-ds160</code></td><td class="iss">DOS</td><td>DS-160 · 非移民签证在线申请 · ceac.state.gov/genniv</td></tr>
+        <tr><td class="id"><code>f-i539</code></td><td class="iss">USCIS</td><td>Form I-539 · 非移民身份延期 / 变更（L-2 家属常用）· uscis.gov/i-539</td></tr>
+        <tr><td class="id"><code>f-eta9089</code></td><td class="iss">DOL</td><td>Form ETA-9089 · PERM 申请 · FLAG 系统递</td></tr>
+        <tr><td class="id"><code>f-eta9141</code></td><td class="iss">DOL</td><td>Form ETA-9141 · PWD 主流工资裁定请求</td></tr>
+        <tr><td class="id"><code>f-i140</code></td><td class="iss">USCIS</td><td>Form I-140 · 职业移民申请 · uscis.gov/i-140</td></tr>
+        <tr><td class="id"><code>f-i907</code></td><td class="iss">USCIS</td><td>Form I-907 · 加急审理 · uscis.gov/i-907</td></tr>
+        <tr><td class="id"><code>f-i485</code></td><td class="iss">USCIS</td><td>Form I-485 · 身份调整 · uscis.gov/i-485</td></tr>
+        <tr><td class="id"><code>f-i765</code></td><td class="iss">USCIS</td><td>Form I-765 · EAD 工作许可 · uscis.gov/i-765</td></tr>
+        <tr><td class="id"><code>f-i131</code></td><td class="iss">USCIS</td><td>Form I-131 · Advance Parole / Reentry Permit · uscis.gov/i-131</td></tr>
+        <tr><td class="id"><code>f-i693</code></td><td class="iss">USCIS</td><td>Form I-693 · 民事体检（I-485 附件）</td></tr>
+        <tr><td class="id"><code>f-ds260</code></td><td class="iss">DOS</td><td>Form DS-260 · 移民签证申请 · ceac.state.gov</td></tr>
+        <tr><td class="id"><code>f-n470</code></td><td class="iss">USCIS</td><td>Form N-470 · 保留入籍用居住时间 · uscis.gov/n-470</td></tr>
+        <tr><td class="id"><code>f-n400</code></td><td class="iss">USCIS</td><td>Form N-400 · 归化申请 · uscis.gov/n-400</td></tr>
+        <tr><td class="id"><code>f-n600</code></td><td class="iss">USCIS</td><td>Form N-600 · 公民身份证明（CCA 所得）· uscis.gov/n-600</td></tr>
+        <tr><td class="id"><code>f-i94</code></td><td class="iss">CBP</td><td>Form I-94 · 入出境记录电子版 · i94.cbp.dhs.gov</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer class="btm">
+    <span>relocate · path-detail · us · l1b-family · v0.1</span>
+    <span>本文不替代律师意见 · 所有数值以官方当期文本为准</span>
+  </footer>
+
+</main>
+
+</body>
+</html>
