@@ -29,22 +29,25 @@ pivot 后允许以"二手"身份引用律所 / 博客 / 论坛的整理，但在
 
 ## § 1 · 已登记的源
 
-> 当前为空。
+### us / l1b-family（批量登记，2026-04-19）
 
-<!-- 首条登记示例（删除本 HTML 注释并替换真实数据后添加）：
-- authority: jp/isa
-  authorityFullName: 出入国在留管理庁
-  docId: hsp-scoring-table
-  sourceURL: https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri07_00114.html
-  language: ja
-  notes: 供 design/path-detail-jp-hsp.html § 3.1 使用
--->
+对应 [`site/paths/us-l1b-family.html`](site/paths/us-l1b-family.html) 引用的全部官方一手文件。
 
-## § 2 · 相关但尚未登记
+- 归档位置：[`data/archive/us/l1b-family/`](data/archive/us/l1b-family/)
+- 完整源 URL 清单见归档目录下的 [`download.sh`](data/archive/us/l1b-family/download.sh)（可重放）
+- 抓取日志：[`_download.log`](data/archive/us/l1b-family/_download.log)
 
-`archive/garden-experiment-2026-04-19/design/sources/us-l1b-family/` 下有 48 份美国移民
-相关的政府原件（8 USC / CFR / USCIS 表格 / 政策页等），是 pivot 前那一轮抓的。**尚未
-整理进本文件**——因为 L-1B 路径样稿当前还在 archive 里，没有真正作为在线内容使用。
+涉及发布机关：
 
-将来把 L-1B 从 archive 挪回主线时，顺手把那批源批量登记到本文件 § 1（一次 commit 登
-掉，不需要一条一个 PR）。
+- **USCIS**（U.S. Citizenship and Immigration Services）— Policy Manual、I-129 / I-140 / I-485 / I-765 / I-131 / I-907 / I-539 / I-693 / N-400 / N-470 / N-600 表格，H-4/L-2 配偶 EAD 与 CSPA 政策说明页
+- **DOS**（U.S. Department of State）— Visa Bulletin 入口、DS-160 / DS-260 在线表单占位、22 CFR § 42.12 cross-chargeability
+- **DOL**（U.S. Department of Labor）— OFLC / FLAG 入口、ETA-9089 (PERM) / ETA-9141 (PWD) 表格、20 CFR 656
+- **CBP**（U.S. Customs and Border Protection）— I-94 在线查询入口
+- **IRS** — Publication 519（U.S. Tax Guide for Aliens）
+- **Congress (Public Law PDF via congress.gov)** — INA 主法源法律文本
+- **8 USC 相关章节（Cornell LII HTML 快照）** — 1101 / 1151 / 1153 / 1154 / 1182 / 1184 / 1186a / 1255 / 1427 等
+- **8 CFR（eCFR HTML 快照）** — §§ 214.2(l) / 245 / 204.5 等
+
+总计 48 条目（45 份离线文件 + 3 份在线表单 `.url` 占位）。
+
+注：pivot 前这批文件曾存于 `archive/garden-experiment-2026-04-19/design/sources/us-l1b-family/`，归档原因是当时 RULES § 2.1.1 要求独立 PR 登记。pivot 后该约束放宽，文件直接挪入 `data/archive/`。详见 [`archive/garden-experiment-2026-04-19/README.md`](archive/garden-experiment-2026-04-19/README.md)。

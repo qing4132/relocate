@@ -7,6 +7,70 @@
 
 ## Now · 在哪
 
+- 2026-04-19 完成方向 pivot（commit `8c034f6`）：从"严格数据工程化 + 付费 + dogfood 验收"改为"非盈利 · 仅供参考 · 尽力而为 · 不担责"。详情见 [RULES.md](RULES.md) § 6。
+- 2026-04-19 紧接着搭起工程架子 + 把 L-1B 内容挪回主线：
+  - 技术栈：**纯静态 HTML / CSS，无框架，无构建**。详见 [docs/engineering.md](docs/engineering.md)
+  - 可部署目录：`site/`
+  - 两条路径详情页已在线：
+    - [`site/paths/jp-hsp.html`](site/paths/jp-hsp.html) — 日本 · 高度専門職 1 号ロ · 技术系
+    - [`site/paths/us-l1b-family.html`](site/paths/us-l1b-family.html) — 美国 · L-1B 家庭路径（L-1B → 永居 → 入籍）
+  - 首页：[`site/index.html`](site/index.html)
+  - 48 份美国官方原件：[`data/archive/us/l1b-family/`](data/archive/us/l1b-family/)，已在 [SOURCES.md § 1](SOURCES.md) 批量登记
+- 文档层：RULES / README / SOURCES / HANDOFF / docs/path-authoring / docs/engineering 均与新基调对齐
+
+## Next · 下一步
+
+按顺序，但每一步做不做由现实情况决定——**这不是硬 TODO**：
+
+- [ ] **过一遍 JP HSP 路径页的正文**。caveat 已改，但正文里仍有若干写于"草稿 / 对照 sitemap 字段摆位"语境下的措辞（"字段", "摆进来", "未决"等），可以趁早改成面向读者的表述
+- [ ] **给 JP HSP 页底部补一张官方文件总表**（对照 L-1B 页 § 8），把引用过的日本 `moj.go.jp` / `nyukan` / `mhlw` 页面列成表，并顺手下到 `data/archive/jp/hsp/`
+- [ ] **选定最终站点名**（或就用 `relocate` 到上线那天）
+- [ ] **决定部署目标**：GitHub Pages (source=`/site`) / Netlify / Cloudflare Pages，写入 [docs/engineering.md](docs/engineering.md)
+- [ ] **License 落定** — 内容 CC BY-SA 4.0 + 代码 MIT（倾向），写回 [README.md](README.md)
+- [ ] **网站 favicon / OG 图**（上线前）
+
+已完成、从本清单拿掉的：
+
+- ~~把 L-1B 路径样稿与美国一手源从 archive/ 挪回主线~~（2026-04-19）
+- ~~把现有 HTML 样稿落成可发布的静态站~~（2026-04-19，选定纯静态 HTML 方案）
+- ~~首页草稿~~（2026-04-19，[site/index.html](site/index.html)）
+
+## Don't · 别做
+
+- 别重新引入 pivot 前的硬约束（五元组必填、独立 PR 登记、180 天强制复核）。放宽后如果确实写错了，按 RULES § 5.2 改就行
+- 别加付费、不管多"轻"的付费都别加（RULES § 1.1 / § 3.1）
+- 别做"AI 移民顾问"聊天框（RULES § 3.1）
+- 别引入前端框架（Astro / Next / Vite）。见 [docs/engineering.md](docs/engineering.md)
+- 别悄悄推广 — 自用 + 顺手公开，不做增长（RULES § 3.2）
+- 别删 `archive/`（RULES § 5.3）
+- 别在任何页面省略"仅供参考 · 非官方"字样（RULES § 1.4）
+
+## Before switching machine
+
+- [ ] `git status` 干净？
+- [ ] 已 `git push`？
+- [ ] 本文件的 Now / Next 更新到"下次坐下来能直接开始的具体动作"？
+
+## On arrival
+
+1. `git pull`
+2. 读本文件（2 分钟）
+3. 扫一眼 [RULES.md](RULES.md)（3 分钟）
+4. 要新增路径 → [docs/path-authoring.md](docs/path-authoring.md)
+5. 要动工程层 → [docs/engineering.md](docs/engineering.md)
+
+---
+
+<sub>HANDOFF ≠ PLAN。它描述当下，不规划未来。</sub>
+# HANDOFF
+
+> 接手说明。愿景见 [README](README.md)，原则见 [RULES](RULES.md)。
+> 每次工作结束前顺手更新本文件的 Now / Next。
+
+---
+
+## Now · 在哪
+
 - 刚完成一次方向调整（2026-04-19）：从"严格数据工程化 + 付费 + dogfood 验收"
   改为"非盈利 · 仅供参考 · 尽力而为 · 不担责"。详细动机见 [RULES.md](RULES.md) § 6
 - 仓库里已有的材料：

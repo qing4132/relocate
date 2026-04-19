@@ -39,11 +39,14 @@ relocate/
 ├── README.md         # 本文件
 ├── HANDOFF.md        # 接手说明（给未来的自己 / 任何一起维护的人）
 ├── SOURCES.md        # 已引用过的一手源清单（累进式，不强制前置）
-├── design/           # HTML 样稿与视觉探索
-├── data/             # 抓取、原件存档（能存就存，不强制）
+├── site/             # 可部署的静态站：首页 + 路径详情页
+├── data/             # 引用过的官方文件本地归档
+├── design/           # 早期视觉 / 结构探索（非可部署内容）
 ├── docs/             # 工序与协作笔记
 └── archive/          # 试错留痕，永不删除
 ```
+
+技术栈与部署说明见 [docs/engineering.md](docs/engineering.md)。
 
 ## 现状
 
