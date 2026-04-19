@@ -9,20 +9,22 @@
 
 - **2026-04-19 · 项目定位 pivot**（commit `8c034f6`）：从"严格数据工程化 + 付费 + dogfood"改为"非盈利 · 仅供参考 · 尽力而为 · 不担责"。详见 [RULES.md](RULES.md) § 6。
 - **2026-04-19 · 静态站工程架子搭起 + L-1B 内容归主线**（commit `1cfa93d`）
-- **2026-04-19 · 路径写作规则升级**（本次 commit）：每条路径必须覆盖
+- **2026-04-19 · 路径写作规则升级**（commit `440d713`）：每条路径必须覆盖
   - 维度 A · 工签 → 永居 → 入籍
   - 维度 B · 家庭为默认单位（不再分 `-family` 文件；配偶 / 子女派生块 + 家庭双保险段）
   - 维度 C · 备选切换 + 占位链接
+- **2026-04-19 · 清零"待上线未完成"文案**（commit `771e79d`）：替换全部 pending 占位链接、修正 AU GTV→NIV 更名、下线 JP HSP 旧版稿
+- **2026-04-19 · JP HSP 官方原件全量归档 + 两页来源表补本地归档列**（本次 commit）：
+  - `data/archive/jp/hsp/` 已落 14 份官方文件（ISA 8 · e-Gov 2 XML · MOJ 1 · MHLW 1 · PRC 1）+ README + download.sh
+  - `site/paths/jp-hsp.html` § 7 表、`site/paths/us-l1b.html` § 10 四张子表均新增「本地归档」列，所有官方引用在本地可定位
 - 技术栈：**纯静态 HTML / CSS，无框架、无构建**（[docs/engineering.md](docs/engineering.md)）
 - 可部署目录：[site/](site/)
 - 已有路径页：
-  - [`site/paths/jp-hsp.html`](site/paths/jp-hsp.html) — 日本 · 高度専門職 1 号ロ · 工签 → 永住 → 帰化（含家庭双保险 + 备选切换，完全重写自旧 "字段压测样稿"）
-  - [`site/paths/us-l1b.html`](site/paths/us-l1b.html) — 美国 · L-1B（原 `us-l1b-family.html` 重命名；新增 § 7 家庭双保险 + § 8 备选切换）
+  - [`site/paths/jp-hsp.html`](site/paths/jp-hsp.html) — 日本 · 高度専門職 1 号ロ · 工签 → 永住 → 帰化
+  - [`site/paths/us-l1b.html`](site/paths/us-l1b.html) — 美国 · L-1B · 工签 → 永居 → 入籍
 
 ## Next · 下一步
 
-- [ ] **过 JP HSP 页正文**：重写后还是会有表述可优化处，发布前再读一遍
-- [ ] **下载 JP HSP 的官方原件到 `data/archive/jp/hsp/`**（积分告示、永住ガイドライン、入管法 § 22-2、国籍法、法務省 帰化页；参照 L-1B 的 download.sh 写一份 jp 版本）
 - [ ] **消化"待补路径"清单**（见下文）：按能力逐条建立，每建一条全站搜 `class="pending"` 替换
 - [ ] **选定最终站点名**（或继续用 `relocate` 到真正公开那天）
 - [ ] **决定部署目标**：GitHub Pages (source=`/site`) / Netlify / Cloudflare Pages，选定后写入 [docs/engineering.md](docs/engineering.md)
@@ -58,6 +60,9 @@
 - ~~重写 JP HSP 为完整工签→永住→帰化 + 家庭 + 备选切换~~（2026-04-19）
 - ~~为 L-1B 补家庭双保险 + 备选切换~~（2026-04-19）
 - ~~把 `us-l1b-family.html` 重命名为 `us-l1b.html`~~（2026-04-19）
+- ~~过 JP HSP 页正文 + 修正 ISA 失效 URL~~（2026-04-19，本次）
+- ~~下载 JP HSP 官方原件到 `data/archive/jp/hsp/` 并在页面 § 7 表补「本地归档」列~~（2026-04-19，本次）
+- ~~US L-1B 页 § 10 四张子表补「本地归档」列~~（2026-04-19，本次）
 
 ## Don't · 别做
 
