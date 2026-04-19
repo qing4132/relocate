@@ -21,10 +21,15 @@
   - [`site/paths/us-h1b.html`](site/paths/us-h1b.html) — 含抽签注册 · LCA/I-129 · 维持（AC21 突破 6 年）· PERM/I-140/排期 · I-485/领事 · N-400 · 家庭三线图 · 备选切换 · § 10 四张子表全带本地归档列
   - `data/archive/us/h1b/`（USCIS 5 · DOL 2 · regulations 2 · statutes 2 · forms 5 PDFs + 3 online-only stubs）+ README + download.sh；AC21 / CSPA / CCA / 归化条款 / PERM 表格 / I-485 / N-400 等共用件复用 `data/archive/us/l1b-family/`
   - `site/index.html` 路径列表新增 H-1B 条目；`site/paths/jp-hsp.html` § 5 与 `site/paths/us-l1b.html` § 8 的 H-1B 条目从 USCIS 外链改为本站内链
-- **2026-04-19 · 新增美国国家前置知识总览页**（本次 commit）：
+- **2026-04-19 · 新增美国国家前置知识总览页**（commit `c7bead9`）：
   - [`site/paths/us-overview.html`](site/paths/us-overview.html) — 面向任一条具体 US path 读者的共性前置：机构分工（USCIS/CBP/ICE/DOS/DOL/IRS/SSA）· 签证 vs 身份 vs I-94 · NIV/IV · 双重意图 · NIV 字母表速查 · EB 五类与 7% 国别配额 · 优先日 / Visa Bulletin 两表 / Cross-Chargeability / AC21 三条 · AOS vs CP + CSPA · 维持身份 / 60 天 grace / 3-10 年禁令 / Advance Parole · LPR 维持（物理存在 · Reentry · N-470 · 全球纳税）· 入籍 5-3-18 · 中国国籍法 §9 · 表格速查 · 政策节奏。
   - 所有官方引用复用 `data/archive/us/l1b-family/` 的 statutes / regulations / policy（未新增归档文件）
   - `site/index.html` 路径列表把 us-overview 置于顶部，status 写「前置知识」
+- **2026-04-20 · 新增 US O-1 杰出人才路径 + 官方原件归档**（本次 commit）：
+  - [`site/paths/us-o1.html`](site/paths/us-o1.html) — O-1A / O-1B 三档 · 8 条证据标准 · 2022 STEM 备忘 · 咨询函 · Agent 模式 · 3 + 1 + 1 无上限续签 · O-3 不可工作的家庭困境 · EB-1A 自荐为主线 · EB-2 NIW / EB-1B 备选 · 家庭双保险三种配置 · 备选切换（同类 / 跨签证 / 跨国）· § 10 四张子表带本地归档列
+  - `data/archive/us/o1/`（USCIS 5 · regulations 1 · statutes 2 · forms 3 PDF + 2 online-only stub）+ README + download.sh；I-485 / I-765 / I-131 / I-539 / I-693 / N-400 / N-470 / N-600 / AC21 / CSPA / CCA / 8 CFR 245 / INA §203 / §245 / §316 / §319 / §320 等共用件沿用 `data/archive/us/l1b-family/`
+  - 跨链接：`site/paths/us-h1b.html` § 7 的 H-1B → O-1A 条目从 USCIS 外链改为 `us-o1.html`；`site/paths/us-l1b.html` § 8 的 L-1B → O-1A 条目同改；`site/paths/us-overview.html` § 2 "NIV 字母表" 中 O-1 条目加本站链接，§ 11 "本站美国 path 索引" 增 O-1 条目，§ 11 页末的"待补路径清单"中移除 O-1A
+  - `site/index.html` 路径列表新增 O-1 条目
 - 技术栈：**纯静态 HTML / CSS，无框架、无构建**（[docs/engineering.md](docs/engineering.md)）
 - 可部署目录：[site/](site/)
 - 已有路径页：
@@ -32,6 +37,7 @@
   - [`site/paths/jp-hsp.html`](site/paths/jp-hsp.html) — 日本 · 高度専門職 1 号ロ · 工签 → 永住 → 帰化
   - [`site/paths/us-l1b.html`](site/paths/us-l1b.html) — 美国 · L-1B · 工签 → 永居 → 入籍
   - [`site/paths/us-h1b.html`](site/paths/us-h1b.html) — 美国 · H-1B · 抽签 → 工签 → 永居 → 入籍
+  - [`site/paths/us-o1.html`](site/paths/us-o1.html) — 美国 · O-1 · 杰出人才 → EB-1A → 永居 → 入籍
 
 ## Next · 下一步
 
@@ -48,7 +54,6 @@
 | 建议 slug | 目标文件 | 出现于 |
 | --- | --- | --- |
 | `us-l1a` | `site/paths/us-l1a.html` | us-l1b.html § 8 |
-| `us-o1a` | `site/paths/us-o1a.html` | us-l1b.html § 8 |
 | `us-eb1a` | `site/paths/us-eb1a.html` | us-l1b.html § 8 |
 | `jp-hsp-1a` | `site/paths/jp-hsp-1a.html` | jp-hsp.html § 5（研究系） |
 | `jp-hsp-2` | `site/paths/jp-hsp-2.html` | jp-hsp.html § 5 |
@@ -72,6 +77,7 @@
 - ~~过 JP HSP 页正文 + 修正 ISA 失效 URL~~（2026-04-19，本次）
 - ~~下载 JP HSP 官方原件到 `data/archive/jp/hsp/` 并在页面 § 7 表补「本地归档」列~~（2026-04-19，本次）
 - ~~US L-1B 页 § 10 四张子表补「本地归档」列~~（2026-04-19）
+- ~~新增 US O-1 杰出人才路径 + 官方原件归档 + 跨页链接替换~~（2026-04-20）
 - ~~新增 US H-1B 路径 + 归档 + 首页更新 + 交叉链接~~（2026-04-19，本次）
 
 ## Don't · 别做

@@ -1,0 +1,945 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>relocate · US · O-1 杰出人才 → EB-1A → 入籍（仅供参考 · 非官方）</title>
+<style>
+  :root{
+    --ink:#141414;
+    --ink-soft:#3d3d3d;
+    --ink-faint:#8a8a8a;
+    --rule:#d8d8d8;
+    --rule-soft:#ebebeb;
+    --bg:#fdfbf7;
+    --warn-bg:#fff6e7;
+    --warn-ink:#6a4d00;
+    --inherit-bg:#f1efe9;
+    --branch-bg:#f5f2ea;
+    --serif:Georgia,"Source Han Serif SC","Noto Serif SC","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;
+    --mono:"SFMono-Regular","Menlo",Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:var(--serif);font-size:16.5px;line-height:1.78;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+
+  header.top{
+    padding:14px 40px;border-bottom:1px solid var(--rule);
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em;
+    background:#fff;
+  }
+  header.top .l{color:var(--ink)}
+
+  .page{max-width:920px;margin:0 auto;padding:56px 32px 140px}
+
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 10px}
+  h1{font-size:30px;font-weight:700;line-height:1.25;letter-spacing:-0.005em;margin:0 0 6px}
+  .sub{font-family:var(--sans);font-size:14px;color:var(--ink-soft);margin:0 0 14px;letter-spacing:0.01em}
+  .sub code{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 6px;border-radius:2px;color:var(--ink)}
+  .meta{
+    font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);
+    letter-spacing:0.04em;margin:0 0 28px;
+    padding-bottom:18px;border-bottom:1px solid var(--ink);
+  }
+  .meta span + span::before{content:" · ";margin:0 4px;color:var(--rule)}
+
+  .caveat{
+    background:var(--warn-bg);border:1px solid var(--warn-ink);
+    padding:14px 20px;margin:0 0 32px;
+    font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--warn-ink);
+  }
+  .caveat strong{color:#3c2a00}
+  .caveat p{margin:0 0 6px}
+  .caveat p:last-child{margin:0}
+
+  .chip{
+    display:grid;grid-template-columns:repeat(6, 1fr);
+    gap:0;background:#fff;border:1px solid var(--ink);
+    font-family:var(--sans);margin:0 0 36px;
+  }
+  .chip > div{padding:12px 14px;border-right:1px solid var(--rule)}
+  .chip > div:last-child{border-right:none}
+  .chip dt{
+    font-family:var(--mono);font-size:10px;color:var(--ink-faint);
+    letter-spacing:0.09em;text-transform:uppercase;margin:0 0 3px;
+  }
+  .chip dd{margin:0;font-size:13.5px;color:var(--ink);font-weight:600}
+  .chip dd small{display:block;font-weight:400;font-size:11.5px;color:var(--ink-faint);margin-top:2px;font-family:var(--mono)}
+
+  /* 段锚点条（六段） */
+  .stagenav{
+    display:grid;grid-template-columns:repeat(6, 1fr);
+    gap:6px;margin:0 0 40px;
+    font-family:var(--sans);
+  }
+  .stagenav a{
+    display:block;padding:10px 12px;
+    background:#fff;border:1px solid var(--ink);
+    text-decoration:none;color:var(--ink);
+  }
+  .stagenav a .lbl{
+    font-family:var(--mono);font-size:10px;color:var(--ink-faint);
+    letter-spacing:0.09em;text-transform:uppercase;display:block;margin-bottom:3px;
+  }
+  .stagenav a .t{font-size:14px;font-weight:700;display:block;line-height:1.3}
+  .stagenav a .b{font-size:11.5px;color:var(--ink-soft);display:block;margin-top:3px;font-family:var(--serif);line-height:1.45}
+
+  section{margin:56px 0 0}
+  section > h2{font-size:20px;font-weight:700;line-height:1.35;margin:0 0 4px}
+  section > h2 .n{
+    font-family:var(--mono);font-size:12px;font-weight:400;
+    color:var(--ink-faint);letter-spacing:0.08em;margin-right:10px;
+  }
+  section > h2 .tag{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:0.06em;
+    padding:2px 7px;border:1px solid var(--ink-faint);color:var(--ink-faint);
+    font-weight:400;margin-left:10px;vertical-align:3px;
+  }
+  section > .lede{
+    font-family:var(--serif);font-style:italic;
+    color:var(--ink-soft);font-size:15.5px;line-height:1.7;margin:0 0 20px;
+  }
+
+  p{margin:0 0 1em}
+  h3{font-size:15.5px;font-weight:700;margin:26px 0 8px}
+  h3 .n{
+    font-family:var(--mono);font-size:11px;font-weight:400;
+    color:var(--ink-faint);letter-spacing:0.06em;margin-right:8px;
+  }
+  h4{font-size:13.5px;font-weight:700;margin:18px 0 6px;font-family:var(--sans)}
+
+  /* 节点卡 */
+  .node{
+    background:#fff;border:1px solid var(--ink);
+    padding:18px 22px;margin:14px 0 18px;
+    font-family:var(--sans);font-size:13.5px;line-height:1.7;
+  }
+  .node .ntop{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding-bottom:8px;border-bottom:1px solid var(--rule-soft);margin-bottom:12px;
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em;
+  }
+  .node .ntop .who{
+    display:inline-block;padding:1px 6px;
+    border:1px solid var(--ink);color:var(--ink);
+    font-family:var(--mono);font-size:10px;letter-spacing:0.06em;margin-left:6px;
+  }
+  .node .ntop .who.derivative{border-color:var(--ink-faint);color:var(--ink-faint)}
+  .node .big{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink);line-height:1.35;margin:0 0 6px}
+  .node .big em{font-style:normal;color:var(--ink-faint);font-weight:400;font-size:14px;margin-left:6px}
+  .node p{margin:0 0 10px;color:var(--ink-soft)}
+  .node p strong{color:var(--ink);font-weight:700}
+  .node dl.kv{
+    display:grid;grid-template-columns:140px 1fr;gap:6px 14px;
+    font-size:12.5px;color:var(--ink-soft);margin:12px 0 0;
+    padding-top:10px;border-top:1px dashed var(--rule);
+  }
+  .node dl.kv dt{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.06em;text-transform:uppercase;padding-top:2px}
+  .node dl.kv dd{margin:0}
+  .node dl.kv dd code{font-family:var(--mono);font-size:11.5px;background:var(--rule-soft);padding:1px 5px;border-radius:2px;color:var(--ink)}
+  .node ul.where{
+    list-style:none;padding:0;margin:8px 0 0;
+    font-family:var(--sans);font-size:12.5px;line-height:1.6;
+  }
+  .node ul.where li{
+    padding:5px 0;border-top:1px solid var(--rule-soft);
+    display:grid;grid-template-columns:150px 1fr;gap:14px;color:var(--ink-soft);
+  }
+  .node ul.where li:first-child{border-top:1px solid var(--rule)}
+  .node ul.where li .label{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    letter-spacing:0.06em;text-transform:uppercase;
+  }
+  .node ul.where li code{font-family:var(--mono);font-size:11.5px;color:var(--ink);background:var(--rule-soft);padding:1px 5px;border-radius:2px}
+  .node ul.where li a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--ink-faint);text-underline-offset:2px}
+
+  /* 分支块 */
+  .branches{
+    background:var(--branch-bg);border-left:3px solid var(--ink);
+    padding:14px 20px;margin:12px 0 18px;
+    font-family:var(--sans);font-size:13px;line-height:1.7;
+  }
+  .branches h4{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink);
+    letter-spacing:0.1em;text-transform:uppercase;margin:0 0 10px;font-weight:600;
+  }
+  .branches h4::before{content:"↳ 分支 · "}
+  .branches ol{margin:0;padding:0 0 0 20px;counter-reset:b}
+  .branches ol > li{margin:0 0 10px;color:var(--ink-soft)}
+  .branches ol > li strong{color:var(--ink);font-weight:700}
+  .branches ol > li code{font-family:var(--mono);font-size:11.5px;background:#fff;padding:1px 5px;border:1px solid var(--rule);color:var(--ink)}
+
+  /* 家庭三线图 */
+  .familytrack{
+    background:#fff;border:1px solid var(--ink);margin:14px 0 18px;
+    font-family:var(--sans);font-size:12.5px;
+  }
+  .familytrack .row{
+    display:grid;grid-template-columns:130px 1fr;
+    border-bottom:1px solid var(--rule);
+  }
+  .familytrack .row:last-child{border-bottom:none}
+  .familytrack .row .l{
+    padding:14px;background:var(--rule-soft);border-right:1px solid var(--rule);
+    font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.06em;text-transform:uppercase;
+  }
+  .familytrack .row .l small{display:block;font-size:10px;color:var(--ink-faint);margin-top:3px;letter-spacing:0.04em}
+  .familytrack .row .r{padding:14px 18px;color:var(--ink-soft);line-height:1.65}
+  .familytrack .row .r strong{color:var(--ink)}
+  .familytrack .row .r em{font-style:normal;background:var(--rule-soft);padding:1px 6px;font-family:var(--mono);font-size:11px;color:var(--ink);margin-right:4px}
+
+  /* ASCII / 盒状路径总览图 */
+  .flowchart{
+    background:#fff;border:1px solid var(--ink);
+    padding:22px 24px;margin:10px 0 24px;
+    font-family:var(--mono);font-size:12.5px;line-height:1.8;
+    color:var(--ink);white-space:pre;overflow-x:auto;
+  }
+  .flowchart .hi{background:var(--rule-soft);padding:0 4px}
+  .flowchart .br{color:var(--ink-faint)}
+
+  /* 来源清单 */
+  table.sources{
+    width:100%;border-collapse:collapse;background:#fff;
+    font-family:var(--sans);font-size:12.5px;line-height:1.55;
+    margin:10px 0 16px;
+  }
+  table.sources th,table.sources td{
+    padding:8px 10px;text-align:left;vertical-align:top;
+    border-bottom:1px solid var(--rule);
+  }
+  table.sources thead th{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    letter-spacing:0.08em;text-transform:uppercase;font-weight:600;
+    border-bottom:1px solid var(--ink);background:var(--rule-soft);
+  }
+  table.sources td.id{width:80px}
+  table.sources td.id code{font-family:var(--mono);font-size:11px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+  table.sources td.iss{width:150px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em}
+  table.sources td a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--ink-faint);text-underline-offset:2px}
+
+  /* 风险块 */
+  .risk{
+    background:#fff;border:1px solid var(--warn-ink);
+    padding:14px 20px;margin:10px 0 16px;
+    font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--ink);
+  }
+  .risk h4{
+    font-family:var(--mono);font-size:10.5px;color:var(--warn-ink);
+    letter-spacing:0.1em;text-transform:uppercase;margin:0 0 8px;font-weight:600;
+  }
+  .risk h4::before{content:"! "}
+  .risk ul{margin:6px 0 0;padding:0 0 0 20px}
+  .risk li{margin:0 0 8px;color:var(--ink-soft)}
+  .risk li strong{color:var(--ink)}
+
+  /* inline 术语 */
+  .term{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+
+  /* 行内小提示 */
+  .hint{display:block;color:var(--ink-faint);font-size:12px;margin-top:3px;font-style:italic;font-family:var(--serif)}
+
+  /* 备选切换列表 */
+  .altlist{margin:10px 0 18px;padding:0;list-style:none}
+  .altlist > li{
+    border-top:1px solid var(--rule-soft);padding:14px 0;
+    display:grid;grid-template-columns:150px 1fr;gap:18px;
+    font-family:var(--sans);font-size:13px;line-height:1.65;color:var(--ink-soft);
+  }
+  .altlist > li:last-child{border-bottom:1px solid var(--rule-soft)}
+  .altlist .tgt{
+    font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.04em;
+    padding-top:2px;
+  }
+  .altlist .tgt small{display:block;font-size:10.5px;color:var(--ink-faint);margin-top:3px;text-transform:uppercase;letter-spacing:0.08em}
+  .altlist strong{color:var(--ink)}
+  .altlist .when{color:var(--ink-faint);font-size:12px;display:block;margin-top:4px;font-style:italic;font-family:var(--serif)}
+
+  footer.btm{
+    margin-top:80px;padding-top:14px;border-top:1px solid var(--rule);
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    display:flex;justify-content:space-between;letter-spacing:0.04em;
+  }
+
+  /* 链接基础 */
+  a{color:inherit}
+  .caveat a{color:var(--warn-ink)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <span class="l"><a href="../" style="color:inherit;text-decoration:none">relocate</a> · 路径 · US · O-1</span>
+  <span>仅供参考 · 非官方</span>
+</header>
+
+<main class="page">
+
+  <p class="kicker">美国 · 杰出人才 · 工签 → 永居 → 入籍</p>
+  <h1>美国 · O-1 杰出人才 → EB-1A → 绿卡 → 入籍</h1>
+  <p class="sub">
+    <code>us-o1</code> · 面向"有可证明成就"的个人 · 无年度配额 · 无 PERM · 免国别抽签。
+  </p>
+  <p class="meta">
+    <span>version v0.1</span>
+    <span>最后编辑 2026-04-20</span>
+    <span>通用前置知识见 <a href="us-overview.html" style="color:inherit">us-overview</a> · 共享条款不再重复</span>
+    <span><a href="../" style="color:inherit">← 回到 relocate 首页</a></span>
+  </p>
+
+  <div class="caveat">
+    <p><strong>仅供参考 · 非官方：</strong>本页整理自 USCIS · 国务院 · Cornell LII · eCFR 的公开条款与说明。面向中文读者做路径速览，<strong>不是法律意见，不是移民中介建议，不替代律师</strong>。O-1 是重度证据驱动的类别，个案差异极大，最终策略建议找有 O-1 / EB-1A 判例经验的律师设计。</p>
+    <p><strong>本页边界：</strong>本页专讲 O-1 (+ 自然搭配的 EB-1A 绿卡路径) 这条路；关于签证 / 身份 / I-94、双重意图、7% 国别配额、AOS vs CP、CSPA、LPR 维持、5-3-18 入籍、中国国籍法第 9 条等跨所有美国 path 的共性前置知识，统一写在 <a href="us-overview.html">us-overview</a>，本页不重复。</p>
+    <p><strong>数字处理：</strong>涉及具体美元金额的费用一律不写死（以 USCIS / DOS 当期公告为准）；法律条款里写死的量（3 年首批 · 每次 1 年续签无上限 · 60 天 grace · 8 条证据中至少 3 条）会直接写出并附条款链接。</p>
+    <p><strong>读法：</strong>家庭视角为默认——主申节点下 <em>↳ 配偶</em> / <em>↳ 子女</em> 小块是派生规则；单人读者忽略 ↳ 块即可。<strong>O-1 最大的结构缺陷是 O-3 配偶不能工作</strong>（见 § 4、§ 7），如果配偶需要在美工作，必须在家庭层面事先设计独立 path。</p>
+  </div>
+
+  <dl class="chip">
+    <div>
+      <dt>签证类别</dt>
+      <dd>O-1A / O-1B <small>NIV · INA §101(a)(15)(O)</small></dd>
+    </div>
+    <div>
+      <dt>初次期限</dt>
+      <dd>≤ 3 年 <small>8 CFR 214.2(o)(6)(iii)</small></dd>
+    </div>
+    <div>
+      <dt>续签</dt>
+      <dd>每次 1 年 · 无上限 <small>区别于 H-1B 6 年 / L-1 5-7 年</small></dd>
+    </div>
+    <div>
+      <dt>家属</dt>
+      <dd>O-3（配偶 + 21 岁以下子女）<small>O-3 <strong>不可工作</strong></small></dd>
+    </div>
+    <div>
+      <dt>双重意图</dt>
+      <dd>行政承认 <small>办绿卡不影响续签</small></dd>
+    </div>
+    <div>
+      <dt>典型绿卡接续</dt>
+      <dd>EB-1A（自荐 · 无 PERM）<small>排期多数年份 current 或 ≤ 2 年</small></dd>
+    </div>
+  </dl>
+
+  <nav class="stagenav">
+    <a href="#stage-overview">
+      <span class="lbl">§ 0</span>
+      <span class="t">全景图</span>
+      <span class="b">三线 + 时间轴</span>
+    </a>
+    <a href="#stage-eligibility">
+      <span class="lbl">§ 1</span>
+      <span class="t">身份入口</span>
+      <span class="b">O-1A / O-1B · 8 条证据</span>
+    </a>
+    <a href="#stage-file">
+      <span class="lbl">§ 2</span>
+      <span class="t">工签申请</span>
+      <span class="b">咨询函 · I-129 · 落地</span>
+    </a>
+    <a href="#stage-maintain">
+      <span class="lbl">§ 3</span>
+      <span class="t">维持与续签</span>
+      <span class="b">3 + 1 + 1 · 换雇主</span>
+    </a>
+    <a href="#stage-family">
+      <span class="lbl">§ 4</span>
+      <span class="t">家属 O-3</span>
+      <span class="b">无 EAD · 21 岁悬崖</span>
+    </a>
+    <a href="#stage-gc">
+      <span class="lbl">§ 5</span>
+      <span class="t">启动绿卡</span>
+      <span class="b">EB-1A / NIW</span>
+    </a>
+    <a href="#stage-lpr">
+      <span class="lbl">§ 6</span>
+      <span class="t">绿卡 → 入籍</span>
+      <span class="b">I-485 · LPR · N-400</span>
+    </a>
+    <a href="#stage-play">
+      <span class="lbl">§ 7</span>
+      <span class="t">家庭玩法</span>
+      <span class="b">配偶独立 path</span>
+    </a>
+    <a href="#stage-altern">
+      <span class="lbl">§ 8</span>
+      <span class="t">备选切换</span>
+      <span class="b">同类 / 跨签 / 跨国</span>
+    </a>
+  </nav>
+
+  <!-- ============ § 0 全景 ============ -->
+  <section id="stage-overview">
+    <h2><span class="n">§ 0</span>全景图 · 从证据积累到入籍</h2>
+    <p class="lede">O-1 的逻辑与 H-1B / L-1 完全不同：不是"雇主身份条件 + 行业岗位条件"的双轨审查，而是"申请人个人的杰出性举证"。一旦获批，NIV 侧几乎没有 H-1B 那种时间压力（无 6 年上限、无抽签、无国别配额），最大压力转移到绿卡侧。</p>
+
+    <p>也正因为 O-1 的"杰出性"门槛与 EB-1A 的"杰出能力"门槛重合度极高，<strong>O-1 是目前把"自我雇主 / 自主项目 / 跨雇主咨询"等非传统职业形态带入美国工作并接续绿卡的事实标准通道</strong>。</p>
+
+    <h3><span class="n">0.1</span>一张图 · 典型中国出生申请人</h3>
+    <div class="timeline">
+      <div class="trow">
+        <span class="t-left">主申（O-1A）</span>
+        <span class="t-bar"><span class="seg s-niv">O-1 工签 · 3 年首批 + 每 1 年无限续</span><span class="seg s-iv">I-140 EB-1A → I-485 / CP</span><span class="seg s-lpr">LPR 5 年</span><span class="seg s-n">N-400</span></span>
+      </div>
+      <div class="trow">
+        <span class="t-left">↳ 配偶（O-3）</span>
+        <span class="t-bar"><span class="seg s-dep">O-3 派生 · 不可工作</span><span class="seg s-iv">I-485 同递</span><span class="seg s-lpr">LPR 同步</span></span>
+      </div>
+      <div class="trow">
+        <span class="t-left">↳ 子女（O-3）</span>
+        <span class="t-bar"><span class="seg s-dep">O-3 · 可就学 · 21 岁前</span><span class="seg s-iv">I-485 同递 · CSPA</span><span class="seg s-lpr">LPR</span></span>
+      </div>
+    </div>
+
+    <p class="hint">↳ 派生行里的"不可工作"是 O-1 家庭最关键的一条规则。配偶想工作必须另起独立身份（详见 § 4 与 § 7）。</p>
+
+    <h3><span class="n">0.2</span>O-1 与 H-1B / L-1 / EB-1A 的四点关键差异</h3>
+    <table class="sources">
+      <thead><tr><th>维度</th><th>H-1B</th><th>L-1</th><th>O-1</th><th>EB-1A（绿卡）</th></tr></thead>
+      <tbody>
+        <tr><td>年度配额</td><td class="iss">有 · 抽签</td><td>无</td><td>无</td><td>有 · 但多数年份中国出生 current</td></tr>
+        <tr><td>NIV 时长上限</td><td>6 年（可 AC21 突破）</td><td>5 / 7 年（硬顶）</td><td class="iss">无 · 每次 1 年无限续</td><td>—（终身 LPR）</td></tr>
+        <tr><td>是否需雇主</td><td>需</td><td>需（同集团）</td><td>需（可为 agent）</td><td class="iss">否 · 自荐</td></tr>
+        <tr><td>配偶工作权</td><td>H-4 · I-140 后 EAD</td><td>L-2S · 自动 EAD</td><td class="iss">O-3 · 不可工作</td><td>绿卡后无限制</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ============ § 1 证据入口 ============ -->
+  <section id="stage-eligibility">
+    <h2><span class="n">§ 1</span>身份入口 · O-1A / O-1B · 8 条证据标准</h2>
+    <p class="lede">O-1 分三档。中文读者的"杰出人才签证"大多指第一档（O-1A · 科学 / 教育 / 商业 / 体育）或第二档（O-1B · 艺术 / 影视）。</p>
+
+    <h3><span class="n">1.1</span>三档划分</h3>
+    <table class="sources">
+      <thead><tr><th>子类</th><th>领域</th><th>门槛措辞</th><th>法律依据</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>O-1A</code></td><td>科学 · 教育 · 商业 · 体育</td><td>extraordinary ability · <strong>国家或国际层面的持续赞誉</strong>，属所在领域顶尖一小部分</td><td>INA §101(a)(15)(O)(i)</td></tr>
+        <tr><td class="id"><code>O-1B（艺术）</code></td><td>艺术</td><td>distinction · <strong>显著高于行业普通水平</strong>，在其领域获得认可</td><td>同上 · 8 CFR 214.2(o)(3)(ii)</td></tr>
+        <tr><td class="id"><code>O-1B（MPT）</code></td><td>影视（motion picture or television）</td><td>extraordinary achievement · <strong>一段时间内的杰出成就</strong></td><td>8 CFR 214.2(o)(3)(iv)</td></tr>
+        <tr><td class="id"><code>O-2</code></td><td>随 O-1B / 部分 O-1A 体育项目的关键支持人员</td><td>"integral part" 的必要支持</td><td>INA §101(a)(15)(O)(ii)</td></tr>
+        <tr><td class="id"><code>O-3</code></td><td>O-1 / O-2 的配偶 + 21 岁以下未婚子女</td><td>派生 · 不可工作</td><td>INA §101(a)(15)(O)(iii)</td></tr>
+      </tbody>
+    </table>
+
+    <p>"distinction" 与 "extraordinary ability" 是两套门槛。实务上 O-1B 艺术档相对容易满足，O-1A 科研 / 商业档举证更重。</p>
+
+    <h3><span class="n">1.2</span>O-1A 的 8 条证据标准 · 至少满足 3 条</h3>
+    <div class="node">
+      <div class="ntop"><span>§1.2 · 8 CFR 214.2(o)(3)(iii)(B)</span></div>
+      <div class="big">满足"一次性大奖"或 8 条中至少 3 条</div>
+      <p><strong>捷径路线：</strong>曾获诺贝尔奖、奥斯卡、普利策、奥运金牌等"国际公认的主要大奖"一项即可（(o)(3)(iii)(A)）。</p>
+      <p><strong>常规路线（至少 3 条）：</strong></p>
+      <ol>
+        <li>获得本领域<strong>国家或国际层面的、较低级别的</strong>获奖或认可</li>
+        <li>作为领域内杰出成就会员资格要求严格的<strong>专业协会会员</strong>（审核机制要是同行评审）</li>
+        <li>在专业或主要行业媒体、主流媒体上有<strong>关于申请人及其工作的报道</strong></li>
+        <li>作为<strong>同行专业工作的评审</strong>（期刊审稿 · 会议评委 · 评奖评委）</li>
+        <li>对本领域作出<strong>原创性重要贡献</strong>（科学 · 学术 · 商业 · 艺术）</li>
+        <li>在专业或主要行业<strong>出版物上发表署名文章</strong></li>
+        <li>以<strong>关键或主导角色</strong>任职于有杰出声誉的组织</li>
+        <li>获得<strong>高薪或其他高于同业的报酬</strong></li>
+      </ol>
+      <p class="hint">条款允许"类比证据"（comparable evidence）——若上述标准不直接适用于你的子领域，可以提交同等说服力的替代证据，但必须先说明<strong>为什么该项标准不适用</strong>。这是 STEM / 企业家申请人最常用的弹性口径（见 § 1.4）。</p>
+      <dl class="kv">
+        <dt>条款原文</dt><dd><a href="../../data/archive/us/o1/regulations/8-CFR-214.2_O-nonimmigrant.html" target="_blank" rel="noopener">8 CFR 214.2(o)(3)(iii)</a></dd>
+        <dt>官方说明</dt><dd><a href="../../data/archive/us/o1/uscis/o1_overview.html" target="_blank" rel="noopener">USCIS · O-1 Overview</a> · <a href="../../data/archive/us/o1/uscis/policy-manual_vol2-part-m_O.html" target="_blank" rel="noopener">USCIS Policy Manual Vol.2 Part M</a></dd>
+      </dl>
+    </div>
+
+    <h3><span class="n">1.3</span>O-1B 艺术 · 6 条证据标准</h3>
+    <div class="node">
+      <div class="ntop"><span>§1.3 · 8 CFR 214.2(o)(3)(iv)(B)</span></div>
+      <div class="big">获 Oscar / Emmy / Grammy / Director's Guild 提名，或满足 6 条中至少 3 条</div>
+      <ul>
+        <li>在杰出作品中担任（或将担任）主演 / 领衔角色</li>
+        <li>获得的国家或国际认可（报刊评论等）</li>
+        <li>在杰出机构担任（或将担任）主演 / 主要角色</li>
+        <li>享有主要商业或关键批评成功</li>
+        <li>获得专业组织 / 评论家 / 政府机构 / 领域专家的重要认可</li>
+        <li>在与同行相比下获得高报酬</li>
+      </ul>
+      <p>O-1B MPT（影视）另有独立条款（(o)(3)(v)），门槛"extraordinary achievement" 明显高于一般艺术 "distinction"。</p>
+    </div>
+
+    <h3><span class="n">1.4</span>2022 年 STEM / 企业家的澄清备忘</h3>
+    <div class="node">
+      <div class="ntop"><span>§1.4 · USCIS Policy Alert PA-2022-03 · 2022-01-21</span></div>
+      <div class="big">专门拆解 O-1A 8 条标准对科研与创业人群的适用口径</div>
+      <p>这份 2022 年 1 月 USCIS 发布的政策更新，针对 STEM 领域与 <span class="term">entrepreneur</span> 的 O-1A 证据审查给出非穷尽示例。核心影响：</p>
+      <ul>
+        <li>明确承认<strong>专利授权与论文引用</strong>可作为"原创性重要贡献"的证据</li>
+        <li>明确承认<strong>担任知名 VC / 加速器的顾问 / 评委</strong>可计入"同行评审"</li>
+        <li>明确承认<strong>受邀在 NIH / NSF / 行业旗舰会议做报告</strong>可作为 "critical role" 证据</li>
+        <li>创业者可用 <strong>fundraising 记录 / 关键高管头衔 / 媒体覆盖</strong>等构造证据组</li>
+      </ul>
+      <p>这份备忘是 2022 年之后 O-1A 成为"硅谷独立创业 / 独立研究者进美首选身份"的直接法规基础。</p>
+      <dl class="kv">
+        <dt>原文归档</dt><dd><a href="../../data/archive/us/o1/uscis/policy-alert_O-1A-STEM_2022-01.pdf" target="_blank" rel="noopener">PA-2022-03 PDF</a></dd>
+        <dt>发布页</dt><dd>USCIS Policy Manual 更新日志</dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ § 2 工签申请 ============ -->
+  <section id="stage-file">
+    <h2><span class="n">§ 2</span>工签申请 · 咨询函 · I-129 · 落地</h2>
+
+    <h3><span class="n">2.1</span>申请主体 · Petitioner 必须是雇主或 Agent</h3>
+    <p>O-1 不能完全自雇——即使是自营公司也必须以 <strong>公司名义（entity）作为 Petitioner 为自己申请</strong>，不能"个人自己向自己"递。两种可用结构：</p>
+    <ul>
+      <li><strong>单一雇主</strong>：公司直接 file I-129 · 最简单</li>
+      <li><strong>Agent 模式</strong>：1 个 agent 代理多个 end-clients · 附带工作 itinerary + 各 end-client 的合同/offer · 特别适合自由职业艺术家 / 跨项目创业者 / 独立顾问</li>
+    </ul>
+    <p>其中 agent 模式由 <a href="../../data/archive/us/o1/regulations/8-CFR-214.2_O-nonimmigrant.html" target="_blank" rel="noopener">8 CFR 214.2(o)(2)(iv)(E)</a> 明确授权，是"非传统职业形态"进入美国的关键法律口径。</p>
+
+    <h3><span class="n">2.2</span>Consultation Letter · 同业咨询函</h3>
+    <div class="node">
+      <div class="ntop"><span>§2.2 · 8 CFR 214.2(o)(5)</span></div>
+      <div class="big">同业 / 工会 / 管理公会对你"杰出性"的书面意见</div>
+      <p>O-1 申请必须附<strong>来自同业组织 / 工会 / 管理公会</strong>的书面意见，对申请人的成就与所申请工作的性质出具意见。若某领域不存在合适的同业组织，USCIS 允许申请人在申请时说明情况。</p>
+      <ul>
+        <li><strong>O-1A</strong>（科研 / 商业 / 教育 / 体育）：常见无对口同业组织的情形——说明即可豁免，但大多数申请人会自行寻找该领域 2–3 位 peer level 独立专家出具"推荐信（experts in the field）"作为事实上的 peer review</li>
+        <li><strong>O-1B 艺术</strong>：好莱坞相关由 <em>SAG-AFTRA</em> / <em>DGA</em> / <em>WGA</em> 等对应工会出具；无对口工会的艺术门类可由同业专家替代</li>
+      </ul>
+      <p>USCIS 发布了 <a href="../../data/archive/us/o1/uscis/o1_consultation-letter-addresses.html" target="_blank" rel="noopener">O / P 咨询函地址索引</a>，列明各领域应投寄对象。</p>
+    </div>
+
+    <h3><span class="n">2.3</span>I-129 · O 附件 + 证据包</h3>
+    <table class="sources">
+      <thead><tr><th>文件</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td><a href="../../data/archive/us/o1/forms/I-129.pdf" target="_blank" rel="noopener">I-129 主表</a></td><td>非移民工作者申请通表（含 O supplement）</td></tr>
+        <tr><td><a href="../../data/archive/us/o1/forms/I-129_instructions.pdf" target="_blank" rel="noopener">I-129 说明</a></td><td>填写与申请费当期口径</td></tr>
+        <tr><td>证据包</td><td>咨询函 · 详细申请信 · 8 条证据（or 6 条）的逐项原件 · 媒体报道原件 · 专家推荐信 · 发表物 · 奖状 · 会员证明 · 工作合同 / offer · 受邀证明</td></tr>
+        <tr><td>工作 itinerary</td><td>agent 模式必需；单一雇主可选</td></tr>
+        <tr><td><a href="../../data/archive/us/o1/forms/I-907_premium-processing.pdf" target="_blank" rel="noopener">I-907 加急</a></td><td>15 个工作日决定（非保证批准）· 强烈推荐</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">2.4</span>签证贴签与入境</h3>
+    <p>I-129 获批后收到 <span class="term">I-797</span>：</p>
+    <ul>
+      <li><strong>境外申请</strong>：美领馆填 <a href="../../data/archive/us/o1/forms/DS-160_online-only.url" target="_blank" rel="noopener">DS-160</a> + 面签 + 贴签 → 最早可在 I-797 生效日前 10 天入境</li>
+      <li><strong>境内切换身份</strong>（如 F-1 OPT → O-1）：I-129 同时请求 change of status，获批即生效，无需出境，但首次出境回来仍须在使馆贴签</li>
+    </ul>
+    <p>入境后 <strong>CBP 以 I-94 上的 "admit until" 日期</strong>为合法身份到期日，签证贴纸只管入境不管停留时长（见 <a href="us-overview.html#s-concepts">us-overview § 1.1</a>）。</p>
+  </section>
+
+  <!-- ============ § 3 维持与续签 ============ -->
+  <section id="stage-maintain">
+    <h2><span class="n">§ 3</span>维持与续签 · 3 + 1 + 1 · 无上限 · 换雇主</h2>
+
+    <h3><span class="n">3.1</span>时长结构</h3>
+    <div class="node">
+      <div class="ntop"><span>§3.1 · 8 CFR 214.2(o)(6)</span></div>
+      <div class="big">初批 ≤ 3 年 · 每次续签 1 年 · 无累计上限</div>
+      <p>O-1 的时长规则在所有主流工签中最友好：</p>
+      <ul>
+        <li><strong>初次 I-129</strong>：批准时长以"完成该 event / activity 所需时间"为准，<strong>最多 3 年</strong></li>
+        <li><strong>续签（I-129 extension）</strong>：每次增量 <strong>最多 1 年</strong>，但<strong>无累计上限</strong>——只要你持续有可证明的杰出活动即可无限续</li>
+        <li>特别适合绿卡侧因 PD 倒退等意外拖延的情形——不像 H-1B 6 年后要靠 AC21 §104(c) 续，O-1 结构上没有这一困境</li>
+      </ul>
+    </div>
+
+    <h3><span class="n">3.2</span>换雇主 · Amendment</h3>
+    <p>O-1 不像 H-1B 有 <span class="term">portability</span>（递交即开工）。<strong>换雇主必须由新雇主重新递 I-129 · 获批后才能为新雇主工作</strong>。实务中：</p>
+    <ul>
+      <li>新雇主递 I-129 + 请求加急（I-907 15 工作日出结果）</li>
+      <li>旧雇主的 O-1 在新 I-129 生效前仍然是你的合法身份——不要旧雇主提前终止</li>
+      <li>如果新岗位只是同雇主内的职责变化（<em>material change</em>），也需 I-129 amendment</li>
+    </ul>
+
+    <h3><span class="n">3.3</span>失业后的 60 天 grace</h3>
+    <p>终止雇佣后适用与 H-1B / L-1 相同的 <strong>最多 60 天</strong>宽限（<a href="../../data/archive/us/l1b-family/regulations/8-CFR-214.2_L-H-nonimmigrant.html" target="_blank" rel="noopener">8 CFR 214.1(l)(2)</a>），可做：</p>
+    <ul>
+      <li>找新雇主递新 I-129</li>
+      <li>切 B-2 / F-1 / H-1B / L-1 等其他身份</li>
+      <li>离境</li>
+    </ul>
+    <p>60 天内未处置，unlawful presence 开始计时；超过 180 天累计面临 3 年禁令（见 <a href="us-overview.html#s-status">us-overview § 5.3</a>）。</p>
+
+    <h3><span class="n">3.4</span>双重意图 · 办绿卡不影响续签</h3>
+    <p>USCIS 行政承认 O-1 为双重意图（policy manual）——<strong>已递 I-140 / I-485 不构成 O-1 续签的负面因素</strong>。这也是 O-1 比 F-1 / J-1 / TN 更适合作为绿卡桥梁的根本原因。</p>
+  </section>
+
+  <!-- ============ § 4 家属 ============ -->
+  <section id="stage-family">
+    <h2><span class="n">§ 4</span>家属 O-3 · 不可工作 · 21 岁悬崖</h2>
+
+    <div class="risk">
+      <h4>O-1 路径的最大结构缺陷</h4>
+      <p>与 H-4（I-140 后 EAD）、L-2S（自动 EAD）、E-2 配偶（自动 EAD）不同，<strong>O-3 在任何情况下都不能获得工作许可</strong>。这是 O-1 路径中必须在家庭层面最早做好预案的一条。</p>
+      <p>唯二解决方式：</p>
+      <ol>
+        <li><strong>配偶另起独立工作身份</strong>（H-1B / 独立 O-1 / L-1 / F-1 + OPT 等）——见 § 7 家庭玩法</li>
+        <li>等主申拿到 EB-1A / NIW 绿卡：I-485 递交后配偶凭 <span class="term">I-765</span> 可申请 EAD，约 5–8 个月拿到工作许可</li>
+      </ol>
+    </div>
+
+    <h3><span class="n">4.1</span>O-3 允许的活动</h3>
+    <ul>
+      <li>合法居留 · 与主申同批同续</li>
+      <li><strong>可全日制 / 兼职就学</strong>（任何学历层次）——这是 O-3 身份下小孩与在读配偶的主要利用方式</li>
+      <li><strong>不可受雇</strong> · 不可从事 USCIS 定义的"employment"（包括远程为境外公司工作？技术灰色，实务上多数律师保守建议避免）</li>
+      <li>可自由出入境（持有效签证 + I-797）</li>
+    </ul>
+
+    <h3><span class="n">4.2</span>子女 · 21 岁前</h3>
+    <p>O-3 子女满 21 岁自动失派生资格（不论排期或婚姻状态）。处理选项同 <a href="us-overview.html#s-concepts">us-overview § 8.2</a>：切 F-1 / 找独立工签 / 赶在 21 岁前已递 I-485（CSPA 公式保护）。</p>
+
+    <h3><span class="n">4.3</span>派生身份的申请</h3>
+    <ul>
+      <li>与主申 I-129 同时：主申 I-129 获批后，家属另递 <a href="../../data/archive/us/l1b-family/forms/I-539_extend-change-status.pdf" target="_blank" rel="noopener">I-539</a> 在境内变更 / 延期身份，或在境外以 DS-160 面签 O-3</li>
+      <li>所有 O-3 家属的有效期不超过主申 O-1 的有效期</li>
+    </ul>
+  </section>
+
+  <!-- ============ § 5 启动绿卡 ============ -->
+  <section id="stage-gc">
+    <h2><span class="n">§ 5</span>启动绿卡 · EB-1A 首选 · EB-2 NIW / EB-1B 备选</h2>
+    <p class="lede">O-1A 已经构造了一套"杰出能力"证据体系，几乎无缝可升级到 EB-1A 的 I-140（标准略高但维度相同）。这是 O-1 → 绿卡最常见的主线。</p>
+
+    <h3><span class="n">5.1</span>EB-1A · Extraordinary Ability · 自荐 · 无 PERM</h3>
+    <div class="node">
+      <div class="ntop"><span>§5.1 · INA §203(b)(1)(A) · 8 CFR 204.5(h)</span></div>
+      <div class="big">O-1A 的天然延续 · 无雇主赞助 · 无 PERM</div>
+      <p><strong>证据结构：</strong>满足"一次性大奖"（诺贝尔奖级别）或 <strong>10 条标准中至少 3 条</strong>（与 O-1A 的 8 条高度重合但更严，且审查看"sustained national or international acclaim"，即持续声誉，而非单次事件）。实务经验：</p>
+      <ul>
+        <li>通常需 O-1A 证据基础上<strong>再增 1–2 层</strong>（如多篇高引论文 / 更多主流媒体报道 / 更系统的同行评审记录）</li>
+        <li>EB-1A 判断有"final merits determination" 两段论——USCIS 会先数"满足几条"再整体评估"是否真的 top small percentage"，有 O-1 获批的事实本身就是有力事实证据但不是通行证</li>
+        <li><strong>Priority Date</strong> = USCIS 收到 I-140 的日期</li>
+        <li><strong>排期</strong>：中国大陆出生 EB-1 近十年多数月份 current 或排期 ≤ 2 年（见 DOS Visa Bulletin），远快于 EB-2 PERM 路线</li>
+      </ul>
+      <dl class="kv">
+        <dt>法律</dt><dd><a href="../../data/archive/us/l1b-family/statutes/8-USC-1153_INA-203.html" target="_blank" rel="noopener">INA §203 · 8 USC §1153</a></dd>
+        <dt>实施细则</dt><dd><a href="../../data/archive/us/l1b-family/regulations/8-CFR-204.5_EB-petition.html" target="_blank" rel="noopener">8 CFR 204.5(h)</a></dd>
+        <dt>用表</dt><dd><a href="../../data/archive/us/l1b-family/forms/I-140_EB-petition.pdf" target="_blank" rel="noopener">I-140</a> + <a href="../../data/archive/us/l1b-family/forms/I-907_premium-processing.pdf" target="_blank" rel="noopener">I-907 加急</a>（EB-1A I-140 支持 PP）</dd>
+      </dl>
+    </div>
+
+    <h3><span class="n">5.2</span>EB-2 NIW · 备选</h3>
+    <p>若暂时凑不够 EB-1A 的"10 条中 3 条 + 持续声誉"，但能证明自己的工作具有国家利益、对美国有实质影响、且放弃 PERM 对美国有利（<em>Matter of Dhanasar</em> 三要素），可考虑 EB-2 NIW。与 EB-1A 的对比：</p>
+    <ul>
+      <li><strong>NIW</strong>：无 PERM、无雇主 · 门槛明显低于 EB-1A · 中国大陆出生排期约 4–6 年（见 Visa Bulletin）</li>
+      <li><strong>EB-1A</strong>：无 PERM、无雇主 · 门槛更高 · 中国大陆出生排期通常 ≤ 2 年</li>
+      <li>实务：多数 O-1A 持有人先递 NIW（下限保底）· 证据积累到位后再并行递 EB-1A</li>
+    </ul>
+
+    <h3><span class="n">5.3</span>EB-1B · Outstanding Professor / Researcher</h3>
+    <p>面向高校教研 + 跨国公司 R&D lead 群体，需雇主赞助、需终身职位或同等：</p>
+    <ul>
+      <li>至少 3 年相关经验</li>
+      <li>雇主为获 tenure / tenure-track 的大学 / 有质量 R&D 的私营雇主</li>
+      <li>满足 6 条标准中 2 条（与 EB-1A 证据重合度高）</li>
+    </ul>
+    <p>科研 + 学术路径的 O-1A → EB-1B 是常见替代（若主雇主已承诺 tenure-track）。</p>
+
+    <h3><span class="n">5.4</span>PERM 路线（EB-2 / EB-3）</h3>
+    <p>理论上可用，但 O-1 群体基本不会选：</p>
+    <ul>
+      <li>PERM 审理 6–18 个月 · I-140 再 6–12 个月 · 中国大陆出生 EB-2 排期 5–7 年</li>
+      <li>同样的时间里走 EB-1A / NIW 通常已经拿到绿卡</li>
+      <li>只有在 EB-1A / NIW 完全无法构造证据时才回头走 PERM</li>
+    </ul>
+  </section>
+
+  <!-- ============ § 6 绿卡收尾 ============ -->
+  <section id="stage-lpr">
+    <h2><span class="n">§ 6</span>绿卡收尾 · I-485 / CP · LPR · 入籍 N-400</h2>
+    <p class="lede">拿到 I-140 批准 + PD current 后，走 AOS（境内 I-485）或 CP（海外面签）之一。通用规则见 <a href="us-overview.html#s-aos-cp">us-overview § 4</a>，以下只写 O-1 路径下的特别注意。</p>
+
+    <h3><span class="n">6.1</span>I-485 AOS · O-1 主申常选</h3>
+    <p>已在美工作的 O-1 主申绝大多数选 AOS：</p>
+    <ul>
+      <li>I-485 + I-765（EAD）+ I-131（AP）三表同递 · 5–8 个月出 EAD / AP · 全家一并</li>
+      <li>递 I-485 后仍可保留 O-1（双重意图允许），也可完全依赖 EAD · 两种身份常见并存</li>
+      <li><strong>O-3 家属递 I-765 后 5–8 个月即可工作</strong>——这是家庭层面解决"O-3 不能工作"的最终出口</li>
+      <li>I-693 体检（授权 civil surgeon）· 与 I-485 同递或 RFE 时补</li>
+      <li>Cross-chargeability（配偶不同出生国）可用（见 <a href="us-overview.html#s-iv">us-overview § 3.5</a>）</li>
+    </ul>
+
+    <h3><span class="n">6.2</span>CP · Consular Processing</h3>
+    <p>若主申在申请时已在境外或偏好一次性完成：I-140 → NVC → DS-260 → 使馆面签 → 入境即 LPR。适合：家属分散、计划长期海外后再入境定居、不想在美等批。</p>
+
+    <h3><span class="n">6.3</span>LPR 维持 + N-400</h3>
+    <p>拿到绿卡后维持要求与入籍模板对所有 US path 相同，不在本页重复——请对照 <a href="us-overview.html#s-lpr">us-overview § 6 · LPR 维持</a> 与 <a href="us-overview.html#s-naturalize">§ 7 · 入籍模板</a>。O-1 / EB-1A 路径的常见时间线：</p>
+    <ul>
+      <li>绿卡生效日 + 4 年 9 个月 → 可递 <a href="../../data/archive/us/l1b-family/forms/N-400_naturalization.pdf" target="_blank" rel="noopener">N-400</a>（5-3-18 规则）</li>
+      <li>这 5 年中至少 30 个月物理在美 · 任一次离美不超过 6 个月 / 12 个月（见 § 6 阈值）</li>
+      <li>美国公民配偶可 3-3-18（INA §319(a)）</li>
+      <li>入籍宣誓 → 自动失中国国籍（中国《国籍法》第 9 条）· 注销中国护照 · 申请中国签证回国</li>
+    </ul>
+
+    <h3><span class="n">6.4</span>21 岁以下子女自动入籍</h3>
+    <p>主申入籍后，未满 18 岁 + 已是 LPR + 合法居住父母处的子女按 <a href="../../data/archive/us/l1b-family/statutes/PubL-106-395_CCA-2000.pdf" target="_blank" rel="noopener">CCA 2000</a> 自动取得美国公民身份；可递 <a href="../../data/archive/us/l1b-family/forms/N-600_certificate-of-citizenship.pdf" target="_blank" rel="noopener">N-600</a> 获证明。</p>
+  </section>
+
+  <!-- ============ § 7 家庭玩法 ============ -->
+  <section id="stage-play">
+    <h2><span class="n">§ 7</span>家庭玩法 · 两条独立 path · 解决 O-3 无工权</h2>
+    <p class="lede">O-1 家庭必须做的核心设计是：配偶不能指望 O-3 本身，得有第二条独立工作身份。以下三种是最常见的配置。</p>
+
+    <h3><span class="n">7.1</span>双线 A · 主 O-1 + 配偶独立 H-1B</h3>
+    <div class="node">
+      <div class="ntop"><span>§7.1</span></div>
+      <div class="big">最常见组合 · 配偶走企业雇主 H-1B 抽签</div>
+      <ul>
+        <li><strong>触发时机</strong>：主申获得 O-1 offer 的同时，配偶寻找愿意抽 H-1B 的企业雇主（或已在 F-1 OPT 期间）</li>
+        <li><strong>时间压力</strong>：每年 3 月注册、4 月抽签、10 月 1 日入职 · 抽中率近年 ≈ 20–30%</li>
+        <li><strong>抽不中兜底</strong>：配偶保留 O-3 身份继续就学或陪伴；下年再抽 · OPT 已失效须其他过渡（切 H-3 / B-2 / 独立 O-1）</li>
+        <li><strong>独立绿卡线</strong>：H-1B 配偶可独立走 EB-2 PERM（公司支持）</li>
+      </ul>
+    </div>
+
+    <h3><span class="n">7.2</span>双线 B · 主 O-1 + 配偶独立 O-1</h3>
+    <div class="node">
+      <div class="ntop"><span>§7.2</span></div>
+      <div class="big">夫妻双方都有杰出性证据时最稳健</div>
+      <ul>
+        <li><strong>触发时机</strong>：双方都有可证明的 O-1A / O-1B 证据（科研 + 艺术 / 科研 + 创业 / 创业 + 创业常见）</li>
+        <li><strong>优势</strong>：免抽签、免配额、双方各自无限续 · 两条独立绿卡线（双 EB-1A）· 家庭整体韧性最高</li>
+        <li><strong>劣势</strong>：两份完整的 O-1 证据包 + 咨询函 + I-129 + I-907 · 前期时间与律师成本高</li>
+      </ul>
+    </div>
+
+    <h3><span class="n">7.3</span>双线 C · 主 O-1 + 配偶 L-1 / E-2</h3>
+    <p>若配偶在跨国公司有内部调动机会 → <strong>L-1A / L-1B + L-2S（自动 EAD）</strong>；若配偶持有具备条约国国籍（如新加坡 / 日本 / 韩国 / 德国 / 英国等）并有实质贸易 / 投资 → <strong>E-1 / E-2 + 配偶自动 EAD</strong>。两者的共同优点：配偶那条 path 的"再下一层家属"（L-2 / E 配偶）本身就自带工作权，不需要等 I-140。</p>
+
+    <h3><span class="n">7.4</span>家庭三线图 · 典型 O-1A 科研 + 配偶 H-1B</h3>
+    <div class="timeline">
+      <div class="trow">
+        <span class="t-left">主申 O-1A</span>
+        <span class="t-bar"><span class="seg s-niv">O-1 · 3 + 1 + 1…</span><span class="seg s-iv">EB-1A I-140 / I-485</span><span class="seg s-lpr">LPR 5 年</span><span class="seg s-n">N-400</span></span>
+      </div>
+      <div class="trow">
+        <span class="t-left">配偶 H-1B</span>
+        <span class="t-bar"><span class="seg s-niv">F-1 OPT → H-1B 抽签</span><span class="seg s-iv">EB-2 PERM + I-140（独立）</span><span class="seg s-lpr">LPR</span><span class="seg s-n">N-400</span></span>
+      </div>
+      <div class="trow">
+        <span class="t-left">子女</span>
+        <span class="t-bar"><span class="seg s-dep">O-3 / H-4 · 就学</span><span class="seg s-iv">I-485 同递 · CSPA</span><span class="seg s-lpr">LPR</span><span class="seg s-n">CCA 自动入籍</span></span>
+      </div>
+    </div>
+    <p class="hint">一旦任一条主 path 出问题（O-1 续签被拒 · H-1B 失业 · EB-1A I-140 被拒）· 另一条独立线仍在运转，全家不至于一起失身份。</p>
+  </section>
+
+  <!-- ============ § 8 备选切换 ============ -->
+  <section id="stage-altern">
+    <h2><span class="n">§ 8</span>备选切换 · 这条走不通怎么办</h2>
+
+    <h3 style="font-family:var(--sans);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);margin:22px 0 0;font-weight:600">同类切换（仍在美国）</h3>
+    <div class="branches">
+      <h4>O-1A / O-1B 之间</h4>
+      <ol>
+        <li><strong>门槛：</strong>实质工作领域的认定——同一申请人若同时有科研产出与艺术作品，可选择证据更扎实的一侧</li>
+        <li><strong>时机：</strong>首次申请前由律师评估；在批之后改领域需重新 I-129</li>
+      </ol>
+    </div>
+
+    <div class="branches">
+      <h4>O-1 → H-1B</h4>
+      <ol>
+        <li><strong>门槛：</strong>学士 + "specialty occupation" · 雇主需过 LCA</li>
+        <li><strong>时机：</strong>O-1 续签困难（证据老化）或希望转为有配偶 EAD 可能的 H-4 家庭结构时考虑 · 注意 H-1B 抽签</li>
+        <li><strong>详见：</strong><a href="us-h1b.html">本站 · 美国 H-1B 路径</a></li>
+      </ol>
+    </div>
+
+    <div class="branches">
+      <h4>O-1 → L-1A / L-1B</h4>
+      <ol>
+        <li><strong>门槛：</strong>需在美国公司的海外关联雇主满 1 年 · O-1 持有人若同时在跨国公司任高管 / 专门知识岗位可切</li>
+        <li><strong>时机：</strong>当雇主全球架构可支持 + 希望获 L-2S 自动 EAD 解决配偶工作问题时</li>
+        <li><strong>详见：</strong><a href="us-l1b.html">本站 · 美国 L-1B 路径</a></li>
+      </ol>
+    </div>
+
+    <div class="branches">
+      <h4>O-1 → EB-1A 直接 consular</h4>
+      <ol>
+        <li><strong>门槛：</strong>EB-1A I-140 批 + PD current</li>
+        <li><strong>时机：</strong>若在境外有长驻计划，直接 DS-260 走使馆入境即 LPR，跳过 I-485 pending 期</li>
+      </ol>
+    </div>
+
+    <h3 style="font-family:var(--sans);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);margin:22px 0 0;font-weight:600">跨国切换（换目的国）</h3>
+
+    <div class="branches">
+      <h4>Canada · Global Talent Stream</h4>
+      <ol>
+        <li><strong>门槛：</strong>Category A（独特专业技能）或 Category B（指定紧缺职业列表，主要 IT / STEM）+ 加拿大雇主 LMIA exempt</li>
+        <li><strong>时机：</strong>若美国 O-1 获批难、或希望快速（2 周处理）拿一张工签先落地英语国家，可考虑加拿大 · 3 年内续永居通道（Express Entry）明晰</li>
+        <li><a class="pending" title="尚未建立路径页">CA · Global Talent Stream</a></li>
+      </ol>
+    </div>
+
+    <div class="branches">
+      <h4>UK · Global Talent Visa</h4>
+      <ol>
+        <li><strong>门槛：</strong>由 Tech Nation（已关 · Home Office 重组中）/ Royal Society / British Academy 等指定机构背书</li>
+        <li><strong>时机：</strong>证据向英语学界 / 创业圈倾斜时 · 英国 5 年永居路径比美国短但税务更重</li>
+        <li><a class="pending" title="尚未建立路径页">UK · Global Talent</a></li>
+      </ol>
+    </div>
+
+    <div class="branches">
+      <h4>Japan · 高度専門職 1 号ロ</h4>
+      <ol>
+        <li><strong>门槛：</strong>70 分通过打分（学历 + 年收入 + 经历 + 加分项）· 日本雇主 offer</li>
+        <li><strong>时机：</strong>若希望以日本为亚洲落脚点，80 分 1 年拿永住、70 分 3 年拿永住 · 东亚文化 + 人身安全优势 · 但入籍须放弃他国国籍 + 放弃中国籍</li>
+        <li><strong>详见：</strong><a href="jp-hsp.html">本站 · 日本 HSP 路径</a></li>
+      </ol>
+    </div>
+
+    <div class="branches">
+      <h4>Australia · Global Talent Program / NIV</h4>
+      <ol>
+        <li><strong>门槛：</strong>领域内"target sector"（10 个优先领域）· 年收入门槛 · 澳洲 nominator 背书</li>
+        <li><strong>时机：</strong>家庭偏好英语国家 + 时区近亚洲 · 时间线 PR 通常 6–12 个月</li>
+        <li><a class="pending" title="尚未建立路径页">AU · Global Talent</a></li>
+      </ol>
+    </div>
+
+    <div class="branches">
+      <h4>Singapore · ONE Pass</h4>
+      <ol>
+        <li><strong>门槛：</strong>月薪 SGD 30,000 门槛，或为"杰出成就人士"</li>
+        <li><strong>时机：</strong>家庭偏好亚洲 + 低税 · ONE Pass 5 年长签 + 可开公司 + 配偶 LOC 工作 · 但永居门槛高</li>
+        <li><a class="pending" title="尚未建立路径页">SG · ONE Pass</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ § 9 整条路径的风险点 ============ -->
+  <section>
+    <h2><span class="n">§ 9</span>整条路径的主要风险点</h2>
+
+    <div class="risk">
+      <h4>证据老化 · O-1 续签被拒</h4>
+      <ul>
+        <li>O-1 每次续签 USCIS 会要求"持续性杰出活动"证据 · 若在 O-1 期间无新成就（无新奖、无新发表、无新媒体、无新关键角色），RFE 概率显著上升</li>
+        <li>缓解：年度主动补充 1–2 条新证据（邀请讲座 · 新专利 · 新媒体 · 新评委职务）</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>咨询函失败 · 同业组织不支持</h4>
+      <ul>
+        <li>艺术 / 影视：SAG-AFTRA / DGA 等工会可出负面意见 → 直接影响获批</li>
+        <li>科研：若强行找"不对口"的学会出函，USCIS 可忽略该意见</li>
+        <li>缓解：申请前先私下与工会 / 学会沟通、备好 2–3 份专家独立推荐信作替代</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>O-3 配偶长期无 EAD · 婚姻张力</h4>
+      <ul>
+        <li>独立职业的配偶在美被迫停业数年，是 O-1 家庭最现实的压力点</li>
+        <li>缓解：§ 7 三种独立 path 选一，或加速 EB-1A I-485（递交后 5–8 个月 EAD）</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>EB-1A I-140 "final merits" 被驳</h4>
+      <ul>
+        <li>即使满足 10 条中 3 条，USCIS 仍可在 final merits 阶段认为未达"top small percentage of field" 而拒</li>
+        <li>缓解：并行递 EB-2 NIW（门槛更低）作为保底 · PD 可转用</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>换雇主期间的身份间隙</h4>
+      <ul>
+        <li>O-1 无 H-1B portability · 新雇主 I-129 未批前不可工作 · 有 60 天 grace 但不够典型 I-129 周期</li>
+        <li>缓解：新雇主同时请求 I-907 加急（15 工作日）· 旧雇主不提前终止</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>政策风向变化</h4>
+      <ul>
+        <li>2022 STEM 备忘是行政备忘性质，可被后届政府撤销 · 若撤销，独立创业 / 独立研究者的 O-1A 获批率可能回落</li>
+        <li>缓解：依赖客观证据（专利 / 引用 / 媒体 / 奖项）而非仅靠"类比证据"</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 10 官方文件总表 ============ -->
+  <section>
+    <h2><span class="n">§ 10</span>官方文件总表 · 本页所有规则的出处</h2>
+    <p class="lede">本页所有规则都指向下列原始文件。与 L-1B / H-1B 共享的条款（I-485 / I-765 / I-131 / I-693 / N-400 / N-470 / N-600 / AC21 / CSPA / CCA / 8 CFR 245 / 8 USC §1101/1153/1184/1255/1427/1430/1431 / IRS Pub 519 等）已在 <code>data/archive/us/l1b-family/</code> 与 <code>data/archive/us/h1b/</code> 归档，下方链接直接指向。O-1 独有条款收在 <code>data/archive/us/o1/</code>。</p>
+
+    <h3><span class="n">10.1</span>法律条款（Statute）</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>发布</th><th>条款 / 文件</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>s-ina-101</code></td><td class="iss">Congress · U.S.C.</td><td>INA §101(a)(15)(O) · O 类非移民定义（8 U.S.C. §1101）</td><td><a href="../../data/archive/us/o1/statutes/8-USC-1101_INA-101.html" target="_blank" rel="noopener">归档</a></td></tr>
+        <tr><td class="id"><code>s-ina-214</code></td><td class="iss">Congress · U.S.C.</td><td>INA §214(c)(3) · O 类非移民身份规则（8 U.S.C. §1184）</td><td><a href="../../data/archive/us/o1/statutes/8-USC-1184_INA-214.html" target="_blank" rel="noopener">归档</a></td></tr>
+        <tr><td class="id"><code>s-ina-203</code></td><td class="iss">Congress · U.S.C.</td><td>INA §203(b)(1)(A) · EB-1A 立法依据</td><td><a href="../../data/archive/us/l1b-family/statutes/8-USC-1153_INA-203.html" target="_blank" rel="noopener">l1b-family 归档</a></td></tr>
+        <tr><td class="id"><code>s-ina-245</code></td><td class="iss">Congress · U.S.C.</td><td>INA §245 · AOS 身份调整</td><td><a href="../../data/archive/us/l1b-family/statutes/8-USC-1255_INA-245.html" target="_blank" rel="noopener">l1b-family 归档</a></td></tr>
+        <tr><td class="id"><code>s-ina-316-319</code></td><td class="iss">Congress · U.S.C.</td><td>INA §316 · §319(a) · 归化 5-3-18 / 3-3-18</td><td><a href="../../data/archive/us/l1b-family/statutes/8-USC-1427_INA-316.html" target="_blank" rel="noopener">§316</a> · <a href="../../data/archive/us/l1b-family/statutes/8-USC-1430_INA-319.html" target="_blank" rel="noopener">§319</a></td></tr>
+        <tr><td class="id"><code>s-cca</code></td><td class="iss">Congress · Public Law</td><td>CCA 2000 · Pub.L. 106-395 · 子女自动入籍</td><td><a href="../../data/archive/us/l1b-family/statutes/PubL-106-395_CCA-2000.pdf" target="_blank" rel="noopener">l1b-family 归档</a></td></tr>
+        <tr><td class="id"><code>s-cspa</code></td><td class="iss">Congress · Public Law</td><td>CSPA 2002 · Pub.L. 107-208</td><td><a href="../../data/archive/us/l1b-family/statutes/PubL-107-208_CSPA-2002.pdf" target="_blank" rel="noopener">l1b-family 归档</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.2</span>联邦法规（CFR）</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>发布</th><th>条款 / 文件</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>r-cfr-214o</code></td><td class="iss">DHS · 8 CFR</td><td>8 CFR 214.2(o) · O 类非移民实施细则 · 8 条证据 / 咨询函 / 3 + 1 年</td><td><a href="../../data/archive/us/o1/regulations/8-CFR-214.2_O-nonimmigrant.html" target="_blank" rel="noopener">归档</a></td></tr>
+        <tr><td class="id"><code>r-cfr-204</code></td><td class="iss">DHS · 8 CFR</td><td>8 CFR 204.5(h) · EB-1 Extraordinary Ability 实施细则</td><td><a href="../../data/archive/us/l1b-family/regulations/8-CFR-204.5_EB-petition.html" target="_blank" rel="noopener">l1b-family 归档</a></td></tr>
+        <tr><td class="id"><code>r-cfr-245</code></td><td class="iss">DHS · 8 CFR</td><td>8 CFR 245 · AOS 身份调整程序</td><td><a href="../../data/archive/us/l1b-family/regulations/8-CFR-245_AOS.html" target="_blank" rel="noopener">l1b-family 归档</a></td></tr>
+        <tr><td class="id"><code>r-cfr-312-320</code></td><td class="iss">DHS · 8 CFR</td><td>8 CFR 312 / 316 / 319 / 320 · 归化各项要求</td><td><a href="../../data/archive/us/l1b-family/regulations/8-CFR-316_naturalization-general.html" target="_blank" rel="noopener">l1b-family 归档</a></td></tr>
+        <tr><td class="id"><code>r-cfr-4212</code></td><td class="iss">DOS · 22 CFR</td><td>22 CFR 42.12 · Cross-Chargeability</td><td><a href="../../data/archive/us/l1b-family/regulations/22-CFR-42.12_cross-chargeability.html" target="_blank" rel="noopener">l1b-family 归档</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.3</span>行政政策手册与说明页</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>发布</th><th>文档</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>p-uscis-o1</code></td><td class="iss">USCIS</td><td>O-1 Overview（含 O-1A / O-1B / O-2 / O-3）</td><td><a href="../../data/archive/us/o1/uscis/o1_overview.html" target="_blank" rel="noopener">归档</a></td></tr>
+        <tr><td class="id"><code>p-uscis-oqa</code></td><td class="iss">USCIS</td><td>O Nonimmigrant Classifications Q&A</td><td><a href="../../data/archive/us/o1/uscis/o-nonimmigrant_qa.html" target="_blank" rel="noopener">归档</a></td></tr>
+        <tr><td class="id"><code>p-uscis-cons</code></td><td class="iss">USCIS</td><td>O / P Consultation Letter 地址索引</td><td><a href="../../data/archive/us/o1/uscis/o1_consultation-letter-addresses.html" target="_blank" rel="noopener">归档</a></td></tr>
+        <tr><td class="id"><code>p-uscis-pm-o</code></td><td class="iss">USCIS</td><td>Policy Manual Vol.2 Part M（O 类）</td><td><a href="../../data/archive/us/o1/uscis/policy-manual_vol2-part-m_O.html" target="_blank" rel="noopener">归档</a></td></tr>
+        <tr><td class="id"><code>p-uscis-stem</code></td><td class="iss">USCIS</td><td>Policy Alert PA-2022-03 · O-1A STEM / 企业家澄清 · 2022-01-21</td><td><a href="../../data/archive/us/o1/uscis/policy-alert_O-1A-STEM_2022-01.pdf" target="_blank" rel="noopener">归档 PDF</a></td></tr>
+        <tr><td class="id"><code>p-cspa</code></td><td class="iss">USCIS</td><td>CSPA guidance · Vol.7 Part A Ch.7</td><td><a href="../../data/archive/us/l1b-family/policy/uscis_CSPA-guidance.html" target="_blank" rel="noopener">l1b-family 归档</a></td></tr>
+        <tr><td class="id"><code>p-vb</code></td><td class="iss">DOS</td><td>Visa Bulletin 主索引</td><td><a href="../../data/archive/us/l1b-family/policy/dos_visa-bulletin_index.html" target="_blank" rel="noopener">l1b-family 归档</a></td></tr>
+        <tr><td class="id"><code>p-irs</code></td><td class="iss">IRS</td><td>Publication 519 · U.S. Tax Guide for Aliens</td><td><a href="../../data/archive/us/l1b-family/policy/irs_Pub-519_tax-guide-aliens.pdf" target="_blank" rel="noopener">l1b-family 归档</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.4</span>表格（Forms）</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>用途</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>I-129</code></td><td>O-1 / O-2 petition + O supplement</td><td><a href="../../data/archive/us/o1/forms/I-129.pdf" target="_blank" rel="noopener">I-129</a> + <a href="../../data/archive/us/o1/forms/I-129_instructions.pdf" target="_blank" rel="noopener">说明</a></td></tr>
+        <tr><td class="id"><code>I-539</code></td><td>O-3 身份变更 / 延期（境内）</td><td><a href="../../data/archive/us/l1b-family/forms/I-539_extend-change-status.pdf" target="_blank" rel="noopener">l1b-family 归档</a></td></tr>
+        <tr><td class="id"><code>I-907</code></td><td>Premium Processing 加急（I-129 / I-140 EB-1A）</td><td><a href="../../data/archive/us/o1/forms/I-907_premium-processing.pdf" target="_blank" rel="noopener">归档</a></td></tr>
+        <tr><td class="id"><code>I-140</code></td><td>EB-1A / EB-1B / EB-2 NIW</td><td><a href="../../data/archive/us/l1b-family/forms/I-140_EB-petition.pdf" target="_blank" rel="noopener">l1b-family 归档</a></td></tr>
+        <tr><td class="id"><code>I-485 / I-765 / I-131 / I-693</code></td><td>AOS 四件套</td><td><a href="../../data/archive/us/l1b-family/forms/I-485_AOS.pdf" target="_blank" rel="noopener">I-485</a> · <a href="../../data/archive/us/l1b-family/forms/I-765_EAD.pdf" target="_blank" rel="noopener">I-765</a> · <a href="../../data/archive/us/l1b-family/forms/I-131_AP-Reentry.pdf" target="_blank" rel="noopener">I-131</a> · <a href="../../data/archive/us/l1b-family/forms/I-693_medical.pdf" target="_blank" rel="noopener">I-693</a></td></tr>
+        <tr><td class="id"><code>DS-160 / DS-260</code></td><td>NIV 面签 / IV 面签在线入口</td><td><a href="../../data/archive/us/o1/forms/DS-160_online-only.url" target="_blank" rel="noopener">DS-160 入口</a> · <a href="../../data/archive/us/l1b-family/forms/DS-260_online-only.url" target="_blank" rel="noopener">DS-260 入口</a></td></tr>
+        <tr><td class="id"><code>I-94</code></td><td>CBP 入境记录</td><td><a href="../../data/archive/us/o1/forms/I-94_CBP-online.url" target="_blank" rel="noopener">CBP I-94 入口</a></td></tr>
+        <tr><td class="id"><code>N-400 / N-470 / N-600</code></td><td>归化 / 保留连续居住 / 子女公民证明</td><td><a href="../../data/archive/us/l1b-family/forms/N-400_naturalization.pdf" target="_blank" rel="noopener">N-400</a> · <a href="../../data/archive/us/l1b-family/forms/N-470_preserve-residence.pdf" target="_blank" rel="noopener">N-470</a> · <a href="../../data/archive/us/l1b-family/forms/N-600_certificate-of-citizenship.pdf" target="_blank" rel="noopener">N-600</a></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <footer class="btm">
+    <span>relocate · path · us-o1 · v0.1</span>
+    <span>本文不替代律师意见 · 所有数值以官方当期文本为准</span>
+  </footer>
+
+</main>
+
+</body>
+</html>
