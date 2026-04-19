@@ -1,5 +1,65 @@
 # HANDOFF
 
+> 接手说明。愿景见 [README](README.md)，原则见 [RULES](RULES.md)。
+> 每次工作结束前顺手更新本文件的 Now / Next。
+
+---
+
+## Now · 在哪
+
+- 刚完成一次方向调整（2026-04-19）：从"严格数据工程化 + 付费 + dogfood 验收"
+  改为"非盈利 · 仅供参考 · 尽力而为 · 不担责"。详细动机见 [RULES.md](RULES.md) § 6
+- 仓库里已有的材料：
+  - `design/path-detail-jp-hsp.html` — 日本 · 高度専門職 1 号ロ · 技术系 路径详情样稿
+  - `design/coverage-survey.html` — 覆盖清单样稿
+  - `design/sitemap.html` — 站点结构草图
+  - `archive/garden-experiment-2026-04-19/design/path-detail-us-l1b-family.html` — 美国 L-1B 家庭路径（完整 § 0-§ 8 内容）
+  - `archive/garden-experiment-2026-04-19/design/sources/us-l1b-family/` — 对应的 48 份美国政府一手源原件（约 20 MB）
+- 文档层：RULES.md / README.md / SOURCES.md / docs/path-authoring.md 已在 pivot 后重写，与新基调对齐
+
+## Next · 下一步
+
+按顺序，但每一步做不做由现实情况决定——**这不是硬 TODO**：
+
+- [ ] **把 L-1B 路径样稿与美国一手源从 archive/ 挪回主线**。新基调下它们不再违规，archive/ 那个实验目录可以只保留 README 的"我们试过什么"记录。挪回路径建议：
+  - `design/path-detail-us-l1b-family.html`
+  - `data/archive/us/.../` 按 `SOURCES.md` 现在的轻度要求重新组织
+- [ ] **把现有 HTML 样稿落成可发布的静态站**。建议栈（未定）：
+  - 纯手写 HTML + 少量共享 CSS（最朴素，与"业余维护"气质最近）
+  - 或 Astro（组件化 + 内容集合 + 零 JS 运行时）
+  - Next.js / Vite 这类都过重，不建议
+- [ ] **确定最终站点名** — 或者就用 `relocate` 直到真的要公开再说
+- [ ] **首页草稿** — 一句话说清"这是什么 / 不是什么 / 仅供参考"，三段结束
+- [ ] **License 落定** — 内容 CC BY-SA 4.0 + 代码 MIT（倾向），写回 README
+
+## Don't · 别做
+
+- 别重新引入 RULES § 2.1.1 级别的硬约束（五元组必填、独立 PR 登记、180 天强制复核）。
+  pivot 就是为了放下这些——放宽后如果确实写错了，按 § 5.2 改就行
+- 别加付费、不管多"轻"的付费都别加（RULES § 1.1 / § 3.1）
+- 别做"AI 移民顾问"聊天框（RULES § 3.1）
+- 别悄悄推广 — 自用 + 顺手公开，不做增长（RULES § 3.2）
+- 别删 `archive/`。试错留痕是项目历史的一部分
+- 别在任何地方省略"仅供参考 · 非官方"字样（RULES § 1.4）
+
+## Before switching machine
+
+- [ ] `git status` 干净？
+- [ ] 已 `git push`？
+- [ ] 本文件的 Now / Next 更新到"下次坐下来能直接开始的具体动作"？
+
+## On arrival
+
+1. `git pull`
+2. 读本文件
+3. 扫一眼 RULES.md（很短，3 分钟能过完）
+4. 按 Next 继续
+
+---
+
+<sub>HANDOFF ≠ PLAN。它描述当下，不规划未来。</sub>
+# HANDOFF
+
 > 放下一切前先读完本文件。最多 2 分钟。
 > 本文件只记录**当前状态 + 下一步 + 提醒**。愿景见 [README](README.md)，规则见 [RULES](RULES.md)，历史见 `git log`。
 > **每次会话结束前必须更新本文件**。不更新等于没写。
