@@ -17,13 +17,18 @@
 - **2026-04-19 · JP HSP 官方原件全量归档 + 两页来源表补本地归档列**（commit `10c73f9`）：
   - `data/archive/jp/hsp/` 已落 14 份官方文件（ISA 8 · e-Gov 2 XML · MOJ 1 · MHLW 1 · PRC 1）+ README + download.sh
   - `site/paths/jp-hsp.html` § 7 表、`site/paths/us-l1b.html` § 10 四张子表均新增「本地归档」列，所有官方引用在本地可定位
-- **2026-04-19 · 新增 US H-1B 路径 + 官方原件归档**（本次 commit）：
+- **2026-04-19 · 新增 US H-1B 路径 + 官方原件归档**（commit `3218438`）：
   - [`site/paths/us-h1b.html`](site/paths/us-h1b.html) — 含抽签注册 · LCA/I-129 · 维持（AC21 突破 6 年）· PERM/I-140/排期 · I-485/领事 · N-400 · 家庭三线图 · 备选切换 · § 10 四张子表全带本地归档列
   - `data/archive/us/h1b/`（USCIS 5 · DOL 2 · regulations 2 · statutes 2 · forms 5 PDFs + 3 online-only stubs）+ README + download.sh；AC21 / CSPA / CCA / 归化条款 / PERM 表格 / I-485 / N-400 等共用件复用 `data/archive/us/l1b-family/`
   - `site/index.html` 路径列表新增 H-1B 条目；`site/paths/jp-hsp.html` § 5 与 `site/paths/us-l1b.html` § 8 的 H-1B 条目从 USCIS 外链改为本站内链
+- **2026-04-19 · 新增美国国家前置知识总览页**（本次 commit）：
+  - [`site/paths/us-overview.html`](site/paths/us-overview.html) — 面向任一条具体 US path 读者的共性前置：机构分工（USCIS/CBP/ICE/DOS/DOL/IRS/SSA）· 签证 vs 身份 vs I-94 · NIV/IV · 双重意图 · NIV 字母表速查 · EB 五类与 7% 国别配额 · 优先日 / Visa Bulletin 两表 / Cross-Chargeability / AC21 三条 · AOS vs CP + CSPA · 维持身份 / 60 天 grace / 3-10 年禁令 / Advance Parole · LPR 维持（物理存在 · Reentry · N-470 · 全球纳税）· 入籍 5-3-18 · 中国国籍法 §9 · 表格速查 · 政策节奏。
+  - 所有官方引用复用 `data/archive/us/l1b-family/` 的 statutes / regulations / policy（未新增归档文件）
+  - `site/index.html` 路径列表把 us-overview 置于顶部，status 写「前置知识」
 - 技术栈：**纯静态 HTML / CSS，无框架、无构建**（[docs/engineering.md](docs/engineering.md)）
 - 可部署目录：[site/](site/)
 - 已有路径页：
+  - [`site/paths/us-overview.html`](site/paths/us-overview.html) — 美国 · 移民体系通用前置知识（primer，非 path）
   - [`site/paths/jp-hsp.html`](site/paths/jp-hsp.html) — 日本 · 高度専門職 1 号ロ · 工签 → 永住 → 帰化
   - [`site/paths/us-l1b.html`](site/paths/us-l1b.html) — 美国 · L-1B · 工签 → 永居 → 入籍
   - [`site/paths/us-h1b.html`](site/paths/us-h1b.html) — 美国 · H-1B · 抽签 → 工签 → 永居 → 入籍
