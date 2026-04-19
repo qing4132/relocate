@@ -245,6 +245,31 @@
   /* 行内小提示 */
   .hint{display:block;color:var(--ink-faint);font-size:12px;margin-top:3px;font-style:italic;font-family:var(--serif)}
 
+  /* 备选切换列表 */
+  .altlist{margin:10px 0 18px;padding:0;list-style:none}
+  .altlist > li{
+    border-top:1px solid var(--rule-soft);padding:14px 0;
+    display:grid;grid-template-columns:150px 1fr;gap:18px;
+    font-family:var(--sans);font-size:13px;line-height:1.65;color:var(--ink-soft);
+  }
+  .altlist > li:last-child{border-bottom:1px solid var(--rule-soft)}
+  .altlist .tgt{
+    font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.04em;
+    padding-top:2px;
+  }
+  .altlist .tgt small{display:block;font-size:10.5px;color:var(--ink-faint);margin-top:3px;text-transform:uppercase;letter-spacing:0.08em}
+  .altlist strong{color:var(--ink)}
+  .altlist .when{color:var(--ink-faint);font-size:12px;display:block;margin-top:4px;font-style:italic;font-family:var(--serif)}
+
+  /* 占位链接：路径页尚未建立 */
+  a.pending{
+    color:var(--ink-faint);
+    text-decoration:underline;text-decoration-style:dotted;text-decoration-color:var(--ink-faint);
+    text-underline-offset:3px;
+    cursor:help;
+  }
+  a.pending::after{content:" ⋯"}
+
   footer.btm{
     margin-top:80px;padding-top:14px;border-top:1px solid var(--rule);
     font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
@@ -823,9 +848,121 @@
     </div>
   </section>
 
-  <!-- ============ § 7 风险汇总 ============ -->
+  <!-- ============ § 7 家庭双保险 ============ -->
   <section>
-    <h2><span class="n">§ 7</span>核心风险点</h2>
+    <h2><span class="n">§ 7</span>家庭玩法 · 双保险 / 双轨制</h2>
+    <p class="lede">把"主申 + 家属派生"这种单线模型换成两位成年人各有独立工作身份的双线模型。主申任何一条路径失败（I-140 被 RFE、公司裁员、L-1B 续签被拒），家庭里还有另一条腿撑住身份与工作权。</p>
+
+    <div class="risk" style="border-color:var(--ink);background:#fff">
+      <h4 style="color:var(--ink)">双线 A · L-1B 主申 + L-2S 配偶转 H-1B</h4>
+      <p style="font-family:var(--sans);font-size:13px;margin:6px 0 8px"><strong>适合：</strong>配偶本身有独立可雇佣技能、拿到美国雇主 offer、且愿意走抽签。</p>
+      <ul style="font-family:var(--sans);font-size:13px">
+        <li><strong>第一阶段：</strong>主申以 L-1B 入境，配偶以 L-2S 入境。配偶凭 I-94（自动记载 L-2S status）<strong>无需 EAD 即可工作</strong>（USCIS 2022-01 更新，见 <a href="../../data/archive/us/l1b-family/policy/uscis_H4-E-L-spouse-EAD.html" target="_blank" rel="noopener">I-765 policy 页</a>）。</li>
+        <li><strong>第二阶段：</strong>配偶找到愿意赞助的美国雇主 → 雇主 3 月 1–20 日登记 H-1B lottery → 中签后 4–9 月递 I-129 change of status（<code>L-2 → H-1B</code>，表 I-129）。</li>
+        <li><strong>第三阶段（双线确立）：</strong>10 月 1 日起配偶正式以 H-1B 身份工作。此时家庭里两个成年人各持独立工作身份：主申 L-1B、配偶 H-1B。任一方失去身份，另一方可作为 L-2S / H-4 反向兜底对方。</li>
+        <li><strong>绿卡阶段的意义：</strong>两人各自拥有独立 I-140 起跑线。如果主申的 EB-2 排期倒退，配偶的雇主也可以并行推 PERM + I-140，用配偶的优先日递 I-485 —— 另一方作为派生受益人跟过去。整体绿卡时间取两条 I-140 中更早的那一条。</li>
+        <li><strong>代价：</strong>配偶那一侧的 H-1B 有 6 年总时长上限，绿卡若未在此之前启动会再遇瓶颈；抽签本身年度中签概率并不稳定。</li>
+      </ul>
+    </div>
+
+    <div class="risk" style="border-color:var(--ink);background:#fff">
+      <h4 style="color:var(--ink)">双线 B · 主申 L-1B 过桥 H-1B，配偶继续 L-2S</h4>
+      <p style="font-family:var(--sans);font-size:13px;margin:6px 0 8px"><strong>适合：</strong>主申担心 L-1B RFE 或公司并购风险、想把身份 &quot;去公司化&quot;（L-1 严格绑定雇主，H-1B 允许跳槽 + AC21 移植）。</p>
+      <ul style="font-family:var(--sans);font-size:13px">
+        <li>主申 L-1B 期间由公司代抽 H-1B。中签即 change of status（<code>L-1B → H-1B</code>）。</li>
+        <li>配偶跟随切换：<code>L-2S → H-4</code>。此时配偶工作权需凭 H-4 EAD 维持，而 H-4 EAD 仅当主申已过 L/H 总时长或 I-140 批准后才能申请（见 8 CFR § 214.2(h)(9)(iv)）—— 往往 I-140 之前存在窗口期。</li>
+        <li><strong>次坑：</strong>切 H-4 后如果 EAD 未能及时续出，配偶将进入 "有身份无工作权" 状态。建议切换时机安排在 I-140 已批准之后。</li>
+      </ul>
+    </div>
+
+    <div class="risk" style="border-color:var(--ink);background:#fff">
+      <h4 style="color:var(--ink)">双线 C · 双 EB-5 / 双雇主赞助（非本路径典型，仅备注）</h4>
+      <p style="font-family:var(--sans);font-size:13px;margin:6px 0 0">两位成年人都不依赖派生签证、各自以主申身份推职业绿卡。成本最高、独立性也最高。本路径不展开，配偶如走此线建议看独立的 H-1B / EB-1A 路径页（<a class="pending" title="尚未建立路径页">H-1B 主路径</a>）。</p>
+    </div>
+  </section>
+
+  <!-- ============ § 8 备选切换 ============ -->
+  <section>
+    <h2><span class="n">§ 8</span>备选切换 · 这条走不通怎么办</h2>
+    <p class="lede">L-1B 不是唯一进美国的路。下面是按"切换成本"由低到高排列的几条最常见备选，每一条都注了进入门槛 / 切换时机 / 目标路径页链接（部分尚待建立）。</p>
+
+    <h3 style="font-family:var(--sans);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);margin:22px 0 0;font-weight:600">同类切换（仍在美国）</h3>
+    <ul class="altlist">
+      <li>
+        <span class="tgt">L-1B → L-1A<small>管理 / 高管</small></span>
+        <span>
+          <strong>门槛：</strong>在美方公司已承担或即将承担管理或高管职责（管理 function 或 subordinate team）。<strong>何时考虑：</strong>职位晋升到能带团队时。<strong>价值：</strong>总时长由 5 年延至 7 年，且 L-1A 可直接走 EB-1C 免 PERM。
+          <span class="when">占位：<a class="pending" title="尚未建立路径页">L-1A 路径页</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="tgt">L-1B → H-1B<small>年度抽签</small></span>
+        <span>
+          <strong>门槛：</strong>学士及以上学历，雇主愿意赞助并参加 3 月 lottery。<strong>何时考虑：</strong>担心 L-1B 续签被拒 / 想跳槽自由。<strong>价值：</strong>H-1B 可跳槽（AC21），总时长 6 年可延至绿卡批准。
+          <span class="when">占位：<a class="pending" title="尚未建立路径页">H-1B 路径页</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="tgt">L-1B → O-1A<small>杰出人才</small></span>
+        <span>
+          <strong>门槛：</strong>在本领域有&quot;extraordinary ability&quot;—— 通常要求满足 8 CFR § 214.2(o)(3)(iii) 八项标准中至少三项（奖项 / 发表 / 同行评审 / 高薪 / 关键角色等）。<strong>何时考虑：</strong>有学术成果或媒体曝光，不想被 H-1B 抽签绑定。<strong>价值：</strong>3 年 + 不限次续签，无年度配额。
+          <span class="when">占位：<a class="pending" title="尚未建立路径页">O-1A 路径页</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="tgt">EB-2 PERM → EB-1A / EB-1B<small>绿卡分类升级</small></span>
+        <span>
+          <strong>门槛：</strong>EB-1A（杰出人才自荐）或 EB-1B（杰出教授 / 研究员，需雇主）。<strong>何时考虑：</strong>EB-2 排期严重倒退（中国出生每年常见 3–5 年），而申请人在本领域有可佐证的卓越成果。<strong>价值：</strong>EB-1 中国出生通常当前有效，跳过 PERM。
+          <span class="when">本页 § 3.1 已提及；独立路径页占位：<a class="pending" title="尚未建立路径页">EB-1A 自荐绿卡</a></span>
+        </span>
+      </li>
+    </ul>
+
+    <h3 style="font-family:var(--sans);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);margin:22px 0 0;font-weight:600">跨国切换（换目的国）</h3>
+    <ul class="altlist">
+      <li>
+        <span class="tgt">Canada · GTS<small>Global Talent Stream</small></span>
+        <span>
+          <strong>门槛：</strong>进入 ESDC 指定职业清单 Category A / B（软件工程师、ML / AI 研究员等均在列），雇主提交 Labour Market Benefits Plan。<strong>何时考虑：</strong>需要 2 周内落地的应急备胎；或 L-1B 在美被拒后希望保持北美生活半径。<strong>价值：</strong>官方承诺 2 周处理工签申请；配偶自动获 open work permit。
+          <span class="when">占位：<a class="pending" title="尚未建立路径页">Canada · Global Talent Stream</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="tgt">Japan · HSP<small>高度専門職 1 号ロ</small></span>
+        <span>
+          <strong>门槛：</strong>积分制 70 分以上（学历 + 年收 + 年龄 + 日语 + 大学排名等维度求和）。<strong>何时考虑：</strong>主申及配偶均有可量化加分项、倾向家庭稳定与子女教育。<strong>价值：</strong>80 分以上最短 <strong>1 年</strong>可申永住；配偶可持派生签独立就业，无需雇主赞助。
+          <span class="when">已有路径页：<a href="jp-hsp.html">日本 · 高度専門職 1 号ロ</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="tgt">UK · Global Talent<small>杰出 / 高潜</small></span>
+        <span>
+          <strong>门槛：</strong>经 Tech Nation / 皇家学会等指定背书机构 endorsement；digital technology / 学术科研 / 艺术 三条赛道。<strong>何时考虑：</strong>有论文 / 开源 / 行业曝光可打包申请。<strong>价值：</strong>无雇主绑定、5 年连续居住后可申 ILR（Indefinite Leave to Remain）。
+          <span class="when">占位：<a class="pending" title="尚未建立路径页">UK · Global Talent</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="tgt">Australia · GTV<small>Global Talent Visa (subclass 858)</small></span>
+        <span>
+          <strong>门槛：</strong>在十大优先领域（量子 / 空间科技 / AgTech / MedTech / 网络安全等）有"国际公认成就"。<strong>何时考虑：</strong>背景在 Global Talent Officer program 覆盖行业。<strong>价值：</strong>一步到位获永居，无需先走工签。
+          <span class="when">占位：<a class="pending" title="尚未建立路径页">Australia · Global Talent Visa</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="tgt">Singapore · ONE Pass<small>Overseas Networks &amp; Expertise</small></span>
+        <span>
+          <strong>门槛：</strong>月薪 ≥ S$30,000 或在科技 / 学术 / 艺术 / 体育领域有国际公认成就。<strong>何时考虑：</strong>高薪档位、倾向税负低 + 东南亚枢纽。<strong>价值：</strong>5 年准证、可同时任多雇主、配偶可持 LOC 就业。永居 PR 需另走通道。
+          <span class="when">占位：<a class="pending" title="尚未建立路径页">Singapore · ONE Pass</a></span>
+        </span>
+      </li>
+    </ul>
+
+    <p style="font-family:var(--sans);font-size:12px;color:var(--ink-faint);margin-top:18px"><em>以上"占位链接"对应的路径页尚未建立。建立后本页会替换为真实链接。完整待补路径清单见项目的 <a href="https://github.com/qing4132/relocate/blob/main/HANDOFF.md">HANDOFF.md</a>。</em></p>
+  </section>
+
+  <!-- ============ § 9 风险汇总 ============ -->
+  <section>
+    <h2><span class="n">§ 9</span>核心风险点</h2>
     <p class="lede">家庭单位视角下，不是每一个成员在每一段都安全。下面是最容易被忽视的几类。</p>
 
     <div class="risk">
@@ -869,9 +1006,9 @@
     </div>
   </section>
 
-  <!-- ============ § 8 官方文件总表 ============ -->
+  <!-- ============ § 10 官方文件总表 ============ -->
   <section>
-    <h2><span class="n">§ 8</span>官方文件总表</h2>
+    <h2><span class="n">§ 10</span>官方文件总表</h2>
     <p class="lede">上文每个节点都就地指了源。这里再做一份一站式目录，便于直接照着清单去 bookmark。仅使用"发布机构 + 文档名 + 发布机构官网入口"三项——避免深链失效时找不到。</p>
 
     <h3><span class="n">8.1</span>法律条款（Statute）</h3>

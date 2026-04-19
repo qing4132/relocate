@@ -3,6 +3,619 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>relocate · 路径详情 · 日本 高度専門職 1 号ロ · 到帰化为止（仅供参考 · 非官方）</title>
+<style>
+  :root{
+    --ink:#141414;--ink-soft:#3d3d3d;--ink-faint:#8a8a8a;
+    --rule:#d8d8d8;--rule-soft:#ebebeb;
+    --bg:#fdfbf7;
+    --warn-bg:#fff6e7;--warn-ink:#6a4d00;
+    --inherit-bg:#f1efe9;
+    --serif:Georgia,"Source Han Serif SC","Noto Serif SC","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;
+    --mono:"SFMono-Regular","Menlo",Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  header.top{padding:14px 40px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em;background:#fff}
+  header.top .l{color:var(--ink)}
+  .page{max-width:920px;margin:0 auto;padding:56px 32px 140px}
+
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 10px}
+  h1{font-size:30px;font-weight:700;line-height:1.25;letter-spacing:-0.005em;margin:0 0 6px}
+  .sub{font-family:var(--sans);font-size:14px;color:var(--ink-soft);margin:0 0 14px;letter-spacing:0.01em}
+  .sub code{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 6px;border-radius:2px;color:var(--ink)}
+  .meta{font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);letter-spacing:0.04em;margin:0 0 28px;padding-bottom:18px;border-bottom:1px solid var(--ink)}
+  .meta span + span::before{content:" · ";margin:0 4px;color:var(--rule)}
+  .meta a{color:inherit}
+
+  .caveat{background:var(--warn-bg);border:1px solid var(--warn-ink);padding:14px 20px;margin:0 0 32px;font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--warn-ink)}
+  .caveat strong{color:#3c2a00}
+  .caveat p{margin:0 0 6px}
+  .caveat p:last-child{margin:0}
+  .caveat a{color:var(--warn-ink)}
+
+  /* 元数据 chip */
+  .chip{display:grid;grid-template-columns:repeat(6,1fr);gap:0;background:#fff;border:1px solid var(--ink);font-family:var(--sans);margin:0 0 28px}
+  .chip > div{padding:12px 14px;border-right:1px solid var(--rule)}
+  .chip > div:last-child{border-right:none}
+  .chip dt{font-family:var(--mono);font-size:10px;color:var(--ink-faint);letter-spacing:0.09em;text-transform:uppercase;margin:0 0 3px}
+  .chip dd{margin:0;font-size:13.5px;color:var(--ink);font-weight:600}
+  .chip dd small{display:block;font-weight:400;font-size:11.5px;color:var(--ink-faint);margin-top:2px;font-family:var(--mono)}
+
+  /* 三段锚点 */
+  .stagenav{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:0 0 40px;font-family:var(--sans)}
+  .stagenav a{display:block;padding:12px 14px;background:#fff;border:1px solid var(--ink);text-decoration:none;color:var(--ink)}
+  .stagenav a .lbl{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.1em;text-transform:uppercase;display:block;margin-bottom:3px}
+  .stagenav a .t{font-size:15px;font-weight:700;display:block}
+  .stagenav a .b{font-size:12px;color:var(--ink-soft);display:block;margin-top:3px;font-family:var(--serif)}
+
+  section{margin:56px 0 0}
+  section > h2{font-size:20px;font-weight:700;line-height:1.35;margin:0 0 4px}
+  section > h2 .n{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--ink-faint);letter-spacing:0.08em;margin-right:10px}
+  section > h2 .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:0.06em;padding:2px 7px;border:1px solid var(--ink-faint);color:var(--ink-faint);font-weight:400;margin-left:10px;vertical-align:3px}
+  section > .lede{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:15.5px;line-height:1.7;margin:0 0 20px}
+
+  p{margin:0 0 1em}
+  h3{font-size:15.5px;font-weight:700;margin:26px 0 8px}
+  h3 .n{font-family:var(--mono);font-size:11px;font-weight:400;color:var(--ink-faint);letter-spacing:0.06em;margin-right:8px}
+
+  /* 节点卡 */
+  .node{background:#fff;border:1px solid var(--ink);margin:12px 0 18px;padding:16px 20px 14px;font-family:var(--sans);font-size:13.5px;line-height:1.7;color:var(--ink-soft)}
+  .node .ntop{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:8px;margin-bottom:10px;border-bottom:1px solid var(--rule-soft);font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em}
+  .node .ntop .who{color:var(--ink);font-weight:600}
+  .node strong{color:var(--ink)}
+  .node dl.facts{display:grid;grid-template-columns:140px 1fr;gap:6px 14px;margin:6px 0 10px;padding-top:8px;border-top:1px dashed var(--rule)}
+  .node dl.facts dt{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.06em;text-transform:uppercase;padding-top:2px}
+  .node dl.facts dd{margin:0;color:var(--ink-soft);font-size:13px}
+  .node dl.facts dd strong{color:var(--ink)}
+  .node ul.src{margin:6px 0 0;padding:0;list-style:none;font-size:12.5px;color:var(--ink-soft)}
+  .node ul.src li{display:grid;grid-template-columns:120px 1fr;gap:10px;padding:3px 0;border-top:1px solid var(--rule-soft)}
+  .node ul.src li:first-child{border-top:none}
+  .node ul.src .label{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.06em;text-transform:uppercase;padding-top:2px}
+  .node ul.src a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--ink-faint);text-underline-offset:2px}
+
+  /* 派生 ↳ 块 */
+  .branches{background:var(--inherit-bg);border:1px dashed var(--ink);margin:8px 0 18px;padding:14px 20px;font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--ink-soft)}
+  .branches h4{font-family:var(--mono);font-size:10.5px;color:var(--ink);letter-spacing:0.1em;text-transform:uppercase;margin:0 0 8px;font-weight:600}
+  .branches h4::before{content:"↳ ";color:var(--ink-faint)}
+  .branches p{margin:0 0 6px}
+  .branches strong{color:var(--ink)}
+  .branches ol{margin:6px 0 0;padding:0 0 0 22px}
+  .branches ol > li{margin:0 0 6px}
+
+  /* 积分表 */
+  table.points{width:100%;border-collapse:collapse;background:#fff;font-family:var(--sans);font-size:13px;line-height:1.55;margin:6px 0 14px}
+  table.points th,table.points td{padding:9px 10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
+  table.points thead th{border-bottom:1px solid var(--ink);background:var(--rule-soft);font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em;text-transform:uppercase;font-weight:600}
+  table.points td.cat{font-weight:600;color:var(--ink);width:150px}
+  table.points td.range{font-family:var(--mono);width:110px;color:var(--ink-faint);font-size:12.5px}
+  table.points td.note{color:var(--ink-soft)}
+  table.points tr.total td{border-top:1px solid var(--ink);border-bottom:none;background:var(--rule-soft);font-weight:700;color:var(--ink)}
+
+  /* 永居加速线 */
+  .speedlines{background:#fff;border:1px solid var(--ink);padding:16px 20px;margin:8px 0 16px;font-family:var(--sans);font-size:13px;line-height:1.55}
+  .speedlines .line{display:grid;grid-template-columns:120px 1fr 90px;gap:14px;padding:10px 0;border-bottom:1px solid var(--rule-soft);align-items:center}
+  .speedlines .line:last-child{border-bottom:none}
+  .speedlines .line .tag{font-family:var(--mono);font-size:11.5px;font-weight:700;border:1px solid var(--ink);padding:3px 8px;text-align:center}
+  .speedlines .line .desc{color:var(--ink-soft);font-size:12.5px}
+  .speedlines .line .num{font-family:var(--mono);font-size:13px;color:var(--ink);text-align:right}
+
+  /* 家庭三线图 */
+  .familytrack{background:#fff;border:1px solid var(--ink);margin:14px 0 18px;font-family:var(--sans);font-size:12.5px}
+  .familytrack .row{display:grid;grid-template-columns:130px 1fr;border-bottom:1px solid var(--rule)}
+  .familytrack .row:last-child{border-bottom:none}
+  .familytrack .row .l{padding:14px;background:var(--rule-soft);border-right:1px solid var(--rule);font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.06em;text-transform:uppercase}
+  .familytrack .row .l small{display:block;font-size:10px;color:var(--ink-faint);margin-top:3px;letter-spacing:0.04em}
+  .familytrack .row .r{padding:14px 18px;color:var(--ink-soft);line-height:1.65}
+  .familytrack .row .r strong{color:var(--ink)}
+  .familytrack .row .r em{font-style:normal;background:var(--rule-soft);padding:1px 6px;font-family:var(--mono);font-size:11px;color:var(--ink);margin-right:4px}
+
+  /* 风险块 */
+  .risk{background:#fff;border:1px solid var(--warn-ink);padding:14px 20px;margin:10px 0 16px;font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--ink)}
+  .risk h4{font-family:var(--mono);font-size:10.5px;color:var(--warn-ink);letter-spacing:0.1em;text-transform:uppercase;margin:0 0 8px;font-weight:600}
+  .risk h4::before{content:"! "}
+  .risk ul{margin:6px 0 0;padding:0 0 0 20px}
+  .risk li{margin:0 0 8px;color:var(--ink-soft)}
+  .risk li strong{color:var(--ink)}
+
+  /* 备选切换 */
+  .altlist{margin:10px 0 18px;padding:0;list-style:none}
+  .altlist > li{border-top:1px solid var(--rule-soft);padding:14px 0;display:grid;grid-template-columns:150px 1fr;gap:18px;font-family:var(--sans);font-size:13px;line-height:1.65;color:var(--ink-soft)}
+  .altlist > li:last-child{border-bottom:1px solid var(--rule-soft)}
+  .altlist .tgt{font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.04em;padding-top:2px}
+  .altlist .tgt small{display:block;font-size:10.5px;color:var(--ink-faint);margin-top:3px;text-transform:uppercase;letter-spacing:0.08em}
+  .altlist strong{color:var(--ink)}
+  .altlist .when{color:var(--ink-faint);font-size:12px;display:block;margin-top:4px;font-style:italic;font-family:var(--serif)}
+
+  /* 占位链接 */
+  a.pending{color:var(--ink-faint);text-decoration:underline;text-decoration-style:dotted;text-decoration-color:var(--ink-faint);text-underline-offset:3px;cursor:help}
+  a.pending::after{content:" ⋯"}
+
+  /* 来源表 */
+  table.sources{width:100%;border-collapse:collapse;background:#fff;font-family:var(--sans);font-size:12.5px;line-height:1.55;margin:10px 0 16px}
+  table.sources th,table.sources td{padding:8px 10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
+  table.sources thead th{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em;text-transform:uppercase;font-weight:600;border-bottom:1px solid var(--ink);background:var(--rule-soft)}
+  table.sources td.id{width:90px}
+  table.sources td.id code{font-family:var(--mono);font-size:11px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+  table.sources td.iss{width:160px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em}
+  table.sources td a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--ink-faint);text-underline-offset:2px}
+
+  .term{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+  .hint{display:block;color:var(--ink-faint);font-size:12px;margin-top:3px;font-style:italic;font-family:var(--serif)}
+
+  footer.btm{margin-top:80px;padding-top:14px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);display:flex;justify-content:space-between;letter-spacing:0.04em}
+  a{color:inherit}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <span class="l"><a href="../" style="color:inherit;text-decoration:none">relocate</a> · 路径详情 · 日本 · 高度専門職 1 号ロ</span>
+  <span>仅供参考 · 非官方</span>
+</header>
+
+<main class="page">
+
+  <p class="kicker">路径详情 · 技术系 · 工签 → 永住 → 帰化</p>
+  <h1>日本 · 高度専門職 1 号ロ · 家庭完整路径</h1>
+  <p class="sub">
+    <code>jp-hsp-1b-engineer</code> · 出入国在留管理庁主理的积分制在留资格，配偶 &amp; 子女派生就労 · 最短 1 年永住 · 帰化路径
+  </p>
+  <p class="meta">
+    <span>version v0.2</span>
+    <span>最后编辑 2026-04-19</span>
+    <span>家庭单位视角 · 忽略"↳ 派生"小块即可当单人路径读</span>
+    <span><a href="../">← 回到 relocate 首页</a></span>
+  </p>
+
+  <div class="caveat">
+    <p><strong>仅供参考 · 非官方：</strong>本页整理自 <a href="https://www.moj.go.jp/isa/" target="_blank" rel="noopener">出入国在留管理庁</a>、法務省民事局、厚生労働省等机关公开发布的规则说明，用于帮助中文读者对这条路径建立大致印象。<strong>不是法律意见，不是官方信息，不替代律师或行政書士。</strong></p>
+    <p><strong>数字怎么来的：</strong>积分表维度、永住年限、帰化居住要求等均来自公开政府文本；页面每段附了可自行复核的入口。规则可能过时——做任何实际动作前请以出入国在留管理庁最新告示为准。</p>
+    <p><strong>读法：</strong>页首 chip 是这条路径的一眼画像，下面按"工签（§ 1）→ 永住（§ 2）→ 帰化（§ 3）"线性展开。每段里主申先写，然后用 <em>↳ 配偶 / ↳ 子女</em> 派生块说明家属侧情况。家庭双保险玩法在 § 4，备选切换在 § 5。</p>
+  </div>
+
+  <!-- 元数据 chip -->
+  <dl class="chip">
+    <div><dt>国家</dt><dd>日本 <small>jp</small></dd></div>
+    <div><dt>起点签证</dt><dd>高度専門職 1 号ロ <small>+ 家族滞在</small></dd></div>
+    <div><dt>主理机关</dt><dd>出入国在留管理庁 <small>isa</small></dd></div>
+    <div><dt>规则类型</dt><dd>积分制 <small>PBS · 70 点</small></dd></div>
+    <div><dt>永住最短</dt><dd>1 年 / 3 年 <small>80 / 70 点</small></dd></div>
+    <div><dt>帰化最短</dt><dd>5 年居住 <small>一般要件</small></dd></div>
+  </dl>
+
+  <!-- 三段锚点 -->
+  <nav class="stagenav">
+    <a href="#stage-work"><span class="lbl">§ 1</span><span class="t">工签 · HSP 在留</span><span class="b">积分制 70 点 / 80 点两档 · 配偶派生就労</span></a>
+    <a href="#stage-eijuu"><span class="lbl">§ 2</span><span class="t">永住 · 永住者</span><span class="b">最短 1 年 · 家属单独申请</span></a>
+    <a href="#stage-kika"><span class="lbl">§ 3</span><span class="t">帰化 · 日本国籍</span><span class="b">5 年居住 · 须放弃原国籍</span></a>
+  </nav>
+
+  <!-- ============ § 0 全景 ============ -->
+  <section id="stage-overview">
+    <h2><span class="n">§ 0</span>全景 · 家庭三线时序</h2>
+    <p class="lede">HSP 1 号ロ 与美国 L-1B 最大的差别：配偶拥有几乎与主申同等的独立就労权，不依赖年度抽签；永住触发以"积分达标 + 连续在留"两项为锚，时间线由 70/80 两档决定。</p>
+
+    <div class="familytrack">
+      <div class="row">
+        <div class="l">主申<small>Principal</small></div>
+        <div class="r">
+          <em>§ 1</em>COE 取得 → 使馆签证 → 入国获 HSP 1 号ロ 在留卡（5 年）<br>
+          <em>§ 1</em>到达并就労 · 第 1 年起累计积分（如跨过 80 则加速永住条件触发）<br>
+          <em>§ 2</em>满 1 年（80 点）或满 3 年（70 点）→ 申请永住者<br>
+          <em>§ 3</em>（可选）连续在留满 5 年且其中 3 年就労 → 申请帰化 → 放弃中国国籍 → 获日本国籍
+        </div>
+      </div>
+      <div class="row">
+        <div class="l">配偶<small>Spouse</small></div>
+        <div class="r">
+          <em>§ 1</em>同期"家族滞在"入国 → 申请"高度専門職外国人の配偶者"特例就労许可 → <strong>不受学历限制全职就业</strong><br>
+          <em>§ 2</em>与主申同期或稍后独立申请永住（HSP 配偶也可按同样加速线，若自身也达标）<br>
+          <em>§ 3</em>帰化独立递件（不自动随主申）。如自身积分也够或在日稳定就労，通常无难度
+        </div>
+      </div>
+      <div class="row">
+        <div class="l">子女<small>Child</small></div>
+        <div class="r">
+          <em>§ 1</em>"家族滞在"入国 · 义务教育期就读公立或国际学校 · 无需工作许可<br>
+          <em>§ 2</em>随父母永住时可作为"永住者の配偶者等"或一并申请永住者<br>
+          <em>§ 3</em>父母帰化时，<strong>未满 20 岁（2022 年后为 18 岁）未婚未独立者</strong>可按《国籍法》§ 8 简化要件一并帰化
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 1 工签 ============ -->
+  <section id="stage-work">
+    <h2><span class="n">§ 1</span>第一段 · HSP 1 号ロ 在留资格<span class="tag">主申 + 派生</span></h2>
+    <p class="lede">积分制。学历、年收、年龄、日语、大学排名、论文 &amp; 专利、研究 / 管理经验等维度累加，达 70 点即准予取得本在留资格，达 80 点另享多项加速优待。</p>
+
+    <h3><span class="n">1.1</span>门槛 · 积分维度</h3>
+    <p>全部维度求和需达 <strong>70 点</strong>。以下为常见加分维度概要；每项具体分值以 <a href="https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri07_00114.html" target="_blank" rel="noopener">出入国在留管理庁 · 高度人材ポイント制</a>告示为准。</p>
+    <table class="points">
+      <thead><tr><th>维度</th><th>常见得分</th><th>说明</th></tr></thead>
+      <tbody>
+        <tr><td class="cat">学历</td><td class="range">10 / 20 / 30</td><td class="note">学士 / 硕士 / 博士；双硕士加 5；博士 + 硕士（非同专业）加 5</td></tr>
+        <tr><td class="cat">职歴</td><td class="range">5 / 10 / 15 / 20</td><td class="note">相关领域工作年数阶梯（3 / 5 / 7 / 10 年）</td></tr>
+        <tr><td class="cat">年収</td><td class="range">0–40</td><td class="note">400 万円起，每 100 万円递增；低年龄高年收分值更高。年収未达 300 万円（29 岁以下例外）直接否决</td></tr>
+        <tr><td class="cat">年龄</td><td class="range">0 / 5 / 10 / 15</td><td class="note">29 岁以下加 15，30–34 岁加 10，35–39 岁加 5，40 岁及以上 0</td></tr>
+        <tr><td class="cat">日语</td><td class="range">10 / 15</td><td class="note">JLPT N2 / N1（或等效 BJT 400 分以上）；母语非日语者</td></tr>
+        <tr><td class="cat">大学排名</td><td class="range">+10</td><td class="note">QS / THE / 上海交大 三榜任一入榜的毕业院校</td></tr>
+        <tr><td class="cat">论文 · 特许</td><td class="range">+15 / +20 等</td><td class="note">三年内三篇以上有引用论文 / 授权特许等</td></tr>
+        <tr><td class="cat">契约机关</td><td class="range">+10 / +20</td><td class="note">在"创新性ある中小企业"或同等性质雇主就职加分</td></tr>
+        <tr class="total"><td>合计达标</td><td class="range">≥ 70 点</td><td class="note">80 点及以上享永住 1 年加速 + 其他优待</td></tr>
+      </tbody>
+    </table>
+    <p><span class="term">小提示</span> 积分不设硬性上限——部分人可以一项"大学排名 + 论文 + 博士学位"叠到 80 点以上，从而走 1 年永住线。积分达 80 点时一并享多重在留活动许可、家事使用人雇用、父母同居支援等。</p>
+
+    <div class="node">
+      <div class="ntop"><span>节点 · COE（在留資格認定証明書）</span><span class="who">雇主 / 所属机关在日递交</span></div>
+      <p><strong>是什么：</strong>日本雇主（或申请人指定的行政書士）向所属入管局递交，核定申请人满足 HSP 积分并核发 "Certificate of Eligibility"，作为随后使馆签证申请的前置文件。</p>
+      <dl class="facts">
+        <dt>处理期</dt><dd>约 1–3 个月</dd>
+        <dt>主要材料</dt><dd>积分计算表 + 各维度证明（学位、在職証明、源泉徴収票、JLPT 等）</dd>
+        <dt>费用</dt><dd>无手数料；行政書士代办常见 10–30 万円</dd>
+      </dl>
+      <ul class="src">
+        <li><span class="label">在留資格</span><span>高度専門職 1 号ロ（出入国管理及び難民認定法 别表第一之二）</span></li>
+        <li><span class="label">官方指引</span><span><a href="https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri07_00114.html" target="_blank" rel="noopener">高度人材ポイント制</a></span></li>
+      </ul>
+    </div>
+
+    <div class="node">
+      <div class="ntop"><span>节点 · 使馆签证 → 入国 → 在留卡</span><span class="who">驻华日本国大使馆 / 総領事館</span></div>
+      <p><strong>是什么：</strong>凭 COE 在所属辖区使馆取得 "高度専門職 1 号" 查证（有效期 3 个月），首次入国时在空港即发"在留カード"，有效期 <strong>5 年</strong>。</p>
+      <dl class="facts">
+        <dt>有效期</dt><dd>在留 5 年（届满前可延期）</dd>
+        <dt>就労限制</dt><dd>只能在 COE 所附"指定书"列明的机关从事相关活动</dd>
+        <dt>在留活动</dt><dd>80 点以上可"多个机关併行兼职"特例</dd>
+      </dl>
+    </div>
+
+    <div class="branches">
+      <h4>↳ 配偶派生：HSP 外国人の配偶者 就労</h4>
+      <p><strong>不走普通的"家族滞在"就労制限。</strong>HSP 主申的配偶作为"特定活動"在留者，可申请"高度専門職外国人の配偶者"就労许可 —— <strong>无学历要求、无行业限制</strong>，等同全职劳动者。</p>
+      <ol>
+        <li>配偶与主申同期或稍后以"家族滞在"入国，在留 5 年</li>
+        <li>递交"在留資格変更" → 取得"特定活動 · 高度専門職外国人の配偶者"在留卡</li>
+        <li>自此可自由就业；劳动所得计入家庭总年収，间接贡献主申积分续命</li>
+        <li><strong>与美国 L-2S 的对照：</strong>L-2S 也允许配偶工作，但依赖主申身份续存；日本 HSP 配偶工作权同样依赖主申身份存续，结构相似，但工作自由度覆盖更广（L-2S 受 L-1B 雇主绑定风险间接影响）</li>
+      </ol>
+    </div>
+
+    <div class="branches">
+      <h4>↳ 子女派生：家族滞在</h4>
+      <p>未成年子女以"家族滞在"入国、在留 5 年，随主申同步延期。公立义务教育免费，入国后可直接插班。</p>
+      <ul>
+        <li>子女升满高中 / 大学后若自身有就労意愿，需转"留学" → "技術・人文知識・国際業務"或独立 HSP 等</li>
+        <li>子女在日本出生者按"经营国籍"不得自动取得日本籍（《国籍法》§ 2 采"父母任一为日本人"血统主义），但满足永住要件后可作为永住者之子申请"永住者の配偶者等"</li>
+      </ul>
+    </div>
+
+    <h3><span class="n">1.2</span>在留维持 · 容易踩的坑</h3>
+    <div class="risk">
+      <h4>积分随时间漂移</h4>
+      <ul>
+        <li><strong>年收跌破 300 万円</strong>（29 岁以下除外）即取消 HSP 资格，须转回一般"技術・人文知識・国際業務"</li>
+        <li><strong>年龄加分会随年龄增长脱落</strong>：29 岁以下的 +15 到 30 岁自动归零 +10；跨过 40 岁则完全失去年龄加分。此类"无过而失点"应在 80 点起步时预留缓冲</li>
+        <li><strong>跨机关就职</strong>：HSP 在留资格与"指定书"绑定，跳槽须向入管局递交"契約機関等に関する届出"；未在 14 日内告知视为违反在留条件</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 2 永住 ============ -->
+  <section id="stage-eijuu">
+    <h2><span class="n">§ 2</span>第二段 · 永住者<span class="tag">最短 1 年 / 3 年加速线</span></h2>
+    <p class="lede">日本的"永住权"由《出入国管理及び難民認定法》§ 22-2 规定。一般要件需在留 10 年（其中就労 5 年）；HSP 持有者凭积分达标可加速为 1 年或 3 年。</p>
+
+    <div class="speedlines">
+      <div class="line"><span class="tag">HSP 80 点</span><span class="desc">积分达 80 点并持续保持，同时在留满 1 年</span><span class="num">1 年</span></div>
+      <div class="line"><span class="tag">HSP 70 点</span><span class="desc">积分达 70 点并持续保持，同时在留满 3 年</span><span class="num">3 年</span></div>
+      <div class="line"><span class="tag">日本人配偶</span><span class="desc">与日本人结婚，婚后在留满 1 年且婚姻持续满 3 年</span><span class="num">3 年</span></div>
+      <div class="line"><span class="tag">一般要件</span><span class="desc">在留 10 年，其中就労 5 年，所在资格有效且无不良记录</span><span class="num">10 年</span></div>
+    </div>
+
+    <div class="node">
+      <div class="ntop"><span>节点 · 永住许可申请（永住者への在留資格変更）</span><span class="who">本人递交 · 入管局</span></div>
+      <p><strong>是什么：</strong>向居住地管辖入管局提交"永住許可申請書"。获批后在留资格变更为"永住者"，在留卡永久有效（7 年更新一次），就労无限制。</p>
+      <dl class="facts">
+        <dt>处理期</dt><dd>公式时间 4 个月，实际常见 4–8 个月</dd>
+        <dt>主要材料</dt><dd>身元保証書 · 所得証明（近 3 年）· 纳税证明 · 年金纳付证明 · 积分计算表（沿用 HSP）· 住民票</dd>
+        <dt>手数料</dt><dd>8,000 円</dd>
+        <dt>关键审查项</dt><dd>年金 &amp; 健康保険连续纳付（2019 年后严格化）· 住民税连续 3 年无滞纳</dd>
+      </dl>
+      <ul class="src">
+        <li><span class="label">法源</span><span>出入国管理及び難民認定法 § 22-2</span></li>
+        <li><span class="label">审查要领</span><span><a href="https://www.moj.go.jp/isa/applications/procedures/16-4.html" target="_blank" rel="noopener">永住許可に関するガイドライン</a></span></li>
+      </ul>
+    </div>
+
+    <div class="branches">
+      <h4>↳ 配偶派生：独立申请或"永住者の配偶者等"</h4>
+      <p>配偶的永住申请 <strong>不自动随主申</strong>。两种常见路线：</p>
+      <ol>
+        <li><strong>同步独立申请</strong>：如配偶自身也以 HSP 特定活动就労且积分独立达 70/80，可与主申同期递件，使用自己的积分加速线</li>
+        <li><strong>主申批准后以"永住者の配偶者等"在留变更</strong>：不需要积分，但通常要求婚姻关系真实、配偶持续在日 1 年以上、无不良记录</li>
+      </ol>
+    </div>
+
+    <div class="branches">
+      <h4>↳ 子女派生：与父母永住同案或以"永住者の配偶者等"</h4>
+      <p>未成年子女一般与父母同案递交；已成年或已婚子女须独立申请。</p>
+    </div>
+
+    <h3><span class="n">2.1</span>永住者的维持</h3>
+    <div class="risk">
+      <h4>看似"永久"，实则有可失去</h4>
+      <ul>
+        <li><strong>再入国许可</strong>：离境超过 1 年须申请 Re-entry Permit（最长 5 年）；否则视为永住放弃</li>
+        <li><strong>長期不在</strong>：持有永住但长期不在日本（如在海外工作 2 年未办 Re-entry）会被判定"永住放弃"，需重新走工签路径</li>
+        <li><strong>年金 · 社保断缴</strong>：永住批准后仍须持续加入国民年金与国民健康保险，长期滞纳可能成为未来帰化申请的障碍</li>
+        <li><strong>严重刑事 / 违反出入国法</strong>：可被取消永住；重大违章 + 驱逐后 5–10 年不得再入国</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 3 帰化 ============ -->
+  <section id="stage-kika">
+    <h2><span class="n">§ 3</span>第三段 · 帰化 · 取得日本国籍<span class="tag">国家对象 · 中国护照者须放弃原籍</span></h2>
+    <p class="lede">帰化（きか，naturalization）由《国籍法》§ 4–§ 10 规定，法務局受理。与"永住"是<strong>平行关系</strong>而非串行 —— 技术上可直接从 HSP 申请帰化而跳过永住，但审查中"在日稳定性"常参考永住或同等长期居留实绩。</p>
+
+    <div class="node">
+      <div class="ntop"><span>节点 · 帰化许可申请</span><span class="who">本人递交 · 管辖法務局</span></div>
+      <p><strong>一般要件（《国籍法》§ 5）：</strong></p>
+      <dl class="facts">
+        <dt>居住要件</dt><dd>连续在日本居住 <strong>5 年以上</strong>，其中至少 3 年就労</dd>
+        <dt>能力要件</dt><dd>年满 18 岁（2022-04 前为 20 岁）且本国法上有行为能力</dd>
+        <dt>素行要件</dt><dd>无犯罪记录 · 纳税无滞纳 · 交通违章记录良好</dd>
+        <dt>生计要件</dt><dd>有稳定收入足以在日本独立生活（家庭成员收入可合算）</dd>
+        <dt>国籍丧失要件</dt><dd><strong>须放弃原国籍</strong>（中国护照持有者将失去中国国籍，详见下段）</dd>
+        <dt>宪法遵守要件</dt><dd>不曾加入以武力破坏日本国宪法为目的的团体</dd>
+      </dl>
+      <ul class="src">
+        <li><span class="label">法源</span><span>国籍法 § 4–§ 10（帰化）</span></li>
+        <li><span class="label">官方指引</span><span><a href="https://www.moj.go.jp/MINJI/minji78.html" target="_blank" rel="noopener">法務省 · 帰化許可申請</a></span></li>
+        <li><span class="label">处理期</span><span>公式 1 年，实际常见 10–14 个月</span></li>
+        <li><span class="label">手数料</span><span>无</span></li>
+      </ul>
+    </div>
+
+    <h3><span class="n">3.1</span>HSP 帰化加速（简易帰化）</h3>
+    <p>《国籍法》§ 6–§ 8 列举多种"简易帰化"情形。与 HSP 路径相关的主要是：</p>
+    <ul>
+      <li>《国籍法》§ 6 之 3：<strong>日本籍配偶的外国籍配偶</strong> —— 婚姻满 3 年 + 在日居住 1 年以上即可（结合跨国家庭情形）</li>
+      <li>《国籍法》§ 7：<strong>与日本人结婚且在日连续居住 3 年以上</strong></li>
+      <li>《国籍法》§ 8：<strong>日本人的未成年子</strong> —— 父母任一入籍日本后，未成年未婚未独立子女可按简易要件一并帰化</li>
+    </ul>
+    <p class="hint">关于"跳过永住直接帰化"的可行性：理论上无永住前置要求，实务中法务局会综合审查"在日稳定性"；常见做法是取得永住后再帰化，但亦有高积分 HSP 持有者直接帰化的成功案例（来源：行政书士行业公开整理，<span class="term">二手</span>）。</p>
+
+    <h3><span class="n">3.2</span>对中国大陆护照持有者的特殊处理</h3>
+    <div class="risk">
+      <h4>双重国籍不允许</h4>
+      <ul>
+        <li><strong>日本：</strong>《国籍法》§ 14 规定"重国籍者"在一定年龄前必须选择其一，不承认主动保留双重国籍</li>
+        <li><strong>中国：</strong>《中华人民共和国国籍法》§ 9 规定"定居外国的中国公民，自愿加入或取得外国国籍的，即<strong>自动丧失</strong>中国国籍"</li>
+        <li><strong>流程：</strong>日本帰化许可下达后，持许可书到中国驻日大使馆办理"国籍丧失证明"，然后向法务局提交。中国护照自动失效，之后只能以日本国籍 + 探亲签证返回中国大陆</li>
+        <li><strong>子女：</strong>未成年子女如仅单方父母帰化，中国法律下仍可保留中国国籍；双方父母均帰化时情形同上</li>
+        <li><strong>不可逆：</strong>恢复中国国籍须向中华人民共和国国家移民管理局申请，<strong>成功案例极少</strong>。做此决定前请三思</li>
+      </ul>
+    </div>
+
+    <div class="branches">
+      <h4>↳ 配偶派生：独立帰化</h4>
+      <p>配偶的帰化申请 <strong>不自动随主申</strong>，须独立递件。若配偶自身在日连续居住满 5 年 + 3 年就労，即可按一般要件独立帰化；若主申先帰化为日本人，配偶在满 1 年居住后可按《国籍法》§ 7 走"与日本人结婚"简易帰化。</p>
+    </div>
+
+    <div class="branches">
+      <h4>↳ 子女派生：§ 8 简易帰化</h4>
+      <p>父母任一帰化后，未成年未婚未独立子女可按《国籍法》§ 8 简化要件一并帰化。18–20 岁间（2022 年国籍法修订后 18 岁即成年）子女若已独立则须自行走一般要件。</p>
+    </div>
+  </section>
+
+  <!-- ============ § 4 家庭双保险 ============ -->
+  <section>
+    <h2><span class="n">§ 4</span>家庭玩法 · 双保险 / 双轨制</h2>
+    <p class="lede">HSP 1 号ロ 的"配偶就労权不依赖抽签"是它相对美国 L-1B / H-1B 家庭玩法最大的结构优势。双线设计相对简单。</p>
+
+    <div class="risk" style="border-color:var(--ink);background:#fff">
+      <h4 style="color:var(--ink)">双线 A · 双 HSP（两人各自独立 HSP 1 号ロ）</h4>
+      <p style="font-family:var(--sans);font-size:13px;margin:6px 0 8px"><strong>适合：</strong>两位成年人都有可达 70 点的积分包（学历 + 年收 + 经验 + 日语等）。</p>
+      <ul style="font-family:var(--sans);font-size:13px">
+        <li>双方各自由日本雇主递 COE、各自领 HSP 1 号ロ 在留卡</li>
+        <li>彼此互为"家族滞在"并不必要；双方以独立 HSP 身份生活可大幅降低对对方雇主变动的敏感度</li>
+        <li>永住阶段各走各自的积分加速线，若一方高一方低，高分方先永住后低分方可转 "永住者の配偶者等"</li>
+        <li><strong>成本：</strong>双方简历都需达 HSP 门槛；一方日语不达 N2 或学历较低时不适用</li>
+      </ul>
+    </div>
+
+    <div class="risk" style="border-color:var(--ink);background:#fff">
+      <h4 style="color:var(--ink)">双线 B · 主申 HSP + 配偶派生就労转独立技人国</h4>
+      <p style="font-family:var(--sans);font-size:13px;margin:6px 0 8px"><strong>适合：</strong>配偶单独测算积分不到 70 点（常见卡在年收或大学排名），但本身有就职能力。</p>
+      <ul style="font-family:var(--sans);font-size:13px">
+        <li>第一步：配偶以"家族滞在"入国 + 申请"HSP 外国人の配偶者"特定活动 → 合法全职就业</li>
+        <li>第二步：配偶在日本工作 2–3 年、语言能力或积分实绩提升后，可转"技術・人文知識・国際業務"独立在留（普通工签）</li>
+        <li>第三步：继续积累满 70 点后反向转 HSP 独立在留；永住路径回到双 HSP 情形</li>
+        <li><strong>关键节点：</strong>配偶转独立工签之前其身份依赖主申；因此主申换公司须谨慎。主申跳槽的 14 日届出同样影响配偶</li>
+      </ul>
+    </div>
+
+    <div class="risk" style="border-color:var(--ink);background:#fff">
+      <h4 style="color:var(--ink)">双线 C · 主申 HSP + 配偶独立"経営・管理"创业</h4>
+      <p style="font-family:var(--sans);font-size:13px;margin:6px 0 0">配偶资本金 ≥ 500 万円在日创设法人可独立取得"経営・管理"在留资格。适合家庭有资金、配偶有创业意愿的情形。配偶由此取得的独立身份在主申 HSP 失效时可反向支撑家庭身份延续。本路径不展开，参见 <a class="pending" title="尚未建立路径页">日本 · 経営・管理</a>。</p>
+    </div>
+  </section>
+
+  <!-- ============ § 5 备选切换 ============ -->
+  <section>
+    <h2><span class="n">§ 5</span>备选切换 · 这条走不通怎么办</h2>
+    <p class="lede">HSP 1 号ロ 不是唯一进日本的路径。下面是按"切换成本"由低到高排列的常见备选。</p>
+
+    <h3 style="font-family:var(--sans);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);margin:22px 0 0;font-weight:600">同类切换（仍在日本）</h3>
+    <ul class="altlist">
+      <li>
+        <span class="tgt">HSP 1 号ロ → HSP 1 号イ<small>研究系</small></span>
+        <span>
+          <strong>门槛：</strong>以研究 / 教育为主要活动（大学 · 研究机构），同积分制但加分维度侧重论文 / 专利。<strong>何时考虑：</strong>从企业转入学术 / 研究机构。<strong>价值：</strong>在留年限与待遇完全相同，论文 &amp; 专利加分通常能快速达 80 点。
+          <span class="when">占位：<a class="pending" title="尚未建立路径页">HSP 1 号イ</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="tgt">HSP 1 号ロ → HSP 2 号<small>长期稳定</small></span>
+        <span>
+          <strong>门槛：</strong>持 HSP 1 号 满 3 年且维持 70 点以上。<strong>何时考虑：</strong>想把 5 年在留延至无期限，但又暂不想申请永住。<strong>价值：</strong>在留无期限、可从事几乎所有就労活动；不等同永住，但日常体验接近。
+          <span class="when">独立路径页占位：<a class="pending" title="尚未建立路径页">HSP 2 号</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="tgt">HSP → 技術・人文知識・国際業務<small>普通工签</small></span>
+        <span>
+          <strong>门槛：</strong>本专业学士学位 + 与岗位相关工作内容。<strong>何时考虑：</strong>HSP 积分因年龄脱落跌破 70，但仍希望留日。<strong>价值：</strong>无积分要求、无年收下限，永住走 10 年一般线；配偶退回"家族滞在"且就労受限（原则每周 28 小时）。
+          <span class="when">占位：<a class="pending" title="尚未建立路径页">日本 · 技術・人文知識・国際業務</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="tgt">HSP → 経営・管理<small>创业</small></span>
+        <span>
+          <strong>门槛：</strong>资本金 ≥ 500 万円、事业计划、办公实体、常勤员工 2 人以上之一。<strong>何时考虑：</strong>在日创业或收购既有事业。<strong>价值：</strong>不依赖雇主；可与 HSP 家庭双保险组合（主申 HSP + 配偶経営・管理）。
+          <span class="when">占位：<a class="pending" title="尚未建立路径页">日本 · 経営・管理</a></span>
+        </span>
+      </li>
+    </ul>
+
+    <h3 style="font-family:var(--sans);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;color:var(--ink-soft);margin:22px 0 0;font-weight:600">跨国切换（换目的国）</h3>
+    <ul class="altlist">
+      <li>
+        <span class="tgt">USA · L-1B<small>内部调动</small></span>
+        <span>
+          <strong>门槛：</strong>同一跨国集团内海外子公司就职 1 年以上，持"专门知识"。<strong>何时考虑：</strong>所在公司在美有子公司、希望快速进入北美工作环境。<strong>价值：</strong>L-2S 配偶就労自动授予（结构与 HSP 配偶派生就労相近）；但绿卡须另走 EB-2/3 排期。
+          <span class="when">已有路径页：<a href="us-l1b.html">美国 · L-1B 家庭完整路径</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="tgt">USA · H-1B<small>专业职位 + 年度抽签</small></span>
+        <span>
+          <strong>门槛：</strong>学士以上 + 美国雇主赞助 + 3 月抽签中签。<strong>何时考虑：</strong>有美国雇主 offer 且愿意承担抽签不确定性。
+          <span class="when">占位：<a class="pending" title="尚未建立路径页">H-1B 路径页</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="tgt">Canada · GTS<small>Global Talent Stream</small></span>
+        <span>
+          <strong>门槛：</strong>进入 ESDC 指定职业清单，雇主提交 LMBP。<strong>何时考虑：</strong>想要 2 周落地的应急备胎；倾向北美移民终点。<strong>价值：</strong>2 周处理；配偶自动 open work permit。
+          <span class="when">占位：<a class="pending" title="尚未建立路径页">Canada · Global Talent Stream</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="tgt">UK · Global Talent<small>杰出 / 高潜</small></span>
+        <span>
+          <strong>门槛：</strong>经 Tech Nation 等指定背书机构 endorsement。<strong>何时考虑：</strong>已有论文 / 开源 / 行业曝光。<strong>价值：</strong>无雇主绑定；5 年可申 ILR。
+          <span class="when">占位：<a class="pending" title="尚未建立路径页">UK · Global Talent</a></span>
+        </span>
+      </li>
+      <li>
+        <span class="tgt">Singapore · ONE Pass<small>高薪通道</small></span>
+        <span>
+          <strong>门槛：</strong>月薪 ≥ S$30,000 或领域国际公认成就。<strong>何时考虑：</strong>年薪已达档位、倾向低税 + 东南亚枢纽。
+          <span class="when">占位：<a class="pending" title="尚未建立路径页">Singapore · ONE Pass</a></span>
+        </span>
+      </li>
+    </ul>
+
+    <p style="font-family:var(--sans);font-size:12px;color:var(--ink-faint);margin-top:18px"><em>以上"占位链接"对应的路径页尚未建立，建立后将替换为真实链接。完整待补路径清单见项目的 <a href="https://github.com/qing4132/relocate/blob/main/HANDOFF.md">HANDOFF.md</a>。</em></p>
+  </section>
+
+  <!-- ============ § 6 风险 ============ -->
+  <section>
+    <h2><span class="n">§ 6</span>核心风险点</h2>
+    <p class="lede">家庭单位视角下最容易被忽视的几类。</p>
+
+    <div class="risk">
+      <h4>积分"静默脱落"</h4>
+      <ul>
+        <li>年龄加分随年龄走，30 / 35 / 40 岁各有分水岭</li>
+        <li>年収随换工作 / 汇率 / 奖金结构漂移，跌破 300 万円直接失去 HSP 资格</li>
+        <li>大学排名每年更新（QS / THE），毕业院校进 / 出榜会直接改变加分</li>
+        <li>建议：起步时积分应 ≥ 80，用 10 分余量对冲未来 5 年的自然脱落</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>年金 / 健康保険 连续纳付</h4>
+      <ul>
+        <li>2019 年后永住审查强化，年金 &amp; 国保连续纳付记录成为硬指标</li>
+        <li>留学转工签的"空档期"未加入国民年金 → 影响永住 &amp; 帰化审查</li>
+        <li>配偶挂靠主申厚生年金"第三号被保険者"无需自缴，但若配偶自行就业收入超过约 130 万円则须转第一/二号，易断档</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>帰化的不可逆性（对中国大陆护照者）</h4>
+      <ul>
+        <li>帰化许可下达后自动失去中国国籍，不可撤回</li>
+        <li>若父母仍在中国、有中国国内资产 / 户籍 / 养老金等需处理的，建议帰化前 6–12 个月完成相关手续</li>
+        <li>帰化后返回中国须申请签证，一般不影响探亲；但中国涉密 / 军工 / 公职背景者须另查相关限制</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>HSP 与"技術・人文知識・国際業務"切换成本</h4>
+      <ul>
+        <li>从 HSP 降回一般技人国较简单；从一般技人国升 HSP 须积分重新达 70 点且配偶就労许可须重新申请</li>
+        <li>永住年限计算以实际在留时间为准，但 HSP 加速线要求"积分达标期间"，降级期间不计加速</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 7 官方文件总表 ============ -->
+  <section>
+    <h2><span class="n">§ 7</span>官方文件总表</h2>
+    <p class="lede">本页每个数字都来自下面这些公开文件之一。页面可能过时，真的要做决定前请以这些来源的最新版本为准。</p>
+
+    <table class="sources">
+      <thead><tr><th>id</th><th>发布机关</th><th>文件名 · 链接</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>jp-isa-hsp</code></td><td class="iss">出入国在留管理庁</td><td><a href="https://www.moj.go.jp/isa/applications/procedures/nyuukokukanri07_00114.html" target="_blank" rel="noopener">高度人材ポイント制</a>（积分维度与分值告示）</td></tr>
+        <tr><td class="id"><code>jp-isa-eijuu</code></td><td class="iss">出入国在留管理庁</td><td><a href="https://www.moj.go.jp/isa/applications/procedures/16-4.html" target="_blank" rel="noopener">永住許可に関するガイドライン</a></td></tr>
+        <tr><td class="id"><code>jp-inran</code></td><td class="iss">e-Gov 法令検索</td><td><a href="https://elaws.e-gov.go.jp/document?lawid=326CO0000000319" target="_blank" rel="noopener">出入国管理及び難民認定法</a>（含 § 22-2 永住）</td></tr>
+        <tr><td class="id"><code>jp-moj-kika</code></td><td class="iss">法務省 · 民事局</td><td><a href="https://www.moj.go.jp/MINJI/minji78.html" target="_blank" rel="noopener">帰化許可申請</a></td></tr>
+        <tr><td class="id"><code>jp-kokuseki</code></td><td class="iss">e-Gov 法令検索</td><td><a href="https://elaws.e-gov.go.jp/document?lawid=325AC0000000147" target="_blank" rel="noopener">国籍法</a>（§ 4–§ 14）</td></tr>
+        <tr><td class="id"><code>cn-kokuseki</code></td><td class="iss">全国人大</td><td><a href="http://www.npc.gov.cn/npc/c2/c30834/201805/t20180526_187129.html" target="_blank" rel="noopener">中华人民共和国国籍法</a>（§ 9 自动丧失）</td></tr>
+        <tr><td class="id"><code>jp-isa-family</code></td><td class="iss">出入国在留管理庁</td><td><a href="https://www.moj.go.jp/isa/applications/status/hsp03.html" target="_blank" rel="noopener">高度専門職外国人の配偶者の就労</a></td></tr>
+        <tr><td class="id"><code>jp-mhlw-nenkin</code></td><td class="iss">厚生労働省</td><td><a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/nenkin/nenkin/index.html" target="_blank" rel="noopener">公的年金制度</a></td></tr>
+      </tbody>
+    </table>
+
+    <p style="font-family:var(--sans);font-size:12.5px;color:var(--ink-soft);margin-top:14px"><em>本页当前未在 <code>data/archive/jp/hsp/</code> 保存以上文件原件。HANDOFF Next 已记录"补 JP HSP 归档"。原件抓取后本段会在每一行末补一个"归档"链接指向本地版本。</em></p>
+  </section>
+
+  <footer class="btm">
+    <span>relocate · path · jp-hsp</span>
+    <span>仅供参考 · 非官方 · 2026-04-19</span>
+  </footer>
+
+  <!--
+    待补路径（本页 § 4 / § 5 出现的 class="pending" 占位）：
+    - HSP 1 号イ（研究系）               slug: jp-hsp-1a
+    - HSP 2 号                          slug: jp-hsp-2
+    - 日本 · 技術・人文知識・国際業務      slug: jp-gijinkoku
+    - 日本 · 経営・管理                  slug: jp-business-mgmt
+    - H-1B 路径页                        slug: us-h1b
+    - Canada · Global Talent Stream     slug: ca-gts
+    - UK · Global Talent                 slug: uk-global-talent
+    - Singapore · ONE Pass              slug: sg-one-pass
+  -->
+
+</main>
+
+</body>
+</html>
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
 <title>relocate · 路径详情 · 日本 高度専門職 1 号ロ（仅供参考 · 非官方）</title>
 <style>
   :root{
