@@ -14,14 +14,19 @@
   - 维度 B · 家庭为默认单位（不再分 `-family` 文件；配偶 / 子女派生块 + 家庭双保险段）
   - 维度 C · 备选切换 + 占位链接
 - **2026-04-19 · 清零"待上线未完成"文案**（commit `771e79d`）：替换全部 pending 占位链接、修正 AU GTV→NIV 更名、下线 JP HSP 旧版稿
-- **2026-04-19 · JP HSP 官方原件全量归档 + 两页来源表补本地归档列**（本次 commit）：
+- **2026-04-19 · JP HSP 官方原件全量归档 + 两页来源表补本地归档列**（commit `10c73f9`）：
   - `data/archive/jp/hsp/` 已落 14 份官方文件（ISA 8 · e-Gov 2 XML · MOJ 1 · MHLW 1 · PRC 1）+ README + download.sh
   - `site/paths/jp-hsp.html` § 7 表、`site/paths/us-l1b.html` § 10 四张子表均新增「本地归档」列，所有官方引用在本地可定位
+- **2026-04-19 · 新增 US H-1B 路径 + 官方原件归档**（本次 commit）：
+  - [`site/paths/us-h1b.html`](site/paths/us-h1b.html) — 含抽签注册 · LCA/I-129 · 维持（AC21 突破 6 年）· PERM/I-140/排期 · I-485/领事 · N-400 · 家庭三线图 · 备选切换 · § 10 四张子表全带本地归档列
+  - `data/archive/us/h1b/`（USCIS 5 · DOL 2 · regulations 2 · statutes 2 · forms 5 PDFs + 3 online-only stubs）+ README + download.sh；AC21 / CSPA / CCA / 归化条款 / PERM 表格 / I-485 / N-400 等共用件复用 `data/archive/us/l1b-family/`
+  - `site/index.html` 路径列表新增 H-1B 条目；`site/paths/jp-hsp.html` § 5 与 `site/paths/us-l1b.html` § 8 的 H-1B 条目从 USCIS 外链改为本站内链
 - 技术栈：**纯静态 HTML / CSS，无框架、无构建**（[docs/engineering.md](docs/engineering.md)）
 - 可部署目录：[site/](site/)
 - 已有路径页：
   - [`site/paths/jp-hsp.html`](site/paths/jp-hsp.html) — 日本 · 高度専門職 1 号ロ · 工签 → 永住 → 帰化
   - [`site/paths/us-l1b.html`](site/paths/us-l1b.html) — 美国 · L-1B · 工签 → 永居 → 入籍
+  - [`site/paths/us-h1b.html`](site/paths/us-h1b.html) — 美国 · H-1B · 抽签 → 工签 → 永居 → 入籍
 
 ## Next · 下一步
 
@@ -37,7 +42,6 @@
 
 | 建议 slug | 目标文件 | 出现于 |
 | --- | --- | --- |
-| `us-h1b` | `site/paths/us-h1b.html` | jp-hsp.html § 5, us-l1b.html § 7, § 8 |
 | `us-l1a` | `site/paths/us-l1a.html` | us-l1b.html § 8 |
 | `us-o1a` | `site/paths/us-o1a.html` | us-l1b.html § 8 |
 | `us-eb1a` | `site/paths/us-eb1a.html` | us-l1b.html § 8 |
@@ -50,7 +54,7 @@
 | `uk-global-talent` | `site/paths/uk-global-talent.html` | 两个路径页 |
 | `sg-one-pass` | `site/paths/sg-one-pass.html` | 两个路径页 |
 
-优先级建议：`us-h1b` 最值得先做（两条现有路径都链到它且与 L-1B / HSP 双保险玩法强相关）。
+优先级建议：剩余里 `us-l1a` / `us-eb1a` 与 H-1B / L-1B 族系强相关，可接着做。
 
 已完成、从本清单拿掉的：
 
@@ -62,7 +66,8 @@
 - ~~把 `us-l1b-family.html` 重命名为 `us-l1b.html`~~（2026-04-19）
 - ~~过 JP HSP 页正文 + 修正 ISA 失效 URL~~（2026-04-19，本次）
 - ~~下载 JP HSP 官方原件到 `data/archive/jp/hsp/` 并在页面 § 7 表补「本地归档」列~~（2026-04-19，本次）
-- ~~US L-1B 页 § 10 四张子表补「本地归档」列~~（2026-04-19，本次）
+- ~~US L-1B 页 § 10 四张子表补「本地归档」列~~（2026-04-19）
+- ~~新增 US H-1B 路径 + 归档 + 首页更新 + 交叉链接~~（2026-04-19，本次）
 
 ## Don't · 别做
 
