@@ -30,7 +30,7 @@
   - `data/archive/us/o1/`（USCIS 5 · regulations 1 · statutes 2 · forms 3 PDF + 2 online-only stub）+ README + download.sh；I-485 / I-765 / I-131 / I-539 / I-693 / N-400 / N-470 / N-600 / AC21 / CSPA / CCA / 8 CFR 245 / INA §203 / §245 / §316 / §319 / §320 等共用件沿用 `data/archive/us/l1b/`
   - 跨链接：`site/paths/us-h1b.html` § 7 的 H-1B → O-1A 条目从 USCIS 外链改为 `us-o1.html`；`site/paths/us-l1b.html` § 8 的 L-1B → O-1A 条目同改；`site/paths/us-overview.html` § 2 "NIV 字母表" 中 O-1 条目加本站链接，§ 11 "本站美国 path 索引" 增 O-1 条目，§ 11 页末的"待补路径清单"中移除 O-1A
   - `site/index.html` 路径列表新增 O-1 条目
-- **2026-04-20 · 新增 US L-1A 跨国公司管理者 / 高管路径 + 官方原件归档**（本次 commit）：
+- **2026-04-20 · 新增 US L-1A 跨国公司管理者 / 高管路径 + 官方原件归档**（commit `acb18b0`）：
   - [`site/paths/us-l1a.html`](site/paths/us-l1a.html) — 管理 / 高管岗位定义（INA §101(a)(44) + USCIS Vol 2 Part L · 含 function manager）· 7 年累计上限 · 常规 3+2+2 与 "新办公室" 1+2+2+2 两套节奏 · 主线 EB-1C 绿卡（免 PERM · 与 L-1A 事实要件一比一同构 · 美国雇主须运营满 1 年）· EB-1A / NIW 备份 · 家庭双保险三种配置 · 备选切换（L-1A↔H-1B / O-1A / EB-1A、Canada ICT / GTS、JP HSP 1 号イ / ロ、UK Senior Specialist、SG ONE Pass）· § 10 四张子表带本地归档列
   - `data/archive/us/l1a/`（USCIS 4 份 L-1A / EB-1 总览 / Policy Manual Vol 2 Part L / Vol 6 Part F Ch 5）+ README + download.sh；上游法条 + 下游流程的全部共用件（INA §101/§214/§203/§245/§316/§319/§320 · 8 CFR 214.2 / 204.5 / 245 · AC21 / CSPA / CCA · I-129 / I-140 / I-485 / N-400 / N-600 等）沿用 `data/archive/us/l1b/`
   - 按"共用则引用不复制"原则：页面 § 4（绿卡收尾 I-485 vs DS-260）与 § 5（LPR 维持 / N-400 / CCA 子女自动入籍）直接引 `us-l1b.html` 对应段，不重复照搬
@@ -42,8 +42,7 @@
   - [`site/paths/us-overview.html`](site/paths/us-overview.html) — 美国 · 移民体系通用前置知识（primer，非 path）
   - [`site/paths/jp-hsp.html`](site/paths/jp-hsp.html) — 日本 · 高度専門職 1 号ロ · 工签 → 永住 → 帰化
   - [`site/paths/us-l1b.html`](site/paths/us-l1b.html) — 美国 · L-1B · 工签 → 永居 → 入籍
-  - [`site/paths/us-l1a.html`](site/paths/us-l1a.html) — 美国 · L-1A · 工签 → EB-1C → 永居 → 入籍
-  - [`site/paths/us-h1b.html`](site/paths/us-h1b.html) — 美国 · H-1B · 抽签 → 工签 → 永居 → 入籍
+  - [`site/paths/us-l1a.html`](site/paths/us-l1a.html) — 美国 · L-1A · 工签 → EB-1C → 永居 → 入籍  - [`site/paths/us-l1a.html`](site/paths/us-l1a.html) — 美国 · L-1A · 工签 → EB-1C → 永居 → 入籍  - [`site/paths/us-h1b.html`](site/paths/us-h1b.html) — 美国 · H-1B · 抽签 → 工签 → 永居 → 入籍
   - [`site/paths/us-o1.html`](site/paths/us-o1.html) — 美国 · O-1 · 杰出人才 → EB-1A → 永居 → 入籍
 
 ## Next · 下一步
