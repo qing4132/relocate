@@ -25,17 +25,24 @@
   - [`site/paths/us-overview.html`](site/paths/us-overview.html) — 面向任一条具体 US path 读者的共性前置：机构分工（USCIS/CBP/ICE/DOS/DOL/IRS/SSA）· 签证 vs 身份 vs I-94 · NIV/IV · 双重意图 · NIV 字母表速查 · EB 五类与 7% 国别配额 · 优先日 / Visa Bulletin 两表 / Cross-Chargeability / AC21 三条 · AOS vs CP + CSPA · 维持身份 / 60 天 grace / 3-10 年禁令 / Advance Parole · LPR 维持（物理存在 · Reentry · N-470 · 全球纳税）· 入籍 5-3-18 · 中国国籍法 §9 · 表格速查 · 政策节奏。
   - 所有官方引用复用 `data/archive/us/l1b/` 的 statutes / regulations / policy（未新增归档文件）
   - `site/index.html` 路径列表把 us-overview 置于顶部，status 写「前置知识」
-- **2026-04-20 · 新增 US O-1 杰出人才路径 + 官方原件归档**（本次 commit）：
+- **2026-04-20 · 新增 US O-1 杰出人才路径 + 官方原件归档**（commit `d189376`）：
   - [`site/paths/us-o1.html`](site/paths/us-o1.html) — O-1A / O-1B 三档 · 8 条证据标准 · 2022 STEM 备忘 · 咨询函 · Agent 模式 · 3 + 1 + 1 无上限续签 · O-3 不可工作的家庭困境 · EB-1A 自荐为主线 · EB-2 NIW / EB-1B 备选 · 家庭双保险三种配置 · 备选切换（同类 / 跨签证 / 跨国）· § 10 四张子表带本地归档列
   - `data/archive/us/o1/`（USCIS 5 · regulations 1 · statutes 2 · forms 3 PDF + 2 online-only stub）+ README + download.sh；I-485 / I-765 / I-131 / I-539 / I-693 / N-400 / N-470 / N-600 / AC21 / CSPA / CCA / 8 CFR 245 / INA §203 / §245 / §316 / §319 / §320 等共用件沿用 `data/archive/us/l1b/`
   - 跨链接：`site/paths/us-h1b.html` § 7 的 H-1B → O-1A 条目从 USCIS 外链改为 `us-o1.html`；`site/paths/us-l1b.html` § 8 的 L-1B → O-1A 条目同改；`site/paths/us-overview.html` § 2 "NIV 字母表" 中 O-1 条目加本站链接，§ 11 "本站美国 path 索引" 增 O-1 条目，§ 11 页末的"待补路径清单"中移除 O-1A
   - `site/index.html` 路径列表新增 O-1 条目
+- **2026-04-20 · 新增 US L-1A 跨国公司管理者 / 高管路径 + 官方原件归档**（本次 commit）：
+  - [`site/paths/us-l1a.html`](site/paths/us-l1a.html) — 管理 / 高管岗位定义（INA §101(a)(44) + USCIS Vol 2 Part L · 含 function manager）· 7 年累计上限 · 常规 3+2+2 与 "新办公室" 1+2+2+2 两套节奏 · 主线 EB-1C 绿卡（免 PERM · 与 L-1A 事实要件一比一同构 · 美国雇主须运营满 1 年）· EB-1A / NIW 备份 · 家庭双保险三种配置 · 备选切换（L-1A↔H-1B / O-1A / EB-1A、Canada ICT / GTS、JP HSP 1 号イ / ロ、UK Senior Specialist、SG ONE Pass）· § 10 四张子表带本地归档列
+  - `data/archive/us/l1a/`（USCIS 4 份 L-1A / EB-1 总览 / Policy Manual Vol 2 Part L / Vol 6 Part F Ch 5）+ README + download.sh；上游法条 + 下游流程的全部共用件（INA §101/§214/§203/§245/§316/§319/§320 · 8 CFR 214.2 / 204.5 / 245 · AC21 / CSPA / CCA · I-129 / I-140 / I-485 / N-400 / N-600 等）沿用 `data/archive/us/l1b/`
+  - 按"共用则引用不复制"原则：页面 § 4（绿卡收尾 I-485 vs DS-260）与 § 5（LPR 维持 / N-400 / CCA 子女自动入籍）直接引 `us-l1b.html` 对应段，不重复照搬
+  - 跨链接：`site/paths/us-l1b.html` § 8 的 L-1B → L-1A 条目从 USCIS 外链改为本站 `us-l1a.html`；`site/paths/us-o1.html` § 8 的 O-1 → L-1A / L-1B 同时链到 L-1A 与 L-1B；`site/paths/us-h1b.html` § 8 的 H-1B → L-1B / L-1A 同时链两页；`site/paths/us-overview.html` § 2 NIV 字母表中 L-1A / L-1B 条目、§ 11 "本站美国 path 索引" 新增 L-1A 条目，§ 11 页末的"待补路径清单"中移除 L-1A
+  - `site/index.html` 路径列表新增 L-1A 条目，置于 L-1B 之后 H-1B 之前
 - 技术栈：**纯静态 HTML / CSS，无框架、无构建**（[docs/engineering.md](docs/engineering.md)）
 - 可部署目录：[site/](site/)
 - 已有路径页：
   - [`site/paths/us-overview.html`](site/paths/us-overview.html) — 美国 · 移民体系通用前置知识（primer，非 path）
   - [`site/paths/jp-hsp.html`](site/paths/jp-hsp.html) — 日本 · 高度専門職 1 号ロ · 工签 → 永住 → 帰化
   - [`site/paths/us-l1b.html`](site/paths/us-l1b.html) — 美国 · L-1B · 工签 → 永居 → 入籍
+  - [`site/paths/us-l1a.html`](site/paths/us-l1a.html) — 美国 · L-1A · 工签 → EB-1C → 永居 → 入籍
   - [`site/paths/us-h1b.html`](site/paths/us-h1b.html) — 美国 · H-1B · 抽签 → 工签 → 永居 → 入籍
   - [`site/paths/us-o1.html`](site/paths/us-o1.html) — 美国 · O-1 · 杰出人才 → EB-1A → 永居 → 入籍
 
@@ -52,8 +59,7 @@
 当前 `site/paths/jp-hsp.html` 与 `site/paths/us-l1b.html` 的 § 备选切换小节共有如下 `class="pending"` 占位。建立目标页后须全站搜索并替换为真实链接：
 
 | 建议 slug | 目标文件 | 出现于 |
-| --- | --- | --- |
-| `us-l1a` | `site/paths/us-l1a.html` | us-l1b.html § 8 |
+| --- eb1a` | `site/paths/us-eb1a.html` | us-l1b.html § 8 · us-l1a.html § 8 · us-o1tml § 8 |
 | `us-eb1a` | `site/paths/us-eb1a.html` | us-l1b.html § 8 |
 | `jp-hsp-1a` | `site/paths/jp-hsp-1a.html` | jp-hsp.html § 5（研究系） |
 | `jp-hsp-2` | `site/paths/jp-hsp-2.html` | jp-hsp.html § 5 |
@@ -64,7 +70,7 @@
 | `uk-global-talent` | `site/paths/uk-global-talent.html` | 两个路径页 |
 | `sg-one-pass` | `site/paths/sg-one-pass.html` | 两个路径页 |
 
-优先级建议：剩余里 `us-l1a` / `us-eb1a` 与 H-1B / L-1B 族系强相关，可接着做。
+优先级建议：`us-eb1a` 与 L-1A / O-1 / H-1B 族系强相关（是三条 path 的绿卡主线 / 备选分类），可接着做。
 
 已完成、从本清单拿掉的：
 
@@ -79,6 +85,7 @@
 - ~~US L-1B 页 § 10 四张子表补「本地归档」列~~（2026-04-19）
 - ~~新增 US O-1 杰出人才路径 + 官方原件归档 + 跨页链接替换~~（2026-04-20）
 - ~~新增 US H-1B 路径 + 归档 + 首页更新 + 交叉链接~~（2026-04-19，本次）
+- ~~新增 US L-1A 路径 + 归档 + 四页交叉链接 + 共用段引用 L-1B 页~~（2026-04-20，本次）
 
 ## Don't · 别做
 
