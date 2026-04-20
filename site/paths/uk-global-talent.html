@@ -1,0 +1,642 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>relocate · 路径详情 · UK Global Talent · 到入籍为止（仅供参考 · 非官方）</title>
+<style>
+  :root{
+    --ink:#141414;
+    --ink-soft:#3d3d3d;
+    --ink-faint:#8a8a8a;
+    --rule:#d8d8d8;
+    --rule-soft:#ebebeb;
+    --bg:#fdfbf7;
+    --warn-bg:#fff6e7;
+    --warn-ink:#6a4d00;
+    --branch-bg:#f5f2ea;
+    --serif:Georgia,"Source Han Serif SC","Noto Serif SC","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;
+    --mono:"SFMono-Regular","Menlo",Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  header.top{padding:14px 40px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em;background:#fff}
+  header.top .l{color:var(--ink)}
+  .page{max-width:920px;margin:0 auto;padding:56px 32px 140px}
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 10px}
+  h1{font-size:30px;font-weight:700;line-height:1.25;letter-spacing:-0.005em;margin:0 0 6px}
+  .sub{font-family:var(--sans);font-size:14px;color:var(--ink-soft);margin:0 0 14px;letter-spacing:0.01em}
+  .sub code{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 6px;border-radius:2px;color:var(--ink)}
+  .meta{font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);letter-spacing:0.04em;margin:0 0 28px;padding-bottom:18px;border-bottom:1px solid var(--ink)}
+  .meta span + span::before{content:" · ";margin:0 4px;color:var(--rule)}
+  .caveat{background:var(--warn-bg);border:1px solid var(--warn-ink);padding:14px 20px;margin:0 0 32px;font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--warn-ink)}
+  .caveat strong{color:#3c2a00}
+  .caveat p{margin:0 0 6px}
+  .caveat p:last-child{margin:0}
+  .caveat a{color:var(--warn-ink)}
+  .chip{display:grid;grid-template-columns:repeat(6, 1fr);gap:0;background:#fff;border:1px solid var(--ink);font-family:var(--sans);margin:0 0 36px}
+  .chip > div{padding:12px 14px;border-right:1px solid var(--rule)}
+  .chip > div:last-child{border-right:none}
+  .chip dt{font-family:var(--mono);font-size:10px;color:var(--ink-faint);letter-spacing:0.09em;text-transform:uppercase;margin:0 0 3px}
+  .chip dd{margin:0;font-size:13.5px;color:var(--ink);font-weight:600}
+  .chip dd small{display:block;font-weight:400;font-size:11.5px;color:var(--ink-faint);margin-top:2px;font-family:var(--mono)}
+  .stagenav{display:grid;grid-template-columns:repeat(6, 1fr);gap:6px;margin:0 0 40px;font-family:var(--sans)}
+  .stagenav a{display:block;padding:10px 12px;background:#fff;border:1px solid var(--ink);text-decoration:none;color:var(--ink)}
+  .stagenav a .lbl{font-family:var(--mono);font-size:10px;color:var(--ink-faint);letter-spacing:0.09em;text-transform:uppercase;display:block;margin-bottom:3px}
+  .stagenav a .t{font-size:14px;font-weight:700;display:block;line-height:1.3}
+  .stagenav a .b{font-size:11.5px;color:var(--ink-soft);display:block;margin-top:3px;font-family:var(--serif);line-height:1.45}
+  section{margin:56px 0 0}
+  section > h2{font-size:20px;font-weight:700;line-height:1.35;margin:0 0 4px}
+  section > h2 .n{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--ink-faint);letter-spacing:0.08em;margin-right:10px}
+  section > h2 .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:0.06em;padding:2px 7px;border:1px solid var(--ink-faint);color:var(--ink-faint);font-weight:400;margin-left:10px;vertical-align:3px}
+  section > .lede{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:15.5px;line-height:1.7;margin:0 0 20px}
+  p{margin:0 0 1em}
+  h3{font-size:15.5px;font-weight:700;margin:26px 0 8px}
+  h3 .n{font-family:var(--mono);font-size:11px;font-weight:400;color:var(--ink-faint);letter-spacing:0.06em;margin-right:8px}
+  h4{font-size:13.5px;font-weight:700;margin:18px 0 6px;font-family:var(--sans)}
+  .node{background:#fff;border:1px solid var(--ink);padding:18px 22px;margin:14px 0 18px;font-family:var(--sans);font-size:13.5px;line-height:1.7}
+  .node .ntop{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:8px;border-bottom:1px solid var(--rule-soft);margin-bottom:12px;font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em}
+  .node .big{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink);line-height:1.35;margin:0 0 6px}
+  .node p{margin:0 0 10px;color:var(--ink-soft)}
+  .node p strong{color:var(--ink);font-weight:700}
+  .node dl.kv{display:grid;grid-template-columns:140px 1fr;gap:6px 14px;font-size:12.5px;color:var(--ink-soft);margin:12px 0 0;padding-top:10px;border-top:1px dashed var(--rule)}
+  .node dl.kv dt{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.06em;text-transform:uppercase;padding-top:2px}
+  .node dl.kv dd{margin:0}
+  .node dl.kv dd code{font-family:var(--mono);font-size:11.5px;background:var(--rule-soft);padding:1px 5px;border-radius:2px;color:var(--ink)}
+  .familytrack{background:#fff;border:1px solid var(--ink);margin:14px 0 18px;font-family:var(--sans);font-size:12.5px}
+  .familytrack .row{display:grid;grid-template-columns:130px 1fr;border-bottom:1px solid var(--rule)}
+  .familytrack .row:last-child{border-bottom:none}
+  .familytrack .row .l{padding:14px;background:var(--rule-soft);border-right:1px solid var(--rule);font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.06em;text-transform:uppercase}
+  .familytrack .row .l small{display:block;font-size:10px;color:var(--ink-faint);margin-top:3px;letter-spacing:0.04em}
+  .familytrack .row .r{padding:14px 18px;color:var(--ink-soft);line-height:1.65}
+  .familytrack .row .r strong{color:var(--ink)}
+  .familytrack .row .r em{font-style:normal;background:var(--rule-soft);padding:1px 6px;font-family:var(--mono);font-size:11px;color:var(--ink);margin-right:4px}
+  .flowchart{background:#fff;border:1px solid var(--ink);padding:22px 24px;margin:10px 0 24px;font-family:var(--mono);font-size:12.5px;line-height:1.8;color:var(--ink);white-space:pre;overflow-x:auto}
+  .flowchart .hi{background:var(--rule-soft);padding:0 4px}
+  .flowchart .br{color:var(--ink-faint)}
+  table.sources{width:100%;border-collapse:collapse;background:#fff;font-family:var(--sans);font-size:12.5px;line-height:1.55;margin:10px 0 16px}
+  table.sources th,table.sources td{padding:8px 10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
+  table.sources thead th{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em;text-transform:uppercase;font-weight:600;border-bottom:1px solid var(--ink);background:var(--rule-soft)}
+  table.sources td.id{width:110px}
+  table.sources td.id code{font-family:var(--mono);font-size:11px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+  table.sources td.iss{width:150px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em}
+  table.sources td a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--ink-faint);text-underline-offset:2px}
+  .risk{background:#fff;border:1px solid var(--warn-ink);padding:14px 20px;margin:10px 0 16px;font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--ink)}
+  .risk h4{font-family:var(--mono);font-size:10.5px;color:var(--warn-ink);letter-spacing:0.1em;text-transform:uppercase;margin:0 0 8px;font-weight:600}
+  .risk h4::before{content:"! "}
+  .risk ul{margin:6px 0 0;padding:0 0 0 20px}
+  .risk li{margin:0 0 8px;color:var(--ink-soft)}
+  .risk li strong{color:var(--ink)}
+  .term{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+  .hint{display:block;color:var(--ink-faint);font-size:12px;margin-top:3px;font-style:italic;font-family:var(--serif)}
+  .altlist{margin:10px 0 18px;padding:0;list-style:none}
+  .altlist > li{border-top:1px solid var(--rule-soft);padding:14px 0;display:grid;grid-template-columns:150px 1fr;gap:18px;font-family:var(--sans);font-size:13px;line-height:1.65;color:var(--ink-soft)}
+  .altlist > li:last-child{border-bottom:1px solid var(--rule-soft)}
+  .altlist .tgt{font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.04em;padding-top:2px}
+  .altlist .tgt small{display:block;font-size:10.5px;color:var(--ink-faint);margin-top:3px;text-transform:uppercase;letter-spacing:0.08em}
+  .altlist strong{color:var(--ink)}
+  .altlist .when{color:var(--ink-faint);font-size:12px;display:block;margin-top:4px;font-style:italic;font-family:var(--serif)}
+  .altlist a.pending{color:var(--ink-faint);text-decoration:underline;text-decoration-style:dashed;text-decoration-color:var(--ink-faint);text-underline-offset:3px;cursor:help}
+  footer.btm{margin-top:80px;padding-top:14px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);display:flex;justify-content:space-between;letter-spacing:0.04em}
+  a{color:inherit}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <span class="l"><a href="../" style="color:inherit;text-decoration:none">relocate</a> · 路径详情 · 英国 · Global Talent</span>
+  <span>仅供参考 · 非官方</span>
+</header>
+
+<main class="page">
+
+  <p class="kicker">路径详情 · 家庭单位 · 背书驱动 · 到入籍为止</p>
+  <h1>英国 · Global Talent Visa · 家庭完整路径</h1>
+  <p class="sub">
+    <code>uk-global-talent</code> · 前身 Tier 1 Exceptional Talent（2020 更名）· 四赛道背书（Research / Digital / Arts / Prize）· Exceptional Talent 3 年 ILR vs Exceptional Promise 5 年 ILR · ILR + 12 月申入籍
+  </p>
+  <p class="meta">
+    <span>version v0.1</span>
+    <span>最后编辑 2026-04-20</span>
+    <span>家庭单位视角 · 亦可单人套用</span>
+    <span><a href="../" style="color:inherit">← 回到 relocate 首页</a></span>
+  </p>
+
+  <div class="caveat">
+    <p><strong>仅供参考 · 非官方：</strong>本页整理自 GOV.UK 与 legislation.gov.uk 公开条款。<strong>不是法律意见、不是 OISC 注册代理 / Solicitor 的建议、不替代律师</strong>。Global Talent 的核心决策权在<em>背书机构</em>（endorsing body），Home Office 只做身份与合规复核——材料的包装方式对结果影响极大；个案差异显著。</p>
+    <p><strong>本页边界：</strong>以 Global Talent（背书驱动）为主线串通到入籍；Skilled Worker（原 Tier 2）、High Potential Individual（HPI）、Innovator Founder、Scale-up、Student → Graduate 只在 § 1 与 § 8 作为相邻路径被点名。UK 允许双重国籍；但<em>中国《国籍法》§9 仍然独立生效</em>——入籍 UK 那一刻中国籍自动丧失。</p>
+    <p><strong>数字怎么来的：</strong>每一处门槛、年限、费用都标了可自行复核的官方出处（见 § 10）。注意：<strong>Tech Nation 于 2023-04 关停</strong>，digital technology 赛道背书由 UKRI 接管（原 Appendix 条文中仍保留 Tech Nation 字样，实际申请走 UKRI 的 Technation programme）。</p>
+  </div>
+
+  <dl class="chip">
+    <div><dt>国家</dt><dd>英国 UK <small>BrE · 英格兰 + 苏格兰 + 威尔士 + 北爱</small></dd></div>
+    <div><dt>签证</dt><dd>Global Talent <small>前 Tier 1 Exceptional Talent</small></dd></div>
+    <div><dt>性质</dt><dd>工签 → ILR → 公民 <small>两档 · 背书驱动</small></dd></div>
+    <div><dt>持签</dt><dd>1–5 年 <small>可续 · 无总年限</small></dd></div>
+    <div><dt>ILR</dt><dd>3 年（Talent）<small>5 年（Promise）</small></dd></div>
+    <div><dt>入籍</dt><dd>ILR + 12 月 <small>5 年累计合法居留</small></dd></div>
+  </dl>
+
+  <nav class="stagenav">
+    <a href="#stage-overview"><span class="lbl">§ 0</span><span class="t">全景图</span><span class="b">四赛道 · 两档</span></a>
+    <a href="#stage-enter"><span class="lbl">§ 1</span><span class="t">Stage 1 背书</span><span class="b">证据 · 背书机构</span></a>
+    <a href="#stage-visa"><span class="lbl">§ 2</span><span class="t">Stage 2 签证</span><span class="b">£766 · IHS · 5 年</span></a>
+    <a href="#stage-ilr"><span class="lbl">§ 3</span><span class="t">ILR 永居</span><span class="b">3 / 5 年 · 180 天规则</span></a>
+    <a href="#stage-citizen"><span class="lbl">§ 4</span><span class="t">Citizenship</span><span class="b">Life in UK + 450 天</span></a>
+    <a href="#stage-alt"><span class="lbl">§ 8</span><span class="t">备选</span><span class="b">Skilled Worker / HPI / US EB-1A</span></a>
+  </nav>
+
+  <!-- ============ § 0 全景 ============ -->
+  <section id="stage-overview">
+    <h2><span class="n">§ 0</span>全景图</h2>
+    <p class="lede">Global Talent 是一条由<strong>指定背书机构</strong>（而不是雇主、不是 Home Office、不是积分制）来判断你是否"世界级天赋或潜力"的签证。Stage 1 拿到背书（或获得指定大奖免背书），Stage 2 办签证。</p>
+
+<div class="flowchart">
+<span class="br">[ 境内 / 境外均可 ]</span>
+    证据准备：论文 / 奖项 / 专利 / 媒体曝光 / 开源 / 展览
+                         │
+                         ▼
+           ┌──────────────────────────────┐
+           │  <span class="hi">Stage 1 · 背书申请</span>                │
+           │  选赛道 + 选档（Talent / Promise）  │
+           │  £524 背书费（含在 £766 签证费中）   │
+           └──────────┬──────────────────┘
+                      │ 背书机构评审（通常 8 周内）
+                      ▼
+         获得背书（endorsement letter）
+         — 或 —
+         <span class="hi">免背书路径：获指定 prestigious prize</span>
+                      │
+                      │ 3 个月内递 Stage 2
+                      ▼
+           ┌──────────────────────────────┐
+           │  <span class="hi">Stage 2 · 签证申请</span>                │
+           │  £766（境内外同价）                │
+           │  IHS 健保附加费 £1,035 / 人 / 年     │
+           │  体检 + 无犯罪 + TB 测试（中国需）    │
+           └──────────┬──────────────────┘
+                      │ 3 周内决定（境内 8 周）
+                      ▼
+               <span class="hi">入境 · 最长 5 年</span>
+                      │
+                      ▼  <span class="hi">§ 3 · Continuous Residence</span>
+                      5 年内离境 ≤ 180 天 / 12 月
+                      │
+                      ▼
+         <span class="hi">Talent 档 3 年</span> 或 <span class="hi">Promise 档 5 年</span>  后申 ILR
+                      │
+                      ▼  <span class="hi">§ 4 · ILR 持满 12 月</span>
+                        Life in UK Test + B1 英语
+                      │
+                      ▼
+            <span class="hi">Naturalisation（Naturalisation as BC）</span>
+            <span class="br">（UK 允许双重国籍 · 中国《国籍法》§9 自动失中国籍）</span>
+</div>
+
+    <h3><span class="n">0.1</span>核心法源（五件套）</h3>
+    <table class="sources">
+      <thead><tr><th>层级</th><th>法源</th><th>核心条款</th><th>用途</th></tr></thead>
+      <tbody>
+        <tr><td>签证授权</td><td>Immigration Act 1971</td><td>§3（limited / indefinite leave）· §4（Secretary of State's power）</td><td>签发 / 限定 / 延长签证的上位授权</td></tr>
+        <tr><td>Global Talent 具体条款</td><td>Immigration Rules · Appendix Global Talent</td><td>GT 1–13 · 定义 / 背书 / 签证 / 延签 / ILR / 家属</td><td>签证要件的细则（下列每条含 GT 编号）</td></tr>
+        <tr><td>Prestigious Prize 清单</td><td>Immigration Rules · Appendix Global Talent: Prestigious Prizes</td><td>免背书的国际大奖清单（诺贝尔 / Turing / Fields / Fulbright / Booker / Oscar 等）</td><td>免 Stage 1 的清单</td></tr>
+        <tr><td>居留标准</td><td>Immigration Rules · Appendix Continuous Residence</td><td>5 年内离境 ≤ 180 天 / 12 月</td><td>ILR 核心规则</td></tr>
+        <tr><td>入籍</td><td>British Nationality Act 1981</td><td>§6（naturalisation）· Schedule 1 · 4 / 4A（residence requirements）</td><td>入籍上位法</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">0.2</span>四条背书赛道 + 一条免背书</h3>
+
+    <div class="node">
+      <div class="big">① Research & Academia · 研究与学术</div>
+      <p><strong>背书机构：</strong>Royal Society（自然科学）· British Academy（人文与社科）· Royal Academy of Engineering（工程）· UK Research and Innovation（UKRI）（跨学科、endorsed funder 路径）</p>
+      <p><strong>四条子路径：</strong></p>
+      <ul>
+        <li><span class="term">Academic Fellowship</span> · 持指定机构的 fellowship（list by Royal Society / RAEng / British Academy）</li>
+        <li><span class="term">Endorsed Funder</span> · 在 UKRI 名单的英国研究机构，由 endorsed funder 提供 research grant / 薪资（免 peer review）</li>
+        <li><span class="term">Academic and Research Appointments</span> · 在指定英国机构担任研究员 / 高级研究员</li>
+        <li><span class="term">Peer Review</span> · 无以上任一 → 由 Royal Society / RAEng / British Academy 做同行评审</li>
+      </ul>
+      <dl class="kv">
+        <dt>归档</dt><dd><a href="../../data/archive/uk/global-talent/gov-uk/gt-researcher.html" target="_blank" rel="noopener">GOV.UK · Research & Academia 赛道</a></dd>
+      </dl>
+    </div>
+
+    <div class="node">
+      <div class="big">② Digital Technology · 数字技术</div>
+      <p><strong>背书机构：</strong>原 <span class="term">Tech Nation</span>（2023-04 关停）· 现由 <strong>UKRI</strong> 通过 Technation programme 接管</p>
+      <p><strong>典型申请人：</strong>AI / ML / 加密 / FinTech / 游戏 / SaaS 的 CEO / CTO / founding engineer / principal PM；须展示对 UK 数字科技生态的显著贡献（已完成而非"将来会做"）。</p>
+      <p><strong>证据门槛（取自 Tech Nation 历史口径，UKRI 大致沿用）：</strong>① 必备证据：业务影响 / 产品规模 / 融资 / 员工数；② 可选证据 2 项起（在 5 项中选）：领域内有声望的 recognition、创新贡献、商业成就、讲者 / 布道者、学术投入。</p>
+      <dl class="kv">
+        <dt>归档</dt><dd><a href="../../data/archive/uk/global-talent/gov-uk/gt-digital.html" target="_blank" rel="noopener">GOV.UK · Digital Technology 赛道</a></dd>
+      </dl>
+    </div>
+
+    <div class="node">
+      <div class="big">③ Arts & Culture · 文化艺术</div>
+      <p><strong>背书机构：</strong>Arts Council England（主背书方，下辖戏剧 / 舞蹈 / 音乐 / 视觉艺术 / 文学 / 博物馆 / 综合艺术 七条分支）；代理背书：PACT（影视）· British Fashion Council（时装）· Royal Institute of British Architects（建筑）</p>
+      <p><strong>典型申请人：</strong>导演 / 演员 / 作家 / 策展人 / 视觉艺术家 / 时装设计师 / 建筑师 / 音乐人。</p>
+      <dl class="kv">
+        <dt>归档</dt><dd><a href="../../data/archive/uk/global-talent/gov-uk/gt-arts.html" target="_blank" rel="noopener">GOV.UK · Arts & Culture 赛道</a></dd>
+      </dl>
+    </div>
+
+    <div class="node">
+      <div class="big">④ Prestigious Prize · 免背书直通</div>
+      <p><strong>规则：</strong>若已获得 Immigration Rules · <em>Appendix Global Talent: Prestigious Prizes</em> 清单中的奖项（诺贝尔奖 · Turing Award · Fields Medal · Fulbright · Booker Prize · Oscar · Grammy · Pritzker · Leibniz 等），可直接递 Stage 2，无需 Stage 1。</p>
+      <dl class="kv">
+        <dt>归档</dt><dd><a href="../../data/archive/uk/global-talent/rules/appendix-gt-prizes.html" target="_blank" rel="noopener">Immigration Rules Appendix · Prestigious Prizes</a></dd>
+      </dl>
+    </div>
+
+    <h3><span class="n">0.3</span>Exceptional Talent vs Exceptional Promise</h3>
+    <table class="sources">
+      <thead><tr><th>维度</th><th>Exceptional Talent</th><th>Exceptional Promise</th></tr></thead>
+      <tbody>
+        <tr><td>定位</td><td>已是全球公认的 <em>established leader</em></td><td>有潜力成为 leader 的 <em>emerging</em> 阶段</td></tr>
+        <tr><td>典型</td><td>教授 / 院士 / 大奖得主 / 高资历 C-level</td><td>博后 / 副教授 / Senior Engineer / 早期创业者</td></tr>
+        <tr><td>ILR 最短</td><td><strong>3 年</strong></td><td><strong>5 年</strong></td></tr>
+        <tr><td>换档</td><td>—</td><td>在 UK 期间达到 Talent 标准，可在 ILR 申请时按 Talent 计算（3 年）</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ============ § 1 Stage 1 背书 ============ -->
+  <section id="stage-enter">
+    <h2><span class="n">§ 1</span>Stage 1 · 背书申请（核心）</h2>
+    <p class="lede">Global Talent 决策 90% 在这一步。Home Office 负责签证与合规、background check 与生物识别；而"你算不算 exceptional"由对应赛道的背书机构判断。</p>
+
+    <h3><span class="n">1.1</span>递交流程</h3>
+    <div class="node">
+      <div class="ntop"><span>§1.1 · Appendix GT 3 · endorsement application</span></div>
+      <div class="big">Home Office 递件 → 背书机构评审 → 背书函回 Home Office</div>
+      <ol>
+        <li>在 GOV.UK 线上系统选择"Global Talent · Stage 1 endorsement"</li>
+        <li>选择赛道（research / digital / arts / architecture / film / fashion）与档位（Talent / Promise）</li>
+        <li>提交 CV + 推荐信 3 封（须来自该领域国际公认的权威人士）+ 个人陈述 + 证据包（根据赛道不同，每类要件不同）</li>
+        <li>付 <strong>£524 背书费</strong>（2024 档；此费用含在 £766 签证总费用中）</li>
+        <li>Home Office 转送给对应背书机构</li>
+        <li>背书机构评审（通常 8 周内，Peer Review 路径可能 16 周+）</li>
+        <li>背书通过 → 获得 <em>endorsement letter</em> · 有效期 3 个月（须在 3 个月内递 Stage 2）</li>
+      </ol>
+    </div>
+
+    <h3><span class="n">1.2</span>证据构成 · 各赛道共性</h3>
+    <table class="sources">
+      <thead><tr><th>维度</th><th>典型证据</th></tr></thead>
+      <tbody>
+        <tr><td>必备（所有赛道）</td><td>Personal statement（1-2 页 · 你是谁、做什么、来英计划）· 至少 3 封权威推荐信（每封 1-2 页 · 推荐人须在你领域内全球公认权威）· CV</td></tr>
+        <tr><td>Research</td><td>主要论文（含引用统计）· 主要奖项 · 主要主持 grant · Fellowship 证明（如有）· 推荐信须来自同领域讲席 / 院士 / Nobel 水准</td></tr>
+        <tr><td>Digital</td><td>融资记录（PitchBook / Crunchbase 截图）· 公司估值 · 产品 DAU / MAU · GitHub Star · 技术 blog / 演讲 / 论坛 · 推荐信须来自活跃的 UK tech 生态联系人或国际 top-tier VC / founder</td></tr>
+        <tr><td>Arts</td><td>展览 / 演出 / 出版记录 · 媒体 review（Guardian / FT / NYT 层级）· 获奖 · 代表作品集 · 推荐信须来自本国或英国 top 机构的策展人 / 艺术总监 / 院士</td></tr>
+        <tr><td>可选（2 项起）</td><td>媒体报道 · 学术引用 · 专利 · 评委 / 同行评审经历 · 业界讲者 · 出版物 · 开源贡献 · 政策咨询 / 政府顾问</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">1.3</span>背书决定时间线</h3>
+    <div class="flowchart">
+<span class="br">Stage 1 申请</span>
+  8 周   <span class="hi">8 weeks for most endorsement decisions</span>
+         Peer Review 路径偶有 12–16 周
+         结果：Endorsed / Not Endorsed
+<span class="br">被拒？</span>
+         — Administrative Review（7 天内） 或
+         — 直接重新准备新材料再申（可以 · 无次数上限）
+    </div>
+  </section>
+
+  <!-- ============ § 2 Stage 2 签证 ============ -->
+  <section id="stage-visa">
+    <h2><span class="n">§ 2</span>Stage 2 · 签证申请</h2>
+    <p class="lede">相对于 Stage 1 的不确定性，Stage 2 是程序性的——只要身份 / 安全 / 合规 / 资金没问题，基本通过。</p>
+
+    <div class="node">
+      <div class="ntop"><span>§2 · Appendix GT 5–11 · permission to enter / stay</span></div>
+      <div class="big">£766 + IHS £1,035/人/年 · 1–5 年自选</div>
+      <p><strong>主申：</strong></p>
+      <ul>
+        <li><strong>基础费：</strong>£766（境内外同价 · 已含 £524 Stage 1 背书费）</li>
+        <li><strong>IHS 健保附加费：</strong>£1,035 / 人 / 年（2024-02 上调 · 须按签证总年数一次性预付）</li>
+        <li><strong>签证长度：</strong>1–5 年自选（按自己付得起多少 IHS 定）</li>
+        <li><strong>决定时间：</strong>境外 3 周 · 境内 8 周 · 可付 £500+ 加急 1 周</li>
+        <li><strong>体检：</strong>中国申请人须做 TB 测试（IOM 指定机构）</li>
+        <li><strong>生物识别：</strong>UKVI CAS / VFS / SSC 任一采集</li>
+      </ul>
+      <p><strong>家属（dependant）：</strong>每位配偶 / 子女单独 £766 + IHS · 同步申请或延后加申均可</p>
+      <dl class="kv">
+        <dt>归档</dt><dd><a href="../../data/archive/uk/global-talent/gov-uk/gt-overview.html" target="_blank" rel="noopener">GOV.UK · Global Talent Overview</a></dd>
+        <dt>法条</dt><dd><a href="../../data/archive/uk/global-talent/rules/appendix-global-talent.html" target="_blank" rel="noopener">Immigration Rules Appendix · Global Talent</a></dd>
+      </dl>
+    </div>
+
+    <h3><span class="n">2.1</span>家属（Dependants）</h3>
+    <div class="node">
+      <div class="ntop"><span>§2.1 · Appendix GT 10 · dependants</span></div>
+      <div class="big">配偶 + 未成年子女均可随签 · 父母不派生</div>
+      <ul>
+        <li><strong>配偶 / 同居伴侣 / Civil Partner：</strong>可随签 · <strong>工作权不受限</strong>（不像 Skilled Worker 要同等级别工作）· 可做雇员 / 自由职业 / 创业 / 全职学生</li>
+        <li><strong>未成年子女（&lt; 18 岁）：</strong>可随签 · 公立 K-12 免费（但大学学费看各大学身份判定）</li>
+        <li><strong>成年子女（≥ 18 岁）：</strong>单独走 Student / Graduate / 其他签证</li>
+        <li><strong>父母：</strong>不派生 · 单独走 Adult Dependant Relative（门槛极高 · 实务几乎走不通）</li>
+        <li><strong>新生子女：</strong>在 UK 出生 <em>不自动得公民</em>；父母之一须已是 British Citizen 或 Settled（ILR）· 否则子女先按父母身份派生签证</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 3 ILR ============ -->
+  <section id="stage-ilr">
+    <h2><span class="n">§ 3</span>ILR 永居 · Talent 3 年 / Promise 5 年 · 180 天规则</h2>
+    <p class="lede">ILR（Indefinite Leave to Remain）是 UK 的永居身份：无到期日、工作 / 学习 / 创业无限制、社会福利全开、是入籍的必经门槛。</p>
+
+    <div class="node">
+      <div class="ntop"><span>§3 · Appendix GT 12 · settlement</span></div>
+      <div class="big">Qualifying period: Talent 3 · Promise 5</div>
+      <p><strong>档次门槛：</strong></p>
+      <ul>
+        <li><strong>Exceptional Talent 档：</strong>持 Global Talent 身份满 <strong>3 年</strong>可申 ILR</li>
+        <li><strong>Exceptional Promise 档：</strong>持 Global Talent 身份满 <strong>5 年</strong>可申 ILR</li>
+        <li><strong>混合计算：</strong>Qualifying period 可累计 Global Talent / Skilled Worker / Innovator Founder / Scale-up / Representative of an Overseas Business / Business Visitor 等多条 "work visa" 合并计算；但须<em>最后一段</em>为 Global Talent</li>
+      </ul>
+      <p><strong>Continuous Residence（Appendix Continuous Residence）：</strong></p>
+      <ul>
+        <li>Qualifying period 内每 12 个滚动月离境不超过 <strong>180 天</strong>（2024-01-11 起新申按"rolling 12 months"计；在此之前按 consecutive calendar years）</li>
+        <li>离境原因不限（工作 / 家庭 / 疫情 / 医疗）但超 180 天单次离境须有极强说明</li>
+        <li><strong>研究人员例外</strong>：如果离境是为"field work / research trips"，Research route 申请人对 180 天阈值有一定宽限（个案）</li>
+      </ul>
+      <p><strong>其他要求：</strong></p>
+      <ul>
+        <li><strong>English language</strong>：B1 或更高（degree taught in English 可替代）</li>
+        <li><strong>Life in the UK Test</strong>：24 选题 · 75% 合格（即 18/24）· £50 / 次</li>
+        <li><strong>背书机构确认函</strong>：ILR 时仍须让原背书机构出具"申请人仍在领域内活跃并做出贡献"的第二次背书（endorsement for settlement）</li>
+        <li><strong>费用</strong>：£3,029（2024 档）· IHS 不再适用</li>
+        <li><strong>决定时间</strong>：标准 6 个月 · Super Priority £1,000 加急 1 天</li>
+      </ul>
+      <dl class="kv">
+        <dt>规则</dt><dd><a href="../../data/archive/uk/global-talent/rules/appendix-global-talent.html" target="_blank" rel="noopener">Appendix Global Talent · GT 12</a></dd>
+        <dt>指南</dt><dd><a href="../../data/archive/uk/global-talent/gov-uk/gt-settle.html" target="_blank" rel="noopener">GOV.UK · Apply to settle</a></dd>
+      </dl>
+    </div>
+
+    <h3><span class="n">3.1</span>家属 ILR</h3>
+    <div class="node">
+      <div class="big">配偶独立条件 · 3 年连续居留 + 与主申同步</div>
+      <p>配偶 / 子女 ILR 的 qualifying period 独立计算（<em>不</em>随主申档位）：</p>
+      <ul>
+        <li>如果主申即将拿 ILR，配偶持 Global Talent dependant 身份满 <strong>3 年</strong>（含与主申 180 天规则的叠加）可随主申申 ILR</li>
+        <li>若配偶在主申 ILR 后加入，则需独立走 5 年路径（加入后 5 年夫妻团聚计算）</li>
+        <li>未成年子女随父母 · ILR 同步</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 4 Citizenship ============ -->
+  <section id="stage-citizen">
+    <h2><span class="n">§ 4</span>Naturalisation · 入籍 · ILR + 12 月 · 5 年 450 天</h2>
+    <p class="lede">UK 是典型的 "ILR + 1 年" 入籍路径：拿到 ILR 后再等 12 个月就可以递归化申请。主申与配偶的起算口径不同。</p>
+
+    <div class="node">
+      <div class="ntop"><span>§4 · British Nationality Act 1981 · §6 + Schedule 1</span></div>
+      <div class="big">Naturalisation as British Citizen · Form AN</div>
+      <p><strong>Schedule 1 · 4（一般申请人）要件：</strong></p>
+      <ul>
+        <li><strong>年龄 ≥ 18 岁</strong> · 未成年子女走 §3 registration，不走 §6 naturalisation</li>
+        <li><strong>在 UK 合法居留 ≥ 5 年</strong>（申请当天往前推 5 年）</li>
+        <li><strong>已持 ILR（或 EU Settled Status / Irish citizenship）≥ 12 个月</strong>（配偶 British Citizen 例外，无 12 月等待）</li>
+        <li><strong>近 5 年内离境 ≤ 450 天</strong></li>
+        <li><strong>近 12 个月内离境 ≤ 90 天</strong></li>
+        <li><strong>English</strong>：B1 或更高</li>
+        <li><strong>Life in the UK Test</strong>：已通过（ILR 时通过的 score 继续有效）</li>
+        <li><strong>Good character</strong>：无重大犯罪 · 无移民违规 · 税务合规</li>
+        <li><strong>Intent to make UK your home</strong>：声明意图在 UK 继续居住（不可递交后立刻长期离境）</li>
+      </ul>
+      <p><strong>配偶路径（Schedule 1 · 3）：</strong>如果申请人配偶是 British Citizen，则：①在 UK 住满 3 年即可申（ILR 门槛仍在，但不须持 ILR 满 12 个月）· ②近 3 年内离境 ≤ 270 天</p>
+      <p><strong>费用</strong>：£1,500（2024 档）+ Citizenship Ceremony £80 · <strong>决定时间</strong>：6 个月 · <strong>产出</strong>：Home Office 发 Approval Letter → Local Council 排 Citizenship Ceremony → 宣誓 → 拿 Naturalisation Certificate → 持此件申英国护照</p>
+      <dl class="kv">
+        <dt>法条</dt><dd><a href="../../data/archive/uk/global-talent/laws/british-nationality-act-1981.html" target="_blank" rel="noopener">British Nationality Act 1981</a></dd>
+        <dt>官方</dt><dd><a href="../../data/archive/uk/global-talent/gov-uk/citizenship-naturalise.html" target="_blank" rel="noopener">GOV.UK · Apply for citizenship with ILR</a></dd>
+      </dl>
+    </div>
+
+    <h3><span class="n">4.1</span>中国籍的同步处理</h3>
+    <ul>
+      <li><strong>英方：</strong>UK 自始即允许双重国籍（Nationality 法无放弃条款）· Naturalisation 宣誓词不要求放弃原国籍</li>
+      <li><strong>中方：</strong>中国《国籍法》§9 独立生效——"定居外国的中国公民，自愿加入或取得外国国籍的，自动丧失中国国籍"· 入英籍即失中国籍</li>
+      <li><strong>实务：</strong>宣誓后持 Naturalisation Certificate 去中国驻英使领馆办护照 / 户籍注销 · 获"退籍证明" · 之后回中国须持英国护照 + 中国签证</li>
+      <li><strong>灰色区：</strong>持两本护照入出境的情况存在但不受任何一侧法律保护；近年中国驻外使馆对"未注销中国护照"的英籍华人办签证趋严</li>
+    </ul>
+
+    <h3><span class="n">4.2</span>未成年子女同期 · Registration</h3>
+    <p>未满 18 岁子女走 <strong>§3(1) registration</strong>（非 §6 naturalisation）· 父母之一入籍成功后可申 · 费用 £1,214 / 人 · 无 12 月等待 · 无 Life in UK Test · 不需要 English 测试 · 但 Home Office 有 discretion 裁量。</p>
+  </section>
+
+  <!-- ============ § 5 家庭配置 ============ -->
+  <section id="stage-family">
+    <h2><span class="n">§ 5</span>家庭玩法 · 三种典型配置</h2>
+
+    <h3><span class="n">5.1</span>单线 · 主申 Global Talent · 全家随签 · 3 / 5 年 ILR</h3>
+    <div class="node">
+      <div class="big">最常见 · 一份背书 · 全家跟进</div>
+      <p>主申递 Stage 1 + Stage 2 · 配偶 + 子女作为 dependant 同批签证。<strong>优势：</strong>配偶工作权无限制，可以做雇员 / 自由职业 / 创业 / 学生。配偶 ILR 与主申同步（只要配偶也满 180 天规则）。</p>
+      <p><strong>劣势：</strong>如果背书机构评估收紧（Promise 越来越难拿 Talent 档），ILR 年限从 3 → 5 会推迟入籍 2 年；这是 2022 后 UKRI 接管 Tech Nation 的主要不确定性。</p>
+    </div>
+
+    <h3><span class="n">5.2</span>双线 · 夫妻一方 Global Talent · 一方 Skilled Worker / HPI</h3>
+    <div class="node">
+      <div class="big">成就线 + 雇主担保 / 英高校校友线 · 双保险</div>
+      <p>若夫妻一方拿 Global Talent Promise 档（5 年 ILR），另一方可并行走 <strong>Skilled Worker（2-year 路径）</strong>或 <strong>HPI（High Potential Individual · 2-year / 3-year）</strong>——双线加速 ILR：谁先累计够年限谁先申，另一方以配偶身份搭车。</p>
+      <p><strong>HPI 说明</strong>：HPI 允许过去 5 年内从全球 Top 50 大学毕业的人入境 2 年（博士则 3 年），无雇主担保，是 Global Talent 之外另一条"自由工签"。</p>
+    </div>
+
+    <h3><span class="n">5.3</span>过渡线 · Student → Graduate → Global Talent</h3>
+    <div class="node">
+      <div class="big">先在 UK 读硕博 · 累本地曝光 · 再申 Global Talent</div>
+      <p>海外成就不够 / 推荐人网络未建立时，先走 <strong>Student visa</strong>（硕博 1–4 年）→ <strong>Graduate visa</strong>（硕士 2 年 · 博士 3 年工作权）→ 在 Graduate visa 期内累积英国本地发表 / 业界人脉 → 再申 Global Talent。</p>
+      <p>这条路径的时间成本 3–5 年但对中国籍学生是主流通道；博士毕业后直接走 UKRI Academic and Research Appointments 路径拿背书的成功率高。</p>
+    </div>
+  </section>
+
+  <!-- ============ § 6 时间线 ============ -->
+  <section id="stage-timeline">
+    <h2><span class="n">§ 6</span>家庭时间线 · Talent 档典型 3 + 1 · 4 年半到入籍</h2>
+
+<div class="flowchart">
+<span class="br">Y0</span>    证据包 · 挑赛道 · 联系推荐人
+<span class="br">Y0+2M</span>  3 封推荐信到位 · CV · Personal Statement
+<span class="br">Y0+3M</span>  递 Stage 1
+<span class="br">Y0+5M</span>  <span class="hi">背书通过</span>
+<span class="br">Y0+5.5M</span> 递 Stage 2（3 个月内须递）
+<span class="br">Y0+6M</span>  <span class="hi">签证下来 · 5 年 Global Talent</span>
+<span class="br">Y1+</span>   境内工作 / 创业 / 研究 · 配偶就业 · 子女入学
+<span class="br">Y3+6M</span>  <span class="hi">Talent 档 ILR 申请（满 3 年 + Continuous Residence）</span>
+<span class="br">Y3+9M</span>  Life in UK Test + 背书机构二次背书
+<span class="br">Y3+12M</span> <span class="hi">ILR 批准</span>
+<span class="br">Y4+12M</span> <span class="hi">ILR 满 12 个月 · 递归化</span>
+<span class="br">Y5</span>    Home Office Approval + Ceremony
+              <span class="hi">Naturalisation Certificate · 护照</span>
+              <span class="br">（宣誓即触发中国国籍法 §9 失籍 · 注销中国护照）</span>
+</div>
+    <p class="hint">若为 Promise 档（5 年 ILR），时间线后移 2 年至 Y7 入籍。</p>
+  </section>
+
+  <!-- ============ § 7 风险 ============ -->
+  <section id="stage-risk">
+    <h2><span class="n">§ 7</span>核心风险点</h2>
+
+    <div class="risk">
+      <h4>Stage 1 背书阶段</h4>
+      <ul>
+        <li><strong>背书机构裁量大：</strong>Arts Council / Royal Society / UKRI 各有不同"文化"与口径；每年有调整；3 封推荐信质量是生死线</li>
+        <li><strong>Tech Nation 遗留：</strong>2023-04 Tech Nation 关停后 digital 赛道由 UKRI 的 Technation programme 接管，但现有 Immigration Rules 中 Tech Nation 字样仍未全面更新；部分 UKRI 对数字赛道的审批口径与 Tech Nation 不同（更偏 research / deep tech、偏基础研究），对纯商业 AI / SaaS founder 可能更难拿</li>
+        <li><strong>推荐人门槛：</strong>推荐人须 "actively engaged in a leading role in the applicant's area of expertise" · 对没有 UK/US 学术圈 / 科技圈 1st-degree 关系的申请人是极大障碍</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>持签与 Continuous Residence</h4>
+      <ul>
+        <li><strong>180 天 rolling 12 months 规则：</strong>2024-01-11 起新规改为 rolling 12 months（此前为 consecutive calendar years）· 回母国照护父母 / 长期 field work 极易踩线</li>
+        <li><strong>IHS 上调：</strong>2024-02 从 £624/年 → £1,035/年，5 年签证一次性预付 £5,175 / 人 · 家庭四口约 £20,700</li>
+        <li><strong>无社会保险 / NHS 自付部分：</strong>IHS 覆盖 NHS 但不覆盖处方费 / 牙科 / 眼科 / 非紧急手术的长队</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>ILR 与入籍</h4>
+      <ul>
+        <li><strong>二次背书：</strong>ILR 时必须让原背书机构再出一封"仍在活跃"的背书函——如果申请人 ILR 前 3 年改行 / 沉寂，二次背书可能拒出</li>
+        <li><strong>入籍 Good Character：</strong>Home Office 会跨查 HMRC（税务）· NHS（欠费）· DVLA（交通）· 中国户籍上的行政处罚可能被看到</li>
+        <li><strong>450 天规则：</strong>近 5 年离境 &gt; 450 天须提供说明；即使过审，下一次 Home Office 查询你的 settlement intent 时这是一面红旗</li>
+        <li><strong>5 个月"Intent to make UK home"：</strong>入籍成功后过早长期离境（&gt; 6 个月）可能被视为虚假陈述，理论上触发 Home Office s.40 BNA 撤销（罕见但发生过）</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 8 备选 ============ -->
+  <section id="stage-alt">
+    <h2><span class="n">§ 8</span>备选切换 · 这条走不通怎么办</h2>
+
+    <ul class="altlist">
+      <li>
+        <span class="tgt">UK · Skilled Worker<small>前 Tier 2 General · 雇主担保</small></span>
+        <div>
+          <strong>门槛：</strong>持 Home Office Licensed Sponsor 的雇主 offer · 职业在 Appendix Skilled Occupations · 薪资 ≥ £38,700（2024-04）或岗位 "going rate"（取高者）· 英语 B1。<strong>何时考虑：</strong>没有国际成就但有 UK 雇主 offer。<strong>价值：</strong>5 年签证 · 满 5 年可申 ILR · 配偶工作权无限制。
+          <span class="when">占位：<a class="pending" href="#" title="待建：uk-skilled-worker">本站 · UK Skilled Worker</a>（未建）· 官方：<a href="https://www.gov.uk/skilled-worker-visa" target="_blank" rel="noopener">GOV.UK · Skilled Worker</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">UK · High Potential Individual<small>HPI · 全球 Top 50 大学校友</small></span>
+        <div>
+          <strong>门槛：</strong>过去 5 年内从 GOV.UK 认可的 Top 50 大学毕业（硕士及以上）· 英语 B1。<strong>何时考虑：</strong>海外名校毕业 5 年内 / 无雇主。<strong>价值：</strong>硕士 2 年 / 博士 3 年签证 · 工作权无限制 · 可在期内找工作后再切 Skilled Worker 或 Global Talent。<strong>劣势：</strong>不可续 · 须在有效期内切到其他签证。
+          <span class="when">占位：<a class="pending" href="#" title="待建：uk-hpi">本站 · UK HPI</a>（未建）· 官方：<a href="https://www.gov.uk/high-potential-individual-visa" target="_blank" rel="noopener">GOV.UK · HPI</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">UK · Innovator Founder<small>创业签证</small></span>
+        <div>
+          <strong>门槛：</strong>业务计划须获 GOV.UK 指定 endorsing body 认可（innovative / viable / scalable 三标准）· 无最低资金要求（2023-04 取消 £50k 门槛）· 英语 B2。<strong>何时考虑：</strong>有 UK 注册公司想创业。<strong>价值：</strong>3 年签证 · 满 3 年可直接申 ILR · 无员工人数 / 融资要求。
+          <span class="when">占位：<a class="pending" href="#" title="待建：uk-innovator-founder">本站 · UK Innovator Founder</a>（未建）· 官方：<a href="https://www.gov.uk/innovator-founder-visa" target="_blank" rel="noopener">GOV.UK · Innovator Founder</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">UK · Scale-up Worker<small>英国独角兽工签</small></span>
+        <div>
+          <strong>门槛：</strong>UK Home Office 认可的 scale-up 公司的 offer（过去 3 年年增长 ≥ 20%）· 薪资 ≥ £36,300 或岗位 going rate。<strong>价值：</strong>首 2 年与雇主绑定 · 之后可自由换工作 · 5 年 ILR。
+          <span class="when">官方：<a href="https://www.gov.uk/scale-up-worker-visa" target="_blank" rel="noopener">GOV.UK · Scale-up Worker</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">US · EB-1A<small>美国杰出人才绿卡</small></span>
+        <div>
+          <strong>门槛：</strong>8 CFR 204.5(h) · 10 条标准中的 3 条 · Kazarian 两段论。<strong>何时考虑：</strong>Global Talent 被拒且背书路线全部试过 · 或偏好美国 TC。<strong>价值：</strong>自荐 · 免 PERM · 一步绿卡。
+          <span class="when">详情：<a href="us-eb1a.html">本站 · US EB-1A 杰出人才绿卡</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">US · O-1A<small>杰出人才非移民签证</small></span>
+        <div>
+          <strong>门槛：</strong>8 CFR 214.2(o) · 证据与 Global Talent 重合度 &gt; 70%。<strong>何时考虑：</strong>Stage 1 被拒，想先去美国工作 2-3 年累积美国本地曝光后再申 Global Talent。<strong>价值：</strong>工签无数量上限 · 3 年 + 无限续签。
+          <span class="when">详情：<a href="us-o1.html">本站 · US O-1 杰出人才</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">CA · GTS + Express Entry<small>加拿大 2 周工签 + PR</small></span>
+        <div>
+          <strong>门槛：</strong>ESDC Category A / B 岗位 + 雇主 LMBP。<strong>何时考虑：</strong>Global Talent 决策期太长 · 想尽快落地英语国家。<strong>价值：</strong>2 周工签 · CEC PR 1 年起步。
+          <span class="when">详情：<a href="ca-gts.html">本站 · CA Global Talent Stream</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">AU · NIV 858<small>澳大利亚一步到位 PR</small></span>
+        <div>
+          <strong>门槛：</strong>国际公认卓越成就 + Form 1000 提名人 + 薪资 ≥ FWHIT。<strong>何时考虑：</strong>偏好一步永居 · 时区偏亚洲。<strong>价值：</strong>一步 PR · 无雇主绑定 · 全家同批。
+          <span class="when">详情：<a href="au-gtv.html">本站 · AU National Innovation Visa</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">SG · ONE Pass<small>新加坡高薪</small></span>
+        <div>
+          <strong>门槛：</strong>月薪 ≥ SGD 30k 或国际公认成就。<strong>价值：</strong>5 年长签 · 多雇主 · 亚洲枢纽 · 低税。
+          <span class="when">详情：<a href="sg-one-pass.html">本站 · SG ONE Pass</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">JP · HSP 1 号<small>日本高度専門職</small></span>
+        <div>
+          <strong>门槛：</strong>积分制 ≥ 70 分。<strong>价值：</strong>80 分 1 年拿永住。
+          <span class="when">详情：<a href="jp-hsp.html">本站 · 日本 HSP</a></span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ § 10 官方文件总表 ============ -->
+  <section id="stage-sources">
+    <h2><span class="n">§ 10</span>官方文件总表 <span class="tag">含本地归档</span></h2>
+    <p class="lede">本表列出 Global Talent 路径上所有引用的官方原件，均在 <a href="../../data/archive/uk/global-talent/" target="_blank" rel="noopener"><code>data/archive/uk/global-talent/</code></a> 下有快照。</p>
+
+    <h3><span class="n">10.1</span>法律 · legislation.gov.uk</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>IA71</code></td><td>Immigration Act 1971 · 入境与居留上位法</td><td class="iss">UKPGA · 1971 c. 77</td><td><a href="../../data/archive/uk/global-talent/laws/immigration-act-1971.html" target="_blank" rel="noopener">laws/immigration-act-1971.html</a></td></tr>
+        <tr><td class="id"><code>BNA81</code></td><td>British Nationality Act 1981 · §6 + Schedule 1 · 入籍规则</td><td class="iss">UKPGA · 1981 c. 61</td><td><a href="../../data/archive/uk/global-talent/laws/british-nationality-act-1981.html" target="_blank" rel="noopener">laws/british-nationality-act-1981.html</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.2</span>移民规则 · Immigration Rules</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>出处</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>APP-GT</code></td><td>Appendix Global Talent · 签证要件 · GT 1–13</td><td class="iss">GOV.UK Guidance</td><td><a href="../../data/archive/uk/global-talent/rules/appendix-global-talent.html" target="_blank" rel="noopener">rules/appendix-global-talent.html</a></td></tr>
+        <tr><td class="id"><code>APP-GTP</code></td><td>Appendix Global Talent: Prestigious Prizes · 免背书大奖清单</td><td class="iss">GOV.UK Guidance</td><td><a href="../../data/archive/uk/global-talent/rules/appendix-gt-prizes.html" target="_blank" rel="noopener">rules/appendix-gt-prizes.html</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.3</span>政策页 · GOV.UK</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>出处</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>gt-ov</code></td><td>Global Talent · 总览（含 Stage 1 + Stage 2 + Extend + ILR 摘要）</td><td class="iss">GOV.UK</td><td><a href="../../data/archive/uk/global-talent/gov-uk/gt-overview.html" target="_blank" rel="noopener">gov-uk/gt-overview.html</a></td></tr>
+        <tr><td class="id"><code>gt-res</code></td><td>Research & Academia 赛道专页</td><td class="iss">GOV.UK</td><td><a href="../../data/archive/uk/global-talent/gov-uk/gt-researcher.html" target="_blank" rel="noopener">gov-uk/gt-researcher.html</a></td></tr>
+        <tr><td class="id"><code>gt-dig</code></td><td>Digital Technology 赛道专页</td><td class="iss">GOV.UK</td><td><a href="../../data/archive/uk/global-talent/gov-uk/gt-digital.html" target="_blank" rel="noopener">gov-uk/gt-digital.html</a></td></tr>
+        <tr><td class="id"><code>gt-art</code></td><td>Arts & Culture 赛道专页</td><td class="iss">GOV.UK</td><td><a href="../../data/archive/uk/global-talent/gov-uk/gt-arts.html" target="_blank" rel="noopener">gov-uk/gt-arts.html</a></td></tr>
+        <tr><td class="id"><code>cit-ov</code></td><td>Become a British Citizen · 入籍总览</td><td class="iss">GOV.UK</td><td><a href="../../data/archive/uk/global-talent/gov-uk/citizenship-become.html" target="_blank" rel="noopener">gov-uk/citizenship-become.html</a></td></tr>
+        <tr><td class="id"><code>cit-nat</code></td><td>Apply for citizenship if you have ILR · Form AN</td><td class="iss">GOV.UK</td><td><a href="../../data/archive/uk/global-talent/gov-uk/citizenship-naturalise.html" target="_blank" rel="noopener">gov-uk/citizenship-naturalise.html</a></td></tr>
+        <tr><td class="id"><code>lituk</code></td><td>Life in the UK Test</td><td class="iss">GOV.UK</td><td><a href="../../data/archive/uk/global-talent/gov-uk/life-in-uk-test.html" target="_blank" rel="noopener">gov-uk/life-in-uk-test.html</a></td></tr>
+        <tr><td class="id"><code>dual</code></td><td>UK · Dual Citizenship（允许）</td><td class="iss">GOV.UK</td><td><a href="../../data/archive/uk/global-talent/gov-uk/dual-citizenship.html" target="_blank" rel="noopener">gov-uk/dual-citizenship.html</a></td></tr>
+      </tbody>
+    </table>
+
+    <p class="hint">本表"本地归档"指向的是仓库内 <code>data/archive/uk/global-talent/</code> 下已下载的官方原件快照。若本地文件缺失，请在仓库根下运行 <code>bash data/archive/uk/global-talent/download.sh</code> 重新拉取。</p>
+  </section>
+
+  <footer class="btm">
+    <span>relocate · uk-global-talent · v0.1</span>
+    <span>© 本站非商用 · 内容引自官方公开条款与指南</span>
+  </footer>
+
+</main>
+</body>
+</html>

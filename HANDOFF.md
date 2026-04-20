@@ -45,6 +45,10 @@
   - [`site/paths/sg-one-pass.html`](site/paths/sg-one-pass.html) — ONE Pass（Overseas Networks & Expertise Pass）两档门槛（月薪 SGD 30k 档 vs outstanding achievements 成就档）· 5 年长签 · 多雇主 + 自办公司 + 董事权 · Dependant's Pass + 配偶 LOC 工作权 · 续签三条口径（累计 SGD 1.5M 或持续高薪或持续成就）· IRAS 183 天 tax residency · PR（ICA PTS Scheme · 裁量审批 · REP 维持）· Citizenship（Constitution Art 122–141 · PR ≥ 2 年 · 单一国籍制度 Art 134 · 与中国《国籍法》§9 的双向触发）· CPF 义务 · 子女 NS 兵役 · 三种家庭配置 · § 8 备选切换（EP / Tech.Pass / PEP / 美 EB-1A / 美 O-1A / JP HSP / UK Global Talent / CA GTS / UAE Golden Visa）· § 10 官方文件四张子表全带本地归档列
   - `data/archive/sg/one-pass/`（MOM 4：ONE Pass overview / eligibility / EP / Dependant's Pass · ICA 2：PR / Citizenship · IRAS 1：tax residency · AGC 3：EFMA Cap 91A / Immigration Act Cap 133 / Constitution Part X Art 122–141）+ README + download.sh；Tech.Pass 因 EDB 反爬 + MOM 原页 404 不强制归档，页面内仅作相邻对比
   - 跨链接：`site/index.html` 路径列表新增 SG ONE Pass 条目（首条 SG 路径，紧随 US EB-1A）；`site/paths/us-l1a.html` § 8 · `site/paths/us-h1b.html` § 7 · `site/paths/us-l1b.html` § 8 · `site/paths/us-o1.html` § 8 · `site/paths/us-eb1a.html` § 8 · `site/paths/jp-hsp.html` § 5 共 6 页的"Singapore · ONE Pass" 条目全部从 MOM 外链或 pending 占位改为本站内链（保留 MOM fallback 链接）
+- **2026-04-20 · 新增 UK Global Talent Visa 路径 + 官方原件归档**（commit 待写）：
+  - [`site/paths/uk-global-talent.html`](site/paths/uk-global-talent.html) — Stage 1 背书 + Stage 2 签证两段式 · 四赛道（Research & Academia / Digital Technology / Arts & Culture / Prestigious Prize 免背书）· Exceptional Talent 与 Exceptional Promise 两档 · 背书申请流程与证据构成 · Stage 2 签证（£766 + IHS £1,035/人/年 · 1–5 年自选）· Continuous Residence（2024-01-11 新规 rolling 12 months，滑动 12 月离境 ≤ 180 天）· ILR（Talent 3 年 · Promise 5 年 · 二次背书 · Life in UK Test · B1）· Naturalisation（ILR + 12 个月 + 5 年合法居留 + 5 年离境 ≤ 450 天 + 12 月离境 ≤ 90 天 + Good Character）· 允许双重国籍但与中国《国籍法》§9 冲突 · Tech Nation 2023-04 关停 · digital 赛道转 UKRI · § 5 三种家庭配置（单线 / 与 Skilled Worker / HPI 双线 / 过渡线 Student → Graduate）· § 8 备选（UK Skilled Worker / HPI / Innovator Founder / Scale-up · US EB-1A / O-1A · CA GTS · AU NIV · SG ONE Pass · JP HSP）· § 10 三张子表带本地归档列
+  - `data/archive/uk/global-talent/`（GOV.UK 12 · Immigration Rules 2 · legislation.gov.uk 2）共 16 份官方原件 + README + download.sh；GOV.UK 在 Global Talent 系列下的多个 URL（stage1 / stage2 / settle / extend 等）返回同一份 HTML，以 `gt-overview.html` 为主；`gt-prize.html` 与 `ilr-global-talent.html` 404（内容合并至 Immigration Rules Appendix）
+  - 跨链接：`site/index.html` 路径列表新增 UK Global Talent 条目（首条 UK 路径，紧随 AU NIV）；`site/paths/ca-gts.html` § 8 · `site/paths/au-gtv.html` § 8 · `site/paths/sg-one-pass.html` § 8 · `site/paths/us-eb1a.html` § 7 · `site/paths/jp-hsp.html` § 5 · `site/paths/us-l1b.html` § 8 · `site/paths/us-h1b.html` § 7 · `site/paths/us-o1.html` § 8 共 8 页的 UK Global Talent 条目从 pending 占位或 GOV.UK 外链改为本站内链（保留 GOV.UK fallback 链接）
 - **2026-04-20 · 新增 AU National Innovation Visa（NIV · 前 GTV · Subclass 858）路径 + 官方原件归档**（commit 待写）：
   - [`site/paths/au-gtv.html`](site/paths/au-gtv.html) — NIV 一步到位永居（非"工签→PR 两段式"）· Migration Regulations 1994 Schedule 2 Part 858 · 四大门槛（国际公认卓越成就 + 领域内持续突出 + 提名人 Form 1000 + 薪资达 FWHIT）· 18–55 岁标准档 + 18 岁以下 / 55 岁以上的 exceptional benefit 加档 · EOI → Invitation（无 SLA）→ 60 天窗口递 858 → 体检 + 无犯罪 → Grant · 家属（配偶 + 未成年子女同批 PR，父母不派生）· Travel Facility 5 年 + RRV 续 · Australian Citizenship Act 2007 §21 / §22 入籍四条（4 年居留 + 12 月 PR + 总离境 ≤ 12 月 + 最后 12 月离境 ≤ 90 天）· 允许双重国籍但与中国《国籍法》§9 冲突 · GTV → NIV 更名（2024-12）下变与不变 · § 8 备选（AU 189/190/491/482/124/188 · US EB-1A / O-1 / CA GTS / UK GT / SG ONE Pass / JP HSP）· § 10 三张子表带本地归档列
   - `data/archive/au/gtv/`（Home Affairs 3 份：NIV overview + Citizenship become + Citizenship as PR · legislation.gov.au 3 份：Migration Act 1958 + Migration Regulations 1994 + Australian Citizenship Act 2007）共 6 份官方原件 + README + download.sh；Home Affairs 在 2024-12 NIV 更名时把 eligibility / steps / about / nominator 子页合并到单页，FWHIT 年度数字因 fairwork.gov.au 对当前网络超时而仅作外链指向 fwc.gov.au
@@ -66,6 +70,7 @@
   - [`site/paths/sg-one-pass.html`](site/paths/sg-one-pass.html) — 新加坡 · ONE Pass · 工签 → PR → Citizenship
   - [`site/paths/ca-gts.html`](site/paths/ca-gts.html) — 加拿大 · Global Talent Stream · 2 周工签 → Express Entry PR → 入籍
   - [`site/paths/au-gtv.html`](site/paths/au-gtv.html) — 澳大利亚 · National Innovation Visa（NIV · 前 GTV · Subclass 858）· 一步到位永居 → 入籍
+  - [`site/paths/uk-global-talent.html`](site/paths/uk-global-talent.html) — 英国 · Global Talent Visa · 背书驱动 · Stage 1 + Stage 2 → ILR → 入籍
 
 ## Next · 下一步
 
@@ -85,7 +90,7 @@
 | `jp-hsp-2` | `site/paths/jp-hsp-2.html` | jp-hsp.html § 5 |
 | `jp-gijinkoku` | `site/paths/jp-gijinkoku.html` | jp-hsp.html § 5（技術・人文知識・国際業務） |
 | `ca-gts` | `site/paths/ca-gts.html` | 两个路径页的跨国切换段 |
-| `uk-global-talent` | `site/paths/uk-global-talent.html` | 两个路径页 |
+
 
 优先级建议：`us-niw`（EB-2 国家利益豁免）与 EB-1A 证据高度重合，是 EB-1A 最常见并行备选；`us-eb1b`（杰出教研）与 EB-1A 同享 EB-1 排期池——两条都是 L-1A / O-1 / H-1B / EB-1A 路径页 § 8 的下一个待补占位。
 
@@ -107,6 +112,7 @@
 - ~~新增 SG ONE Pass 路径 + MOM / ICA / IRAS / AGC 共 10 份官方原件归档 + 六页交叉链接~~（2026-04-20，本次）
 - ~~新增 CA Global Talent Stream 路径 + ESDC / IRCC / Justice Laws 共 13 份官方原件归档 + 六页交叉链接~~（2026-04-20，本次）
 - ~~新增 AU National Innovation Visa（NIV · 前 GTV · Subclass 858）路径 + Home Affairs / legislation.gov.au 共 6 份官方原件归档 + 三页交叉链接~~（2026-04-20，本次）
+- ~~新增 UK Global Talent Visa 路径 + GOV.UK / Immigration Rules / legislation.gov.uk 共 16 份官方原件归档 + 八页交叉链接~~（2026-04-20，本次）
 
 ## Don't · 别做
 
