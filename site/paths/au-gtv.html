@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>relocate · 路径详情 · 澳大利亚 NIV（858） · 到入籍为止（仅供参考 · 非官方）</title>
+<style>
+  :root{
+    --ink:#141414;
+    --ink-soft:#3d3d3d;
+    --ink-faint:#8a8a8a;
+    --rule:#d8d8d8;
+    --rule-soft:#ebebeb;
+    --bg:#fdfbf7;
+    --warn-bg:#fff6e7;
+    --warn-ink:#6a4d00;
+    --branch-bg:#f5f2ea;
+    --serif:Georgia,"Source Han Serif SC","Noto Serif SC","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;
+    --mono:"SFMono-Regular","Menlo",Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  header.top{padding:14px 40px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em;background:#fff}
+  header.top .l{color:var(--ink)}
+  .page{max-width:920px;margin:0 auto;padding:56px 32px 140px}
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 10px}
+  h1{font-size:30px;font-weight:700;line-height:1.25;letter-spacing:-0.005em;margin:0 0 6px}
+  .sub{font-family:var(--sans);font-size:14px;color:var(--ink-soft);margin:0 0 14px;letter-spacing:0.01em}
+  .sub code{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 6px;border-radius:2px;color:var(--ink)}
+  .meta{font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);letter-spacing:0.04em;margin:0 0 28px;padding-bottom:18px;border-bottom:1px solid var(--ink)}
+  .meta span + span::before{content:" · ";margin:0 4px;color:var(--rule)}
+  .caveat{background:var(--warn-bg);border:1px solid var(--warn-ink);padding:14px 20px;margin:0 0 32px;font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--warn-ink)}
+  .caveat strong{color:#3c2a00}
+  .caveat p{margin:0 0 6px}
+  .caveat p:last-child{margin:0}
+  .caveat a{color:var(--warn-ink)}
+  .chip{display:grid;grid-template-columns:repeat(6, 1fr);gap:0;background:#fff;border:1px solid var(--ink);font-family:var(--sans);margin:0 0 36px}
+  .chip > div{padding:12px 14px;border-right:1px solid var(--rule)}
+  .chip > div:last-child{border-right:none}
+  .chip dt{font-family:var(--mono);font-size:10px;color:var(--ink-faint);letter-spacing:0.09em;text-transform:uppercase;margin:0 0 3px}
+  .chip dd{margin:0;font-size:13.5px;color:var(--ink);font-weight:600}
+  .chip dd small{display:block;font-weight:400;font-size:11.5px;color:var(--ink-faint);margin-top:2px;font-family:var(--mono)}
+  .stagenav{display:grid;grid-template-columns:repeat(6, 1fr);gap:6px;margin:0 0 40px;font-family:var(--sans)}
+  .stagenav a{display:block;padding:10px 12px;background:#fff;border:1px solid var(--ink);text-decoration:none;color:var(--ink)}
+  .stagenav a .lbl{font-family:var(--mono);font-size:10px;color:var(--ink-faint);letter-spacing:0.09em;text-transform:uppercase;display:block;margin-bottom:3px}
+  .stagenav a .t{font-size:14px;font-weight:700;display:block;line-height:1.3}
+  .stagenav a .b{font-size:11.5px;color:var(--ink-soft);display:block;margin-top:3px;font-family:var(--serif);line-height:1.45}
+  section{margin:56px 0 0}
+  section > h2{font-size:20px;font-weight:700;line-height:1.35;margin:0 0 4px}
+  section > h2 .n{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--ink-faint);letter-spacing:0.08em;margin-right:10px}
+  section > h2 .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:0.06em;padding:2px 7px;border:1px solid var(--ink-faint);color:var(--ink-faint);font-weight:400;margin-left:10px;vertical-align:3px}
+  section > .lede{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:15.5px;line-height:1.7;margin:0 0 20px}
+  p{margin:0 0 1em}
+  h3{font-size:15.5px;font-weight:700;margin:26px 0 8px}
+  h3 .n{font-family:var(--mono);font-size:11px;font-weight:400;color:var(--ink-faint);letter-spacing:0.06em;margin-right:8px}
+  h4{font-size:13.5px;font-weight:700;margin:18px 0 6px;font-family:var(--sans)}
+  .node{background:#fff;border:1px solid var(--ink);padding:18px 22px;margin:14px 0 18px;font-family:var(--sans);font-size:13.5px;line-height:1.7}
+  .node .ntop{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:8px;border-bottom:1px solid var(--rule-soft);margin-bottom:12px;font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em}
+  .node .big{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink);line-height:1.35;margin:0 0 6px}
+  .node p{margin:0 0 10px;color:var(--ink-soft)}
+  .node p strong{color:var(--ink);font-weight:700}
+  .node dl.kv{display:grid;grid-template-columns:140px 1fr;gap:6px 14px;font-size:12.5px;color:var(--ink-soft);margin:12px 0 0;padding-top:10px;border-top:1px dashed var(--rule)}
+  .node dl.kv dt{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.06em;text-transform:uppercase;padding-top:2px}
+  .node dl.kv dd{margin:0}
+  .node dl.kv dd code{font-family:var(--mono);font-size:11.5px;background:var(--rule-soft);padding:1px 5px;border-radius:2px;color:var(--ink)}
+  .familytrack{background:#fff;border:1px solid var(--ink);margin:14px 0 18px;font-family:var(--sans);font-size:12.5px}
+  .familytrack .row{display:grid;grid-template-columns:130px 1fr;border-bottom:1px solid var(--rule)}
+  .familytrack .row:last-child{border-bottom:none}
+  .familytrack .row .l{padding:14px;background:var(--rule-soft);border-right:1px solid var(--rule);font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.06em;text-transform:uppercase}
+  .familytrack .row .l small{display:block;font-size:10px;color:var(--ink-faint);margin-top:3px;letter-spacing:0.04em}
+  .familytrack .row .r{padding:14px 18px;color:var(--ink-soft);line-height:1.65}
+  .familytrack .row .r strong{color:var(--ink)}
+  .familytrack .row .r em{font-style:normal;background:var(--rule-soft);padding:1px 6px;font-family:var(--mono);font-size:11px;color:var(--ink);margin-right:4px}
+  .flowchart{background:#fff;border:1px solid var(--ink);padding:22px 24px;margin:10px 0 24px;font-family:var(--mono);font-size:12.5px;line-height:1.8;color:var(--ink);white-space:pre;overflow-x:auto}
+  .flowchart .hi{background:var(--rule-soft);padding:0 4px}
+  .flowchart .br{color:var(--ink-faint)}
+  table.sources{width:100%;border-collapse:collapse;background:#fff;font-family:var(--sans);font-size:12.5px;line-height:1.55;margin:10px 0 16px}
+  table.sources th,table.sources td{padding:8px 10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
+  table.sources thead th{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em;text-transform:uppercase;font-weight:600;border-bottom:1px solid var(--ink);background:var(--rule-soft)}
+  table.sources td.id{width:110px}
+  table.sources td.id code{font-family:var(--mono);font-size:11px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+  table.sources td.iss{width:150px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em}
+  table.sources td a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--ink-faint);text-underline-offset:2px}
+  .risk{background:#fff;border:1px solid var(--warn-ink);padding:14px 20px;margin:10px 0 16px;font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--ink)}
+  .risk h4{font-family:var(--mono);font-size:10.5px;color:var(--warn-ink);letter-spacing:0.1em;text-transform:uppercase;margin:0 0 8px;font-weight:600}
+  .risk h4::before{content:"! "}
+  .risk ul{margin:6px 0 0;padding:0 0 0 20px}
+  .risk li{margin:0 0 8px;color:var(--ink-soft)}
+  .risk li strong{color:var(--ink)}
+  .term{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+  .hint{display:block;color:var(--ink-faint);font-size:12px;margin-top:3px;font-style:italic;font-family:var(--serif)}
+  .altlist{margin:10px 0 18px;padding:0;list-style:none}
+  .altlist > li{border-top:1px solid var(--rule-soft);padding:14px 0;display:grid;grid-template-columns:150px 1fr;gap:18px;font-family:var(--sans);font-size:13px;line-height:1.65;color:var(--ink-soft)}
+  .altlist > li:last-child{border-bottom:1px solid var(--rule-soft)}
+  .altlist .tgt{font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.04em;padding-top:2px}
+  .altlist .tgt small{display:block;font-size:10.5px;color:var(--ink-faint);margin-top:3px;text-transform:uppercase;letter-spacing:0.08em}
+  .altlist strong{color:var(--ink)}
+  .altlist .when{color:var(--ink-faint);font-size:12px;display:block;margin-top:4px;font-style:italic;font-family:var(--serif)}
+  .altlist a.pending{color:var(--ink-faint);text-decoration:underline;text-decoration-style:dashed;text-decoration-color:var(--ink-faint);text-underline-offset:3px;cursor:help}
+  footer.btm{margin-top:80px;padding-top:14px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);display:flex;justify-content:space-between;letter-spacing:0.04em}
+  a{color:inherit}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <span class="l"><a href="../" style="color:inherit;text-decoration:none">relocate</a> · 路径详情 · 澳大利亚 · NIV 858</span>
+  <span>仅供参考 · 非官方</span>
+</header>
+
+<main class="page">
+
+  <p class="kicker">路径详情 · 家庭单位 · 永居一步到位 · 到入籍为止</p>
+  <h1>澳大利亚 · National Innovation Visa（Subclass 858）· 家庭完整路径</h1>
+  <p class="sub">
+    <code>au-niv-858</code> · 前身 Global Talent Visa（GTV，2024 年底更名 NIV） · EOI 邀请制 · 一步获永居 · 提名人 Form 1000 · FWHIT 薪资门槛 · PR 后 4 年入籍
+  </p>
+  <p class="meta">
+    <span>version v0.1</span>
+    <span>最后编辑 2026-04-20</span>
+    <span>家庭单位视角 · 亦可单人套用</span>
+    <span><a href="../" style="color:inherit">← 回到 relocate 首页</a></span>
+  </p>
+
+  <div class="caveat">
+    <p><strong>仅供参考 · 非官方：</strong>本页整理自 Department of Home Affairs 与 Federal Register of Legislation 的公开条款与指南。面向中文读者做路径速览，<strong>不是法律意见、不是 MARA 注册移民代理建议、不替代律师</strong>。NIV 是邀请制 · 决策几乎完全取决于"国际公认成就"的证据质量 + 提名人分量 + 领域与国家利益的拟合度；无统一门槛表，个案差异极大。</p>
+    <p><strong>本页边界：</strong>本页以 NIV（Subclass 858，前身 GTV）为主线串通到入籍；Subclass 189 / 190 / 491（技术移民积分制）、482 TSS（雇主担保工签）、Business Innovation 188/888、Distinguished Talent 124（海外版 858）只在 § 1、§ 8 作为相邻路径被点名。澳大利亚自 2002-04-04 允许双重国籍（Citizenship Act §33AA 之后的修订），但<em>中国《国籍法》§9 仍然独立生效</em>——入籍澳大利亚那一刻，中国籍自动丧失。</p>
+    <p><strong>数字怎么来的：</strong>每一处门槛、年限、费用都标了可自行复核的官方出处（见 § 10）。2024-12 NIV 更名后官方主页<em>合并</em>了原来的 eligibility / steps / about / nominator 子页到单页，本页所有引用都指向归档的 <code>niv-overview.html</code>。FWHIT 年度金额以 Fair Work Commission 当年公告为准。</p>
+  </div>
+
+  <dl class="chip">
+    <div><dt>国家</dt><dd>澳大利亚 <small>au</small></dd></div>
+    <div><dt>签证</dt><dd>Subclass 858 · NIV <small>前身 GTV</small></dd></div>
+    <div><dt>性质</dt><dd><strong>永居 PR</strong> <small>一步到位</small></dd></div>
+    <div><dt>流程</dt><dd>EOI → 邀请 → 60 天申请 <small>全家同批</small></dd></div>
+    <div><dt>担保</dt><dd>提名人 Form 1000 <small>同领域有声望</small></dd></div>
+    <div><dt>入籍</dt><dd>PR 后 4 年 <small>s.22 居住标准</small></dd></div>
+  </dl>
+
+  <nav class="stagenav">
+    <a href="#stage-overview"><span class="lbl">§ 0</span><span class="t">全景图</span><span class="b">NIV 一步 PR · 盒图</span></a>
+    <a href="#stage-enter"><span class="lbl">§ 1</span><span class="t">EOI + 申请</span><span class="b">邀请制 · Form 1000</span></a>
+    <a href="#stage-hold"><span class="lbl">§ 2</span><span class="t">PR 维持</span><span class="b">RRV · 税务</span></a>
+    <a href="#stage-citizen"><span class="lbl">§ 4</span><span class="t">升公民</span><span class="b">4 年居住 · 12 个月 PR</span></a>
+    <a href="#stage-risk"><span class="lbl">§ 7</span><span class="t">风险</span><span class="b">证据 · 提名人 · 领域</span></a>
+    <a href="#stage-alt"><span class="lbl">§ 8</span><span class="t">备选</span><span class="b">189 / 482 / US EB-1A</span></a>
+  </nav>
+
+  <!-- ============ § 0 全景 ============ -->
+  <section id="stage-overview">
+    <h2><span class="n">§ 0</span>全景图</h2>
+    <p class="lede">NIV 是四条路径里唯一一条"一步到位永居"的签证——不先拿临时工签，也不走积分制。核心门槛不是薪资或学历，是"<strong>国际公认的卓越成就</strong>"证据以及<strong>澳方合格提名人</strong>的背书。入境即 PR，四年后可入籍。</p>
+
+<div class="flowchart">
+<span class="br">[ 境外 / 境内均可 ]</span>
+    证据准备：国际奖项 / 领域权威引用 / 同行评审
+    +
+    物色澳大利亚提名人（PR / 公民 / 合资格 NZ 公民 / 机构）
+                         │
+                         ▼
+              ┌─────────────────────────┐
+              │  <span class="hi">§ 1  递 EOI</span>                 │
+              │  Department of Home Affairs  │
+              │  无费用 · 政策筛选评估        │
+              └──────────┬──────────────┘
+                         │ 被选中
+                         ▼
+              ┌─────────────────────────┐
+              │  <span class="hi">Invitation to Apply</span>         │
+              │  唯一参考号 · 60 天窗口      │
+              └──────────┬──────────────┘
+                         │ 在 60 天内递 858
+                         ▼
+              ┌─────────────────────────┐
+              │  <span class="hi">§ 1  递 Subclass 858</span>        │
+              │  申请费（主申 + 家属分档）    │
+              │  Form 1000 提名书            │
+              │  国际成就证据包              │
+              │  体检 + 无犯罪               │
+              └──────────┬──────────────┘
+                         │ 审理（无统一 SLA · 高质量个案可数月）
+                         ▼
+       ┌─────────────────┼─────────────────┐
+       ▼                 ▼                 ▼
+   <span class="br">主申 PR</span>           <span class="br">配偶 PR</span>         <span class="br">子女 PR</span>
+   一步到位          一步到位           一步到位
+                         │
+                         ▼  <span class="hi">§ 2  PR 维持 · 5 年 Travel Facility</span>
+                                        过期后可申 RRV
+                         │
+                         ▼  <span class="hi">§ 4 · PR 满 4 年（含最后 12 个月为 PR）</span>
+                     递公民申请
+                         │ 背景检查 + 入籍考试 + 宣誓
+                         ▼
+              <span class="hi">澳大利亚公民 · 双重国籍 · 护照 · 投票</span>
+              <span class="br">（澳大利亚允许双重国籍；中国《国籍法》§9 自动丧失中国籍、须注销中国护照）</span>
+</div>
+
+    <h3><span class="n">0.1</span>核心法源（六件套）</h3>
+    <table class="sources">
+      <thead><tr><th>层级</th><th>法源</th><th>核心条款</th><th>用途</th></tr></thead>
+      <tbody>
+        <tr><td>签证类别法</td><td>Migration Act 1958</td><td>§31（classes of visa）· §65（visa criteria）</td><td>上位法授权条件</td></tr>
+        <tr><td>签证细则</td><td>Migration Regulations 1994 · Schedule 2 · Part 858</td><td>cl 858.21–858.32（主申）· 858.31（提名人）· 858.322（成就）</td><td>NIV 具体要件</td></tr>
+        <tr><td>合规附表</td><td>Migration Regulations · Schedule 1 Item 1135</td><td>Application charge（申请费）· Form 1000（提名书）· 必须在 EOI 邀请后 60 天内递</td><td>递件程序</td></tr>
+        <tr><td>家属</td><td>Migration Regulations · Schedule 2 · Part 858 · Subclass 858.311 / 858.312</td><td>Member of family unit</td><td>配偶 + 子女派生</td></tr>
+        <tr><td>入籍法</td><td>Australian Citizenship Act 2007</td><td>§21（入籍）· §22（居住标准）· §22A（政府服务人员例外）· §24（放弃条件）</td><td>4 年居住规则</td></tr>
+        <tr><td>双重国籍</td><td>Australian Citizenship Act 2007 · §33AA / §35A 之后的修订</td><td>自 2002-04-04 起允许双重国籍</td><td>不强制放弃原国籍</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">0.2</span>GTV → NIV 更名（2024-12）</h3>
+    <div class="node">
+      <div class="big">只是换名 · Subclass 编号 / 核心要件不变</div>
+      <p>2024 年 12 月，澳大利亚政府把 <span class="term">Global Talent Visa (subclass 858)</span> 更名为 <span class="term">National Innovation Visa</span>。subclass 编号 858 不变；条款依据仍是 Migration Regulations 1994 · Schedule 2 · Part 858；原有要件（国际公认成就 + 提名人 + FWHIT 薪资）与决策口径也没实质变化。</p>
+      <p>同时发生的变化：</p>
+      <ul>
+        <li><strong>站点改版</strong>：官方把 overview / eligibility / steps / about / nominator 多个子页<em>合并到单页</em>（本页 § 10 引用）</li>
+        <li><strong>重心微调</strong>：措辞从"<em>future-shaping sectors</em>"转为更笼统的"<em>key sectors of the Australian economy</em>"；从一个明确列表变为由部门在具体案子里判断"对澳大利亚的国家利益"</li>
+        <li><strong>EOI 表单</strong>更新，ImmiAccount 内走</li>
+      </ul>
+      <p>对申请人的影响：如果你是 2023–2024 年按 GTV 准备证据的，基本可以沿用——只是在 EOI / 文件里把 GTV 换成 NIV；面试与材料逻辑一致。</p>
+    </div>
+
+    <h3><span class="n">0.3</span>三大优势（为什么选这条）</h3>
+    <div class="node">
+      <div class="big">一步到位 PR · 无雇主绑定 · 全家同批</div>
+      <p><strong>① 一步到位永居：</strong>NIV 是<em>永久签证</em>（permanent visa）——获批那一刻主申、配偶、未成年子女同批拿 PR。不像美国 H-1B/L-1（工签 → EB-1A/EB-1C 绿卡两阶段）或加拿大 GTS（工签 → Express Entry → PR），NIV 把"入境权 + 工作权 + 居留权"一次性解决。</p>
+      <p><strong>② 无雇主绑定：</strong>NIV 不需要 LMIA 等劳动市场测试，也不限定职业列表；提名人是<em>背书人</em>而非<em>雇主</em>——提名人可以是任意合格 PR / 公民 / 机构，不提供工作 offer 也可以。获签后主申可自由择业、创业、学习。</p>
+      <p><strong>③ 不卡年龄：</strong>189 / 190 类技术移民积分制 45 岁断崖 cutoff，NIV 没有硬性年龄上限（但 55 岁以上需要额外证明"对澳有例外贡献"）；因此对晚期科研 / 行业领袖是稀缺通道。</p>
+    </div>
+  </section>
+
+  <!-- ============ § 1 EOI + 申请 ============ -->
+  <section id="stage-enter">
+    <h2><span class="n">§ 1</span>EOI + 申请 · 证据 · 提名人 · 60 天窗口</h2>
+    <p class="lede">NIV 分两步：先递<strong>无费用的 EOI</strong>由 Department 内部挑；被选中收邀请后，在 60 天内递正式 858 申请（正式申请才收申请费）。</p>
+
+    <h3><span class="n">1.1</span>四大门槛</h3>
+    <div class="node">
+      <div class="ntop"><span>§1.1 · Subclass 858 · cl 858.212–858.223</span></div>
+      <div class="big">成就 + 领域 + 提名人 + 薪资潜力</div>
+      <p><strong>① Internationally recognised record of exceptional and outstanding achievement</strong> · 国际公认的卓越成就。Home Affairs 的核心门槛，证据包须证明申请人"在领域内跻身世界前列"。</p>
+      <p><strong>② Prominent in an eligible field</strong> · 在合格领域内仍然活跃且突出。</p>
+      <p><strong>③ Be nominated on a Form 1000 at time of application</strong> · 必须有一位澳大利亚公民 / PR / 合资格新西兰公民 / 澳大利亚组织在申请时填写 <span class="term">Form 1000</span> 做提名人；提名人本身须"在同一领域有声望"（nationally prominent）。</p>
+      <p><strong>④ Ability to attract a salary at or above FWHIT</strong> · 进入澳大利亚后能取得不低于 Fair Work High Income Threshold 的薪酬。FWHIT 由 Fair Work Commission 每年 7 月 1 日按 WPI 指数化调整；2024-07-01 档为 <strong>AUD 175,000/年</strong>（2025-07-01 档刷新；以当期公告为准）。</p>
+      <dl class="kv">
+        <dt>法条</dt><dd><a href="../../data/archive/au/gtv/laws/migration-regs-1994.html" target="_blank" rel="noopener">Migration Regulations 1994 · Part 858</a></dd>
+        <dt>Form 1000</dt><dd><a href="../../data/archive/au/gtv/immi/niv-overview.html" target="_blank" rel="noopener">Home Affairs · NIV（归档页）</a></dd>
+      </dl>
+    </div>
+
+    <h3><span class="n">1.2</span>年龄 · 两个特殊档</h3>
+    <div class="node">
+      <div class="ntop"><span>§1.2 · Subclass 858 · cl 858.214</span></div>
+      <div class="big">18–55 岁：直通 · 其他：需"例外贡献"证明</div>
+      <ul>
+        <li><strong>18–55 岁</strong>：按标准证据包评估（见 § 1.3）</li>
+        <li><strong>&lt; 18 岁</strong> 或 <strong>≥ 55 岁</strong>：申请人须额外证明"would be of exceptional benefit to the Australian community"——更高的证据门槛，常需具体到产业贡献、专利收入、潜在岗位创造等<em>量化</em>数字</li>
+      </ul>
+    </div>
+
+    <h3><span class="n">1.3</span>证据构成 · 典型材料清单</h3>
+    <table class="sources">
+      <thead><tr><th>维度</th><th>证据</th></tr></thead>
+      <tbody>
+        <tr><td>个人资质</td><td>博士学位 / 国际奖项（Turing / Fields / 院士 / 某行业 top 1% 榜单）· 领域权威引用 · 媒体专访</td></tr>
+        <tr><td>同行评审</td><td>顶刊 / 顶会论文被引 · 主持 / 联名同行评审 · 被邀 keynote · 主流奖项评委</td></tr>
+        <tr><td>薪酬记录</td><td>过往 2–3 年税后收入达 FWHIT 水平的证明（offer / 股权变现 / 企业估值分摊）</td></tr>
+        <tr><td>行业影响</td><td>个人专利 / 公司估值 · 带团队规模 · 开源项目 Star / Fork · 创始 / 联合创始企业估值</td></tr>
+        <tr><td>提名人 sponsor letter</td><td>Form 1000 + 提名人本人的资质证明 · 阐明申请人如何"对澳国家利益显著"</td></tr>
+        <tr><td>拟合度陈述</td><td>申请人未来在澳的行业规划 · 与当期政府优先方向（量子 / AI / 国防科技 / 新能源 / 生命科技 / 先进制造等）的对接</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">1.4</span>时间线 · EOI → 邀请 → 60 天</h3>
+    <table class="sources">
+      <thead><tr><th>步骤</th><th>谁做</th><th>耗时</th><th>产出</th></tr></thead>
+      <tbody>
+        <tr><td>1. 准备证据包 + 找提名人</td><td>申请人 + 提名人</td><td>2–6 个月</td><td>CV · 引用统计 · Form 1000 草稿</td></tr>
+        <tr><td>2. 递 EOI（ImmiAccount）</td><td>申请人</td><td>在线即时</td><td>EOI 档案 · 无费用</td></tr>
+        <tr><td>3. Department 评估</td><td>Department</td><td>数月（不公示具体 SLA）</td><td>Invitation（唯一参考号）或默拒</td></tr>
+        <tr><td>4. 60 天窗口内递 858 + 申请费</td><td>申请人</td><td>≤ 60 天</td><td>递件确认 · HAP ID（体检）</td></tr>
+        <tr><td>5. 体检 + 无犯罪 + 面试（如有）</td><td>申请人 + 家属</td><td>1–3 个月</td><td>eMedical 报告 · 警察证明</td></tr>
+        <tr><td>6. 决定</td><td>Department</td><td>数月至 1+ 年（无统一 SLA）</td><td>Grant Letter（获批）或 NOICC（拒签意向）</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">1.5</span>家属派生</h3>
+    <div class="node">
+      <div class="ntop"><span>§1.5 · Member of Family Unit</span></div>
+      <div class="big">配偶 / 同居伴侣 + 未成年子女同批 PR · 父母不派生</div>
+      <ul>
+        <li><strong>配偶 / 同居伴侣：</strong>同批 PR（Subclass 858，Secondary applicant）· 包括事实婚姻 · 同性婚姻（澳大利亚全境承认）</li>
+        <li><strong>未成年子女：</strong>18 岁以下（或 23 岁以下全日制学生经济依赖）同批 PR</li>
+        <li><strong>父母：</strong><em>不</em>随 NIV 派生；PR 落地后另走 Subclass 143 / 173 / 103 父母签证（排期 10+ 年）</li>
+        <li><strong>未婚未成年兄弟姐妹 / 继子女：</strong>特定条件下可作为 member of family unit 随申</li>
+      </ul>
+      <p>对家庭单位的意义：NIV 的家属派生是<em>一次性</em>的——拿到 PR 后加入的配偶（结婚在 PR 之后）须走 Partner Visa (Subclass 820/801) 另申；PR 后出生的子女自动公民（若双方之一已是 PR 且子女在澳出生）。</p>
+    </div>
+  </section>
+
+  <!-- ============ § 2 PR 维持 ============ -->
+  <section id="stage-hold">
+    <h2><span class="n">§ 2</span>PR 维持 · Travel Facility + 税务</h2>
+    <p class="lede">NIV 给的是永久签证，但附带的旅行便利只有 5 年——过期后要回澳需要 RRV（Resident Return Visa）。</p>
+
+    <h3><span class="n">2.1</span>Travel Facility · 5 年</h3>
+    <div class="node">
+      <div class="ntop"><span>§2.1 · Migration Regulations · Subclass 155 / 157 (RRV)</span></div>
+      <div class="big">PR 是永久的 · 但进出境的"入境许可"只有 5 年</div>
+      <ul>
+        <li><strong>首次 NIV 批准</strong>给 5 年 Travel Facility · 在此期间进出澳大利亚无限次</li>
+        <li><strong>5 年到期后</strong>：若已累计在澳住满 <strong>2 年 / 5 年</strong>，可无条件续 RRV 再给 5 年</li>
+        <li><strong>未住够</strong>：需证明"与澳大利亚有实质联系"（家庭 / 商业 / 文化 / 工作）· 通常续 1 年 Travel Facility</li>
+        <li><strong>境内 PR 不受影响</strong>：Travel Facility 过期但人在澳大利亚，PR 身份仍有效——只影响离境后回境</li>
+      </ul>
+    </div>
+
+    <h3><span class="n">2.2</span>税务 · ATO</h3>
+    <ul>
+      <li><strong>税务居民身份独立判定</strong>：PR 身份不等于税务居民；依 Resides test / Domicile test / 183-day test / Superannuation test 四条之一判</li>
+      <li><strong>居民全球征税</strong>：ATO 对税务居民按<em>全球收入</em>征税；联邦累进最高 45% + Medicare Levy 2% = 47%</li>
+      <li><strong>Superannuation</strong>：雇主强制缴纳 11.5%（2024-25 财年，每年 +0.5% 至 12%）· 类似公积金</li>
+      <li><strong>中澳 DTA</strong>：有双边税收协定 · 避免双重征税 · 中国境内收入在澳报税时可抵扣已缴中国所得税</li>
+      <li><strong>FIRB</strong>：非公民购买澳大利亚房产须 Foreign Investment Review Board 批准 · PR 不受限</li>
+    </ul>
+
+    <h3><span class="n">2.3</span>家庭维持</h3>
+    <div class="familytrack">
+      <div class="row"><div class="l">主申 NIV <small>PR 永久</small></div><div class="r"><em>Y0</em> 获批即 PR <em>Y0–Y5</em> 首次 Travel Facility <em>Y4+</em> 满足 citizenship s.22 后申入籍 <em>Y5+</em> 续 RRV 或入籍后持澳护照</div></div>
+      <div class="row"><div class="l">配偶 NIV-S <small>PR 永久</small></div><div class="r"><em>Y0</em> 同批 PR · 完全工作权 <em>Y4+</em> 独立申入籍（各自计居住天数）</div></div>
+      <div class="row"><div class="l">子女 NIV-S <small>PR 永久</small></div><div class="r"><em>Y0</em> 同批 PR <em>K-12 / 大学</em> 与本地学生同价 · HECS-HELP 学贷可用 <em>Y4+</em> 随父母或独立入籍</div></div>
+    </div>
+  </section>
+
+  <!-- ============ § 4 入籍 ============ -->
+  <section id="stage-citizen">
+    <h2><span class="n">§ 4</span>升公民 · 4 年居住 · 12 个月 PR · 允许双重国籍</h2>
+    <p class="lede">澳大利亚自 2002-04-04 起允许双重国籍（Citizenship Act 2007 的前身修订）；但中国《国籍法》§9 仍然独立生效——对中国大陆出生者而言，入籍澳那一刻中国籍自动丧失。</p>
+
+    <div class="node">
+      <div class="ntop"><span>§4 · Australian Citizenship Act 2007 · §21 / §22</span></div>
+      <div class="big">通过 conferral 入籍的居住标准 · s.22</div>
+      <p><strong>法定门槛（s.22 General residence requirement）：</strong></p>
+      <ul>
+        <li>申请前<strong>连续 4 年</strong>合法居留澳大利亚（任何有效签证均可计入，不限于 PR）；</li>
+        <li>其中<strong>最近 12 个月必须是 PR 身份</strong>（或永久签证持有人）；</li>
+        <li>这 4 年内<strong>累计离境不超过 12 个月</strong>；</li>
+        <li>最近 12 个月内<strong>离境不超过 90 天</strong>。</li>
+      </ul>
+      <p><strong>其他条件（s.21）：</strong>年满 18 岁 · 通过英语语言评估（在入籍考试中内嵌）· 通过 <strong>citizenship test</strong>（20 题多选 · 75% 合格 · 其中 5 题涉及澳大利亚价值观须全对）· 品格良好（character test）· 理解入籍的性质 · 有意在澳生活 / 保持与澳的实质联系。</p>
+      <p><strong>免考：</strong>年龄 &lt; 18 或 ≥ 60 岁 · 有永久身心障碍的申请人。</p>
+      <p><strong>时间线：</strong>递在线申请 → IRCC 处理 → 排考 → 排宣誓（Citizenship Ceremony）· 当期总时长约 12–24 个月。</p>
+      <dl class="kv">
+        <dt>法律</dt><dd><a href="../../data/archive/au/gtv/laws/citizenship-act-2007.html" target="_blank" rel="noopener">Australian Citizenship Act 2007</a></dd>
+        <dt>官方</dt><dd><a href="../../data/archive/au/gtv/immi/citizenship-become.html" target="_blank" rel="noopener">Home Affairs · Become a Citizen</a> · <a href="../../data/archive/au/gtv/immi/citizenship-residence.html" target="_blank" rel="noopener">PR 申请入籍页</a></dd>
+      </dl>
+    </div>
+
+    <h3><span class="n">4.1</span>中国籍的同步处理</h3>
+    <ul>
+      <li><strong>澳方：</strong>自 2002-04-04 起允许双重国籍（Australian Citizenship Amendment Act 2002 前后一揽子修订）· 宣誓词不要求放弃原国籍 · 也不强制注销原护照</li>
+      <li><strong>中方：</strong>中国《国籍法》§9 独立生效——"定居外国的中国公民，自愿加入或取得外国国籍的，自动丧失中国国籍"· 入澳籍即失中国籍</li>
+      <li><strong>实务：</strong>宣誓后持澳籍证书去中国驻澳使领馆办护照 / 户籍注销 · 获"退籍证明" · 之后回中国须持澳大利亚护照 + 中国签证</li>
+      <li><strong>灰色区：</strong>持两本护照入出境的情况存在但不受任何一侧法律保护；近年中国驻外使馆对"未注销中国护照"的澳籍华人办签证趋严</li>
+    </ul>
+
+    <h3><span class="n">4.2</span>未成年子女同期</h3>
+    <p>未满 16 岁 PR 子女由父母代申（s.21 (5) conferral by descent 的相近通路）· 无 4 年居住硬要求 · 免考试 · 父母同批宣誓。</p>
+  </section>
+
+  <!-- ============ § 5 家庭配置 ============ -->
+  <section id="stage-family">
+    <h2><span class="n">§ 5</span>家庭玩法 · 三种典型配置</h2>
+
+    <h3><span class="n">5.1</span>单线 · 主申 NIV · 全家同批 PR</h3>
+    <div class="node">
+      <div class="big">最常见 · 一份证据包 · 一次提名 · 全家一步到位</div>
+      <p>主申递 EOI + 858 · 配偶 + 子女作为 secondary applicant 同批 PR。由于 NIV 本身就是一步永居，大多数家庭走到 § 4 入籍前不需要做<em>任何</em>签证切换——这比 US / CA / JP 路径都简单。</p>
+      <p><strong>关键</strong>：若 4 年内夫妻一方离婚/分居，secondary 的 PR <em>依然有效</em>（不像 US Partner Visa 那种两阶段绿卡的依附性），这对家庭关系变动的抗风险高。</p>
+    </div>
+
+    <h3><span class="n">5.2</span>双线 · 夫妻各递 NIV / 或一方走 189</h3>
+    <div class="node">
+      <div class="big">双方都有国际成就 · 双线并行保底</div>
+      <p>若夫妻双方都独立具备国际成就，可各自递 EOI——两条独立评估线，<em>任一</em>先被邀请都可覆盖全家。备选：一方 NIV 走成就线 · 另一方 <strong>Subclass 189（Skilled Independent）</strong>走积分制——双线应对 NIV 不确定的邀请节奏。</p>
+    </div>
+
+    <h3><span class="n">5.3</span>过渡线 · 先 482 TSS 工签 · 再递 NIV</h3>
+    <div class="node">
+      <div class="big">先在澳本地累计成就 · 再升维申 NIV</div>
+      <p>海外证据不够时，可先拿 <strong>Subclass 482（Temporary Skill Shortage）</strong>工签入境工作 2–3 年 · 在澳本地拿奖 / 发论文 / 创业 / 累积 media presence · 本地提名人资源更好组织 · 然后递 NIV。</p>
+      <p>对晚期科研 / 已有海外成就但缺"澳本地曝光"的申请人有用；也是 H-1B 在美国被拒 / L-1 续签失败后的"横切"选项。</p>
+    </div>
+  </section>
+
+  <!-- ============ § 6 时间线 ============ -->
+  <section id="stage-timeline">
+    <h2><span class="n">§ 6</span>家庭三线图 · 典型 1 年 PR + 4 年入籍节奏</h2>
+
+<div class="flowchart">
+<span class="br">Y0</span>    准备证据包 · 物色提名人
+<span class="br">Y0+2M</span>  提名人 Form 1000 草拟完成
+<span class="br">Y0+3M</span>  递 EOI
+<span class="br">Y0+6M</span>  <span class="hi">收 Invitation to Apply</span>
+<span class="br">Y0+7M</span>  递 858 申请 · 付申请费 · HAP ID
+<span class="br">Y0+8M</span>  体检 + 无犯罪
+<span class="br">Y0+12M</span> <span class="hi">Grant · 全家 PR</span>
+<span class="br">Y1</span>    首次入境（若海外申） / 继续居住（若境内申）
+<span class="br">Y1+</span>   ATO 税务居民身份建立 · 配偶就业 · 子女入学
+<span class="br">Y4</span>    <span class="hi">满足 s.22 4 年居住（含最后 12 月为 PR）</span>
+<span class="br">Y4+6M</span>  入籍考试 + 品格背调
+<span class="br">Y5</span>    <span class="hi">Citizenship Ceremony · 宣誓 · 拿澳护照</span>
+              <span class="br">（宣誓即触发中国国籍法 §9 失籍 · 注销中国护照）</span>
+</div>
+  </section>
+
+  <!-- ============ § 7 风险 ============ -->
+  <section id="stage-risk">
+    <h2><span class="n">§ 7</span>核心风险点</h2>
+
+    <div class="risk">
+      <h4>EOI → 邀请阶段的结构性风险</h4>
+      <ul>
+        <li><strong>EOI 是"黑盒"：</strong>Department 不公开挑选标准 / 不承诺时限 / 不给拒绝反馈 · 可能数月无响应 · 可能被默拒后复递仍无进展</li>
+        <li><strong>政府重心浮动：</strong>每届政府 / 每年预算都会调整 NIV 的关键领域偏好；你按 2023 年 GTV 量子赛道准备的材料，2026 年可能被归入"与当期国家利益拟合度低"</li>
+        <li><strong>提名人是单点</strong>：找到一位 nationally prominent 且愿意出 Form 1000 的提名人常比备证据还难；提名人本人一旦失去声望或离开澳，重新组织提名成本高</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>858 申请阶段的裁量风险</h4>
+      <ul>
+        <li><strong>"国际公认"的证据门槛模糊：</strong>与 US EB-1A 类似但没有 10 条明确标准——签证官按<em>总体印象</em>裁量；高质量材料被拒也有发生</li>
+        <li><strong>FWHIT 薪资证明：</strong>若海外收入以股权 / 分红为主，签证官可能不完全采信 · 建议以 offer letter / W-2 / 税单建立稳定现金收入流</li>
+        <li><strong>NOICC（拒签意向）：</strong>收到 NOICC 有 28 天回复期 · 几乎不能新增证据 · 只能解释 · 这是最后一次争取</li>
+        <li><strong>&lt; 18 / ≥ 55 岁</strong>的"exceptional benefit"门槛比主流档高一档 · 常见退案原因</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>PR 维持与入籍阶段</h4>
+      <ul>
+        <li><strong>Travel Facility 过期忽视：</strong>PR 本体永久但"进出便利"只有 5 年；长期海外驻派 + 5 年内在澳 &lt; 2 年 → RRV 续期要挤"实质联系"窄口</li>
+        <li><strong>入籍的 4 年 + 12 月 + 90 天三叠加规则：</strong>最后 12 个月离境 &gt; 90 天（即便因工作 / 家庭紧急）会直接推迟入籍资格</li>
+        <li><strong>Character test：</strong>中国户籍上的行政处罚 / 轻微刑事记录在 character 检查时可能成为隐患 · 宜在递件前主动披露</li>
+        <li><strong>Section 50（授予与撤销）：</strong>若入籍申请中有虚假陈述 · 10 年内可被 Minister 依 s.34 撤销公民身份</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 8 备选 ============ -->
+  <section id="stage-alt">
+    <h2><span class="n">§ 8</span>备选切换 · 这条走不通怎么办</h2>
+
+    <ul class="altlist">
+      <li>
+        <span class="tgt">AU · Subclass 189<small>技术独立 · 积分制 · PR 一步</small></span>
+        <div>
+          <strong>门槛：</strong>职业在 MLTSSL 列表 · SkillSelect 积分（年龄 + 英语 + 学历 + 工作经验）· 无雇主担保。<strong>何时考虑：</strong>没有国际成就但有硬性职业资格（工程 / 医护 / 会计 / IT）· ≤ 45 岁。<strong>价值：</strong>一次到永居 · 不依赖提名人。
+          <span class="when">占位：<a class="pending" href="#" title="待建：au-189">本站 · AU 189</a>（未建）· 官方：<a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/skilled-independent-189" target="_blank" rel="noopener">Home Affairs · Subclass 189</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">AU · Subclass 190 / 491<small>州 / 偏远区担保</small></span>
+        <div>
+          <strong>门槛：</strong>189 分数不够时 · 某州或偏远地区政府担保额外加 5–15 分。<strong>价值：</strong>190 一步 PR · 491 临签 3 年后转 PR。<strong>劣势：</strong>州担保常附带"本州居住 2 年"的道德义务。
+          <span class="when">占位：<a class="pending" href="#" title="待建：au-190-491">本站 · AU 190/491</a>（未建）· 官方：<a href="https://immi.homeaffairs.gov.au/visas/working-in-australia/skillselect" target="_blank" rel="noopener">Home Affairs · SkillSelect</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">AU · Subclass 482 TSS<small>雇主担保工签</small></span>
+        <div>
+          <strong>门槛：</strong>澳大利亚注册雇主提名 · 岗位在 TSS 清单 · LMT 测试。<strong>何时考虑：</strong>海外成就不够递 NIV 但有 AU 雇主愿担保。<strong>价值：</strong>2–4 年工签 · 满 2 年雇主担保可走 186 ENS 转 PR · 也可在持签期间积累本地成就再递 NIV。
+          <span class="when">占位：<a class="pending" href="#" title="待建：au-482">本站 · AU 482 TSS</a>（未建）· 官方：<a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/temporary-skill-shortage-482" target="_blank" rel="noopener">Home Affairs · Subclass 482</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">AU · Distinguished Talent 124<small>海外 NIV 等价</small></span>
+        <div>
+          <strong>门槛：</strong>与 NIV 858 本质相同（国际成就 + 提名人 + FWHIT），但递件时必须<em>在境外</em>。<strong>何时考虑：</strong>某些情境下 124 批得更快 / 某些证据包适合境外递。<strong>价值：</strong>一步 PR · 不限领域。
+          <span class="when">占位：无独立本站页；并入 NIV 路径讨论 · 官方：<a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/distinguished-talent-124" target="_blank" rel="noopener">Home Affairs · Subclass 124</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">AU · Business Innovation 188 / 888<small>投资 / 创业移民</small></span>
+        <div>
+          <strong>门槛：</strong>企业家 · 投资额 / 营业额门槛 · 州提名。<strong>何时考虑：</strong>成就档立足商业而非科研 / 科技专业成就。<strong>价值：</strong>188 临签 4 年 · 达标后 888 转 PR。<strong>注：</strong>2024-07 后 188 对新申大幅收紧。
+          <span class="when">官方：<a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/business-innovation-and-investment-188" target="_blank" rel="noopener">Home Affairs · Subclass 188</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">US · EB-1A<small>美国杰出人才绿卡</small></span>
+        <div>
+          <strong>门槛：</strong>8 CFR 204.5(h) · 10 条标准中的 3 条 · Kazarian 两段论（原始门槛 + 最终价值裁量）。<strong>何时考虑：</strong>NIV 邀请迟迟不来且偏好美国 TC · 或已有美国雇主。<strong>价值：</strong>自荐 · 免 PERM · I-140 可直接升 I-485。
+          <span class="when">详情：<a href="us-eb1a.html">本站 · US EB-1A 杰出人才绿卡</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">US · O-1A<small>杰出人才非移民签证</small></span>
+        <div>
+          <strong>门槛：</strong>8 CFR 214.2(o) · 与 NIV 的证据重叠度 &gt; 70%。<strong>何时考虑：</strong>EB-1A 周期长 · 要尽快在美开工。<strong>价值：</strong>工签无数量上限 · 配偶 O-3。
+          <span class="when">详情：<a href="us-o1.html">本站 · US O-1 杰出人才</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">CA · GTS + Express Entry<small>加拿大 2 周工签 + PR</small></span>
+        <div>
+          <strong>门槛：</strong>ESDC Category A / B 岗位 + 雇主 LMBP。<strong>何时考虑：</strong>NIV 邀请不来 · 要<em>尽快</em>落地英语国家。<strong>价值：</strong>2 周处理工签 · 配偶自动 open work permit · 加拿大 1 年本地工作 → CEC PR。
+          <span class="when">详情：<a href="ca-gts.html">本站 · CA Global Talent Stream</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">UK · Global Talent<small>英国背书制</small></span>
+        <div>
+          <strong>门槛：</strong>经指定背书机构 endorsement（digital / 学术 / 艺术 / 研究）。<strong>价值：</strong>3 / 5 年签 · 无雇主绑定 · 5 年可申 ILR 永居。
+          <span class="when">占位：<a class="pending" href="#" title="待建：uk-global-talent">本站 · UK Global Talent</a>（未建）· 官方：<a href="https://www.gov.uk/global-talent" target="_blank" rel="noopener">GOV.UK · Global Talent</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">SG · ONE Pass<small>新加坡高薪</small></span>
+        <div>
+          <strong>门槛：</strong>月薪 ≥ SGD 30k 或国际公认成就。<strong>价值：</strong>5 年长签 · 多雇主 · 亚洲枢纽 · 低税。
+          <span class="when">详情：<a href="sg-one-pass.html">本站 · SG ONE Pass</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">JP · HSP 1 号<small>日本高度専門職</small></span>
+        <div>
+          <strong>门槛：</strong>积分制 ≥ 70 分。<strong>价值：</strong>80 分可 1 年内申永住。
+          <span class="when">详情：<a href="jp-hsp.html">本站 · 日本 HSP 1 号ロ</a></span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ § 10 官方文件总表 ============ -->
+  <section id="stage-sources">
+    <h2><span class="n">§ 10</span>官方文件总表 <span class="tag">含本地归档</span></h2>
+    <p class="lede">本表列出 NIV 路径上所有引用的官方原件，均在 <a href="../../data/archive/au/gtv/" target="_blank" rel="noopener"><code>data/archive/au/gtv/</code></a> 下有快照。<strong>注：</strong>Home Affairs 在 2024-12 NIV 更名后把原 eligibility / steps / about / nominator 子页合并到单一 overview 页；本页只归档存在的 URL。FWHIT 年度数字以 Fair Work Commission 官网当期公告为准（fairwork.gov.au 在境内网络直连有时超时，建议直接查 fwc.gov.au）。</p>
+
+    <h3><span class="n">10.1</span>法律 · legislation.gov.au</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>MA</code></td><td>Migration Act 1958 · 移民上位法 · §31 / §65</td><td class="iss">Cth · 1958</td><td><a href="../../data/archive/au/gtv/laws/migration-act-1958.html" target="_blank" rel="noopener">laws/migration-act-1958.html</a></td></tr>
+        <tr><td class="id"><code>MR</code></td><td>Migration Regulations 1994 · Schedule 2 Part 858 · NIV 具体要件</td><td class="iss">SL · 1994</td><td><a href="../../data/archive/au/gtv/laws/migration-regs-1994.html" target="_blank" rel="noopener">laws/migration-regs-1994.html</a></td></tr>
+        <tr><td class="id"><code>CA</code></td><td>Australian Citizenship Act 2007 · §21 / §22 / §33AA · 入籍 + 双重国籍</td><td class="iss">Cth · 2007</td><td><a href="../../data/archive/au/gtv/laws/citizenship-act-2007.html" target="_blank" rel="noopener">laws/citizenship-act-2007.html</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.2</span>政策页 · Department of Home Affairs</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布 / 出处</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>niv-ov</code></td><td>NIV 858 总览 / eligibility / steps / nominator（聚合页）</td><td class="iss">Home Affairs · immi.homeaffairs.gov.au</td><td><a href="../../data/archive/au/gtv/immi/niv-overview.html" target="_blank" rel="noopener">immi/niv-overview.html</a></td></tr>
+        <tr><td class="id"><code>cit-ov</code></td><td>Become a Citizen · 入籍总览</td><td class="iss">Home Affairs</td><td><a href="../../data/archive/au/gtv/immi/citizenship-become.html" target="_blank" rel="noopener">immi/citizenship-become.html</a></td></tr>
+        <tr><td class="id"><code>cit-pr</code></td><td>Become a Citizen · Permanent Resident（居住标准 + 通路）</td><td class="iss">Home Affairs</td><td><a href="../../data/archive/au/gtv/immi/citizenship-residence.html" target="_blank" rel="noopener">immi/citizenship-residence.html</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.3</span>其他外部参考（不做本地归档）</h3>
+    <ul>
+      <li><a href="https://www.fwc.gov.au/agreements-awards/minimum-wages-and-conditions/high-income-threshold" target="_blank" rel="noopener">Fair Work Commission · High Income Threshold</a>（FWHIT 当期金额）</li>
+      <li><a href="https://immi.homeaffairs.gov.au/form-listing/forms/1000.pdf" target="_blank" rel="noopener">Home Affairs · Form 1000（Nomination for permanent visa）</a></li>
+      <li><a href="https://www.ato.gov.au/individuals-and-families/coming-to-australia-or-going-overseas/residency-requirements-for-individuals" target="_blank" rel="noopener">ATO · Residency for individuals</a>（税务居民判定四项测试）</li>
+      <li><a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/resident-return-155-157" target="_blank" rel="noopener">Home Affairs · Resident Return Visa (Subclass 155 / 157)</a></li>
+      <li><a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/distinguished-talent-124" target="_blank" rel="noopener">Home Affairs · Subclass 124（境外版 NIV）</a></li>
+    </ul>
+
+    <p class="hint">本表"本地归档"指向的是仓库内 <code>data/archive/au/gtv/</code> 下已下载的官方原件快照。若本地文件缺失，请在仓库根下运行 <code>bash data/archive/au/gtv/download.sh</code> 重新拉取。</p>
+  </section>
+
+  <footer class="btm">
+    <span>relocate · au-gtv · v0.1</span>
+    <span>© 本站非商用 · 内容引自官方公开条款与指南</span>
+  </footer>
+
+</main>
+</body>
+</html>
