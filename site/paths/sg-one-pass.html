@@ -1,0 +1,797 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>relocate · 路径详情 · 新加坡 ONE Pass · 到公民为止（仅供参考 · 非官方）</title>
+<style>
+  :root{
+    --ink:#141414;
+    --ink-soft:#3d3d3d;
+    --ink-faint:#8a8a8a;
+    --rule:#d8d8d8;
+    --rule-soft:#ebebeb;
+    --bg:#fdfbf7;
+    --warn-bg:#fff6e7;
+    --warn-ink:#6a4d00;
+    --branch-bg:#f5f2ea;
+    --serif:Georgia,"Source Han Serif SC","Noto Serif SC","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;
+    --mono:"SFMono-Regular","Menlo",Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:var(--serif);font-size:16.5px;line-height:1.78;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+
+  header.top{
+    padding:14px 40px;border-bottom:1px solid var(--rule);
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em;
+    background:#fff;
+  }
+  header.top .l{color:var(--ink)}
+
+  .page{max-width:920px;margin:0 auto;padding:56px 32px 140px}
+
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 10px}
+  h1{font-size:30px;font-weight:700;line-height:1.25;letter-spacing:-0.005em;margin:0 0 6px}
+  .sub{font-family:var(--sans);font-size:14px;color:var(--ink-soft);margin:0 0 14px;letter-spacing:0.01em}
+  .sub code{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 6px;border-radius:2px;color:var(--ink)}
+  .meta{
+    font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);
+    letter-spacing:0.04em;margin:0 0 28px;
+    padding-bottom:18px;border-bottom:1px solid var(--ink);
+  }
+  .meta span + span::before{content:" · ";margin:0 4px;color:var(--rule)}
+
+  .caveat{
+    background:var(--warn-bg);border:1px solid var(--warn-ink);
+    padding:14px 20px;margin:0 0 32px;
+    font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--warn-ink);
+  }
+  .caveat strong{color:#3c2a00}
+  .caveat p{margin:0 0 6px}
+  .caveat p:last-child{margin:0}
+
+  .chip{
+    display:grid;grid-template-columns:repeat(6, 1fr);
+    gap:0;background:#fff;border:1px solid var(--ink);
+    font-family:var(--sans);margin:0 0 36px;
+  }
+  .chip > div{padding:12px 14px;border-right:1px solid var(--rule)}
+  .chip > div:last-child{border-right:none}
+  .chip dt{
+    font-family:var(--mono);font-size:10px;color:var(--ink-faint);
+    letter-spacing:0.09em;text-transform:uppercase;margin:0 0 3px;
+  }
+  .chip dd{margin:0;font-size:13.5px;color:var(--ink);font-weight:600}
+  .chip dd small{display:block;font-weight:400;font-size:11.5px;color:var(--ink-faint);margin-top:2px;font-family:var(--mono)}
+
+  .stagenav{
+    display:grid;grid-template-columns:repeat(6, 1fr);
+    gap:6px;margin:0 0 40px;
+    font-family:var(--sans);
+  }
+  .stagenav a{
+    display:block;padding:10px 12px;
+    background:#fff;border:1px solid var(--ink);
+    text-decoration:none;color:var(--ink);
+  }
+  .stagenav a .lbl{
+    font-family:var(--mono);font-size:10px;color:var(--ink-faint);
+    letter-spacing:0.09em;text-transform:uppercase;display:block;margin-bottom:3px;
+  }
+  .stagenav a .t{font-size:14px;font-weight:700;display:block;line-height:1.3}
+  .stagenav a .b{font-size:11.5px;color:var(--ink-soft);display:block;margin-top:3px;font-family:var(--serif);line-height:1.45}
+
+  section{margin:56px 0 0}
+  section > h2{font-size:20px;font-weight:700;line-height:1.35;margin:0 0 4px}
+  section > h2 .n{
+    font-family:var(--mono);font-size:12px;font-weight:400;
+    color:var(--ink-faint);letter-spacing:0.08em;margin-right:10px;
+  }
+  section > h2 .tag{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:0.06em;
+    padding:2px 7px;border:1px solid var(--ink-faint);color:var(--ink-faint);
+    font-weight:400;margin-left:10px;vertical-align:3px;
+  }
+  section > .lede{
+    font-family:var(--serif);font-style:italic;
+    color:var(--ink-soft);font-size:15.5px;line-height:1.7;margin:0 0 20px;
+  }
+
+  p{margin:0 0 1em}
+  h3{font-size:15.5px;font-weight:700;margin:26px 0 8px}
+  h3 .n{
+    font-family:var(--mono);font-size:11px;font-weight:400;
+    color:var(--ink-faint);letter-spacing:0.06em;margin-right:8px;
+  }
+  h4{font-size:13.5px;font-weight:700;margin:18px 0 6px;font-family:var(--sans)}
+
+  .node{
+    background:#fff;border:1px solid var(--ink);
+    padding:18px 22px;margin:14px 0 18px;
+    font-family:var(--sans);font-size:13.5px;line-height:1.7;
+  }
+  .node .ntop{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding-bottom:8px;border-bottom:1px solid var(--rule-soft);margin-bottom:12px;
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em;
+  }
+  .node .big{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink);line-height:1.35;margin:0 0 6px}
+  .node p{margin:0 0 10px;color:var(--ink-soft)}
+  .node p strong{color:var(--ink);font-weight:700}
+  .node dl.kv{
+    display:grid;grid-template-columns:140px 1fr;gap:6px 14px;
+    font-size:12.5px;color:var(--ink-soft);margin:12px 0 0;
+    padding-top:10px;border-top:1px dashed var(--rule);
+  }
+  .node dl.kv dt{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.06em;text-transform:uppercase;padding-top:2px}
+  .node dl.kv dd{margin:0}
+  .node dl.kv dd code{font-family:var(--mono);font-size:11.5px;background:var(--rule-soft);padding:1px 5px;border-radius:2px;color:var(--ink)}
+
+  .familytrack{
+    background:#fff;border:1px solid var(--ink);margin:14px 0 18px;
+    font-family:var(--sans);font-size:12.5px;
+  }
+  .familytrack .row{
+    display:grid;grid-template-columns:130px 1fr;
+    border-bottom:1px solid var(--rule);
+  }
+  .familytrack .row:last-child{border-bottom:none}
+  .familytrack .row .l{
+    padding:14px;background:var(--rule-soft);border-right:1px solid var(--rule);
+    font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.06em;text-transform:uppercase;
+  }
+  .familytrack .row .l small{display:block;font-size:10px;color:var(--ink-faint);margin-top:3px;letter-spacing:0.04em}
+  .familytrack .row .r{padding:14px 18px;color:var(--ink-soft);line-height:1.65}
+  .familytrack .row .r strong{color:var(--ink)}
+  .familytrack .row .r em{font-style:normal;background:var(--rule-soft);padding:1px 6px;font-family:var(--mono);font-size:11px;color:var(--ink);margin-right:4px}
+
+  .flowchart{
+    background:#fff;border:1px solid var(--ink);
+    padding:22px 24px;margin:10px 0 24px;
+    font-family:var(--mono);font-size:12.5px;line-height:1.8;
+    color:var(--ink);white-space:pre;overflow-x:auto;
+  }
+  .flowchart .hi{background:var(--rule-soft);padding:0 4px}
+  .flowchart .br{color:var(--ink-faint)}
+
+  table.sources{
+    width:100%;border-collapse:collapse;background:#fff;
+    font-family:var(--sans);font-size:12.5px;line-height:1.55;
+    margin:10px 0 16px;
+  }
+  table.sources th,table.sources td{
+    padding:8px 10px;text-align:left;vertical-align:top;
+    border-bottom:1px solid var(--rule);
+  }
+  table.sources thead th{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    letter-spacing:0.08em;text-transform:uppercase;font-weight:600;
+    border-bottom:1px solid var(--ink);background:var(--rule-soft);
+  }
+  table.sources td.id{width:110px}
+  table.sources td.id code{font-family:var(--mono);font-size:11px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+  table.sources td.iss{width:150px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em}
+  table.sources td a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--ink-faint);text-underline-offset:2px}
+
+  .risk{
+    background:#fff;border:1px solid var(--warn-ink);
+    padding:14px 20px;margin:10px 0 16px;
+    font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--ink);
+  }
+  .risk h4{
+    font-family:var(--mono);font-size:10.5px;color:var(--warn-ink);
+    letter-spacing:0.1em;text-transform:uppercase;margin:0 0 8px;font-weight:600;
+  }
+  .risk h4::before{content:"! "}
+  .risk ul{margin:6px 0 0;padding:0 0 0 20px}
+  .risk li{margin:0 0 8px;color:var(--ink-soft)}
+  .risk li strong{color:var(--ink)}
+
+  .term{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+  .hint{display:block;color:var(--ink-faint);font-size:12px;margin-top:3px;font-style:italic;font-family:var(--serif)}
+
+  .altlist{margin:10px 0 18px;padding:0;list-style:none}
+  .altlist > li{
+    border-top:1px solid var(--rule-soft);padding:14px 0;
+    display:grid;grid-template-columns:150px 1fr;gap:18px;
+    font-family:var(--sans);font-size:13px;line-height:1.65;color:var(--ink-soft);
+  }
+  .altlist > li:last-child{border-bottom:1px solid var(--rule-soft)}
+  .altlist .tgt{
+    font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.04em;
+    padding-top:2px;
+  }
+  .altlist .tgt small{display:block;font-size:10.5px;color:var(--ink-faint);margin-top:3px;text-transform:uppercase;letter-spacing:0.08em}
+  .altlist strong{color:var(--ink)}
+  .altlist .when{color:var(--ink-faint);font-size:12px;display:block;margin-top:4px;font-style:italic;font-family:var(--serif)}
+  .altlist a.pending{
+    color:var(--ink-faint);text-decoration:underline;text-decoration-style:dashed;
+    text-decoration-color:var(--ink-faint);text-underline-offset:3px;cursor:help;
+  }
+
+  footer.btm{
+    margin-top:80px;padding-top:14px;border-top:1px solid var(--rule);
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    display:flex;justify-content:space-between;letter-spacing:0.04em;
+  }
+
+  a{color:inherit}
+  .caveat a{color:var(--warn-ink)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <span class="l"><a href="../" style="color:inherit;text-decoration:none">relocate</a> · 路径详情 · 新加坡 · ONE Pass</span>
+  <span>仅供参考 · 非官方</span>
+</header>
+
+<main class="page">
+
+  <p class="kicker">路径详情 · 家庭单位 · ONE Pass → PR → Citizenship</p>
+  <h1>新加坡 · ONE Pass（Overseas Networks &amp; Expertise Pass）· 家庭完整路径</h1>
+  <p class="sub">
+    <code>sg-one-pass-to-citizenship</code> · 含 Dependant's Pass 配偶与 21 岁以下子女 · 5 年长签 → PR → Singapore Citizenship（需放弃中国籍）
+  </p>
+  <p class="meta">
+    <span>version v0.1</span>
+    <span>最后编辑 2026-04-20</span>
+    <span>家庭单位视角 · 亦可单人套用</span>
+    <span><a href="../" style="color:inherit">← 回到 relocate 首页</a></span>
+  </p>
+
+  <div class="caveat">
+    <p><strong>仅供参考 · 非官方：</strong>本页整理自 MOM / ICA / IRAS / AGC 的公开条款、政策页与法令全文。面向中文读者做路径速览，<strong>不是法律意见，不是移民中介建议，不替代律师</strong>。新加坡准证系统由 MOM 高度裁量，PR 与公民则由 ICA 在封闭规则下审批（无公开配额、拒批无理由），个案差异极大。</p>
+    <p><strong>本页边界：</strong>本页专讲 ONE Pass 这条路径（工作准证 → PR → 公民）及其上下游；EP / Tech.Pass / PEP 只在 § 1、§ 8 作为相邻对比出现。新加坡对中国大陆出生的申请人没有"国别排期"，但有严格的单一国籍制度（Constitution Art 134）——入籍时必须放弃中国国籍（见中国《国籍法》§9）。</p>
+    <p><strong>数字怎么来的：</strong>每一处门槛、年限都标了可自行复核的官方出处（见 § 10）。ONE Pass 的续签口径（累计收入 SGD 1.5M 等）在 2024 年定下，之后可能调整；任何时候以 MOM 的当期公告为准。</p>
+  </div>
+
+  <dl class="chip">
+    <div>
+      <dt>国家</dt>
+      <dd>新加坡 <small>sg</small></dd>
+    </div>
+    <div>
+      <dt>起点准证</dt>
+      <dd>ONE Pass <small>+ DP 家属</small></dd>
+    </div>
+    <div>
+      <dt>月薪门槛</dt>
+      <dd>SGD 30,000 <small>或国际公认成就档</small></dd>
+    </div>
+    <div>
+      <dt>首次有效期</dt>
+      <dd>5 年 <small>EP 最长 3 年对照</small></dd>
+    </div>
+    <div>
+      <dt>PR 最短</dt>
+      <dd>6 月起可申 <small>批与不批靠 ICA 裁量</small></dd>
+    </div>
+    <div>
+      <dt>入公民</dt>
+      <dd>PR 后 ≥ 2 年 <small>单一国籍 · 放弃中国籍</small></dd>
+    </div>
+  </dl>
+
+  <nav class="stagenav">
+    <a href="#stage-overview">
+      <span class="lbl">§ 0</span>
+      <span class="t">全景图</span>
+      <span class="b">四段推进 · 一张盒图</span>
+    </a>
+    <a href="#stage-enter">
+      <span class="lbl">§ 1</span>
+      <span class="t">ONE Pass 入境</span>
+      <span class="b">门槛 · 申请 · DP 家属</span>
+    </a>
+    <a href="#stage-hold">
+      <span class="lbl">§ 2</span>
+      <span class="t">准证维持</span>
+      <span class="b">多雇主 · 开公司 · 续签</span>
+    </a>
+    <a href="#stage-pr">
+      <span class="lbl">§ 3</span>
+      <span class="t">升 PR</span>
+      <span class="b">PTS 通道 · REP</span>
+    </a>
+    <a href="#stage-citizen">
+      <span class="lbl">§ 4</span>
+      <span class="t">升公民</span>
+      <span class="b">PR ≥ 2 年 · 单一国籍</span>
+    </a>
+    <a href="#stage-alt">
+      <span class="lbl">§ 7–8</span>
+      <span class="t">风险 · 备选</span>
+      <span class="b">EP / PEP / 其他国</span>
+    </a>
+  </nav>
+
+  <!-- ============ § 0 全景图 ============ -->
+  <section id="stage-overview">
+    <h2><span class="n">§ 0</span>全景图</h2>
+    <p class="lede">先看形状。下面这张盒图是一次"家庭三人"从申请 ONE Pass 到拿到新加坡公民的全部主要节点与分支。新加坡不像美国那样有"国别排期"，也不像日本那样明确"最短 1 年永住"——ONE Pass 本身是 <em>准证</em>、不是居留权；PR 与公民由 ICA 全裁量审批，无公开配额、拒批不给理由。</p>
+
+<div class="flowchart">
+<span class="br">[ 入境前 · 在海外 ]</span>
+    持续高薪 offer / 或国际成就证据 + 公司/自办实体
+                        │
+                        ▼
+              ┌─────────────────────┐
+              │  <span class="hi">§ 1 MOM 递 ONE Pass 申请</span>   │
+              │  Form 190A / 在 MyMOM   │
+              │  审理约 4–8 周          │
+              └──────────┬──────────┘
+                         │ 批准 IPA 信
+                         ▼
+              ┌─────────────────────┐
+              │  入境并 Issue 准证卡   │
+              │  <span class="hi">ONE Pass 5 年有效</span>       │
+              └──────────┬──────────┘
+                         │ 同时
+       ┌─────────────────┼─────────────────┐
+       ▼                 ▼                 ▼
+   <span class="br">主申工作</span>        <span class="br">配偶 DP</span>         <span class="br">21 岁以下子女 DP</span>
+   可多雇主 / 开公司  可凭 LOC 工作       可入读本地 /国际学校
+   可同时任董事                          22 岁起须换准证
+                         │
+                         ▼ <span class="hi">§ 3 PR（最短住 6 月起可递）</span>
+              ┌─────────────────────┐
+              │ ICA · PTS Scheme      │
+              │ 在线 e-PR 系统        │
+              │ 批与不批靠 ICA 裁量   │
+              └──────────┬──────────┘
+                         │ 批准
+                         ▼
+              <span class="hi">§ 4 PR ≥ 2 年后 可申 Singapore Citizenship</span>
+                         │
+                         ▼ 宣誓
+              <span class="hi">新加坡公民 · 单一国籍</span>
+              <span class="br">（Constitution Art 134 + 中国《国籍法》§9 同时生效 → 失中国籍、注销中国护照）</span>
+</div>
+
+    <h3><span class="n">0.1</span>四个关键身份的层级</h3>
+    <table class="sources">
+      <thead><tr><th>层级</th><th>法源</th><th>授予机构</th><th>工作权 / 居留权</th><th>家属派生</th></tr></thead>
+      <tbody>
+        <tr><td>ONE Pass（准证）</td><td>Employment of Foreign Manpower Act §7 · Immigration Act §9</td><td>MOM</td><td>工作 ✓ · 居留 ✓（5 年）· 自由换 / 多雇主 · 可当董事</td><td>DP（配偶、子女）· LOC（配偶工作权）</td></tr>
+        <tr><td>PR（永久居民）</td><td>Immigration Act §10 · §12</td><td>ICA</td><td>工作 ✓（无需准证）· 居留 ✓（Re-Entry Permit 每 5 年续）</td><td>可替家人申 PR / LTVP</td></tr>
+        <tr><td>Citizenship（公民）</td><td>Constitution Part X · Art 122–141</td><td>ICA</td><td>全权 · 护照 · 投票 · 义务兵役（男性）</td><td>可替家人申公民；子女出生即公民</td></tr>
+        <tr><td><em>对比：</em>EP（一般工签）</td><td>同上</td><td>MOM</td><td>工作 ✓（绑一个雇主）· 首次 2 年 · 续 3 年</td><td>DP 与 ONE Pass 相同，但 LOC 门槛更紧</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">0.2</span>ONE Pass 与 EP / Tech.Pass 的三点关键差异</h3>
+    <table class="sources">
+      <thead><tr><th>维度</th><th>ONE Pass</th><th>Tech.Pass（2021 起）</th><th>EP（基线工签）</th></tr></thead>
+      <tbody>
+        <tr><td>月薪门槛</td><td><strong>≥ SGD 30,000</strong>（或国际成就档）</td><td>≥ SGD 20,000（历史口径）</td><td>≥ SGD 5,600（金融业 ≥ 6,200）· 随年龄阶梯</td></tr>
+        <tr><td>首次有效期</td><td><strong>5 年</strong></td><td>2 年</td><td>≤ 2 年</td></tr>
+        <tr><td>雇主绑定</td><td><strong>不绑定 · 可多雇主 · 可自办公司并为董事</strong></td><td>需 EDB 背书</td><td>绑定一个雇主；换工作须重办</td></tr>
+        <tr><td>续签条件</td><td>累计本地应税收入 ≥ SGD 1.5M（过去 5 年），或继续月薪 30k，或继续成就</td><td>5 项 KPI 中至少达成 4 项（导师 / 创业 / 融资 / 研究等）</td><td>雇主重新申请；续签概率随工资、行业、本地雇员比例波动</td></tr>
+        <tr><td>面向</td><td>高薪高管 / 跨国资深技术人 / 国际知名成就者</td><td>科技圈高管 / 创始人</td><td>普通专业人士</td></tr>
+        <tr><td>正文位置</td><td>本页</td><td>§ 8.2（替代）</td><td>§ 8.1（替代 / 降档）</td></tr>
+      </tbody>
+    </table>
+    <p>ONE Pass 2023 年 1 月推出后，事实上把 Tech.Pass 的高薪档位吸收了一大半；仍持有 Tech.Pass 的人可继续，新申请则多转向 ONE Pass。</p>
+
+    <h3><span class="n">0.3</span>三大优势（为什么选这条）</h3>
+    <div class="node">
+      <div class="big">5 年长签 · 解耦雇主 · 低税 + 亚洲枢纽</div>
+      <p><strong>① 5 年长签：</strong>EP 首次最多 2 年，换工作还要重办；ONE Pass 一次 5 年免刷，中间换工作 / 跳雇主 / 自办公司都不需要重新申请。</p>
+      <p><strong>② 完全解耦雇主：</strong>可同时为多个新加坡公司工作、担任多家公司的董事、创办自己的公司并聘自己——这是 EP 完全做不到的。对"一份高管正职 + 几个董事 + 自己 SPV" 的典型高净值职业形态几乎无缝。</p>
+      <p><strong>③ 低税 + 亚洲枢纽：</strong>居民个税累进到 24%（SGD 100 万以上档，2024 后从 22% 调升），整体税负明显低于美 / 英 / 德；时区覆盖亚太全段，飞中国 / 香港 / 日本 / 印度都在 2–6 小时内。IRAS 的 <a href="../../data/archive/sg/one-pass/iras/tax-residency.html" target="_blank" rel="noopener">tax residency 183 天规则</a>简单可算。</p>
+    </div>
+  </section>
+
+  <!-- ============ § 1 ONE Pass 入境 ============ -->
+  <section id="stage-enter">
+    <h2><span class="n">§ 1</span>ONE Pass 入境 · 门槛与申请</h2>
+    <p class="lede">ONE Pass 由 MOM 审批、MOM 发准证。门槛分为两档：薪资档（硬指标）与成就档（软指标）。达任一档即可递。</p>
+
+    <h3><span class="n">1.1</span>申请资格 · 两档门槛</h3>
+    <div class="node">
+      <div class="ntop"><span>§1.1 · MOM ONE Pass Eligibility</span></div>
+      <div class="big">薪资档 · 月薪 ≥ SGD 30,000（最近 1 年）</div>
+      <p>"最近 1 年"指过去一年在新加坡现有雇主 <em>或</em> 海外知名企业获得的固定月薪（<span class="term">fixed monthly salary</span>）。口径：</p>
+      <ul>
+        <li><strong>固定</strong>工资（不含 bonus / RSU / 奖金 / 补贴）· 若一部分是 RSU / 股票，按年化现金等价方式折算</li>
+        <li>若"海外雇主"：必须是市值 ≥ USD 500M 或年收入 ≥ USD 200M 的知名企业（MOM 依公开数据自主核实）</li>
+        <li>若在新加坡就业：需已在新加坡持 EP ≥ 6 个月，且达到本档月薪</li>
+      </ul>
+      <p><strong>核心参考：</strong>月薪 SGD 30,000 大致等价于年薪 SGD 360,000 固定（不含 bonus），约 USD 270,000。</p>
+    </div>
+
+    <div class="node">
+      <div class="ntop"><span>§1.1 · MOM ONE Pass Eligibility · Outstanding Achievements</span></div>
+      <div class="big">成就档 · 国际公认成就（免薪资门槛）</div>
+      <p>不达薪资门槛但在 <strong>科学 · 科技 · 学术 / 研究 · 艺术文化 · 体育</strong>五个领域内有国际层面可佐证的杰出成就，亦可申。MOM 的表述是 "outstanding achievements in arts and culture, sports, science and technology, or academia and research"。实务接近美国 EB-1A 的证据结构：</p>
+      <ul>
+        <li>国家或国际级奖项（不是公司内部 / 地方奖）</li>
+        <li>顶刊 / 顶会论文与显著引用、媒体报道</li>
+        <li>主要机构的领导 / 关键角色、严格会员标准的专业团体成员（Fellow 等）</li>
+      </ul>
+      <p>MOM 保留是否受理的完全裁量权——本档比薪资档模糊得多，通常需要配一份"国内国际背书" + 实际业务 / 研究 / 创业计划书。</p>
+    </div>
+
+    <h3><span class="n">1.2</span>申请流程 · 约 4–8 周</h3>
+    <table class="sources">
+      <thead><tr><th>步骤</th><th>谁做</th><th>耗时</th><th>产出</th></tr></thead>
+      <tbody>
+        <tr><td>1. 准备文件</td><td>申请人 / 雇主</td><td>2–4 周</td><td>护照、学历、过去 1 年工资单、IRAS 税单、offer letter / 公司注册</td></tr>
+        <tr><td>2. MyMOM 在线递 Form 190A</td><td>申请人或雇主</td><td>当日</td><td>Application acknowledgement</td></tr>
+        <tr><td>3. MOM 审理</td><td>MOM</td><td>≥ 4 周（复杂个案 8+ 周）</td><td>IPA（In-Principle Approval）信</td></tr>
+        <tr><td>4. 入境</td><td>申请人</td><td>依机票</td><td>凭 IPA 入境 · 签证官在机场做核对</td></tr>
+        <tr><td>5. Issue 准证卡</td><td>MOM · 申请人</td><td>1–2 周</td><td>ONE Pass 实体卡 · 5 年有效期</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">1.3</span>家属派生 · DP · LOC</h3>
+    <div class="node">
+      <div class="ntop"><span>§1.3 · MOM Dependant's Pass · Letter of Consent</span></div>
+      <div class="big">配偶 + 21 岁以下未婚子女 → DP · 配偶凭 LOC 可工作</div>
+      <p><strong>Dependant's Pass（DP）：</strong></p>
+      <ul>
+        <li><strong>谁可申：</strong>法律意义上的配偶（同性伴侣不纳入） · 21 岁以下未婚子女（含继子女与领养子女）</li>
+        <li><strong>有效期：</strong>随主申的 ONE Pass · 主申失效则 DP 同步失效</li>
+        <li><strong>居留权：</strong>与主申共处 · 无月天数要求但保留身份须保持非丢 DP</li>
+      </ul>
+      <p><strong>配偶工作权 · LOC（Letter of Consent）：</strong>配偶持 DP 后另申 <span class="term">LOC</span>，批了即可在新加坡自由工作——不限雇主、不限行业、无薪资门槛。这是新加坡相对美国 H-4 / 日本 HSP 配偶就业权最宽的一处。</p>
+      <p><strong>21 岁以上子女：</strong>DP 失效，须转 Long-Term Visit Pass（LTVP，父母赞助）或独立准证（EP / S-Pass / 学签）。</p>
+      <dl class="kv">
+        <dt>法律</dt><dd><a href="../../data/archive/sg/one-pass/agc/efma.html" target="_blank" rel="noopener">Employment of Foreign Manpower Act</a>（Cap 91A）· <a href="../../data/archive/sg/one-pass/agc/immigration-act.html" target="_blank" rel="noopener">Immigration Act</a>（Cap 133）</dd>
+        <dt>政策页</dt><dd><a href="../../data/archive/sg/one-pass/mom/dependants-pass.html" target="_blank" rel="noopener">MOM · Dependant's Pass</a></dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ § 2 维持 ============ -->
+  <section id="stage-hold">
+    <h2><span class="n">§ 2</span>准证维持 · 多雇主 · 开公司 · 续签</h2>
+    <p class="lede">ONE Pass 的最大价值是"持证期间无雇主绑定"——这带来全新的收入结构可能性，也意味着续签时要对自己的收入 / 成就账本负责。</p>
+
+    <h3><span class="n">2.1</span>在持证期间可以做的事</h3>
+    <ul>
+      <li><strong>为多家新加坡公司同时工作</strong>：可同时是 A 公司 CTO、B 创业公司 advisor、C 投资公司独立董事——只要全部按 ONE Pass 的报工范围</li>
+      <li><strong>自办公司并担任 Director</strong>：可设立 Pte Ltd 聘自己（部分高净值"正职 + Holding + 咨询"结构的标准做法）</li>
+      <li><strong>就地换雇主</strong>：无须 MOM 报备审批，直接入职新公司；但换主雇主后的收入仍须在续签时计入累计</li>
+      <li><strong>出国短期出差</strong>：无最短居住天数硬指标，但 PR / 入籍阶段 ICA 仍会看居住比率</li>
+    </ul>
+
+    <h3><span class="n">2.2</span>续签门槛 · 三条路径满足一条</h3>
+    <div class="node">
+      <div class="ntop"><span>§2.2 · MOM ONE Pass Renewal</span></div>
+      <div class="big">5 年末续签 · 再加 5 年</div>
+      <p>MOM 公布的续签口径是"三条中满足一条"：</p>
+      <ol>
+        <li><strong>累计收入：</strong>过去 5 年在新加坡的可评估收入（assessable income，以 IRAS 税单为准）累计 ≥ <strong>SGD 1,500,000</strong>；或</li>
+        <li><strong>持续高薪：</strong>当前月薪仍 ≥ SGD 30,000 固定；或</li>
+        <li><strong>持续成就：</strong>在 ONE Pass 持证期间为新加坡经济 / 创业生态创造实质贡献，MOM 以个案裁量。典型：<ul>
+          <li>在新加坡新设公司、雇佣本地员工（MOM 会看 Total Employment Manpower 数字）</li>
+          <li>本地募资 / 产生 revenue</li>
+          <li>持续公开演讲 / 研究 / 艺术产出并获本地媒体报道</li>
+        </ul></li>
+      </ol>
+      <p><strong>口径会调整：</strong>2024 年定下的数字未来可能动，任何时候以 MOM 当期公告为准。</p>
+      <dl class="kv">
+        <dt>官方</dt><dd><a href="../../data/archive/sg/one-pass/mom/one-pass_overview.html" target="_blank" rel="noopener">MOM · ONE Pass 总览</a> · <a href="../../data/archive/sg/one-pass/mom/one-pass_eligibility.html" target="_blank" rel="noopener">Eligibility &amp; Renewal</a></dd>
+      </dl>
+    </div>
+
+    <h3><span class="n">2.3</span>税务 · IRAS</h3>
+    <p>持证后在新加坡居住 ≥ 183 天（当年内）或跨 3 年累计 ≥ 183 天即为"tax resident"，适用累进税率（最高 24%，2024 后）。非居民按统一 24% 或最低税率中较高者计。</p>
+    <ul>
+      <li><strong>海外收入：</strong>新加坡采属地征税——在新加坡境外赚取且未汇入新加坡的收入通常不征税（Not-Ordinarily-Resident / Non-Ordinarily-Resident 判定特别细，请咨询税务师）</li>
+      <li><strong>双重征税：</strong>中国与新加坡有 DTA · 美国无全面 DTA，但持 H-1B / 绿卡等美国税务连接仍须向 IRS 申报全球收入（LPR 路径兼容度差）</li>
+      <li><strong>CPF（公积金）：</strong>外籍准证持有人<strong>不必缴、也不能缴</strong> CPF；转 PR 后开始缴</li>
+    </ul>
+    <p><a href="../../data/archive/sg/one-pass/iras/tax-residency.html" target="_blank" rel="noopener">IRAS · Tax Residency &amp; Tax Rates</a></p>
+
+    <h3><span class="n">2.4</span>家庭维持</h3>
+    <div class="familytrack">
+      <div class="row">
+        <div class="l">主申 ONE Pass <small>续 5 年</small></div>
+        <div class="r"><em>Y1–Y5</em> 可多雇主 · 自办公司 <em>Y5</em> 续签（三条满一条）<em>Y6–Y10</em> 续签后继续</div>
+      </div>
+      <div class="row">
+        <div class="l">配偶 DP + LOC <small>工作权</small></div>
+        <div class="r"><em>Y1</em> 随主申拿 DP <em>Y1+</em> 另递 LOC（4–6 周）即可就业或自办 <em>Y≥2</em> 可独立申请 EP / S-Pass / 自己 ONE Pass 替代主线</div>
+      </div>
+      <div class="row">
+        <div class="l">子女 DP <small>就学</small></div>
+        <div class="r"><em>Y1</em> 随主申拿 DP <em>Y1+</em> 可读本地公立 / 国际学校 <em>22 岁前</em> 必须转 LTVP / 独立准证</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ § 3 升 PR ============ -->
+  <section id="stage-pr">
+    <h2><span class="n">§ 3</span>升 PR · ICA 裁量通道 · PTS Scheme</h2>
+    <p class="lede">新加坡 PR 由 ICA 按 PTS（<em>Professionals / Technical Personnel and Skilled Workers</em>）通道审批；持 ONE Pass 满 ≥ 6 个月起即可递，但<strong>批与不批完全靠 ICA 裁量</strong>——无配额 / 无公开打分表 / 拒批不给理由，一年一次或两次重递即可。</p>
+
+    <div class="node">
+      <div class="ntop"><span>§3 · Immigration Act §10 · §12 · ICA PR e-Service</span></div>
+      <div class="big">门槛是"不明示、靠综合印象"</div>
+      <p><strong>ICA 审查的常见综合维度</strong>（业内总结、非官方公开）：</p>
+      <ul>
+        <li><strong>长期价值感：</strong>在新加坡已经纳税多久 / 有多稳定的雇主 / 有没有本地雇员 / 有没有在新加坡买房或长租</li>
+        <li><strong>经济产出：</strong>IRAS 税单的"assessable income"数字比 offer letter 的名义工资更重要——ICA 看的是"你实际交了多少税"</li>
+        <li><strong>社会嵌入：</strong>子女读的是本地学校还是国际学校、配偶是否在新加坡就业 / 开公司、是否有本地社区 / NGO / 行业协会参与</li>
+        <li><strong>学历 · 行业 · 年龄</strong>：ONE Pass 持证本身是强信号（MOM 已筛过），ICA 通常对 ONE Pass 持证者的审批比 EP 更积极，但仍无保证</li>
+      </ul>
+      <p><strong>时间线：</strong></p>
+      <ul>
+        <li>递 e-PR（在线表 + 证据扫描件）→ 4–6 个月出结果</li>
+        <li>批准：IPA 信 → 3 个月内完成 formalities 并领 PR 卡（<span class="term">Entry Permit</span>）</li>
+        <li>拒批：不给理由 → 建议等 6–12 个月后（收入 / 职位 / 社会参与度有新变化时）重递</li>
+      </ul>
+      <p><strong>PR 的 Re-Entry Permit（REP）：</strong>PR 卡本身每 5 年随附 REP，用于离境后返回的权利；若 REP 过期时人在国外未及时续，PR 身份可被取消——这是维持 PR 的最重要硬性约束。长期不在新加坡的 PR（如回中国工作）容易在 REP 续期时被拒。</p>
+      <dl class="kv">
+        <dt>法律</dt><dd><a href="../../data/archive/sg/one-pass/agc/immigration-act.html" target="_blank" rel="noopener">Immigration Act · Cap 133</a>（§10 Entry Permit · §12 PR）</dd>
+        <dt>申请入口</dt><dd><a href="../../data/archive/sg/one-pass/ica/permanent-residence.html" target="_blank" rel="noopener">ICA · Becoming a PR</a></dd>
+      </dl>
+    </div>
+
+    <h3><span class="n">3.1</span>配偶 / 子女随 PR</h3>
+    <p>主申拿 PR 后，配偶与 21 岁以下未婚子女可<strong>同一份 e-PR 表</strong>附申；也可在主申获批后单独递。配偶获 PR 后即独立工作权（不再需要 LOC / DP），并开始缴 CPF。子女若在新加坡出生 + 父母至少一方为新加坡公民，自动公民；若父母为 PR，则子女可申 PR。</p>
+
+    <h3><span class="n">3.2</span>CPF（Central Provident Fund）义务</h3>
+    <p>转 PR 当月起雇主与雇员开始缴 CPF（基本是三个子账户 OA / SA / MA）· 缴费率首 1 年较低（14% 雇员 + 4% 雇主），从第 3 年起按新加坡公民口径（20% + 17%）。CPF 同时是强制养老金与住房基金（可用 OA 买政府组屋 BTO / 私宅 DP）——成为进入公民的重要财务节点。</p>
+  </section>
+
+  <!-- ============ § 4 升公民 ============ -->
+  <section id="stage-citizen">
+    <h2><span class="n">§ 4</span>升公民 · Singapore Citizenship · 单一国籍</h2>
+    <p class="lede">新加坡实行<strong>单一国籍</strong>（Constitution Art 134）——入籍时必须放弃原国籍。对中国大陆出生者而言，<em>中国《国籍法》§9</em> 也同步生效："定居外国的中国公民，自愿加入或取得外国国籍的，自动丧失中国国籍"——两条冲突规则彼此自洽。</p>
+
+    <div class="node">
+      <div class="ntop"><span>§4 · Constitution Part X · Art 122–141 · Citizenship by Registration</span></div>
+      <div class="big">PR ≥ 2 年后可申 · 年满 21 · 无犯罪</div>
+      <p><strong>法定门槛（Constitution Art 123 - Registration）：</strong></p>
+      <ul>
+        <li>年满 <strong>21 岁</strong>；</li>
+        <li>持 PR ≥ <strong>2 年</strong>（实务通常建议 ≥ 5 年 PR 再递，批准率更高）；</li>
+        <li>能够讲 <strong>英 / 马来 / 华 / 泰米尔</strong>任一官方语言；</li>
+        <li>有意永久定居新加坡；</li>
+        <li>品德良好、无重大犯罪记录。</li>
+      </ul>
+      <p><strong>实务门槛（ICA 综合裁量）：</strong>与 PR 同构——纳税多少、本地雇员、是否买 HDB / 私宅、社区嵌入、子女就学、配偶 / 孩子是否也递。</p>
+      <p><strong>时间线：</strong></p>
+      <ul>
+        <li>递 Citizenship e-Service → 6–12 个月出结果</li>
+        <li>批准：邀请参加 <strong>Citizenship Journey</strong> 半日项目 + 宣誓（Oath of Renunciation, Allegiance and Loyalty）</li>
+        <li>宣誓后：3 个月内须完成放弃原国籍手续 · 注销中国护照（若中国大陆出生）· 领新加坡身份证与护照</li>
+      </ul>
+      <dl class="kv">
+        <dt>法律</dt><dd><a href="../../data/archive/sg/one-pass/agc/constitution-art-122-141.html" target="_blank" rel="noopener">Constitution of Singapore · Part X</a>（§122–141）</dd>
+        <dt>申请入口</dt><dd><a href="../../data/archive/sg/one-pass/ica/citizenship.html" target="_blank" rel="noopener">ICA · Becoming a Singapore Citizen</a></dd>
+      </dl>
+    </div>
+
+    <h3><span class="n">4.1</span>21 岁以下子女同期入籍</h3>
+    <p>主申获批公民后，未成年子女（含 PR 子女 / DP 子女 / 随同申请中的子女）可依 Constitution Art 122 以 <em>Citizenship by Descent</em> 或 <em>Registration</em> 一同入籍，无须单独走 2 年 PR 期——这和美国 CCA 2000 的自动入籍规则功能上类似，但技术上是"同一申请下的合并处理"而不是"法律自动触发"。</p>
+
+    <h3><span class="n">4.2</span>中国籍的同步处理</h3>
+    <p>宣誓即生效的双向触发：</p>
+    <ul>
+      <li><strong>新加坡侧：</strong>Constitution Art 134 要求 registered citizen 在合理时间内放弃原国籍并提交放弃证明（渣打 / 驻华使馆可代转交中国大使馆的《退籍申请》）</li>
+      <li><strong>中国侧：</strong>依中国《国籍法》§9，在宣誓加入新加坡国籍那一刻"自动丧失中国国籍"——《国籍法》§10 规定的"申请退籍"和 §9 的"自动丧失"并列生效，实务上建议尽早办理 §10 的正式退籍证明以便中国户籍注销与护照注销</li>
+      <li><strong>护照处理：</strong>中国驻新加坡大使馆会在确认失籍后配合完成护照注销、户籍注销；此后回中国须持新加坡护照 + 签证</li>
+    </ul>
+    <p class="hint">不是所有人都能走到这一步。ICA 拒批率公开讨论中估计在 50% 以上；重大分歧点通常是"是否足够嵌入新加坡社会"——在新加坡住但核心业务仍在海外的人容易栽在这一条。</p>
+  </section>
+
+  <!-- ============ § 5 家庭玩法 ============ -->
+  <section id="stage-family">
+    <h2><span class="n">§ 5</span>家庭玩法 · 三种典型配置</h2>
+    <p class="lede">ONE Pass 家庭相对 EP 家庭的最大优势在"配偶 LOC 无门槛工作权"与"5 年长签"——这让家庭可以在更从容的节奏下做选择。以下三种是最常见的配置。</p>
+
+    <h3><span class="n">5.1</span>双线 A · 主 ONE Pass + 配偶 LOC</h3>
+    <div class="node">
+      <div class="big">最常见组合 · 配偶凭 DP + LOC 自由工作</div>
+      <ul>
+        <li><strong>触发时机：</strong>主申拿 ONE Pass 即可（不用等）</li>
+        <li><strong>配偶方：</strong>DP 发卡后立即递 LOC → 4–6 周批 → 任何雇主 / 任何行业就业或开公司。LOC 没有月薪门槛、没有行业限制（安保 / 医生等个别需进一步注册的职业除外）</li>
+        <li><strong>PR 时机：</strong>建议主申持 ONE Pass 12–18 个月后主+副同期递 PR，批准率比单递高</li>
+      </ul>
+    </div>
+
+    <h3><span class="n">5.2</span>双线 B · 主 ONE Pass + 配偶独立 ONE Pass / EP</h3>
+    <div class="node">
+      <div class="big">夫妻双方都高薪或双方都有 ONE Pass 资格时最稳健</div>
+      <ul>
+        <li><strong>触发时机：</strong>配偶本人月薪达 SGD 30k 或本身有国际成就</li>
+        <li><strong>优势：</strong>两条独立准证 · 两条独立 PR 线 · 两条独立公民线 · 家庭整体韧性最高；配偶失去 ONE Pass 资格时可用 EP 无缝接续</li>
+        <li><strong>PR 实务：</strong>两人各自独立递 e-PR，通常有利于 ICA 印象</li>
+      </ul>
+    </div>
+
+    <h3><span class="n">5.3</span>双线 C · 主 ONE Pass + 配偶 EP</h3>
+    <p>若配偶薪资未达 ONE Pass 门槛但找到愿意办 EP 的雇主，也可走 EP 独立线。EP 绑定雇主 + 首次 2 年，相对不稳定，但适合配偶薪资 SGD 5.6k–30k 的档位。</p>
+  </section>
+
+  <!-- ============ § 6 家庭三线图 ============ -->
+  <section id="stage-timeline">
+    <h2><span class="n">§ 6</span>家庭三线图 · 典型 3 年 PR + 2 年公民节奏</h2>
+    <p class="lede">以"主申 ONE Pass + 配偶 LOC + 1 个学龄子女"为例，最快节奏的时间线大致如下。实际视 ICA 裁量与个人情况浮动。</p>
+
+<div class="flowchart">
+<span class="br">Y0</span>    主申 ONE Pass 下签 · 全家入境
+<span class="br">Y0+1M</span>  配偶 LOC 生效 · 开始工作或开公司
+<span class="br">Y1</span>    子女适应本地学校 · 开始纳本地税
+<span class="br">Y2</span>    税单累计清晰 · 全家同期递 PR
+<span class="br">Y2.5</span>  PR 批 · 开始缴 CPF · 买 HDB / 私宅的节点
+<span class="br">Y4–Y5</span> <span class="hi">PR 满 2 年 · 开始看公民节奏</span>
+<span class="br">Y5–Y6</span> 递公民 · 建议 ≥ 5 年 PR 再递以提升批准率
+<span class="br">Y6–Y7</span> <span class="hi">公民批 · 宣誓 · 放弃中国籍 · 注销中国护照 · 领新加坡 IC</span>
+</div>
+    <p class="hint">相比之下，EP 路径通常 Y3–Y4 递 PR（前期税单更薄），总时长约 Y8–Y10 入籍；ONE Pass 的 5 年长签与跳雇主自由让前 2 年的"税单厚度"可以更快建立。</p>
+  </section>
+
+  <!-- ============ § 7 风险 ============ -->
+  <section id="stage-risk">
+    <h2><span class="n">§ 7</span>核心风险点</h2>
+
+    <div class="risk">
+      <h4>ONE Pass 持证期的结构性风险</h4>
+      <ul>
+        <li><strong>续签口径的不确定性：</strong>累计 SGD 1.5M / 5 年的硬指标 2024 年刚定，未来可能上调或加新口径。规划时建议按 "SGD 1.5M + 持续高薪" 两条都达到冗余。</li>
+        <li><strong>收入结构的税务镜像：</strong>一部分高净值持证人把收入留在海外控股公司不汇入新加坡 → IRAS 税单"薄"→ ICA PR / 公民审批时不利。避险：主动提高本地 assessable income 比例。</li>
+        <li><strong>家庭 LOC 失效：</strong>主申失去 ONE Pass 资格（如续签被拒），配偶 DP + LOC 同步失效，整个家庭进入倒计时。缓冲：配偶独立 path（双线 B）。</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>PR / 公民阶段的裁量风险</h4>
+      <ul>
+        <li><strong>无公开打分：</strong>不像加拿大 Express Entry 有 CRS，新加坡 PR / 公民都没有公开打分表；ICA 可以不给理由拒批，这是结构性信息不对称。</li>
+        <li><strong>长期离境风险：</strong>PR 持有人若长期在国外（如回中国工作）→ REP 续期易被拒 → PR 失效。规划回亚洲频繁出差的工作模式时须注意物理存在比例。</li>
+        <li><strong>子女兵役：</strong>PR 男性子女 16.5 岁起须登记服兵役（NS），18 岁起入伍服役 2 年。若 15 岁前未拿 PR，入 PR 年龄越晚、NS 豁免空间越小——若放弃 PR 以回避 NS，将影响父母的 PR / 公民状态 + 未来入境资格。</li>
+        <li><strong>宣誓后的 3 个月：</strong>公民宣誓后 3 个月内须完成原国籍放弃——中国领馆实际办理周期可能超过 3 个月，需提前安排。</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>并发美 / 日 path 的互斥</h4>
+      <ul>
+        <li><strong>与美国 LPR 的冲突：</strong>若同时持有美国绿卡，Reentry Permit + 全球纳税义务与新加坡 PR / 公民路径互斥——规划时需在某个阶段二选一。</li>
+        <li><strong>与日本永住的冲突：</strong>日本要求"永住后以日本为生活中心"，与新加坡 PR 的居住比率要求同时存在时须做家庭分居 / 时序切换规划。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 8 备选切换 ============ -->
+  <section id="stage-alt">
+    <h2><span class="n">§ 8</span>备选切换 · 这条走不通怎么办</h2>
+    <p class="lede">ONE Pass 门槛高（月薪 30k 或国际成就）· ICA 裁量重。下面按降档次序列出备选与跨国替代。</p>
+
+    <ul class="altlist">
+      <li>
+        <span class="tgt">SG · EP（Employment Pass）<small>最常见的降档</small></span>
+        <div>
+          <strong>门槛：</strong>月薪 ≥ SGD 5,600（金融 6,200）· 依年龄阶梯升档 · COMPASS 打分制（工资 + 学历 + 多元化 + 本地雇员占比）。<strong>何时考虑：</strong>月薪达不到 SGD 30,000 但有 offer。<strong>价值：</strong>仍可走 DP / LOC · PR / 公民通道相同 · 但续签 + 换工作更繁琐。
+          <span class="when">官方：<a href="../../data/archive/sg/one-pass/mom/employment-pass.html" target="_blank" rel="noopener">MOM · Employment Pass</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">SG · Tech.Pass<small>2023 后逐步并入 ONE Pass</small></span>
+        <div>
+          <strong>门槛：</strong>月薪 ≥ SGD 20,000（历史档）或有海外科技公司 5–10 年高管经验。<strong>何时考虑：</strong>处于"薪资差一点 + 科技背景强"的尴尬区间。<strong>价值：</strong>2 年长签 · 可多雇主 · 续签看"5 项 KPI 中 4 项"。新申请者 MOM 一般建议直接考虑 ONE Pass；已持 Tech.Pass 可继续。
+          <span class="when">官方：<a href="https://www.edb.gov.sg/en/how-we-help/incentives-and-schemes/tech-pass.html" target="_blank" rel="noopener">EDB · Tech.Pass</a>（EDB 站反爬 · 本地未归档）</span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">SG · PEP（Personalised Employment Pass）<small>解耦雇主的老款</small></span>
+        <div>
+          <strong>门槛：</strong>最近年薪 ≥ SGD 270,000（2023 年从 144k 大幅上调）。<strong>何时考虑：</strong>ONE Pass 成就档证据不足但年薪高。<strong>价值：</strong>3 年不可续 · 不绑定雇主 · 失业后 6 月宽限期。门槛与 ONE Pass 薪资档接近但年限更短、不可续——基本被 ONE Pass 覆盖，仅余历史持有人。
+          <span class="when">官方：MOM · Personalised Employment Pass</span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">US · EB-1A<small>杰出人才自荐绿卡</small></span>
+        <div>
+          <strong>门槛：</strong>一次性国际大奖 或 8 CFR 204.5(h) 10 条标准中 ≥ 3 条 + Kazarian 两段论整体判定。<strong>何时考虑：</strong>申请人本身在科研 / 工程 / 创业领域具备国际显性成就，且偏好美国。<strong>价值：</strong>自荐 · 免 PERM · 大陆出生排期 ≤ 2 年；配偶与子女同获绿卡。
+          <span class="when">详情：<a href="us-eb1a.html">本站 · 美国 EB-1A 杰出人才自荐绿卡</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">US · O-1A<small>杰出人才签证 · 非移民</small></span>
+        <div>
+          <strong>门槛：</strong>8 CFR 214.2(o)(3)(iii) 八项标准中至少三项。<strong>何时考虑：</strong>还不够 EB-1A、但需立即入境美国工作；或把 SG 作为备胎、主 path 放美国。<strong>价值：</strong>无年度配额 · 3+1+1…无限续签 · 常为 EB-1A 热身。
+          <span class="when">详情：<a href="us-o1.html">本站 · 美国 O-1 杰出人才</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">JP · HSP 1 号イ / ロ / ハ<small>高度専門職 · 永住最短 1 年</small></span>
+        <div>
+          <strong>门槛：</strong>法务省积分制 ≥ 70 分（年收入 + 学历 + 年龄 + 研究成果 + 经营业绩）。<strong>何时考虑：</strong>偏好日本市场、薪资档位介于新加坡 EP 与 ONE Pass 之间。<strong>价值：</strong>80 分可 1 年即申永住；配偶可全职。
+          <span class="when">详情：<a href="jp-hsp.html">本站 · 日本 HSP 1 号ロ 技术系</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">UK · Global Talent<small>科技 / 学术 / 艺术三赛道背书</small></span>
+        <div>
+          <strong>门槛：</strong>经 Tech Nation（已退役，由 RAEng 等接管） / Royal Society / British Academy 等指定机构 endorsement。<strong>价值：</strong>无雇主绑定 · 5 年可申 ILR；Exceptional Talent 档 3 年可申 ILR。
+          <span class="when">占位：<a class="pending" href="#" title="待建：uk-global-talent">本站 · UK Global Talent</a>（未建）· 官方：<a href="https://www.gov.uk/global-talent" target="_blank" rel="noopener">GOV.UK · Global Talent visa</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">CA · Global Talent Stream<small>雇主主导 · 2 周处理</small></span>
+        <div>
+          <strong>门槛：</strong>进入 ESDC 指定职业清单，雇主提交 LMBP（Labour Market Benefits Plan）。<strong>价值：</strong>2 周快速处理；配偶自动 open work permit；接续 Express Entry → PR 通道。
+          <span class="when">占位：<a class="pending" href="#" title="待建：ca-gts">本站 · CA Global Talent Stream</a>（未建）· 官方：<a href="https://www.canada.ca/en/employment-social-development/services/foreign-workers/global-talent.html" target="_blank" rel="noopener">ESDC · Global Talent Stream</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">AE · Golden Visa<small>10 年居留 · 低税</small></span>
+        <div>
+          <strong>门槛：</strong>专业人才档（月薪 AED 30,000+）或投资档（AED 2M+ 房产 / 基金）或特殊成就档。<strong>价值：</strong>10 年长签 · 零个人所得税 · 配偶与子女一同。<strong>劣势：</strong>不提供公民化通道、长期定居须重复续签。
+          <span class="when">占位：<a class="pending" href="#" title="待建：ae-golden-visa">本站 · UAE Golden Visa</a>（未建）· 官方：UAE ICA · Golden Visa</span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ § 10 官方文件总表 ============ -->
+  <section id="stage-sources">
+    <h2><span class="n">§ 10</span>官方文件总表 <span class="tag">含本地归档</span></h2>
+    <p class="lede">本表列出 ONE Pass 路径上所有引用的官方原件，均在 <a href="../../data/archive/sg/one-pass/" target="_blank" rel="noopener"><code>data/archive/sg/one-pass/</code></a> 下有快照。新加坡政府站多数用稳定英文 URL，更新频率较低，档案抓取成功率较其他国家高。</p>
+
+    <h3><span class="n">10.1</span>法律 · Statutes（AGC · Singapore Statutes Online）</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布 / 出处</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>EFMA</code></td><td>Employment of Foreign Manpower Act（外籍人力就业法）· 准证执行法源</td><td class="iss">AGC · Cap 91A</td><td><a href="../../data/archive/sg/one-pass/agc/efma.html" target="_blank" rel="noopener">agc/efma.html</a></td></tr>
+        <tr><td class="id"><code>IA</code></td><td>Immigration Act（入境法）· 入境 / Entry Permit / PR 法源</td><td class="iss">AGC · Cap 133</td><td><a href="../../data/archive/sg/one-pass/agc/immigration-act.html" target="_blank" rel="noopener">agc/immigration-act.html</a></td></tr>
+        <tr><td class="id"><code>CONS §122–141</code></td><td>Constitution of Singapore · Part X · Citizenship（公民身份）</td><td class="iss">AGC · Constitution 1965</td><td><a href="../../data/archive/sg/one-pass/agc/constitution-art-122-141.html" target="_blank" rel="noopener">agc/constitution-art-122-141.html</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.2</span>政策页 · MOM · ICA · IRAS</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布 / 出处</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>p-one-ov</code></td><td>MOM · ONE Pass 总览</td><td class="iss">MOM mom.gov.sg</td><td><a href="../../data/archive/sg/one-pass/mom/one-pass_overview.html" target="_blank" rel="noopener">mom/one-pass_overview.html</a></td></tr>
+        <tr><td class="id"><code>p-one-elig</code></td><td>MOM · ONE Pass Eligibility（薪资档 / 成就档 / 续签）</td><td class="iss">MOM mom.gov.sg</td><td><a href="../../data/archive/sg/one-pass/mom/one-pass_eligibility.html" target="_blank" rel="noopener">mom/one-pass_eligibility.html</a></td></tr>
+        <tr><td class="id"><code>p-ep</code></td><td>MOM · Employment Pass（EP 基线）</td><td class="iss">MOM mom.gov.sg</td><td><a href="../../data/archive/sg/one-pass/mom/employment-pass.html" target="_blank" rel="noopener">mom/employment-pass.html</a></td></tr>
+        <tr><td class="id"><code>p-dp</code></td><td>MOM · Dependant's Pass + LOC 配偶工作权</td><td class="iss">MOM mom.gov.sg</td><td><a href="../../data/archive/sg/one-pass/mom/dependants-pass.html" target="_blank" rel="noopener">mom/dependants-pass.html</a></td></tr>
+        <tr><td class="id"><code>p-pr</code></td><td>ICA · Becoming a Permanent Resident（PTS Scheme）</td><td class="iss">ICA ica.gov.sg</td><td><a href="../../data/archive/sg/one-pass/ica/permanent-residence.html" target="_blank" rel="noopener">ica/permanent-residence.html</a></td></tr>
+        <tr><td class="id"><code>p-sc</code></td><td>ICA · Becoming a Singapore Citizen</td><td class="iss">ICA ica.gov.sg</td><td><a href="../../data/archive/sg/one-pass/ica/citizenship.html" target="_blank" rel="noopener">ica/citizenship.html</a></td></tr>
+        <tr><td class="id"><code>p-tax</code></td><td>IRAS · Tax Residency &amp; Tax Rates（183 天规则 · 居民累进税率）</td><td class="iss">IRAS iras.gov.sg</td><td><a href="../../data/archive/sg/one-pass/iras/tax-residency.html" target="_blank" rel="noopener">iras/tax-residency.html</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.3</span>表格 · 申请入口（在线）</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>说明</th><th>入口</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>Form 190A</code></td><td>ONE Pass / EP 申请表（在 MyMOM 在线递）</td><td class="iss"><a href="https://www.mom.gov.sg/eservices/services/mymom-portal" target="_blank" rel="noopener">MyMOM Portal</a></td></tr>
+        <tr><td class="id"><code>e-PR</code></td><td>ICA Permanent Residence e-Service（在线表 + 证据）</td><td class="iss"><a href="https://www.ica.gov.sg/reside/PR/apply" target="_blank" rel="noopener">ICA · PR 申请</a></td></tr>
+        <tr><td class="id"><code>e-SC</code></td><td>ICA Citizenship e-Service</td><td class="iss"><a href="https://www.ica.gov.sg/reside/citizenship/apply" target="_blank" rel="noopener">ICA · 公民申请</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.4</span>其他外部参考（不做本地归档 · 易变 URL）</h3>
+    <ul>
+      <li><a href="https://www.mom.gov.sg/newsroom/press-releases/2022/0829-overseas-networks-and-expertise-pass" target="_blank" rel="noopener">MOM 新闻稿（2022-08-29）· ONE Pass 开闸公告</a></li>
+      <li><a href="https://www.edb.gov.sg/en/how-we-help/incentives-and-schemes/tech-pass.html" target="_blank" rel="noopener">EDB · Tech.Pass</a></li>
+      <li><a href="https://www.mom.gov.sg/passes-and-permits/personalised-employment-pass" target="_blank" rel="noopener">MOM · Personalised Employment Pass（PEP）</a></li>
+    </ul>
+
+    <p class="hint">本表"本地归档"指向的是仓库内 <code>data/archive/sg/one-pass/</code> 下已下载的官方原件快照。本页所有内链在 <code>site/paths/</code> 下以相对路径解析（<code>../../data/archive/...</code>）。若本地文件缺失，请在仓库根下运行 <code>bash data/archive/sg/one-pass/download.sh</code> 重新拉取。</p>
+  </section>
+
+  <footer class="btm">
+    <span>relocate · sg-one-pass · v0.1</span>
+    <span>© 本站非商用 · 内容引自官方公开条款与指南</span>
+  </footer>
+
+</main>
+</body>
+</html>

@@ -41,6 +41,10 @@
   - `data/archive/us/eb1a/`（USCIS 2 份：EB-1 overview 与 Policy Manual Vol 6 Part F Ch 2 · EB-1A Extraordinary Ability 含 Kazarian 两段论与 10 条标准逐条释义）+ README + download.sh；全部共用件（INA §203/§245/§316/§319/§320/§202 · 8 CFR 204.5/245 · 22 CFR 42.12 · AC21 / CSPA / CCA · I-140 / I-907 / I-485 / I-765 / I-131 / I-693 / DS-260 / N-400 / N-600 等）沿用 `data/archive/us/l1b/`
   - 按"共用则引用不复制"原则：页面 § 6.3 绿卡收尾 / LPR 维持 / N-400 全部引 `us-l1b.html § 4–5` 与 `us-overview.html § 4 / § 6 / § 7`，不重复照搬
   - 跨链接：`site/index.html` 路径列表新增 EB-1A 条目（紧随 O-1）；`site/paths/us-overview.html` § 2 NIV 字母表 EB-1A 行加 "详见本站 EB-1A 路径" 链接，§ 11 "本站美国 path 索引" 新增 EB-1A 条目，§ 11 页末的"待补路径清单"中移除 EB-1A；`site/paths/us-l1a.html` § 8 的 `us-eb1a` pending 占位改为本站实链（保留官方 archive fallback 链接）；`site/paths/us-l1b.html` § 8 的 EB-1A / EB-1B 条目 EB-1A 字样加本站内链；`site/paths/us-h1b.html` § 7 EB-2 → EB-1A / NIW 条目 EB-1A 字样加本站内链；`site/paths/us-o1.html` § 5 开头补 "详见本站 EB-1A 路径"
+- **2026-04-20 · 新增 SG ONE Pass 高薪 / 杰出人才路径 + 官方原件归档**（第一条非美国 / 非日本 path）：
+  - [`site/paths/sg-one-pass.html`](site/paths/sg-one-pass.html) — ONE Pass（Overseas Networks & Expertise Pass）两档门槛（月薪 SGD 30k 档 vs outstanding achievements 成就档）· 5 年长签 · 多雇主 + 自办公司 + 董事权 · Dependant's Pass + 配偶 LOC 工作权 · 续签三条口径（累计 SGD 1.5M 或持续高薪或持续成就）· IRAS 183 天 tax residency · PR（ICA PTS Scheme · 裁量审批 · REP 维持）· Citizenship（Constitution Art 122–141 · PR ≥ 2 年 · 单一国籍制度 Art 134 · 与中国《国籍法》§9 的双向触发）· CPF 义务 · 子女 NS 兵役 · 三种家庭配置 · § 8 备选切换（EP / Tech.Pass / PEP / 美 EB-1A / 美 O-1A / JP HSP / UK Global Talent / CA GTS / UAE Golden Visa）· § 10 官方文件四张子表全带本地归档列
+  - `data/archive/sg/one-pass/`（MOM 4：ONE Pass overview / eligibility / EP / Dependant's Pass · ICA 2：PR / Citizenship · IRAS 1：tax residency · AGC 3：EFMA Cap 91A / Immigration Act Cap 133 / Constitution Part X Art 122–141）+ README + download.sh；Tech.Pass 因 EDB 反爬 + MOM 原页 404 不强制归档，页面内仅作相邻对比
+  - 跨链接：`site/index.html` 路径列表新增 SG ONE Pass 条目（首条 SG 路径，紧随 US EB-1A）；`site/paths/us-l1a.html` § 8 · `site/paths/us-h1b.html` § 7 · `site/paths/us-l1b.html` § 8 · `site/paths/us-o1.html` § 8 · `site/paths/us-eb1a.html` § 8 · `site/paths/jp-hsp.html` § 5 共 6 页的"Singapore · ONE Pass" 条目全部从 MOM 外链或 pending 占位改为本站内链（保留 MOM fallback 链接）
 - 技术栈：**纯静态 HTML / CSS，无框架、无构建**（[docs/engineering.md](docs/engineering.md)）
 - 可部署目录：[site/](site/)
 - 已有路径页：
@@ -51,6 +55,7 @@
   - [`site/paths/us-h1b.html`](site/paths/us-h1b.html) — 美国 · H-1B · 抽签 → 工签 → 永居 → 入籍
   - [`site/paths/us-o1.html`](site/paths/us-o1.html) — 美国 · O-1 · 杰出人才 → EB-1A → 永居 → 入籍
   - [`site/paths/us-eb1a.html`](site/paths/us-eb1a.html) — 美国 · EB-1A · 杰出人才自荐绿卡（不是签证 · 绿卡分类页）
+  - [`site/paths/sg-one-pass.html`](site/paths/sg-one-pass.html) — 新加坡 · ONE Pass · 工签 → PR → Citizenship
 
 ## Next · 下一步
 
@@ -73,7 +78,6 @@
 | `ca-gts` | `site/paths/ca-gts.html` | 两个路径页的跨国切换段 |
 | `au-gtv` | `site/paths/au-gtv.html` | us-l1b.html § 8 |
 | `uk-global-talent` | `site/paths/uk-global-talent.html` | 两个路径页 |
-| `sg-one-pass` | `site/paths/sg-one-pass.html` | 两个路径页 |
 
 优先级建议：`us-niw`（EB-2 国家利益豁免）与 EB-1A 证据高度重合，是 EB-1A 最常见并行备选；`us-eb1b`（杰出教研）与 EB-1A 同享 EB-1 排期池——两条都是 L-1A / O-1 / H-1B / EB-1A 路径页 § 8 的下一个待补占位。
 
@@ -92,6 +96,7 @@
 - ~~新增 US H-1B 路径 + 归档 + 首页更新 + 交叉链接~~（2026-04-19，本次）
 - ~~新增 US L-1A 路径 + 归档 + 四页交叉链接 + 共用段引用 L-1B 页~~（2026-04-20，本次）
 - ~~新增 US EB-1A 杰出人才自荐绿卡页 + Policy Manual Vol 6 Part F Ch 2 归档 + 六页交叉链接~~（2026-04-20，本次）
+- ~~新增 SG ONE Pass 路径 + MOM / ICA / IRAS / AGC 共 10 份官方原件归档 + 六页交叉链接~~（2026-04-20，本次）
 
 ## Don't · 别做
 
