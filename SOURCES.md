@@ -29,13 +29,13 @@ pivot 后允许以"二手"身份引用律所 / 博客 / 论坛的整理，但在
 
 ## § 1 · 已登记的源
 
-### us / l1b-family（批量登记，2026-04-19）
+### us / l1b（批量登记，2026-04-19）
 
-对应 [`site/paths/us-l1b-family.html`](site/paths/us-l1b-family.html) 引用的全部官方一手文件。
+对应 [`site/paths/us-l1b.html`](site/paths/us-l1b.html) 引用的全部官方一手文件。
 
-- 归档位置：[`data/archive/us/l1b-family/`](data/archive/us/l1b-family/)
-- 完整源 URL 清单见归档目录下的 [`download.sh`](data/archive/us/l1b-family/download.sh)（可重放）
-- 抓取日志：[`_download.log`](data/archive/us/l1b-family/_download.log)
+- 归档位置：[`data/archive/us/l1b/`](data/archive/us/l1b/)
+- 完整源 URL 清单见归档目录下的 [`download.sh`](data/archive/us/l1b/download.sh)（可重放）
+- 抓取日志：[`_download.log`](data/archive/us/l1b/_download.log)
 
 涉及发布机关：
 

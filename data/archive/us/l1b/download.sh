@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# 下载 path-detail-us-l1b-family.html § 8 官方文件总表 全部可下载的官方原件。
+# 下载 path-detail-us-l1b.html § 8 官方文件总表 全部可下载的官方原件。
 # 在线交互式表单（DS-160 / DS-260）无 PDF，用 .url 占位。
 # 所有目标均来自 RULES.md 白名单级别一手源（.gov 或 Cornell LII / govinfo）。
 set -u

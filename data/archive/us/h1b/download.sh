@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # 下载 site/paths/us-h1b.html § 10 官方文件总表（及正文引用）中可下载的官方原件。
 # 来源：USCIS / DOL OFLC / DOS / Cornell LII / govinfo。
-# 说明：与 L-1B 共用的成文法 / CFR / AC21 等，已在 data/archive/us/l1b-family/ 归档，
+# 说明：与 L-1B 共用的成文法 / CFR / AC21 等，已在 data/archive/us/l1b/ 归档，
 # 本 h1b 目录只抓 H-1B 独有的政策页 · LCA 表格 · H-4 EAD 说明等。
 set -u
 
@@ -40,7 +40,7 @@ fetch "https://www.uscis.gov/tools/reports-and-studies/h-1b-employer-data-hub" \
 fetch "https://www.uscis.gov/policy-manual/volume-2-part-h" \
       "uscis/policy-manual_vol2-part-h.html"
 # H-4 EAD · cap-gap 两个话题的专题页近期均经历 URL 重组，USCIS 搜索目前仅
-# 可在浏览器交互下命中；本路径下不重复归档，沿用 us/l1b-family/policy/ 已归档的
+# 可在浏览器交互下命中；本路径下不重复归档，沿用 us/l1b/policy/ 已归档的
 # `uscis_H4-E-L-spouse-EAD.html`（H-4/E/L 配偶 EAD 合并政策页）。
 
 # ------------------------------------------------------------
@@ -53,7 +53,7 @@ fetch "https://www.dol.gov/agencies/whd/immigration/h1b" \
 
 # ------------------------------------------------------------
 # § 10.3  法规 — LCA 实施细则
-# （8 USC 1101/1184、8 CFR 214.2、AC21 等与 L-1B 共享，见 us/l1b-family/）
+# （8 USC 1101/1184、8 CFR 214.2、AC21 等与 L-1B 共享，见 us/l1b/）
 # ------------------------------------------------------------
 fetch "https://www.ecfr.gov/current/title-20/chapter-V/part-655/subpart-H" \
       "regulations/20-CFR-655_H_LCA.html"

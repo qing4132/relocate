@@ -1,12 +1,12 @@
 # US · L-1B Family Path · 官方文件归档
 
-对应路径详情 [`site/paths/us-l1b-family.html`](../../../../site/paths/us-l1b-family.html) § 8。
+对应路径详情 [`site/paths/us-l1b.html`](../../../../site/paths/us-l1b.html) § 8。
 本目录下每一份文件都直接来自发布机关（`.gov` / `law.cornell.edu` / `congress.gov`）原始下载，
 不经任何二次编辑。要更新：运行 `download.sh`，它会跳过已存在的文件，只补齐缺失项。
 
 首次归档日期：2026-04-19。
 
-> 本目录原位于 `archive/garden-experiment-2026-04-19/design/sources/us-l1b-family/`，
+> 本目录原位于 `archive/garden-experiment-2026-04-19/design/sources/us-l1b/`，
 > 2026-04-19 pivot 后挪至此处。原抓取脚本 `download.sh` 与 `_download.log` 一并挪动，
 > 目录内容与原归档一字不改。
 

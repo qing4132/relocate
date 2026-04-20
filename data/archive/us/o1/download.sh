@@ -3,7 +3,7 @@
 # 来源：USCIS / Cornell LII / eCFR。
 # 说明：与 L-1B / H-1B 共用的 INA §101 / §214 / §245 / §316 / §319 / §320 ·
 # AC21 · CSPA · CCA · 8 CFR 245 · I-485 / I-765 / I-131 / I-693 / N-400 / N-470 /
-# N-600 · IRS Pub 519 等已在 data/archive/us/l1b-family/ 与 data/archive/us/h1b/
+# N-600 · IRS Pub 519 等已在 data/archive/us/l1b/ 与 data/archive/us/h1b/
 # 归档，本 o1 目录只抓 O-1 独有的政策与法规页。
 set -u
 

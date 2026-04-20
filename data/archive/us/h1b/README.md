@@ -38,6 +38,6 @@
 
 ## 说明
 
-- **H-4 EAD（2022 年政策）与 cap-gap OPT（F-1 过桥）** 两个专题页的 USCIS 链接近期重组，目前仅在浏览器交互下可命中；本路径不在本目录重复归档。H-4/E/L 配偶 EAD 合并政策页已归档在 [`../l1b-family/policy/uscis_H4-E-L-spouse-EAD.html`](../l1b-family/policy/uscis_H4-E-L-spouse-EAD.html)，与 L-1 共用。
+- **H-4 EAD（2022 年政策）与 cap-gap OPT（F-1 过桥）** 两个专题页的 USCIS 链接近期重组，目前仅在浏览器交互下可命中；本路径不在本目录重复归档。H-4/E/L 配偶 EAD 合并政策页已归档在 [`../l1b/policy/uscis_H4-E-L-spouse-EAD.html`](../l1b/policy/uscis_H4-E-L-spouse-EAD.html)，与 L-1 共用。
 - **成文法与 CFR** 与 L-1B 家庭路径共享条款（INA § 101 / § 214、8 CFR 214.2），在本目录再抓一份以便 H-1B 子路径自包含。
-- **AC21 Pub. L. 106-313** 的原始 PDF 已在 [`../l1b-family/statutes/PubL-106-313_AC21.pdf`](../l1b-family/statutes/PubL-106-313_AC21.pdf) 归档，本目录不重复。
+- **AC21 Pub. L. 106-313** 的原始 PDF 已在 [`../l1b/statutes/PubL-106-313_AC21.pdf`](../l1b/statutes/PubL-106-313_AC21.pdf) 归档，本目录不重复。

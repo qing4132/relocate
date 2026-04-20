@@ -30,7 +30,7 @@ site/                     # 可部署静态站
 ├── index.html            # 首页
 └── paths/                # 路径详情页
     ├── jp-hsp.html       # 日本 · 高度専門職 1 号ロ
-    └── us-l1b-family.html
+    └── us-l1b.html
 
 data/                     # 引用过的官方文件本地归档
 └── archive/<country>/<path-slug>/

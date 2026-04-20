@@ -30,7 +30,7 @@
 
 | 归档期位置 | 现位置 |
 | --- | --- |
-| `design/path-detail-us-l1b-family.html` | [`site/paths/us-l1b-family.html`](../../site/paths/us-l1b-family.html) |
-| `design/sources/us-l1b-family/` | [`data/archive/us/l1b-family/`](../../data/archive/us/l1b-family/) |
+| `design/path-detail-us-l1b-family.html` | [`site/paths/us-l1b.html`](../../site/paths/us-l1b.html) |
+| `design/sources/us-l1b-family/` | [`data/archive/us/l1b/`](../../data/archive/us/l1b/) |
 
 按 [RULES.md](../../RULES.md) § 5.3，archive/ 目录永不删除，留作项目试错历史。
