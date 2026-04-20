@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /site/
+Allow: /data/archive/
+Disallow: /archive/
+Disallow: /design/
+Disallow: /docs/
+
+# 官方原件归档不入索引（避免与原站竞争 SEO）
+User-agent: *
+Disallow: /data/archive/*.html$
+
+Sitemap: https://relocate.example.com/sitemap.xml

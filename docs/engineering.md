@@ -62,13 +62,31 @@ python3 -m http.server 8000
 
 ## 部署
 
-**推荐：GitHub Pages，source 设为 `/site`。**
+**推荐：Cloudflare Pages，publish root 设为仓库根 `/`。**
 
-替代方案：
-- **Netlify / Cloudflare Pages**：publish directory 设为 `site`，无构建命令
-- **任意 nginx / Caddy**：`root` 指向 `site/` 即可
+- 理由：纯静态零构建；CF 国内 PoP 对中文读者访问体验好；**仓库可保持 private**（GitHub Pages 免费版要求 public）；自定义域名 + 自动 HTTPS 全包
+- 入口在 `/site/`，根目录有 `_redirects`（`/` → `/site/`）把根 URL 302 重定向到首页
+- 归档原件在 `/data/archive/...`，路径页用 `../../data/archive/...` 相对链接——**正因为 publish root 选仓库根而不是 `/site`，这些链接才能工作**
+- 根目录额外文件：
+  - [`_redirects`](../_redirects) — CF Pages 专用重写规则
+  - [`404.html`](../404.html) — CF Pages / GH Pages 均自动识别
+  - [`robots.txt`](../robots.txt) — 允许 `/site/` 和 `/data/archive/`（仅目录页）索引，封禁 `/archive/`、`/design/`、`/docs/`
+  - [`sitemap.xml`](../sitemap.xml) — 列出所有路径页；**上线前须把 `https://relocate.example.com` 替换为真实域名**，并在 `robots.txt` 中同步
 
-暂未正式公开部署；域名与上线时机未定。
+### 操作步骤（5 分钟）
+
+1. dash.cloudflare.com → Workers & Pages → Create → Pages → Connect to Git
+2. 选本仓库，`Production branch: main`
+3. Build settings：`Framework preset: None` · `Build command:`（留空）· `Build output directory:` 填 `/` 或留空
+4. Deploy → 拿到 `relocate-xxx.pages.dev`
+5. 自定义域名：Custom domains → Add（可选）
+6. 域名落地后，编辑 `sitemap.xml` 和 `robots.txt` 替换占位 URL，git push 即自动重新部署
+
+### 替代方案
+
+- **GitHub Pages**：Settings → Pages → Source: `Deploy from branch` → `main` → `/site`。但这会让 `../../data/archive/...` 链接 404（publish root 是 `/site`，归档在上层）。要么改用 `main` + `/`（让 GH Pages 当整仓根），要么全站改为 `/data/archive/...` 绝对路径——两者都比 CF Pages 折腾。另外仓库必须 public
+- **Netlify**：功能上与 CF Pages 等价，但国内访问更慢
+- **任意 nginx / Caddy**：`root` 指向仓库根，location `/` 重定向到 `/site/`
 
 ## 新增一条路径时
 

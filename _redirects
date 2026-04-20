@@ -1,0 +1,4 @@
+# Cloudflare Pages 重写规则
+# publish root 是仓库根 /，入口在 /site/，所以把根 URL 302 到 /site/
+# 路径页的 ../../data/archive/... 相对链接借此继续可访问
+/                /site/                  302
