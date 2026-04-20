@@ -36,7 +36,7 @@
   - 按"共用则引用不复制"原则：页面 § 4（绿卡收尾 I-485 vs DS-260）与 § 5（LPR 维持 / N-400 / CCA 子女自动入籍）直接引 `us-l1b.html` 对应段，不重复照搬
   - 跨链接：`site/paths/us-l1b.html` § 8 的 L-1B → L-1A 条目从 USCIS 外链改为本站 `us-l1a.html`；`site/paths/us-o1.html` § 8 的 O-1 → L-1A / L-1B 同时链到 L-1A 与 L-1B；`site/paths/us-h1b.html` § 8 的 H-1B → L-1B / L-1A 同时链两页；`site/paths/us-overview.html` § 2 NIV 字母表中 L-1A / L-1B 条目、§ 11 "本站美国 path 索引" 新增 L-1A 条目，§ 11 页末的"待补路径清单"中移除 L-1A
   - `site/index.html` 路径列表新增 L-1A 条目，置于 L-1B 之后 H-1B 之前
-- **2026-04-20 · 新增 US EB-1A 杰出人才自荐绿卡页 + 官方原件归档**（本次 commit）：
+- **2026-04-20 · 新增 US EB-1A 杰出人才自荐绿卡页 + 官方原件归档**（commit `84924b9`）：
   - [`site/paths/us-eb1a.html`](site/paths/us-eb1a.html) — 绿卡分类页（而非签证路径）· INA §203(b)(1)(A) · 8 CFR 204.5(h) · 一次性大奖 与 10 条证据标准 逐条释义 · <em>Kazarian v. USCIS</em> 两段论（Counting + Final Merits Determination）· 五类行业打包模板（科研 / 工程 / 创业 / 艺术 / 体育）· I-140 + I-907 加急 · 优先日 · Visa Bulletin · AOS concurrent filing · CP · E-14 / E-15 派生 · CSPA · § 7 从 H-1B / L-1 / O-1 / F-1 / 境外切入 · § 8 降档到 NIW / EB-1B / PERM / EB-5 · § 9 十条高频 RFE 触发点
   - `data/archive/us/eb1a/`（USCIS 2 份：EB-1 overview 与 Policy Manual Vol 6 Part F Ch 2 · EB-1A Extraordinary Ability 含 Kazarian 两段论与 10 条标准逐条释义）+ README + download.sh；全部共用件（INA §203/§245/§316/§319/§320/§202 · 8 CFR 204.5/245 · 22 CFR 42.12 · AC21 / CSPA / CCA · I-140 / I-907 / I-485 / I-765 / I-131 / I-693 / DS-260 / N-400 / N-600 等）沿用 `data/archive/us/l1b/`
   - 按"共用则引用不复制"原则：页面 § 6.3 绿卡收尾 / LPR 维持 / N-400 全部引 `us-l1b.html § 4–5` 与 `us-overview.html § 4 / § 6 / § 7`，不重复照搬
