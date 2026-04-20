@@ -1,0 +1,793 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>relocate · 路径详情 · 美国 EB-1A 杰出人才自荐绿卡 · 到入籍为止（仅供参考 · 非官方）</title>
+<style>
+  :root{
+    --ink:#141414;
+    --ink-soft:#3d3d3d;
+    --ink-faint:#8a8a8a;
+    --rule:#d8d8d8;
+    --rule-soft:#ebebeb;
+    --bg:#fdfbf7;
+    --warn-bg:#fff6e7;
+    --warn-ink:#6a4d00;
+    --inherit-bg:#f1efe9;
+    --branch-bg:#f5f2ea;
+    --serif:Georgia,"Source Han Serif SC","Noto Serif SC","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;
+    --mono:"SFMono-Regular","Menlo",Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:var(--serif);font-size:16.5px;line-height:1.78;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+
+  header.top{
+    padding:14px 40px;border-bottom:1px solid var(--rule);
+    display:flex;justify-content:space-between;align-items:baseline;
+    font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em;
+    background:#fff;
+  }
+  header.top .l{color:var(--ink)}
+
+  .page{max-width:920px;margin:0 auto;padding:56px 32px 140px}
+
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 10px}
+  h1{font-size:30px;font-weight:700;line-height:1.25;letter-spacing:-0.005em;margin:0 0 6px}
+  .sub{font-family:var(--sans);font-size:14px;color:var(--ink-soft);margin:0 0 14px;letter-spacing:0.01em}
+  .sub code{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 6px;border-radius:2px;color:var(--ink)}
+  .meta{
+    font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);
+    letter-spacing:0.04em;margin:0 0 28px;
+    padding-bottom:18px;border-bottom:1px solid var(--ink);
+  }
+  .meta span + span::before{content:" · ";margin:0 4px;color:var(--rule)}
+
+  .caveat{
+    background:var(--warn-bg);border:1px solid var(--warn-ink);
+    padding:14px 20px;margin:0 0 32px;
+    font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--warn-ink);
+  }
+  .caveat strong{color:#3c2a00}
+  .caveat p{margin:0 0 6px}
+  .caveat p:last-child{margin:0}
+
+  .chip{
+    display:grid;grid-template-columns:repeat(6, 1fr);
+    gap:0;background:#fff;border:1px solid var(--ink);
+    font-family:var(--sans);margin:0 0 36px;
+  }
+  .chip > div{padding:12px 14px;border-right:1px solid var(--rule)}
+  .chip > div:last-child{border-right:none}
+  .chip dt{
+    font-family:var(--mono);font-size:10px;color:var(--ink-faint);
+    letter-spacing:0.09em;text-transform:uppercase;margin:0 0 3px;
+  }
+  .chip dd{margin:0;font-size:13.5px;color:var(--ink);font-weight:600}
+  .chip dd small{display:block;font-weight:400;font-size:11.5px;color:var(--ink-faint);margin-top:2px;font-family:var(--mono)}
+
+  .stagenav{
+    display:grid;grid-template-columns:repeat(6, 1fr);
+    gap:6px;margin:0 0 40px;
+    font-family:var(--sans);
+  }
+  .stagenav a{
+    display:block;padding:10px 12px;
+    background:#fff;border:1px solid var(--ink);
+    text-decoration:none;color:var(--ink);
+  }
+  .stagenav a .lbl{
+    font-family:var(--mono);font-size:10px;color:var(--ink-faint);
+    letter-spacing:0.09em;text-transform:uppercase;display:block;margin-bottom:3px;
+  }
+  .stagenav a .t{font-size:14px;font-weight:700;display:block;line-height:1.3}
+  .stagenav a .b{font-size:11.5px;color:var(--ink-soft);display:block;margin-top:3px;font-family:var(--serif);line-height:1.45}
+
+  section{margin:56px 0 0}
+  section > h2{font-size:20px;font-weight:700;line-height:1.35;margin:0 0 4px}
+  section > h2 .n{
+    font-family:var(--mono);font-size:12px;font-weight:400;
+    color:var(--ink-faint);letter-spacing:0.08em;margin-right:10px;
+  }
+  section > h2 .tag{
+    font-family:var(--mono);font-size:10.5px;letter-spacing:0.06em;
+    padding:2px 7px;border:1px solid var(--ink-faint);color:var(--ink-faint);
+    font-weight:400;margin-left:10px;vertical-align:3px;
+  }
+  section > .lede{
+    font-family:var(--serif);font-style:italic;
+    color:var(--ink-soft);font-size:15.5px;line-height:1.7;margin:0 0 20px;
+  }
+
+  p{margin:0 0 1em}
+  h3{font-size:15.5px;font-weight:700;margin:26px 0 8px}
+  h3 .n{
+    font-family:var(--mono);font-size:11px;font-weight:400;
+    color:var(--ink-faint);letter-spacing:0.06em;margin-right:8px;
+  }
+  h4{font-size:13.5px;font-weight:700;margin:18px 0 6px;font-family:var(--sans)}
+
+  .node{
+    background:#fff;border:1px solid var(--ink);
+    padding:18px 22px;margin:14px 0 18px;
+    font-family:var(--sans);font-size:13.5px;line-height:1.7;
+  }
+  .node .ntop{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding-bottom:8px;border-bottom:1px solid var(--rule-soft);margin-bottom:12px;
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em;
+  }
+  .node .big{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink);line-height:1.35;margin:0 0 6px}
+  .node p{margin:0 0 10px;color:var(--ink-soft)}
+  .node p strong{color:var(--ink);font-weight:700}
+  .node dl.kv{
+    display:grid;grid-template-columns:140px 1fr;gap:6px 14px;
+    font-size:12.5px;color:var(--ink-soft);margin:12px 0 0;
+    padding-top:10px;border-top:1px dashed var(--rule);
+  }
+  .node dl.kv dt{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.06em;text-transform:uppercase;padding-top:2px}
+  .node dl.kv dd{margin:0}
+  .node dl.kv dd code{font-family:var(--mono);font-size:11.5px;background:var(--rule-soft);padding:1px 5px;border-radius:2px;color:var(--ink)}
+
+  .criteria{
+    background:#fff;border:1px solid var(--ink);margin:14px 0 22px;
+    font-family:var(--sans);
+  }
+  .criteria > .row{
+    display:grid;grid-template-columns:52px 1fr;
+    border-bottom:1px solid var(--rule);
+  }
+  .criteria > .row:last-child{border-bottom:none}
+  .criteria .idx{
+    padding:12px;text-align:center;background:var(--rule-soft);
+    border-right:1px solid var(--rule);
+    font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.04em;
+  }
+  .criteria .body{padding:12px 18px;font-size:13px;line-height:1.7;color:var(--ink-soft)}
+  .criteria .body strong{color:var(--ink);display:block;margin-bottom:3px;font-size:13.5px}
+  .criteria .body code{font-family:var(--mono);font-size:11.5px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+
+  .flowchart{
+    background:#fff;border:1px solid var(--ink);
+    padding:22px 24px;margin:10px 0 24px;
+    font-family:var(--mono);font-size:12.5px;line-height:1.8;
+    color:var(--ink);white-space:pre;overflow-x:auto;
+  }
+  .flowchart .hi{background:var(--rule-soft);padding:0 4px}
+  .flowchart .br{color:var(--ink-faint)}
+
+  table.sources{
+    width:100%;border-collapse:collapse;background:#fff;
+    font-family:var(--sans);font-size:12.5px;line-height:1.55;
+    margin:10px 0 16px;
+  }
+  table.sources th,table.sources td{
+    padding:8px 10px;text-align:left;vertical-align:top;
+    border-bottom:1px solid var(--rule);
+  }
+  table.sources thead th{
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    letter-spacing:0.08em;text-transform:uppercase;font-weight:600;
+    border-bottom:1px solid var(--ink);background:var(--rule-soft);
+  }
+  table.sources td.id{width:90px}
+  table.sources td.id code{font-family:var(--mono);font-size:11px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+  table.sources td.iss{width:160px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em}
+  table.sources td a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--ink-faint);text-underline-offset:2px}
+
+  .risk{
+    background:#fff;border:1px solid var(--warn-ink);
+    padding:14px 20px;margin:10px 0 16px;
+    font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--ink);
+  }
+  .risk h4{
+    font-family:var(--mono);font-size:10.5px;color:var(--warn-ink);
+    letter-spacing:0.1em;text-transform:uppercase;margin:0 0 8px;font-weight:600;
+  }
+  .risk h4::before{content:"! "}
+  .risk ul{margin:6px 0 0;padding:0 0 0 20px}
+  .risk li{margin:0 0 8px;color:var(--ink-soft)}
+  .risk li strong{color:var(--ink)}
+
+  .term{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+  .hint{display:block;color:var(--ink-faint);font-size:12px;margin-top:3px;font-style:italic;font-family:var(--serif)}
+
+  .altlist{margin:10px 0 18px;padding:0;list-style:none}
+  .altlist > li{
+    border-top:1px solid var(--rule-soft);padding:14px 0;
+    display:grid;grid-template-columns:150px 1fr;gap:18px;
+    font-family:var(--sans);font-size:13px;line-height:1.65;color:var(--ink-soft);
+  }
+  .altlist > li:last-child{border-bottom:1px solid var(--rule-soft)}
+  .altlist .tgt{
+    font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.04em;
+    padding-top:2px;
+  }
+  .altlist .tgt small{display:block;font-size:10.5px;color:var(--ink-faint);margin-top:3px;text-transform:uppercase;letter-spacing:0.08em}
+  .altlist strong{color:var(--ink)}
+  .altlist .when{color:var(--ink-faint);font-size:12px;display:block;margin-top:4px;font-style:italic;font-family:var(--serif)}
+  .altlist a.pending{
+    color:var(--ink-faint);text-decoration:underline;text-decoration-style:dashed;
+    text-decoration-color:var(--ink-faint);text-underline-offset:3px;cursor:help;
+  }
+
+  footer.btm{
+    margin-top:80px;padding-top:14px;border-top:1px solid var(--rule);
+    font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);
+    display:flex;justify-content:space-between;letter-spacing:0.04em;
+  }
+
+  a{color:inherit}
+  .caveat a{color:var(--warn-ink)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <span class="l"><a href="../" style="color:inherit;text-decoration:none">relocate</a> · 路径详情 · 美国 · EB-1A 杰出人才自荐绿卡</span>
+  <span>仅供参考 · 非官方</span>
+</header>
+
+<main class="page">
+
+  <p class="kicker">路径详情 · 绿卡分类 · EB-1A → LPR → 入籍</p>
+  <h1>美国 · EB-1A 杰出人才（Extraordinary Ability）· 自荐绿卡</h1>
+  <p class="sub">
+    <code>us-eb1a-to-naturalization</code> · 不是签证 · 是"绿卡类别" · 无雇主赞助 · 无 PERM · 可从 H-1B / L-1 / O-1 / F-1 OPT / 境外任一身份切入
+  </p>
+  <p class="meta">
+    <span>version v0.1</span>
+    <span>最后编辑 2026-04-20</span>
+    <span>绿卡分类视角 · 与具体签证解耦</span>
+    <span><a href="../" style="color:inherit">← 回到 relocate 首页</a></span>
+  </p>
+
+  <div class="caveat">
+    <p><strong>仅供参考 · 非官方：</strong>本页整理自 USCIS · 美国国务院 · Cornell LII · eCFR 的公开条款与政策手册。面向中文读者做路径速览，<strong>不是法律意见，不是移民中介建议，不替代律师</strong>。EB-1A 是高度证据驱动的自荐类别，个案差异极大，律师经验决定打包方式，最终策略务必找有 EB-1A / 审判决履历的律师设计。</p>
+    <p><strong>本页边界：</strong>本页专讲 EB-1A（<em>immigrant</em> 分类，不是签证）这一条。上游"我目前持什么身份在美 / 在境外"与本页是两个独立层次的问题，本页只在 § 7 讲如何从 H-1B / L-1 / O-1 / F-1 / 境外切入 EB-1A。下游的 LPR 维持、N-400 入籍、5-3-18 规则、中国国籍法第 9 条等跨所有 US path 共性内容，写在 <a href="us-overview.html">us-overview</a> 与 <a href="us-l1b.html">us-l1b § 4–5</a>，本页不重复。</p>
+    <p><strong>数字怎么来的：</strong>每一处门槛、节点都标了可自行复核的官方出处（见 § 10）。USCIS 在证据审查上有大量裁量空间，本页给的是条文 + 一般实务，具体打包请以律师判断为准。</p>
+  </div>
+
+  <dl class="chip">
+    <div>
+      <dt>分类编号</dt>
+      <dd>EB-1A <small>INA §203(b)(1)(A)</small></dd>
+    </div>
+    <div>
+      <dt>细则</dt>
+      <dd>8 CFR 204.5(h) <small>10 条标准</small></dd>
+    </div>
+    <div>
+      <dt>雇主</dt>
+      <dd>不需要 <small>self-petition</small></dd>
+    </div>
+    <div>
+      <dt>PERM</dt>
+      <dd>免 <small>跳过 EB-2/EB-3 的 10–24 月</small></dd>
+    </div>
+    <div>
+      <dt>大陆出生排期</dt>
+      <dd>近年多 current<small>或 ≤ 2 年 · 见 Visa Bulletin</small></dd>
+    </div>
+    <div>
+      <dt>典型总时长</dt>
+      <dd>2–4 年拿绿卡 <small>+ 5 年入籍</small></dd>
+    </div>
+  </dl>
+
+  <nav class="stagenav">
+    <a href="#stage-overview">
+      <span class="lbl">§ 0</span>
+      <span class="t">全景</span>
+      <span class="b">EB-1A 是什么 · 条款地图</span>
+    </a>
+    <a href="#stage-threshold">
+      <span class="lbl">§ 1–2</span>
+      <span class="t">证据门槛</span>
+      <span class="b">一次性大奖 · 或 10 条 ≥ 3 条</span>
+    </a>
+    <a href="#stage-kazarian">
+      <span class="lbl">§ 3</span>
+      <span class="t">Kazarian 两段论</span>
+      <span class="b">数条文 + 整体判定</span>
+    </a>
+    <a href="#stage-pack">
+      <span class="lbl">§ 4</span>
+      <span class="t">行业打包</span>
+      <span class="b">科研 / 工程 / 创业 / 艺术 / 体育</span>
+    </a>
+    <a href="#stage-file">
+      <span class="lbl">§ 5</span>
+      <span class="t">申请流程</span>
+      <span class="b">I-140 + I-907 → PD → I-485 / CP</span>
+    </a>
+    <a href="#stage-family">
+      <span class="lbl">§ 6–8</span>
+      <span class="t">家属 · 切入 · 备选</span>
+      <span class="b">E-14 / E-15 · 上游 path · 降档</span>
+    </a>
+  </nav>
+
+  <!-- ============ § 0 全景 ============ -->
+  <section id="stage-overview">
+    <h2><span class="n">§ 0</span>全景 · EB-1A 是什么 · 条款地图</h2>
+    <p class="lede">先把 EB-1A 放在美国移民体系里定位：它是职业移民第一优先（EB-1）下的 <strong>A 档</strong>，自荐、免 PERM、无雇主，和紧邻的 EB-1B（教研）、EB-1C（跨国高管）并列。下面这张图展示从"我目前持某种身份"到"通过 EB-1A 拿绿卡再入籍"的全部关键节点。</p>
+
+<div class="flowchart">
+<span class="br">[ 上游身份 · 任一均可 ]</span>
+  H-1B        L-1A / L-1B     O-1A / O-1B    F-1 OPT      <span class="br">境外（中国 / 他国）</span>
+    \\            \\                \\             \\                /
+     \\            \\                \\             \\              /
+      └────────────┴────────────────┴──────────────┴────────────┘
+                                    │
+                                    ▼
+                  ┌─────────────────────────────────┐
+                  │  <span class="hi">§ 1–2 证据门槛自评</span>                │
+                  │  一次性大奖（Nobel / Pulitzer…） │
+                  │  或 10 条标准中 ≥ 3 条           │
+                  └──────────────┬──────────────────┘
+                                 │ 证据链成熟
+                                 ▼
+                  ┌─────────────────────────────────┐
+                  │  <span class="hi">§ 5.1 递交 I-140</span>                 │
+                  │  EB-1A 自荐 · 可加急 I-907       │
+                  │  审理 2–8 周（PP）or 4–12 月     │
+                  └──────────────┬──────────────────┘
+                                 │ I-140 approved
+                                 ▼
+                  ┌─────────────────────────────────┐
+                  │  <span class="hi">§ 5.2 优先日 · Visa Bulletin</span>      │
+                  │  Priority Date = USCIS 收表日    │
+                  │  大陆出生 EB-1 近年多 current    │
+                  └──────────────┬──────────────────┘
+                                 │ PD current
+                                 ▼
+                  ┌─────────────────┬───────────────┐
+                  │  境内 AOS        │  境外 CP       │
+                  │  I-485+I-765+   │  NVC→DS-260→  │
+                  │  I-131 同递     │  使馆面签      │
+                  └──────────┬──────┴──────┬─────────┘
+                             │ 获批          │ 入境
+                             ▼             ▼
+                       <span class="hi">LPR（绿卡）· 本人 E-11 · 配偶 E-14 · 子女 E-15</span>
+                                 │
+                                 ▼ 维持 5 年（30 月物理在美）
+                       <span class="hi">N-400 入籍</span>（公民配偶可 3-3-18）
+                                 │
+                                 ▼
+                       美国公民 · 子女按 CCA 2000 自动入籍
+                       <span class="br">（中国《国籍法》§9 失中国籍 · 注销中国护照）</span>
+</div>
+
+    <h3><span class="n">0.1</span>和邻近 EB-1 档的三点差异</h3>
+    <table class="sources">
+      <thead><tr><th>维度</th><th>EB-1A 杰出人才</th><th>EB-1B 杰出教研</th><th>EB-1C 跨国高管</th></tr></thead>
+      <tbody>
+        <tr><td>法源</td><td>INA §203(b)(1)(A)</td><td>§203(b)(1)(B)</td><td>§203(b)(1)(C)</td></tr>
+        <tr><td>细则</td><td>8 CFR 204.5(h)</td><td>204.5(i)</td><td>204.5(j)</td></tr>
+        <tr><td>需要雇主</td><td><strong>不需要</strong> · 自荐</td><td>需要（大学 / 研究机构 / 私企 R&D）</td><td>需要（美国雇主运营 ≥ 1 年）</td></tr>
+        <tr><td>需要 offer</td><td>不需要（仅需证明"continue work in the field"）</td><td>通常需要 tenure / tenure-track / permanent</td><td>需要管理 / 高管职位 offer</td></tr>
+        <tr><td>证据数量</td><td>一次性大奖 或 10 条 ≥ 3 条</td><td>6 条 ≥ 2 条</td><td>1+3 年 managerial / executive</td></tr>
+        <tr><td>典型对接 NIV</td><td>O-1A · H-1B · L-1 · 任意</td><td>H-1B · O-1A</td><td>L-1A</td></tr>
+      </tbody>
+    </table>
+    <p>三档共享同一个 EB-1 排期池、同一份 I-140 表格，但审查侧重不同。EB-1A 的独特之处是 <strong>"和雇主完全解耦"</strong>——这带来最大的职业自由度，也是 EB-1A 最被高技能自由职业者 / 创业者 / 研究者追捧的原因。</p>
+
+    <h3><span class="n">0.2</span>三大优势（为什么值得做）</h3>
+    <div class="node">
+      <div class="big">自荐 · 免 PERM · 排期短</div>
+      <p><strong>① 自荐（self-petition）：</strong>不需要任何雇主支持，自己做主申。跳槽、创业、做自由职业都不影响 I-140 / I-485 的状态。这是 EB-2 / EB-3 PERM 做不到的根本自由度。</p>
+      <p><strong>② 免 PERM：</strong>PERM 是劳工部主导的"美国劳动力市场测试"，平均 10–24 个月，外加 I-140 再 6–12 个月。EB-1A 完全跳过此阶段，直接 I-140，加急 15 个自然日出结果。</p>
+      <p><strong>③ 排期短：</strong>EB-1 类别中国大陆出生在 2020 年代大多数月份 <em>current</em> 或排期 ≤ 2 年（以 DOS <a href="../../data/archive/us/l1b/policy/dos_visa-bulletin_index.html" target="_blank" rel="noopener">Visa Bulletin</a> 当期为准）。对比 EB-2 大陆出生 5–7 年、EB-3 大陆出生 4–6 年，时间优势明显。</p>
+    </div>
+  </section>
+
+  <!-- ============ § 1–2 证据门槛 ============ -->
+  <section id="stage-threshold">
+    <h2><span class="n">§ 1</span>法源 · "extraordinary ability" 的官方定义</h2>
+    <p class="lede">EB-1A 的门槛文字上非常高：在所在领域内 <em>"that small percentage who have risen to the very top of the field"</em>（8 CFR 204.5(h)(2)）。这是 USCIS 的最终判定口径。实际操作时，分解为"一次性大奖"与"10 条证据标准"两条可操作路径。</p>
+
+    <div class="node">
+      <div class="ntop"><span>§1 · INA §203(b)(1)(A)(i) · 8 CFR 204.5(h)(2)</span></div>
+      <div class="big">杰出能力 = 国家或国际层面的持续赞誉（sustained national or international acclaim）</div>
+      <p>核心要件三条：</p>
+      <ul>
+        <li><strong>① 非凡能力：</strong>在科学、艺术、教育、商业或体育领域有 extraordinary ability；</li>
+        <li><strong>② 持续赞誉：</strong>在国家或国际层面获得 sustained acclaim（"一次性高光"不够，要有延续性）；</li>
+        <li><strong>③ 继续从事同领域：</strong>申请人意图继续在该领域工作，且其工作将对美国有 substantial prospective benefit（无需具体 offer，但要证明有可行计划——合同、邀请函、持续发表计划、创业规划等）。</li>
+      </ul>
+      <dl class="kv">
+        <dt>法律</dt><dd><a href="../../data/archive/us/l1b/statutes/8-USC-1153_INA-203.html" target="_blank" rel="noopener">INA §203 · 8 USC §1153</a>（(b)(1)(A) 段）</dd>
+        <dt>实施细则</dt><dd><a href="../../data/archive/us/l1b/regulations/8-CFR-204.5_EB-petition.html" target="_blank" rel="noopener">8 CFR 204.5</a>（(h) 节）</dd>
+        <dt>政策手册</dt><dd><a href="../../data/archive/us/eb1a/uscis/policy-manual_vol6-part-f-ch2_eb1a.html" target="_blank" rel="noopener">USCIS Policy Manual Vol 6 Part F Ch 2</a></dd>
+      </dl>
+    </div>
+
+    <h2><span class="n">§ 2</span>证据结构 · 两条可操作路径</h2>
+
+    <h3><span class="n">2.1</span>路径 A · 一次性国际大奖（one-time achievement）</h3>
+    <p>若持有 <strong>一项</strong>举世公认的国际大奖（诺贝尔奖 · 普利策奖 · 奥斯卡金像奖 · 奥运金牌 · 菲尔兹奖 · 图灵奖 · 格莱美…），仅凭该奖项即可一次性满足要件（8 CFR 204.5(h)(3) 开头条款）。USCIS 在政策手册中保留"仅限最高层级大奖"的裁量解释——一般行业奖项、公司内部奖、地方奖 <strong>不算</strong>。</p>
+
+    <h3><span class="n">2.2</span>路径 B · 10 条标准中至少 3 条（实务绝大多数人走这条）</h3>
+    <p>没有一次性大奖时，需在下列 10 条证据标准中满足 <strong>至少 3 条</strong>。注意：<em>满足条数只是 Kazarian 第一步</em>，USCIS 还会做"整体判断"（见 § 3）。</p>
+
+    <div class="criteria">
+      <div class="row"><div class="idx">i</div><div class="body">
+        <strong>国家或国际层面的较小奖项</strong>
+        <p>在所在领域获得 lesser nationally or internationally recognized prizes / awards for excellence。对比路径 A 的"举世公认最高级别大奖"，这里允许行业内的专业奖项（例如 ACM Fellow Award、IEEE Best Paper、国家级科技进步奖等）。</p>
+      </div></div>
+      <div class="row"><div class="idx">ii</div><div class="body">
+        <strong>具有严格会员标准的专业团体成员</strong>
+        <p>Membership in associations in the field that require outstanding achievements as judged by recognized experts。例如 IEEE Fellow / ACM Fellow / NAE / NAS 会员，或学会的"Fellow"级而非普通 "Member" 级。</p>
+      </div></div>
+      <div class="row"><div class="idx">iii</div><div class="body">
+        <strong>专业或重要行业媒体的报道</strong>
+        <p>Published material about the applicant in professional or major trade publications or other major media。报道要以申请人或其工作为主题，不是路人甲提及。媒体要"major" —— 专业领域顶级刊物，或主流新闻（NYT / WSJ / Nature / IEEE Spectrum 等）。</p>
+      </div></div>
+      <div class="row"><div class="idx">iv</div><div class="body">
+        <strong>担任他人工作的评审</strong>
+        <p>Participation as a judge of the work of others。最常见：期刊 / 会议同行评审（peer reviewer for journals / conferences），博士答辩委员会，行业奖项评委，开源项目 committer review 也有被接受的先例。证据：邀请函 + 评审完成截图 / 致谢邮件。</p>
+      </div></div>
+      <div class="row"><div class="idx">v</div><div class="body">
+        <strong>原创的重要贡献</strong>
+        <p>Original scientific / scholarly / artistic / athletic / business-related contributions of major significance。"original" + "major significance" 两个定语都要有——独立推荐信是此条核心证据，需来自独立专家（不认识申请人），解释"贡献的内容 + 为什么重要 + 如何被同行采纳"。</p>
+      </div></div>
+      <div class="row"><div class="idx">vi</div><div class="body">
+        <strong>在专业期刊 / 主流媒体发表学术或行业文章</strong>
+        <p>Authorship of scholarly articles in professional journals or other major media。包括顶会顶刊论文、专业书籍 / 章节、大型博客 / 行业媒体专栏文章。</p>
+      </div></div>
+      <div class="row"><div class="idx">vii</div><div class="body">
+        <strong>作品在展览 / 展示中展出</strong>
+        <p>Display of the applicant's work at artistic exhibitions or showcases。主要供艺术 / 视觉设计 / 建筑 / 影视路径使用。科研路径不常用此条，但学术会议的 invited talk、keynote 有时可以。</p>
+      </div></div>
+      <div class="row"><div class="idx">viii</div><div class="body">
+        <strong>在声誉卓著的机构担任领导或关键角色</strong>
+        <p>Performance in a leading or critical role for organizations or establishments that have a distinguished reputation。要证明"机构杰出" + "角色关键"。创业者 / 高级工程师 / 产品关键角色常用此条——但只证明"我在 Meta 做过"不够，需要同行评价、项目报告、媒体提及共同支撑。</p>
+      </div></div>
+      <div class="row"><div class="idx">ix</div><div class="body">
+        <strong>与同行相比明显偏高的薪酬</strong>
+        <p>Command of a high salary or other significantly high remuneration in relation to others in the field。需可比数据：政府 DOL 同职位同地区的 prevailing wage（<a href="../../data/archive/us/l1b/policy/dol_flag_index.html" target="_blank" rel="noopener">FLAG / OFLC</a>）、BLS 统计、行业薪资报告。证明"我的工资在前 5%–10%"。</p>
+      </div></div>
+      <div class="row"><div class="idx">x</div><div class="body">
+        <strong>在表演艺术领域商业成功</strong>
+        <p>Commercial successes in the performing arts, as shown by box office receipts or record / cassette / compact disk sales。此条仅适用表演艺术，科研 / 工程 / 商业路径用不上。</p>
+      </div></div>
+    </div>
+
+    <p><strong>"comparable evidence" 条款：</strong>8 CFR 204.5(h)(4) 允许——若上述 10 条"不能合理地适用于申请人的职业"（例如新兴行业如 AI safety researcher、独立游戏开发），可提交"可比证据"。实务上仅少数案子用此条，USCIS 要求证明 <em>为什么原 10 条不适合我这个职业</em>。</p>
+  </section>
+
+  <!-- ============ § 3 Kazarian 两段论 ============ -->
+  <section id="stage-kazarian">
+    <h2><span class="n">§ 3</span>Kazarian 两段论 · EB-1A 审查逻辑核心</h2>
+    <p class="lede">2010 年第九巡回上诉法院 <em>Kazarian v. USCIS</em> 案之后，USCIS 正式采用"两段论"审查 EB-1A。理解这个逻辑比理解条文更重要——因为大量 RFE / 拒绝都来自第二段的"整体判断"。</p>
+
+    <div class="node">
+      <div class="ntop"><span>§3 · Kazarian v. USCIS, 596 F.3d 1115 (9th Cir. 2010) · Policy Manual Vol 6 Part F Ch 2 § D</span></div>
+      <div class="big">Step 1：数条文 · Step 2：整体判断"是不是真的 top"</div>
+      <p><strong>第一段 · Counting the Criteria（证据门槛审查）：</strong>USCIS 先核对申请人是否满足"一次性大奖"或"10 条中 ≥ 3 条"。此段是 <em>客观形式</em> 判断，重点在每一条标准的字面要件（"是不是 national / international 大奖"、"机构是不是 distinguished"、"角色是不是 leading or critical"）。<strong>大部分 RFE 首轮就出现在这里</strong>。</p>
+      <p><strong>第二段 · Final Merits Determination（整体价值判断）：</strong>即便第一段过关，USCIS 还会做"一步退开看全局"（step back and evaluate in its totality）的整体判断：所有证据合起来，是否真的证明申请人属于 <em>"that small percentage who have risen to the very top of the field"</em>。此段是 <em>主观裁量</em>——即便 3 条标准都技术性满足，也可能因"整体证据弱"（奖项偏地方、媒体偏次级、贡献影响力不够）而被拒。</p>
+      <p><strong>实务含义：</strong></p>
+      <ul>
+        <li><strong>不要只盯"条数"</strong>——律师常见错误是凑够 3 条就递，但整体说服力弱，Step 2 挂掉</li>
+        <li><strong>多做 1–2 条作为"保险"</strong>：实务通常做到满足 4–6 条，降低 Step 1 被挑刺的风险，也增强 Step 2 整体印象</li>
+        <li><strong>推荐信 + 个案陈述 + 附件的"叙事"</strong>远比"证据清单"重要——Step 2 读的是故事而不是表格</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 4 行业打包 ============ -->
+  <section id="stage-pack">
+    <h2><span class="n">§ 4</span>行业打包 · 不同职业群的证据组合模板</h2>
+    <p class="lede">10 条标准对所有职业通用，但可操作性差异很大。下面给出五类常见背景的证据组合建议——仅为模式参考，<strong>实际打包由律师根据个人简历定制</strong>。</p>
+
+    <h3><span class="n">4.1</span>科研 / 博士后 / 学界</h3>
+    <ul>
+      <li><strong>主力条款：</strong>iv 同行评审（期刊 / 会议 reviewer）· v 原创贡献（独立推荐信 8–10 封）· vi 学术发表（高引用论文）· i 行业奖项（若有）· ii Fellow 级会员（若有）</li>
+      <li><strong>核心证据：</strong>Google Scholar 引用数（越高越好，强证据通常 ≥ 300 citations）· 独立引用分析（移除自引与合作者引用）· 会议邀请讲演 invitation letters · Nature / Science / PNAS / 顶会接收邮件</li>
+      <li><strong>对接 NIV：</strong>O-1A 最匹配（证据几乎可复用）；H-1B 持有人也常走</li>
+      <li><strong>常见弱点：</strong>博后期间发表多但引用未积累 → 建议在引用数 ≥ 200–300 之后再递</li>
+    </ul>
+
+    <h3><span class="n">4.2</span>工程师 / 技术专家（FAANG / 顶级创业公司）</h3>
+    <ul>
+      <li><strong>主力条款：</strong>v 原创贡献（专利 · 系统架构 · 开源 committer）· viii leading/critical role（tech lead / staff eng / 架构师）· ix 高薪 · iii 主流媒体对关键产品的报道</li>
+      <li><strong>核心证据：</strong>授权专利（不是申请中）· 公司内部 tech lead 任命 · 重大产品发布时 The Verge / TechCrunch / NYT 的覆盖 · 独立专家推荐信解释技术贡献</li>
+      <li><strong>对接 NIV：</strong>H-1B / L-1B / O-1A 均可</li>
+      <li><strong>常见弱点：</strong>公司层面的成就与个人贡献难切割 → 需详实说明"我在团队中的具体角色 + 独立功劳"</li>
+    </ul>
+
+    <h3><span class="n">4.3</span>创业者 / 高管</h3>
+    <ul>
+      <li><strong>主力条款：</strong>v 原创贡献（独创商业模式 / 产品）· viii leading role（创始人 / CEO）· iii 媒体报道（产品发布 · 融资 · 退出）· ix 高薪（创始人工资 + 股权估值）</li>
+      <li><strong>核心证据：</strong>公司融资新闻稿（Crunchbase · PitchBook 验证）· 行业媒体对创始人的人物报道 · 独立 VC / 投资人推荐信 · 用户规模 / 营收数据</li>
+      <li><strong>对接 NIV：</strong>O-1A 最匹配（创业者 self-sponsor 模式）· L-1A（跨国创业者）· EB-5 投资 + EB-1A 并行</li>
+      <li><strong>常见弱点：</strong>早期公司证据力弱 → 建议公司有"第三方可验证的里程碑"（A 轮 + · 用户 ≥ 50K · 媒体主动报道）再递</li>
+    </ul>
+
+    <h3><span class="n">4.4</span>艺术家 / 设计师 / 影视</h3>
+    <ul>
+      <li><strong>主力条款：</strong>vii 展览 / 展示（美术馆 / 画廊）· iii 主流媒体报道 · i 艺术奖项 · x 商业成功（票房 / 销量，仅适 performing arts）· iv 担任评委（选美 / 设计比赛评委）</li>
+      <li><strong>对接 NIV：</strong>O-1B（更适配艺术）· EB-1A 通常在建立国际声誉之后做</li>
+      <li><strong>注意：</strong>EB-1A 对艺术 / 设计路径的"extraordinary ability" 门槛高于 O-1B 的"distinction"，不能简单复用 O-1B 证据</li>
+    </ul>
+
+    <h3><span class="n">4.5</span>体育 / 竞技</h3>
+    <ul>
+      <li><strong>主力条款：</strong>i 国际赛事奖牌 · iii 主流媒体报道 · iv 评委（裁判 / 教练）· viii leading role（国家队主力 / 俱乐部队长）</li>
+      <li><strong>对接 NIV：</strong>P-1 / O-1A · 退役运动员常走"教练 / 评委"身份继续 EB-1A</li>
+    </ul>
+  </section>
+
+  <!-- ============ § 5 申请流程 ============ -->
+  <section id="stage-file">
+    <h2><span class="n">§ 5</span>申请流程 · I-140 → 优先日 → AOS / CP</h2>
+    <p class="lede">EB-1A 的流程比 EB-2 PERM 短一大截——没有 PERM、没有劳动力市场测试，直接 I-140 递 USCIS。</p>
+
+    <h3><span class="n">5.1</span>递 I-140（开始计时）</h3>
+    <div class="node">
+      <div class="ntop"><span>§5.1 · I-140 · 8 CFR 204.5</span></div>
+      <div class="big">自己做 Petitioner 和 Beneficiary · USCIS 加州或德州中心收件</div>
+      <p><strong>一次性递交</strong>下列文件：</p>
+      <ul>
+        <li><a href="../../data/archive/us/l1b/forms/I-140_EB-petition.pdf" target="_blank" rel="noopener">I-140 表格</a> · 分类选 EB-1A（Part 2 第 1 项 a）· 无雇主栏 / 自填申请人信息</li>
+        <li>10 条证据标准的对应材料（律师按条打包成 tabs · 每条一独立目录）</li>
+        <li><strong>独立推荐信 5–10 封</strong>（不认识申请人的独立专家，最具分量）</li>
+        <li><strong>非独立推荐信 3–5 封</strong>（导师 / 合作者 / 同事，说明细节）</li>
+        <li>律师陈述信（legal brief，6,000–12,000 字，逐条论证满足性）</li>
+        <li>滤审费 $715（2024 fee rule）+ Asylum Program Fee $600（个人申请豁免）</li>
+        <li><em>可选</em> <a href="../../data/archive/us/l1b/forms/I-907_premium-processing.pdf" target="_blank" rel="noopener">I-907 加急（$2,805）</a>· 15 个自然日内必出结果（approve / RFE / deny）</li>
+      </ul>
+      <p><strong>审理期：</strong></p>
+      <ul>
+        <li><strong>Premium Processing（强烈推荐）：</strong>15 自然日出结果。EB-1A I-140 从 2022 起支持 PP。</li>
+        <li><strong>普通 processing：</strong>近年 4–12 月，服务中心积压波动大</li>
+        <li><strong>RFE 概率：</strong>EB-1A 在所有 I-140 分类中 RFE 率最高（常年 20–40%，部分年份超 50%）· 要预留 86 天回应期</li>
+      </ul>
+    </div>
+
+    <h3><span class="n">5.2</span>优先日（Priority Date）与 Visa Bulletin</h3>
+    <p>I-140 被 USCIS <em>收到</em>的那一天即 Priority Date（PD）。此后每月 DOS 的 <a href="../../data/archive/us/l1b/policy/dos_visa-bulletin_index.html" target="_blank" rel="noopener">Visa Bulletin</a> 会公布 "Final Action Dates"（<span class="term">FAD</span>）与 "Dates for Filing"（<span class="term">DFF</span>）两张表。</p>
+    <ul>
+      <li><strong>大陆出生 EB-1：</strong>2020 年代多数月份 current 或排期 ≤ 2 年；2023–2024 曾一度退到 2022 年初。EB-1A / EB-1B / EB-1C 共享同一个 EB-1 排期格</li>
+      <li><strong>印度出生 EB-1：</strong>长期积压严重（排期 3–6 年以上）</li>
+      <li><strong>其他出生国：</strong>基本年年 current</li>
+      <li><strong>USCIS 每月决定：</strong>I-485 是按 FAD 还是 DFF 收件（见 <a href="../../data/archive/us/l1b/policy/uscis_when-to-file_visa-bulletin.html" target="_blank" rel="noopener">When to File 指南</a>）</li>
+      <li><strong>Cross-chargeability：</strong>若配偶出生于不同国家（如配偶出生于欧洲），可用配偶的出生国排期（22 CFR 42.12，详见 <a href="us-overview.html#s-iv">us-overview § 3.5</a>）</li>
+    </ul>
+
+    <h3><span class="n">5.3</span>境内 AOS · I-485 并递（concurrent filing）</h3>
+    <div class="node">
+      <div class="ntop"><span>§5.3 · I-485 · 8 CFR 245</span></div>
+      <div class="big">PD current 时可把 I-485 与 I-140 <em>一起</em>递</div>
+      <p>EB-1A 允许 concurrent filing（8 CFR 245.2(a)(2)(i)(B)）：即 I-140 和 I-485 <strong>同一天一起递</strong>（条件：递交当月的 Visa Bulletin 显示 PD current）。这带来两个好处：</p>
+      <ul>
+        <li>I-485 递交后约 3–5 个月内可拿 <span class="term">EAD</span>（<a href="../../data/archive/us/l1b/forms/I-765_EAD.pdf" target="_blank" rel="noopener">I-765</a>）与 <span class="term">AP</span>（<a href="../../data/archive/us/l1b/forms/I-131_AP-Reentry.pdf" target="_blank" rel="noopener">I-131</a>）· 独立于原 NIV 的工作与回美权</li>
+        <li>I-485 pending ≥ 180 天后获得 <span class="term">AC21 portability</span>（但 EB-1A 不需要 "same or similar job"——因为本就无雇主锁定，portability 意义主要在于保持 I-485）</li>
+      </ul>
+      <p>若递表当月 PD 未 current，只能先递 I-140，等 PD 到时再递 I-485。</p>
+    </div>
+
+    <h3><span class="n">5.4</span>境外 CP · DS-260 + 使馆面签</h3>
+    <p>若在境外申请、或更偏好一次性完成：I-140 批准后 → National Visa Center（NVC）→ 递 <a href="../../data/archive/us/l1b/forms/DS-260_online-only.url" target="_blank" rel="noopener">DS-260</a> → 使馆面签（广州 / 香港 / 北京等）→ 入境即 LPR（I-551 盖章）。适合：已在中国或其他国家定居、不想在美等批、或家属分散在多地需集中面签。CP 的优势是没有 I-485 积压，但劣势是 <strong>整个过程中不能入境美国工作</strong>。</p>
+  </section>
+
+  <!-- ============ § 6 家属 · 绿卡收尾 ============ -->
+  <section id="stage-family">
+    <h2><span class="n">§ 6</span>家属 · 绿卡收尾 · LPR · 入籍</h2>
+    <p class="lede">本节只讲 EB-1A 特有的家属联动节奏；I-485 流程细节、LPR 维持（30 月物理在美 / Reentry Permit / N-470）、N-400 入籍 5-3-18、21 岁以下子女按 CCA 自动入籍等 <strong>所有 US path 共性环节直接引用</strong>，不在本页重复。</p>
+
+    <h3><span class="n">6.1</span>派生家属 · E-14 / E-15</h3>
+    <div class="node">
+      <div class="big">配偶 E-14 · 未满 21 岁未婚子女 E-15</div>
+      <p>EB-1A 主申拿 LPR 后代号 <strong>E-11</strong>；配偶派生代号 <strong>E-14</strong>；子女派生代号 <strong>E-15</strong>。三者共享同一个 PD，共用一个 EB-1 排期格。</p>
+      <p><strong>家属如何拿绿卡：</strong></p>
+      <ul>
+        <li><strong>若家属已在美（持 H-4 / L-2 / O-3 / F-2 等）：</strong>随 I-485 并递（同一个文件夹 · 同一天 · 同一律师）· 一起拿 EAD / AP · 一起获批</li>
+        <li><strong>若家属在境外：</strong>随主申 CP · DS-260 同批递 · 使馆一起面签 · 一起入境</li>
+        <li><strong>若主申先走、家属稍后：</strong>"follow-to-join" 模式——主申先拿绿卡，家属之后在境外用相同 PD 面签随后入境（INA §203(d)）</li>
+      </ul>
+      <dl class="kv">
+        <dt>法律</dt><dd>INA §203(d)（派生资格）</dd>
+        <dt>细则</dt><dd><a href="../../data/archive/us/l1b/regulations/8-CFR-204.5_EB-petition.html" target="_blank" rel="noopener">8 CFR 204.5</a>（EB-1A 派生规则）</dd>
+      </dl>
+    </div>
+
+    <h3><span class="n">6.2</span>CSPA · 子女"年龄冻结"</h3>
+    <p>EB-1A 属于"有排期 + 有优先日"的 IV 类，<a href="../../data/archive/us/l1b/statutes/PubL-107-208_CSPA-2002.pdf" target="_blank" rel="noopener">CSPA 2002</a> 对子女年龄有保护：<code>CSPA 年龄 = 21 岁生日时的实际年龄 − I-140 审理天数</code>，且子女需在 PD current 后 1 年内"seek to acquire"（通常即递 I-485 或 DS-260）。大陆出生 EB-1 近年多 current，CSPA 保护力度一般弱（因为 I-140 加急 PP 15 天，不产生多少审理天数），所以 <strong>带快 19 岁子女的家庭要尤其关注</strong>——可能需要考虑 EB-2 NIW（审理久，冻结幅度大）并行。详见 <a href="us-overview.html#s-aos-cp">us-overview § 4.3 CSPA</a>。</p>
+
+    <h3><span class="n">6.3</span>绿卡收尾 · LPR 维持 · N-400 入籍 · N-600 子女入籍</h3>
+    <p>以下所有节点在美国所有 path 下规则相同，本页不重复——请对照：</p>
+    <ul>
+      <li><a href="us-l1b.html#stage-final">us-l1b § 4 · 绿卡收尾（I-485 vs DS-260 操作细节）</a></li>
+      <li><a href="us-l1b.html#stage-lpr">us-l1b § 5 · LPR 维持 · N-400 入籍 · CCA 子女自动入籍 · 中国《国籍法》§9</a></li>
+      <li><a href="us-overview.html#s-aos-cp">us-overview § 4 · AOS vs CP 对比表</a></li>
+      <li><a href="us-overview.html#s-lpr">us-overview § 6 · LPR 维持细则（30 月物理在美 · Reentry · N-470 · 全球纳税）</a></li>
+      <li><a href="us-overview.html#s-naturalize">us-overview § 7 · N-400 入籍（5-3-18 规则 · 3-3-18 配偶快车）</a></li>
+    </ul>
+    <p class="hint">EB-1A 路径的典型总时长：从 I-140 递交 → LPR 约 6–24 个月（大陆出生近年 current）· LPR → N-400 5 年（公民配偶 3 年）· 合计 6–7 年入籍。这是 US 绿卡路径中最快的一档。</p>
+  </section>
+
+  <!-- ============ § 7 切入 path ============ -->
+  <section id="stage-enter">
+    <h2><span class="n">§ 7</span>切入 · 从哪种身份来 EB-1A</h2>
+    <p class="lede">EB-1A 是一个"绿卡类别"，不提供工作身份本身。递 I-140 时申请人必须在 <em>某种合法身份</em> 之下。下面列五种最常见的入口，以及各自的注意点。</p>
+
+    <h3><span class="n">7.1</span>从 O-1A / O-1B 切入（最匹配）</h3>
+    <p>O-1 的 8 条标准与 EB-1A 的 10 条标准高度重合，<strong>大量 O-1A 证据可直接复用到 EB-1A</strong>。标准的组合玩法：O-1 先入境（免抽签 · 证据门槛略低）→ 在美期间累积 1–2 层新证据（引用 · 媒体 · 原创贡献）→ 递 EB-1A I-140。详见 <a href="us-o1.html#stage-gc">us-o1 § 5 · EB-1A 首选绿卡</a>。</p>
+
+    <h3><span class="n">7.2</span>从 H-1B 切入（最常见数量上）</h3>
+    <p>绝大多数在美工作的中国工程师 / 研究员持 H-1B。EB-1A 和 H-1B 完全兼容——H-1B 承认双重意图，递 I-140 / I-485 不影响 H-1B 续签。实务组合：H-1B 期间自证证据（专利 · 开源 · 论文 · 媒体）→ 自费律师递 EB-1A（雇主无需出面）→ I-485 并递即拿 EAD 独立于雇主。详见 <a href="us-h1b.html#stage-gc">us-h1b § 5 · 绿卡分类选择</a>。</p>
+
+    <h3><span class="n">7.3</span>从 L-1A / L-1B 切入</h3>
+    <p>L-1A 主线是 EB-1C，但若本人有独立的杰出性证据（不依赖跨国公司经理身份），可并行递 EB-1A 作为 <strong>"独立于雇主的兜底"</strong>——雇主关系变动时 EB-1C 作废但 EB-1A 不受影响。详见 <a href="us-l1a.html#stage-gc">us-l1a § 3.3 · EB-1A 自荐并行</a>。L-1B 持有人（特殊知识专家）同样可直接跳到 EB-1A，避开 PERM。</p>
+
+    <h3><span class="n">7.4</span>从 F-1 OPT / STEM OPT 切入</h3>
+    <p>博士毕业或博后阶段就具备 EB-1A 证据的人（发表 · 引用 · 奖项）可在 F-1 OPT 期间递 EB-1A。注意 F-1 是单一意图，<strong>递 EB-1A 会被面签官认为移民倾向</strong>，所以：</p>
+    <ul>
+      <li>尽量避免在递 EB-1A 之后出境再回美（F-1 续签可能被拒）</li>
+      <li>I-485 并递后用 EAD / AP，OPT 的 STEM 延期身份可作为 I-485 pending 期间的 backup</li>
+      <li>最稳健的组合是先 F-1 OPT → 找雇主抽 H-1B → 在 H-1B 上走 EB-1A</li>
+    </ul>
+
+    <h3><span class="n">7.5</span>从境外（中国 / 他国）直接切入</h3>
+    <p>无需先入境美国。律师在美代递 I-140 → 批准 → NVC → DS-260 → 使馆面签 → 入境即 LPR。优点：零在美成本；缺点：I-140 pending 期间不能入境工作（B-1/B-2 短访可以，但不能工作）。适合：已在中国 / 其他国家有稳定工作或创业、且短期不打算移居美国的高净值申请人；或因为 H-1B 抽不中、O-1 证据不足而在本国等证据成熟后一次性拿绿卡的人。</p>
+  </section>
+
+  <!-- ============ § 8 备选 / 降档 ============ -->
+  <section id="stage-alt">
+    <h2><span class="n">§ 8</span>备选 · 并行 · 降档切换</h2>
+    <p class="lede">EB-1A 的不通过率在 I-140 分类中最高。合理的策略是 <strong>EB-1A + 下位备选并行</strong>——下面按降档次序列出。</p>
+
+    <ul class="altlist">
+      <li>
+        <span class="tgt">并行 EB-2 NIW<small>同一批证据 · 门槛低</small></span>
+        <div>
+          <strong>触发：</strong>EB-1A 证据链成型但担心被 RFE / 拒绝。<strong>玩法：</strong>同一批材料重新打包成 NIW（Matter of Dhanasar 三要素：国家利益 · 良好定位推进 · 平衡 PERM 豁免对美国有利），两个 I-140 并行递，哪条先批走哪条。<strong>价值：</strong>NIW 门槛低、通过率高；缺点是大陆出生 EB-2 排期 4–6 年，需要 H-1B / L-1 / O-1 等 NIV 维持到排期到。
+          <span class="when">详情：<a class="pending" href="#" title="待建：us-niw">本站 · 美国 EB-2 NIW 国家利益豁免（待建）</a>；USCIS 官方：<a href="../../data/archive/us/eb1a/uscis/eb1a_overview.html" target="_blank" rel="noopener">EB-1 Overview</a> · Dhanasar 判例见 Policy Manual Vol 6 Part F Ch 5</span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">EB-1B · 学界雇主赞助<small>雇主 + 证据组合</small></span>
+        <div>
+          <strong>触发：</strong>已获得 tenure / tenure-track / permanent R&D 职位 + 3 年相关经验。<strong>玩法：</strong>EB-1B 由雇主赞助，门槛与 EB-1A 类似但为"6 条中 ≥ 2 条"（见 8 CFR 204.5(i)），且 USCIS 对其执行通常比 EB-1A 宽松。<strong>价值：</strong>同一个 EB-1 排期格 · 学界 + 顶级企业 R&D 常用。
+          <span class="when">详情：<a class="pending" href="#" title="待建：us-eb1b">本站 · 美国 EB-1B 杰出教研（待建）</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">PERM EB-2 / EB-3<small>兜底 · 雇主主导</small></span>
+        <div>
+          <strong>触发：</strong>EB-1A / NIW 证据都不成熟，但有稳定雇主愿意办 PERM。<strong>玩法：</strong>雇主办 PERM（10–24 月）→ I-140 EB-2 或 EB-3 → I-485。<strong>价值：</strong>兜底，但大陆出生 EB-2 排期 5–7 年、EB-3 排期 4–6 年；若单看时间，走 EB-2 PERM 不一定比 EB-1A 慢很多。
+          <span class="when">详情：<a href="us-h1b.html#stage-gc">本站 · 美国 H-1B § 5 · PERM → EB-2 / EB-3</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">EB-5 投资移民<small>80 万 / 105 万美金</small></span>
+        <div>
+          <strong>触发：</strong>EB-1A 证据薄弱但资金充裕。<strong>玩法：</strong>TEA 区域中心 $800K 或直接投资 $1.05M · 创造 10 个美国就业。<strong>价值：</strong>证据门槛完全不同（看资金来源合法 + 投资结构），与 EB-1A 并行可做"证据 + 资本"双保险。
+          <span class="when">详情：<a class="pending" href="#" title="待建：us-eb5">本站 · 美国 EB-5 投资移民（待建）</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">跨国 · 加拿大 / 英国 / 新加坡<small>杰出人才等价路径</small></span>
+        <div>
+          <strong>触发：</strong>美国 EB-1A 被拒或等不起，但本人杰出性证据是跨国通用的（论文 · 专利 · 奖项 · 媒体）。<strong>可替代目的地：</strong>
+          <ul>
+            <li><a class="pending" href="#" title="待建：ca-express-entry-fsw">加拿大 Express Entry · Federal Skilled Worker</a>（CRS 分数 + 博士学位 + 雇主 offer 常可一次性拿 PR）</li>
+            <li><a class="pending" href="#" title="待建：uk-global-talent">英国 Global Talent 签证</a>（Royal Society / British Academy / Tech Nation 背书 · 5 年转 ILR）</li>
+            <li><a class="pending" href="#" title="待建：sg-one-pass">新加坡 ONE Pass / Tech.Pass</a>（收入或创业背景门槛 · 免岗位限制）</li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ § 9 风险 ============ -->
+  <section id="stage-risk">
+    <h2><span class="n">§ 9</span>常见 RFE · 拒绝风险 · 设计缓冲</h2>
+
+    <div class="risk">
+      <h4>10 条高频 RFE 触发点（EB-1A 专属）</h4>
+      <ul>
+        <li><strong>① 奖项"地方化"争议：</strong>公司内部奖 / 大学奖 / 省级行业奖常被判"不满足 national / international 层次"——关键是奖项的 <em>evaluation criteria 是全国 / 国际池竞争</em>。</li>
+        <li><strong>② 会员门槛不够高：</strong>"Member" 级而不是 "Fellow / Senior Member" 级不符合 ii 条——务必提交协会章程证明"Fellow 级需要 outstanding achievements"。</li>
+        <li><strong>③ 媒体报道"不够 major"：</strong>公司博客 / 行业内部通讯 / 较小网站的报道常被质疑——选 NYT / WSJ / Nature / TechCrunch / The Verge / Bloomberg 等主流来源。</li>
+        <li><strong>④ 评委次数不足 / 证据弱：</strong>1–2 次同行评审不够 "sustained"——目标是 ≥ 5–10 次且横跨多个期刊 / 会议；保留所有邀请邮件 + 完成截图。</li>
+        <li><strong>⑤ 原创贡献"重要性"不立：</strong>推荐信只说"很棒"不够，需要数据支撑（引用数 · 采纳机构 · 行业影响面）。</li>
+        <li><strong>⑥ 引用数不"独立"：</strong>USCIS 会减去自引与合作者引用——独立引用占比要高（通常 ≥ 70%）。</li>
+        <li><strong>⑦ leading/critical role 证明依赖雇主自证：</strong>仅凭 HR 任命书不够，需要独立专家解释"该机构为什么 distinguished + 该角色为什么 leading/critical"。</li>
+        <li><strong>⑧ 高薪未做可比：</strong>只给工资单不够，要附同职位同地区的 prevailing wage + 明确排名。</li>
+        <li><strong>⑨ Kazarian Step 2 "整体不够 top"：</strong>即便条数满足 3 条，Step 2 的整体印象（"你是不是真的在 top 小部分"）可能不过关——用律师陈述信和独立推荐信的叙事强化。</li>
+        <li><strong>⑩ "继续从事同领域"计划空泛：</strong>没有 offer 不等于没计划——用合同意向 · 合作备忘 · 发表计划 · 创业规划支撑。</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>整体策略性风险</h4>
+      <ul>
+        <li><strong>拒绝后的重递成本：</strong>EB-1A 被拒后可以重递（没有"禁止再递"条款），但同样一套证据重递通常无效 —— 必须有"重大新证据"（新论文 + 新奖项 + 新媒体报道）。规划 12–18 个月的重证据积累期。</li>
+        <li><strong>I-485 并递后若 I-140 被拒：</strong>并递的 I-485 会随 I-140 被拒而拒——但递 I-485 期间已拿的 EAD / AP 会撤销，需要立即回到原 NIV 身份（或被置于"无身份"状态 → 180 天内离境）。<strong>保持 H-1B / L-1 有效是关键缓冲</strong>。</li>
+        <li><strong>Visa Bulletin 退后：</strong>EB-1 大陆出生排期可能突然退后（如 2023 Q3 曾退到 2022/01）——规划时不能默认 current。</li>
+        <li><strong>PP 的"出结果"陷阱：</strong>Premium Processing 15 天保证出结果，但 RFE 也算结果——RFE 后的 86 天回应期不在 PP 保证范围，可能变成 "PP + 2–4 月"。</li>
+        <li><strong>律师选择：</strong>EB-1A 证据打包与叙事是律师经验的重大差异点 —— 选择时优先看"同领域（你的行业）获批数量"，而不是"整体 EB-1A 数量"。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 10 官方文件总表 ============ -->
+  <section id="stage-sources">
+    <h2><span class="n">§ 10</span>官方文件总表 <span class="tag">含本地归档</span></h2>
+    <p class="lede">本表列出 EB-1A 路径上所有引用的官方原件，并给出"本地归档"一列。绝大多数是与 L-1A / L-1B / O-1 / H-1B / 整个 IV 类共用的文件，一律复用 <a href="../../data/archive/us/l1b/" target="_blank" rel="noopener"><code>data/archive/us/l1b/</code></a>；EB-1A 独有的两份 USCIS 指南另存在 <a href="../../data/archive/us/eb1a/" target="_blank" rel="noopener"><code>data/archive/us/eb1a/</code></a>。</p>
+
+    <h3><span class="n">10.1</span>法律 · Statutes（INA / 其他 Public Law）</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布 / 出处</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>INA §203(b)(1)(A)</code></td><td>EB-1A 杰出人才 · 职业移民第一优先 A 档</td><td class="iss">Public Law · 8 USC §1153</td><td><a href="../../data/archive/us/l1b/statutes/8-USC-1153_INA-203.html" target="_blank" rel="noopener">l1b/statutes/8-USC-1153_INA-203.html</a></td></tr>
+        <tr><td class="id"><code>INA §202</code></td><td>7% 国别配额 · 中国大陆出生排期根源</td><td class="iss">8 USC §1152</td><td><a href="../../data/archive/us/l1b/statutes/8-USC-1152_INA-202.html" target="_blank" rel="noopener">l1b/statutes/8-USC-1152_INA-202.html</a></td></tr>
+        <tr><td class="id"><code>INA §245</code></td><td>境内调整身份（AOS）法源</td><td class="iss">8 USC §1255</td><td><a href="../../data/archive/us/l1b/statutes/8-USC-1255_INA-245.html" target="_blank" rel="noopener">l1b/statutes/8-USC-1255_INA-245.html</a></td></tr>
+        <tr><td class="id"><code>INA §316 / §319</code></td><td>入籍一般规则 / 公民配偶 3 年规则</td><td class="iss">8 USC §1427 / §1430</td><td><a href="../../data/archive/us/l1b/statutes/8-USC-1427_INA-316.html" target="_blank" rel="noopener">l1b/statutes/8-USC-1427_INA-316.html</a> · <a href="../../data/archive/us/l1b/statutes/8-USC-1430_INA-319.html" target="_blank" rel="noopener">8-USC-1430_INA-319.html</a></td></tr>
+        <tr><td class="id"><code>INA §320</code></td><td>21 岁以下未婚子女自动入籍</td><td class="iss">8 USC §1431 · CCA 2000</td><td><a href="../../data/archive/us/l1b/statutes/8-USC-1431_INA-320.html" target="_blank" rel="noopener">l1b/statutes/8-USC-1431_INA-320.html</a> · <a href="../../data/archive/us/l1b/statutes/PubL-106-395_CCA-2000.pdf" target="_blank" rel="noopener">PubL-106-395_CCA-2000.pdf</a></td></tr>
+        <tr><td class="id"><code>CSPA 2002</code></td><td>子女年龄冻结（EB 类 + 排期）</td><td class="iss">PubL 107-208</td><td><a href="../../data/archive/us/l1b/statutes/PubL-107-208_CSPA-2002.pdf" target="_blank" rel="noopener">l1b/statutes/PubL-107-208_CSPA-2002.pdf</a></td></tr>
+        <tr><td class="id"><code>AC21</code></td><td>I-140 批后跳槽 portability · I-485 pending ≥ 180 天</td><td class="iss">PubL 106-313</td><td><a href="../../data/archive/us/l1b/statutes/PubL-106-313_AC21.pdf" target="_blank" rel="noopener">l1b/statutes/PubL-106-313_AC21.pdf</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.2</span>实施细则 · Regulations（CFR）</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布 / 出处</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>8 CFR 204.5(h)</code></td><td>EB-1A 实施细则 · 10 条证据标准 + "comparable evidence"</td><td class="iss">eCFR · DHS / USCIS</td><td><a href="../../data/archive/us/l1b/regulations/8-CFR-204.5_EB-petition.html" target="_blank" rel="noopener">l1b/regulations/8-CFR-204.5_EB-petition.html</a></td></tr>
+        <tr><td class="id"><code>8 CFR 245</code></td><td>AOS 调整身份细则 · concurrent filing</td><td class="iss">eCFR · DHS</td><td><a href="../../data/archive/us/l1b/regulations/8-CFR-245_AOS.html" target="_blank" rel="noopener">l1b/regulations/8-CFR-245_AOS.html</a></td></tr>
+        <tr><td class="id"><code>22 CFR 42.12</code></td><td>Cross-chargeability 配偶跨国别排期</td><td class="iss">eCFR · DOS</td><td><a href="../../data/archive/us/l1b/regulations/22-CFR-42.12_cross-chargeability.html" target="_blank" rel="noopener">l1b/regulations/22-CFR-42.12_cross-chargeability.html</a></td></tr>
+        <tr><td class="id"><code>8 CFR 316 / 319 / 320</code></td><td>入籍 / 公民配偶 / 自动入籍细则</td><td class="iss">eCFR · DHS</td><td><a href="../../data/archive/us/l1b/regulations/8-CFR-316_naturalization-general.html" target="_blank" rel="noopener">l1b/regulations/8-CFR-316_...html</a> · <a href="../../data/archive/us/l1b/regulations/8-CFR-319_naturalization-spouse.html" target="_blank" rel="noopener">8-CFR-319_...html</a> · <a href="../../data/archive/us/l1b/regulations/8-CFR-320_automatic-citizenship.html" target="_blank" rel="noopener">8-CFR-320_...html</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.3</span>政策手册 · USCIS / DOS / DOL</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布 / 出处</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>p-eb1a-overview</code></td><td>USCIS · EB-1A 类别说明页（含 EB-1B / EB-1C 共页）</td><td class="iss">USCIS uscis.gov</td><td><a href="../../data/archive/us/eb1a/uscis/eb1a_overview.html" target="_blank" rel="noopener">eb1a/uscis/eb1a_overview.html</a></td></tr>
+        <tr><td class="id"><code>p-pm-v6-f-2</code></td><td>Policy Manual Vol 6 Part F Ch 2 · EB-1 Extraordinary Ability（Kazarian 两段论 · 10 条标准逐条释义）</td><td class="iss">USCIS Policy Manual</td><td><a href="../../data/archive/us/eb1a/uscis/policy-manual_vol6-part-f-ch2_eb1a.html" target="_blank" rel="noopener">eb1a/uscis/policy-manual_vol6-part-f-ch2_eb1a.html</a></td></tr>
+        <tr><td class="id"><code>p-pm-index</code></td><td>Policy Manual 总目录</td><td class="iss">USCIS Policy Manual</td><td><a href="../../data/archive/us/l1b/policy/uscis-policy-manual_index.html" target="_blank" rel="noopener">l1b/policy/uscis-policy-manual_index.html</a></td></tr>
+        <tr><td class="id"><code>p-vb</code></td><td>DOS Visa Bulletin · 月度排期</td><td class="iss">DOS travel.state.gov</td><td><a href="../../data/archive/us/l1b/policy/dos_visa-bulletin_index.html" target="_blank" rel="noopener">l1b/policy/dos_visa-bulletin_index.html</a></td></tr>
+        <tr><td class="id"><code>p-when-to-file</code></td><td>USCIS · AOS 按 FAD 还是 DFF 收件指南</td><td class="iss">USCIS uscis.gov</td><td><a href="../../data/archive/us/l1b/policy/uscis_when-to-file_visa-bulletin.html" target="_blank" rel="noopener">l1b/policy/uscis_when-to-file_visa-bulletin.html</a></td></tr>
+        <tr><td class="id"><code>p-cspa</code></td><td>USCIS · CSPA 年龄计算指南</td><td class="iss">USCIS uscis.gov</td><td><a href="../../data/archive/us/l1b/policy/uscis_CSPA-guidance.html" target="_blank" rel="noopener">l1b/policy/uscis_CSPA-guidance.html</a></td></tr>
+        <tr><td class="id"><code>p-pw</code></td><td>DOL FLAG / OFLC · prevailing wage 数据（用于 EB-1A 第 ix 条高薪论证）</td><td class="iss">DOL flag.dol.gov</td><td><a href="../../data/archive/us/l1b/policy/dol_flag_index.html" target="_blank" rel="noopener">l1b/policy/dol_flag_index.html</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.4</span>表格 · Forms</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布 / 出处</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>I-140</code></td><td>Immigrant Petition for Alien Worker · EB-1A 主表</td><td class="iss">USCIS</td><td><a href="../../data/archive/us/l1b/forms/I-140_EB-petition.pdf" target="_blank" rel="noopener">l1b/forms/I-140_EB-petition.pdf</a></td></tr>
+        <tr><td class="id"><code>I-907</code></td><td>Premium Processing · 加急 15 自然日</td><td class="iss">USCIS</td><td><a href="../../data/archive/us/l1b/forms/I-907_premium-processing.pdf" target="_blank" rel="noopener">l1b/forms/I-907_premium-processing.pdf</a></td></tr>
+        <tr><td class="id"><code>I-485</code></td><td>境内调整身份</td><td class="iss">USCIS</td><td><a href="../../data/archive/us/l1b/forms/I-485_AOS.pdf" target="_blank" rel="noopener">l1b/forms/I-485_AOS.pdf</a></td></tr>
+        <tr><td class="id"><code>I-765</code></td><td>EAD 工卡 · I-485 pending 期间独立工作</td><td class="iss">USCIS</td><td><a href="../../data/archive/us/l1b/forms/I-765_EAD.pdf" target="_blank" rel="noopener">l1b/forms/I-765_EAD.pdf</a></td></tr>
+        <tr><td class="id"><code>I-131</code></td><td>Advance Parole · I-485 pending 期间回美权</td><td class="iss">USCIS</td><td><a href="../../data/archive/us/l1b/forms/I-131_AP-Reentry.pdf" target="_blank" rel="noopener">l1b/forms/I-131_AP-Reentry.pdf</a></td></tr>
+        <tr><td class="id"><code>I-693</code></td><td>移民体检</td><td class="iss">USCIS</td><td><a href="../../data/archive/us/l1b/forms/I-693_medical.pdf" target="_blank" rel="noopener">l1b/forms/I-693_medical.pdf</a></td></tr>
+        <tr><td class="id"><code>DS-260</code></td><td>境外 IV 申请 · CP 路径使用</td><td class="iss">DOS · 在线表</td><td><a href="../../data/archive/us/l1b/forms/DS-260_online-only.url" target="_blank" rel="noopener">l1b/forms/DS-260_online-only.url</a>（stub）</td></tr>
+        <tr><td class="id"><code>N-400</code></td><td>入籍申请</td><td class="iss">USCIS</td><td><a href="../../data/archive/us/l1b/forms/N-400_naturalization.pdf" target="_blank" rel="noopener">l1b/forms/N-400_naturalization.pdf</a></td></tr>
+        <tr><td class="id"><code>N-600</code></td><td>未成年子女自动入籍证明</td><td class="iss">USCIS</td><td><a href="../../data/archive/us/l1b/forms/N-600_certificate-of-citizenship.pdf" target="_blank" rel="noopener">l1b/forms/N-600_certificate-of-citizenship.pdf</a></td></tr>
+      </tbody>
+    </table>
+
+    <p class="hint">本表"本地归档"指向的是仓库内 <code>data/archive/us/eb1a/</code> 或 <code>data/archive/us/l1b/</code> 下已下载的官方原件快照。本页所有内链在 <code>site/paths/</code> 下以相对路径解析（<code>../../data/archive/...</code>）。若本地文件缺失，请在仓库根下运行 <code>bash data/archive/us/eb1a/download.sh</code> 重新拉取。</p>
+  </section>
+
+  <footer class="btm">
+    <span>relocate · us-eb1a · v0.1</span>
+    <span>© 本站非商用 · 内容引自官方公开条款与指南</span>
+  </footer>
+
+</main>
+</body>
+</html>

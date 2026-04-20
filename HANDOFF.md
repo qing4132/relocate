@@ -36,14 +36,21 @@
   - 按"共用则引用不复制"原则：页面 § 4（绿卡收尾 I-485 vs DS-260）与 § 5（LPR 维持 / N-400 / CCA 子女自动入籍）直接引 `us-l1b.html` 对应段，不重复照搬
   - 跨链接：`site/paths/us-l1b.html` § 8 的 L-1B → L-1A 条目从 USCIS 外链改为本站 `us-l1a.html`；`site/paths/us-o1.html` § 8 的 O-1 → L-1A / L-1B 同时链到 L-1A 与 L-1B；`site/paths/us-h1b.html` § 8 的 H-1B → L-1B / L-1A 同时链两页；`site/paths/us-overview.html` § 2 NIV 字母表中 L-1A / L-1B 条目、§ 11 "本站美国 path 索引" 新增 L-1A 条目，§ 11 页末的"待补路径清单"中移除 L-1A
   - `site/index.html` 路径列表新增 L-1A 条目，置于 L-1B 之后 H-1B 之前
+- **2026-04-20 · 新增 US EB-1A 杰出人才自荐绿卡页 + 官方原件归档**（本次 commit）：
+  - [`site/paths/us-eb1a.html`](site/paths/us-eb1a.html) — 绿卡分类页（而非签证路径）· INA §203(b)(1)(A) · 8 CFR 204.5(h) · 一次性大奖 与 10 条证据标准 逐条释义 · <em>Kazarian v. USCIS</em> 两段论（Counting + Final Merits Determination）· 五类行业打包模板（科研 / 工程 / 创业 / 艺术 / 体育）· I-140 + I-907 加急 · 优先日 · Visa Bulletin · AOS concurrent filing · CP · E-14 / E-15 派生 · CSPA · § 7 从 H-1B / L-1 / O-1 / F-1 / 境外切入 · § 8 降档到 NIW / EB-1B / PERM / EB-5 · § 9 十条高频 RFE 触发点
+  - `data/archive/us/eb1a/`（USCIS 2 份：EB-1 overview 与 Policy Manual Vol 6 Part F Ch 2 · EB-1A Extraordinary Ability 含 Kazarian 两段论与 10 条标准逐条释义）+ README + download.sh；全部共用件（INA §203/§245/§316/§319/§320/§202 · 8 CFR 204.5/245 · 22 CFR 42.12 · AC21 / CSPA / CCA · I-140 / I-907 / I-485 / I-765 / I-131 / I-693 / DS-260 / N-400 / N-600 等）沿用 `data/archive/us/l1b/`
+  - 按"共用则引用不复制"原则：页面 § 6.3 绿卡收尾 / LPR 维持 / N-400 全部引 `us-l1b.html § 4–5` 与 `us-overview.html § 4 / § 6 / § 7`，不重复照搬
+  - 跨链接：`site/index.html` 路径列表新增 EB-1A 条目（紧随 O-1）；`site/paths/us-overview.html` § 2 NIV 字母表 EB-1A 行加 "详见本站 EB-1A 路径" 链接，§ 11 "本站美国 path 索引" 新增 EB-1A 条目，§ 11 页末的"待补路径清单"中移除 EB-1A；`site/paths/us-l1a.html` § 8 的 `us-eb1a` pending 占位改为本站实链（保留官方 archive fallback 链接）；`site/paths/us-l1b.html` § 8 的 EB-1A / EB-1B 条目 EB-1A 字样加本站内链；`site/paths/us-h1b.html` § 7 EB-2 → EB-1A / NIW 条目 EB-1A 字样加本站内链；`site/paths/us-o1.html` § 5 开头补 "详见本站 EB-1A 路径"
 - 技术栈：**纯静态 HTML / CSS，无框架、无构建**（[docs/engineering.md](docs/engineering.md)）
 - 可部署目录：[site/](site/)
 - 已有路径页：
   - [`site/paths/us-overview.html`](site/paths/us-overview.html) — 美国 · 移民体系通用前置知识（primer，非 path）
   - [`site/paths/jp-hsp.html`](site/paths/jp-hsp.html) — 日本 · 高度専門職 1 号ロ · 工签 → 永住 → 帰化
   - [`site/paths/us-l1b.html`](site/paths/us-l1b.html) — 美国 · L-1B · 工签 → 永居 → 入籍
-  - [`site/paths/us-l1a.html`](site/paths/us-l1a.html) — 美国 · L-1A · 工签 → EB-1C → 永居 → 入籍  - [`site/paths/us-l1a.html`](site/paths/us-l1a.html) — 美国 · L-1A · 工签 → EB-1C → 永居 → 入籍  - [`site/paths/us-h1b.html`](site/paths/us-h1b.html) — 美国 · H-1B · 抽签 → 工签 → 永居 → 入籍
+  - [`site/paths/us-l1a.html`](site/paths/us-l1a.html) — 美国 · L-1A · 工签 → EB-1C → 永居 → 入籍
+  - [`site/paths/us-h1b.html`](site/paths/us-h1b.html) — 美国 · H-1B · 抽签 → 工签 → 永居 → 入籍
   - [`site/paths/us-o1.html`](site/paths/us-o1.html) — 美国 · O-1 · 杰出人才 → EB-1A → 永居 → 入籍
+  - [`site/paths/us-eb1a.html`](site/paths/us-eb1a.html) — 美国 · EB-1A · 杰出人才自荐绿卡（不是签证 · 绿卡分类页）
 
 ## Next · 下一步
 
@@ -58,8 +65,7 @@
 当前 `site/paths/jp-hsp.html` 与 `site/paths/us-l1b.html` 的 § 备选切换小节共有如下 `class="pending"` 占位。建立目标页后须全站搜索并替换为真实链接：
 
 | 建议 slug | 目标文件 | 出现于 |
-| --- eb1a` | `site/paths/us-eb1a.html` | us-l1b.html § 8 · us-l1a.html § 8 · us-o1tml § 8 |
-| `us-eb1a` | `site/paths/us-eb1a.html` | us-l1b.html § 8 |
+| --- | --- | --- |
 | `jp-hsp-1a` | `site/paths/jp-hsp-1a.html` | jp-hsp.html § 5（研究系） |
 | `jp-hsp-2` | `site/paths/jp-hsp-2.html` | jp-hsp.html § 5 |
 | `jp-gijinkoku` | `site/paths/jp-gijinkoku.html` | jp-hsp.html § 5（技術・人文知識・国際業務） |
@@ -69,7 +75,7 @@
 | `uk-global-talent` | `site/paths/uk-global-talent.html` | 两个路径页 |
 | `sg-one-pass` | `site/paths/sg-one-pass.html` | 两个路径页 |
 
-优先级建议：`us-eb1a` 与 L-1A / O-1 / H-1B 族系强相关（是三条 path 的绿卡主线 / 备选分类），可接着做。
+优先级建议：`us-niw`（EB-2 国家利益豁免）与 EB-1A 证据高度重合，是 EB-1A 最常见并行备选；`us-eb1b`（杰出教研）与 EB-1A 同享 EB-1 排期池——两条都是 L-1A / O-1 / H-1B / EB-1A 路径页 § 8 的下一个待补占位。
 
 已完成、从本清单拿掉的：
 
@@ -85,6 +91,7 @@
 - ~~新增 US O-1 杰出人才路径 + 官方原件归档 + 跨页链接替换~~（2026-04-20）
 - ~~新增 US H-1B 路径 + 归档 + 首页更新 + 交叉链接~~（2026-04-19，本次）
 - ~~新增 US L-1A 路径 + 归档 + 四页交叉链接 + 共用段引用 L-1B 页~~（2026-04-20，本次）
+- ~~新增 US EB-1A 杰出人才自荐绿卡页 + Policy Manual Vol 6 Part F Ch 2 归档 + 六页交叉链接~~（2026-04-20，本次）
 
 ## Don't · 别做
 
