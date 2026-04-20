@@ -1,0 +1,680 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>relocate · 路径详情 · 加拿大 GTS · 到入籍为止（仅供参考 · 非官方）</title>
+<style>
+  :root{
+    --ink:#141414;
+    --ink-soft:#3d3d3d;
+    --ink-faint:#8a8a8a;
+    --rule:#d8d8d8;
+    --rule-soft:#ebebeb;
+    --bg:#fdfbf7;
+    --warn-bg:#fff6e7;
+    --warn-ink:#6a4d00;
+    --branch-bg:#f5f2ea;
+    --serif:Georgia,"Source Han Serif SC","Noto Serif SC","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;
+    --mono:"SFMono-Regular","Menlo",Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{
+    background:var(--bg);color:var(--ink);
+    font-family:var(--serif);font-size:16.5px;line-height:1.78;
+    -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  }
+  header.top{padding:14px 40px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em;background:#fff}
+  header.top .l{color:var(--ink)}
+  .page{max-width:920px;margin:0 auto;padding:56px 32px 140px}
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 10px}
+  h1{font-size:30px;font-weight:700;line-height:1.25;letter-spacing:-0.005em;margin:0 0 6px}
+  .sub{font-family:var(--sans);font-size:14px;color:var(--ink-soft);margin:0 0 14px;letter-spacing:0.01em}
+  .sub code{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 6px;border-radius:2px;color:var(--ink)}
+  .meta{font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);letter-spacing:0.04em;margin:0 0 28px;padding-bottom:18px;border-bottom:1px solid var(--ink)}
+  .meta span + span::before{content:" · ";margin:0 4px;color:var(--rule)}
+  .caveat{background:var(--warn-bg);border:1px solid var(--warn-ink);padding:14px 20px;margin:0 0 32px;font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--warn-ink)}
+  .caveat strong{color:#3c2a00}
+  .caveat p{margin:0 0 6px}
+  .caveat p:last-child{margin:0}
+  .chip{display:grid;grid-template-columns:repeat(6, 1fr);gap:0;background:#fff;border:1px solid var(--ink);font-family:var(--sans);margin:0 0 36px}
+  .chip > div{padding:12px 14px;border-right:1px solid var(--rule)}
+  .chip > div:last-child{border-right:none}
+  .chip dt{font-family:var(--mono);font-size:10px;color:var(--ink-faint);letter-spacing:0.09em;text-transform:uppercase;margin:0 0 3px}
+  .chip dd{margin:0;font-size:13.5px;color:var(--ink);font-weight:600}
+  .chip dd small{display:block;font-weight:400;font-size:11.5px;color:var(--ink-faint);margin-top:2px;font-family:var(--mono)}
+  .stagenav{display:grid;grid-template-columns:repeat(6, 1fr);gap:6px;margin:0 0 40px;font-family:var(--sans)}
+  .stagenav a{display:block;padding:10px 12px;background:#fff;border:1px solid var(--ink);text-decoration:none;color:var(--ink)}
+  .stagenav a .lbl{font-family:var(--mono);font-size:10px;color:var(--ink-faint);letter-spacing:0.09em;text-transform:uppercase;display:block;margin-bottom:3px}
+  .stagenav a .t{font-size:14px;font-weight:700;display:block;line-height:1.3}
+  .stagenav a .b{font-size:11.5px;color:var(--ink-soft);display:block;margin-top:3px;font-family:var(--serif);line-height:1.45}
+  section{margin:56px 0 0}
+  section > h2{font-size:20px;font-weight:700;line-height:1.35;margin:0 0 4px}
+  section > h2 .n{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--ink-faint);letter-spacing:0.08em;margin-right:10px}
+  section > h2 .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:0.06em;padding:2px 7px;border:1px solid var(--ink-faint);color:var(--ink-faint);font-weight:400;margin-left:10px;vertical-align:3px}
+  section > .lede{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:15.5px;line-height:1.7;margin:0 0 20px}
+  p{margin:0 0 1em}
+  h3{font-size:15.5px;font-weight:700;margin:26px 0 8px}
+  h3 .n{font-family:var(--mono);font-size:11px;font-weight:400;color:var(--ink-faint);letter-spacing:0.06em;margin-right:8px}
+  h4{font-size:13.5px;font-weight:700;margin:18px 0 6px;font-family:var(--sans)}
+  .node{background:#fff;border:1px solid var(--ink);padding:18px 22px;margin:14px 0 18px;font-family:var(--sans);font-size:13.5px;line-height:1.7}
+  .node .ntop{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:8px;border-bottom:1px solid var(--rule-soft);margin-bottom:12px;font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em}
+  .node .big{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink);line-height:1.35;margin:0 0 6px}
+  .node p{margin:0 0 10px;color:var(--ink-soft)}
+  .node p strong{color:var(--ink);font-weight:700}
+  .node dl.kv{display:grid;grid-template-columns:140px 1fr;gap:6px 14px;font-size:12.5px;color:var(--ink-soft);margin:12px 0 0;padding-top:10px;border-top:1px dashed var(--rule)}
+  .node dl.kv dt{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.06em;text-transform:uppercase;padding-top:2px}
+  .node dl.kv dd{margin:0}
+  .node dl.kv dd code{font-family:var(--mono);font-size:11.5px;background:var(--rule-soft);padding:1px 5px;border-radius:2px;color:var(--ink)}
+  .familytrack{background:#fff;border:1px solid var(--ink);margin:14px 0 18px;font-family:var(--sans);font-size:12.5px}
+  .familytrack .row{display:grid;grid-template-columns:130px 1fr;border-bottom:1px solid var(--rule)}
+  .familytrack .row:last-child{border-bottom:none}
+  .familytrack .row .l{padding:14px;background:var(--rule-soft);border-right:1px solid var(--rule);font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.06em;text-transform:uppercase}
+  .familytrack .row .l small{display:block;font-size:10px;color:var(--ink-faint);margin-top:3px;letter-spacing:0.04em}
+  .familytrack .row .r{padding:14px 18px;color:var(--ink-soft);line-height:1.65}
+  .familytrack .row .r strong{color:var(--ink)}
+  .familytrack .row .r em{font-style:normal;background:var(--rule-soft);padding:1px 6px;font-family:var(--mono);font-size:11px;color:var(--ink);margin-right:4px}
+  .flowchart{background:#fff;border:1px solid var(--ink);padding:22px 24px;margin:10px 0 24px;font-family:var(--mono);font-size:12.5px;line-height:1.8;color:var(--ink);white-space:pre;overflow-x:auto}
+  .flowchart .hi{background:var(--rule-soft);padding:0 4px}
+  .flowchart .br{color:var(--ink-faint)}
+  table.sources{width:100%;border-collapse:collapse;background:#fff;font-family:var(--sans);font-size:12.5px;line-height:1.55;margin:10px 0 16px}
+  table.sources th,table.sources td{padding:8px 10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
+  table.sources thead th{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em;text-transform:uppercase;font-weight:600;border-bottom:1px solid var(--ink);background:var(--rule-soft)}
+  table.sources td.id{width:110px}
+  table.sources td.id code{font-family:var(--mono);font-size:11px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+  table.sources td.iss{width:150px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em}
+  table.sources td a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--ink-faint);text-underline-offset:2px}
+  .risk{background:#fff;border:1px solid var(--warn-ink);padding:14px 20px;margin:10px 0 16px;font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--ink)}
+  .risk h4{font-family:var(--mono);font-size:10.5px;color:var(--warn-ink);letter-spacing:0.1em;text-transform:uppercase;margin:0 0 8px;font-weight:600}
+  .risk h4::before{content:"! "}
+  .risk ul{margin:6px 0 0;padding:0 0 0 20px}
+  .risk li{margin:0 0 8px;color:var(--ink-soft)}
+  .risk li strong{color:var(--ink)}
+  .term{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+  .hint{display:block;color:var(--ink-faint);font-size:12px;margin-top:3px;font-style:italic;font-family:var(--serif)}
+  .altlist{margin:10px 0 18px;padding:0;list-style:none}
+  .altlist > li{border-top:1px solid var(--rule-soft);padding:14px 0;display:grid;grid-template-columns:150px 1fr;gap:18px;font-family:var(--sans);font-size:13px;line-height:1.65;color:var(--ink-soft)}
+  .altlist > li:last-child{border-bottom:1px solid var(--rule-soft)}
+  .altlist .tgt{font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.04em;padding-top:2px}
+  .altlist .tgt small{display:block;font-size:10.5px;color:var(--ink-faint);margin-top:3px;text-transform:uppercase;letter-spacing:0.08em}
+  .altlist strong{color:var(--ink)}
+  .altlist .when{color:var(--ink-faint);font-size:12px;display:block;margin-top:4px;font-style:italic;font-family:var(--serif)}
+  .altlist a.pending{color:var(--ink-faint);text-decoration:underline;text-decoration-style:dashed;text-decoration-color:var(--ink-faint);text-underline-offset:3px;cursor:help}
+  footer.btm{margin-top:80px;padding-top:14px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);display:flex;justify-content:space-between;letter-spacing:0.04em}
+  a{color:inherit}
+  .caveat a{color:var(--warn-ink)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <span class="l"><a href="../" style="color:inherit;text-decoration:none">relocate</a> · 路径详情 · 加拿大 · GTS</span>
+  <span>仅供参考 · 非官方</span>
+</header>
+
+<main class="page">
+
+  <p class="kicker">路径详情 · 家庭单位 · GTS 工签 → Express Entry PR → 入籍</p>
+  <h1>加拿大 · Global Talent Stream（GTS）· 家庭完整路径</h1>
+  <p class="sub">
+    <code>ca-gts-to-citizenship</code> · 2 周处理工签 · LMBP · Category A / B · CEC / FSW · CRS 打分 · 3/5 物理存在入籍 · 允许双重国籍（但与中国《国籍法》§9 仍冲突）
+  </p>
+  <p class="meta">
+    <span>version v0.1</span>
+    <span>最后编辑 2026-04-20</span>
+    <span>家庭单位视角 · 亦可单人套用</span>
+    <span><a href="../" style="color:inherit">← 回到 relocate 首页</a></span>
+  </p>
+
+  <div class="caveat">
+    <p><strong>仅供参考 · 非官方：</strong>本页整理自 ESDC / IRCC / Justice Laws 的公开条款与政策页。面向中文读者做路径速览，<strong>不是法律意见、不是移民顾问（RCIC）建议、不替代律师</strong>。加拿大对 temporary work permit / PR / citizenship 有三个独立决策机构（ESDC → IRCC → IRCC），且 Express Entry 抽分（<span class="term">Round of Invitations</span>）线一直在动，个案差异极大。</p>
+    <p><strong>本页边界：</strong>本页以 GTS 为起点（工签）串通到入籍；Express Entry 三类（CEC / FSW / FST）、省提名（PNP）、魁省 PSTQ、Start-Up Visa、Self-Employed 只在 § 1、§ 3、§ 8 作为相邻路径被点名。加拿大允许双重国籍（Citizenship Act §9），但<em>中国《国籍法》§9 仍然独立生效</em>——加入加籍那一刻，中国籍自动丧失。</p>
+    <p><strong>数字怎么来的：</strong>每一处门槛、年限、CRS 分值都标了可自行复核的官方出处（见 § 10）。GTS 2 周服务标准、LMIA 工资下限、CRS 分数阈值均会随政策节奏上调；任何时候以 IRCC / ESDC 当期公告为准。</p>
+  </div>
+
+  <dl class="chip">
+    <div><dt>国家</dt><dd>加拿大 <small>ca</small></dd></div>
+    <div><dt>起点</dt><dd>GTS 工签 <small>+ 配偶 OWP</small></dd></div>
+    <div><dt>处理</dt><dd>2 周服务标准 <small>雇主 LMIA + 个人 WP 并行</small></dd></div>
+    <div><dt>首次工签</dt><dd>2–3 年 <small>可续</small></dd></div>
+    <div><dt>PR 最短</dt><dd>工作 1 年 → CEC <small>Express Entry</small></dd></div>
+    <div><dt>入籍</dt><dd>PR 后 3 年 <small>1,095 天 / 5 年</small></dd></div>
+  </dl>
+
+  <nav class="stagenav">
+    <a href="#stage-overview"><span class="lbl">§ 0</span><span class="t">全景图</span><span class="b">四段推进 · 盒图</span></a>
+    <a href="#stage-enter"><span class="lbl">§ 1</span><span class="t">GTS 工签</span><span class="b">Cat A / B · LMBP · 2 周</span></a>
+    <a href="#stage-hold"><span class="lbl">§ 2</span><span class="t">入境与维持</span><span class="b">OWP · BOWP · 续签</span></a>
+    <a href="#stage-pr"><span class="lbl">§ 3</span><span class="t">升 PR</span><span class="b">CEC · FSW · CRS</span></a>
+    <a href="#stage-citizen"><span class="lbl">§ 4</span><span class="t">升公民</span><span class="b">3/5 物理存在</span></a>
+    <a href="#stage-alt"><span class="lbl">§ 7–8</span><span class="t">风险 · 备选</span><span class="b">FSW / PNP / US H-1B</span></a>
+  </nav>
+
+  <!-- ============ § 0 全景 ============ -->
+  <section id="stage-overview">
+    <h2><span class="n">§ 0</span>全景图</h2>
+    <p class="lede">加拿大是四条路径里唯一一条在工签阶段就有"雇主 2 周服务标准"的；而一旦拿到工签开始在加拿大本地累积全职经验，走 Express Entry · CEC 通道，是从临时身份到 PR 的最直通的国家之一——但前提是 CRS 分数跨过当期的 draw 阈值。</p>
+
+<div class="flowchart">
+<span class="br">[ 入境前 · 在海外 ]</span>
+    加拿大雇主（Cat A 指定 referral / Cat B 上榜职业）
+    +
+    Labour Market Benefits Plan（LMBP）起草
+                        │
+                        ▼
+              ┌─────────────────────────┐
+              │  <span class="hi">§ 1  ESDC 递 LMIA</span>         │
+              │  雇主主导 · 10-day service  │
+              │  标准                       │
+              └──────────┬──────────────┘
+                         │ 正面 LMIA
+                         ▼
+              ┌─────────────────────────┐
+              │  <span class="hi">§ 1  IRCC 递 Work Permit</span>   │
+              │  申请人主导 · 10-day service │
+              │  标准（线上，在海外）       │
+              └──────────┬──────────────┘
+                         │ 批准信 → 入境获 WP
+                         ▼
+       ┌─────────────────┼─────────────────┐
+       ▼                 ▼                 ▼
+   <span class="br">主申 WP</span>           <span class="br">配偶 OWP</span>         <span class="br">22 岁以下子女</span>
+   雇主绑定 2–3 年   Open Work Permit    Study Permit（K-12 免 SP）
+                    任何雇主即可工作
+                         │
+                         ▼  <span class="hi">§ 3  工作满 1 年 · 递 Express Entry 档案</span>
+              ┌─────────────────────────┐
+              │  CEC / FSW / FST · CRS 打分 │
+              │  进入 Express Entry pool     │
+              └──────────┬──────────────┘
+                         │ CRS ≥ draw cutoff
+                         ▼
+                     <span class="hi">ITA（邀请申请 PR）</span>
+                         │ 60 天内递交完整 PR 申请
+                         ▼
+              ┌─────────────────────────┐
+              │  IRCC 审理 · 6 个月服务标准 │
+              │  背调 + 体检 + 税单核验     │
+              └──────────┬──────────────┘
+                         │ COPR 批准
+                         ▼
+              <span class="hi">PR 登陆 · 全家同时或后续登陆</span>
+                         │
+                         ▼ 持 PR ≥ 3 年（1,095 天 / 5 年窗口）
+                     <span class="hi">§ 4 递公民申请</span>
+                         │ 语言 + 入籍考试 + 宣誓
+                         ▼
+              <span class="hi">加拿大公民 · 双重国籍 · 护照 · 投票</span>
+              <span class="br">（加拿大允许双重国籍；中国《国籍法》§9 自动丧失中国籍、须注销中国护照）</span>
+</div>
+
+    <h3><span class="n">0.1</span>四个关键身份的层级</h3>
+    <table class="sources">
+      <thead><tr><th>层级</th><th>法源</th><th>授予机构</th><th>工作权 / 居留权</th><th>家属派生</th></tr></thead>
+      <tbody>
+        <tr><td>TRV + WP（工签）</td><td>IRPA §22 · IRPR §199–205</td><td>IRCC（WP）+ ESDC（LMIA）</td><td>工作 ✓（绑雇主）· 居留 ✓（2–3 年）</td><td>配偶 OWP · 子女 SP</td></tr>
+        <tr><td>PR（永久居民）</td><td>IRPA §12 · §21</td><td>IRCC</td><td>工作 ✓（任何雇主）· 居留 ✓（5 年内住 ≥ 2 年）</td><td>全家同批或主申登陆后另递</td></tr>
+        <tr><td>Citizenship（公民）</td><td>Citizenship Act §5 · §11</td><td>IRCC</td><td>全权 · 护照 · 投票 · 可进出任意次</td><td>出生子女自动公民 · PR 配偶另走</td></tr>
+        <tr><td><em>对比：</em>访客（TRV）</td><td>IRPA §22</td><td>IRCC · 海外领馆</td><td>工作 ✗ · 居留 ≤ 6 个月</td><td>不可派生</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">0.2</span>GTS 与普通 LMIA 工签的三点关键差异</h3>
+    <table class="sources">
+      <thead><tr><th>维度</th><th>GTS</th><th>普通 LMIA</th><th>LMIA-exempt（如 C10 / C11）</th></tr></thead>
+      <tbody>
+        <tr><td>处理速度</td><td><strong>10 个工作日服务标准</strong>（LMIA + WP 各 10）</td><td>数月</td><td>随审签证官</td></tr>
+        <tr><td>雇主成本</td><td>LMIA 申请费 CAD 1,000 + LMBP 义务</td><td>LMIA 申请费 CAD 1,000 + 招聘证明</td><td>雇主补偿 CAD 230（取决于类别）</td></tr>
+        <tr><td>雇主义务</td><td><strong>必须提交 Labour Market Benefits Plan</strong>（LMBP）· 本地雇员招聘、培训、知识转移等可量化承诺</td><td>Transition Plan（类似但较弱）</td><td>视类别</td></tr>
+        <tr><td>工资底线</td><td>Cat B 岗位 ≥ 2×年度工资中位数（各省各岗位不同）</td><td>市场工资</td><td>市场工资</td></tr>
+        <tr><td>岗位限制</td><td><strong>Cat A</strong>: 指定 referral partner 推荐的独特高技能岗位；<strong>Cat B</strong>: 上 Global Talent Occupations List 的 14 个岗位</td><td>几乎所有岗位</td><td>跨国公司内部调动 / ICT / CUSMA 等具体类别</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">0.3</span>三大优势（为什么选这条）</h3>
+    <div class="node">
+      <div class="big">2 周处理 · 配偶 OWP · 直通 Express Entry</div>
+      <p><strong>① 2 周处理：</strong>雇主在 ESDC 递 LMIA 约 10 个工作日出结果，申请人在 IRCC 再递 WP 又 10 个工作日——全流程 4–6 周从递件到入境，这在全球工签里是最快的档位之一。美国 H-1B 要抽签+整年周期，L-1 也需 1–3 个月；GTS 的速度优势非常显著。</p>
+      <p><strong>② 配偶 OWP 免谈：</strong>GTS 主申的配偶自动拿 <span class="term">Open Work Permit</span>，不需要雇主、不需要 LMIA、任何雇主任何岗位均可工作。比美国 H-4 EAD（仅特定阶段）、日本 HSP 配偶（需附 28h/周雇主）宽松得多。</p>
+      <p><strong>③ 直通 Express Entry：</strong>在加拿大全职工作满 1 年即满足 <strong>CEC</strong>（Canadian Experience Class）最低要求；CEC 通常是 CRS 抽分中最"便宜"的类别，加上 1 年加拿大工作经验 + 雇主 arranged employment 能再加 50 分——GTS 持证者往往在工签第二年内就能拿到 ITA。</p>
+    </div>
+  </section>
+
+  <!-- ============ § 1 GTS 工签 ============ -->
+  <section id="stage-enter">
+    <h2><span class="n">§ 1</span>GTS 工签 · Cat A / B · LMBP · 2 周</h2>
+    <p class="lede">GTS 的主体程序由雇主驱动（LMIA + LMBP），申请人本人的动作集中在海外递交 WP 申请、准备体检与背景证明。</p>
+
+    <h3><span class="n">1.1</span>Category A vs Category B</h3>
+    <div class="node">
+      <div class="ntop"><span>§1.1 · ESDC Global Talent Stream Categories</span></div>
+      <div class="big">Cat A · 指定 referral partner 推荐的"unique and specialized"岗位</div>
+      <p>雇主须先获得 <strong>Designated Referral Partner</strong> 的转介（如 Innovation, Science and Economic Development Canada · 各省创新机构 · MaRS 等）。岗位必须是<em>独特 / 专业 / 过去两年本地招不到</em>的。常见于深科技、AI、生物医药创始公司或高级研发岗。</p>
+      <p><strong>要件：</strong>申请前 24 个月内本地招聘证明 · 岗位独特性说明 · 工资 ≥ 市场工资 · LMBP。</p>
+    </div>
+
+    <div class="node">
+      <div class="ntop"><span>§1.1 · ESDC Global Talent Occupations List</span></div>
+      <div class="big">Cat B · 预设"高技能短缺"岗位清单（14 个 NOC 代码）</div>
+      <p>雇主无需 referral partner，直接按清单内 NOC（National Occupational Classification）代码申请。2025 年清单要项包括：</p>
+      <ul>
+        <li><strong>NOC 20012</strong> Computer and information systems managers（CRS 最热门持有者画像）</li>
+        <li><strong>NOC 21211</strong> Data scientists</li>
+        <li><strong>NOC 21223</strong> Database analysts and data administrators</li>
+        <li><strong>NOC 21230</strong> Computer systems developers and programmers</li>
+        <li><strong>NOC 21231</strong> Software engineers and designers</li>
+        <li><strong>NOC 21232</strong> Software developers and programmers</li>
+        <li><strong>NOC 21233</strong> Web designers</li>
+        <li><strong>NOC 21234</strong> Web developers and programmers</li>
+        <li><strong>NOC 21311</strong> Computer engineers (except software engineers and designers)</li>
+        <li><strong>NOC 22220</strong> Computer network and web technicians</li>
+        <li><strong>NOC 22222</strong> Information systems testing technicians</li>
+        <li>另含 Producer / Technical (digital media) / 数字视觉特效等 3 项</li>
+      </ul>
+      <p><strong>工资下限：</strong>Cat B 岗位的工资必须达到"各岗位在当省的年度工资中位数的 2 倍"——这是把 GTS 定位在<em>高薪高技能</em>的硬门槛。每年 ESDC 会刷新。</p>
+      <dl class="kv">
+        <dt>清单</dt><dd><a href="../../data/archive/ca/gts/esdc/gts-occupations.html" target="_blank" rel="noopener">ESDC · Global Talent Applicant Guide（含 Occupations List）</a></dd>
+        <dt>雇主指南</dt><dd><a href="../../data/archive/ca/gts/esdc/gts-employer.html" target="_blank" rel="noopener">ESDC · GTS Requirements</a></dd>
+      </dl>
+    </div>
+
+    <h3><span class="n">1.2</span>LMBP · Labour Market Benefits Plan</h3>
+    <div class="node">
+      <div class="big">雇主承诺本地劳动市场收益 · GTS 的"入场票"</div>
+      <p>LMBP 是 GTS 区别于普通 LMIA 的核心——雇主必须对 ESDC 承诺"带来可量化的本地劳动市场收益"，并在工签后期接受检查。</p>
+      <p><strong>强制承诺（Mandatory Benefits，两个类别各一条）：</strong></p>
+      <ul>
+        <li><strong>Cat A 雇主</strong>必须承诺：为加拿大公民 / PR 创造新的就业机会</li>
+        <li><strong>Cat B 雇主</strong>必须承诺：对加拿大公民 / PR 提供技能与培训投资</li>
+      </ul>
+      <p><strong>补充承诺（Additional Benefits，两类雇主都要选 ≥ 2 项）：</strong>岗位创造、培训预算、新工艺 / 工具引入、知识转移、实习生机会、向本地大学 / 学院投资等。</p>
+      <p><strong>合规检查：</strong>ESDC 会在工签有效期内随机抽查 · 不达标雇主可能被暂停或永久剔除出项目。</p>
+    </div>
+
+    <h3><span class="n">1.3</span>申请流程 · 约 4–6 周</h3>
+    <table class="sources">
+      <thead><tr><th>步骤</th><th>谁做</th><th>耗时</th><th>产出</th></tr></thead>
+      <tbody>
+        <tr><td>1. 雇主走 referral（Cat A）/ 确认 NOC（Cat B）</td><td>雇主</td><td>1–4 周</td><td>Referral letter（Cat A）或 job posting（Cat B）</td></tr>
+        <tr><td>2. 起草 LMBP</td><td>雇主 + 顾问</td><td>1–2 周</td><td>LMBP 文件</td></tr>
+        <tr><td>3. 递 LMIA 申请</td><td>雇主</td><td>ESDC 10 工作日服务标准</td><td>Positive LMIA</td></tr>
+        <tr><td>4. 递 Work Permit 申请</td><td>申请人（线上，海外）</td><td>IRCC 10 工作日服务标准</td><td>POE Letter of Introduction</td></tr>
+        <tr><td>5. 体检</td><td>申请人</td><td>1–2 周</td><td>eMedical 报告</td></tr>
+        <tr><td>6. 入境 · 签发 WP</td><td>CBSA + 申请人</td><td>依机票</td><td>Work Permit 纸质版</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">1.4</span>家属派生</h3>
+    <div class="node">
+      <div class="ntop"><span>§1.4 · IRCC Family Work/Study Permit</span></div>
+      <div class="big">配偶自动 OWP · 22 岁以下子女可读公立 K-12 免 SP</div>
+      <ul>
+        <li><strong>配偶 / 同居伴侣：</strong>同名递 Open Work Permit（C41 LMIA-exempt 类别）· 有效期与主申 WP 同步 · 免 LMIA · 任何雇主任何岗位</li>
+        <li><strong>22 岁以下子女：</strong>K-12 阶段公立学校<em>免 Study Permit</em>可直接入学；大专 / 大学阶段须申 SP · 子女可在 SP 持证期间打工 ≤ 20 h/周</li>
+        <li><strong>同性伴侣：</strong>加拿大承认 · 与异性婚姻同等待遇</li>
+      </ul>
+      <dl class="kv">
+        <dt>工签入口</dt><dd><a href="../../data/archive/ca/gts/ircc/work-permit-lmia-exempt.html" target="_blank" rel="noopener">IRCC · Temporary work permits</a></dd>
+      </dl>
+    </div>
+  </section>
+
+  <!-- ============ § 2 维持 ============ -->
+  <section id="stage-hold">
+    <h2><span class="n">§ 2</span>入境与维持 · 工签续签 · BOWP</h2>
+    <p class="lede">GTS 工签首次通常签 2–3 年，届满可续；在已递 PR 申请但 WP 即将过期的 gap 期，可申 Bridging Open Work Permit（BOWP）续命。</p>
+
+    <h3><span class="n">2.1</span>持证期间可做的事</h3>
+    <ul>
+      <li><strong>在同一雇主内部调岗</strong>：同 NOC 大类内可调；跨 NOC 须重新申请 WP（但仍走 GTS 10 天通道）</li>
+      <li><strong>换雇主</strong>：须雇主重新申请 LMIA + LMBP（新雇主若是 GTS 资质，仍走 GTS 通道）</li>
+      <li><strong>自雇 / 顾问 / 第二份工作</strong>：严格讲 WP 绑定单一雇主，副业非法；可通过申请额外的开放工签或直接走 Start-Up Visa 通道</li>
+      <li><strong>出境旅行</strong>：WP 持有人持 WP + 护照 + TRV（如需）即可返加；没有最低入境比例要求——但 PR 阶段要开始记物理存在</li>
+    </ul>
+
+    <h3><span class="n">2.2</span>BOWP · 续命桥梁工签</h3>
+    <div class="node">
+      <div class="ntop"><span>§2.2 · IRCC Bridging Open Work Permit</span></div>
+      <div class="big">已递完整 PR 申请 · WP 将过期 · 可申 BOWP 保持工作权</div>
+      <p>满足以下条件的 Express Entry 申请人（CEC / FSW / FST）在 WP 到期前 4 个月内可申 BOWP，一次性 24 个月开放工签：</p>
+      <ul>
+        <li>已从 Express Entry 池收到 ITA 并递交完整 PR 申请；</li>
+        <li>完成 <span class="term">Acknowledgement of Receipt</span>（R1 信）；</li>
+        <li>当前 WP 剩 ≤ 4 个月。</li>
+      </ul>
+      <p>BOWP 是<strong>开放工签</strong>——拿到的那一刻，主申也解除雇主绑定了（但通常会继续留原雇主直到 PR 落地）。</p>
+    </div>
+
+    <h3><span class="n">2.3</span>税务 · CRA</h3>
+    <ul>
+      <li><strong>入境当日起</strong>成为加拿大税务居民（若建立"居住纽带"：住所 / 配偶 / 子女 / 主要收入来源任一在加）</li>
+      <li><strong>全球收入申报</strong>：税务居民须按<em>全球收入</em>报 T1；联邦 + 省两级累进，顶档合计 ~ 53%（Ontario）到 ~ 33%（Alberta）</li>
+      <li><strong>CPP + EI</strong>：工签持有人与公民 / PR 同样缴纳加拿大养老金（CPP）与就业保险（EI）</li>
+      <li><strong>中加 DTA</strong>：有双边税收协定 · 避免双重征税 · 但 FBAR / FATCA 类报告义务（美国相关）与加拿大无关</li>
+    </ul>
+
+    <h3><span class="n">2.4</span>家庭维持</h3>
+    <div class="familytrack">
+      <div class="row"><div class="l">主申 WP <small>2–3 年</small></div><div class="r"><em>Y0–Y2</em> 雇主绑定 GTS WP <em>Y1</em> 累计 1 年加拿大经验 → 可递 CEC <em>Y2–Y3</em> WP 续签或拿 BOWP</div></div>
+      <div class="row"><div class="l">配偶 OWP <small>开放</small></div><div class="r"><em>Y0</em> 随主申同批 OWP · 任意雇主 <em>Y1+</em> 若配偶本人满足 CEC 也可做主申 <em>PR 后</em> 自动解除</div></div>
+      <div class="row"><div class="l">子女 SP / 免 SP <small>就学</small></div><div class="r"><em>K-12</em> 公立学校免 SP <em>大专 / 大学</em> 须持 SP · 可兼职打工 20 h/周 <em>21 岁前</em> 随 PR 一同入籍</div></div>
+    </div>
+  </section>
+
+  <!-- ============ § 3 PR ============ -->
+  <section id="stage-pr">
+    <h2><span class="n">§ 3</span>升 PR · Express Entry · CEC 为主</h2>
+    <p class="lede">Express Entry 是 IRCC 用 CRS 给申请人打分的<em>池子</em>，IRCC 定期从池子里抽（Round of Invitations）：达到或超过当期 cutoff 的申请人收到 ITA（Invitation to Apply），然后 60 天内递完整 PR 申请。</p>
+
+    <h3><span class="n">3.1</span>三个门类 · CEC / FSW / FST</h3>
+    <table class="sources">
+      <thead><tr><th>门类</th><th>核心要件</th><th>GTS 持证者适用性</th></tr></thead>
+      <tbody>
+        <tr><td><strong>CEC</strong> · Canadian Experience Class</td><td>过去 3 年内加拿大全职工作 ≥ 1 年（NOC TEER 0/1/2/3） · 英 / 法 CLB 7（NOC 0/1）或 CLB 5（NOC 2/3）</td><td><strong>最适用</strong> · 工签满 1 年即达标</td></tr>
+        <tr><td><strong>FSW</strong> · Federal Skilled Worker</td><td>海外 or 加拿大全职工作 ≥ 1 年 · CLB 7 · 通过 67/100 分初筛 · 证明 funds（约 CAD 14,000 单人）</td><td>备选 · 海外经验也可计</td></tr>
+        <tr><td><strong>FST</strong> · Federal Skilled Trades</td><td>技工工种 · NOC 72/73/82/92 + 某些 NOC 632/633 · 工作 2 年</td><td>不适用（GTS 基本为脑力岗位）</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">3.2</span>CRS 打分 · 六大因子</h3>
+    <div class="node">
+      <div class="ntop"><span>§3.2 · IRCC Comprehensive Ranking System · grid</span></div>
+      <div class="big">满分 1,200 分 · 常见 GTS 主申可达 460–520 分</div>
+      <p><strong>Core / Human Capital（最高 500，单身 / 有伴侣各一档）：</strong>年龄 · 学历 · 语言（第一语言 CLB） · 加拿大工作经验</p>
+      <p><strong>Spouse Factors（最高 40）：</strong>配偶学历 + 语言 + 加拿大工作经验</p>
+      <p><strong>Skill Transferability（最高 100）：</strong>学历 + 语言 + 加拿大 / 海外工作经验 + 工种证书</p>
+      <p><strong>Additional Points（最高 600）：</strong></p>
+      <ul>
+        <li>Provincial Nomination（省提名）· <strong>+600</strong>（几乎确保收 ITA）</li>
+        <li>French 语言能力（NCLC 7+）· <strong>+25–50</strong>（2023 后新增）</li>
+        <li>Arranged Employment（雇主长期 offer）· <strong>+50 或 +200</strong></li>
+        <li>加拿大学历（2 年以上）· <strong>+15 或 +30</strong></li>
+        <li>兄弟姐妹在加公民 / PR · <strong>+15</strong></li>
+      </ul>
+      <p><strong>典型画像：</strong>29 岁 · 硕士 · 英语 CLB 9 · 加拿大工作 2 年 · 已婚 · 无子女 → 约 <strong>490–510 分</strong>。2024 年 category-based draw（STEM / Healthcare）cutoff 常在 430–480；CEC-only draw 约 500–540。法语能加 50 分可显著降压力。</p>
+      <dl class="kv">
+        <dt>打分表</dt><dd><a href="../../data/archive/ca/gts/ircc/crs-grid.html" target="_blank" rel="noopener">IRCC · CRS criteria grid</a></dd>
+        <dt>CEC</dt><dd><a href="../../data/archive/ca/gts/ircc/cec.html" target="_blank" rel="noopener">IRCC · Canadian Experience Class</a></dd>
+        <dt>FSW</dt><dd><a href="../../data/archive/ca/gts/ircc/fsw.html" target="_blank" rel="noopener">IRCC · Federal Skilled Workers</a></dd>
+      </dl>
+    </div>
+
+    <h3><span class="n">3.3</span>从 ITA 到 COPR · 约 6 个月</h3>
+    <table class="sources">
+      <thead><tr><th>步骤</th><th>耗时</th><th>产出</th></tr></thead>
+      <tbody>
+        <tr><td>收 ITA（Invitation to Apply）</td><td>从达 cutoff 次抽签起</td><td>60 天递 e-APR</td></tr>
+        <tr><td>递 e-APR（全家证据 · 体检 · 无犯罪 · funds）</td><td>1–3 周</td><td>R1 信（已受理）</td></tr>
+        <tr><td>IRCC 审核 + 背调 + 体检核验</td><td>约 6 个月服务标准</td><td>R2 信 → 贴签或 eCOPR</td></tr>
+        <tr><td>登陆（Landing）· CBSA 或在加登陆</td><td>依机票</td><td>PR Card + SIN 更新</td></tr>
+      </tbody>
+    </table>
+    <p>若 WP 在审理期间到期，递 BOWP；若全家在加已落地，可线上 eCOPR 直接在境内完成登陆。</p>
+
+    <h3><span class="n">3.4</span>PR 维持 · 5 年内 730 天物理存在</h3>
+    <p>PR 卡有效期 5 年（Permanent Resident Card），<strong>必须在 5 年窗口内物理存在加拿大 ≥ 730 天（2 年）</strong>否则 PR 身份可被撤销。可用经验：</p>
+    <ul>
+      <li>陪同加拿大公民配偶海外生活 · 每一天计</li>
+      <li>被加拿大雇主派驻海外 · 每一天计</li>
+      <li>PR 配偶陪同加拿大雇主派驻海外的另一 PR · 每一天计</li>
+    </ul>
+    <p>长期在中国工作的 GTS → PR 需特别注意物理存在 —— 这是入籍前最易栽的关卡。</p>
+  </section>
+
+  <!-- ============ § 4 入籍 ============ -->
+  <section id="stage-citizen">
+    <h2><span class="n">§ 4</span>升公民 · 3/5 物理存在 · 允许双重国籍</h2>
+    <p class="lede">加拿大允许双重国籍（Citizenship Act §9；1977 年起不再强制放弃）；但中国《国籍法》§9 仍然独立生效——对中国大陆出生者而言，入籍加拿大那一刻中国籍自动丧失，护照须注销。</p>
+
+    <div class="node">
+      <div class="ntop"><span>§4 · Citizenship Act · §5 Grant of citizenship</span></div>
+      <div class="big">PR 期间 5 年内累计住 1,095 天（= 3 年）</div>
+      <p><strong>法定门槛（Citizenship Act §5）：</strong></p>
+      <ul>
+        <li>年满 <strong>18 岁</strong>（未成年人随父母）</li>
+        <li>递申请前 <strong>5 年内在加拿大累计物理存在 ≥ 1,095 天</strong>（申请前做 PR 之前的持签期可部分计入，每 1 天计 0.5 天，最多 365 天）</li>
+        <li>过去 5 年内报过 <strong>3 次</strong>加拿大税（若有报税义务）</li>
+        <li>通过 <strong>入籍考试</strong>（英 / 法任一 · 20 题 · 75% 合格）</li>
+        <li>语言证明：18–54 岁要 <strong>CLB 4</strong>（听 + 说；法语 NCLC 4 同等），通常 IELTS General 或 CELPIP 即可</li>
+        <li>无重大犯罪、未进入撤销程序</li>
+      </ul>
+      <p><strong>时间线：</strong></p>
+      <ul>
+        <li>递申请（在线 e-Application）→ IRCC 核算天数 → 平均 12–18 个月处理</li>
+        <li>邀请参加入籍考试（若 18–54）</li>
+        <li>邀请参加 Oath Ceremony → 当场或 30 天内宣誓</li>
+      </ul>
+      <dl class="kv">
+        <dt>官方</dt><dd><a href="../../data/archive/ca/gts/ircc/citizenship-become.html" target="_blank" rel="noopener">IRCC · Become a Canadian citizen</a> · <a href="../../data/archive/ca/gts/ircc/citizenship-physical-presence.html" target="_blank" rel="noopener">IRCC · Eligibility</a></dd>
+        <dt>法律</dt><dd><a href="../../data/archive/ca/gts/laws/citizenship-act.html" target="_blank" rel="noopener">Citizenship Act · R.S.C. 1985, c. C-29</a></dd>
+      </dl>
+    </div>
+
+    <h3><span class="n">4.1</span>未成年子女同期</h3>
+    <p>未成年 PR 子女由父母递子女申请（IRCC 表 <span class="term">CIT 0003 / CIT 0002</span>）· 无 1,095 天硬要求 · 免语言 + 免考试 · 父母同批宣誓。</p>
+
+    <h3><span class="n">4.2</span>中国籍的同步处理</h3>
+    <ul>
+      <li><strong>加拿大侧：</strong>允许双重国籍（Citizenship Act §9 · 不要求放弃）；宣誓时<em>没有</em>放弃原国籍条款</li>
+      <li><strong>中国侧：</strong>中国《国籍法》§9 独立生效——"定居外国的中国公民，自愿加入或取得外国国籍的，自动丧失中国国籍"· 加入加籍即自动失中国籍</li>
+      <li><strong>实务：</strong>宣誓后持加籍证书去中国驻加使馆办护照 / 户籍注销 · 获"退籍证明"· 之后回中国须持加拿大护照 + 中国签证</li>
+      <li><strong>灰色区：</strong>事实上持两本护照入出境的人存在，但不受任何一侧法律保护；出入境检查风险自担。中国大使馆近年对"未注销中国护照"的加籍华人办理签证趋严</li>
+    </ul>
+  </section>
+
+  <!-- ============ § 5 家庭配置 ============ -->
+  <section id="stage-family">
+    <h2><span class="n">§ 5</span>家庭玩法 · 三种典型配置</h2>
+
+    <h3><span class="n">5.1</span>双线 A · 主申 GTS WP + 配偶 OWP</h3>
+    <div class="node">
+      <div class="big">最常见 · 配偶自由就业 · 1 份 PR 申请全家派生</div>
+      <p>最经典：主申 GTS · 配偶 OWP 立即就业 · 子女 K-12 免 SP。第 2 年主申递 Express Entry（CEC）· 1 份 PR 申请覆盖全家。</p>
+      <p><strong>关键</strong>：配偶若在加工作满 1 年并有 CLB 7，CRS 可加若干分 · 甚至可作为主申递（Spouse 切换）以提升总分。</p>
+    </div>
+
+    <h3><span class="n">5.2</span>双线 B · 夫妻分别递 Express Entry</h3>
+    <div class="node">
+      <div class="big">双方都达 CEC · 两条独立 PR 线并行</div>
+      <p>若夫妻双方都持 WP 且都满足 CEC 最低要求（1 年加拿大工作 + CLB 7），<strong>分别建立 Express Entry 档案</strong>：谁的 CRS 先跨 cutoff，谁先拿 ITA · 另一方作为 accompanying spouse 同批过。</p>
+      <p>相比"指定一方为主申"，双线保证分数下行时的韧性；某些 category-based draw（STEM / Healthcare / Trade）只对 primary 职业有效，双线能覆盖更多机会。</p>
+    </div>
+
+    <h3><span class="n">5.3</span>三线 C · GTS WP + 省提名（PNP）备份</h3>
+    <div class="node">
+      <div class="big">担心联邦 CRS cutoff 过高 · 走省提名保底</div>
+      <p>Ontario Immigrant Nominee Program（OINP）· BC PNP · Alberta AAIP 等多个省份有<em>Tech stream</em>配合 Express Entry；被省提名后 CRS 直接 <strong>+600</strong>，几乎确定 ITA。</p>
+      <p>代价：部分 PNP 要求先取得本省 job offer · 落地后须在该省居住一段时间（道德义务，非法律强制，但若短期离省下次 PR 新卡可能受影响）。</p>
+    </div>
+  </section>
+
+  <!-- ============ § 6 家庭三线图 ============ -->
+  <section id="stage-timeline">
+    <h2><span class="n">§ 6</span>家庭三线图 · 典型 4 年 PR + 3 年公民节奏</h2>
+
+<div class="flowchart">
+<span class="br">Y0</span>    雇主起草 LMBP · ESDC 递 LMIA
+<span class="br">Y0+1M</span>  LMIA 批 · 申请人递 WP
+<span class="br">Y0+2M</span>  WP 批 · 全家入境 · 配偶拿 OWP · 子女入学
+<span class="br">Y1</span>    主申加拿大工作满 1 年 · 达 CEC
+<span class="br">Y1.5</span>  主申递 Express Entry 档案 · CRS 490 分
+<span class="br">Y2</span>    <span class="hi">ITA · 递 e-APR · 背调 + 体检</span>
+<span class="br">Y2.5</span>  COPR 批 · 全家登陆为 PR
+<span class="br">Y2.5+</span>  配偶 OWP 转为 PR 工作权 · 开始缴 CPP · 买房
+<span class="br">Y5.5</span>  PR 满 3 年（5 年内累计 1,095 天）· 申公民
+<span class="br">Y6–Y7</span> <span class="hi">入籍考试 · 宣誓 · 拿护照</span>
+              <span class="br">（宣誓即触发中国国籍法 §9 失籍 · 注销中国护照）</span>
+</div>
+  </section>
+
+  <!-- ============ § 7 风险 ============ -->
+  <section id="stage-risk">
+    <h2><span class="n">§ 7</span>核心风险点</h2>
+
+    <div class="risk">
+      <h4>GTS 工签期的结构性风险</h4>
+      <ul>
+        <li><strong>LMBP 合规检查：</strong>雇主若未达成 LMBP 承诺，ESDC 可暂停 / 永久剔除该雇主；雇主资格失效时主申 WP 续签受影响</li>
+        <li><strong>职业清单浮动：</strong>Global Talent Occupations List 每年刷新 · 某些岗位曾被移出清单；续签时岗位须仍在清单或改走普通 LMIA</li>
+        <li><strong>工资下限上调：</strong>Cat B "省内中位数 2x" 每年涨 · 若跟不上意味着无法续签 GTS（但可走普通 LMIA）</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>Express Entry / PR 阶段的分数风险</h4>
+      <ul>
+        <li><strong>CRS cutoff 上升：</strong>2023 Q1 一般 draw 曾跨 500 分 · 高峰 526 · 靠近年龄 30 的申请人易"老化掉分"</li>
+        <li><strong>Category-based draws 不覆盖所有职业：</strong>STEM / Healthcare / French / Trade / Agriculture / Transport 六个类别外的 NOC 只能等 general draw</li>
+        <li><strong>法语加分红利：</strong>2023 起法语专项 draw 高频 · 无法语能力的申请人明显吃亏</li>
+        <li><strong>Medical / Criminal 背景：</strong>既往健康问题（慢性病 + 超额医保预期）或其他国家刑事记录会 RFE 甚至直接拒批</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>PR 维持与入籍阶段</h4>
+      <ul>
+        <li><strong>Residency Obligation：</strong>5 年内不足 730 天物理存在 → PR 可撤销；常见坑：PR 登陆后长期回中国工作</li>
+        <li><strong>1,095 天的税单重叠：</strong>如果申请人一直在加有报税但物理存在不够，仍然不达标</li>
+        <li><strong>宣誓前的中国公证：</strong>部分申请人因中国籍相关公证 / 出生证 / 结婚证从中国领馆办理受阻，延误宣誓</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 8 备选 ============ -->
+  <section id="stage-alt">
+    <h2><span class="n">§ 8</span>备选切换 · 这条走不通怎么办</h2>
+
+    <ul class="altlist">
+      <li>
+        <span class="tgt">CA · FSW（Federal Skilled Worker）<small>无需加拿大 offer</small></span>
+        <div>
+          <strong>门槛：</strong>海外全职工作 ≥ 1 年（NOC TEER 0/1/2/3）· 67/100 初筛分 · CLB 7 · funds 证明。<strong>何时考虑：</strong>境外申请人、雇主不愿走 LMIA。<strong>价值：</strong>不依赖雇主 · 完全走 CRS 打分。<strong>劣势：</strong>无加拿大工作经验，CRS 天然低 50 分。
+          <span class="when">官方：<a href="../../data/archive/ca/gts/ircc/fsw.html" target="_blank" rel="noopener">IRCC · FSW</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">CA · Provincial Nominee Program<small>省提名 · 加 CRS 600 分</small></span>
+        <div>
+          <strong>门槛：</strong>各省 Tech Stream / Entrepreneur / General 细分；多数要本省 job offer。<strong>何时考虑：</strong>CRS 卡 cutoff 但 Tech 背景强、有 Ontario / BC / Alberta 雇主。<strong>价值：</strong>拿到省提名 CRS +600 几乎锁 ITA · 对年龄大、分数低的申请人价值最大。
+          <span class="when">占位：<a class="pending" href="#" title="待建：ca-pnp-tech">本站 · CA PNP Tech</a>（未建）· 官方：各省 PNP 门户（以 OINP / BC PNP / AAIP 为代表）</span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">CA · Start-Up Visa<small>创始人一步到位 PR</small></span>
+        <div>
+          <strong>门槛：</strong>从 <em>designated organization</em>（VC / 天使 / 孵化器）获 Letter of Support · 核心团队最多 5 人 · 英 / 法 CLB 5 · funds 证明。<strong>何时考虑：</strong>有被加拿大 designated VC / 孵化器接受的创业项目。<strong>价值：</strong>不走 Express Entry · 直接递 PR · 申请期间可申工签先入境。
+          <span class="when">占位：<a class="pending" href="#" title="待建：ca-suv">本站 · CA Start-Up Visa</a>（未建）· 官方：IRCC · Start-Up Visa</span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">CA · ICT（Intra-Company Transferee）<small>LMIA-exempt · 跨国调动</small></span>
+        <div>
+          <strong>门槛：</strong>在海外母 / 子 / 关联公司连续工作 ≥ 1 年（过去 3 年内）· 管理 / executive / specialized knowledge 三档。<strong>价值：</strong>LMIA-exempt · 处理极快（部分可在机场 flagpoling）· 适合 Google / Microsoft / 银行等已在加有实体的跨国公司调动。
+          <span class="when">占位：<a class="pending" href="#" title="待建：ca-ict">本站 · CA ICT</a>（未建）· 官方：IRCC · Work permit exemption C12 · C61 · C62</span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">US · H-1B<small>美国专业职位</small></span>
+        <div>
+          <strong>门槛：</strong>本科学位 + 专业职位 + 雇主担保 + H-1B cap 抽签（3 月）。<strong>何时考虑：</strong>加拿大 GTS 走不通而有美国 offer。<strong>价值：</strong>跨国工资落差大（美国 TC 更高）· 但抽签 + 排期 + 全球纳税是三重负担。
+          <span class="when">详情：<a href="us-h1b.html">本站 · 美国 H-1B 专业职位</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">US · L-1A / L-1B<small>美国跨国调动</small></span>
+        <div>
+          <strong>门槛：</strong>跨国公司同系列分支机构工作 ≥ 1 年（L-1B 专门知识 / L-1A 管理高管）。<strong>何时考虑：</strong>同一雇主在北美有两边分支、偏好美国 TC。<strong>价值：</strong>L-1A 绑定 EB-1C 绿卡路径（与 L-1A 要件同构），速度比 CEC 慢但总 TC 高。
+          <span class="when">详情：<a href="us-l1a.html">本站 · US L-1A</a> · <a href="us-l1b.html">本站 · US L-1B</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">US · O-1A / EB-1A<small>杰出人才</small></span>
+        <div>
+          <strong>门槛：</strong>8 CFR 214.2(o) 或 8 CFR 204.5(h)。<strong>何时考虑：</strong>有国际成就 + 偏好美国。
+          <span class="when">详情：<a href="us-o1.html">本站 · US O-1</a> · <a href="us-eb1a.html">本站 · US EB-1A</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">JP · HSP 1 号イ / ロ / ハ<small>日本高度専門職</small></span>
+        <div>
+          <strong>门槛：</strong>积分制 ≥ 70 分。<strong>何时考虑：</strong>偏好日本市场 · 年薪 JPY 10M+。<strong>价值：</strong>80 分 1 年即可永住。
+          <span class="when">详情：<a href="jp-hsp.html">本站 · 日本 HSP 1 号ロ</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">SG · ONE Pass<small>新加坡高薪准证</small></span>
+        <div>
+          <strong>门槛：</strong>月薪 ≥ SGD 30k 或国际成就。<strong>何时考虑：</strong>亚洲枢纽 + 低税。<strong>价值：</strong>5 年长签 · 多雇主 · 配偶 LOC。
+          <span class="when">详情：<a href="sg-one-pass.html">本站 · SG ONE Pass</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">UK · Global Talent<small>英国背书制</small></span>
+        <div>
+          <strong>门槛：</strong>经指定背书机构 endorsement（digital / 学术 / 艺术）。<strong>价值：</strong>无雇主绑定 · 5 年可申 ILR。
+          <span class="when">占位：<a class="pending" href="#" title="待建：uk-global-talent">本站 · UK Global Talent</a>（未建）· 官方：<a href="https://www.gov.uk/global-talent" target="_blank" rel="noopener">GOV.UK · Global Talent</a></span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ § 10 官方文件总表 ============ -->
+  <section id="stage-sources">
+    <h2><span class="n">§ 10</span>官方文件总表 <span class="tag">含本地归档</span></h2>
+    <p class="lede">本表列出 GTS 路径上所有引用的官方原件，均在 <a href="../../data/archive/ca/gts/" target="_blank" rel="noopener"><code>data/archive/ca/gts/</code></a> 下有快照。<strong>注：</strong>canada.ca（IRCC / ESDC 页）在部分境内网络对直连 curl 会超时（Akamai GeoFilter），本仓库归档通过 <code>web.archive.org</code> <code>id_</code> 模式取 2025 年原始快照；justice.gc.ca 直连。</p>
+
+    <h3><span class="n">10.1</span>法律 · Justice Laws</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布 / 出处</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>IRPA</code></td><td>Immigration and Refugee Protection Act（移民与难民保护法）· 临时工签 / PR 的上位法</td><td class="iss">SC 2001, c. 27</td><td><a href="../../data/archive/ca/gts/laws/irpa.html" target="_blank" rel="noopener">laws/irpa.html</a></td></tr>
+        <tr><td class="id"><code>IRPR</code></td><td>Immigration and Refugee Protection Regulations（IRPA 实施条例）· LMIA / WP / PR 具体规则</td><td class="iss">SOR/2002-227</td><td><a href="../../data/archive/ca/gts/laws/irpr.html" target="_blank" rel="noopener">laws/irpr.html</a></td></tr>
+        <tr><td class="id"><code>CA</code></td><td>Citizenship Act（公民法）· 入籍 3/5 · 双重国籍 · 撤销程序</td><td class="iss">R.S.C. 1985, c. C-29</td><td><a href="../../data/archive/ca/gts/laws/citizenship-act.html" target="_blank" rel="noopener">laws/citizenship-act.html</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.2</span>政策页 · ESDC</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布 / 出处</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>gts-ov</code></td><td>ESDC · Global Talent Stream 总览</td><td class="iss">ESDC canada.ca</td><td><a href="../../data/archive/ca/gts/esdc/gts-overview.html" target="_blank" rel="noopener">esdc/gts-overview.html</a></td></tr>
+        <tr><td class="id"><code>gts-req</code></td><td>ESDC · GTS Requirements 雇主指南（Cat A / B · LMBP · 工资下限）</td><td class="iss">ESDC canada.ca</td><td><a href="../../data/archive/ca/gts/esdc/gts-employer.html" target="_blank" rel="noopener">esdc/gts-employer.html</a></td></tr>
+        <tr><td class="id"><code>gts-app</code></td><td>ESDC · GTS Applicant Guide + Global Talent Occupations List（14 NOC）</td><td class="iss">ESDC canada.ca</td><td><a href="../../data/archive/ca/gts/esdc/gts-occupations.html" target="_blank" rel="noopener">esdc/gts-occupations.html</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.3</span>政策页 · IRCC</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布 / 出处</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>wp</code></td><td>IRCC · Temporary work permits（GTS / LMIA-exempt / BOWP）</td><td class="iss">IRCC canada.ca</td><td><a href="../../data/archive/ca/gts/ircc/work-permit-lmia-exempt.html" target="_blank" rel="noopener">ircc/work-permit-lmia-exempt.html</a></td></tr>
+        <tr><td class="id"><code>ee</code></td><td>IRCC · Express Entry 总览</td><td class="iss">IRCC canada.ca</td><td><a href="../../data/archive/ca/gts/ircc/express-entry.html" target="_blank" rel="noopener">ircc/express-entry.html</a></td></tr>
+        <tr><td class="id"><code>cec</code></td><td>IRCC · Canadian Experience Class 资格</td><td class="iss">IRCC canada.ca</td><td><a href="../../data/archive/ca/gts/ircc/cec.html" target="_blank" rel="noopener">ircc/cec.html</a></td></tr>
+        <tr><td class="id"><code>fsw</code></td><td>IRCC · Federal Skilled Workers 资格</td><td class="iss">IRCC canada.ca</td><td><a href="../../data/archive/ca/gts/ircc/fsw.html" target="_blank" rel="noopener">ircc/fsw.html</a></td></tr>
+        <tr><td class="id"><code>crs</code></td><td>IRCC · Comprehensive Ranking System criteria（六大因子 + Additional Points）</td><td class="iss">IRCC canada.ca</td><td><a href="../../data/archive/ca/gts/ircc/crs-grid.html" target="_blank" rel="noopener">ircc/crs-grid.html</a></td></tr>
+        <tr><td class="id"><code>cit-ov</code></td><td>IRCC · Become a Canadian citizen 总览</td><td class="iss">IRCC canada.ca</td><td><a href="../../data/archive/ca/gts/ircc/citizenship-become.html" target="_blank" rel="noopener">ircc/citizenship-become.html</a></td></tr>
+        <tr><td class="id"><code>cit-elg</code></td><td>IRCC · Citizenship eligibility（物理存在 1,095 / 税 3 次 / 语言 / 考试）</td><td class="iss">IRCC canada.ca</td><td><a href="../../data/archive/ca/gts/ircc/citizenship-physical-presence.html" target="_blank" rel="noopener">ircc/citizenship-physical-presence.html</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.4</span>其他外部参考（不做本地归档）</h3>
+    <ul>
+      <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/express-entry-rounds.html" target="_blank" rel="noopener">IRCC · Express Entry Rounds of Invitations</a>（每次抽签的 cutoff 与类别）</li>
+      <li><a href="https://www.canada.ca/en/employment-social-development/services/foreign-workers/wages.html" target="_blank" rel="noopener">ESDC · Wages by NOC</a>（LMIA 工资下限查询）</li>
+      <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/publications-manuals/operational-bulletins-manuals.html" target="_blank" rel="noopener">IRCC · Operational Bulletins and Manuals</a>（签证官操作手册）</li>
+      <li><a href="https://www.cic.gc.ca/english/resources/tools/updates/" target="_blank" rel="noopener">IRCC · Program Delivery Updates</a></li>
+    </ul>
+
+    <p class="hint">本表"本地归档"指向的是仓库内 <code>data/archive/ca/gts/</code> 下已下载的官方原件快照。若本地文件缺失，请在仓库根下运行 <code>bash data/archive/ca/gts/download.sh</code> 重新拉取。</p>
+  </section>
+
+  <footer class="btm">
+    <span>relocate · ca-gts · v0.1</span>
+    <span>© 本站非商用 · 内容引自官方公开条款与指南</span>
+  </footer>
+
+</main>
+</body>
+</html>

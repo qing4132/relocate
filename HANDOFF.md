@@ -45,6 +45,10 @@
   - [`site/paths/sg-one-pass.html`](site/paths/sg-one-pass.html) — ONE Pass（Overseas Networks & Expertise Pass）两档门槛（月薪 SGD 30k 档 vs outstanding achievements 成就档）· 5 年长签 · 多雇主 + 自办公司 + 董事权 · Dependant's Pass + 配偶 LOC 工作权 · 续签三条口径（累计 SGD 1.5M 或持续高薪或持续成就）· IRAS 183 天 tax residency · PR（ICA PTS Scheme · 裁量审批 · REP 维持）· Citizenship（Constitution Art 122–141 · PR ≥ 2 年 · 单一国籍制度 Art 134 · 与中国《国籍法》§9 的双向触发）· CPF 义务 · 子女 NS 兵役 · 三种家庭配置 · § 8 备选切换（EP / Tech.Pass / PEP / 美 EB-1A / 美 O-1A / JP HSP / UK Global Talent / CA GTS / UAE Golden Visa）· § 10 官方文件四张子表全带本地归档列
   - `data/archive/sg/one-pass/`（MOM 4：ONE Pass overview / eligibility / EP / Dependant's Pass · ICA 2：PR / Citizenship · IRAS 1：tax residency · AGC 3：EFMA Cap 91A / Immigration Act Cap 133 / Constitution Part X Art 122–141）+ README + download.sh；Tech.Pass 因 EDB 反爬 + MOM 原页 404 不强制归档，页面内仅作相邻对比
   - 跨链接：`site/index.html` 路径列表新增 SG ONE Pass 条目（首条 SG 路径，紧随 US EB-1A）；`site/paths/us-l1a.html` § 8 · `site/paths/us-h1b.html` § 7 · `site/paths/us-l1b.html` § 8 · `site/paths/us-o1.html` § 8 · `site/paths/us-eb1a.html` § 8 · `site/paths/jp-hsp.html` § 5 共 6 页的"Singapore · ONE Pass" 条目全部从 MOM 外链或 pending 占位改为本站内链（保留 MOM fallback 链接）
+- **2026-04-20 · 新增 CA Global Talent Stream（GTS）路径 + 官方原件归档**：
+  - [`site/paths/ca-gts.html`](site/paths/ca-gts.html) — GTS 2 周服务标准 · Category A（referral partner 推荐独特岗位）vs Category B（14 个 NOC 代码清单）· LMBP 强制承诺 · Cat B 工资下限 = 省岗位中位数 2x · 配偶自动 OWP · 子女 K-12 免 SP · BOWP 过渡工签 · Express Entry（CEC 最适 GTS、FSW 备选）· CRS 六大因子 + Additional Points（PNP +600 / 法语 +50 / Arranged Employment +50/200）· PR 维持 5/730 天 · 入籍 3/5 物理存在 · 允许双重国籍但与中国《国籍法》§9 冲突 · § 8 跨国备选（FSW / PNP / SUV / ICT / US H-1B/L-1/O-1/EB-1A / JP HSP / SG ONE Pass / UK GT）
+  - `data/archive/ca/gts/`（ESDC 3：GTS overview + requirements + applicant guide/occupations · IRCC 7：work permit + express entry + CEC + FSW + CRS grid + citizenship become + eligibility · Justice Laws 3：IRPA + IRPR + Citizenship Act）共 13 份官方原件 + README + download.sh。由于 canada.ca 在境内网络对直连 curl 会 TCP 劫持至保留 IP（Akamai GeoFilter），download.sh 对 canada.ca 走 `web.archive.org/web/2025id_/` 模式取 2025 年原始快照；justice.gc.ca 直连
+  - 跨链接：`site/index.html` 路径列表新增 CA GTS 条目（首条 CA 路径，紧随 SG ONE Pass）；`site/paths/us-l1a.html` § 8 · `site/paths/us-h1b.html` § 7 · `site/paths/us-l1b.html` § 8 · `site/paths/us-o1.html` § 8 · `site/paths/us-eb1a.html` § 8（原 `ca-express-entry-fsw` pending 替换）· `site/paths/jp-hsp.html` § 5 共 6 页的 "Canada · GTS" 条目全部从 ESDC 外链或 pending 占位改为本站内链（保留 ESDC fallback 链接）
 - 技术栈：**纯静态 HTML / CSS，无框架、无构建**（[docs/engineering.md](docs/engineering.md)）
 - 可部署目录：[site/](site/)
 - 已有路径页：
@@ -56,6 +60,7 @@
   - [`site/paths/us-o1.html`](site/paths/us-o1.html) — 美国 · O-1 · 杰出人才 → EB-1A → 永居 → 入籍
   - [`site/paths/us-eb1a.html`](site/paths/us-eb1a.html) — 美国 · EB-1A · 杰出人才自荐绿卡（不是签证 · 绿卡分类页）
   - [`site/paths/sg-one-pass.html`](site/paths/sg-one-pass.html) — 新加坡 · ONE Pass · 工签 → PR → Citizenship
+  - [`site/paths/ca-gts.html`](site/paths/ca-gts.html) — 加拿大 · Global Talent Stream · 2 周工签 → Express Entry PR → 入籍
 
 ## Next · 下一步
 
@@ -74,7 +79,6 @@
 | `jp-hsp-1a` | `site/paths/jp-hsp-1a.html` | jp-hsp.html § 5（研究系） |
 | `jp-hsp-2` | `site/paths/jp-hsp-2.html` | jp-hsp.html § 5 |
 | `jp-gijinkoku` | `site/paths/jp-gijinkoku.html` | jp-hsp.html § 5（技術・人文知識・国際業務） |
-| `jp-business-mgmt` | `site/paths/jp-business-mgmt.html` | jp-hsp.html § 4, § 5（経営・管理） |
 | `ca-gts` | `site/paths/ca-gts.html` | 两个路径页的跨国切换段 |
 | `au-gtv` | `site/paths/au-gtv.html` | us-l1b.html § 8 |
 | `uk-global-talent` | `site/paths/uk-global-talent.html` | 两个路径页 |
