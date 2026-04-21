@@ -7,6 +7,18 @@
 
 ## Now · 在哪
 
+- **2026-04-21 · 新增 US EB-1B 杰出教研 + US EB-5 投资移民双绿卡分类页 + 官方原件归档**（commit 待写）：
+  - [`site/paths/us-eb1b.html`](site/paths/us-eb1b.html) — 绿卡分类页 · INA §203(b)(1)(B) · 8 CFR 204.5(i) · 三大硬要件（国际承认 + ≥ 3 年教研经验 + tenure / tenure-track / permanent research 岗位 offer）· 6 条证据 ≥ 2 条 + Kazarian 两段论（引用 us-eb1a § 3 不重复）· 合格雇主三形态（大学 / 研究机构 / 企业 R&D ≥ 3 名全职研究员）· permanent position 争议点（按年续聘 / grant funded / visiting / postdoc 都不算）· AC21 跳槽 portability 受限（必须仍为教研 permanent 岗位）· § 7 从 H-1B / O-1A / J-1（212(e) 坑）/ F-1 / 境外切入 · § 8 并行 EB-1A / NIW / PERM EB-2/3 / EB-1C / EB-5 / 跨国 · § 9 EB-1B 专属高频 RFE 七条
+  - [`site/paths/us-eb5.html`](site/paths/us-eb5.html) — 绿卡分类页 · INA §203(b)(5) + §216A · 8 CFR 204.6 + 216.6 · **RIA 2022（PubL 117-103 Div BB）**六大要点（投资额 $800K/$1.05M + TEA 由 DHS 统一裁定 + 20%/10%/2% set-aside 独立排期 + I-485 并递 + RC 授权至 2027 + Good-faith 保护）· 两种投资形态（直接投资 I-526 vs 区域中心 I-526E）· SoF 中国大陆专项（外管 5 万换汇 / 流水链条 / 父母赠与）· RC due diligence 九项清单 · 两步绿卡（I-526E → CLPR 2 年 → I-829 → 永久 LPR）· CLPR 期间 48 个月 I-829 pending 自动延期 · good-faith 重投 2 年窗口 · § 5 家属 E-51/E-52/E-53 + CSPA（EB-5 保护最强）· § 6 境内 H-1B/L-1/E-2/F-1 或境外切入 + 并行 EB-1A/NIW/L-1A→EB-1C/EB-1B/跨国 SUV/GIP/Innovator · § 7 资金 / 项目 / 移民 三层风险
+  - `data/archive/us/eb1b/`（USCIS 2 份：EB-1 overview + Policy Manual Vol 6 Part F Ch 3）+ README + download.sh；全部 INA / 8 CFR / 表格等共用件沿用 `data/archive/us/l1b/`
+  - `data/archive/us/eb5/`（USCIS 5：eb5_overview + Policy Manual Vol 6 Part G + i-526 + i-526e + i-829 · regulations 2：8 CFR 204.6 + 216.6 · statutes 1：PubL 117-103 RIA 2022 · forms 3：I-526 + I-526E + I-829）共 11 份独有官方原件 + README + download.sh；AOS / 入籍 / 共用表格沿用 `data/archive/us/l1b/`。两个 USCIS 4XX URL（eb5_classification / eb5_regional-centers）2024 年被 USCIS 合并至 eb5_overview，已从 download.sh 清理
+  - 按"共用则引用不复制"原则：us-eb1b.html 的 Kazarian 两段论 / Visa Bulletin / AOS vs CP / LPR 维持 / N-400 全部 `.reuse` 引 us-eb1a / us-l1b / us-overview；us-eb5.html 的 LPR 维持 / N-400 / CCA 同样 `.reuse` 引 us-overview / us-l1b
+  - 跨链接：`site/index.html` 路径列表新增 EB-1B + EB-5 两条（紧随 EB-1A）；`site/paths/us-eb1a.html` § 8 · `site/paths/us-niw.html` § 8 · `site/paths/jp-hsp-1a.html` § 5 共 3 页的 us-eb1b / us-eb5 pending 占位全部改为本站实链；`sitemap.xml` 新增 us-eb1b / us-eb5 / jp-hsp-1a 三条 URL
+- **2026-04-21 · 新增 JP HSP 1 号イ 研究系路径 + 清理 HANDOFF 待补清单**（commit 待写）：
+  - [`site/paths/jp-hsp-1a.html`](site/paths/jp-hsp-1a.html) — 高度専門職 1 号イ 研究 / 教育系 · 活动定义（别表第一之二 · 研究 / 研究指导 / 教育三选一）· 与"教授"在留资格对照 · 积分表 1 号ロ / ハ 共用但研究业绩加分（特许 / 科研费 / 论文）为学术系主力 · 任期制职位 + 科研费周期双重风险 · 国立大学 / 国研年金体系（公立学校共済 / 国家公務員共済）特有审查细节 · 涉密研究的国籍审查 · § 5 跨国切换突出 EB-1B（pending）作为 1 号イ 天然对位
+  - 共用段引用 `jp-hsp.html`：§ 2 永住 / § 3 帰化 / § 4 家庭玩法 / § 6 共享风险 全部用 `.reuse` 卡片引用，不重复照搬（同 us-l1a / us-eb1a / us-niw 的"共用则引用不复制"模式）
+  - 归档复用 `data/archive/jp/hsp/`，不另建 `jp/hsp-1a/` 目录（三类 HSP 在制度层面共用同一批文本）
+  - 跨链接：`site/index.html` 路径列表新增 1 号イ 条目（紧随 1 号ロ）；`site/paths/jp-hsp.html` § 5 "HSP 1 号ロ → HSP 1 号イ" 条目由外链改为本站内链（保留 ISA 积分告示 fallback）；`site/paths/sg-one-pass.html` § 8 中 ca-gts 的遗留 pending 占位同步替换为本站实链；HANDOFF 待补清单刷新为当前实际存在的 `class="pending"` 占位列表
 - **2026-04-19 · 项目定位 pivot**（commit `8c034f6`）：从"严格数据工程化 + 付费 + dogfood"改为"非盈利 · 仅供参考 · 尽力而为 · 不担责"。详见 [RULES.md](RULES.md) § 6。
 - **2026-04-19 · 静态站工程架子搭起 + L-1B 内容归主线**（commit `1cfa93d`）
 - **2026-04-19 · 路径写作规则升级**（commit `440d713`）：每条路径必须覆盖
@@ -67,11 +79,14 @@
 - 已有路径页：
   - [`site/paths/us-overview.html`](site/paths/us-overview.html) — 美国 · 移民体系通用前置知识（primer，非 path）
   - [`site/paths/jp-hsp.html`](site/paths/jp-hsp.html) — 日本 · 高度専門職 1 号ロ · 工签 → 永住 → 帰化
+  - [`site/paths/jp-hsp-1a.html`](site/paths/jp-hsp-1a.html) — 日本 · 高度専門職 1 号イ 研究系 · 共用 1 号ロ 的 § 2–§ 4 / § 6 / § 7
   - [`site/paths/us-l1b.html`](site/paths/us-l1b.html) — 美国 · L-1B · 工签 → 永居 → 入籍
   - [`site/paths/us-l1a.html`](site/paths/us-l1a.html) — 美国 · L-1A · 工签 → EB-1C → 永居 → 入籍
   - [`site/paths/us-h1b.html`](site/paths/us-h1b.html) — 美国 · H-1B · 抽签 → 工签 → 永居 → 入籍
   - [`site/paths/us-o1.html`](site/paths/us-o1.html) — 美国 · O-1 · 杰出人才 → EB-1A → 永居 → 入籍
   - [`site/paths/us-eb1a.html`](site/paths/us-eb1a.html) — 美国 · EB-1A · 杰出人才自荐绿卡（不是签证 · 绿卡分类页）
+  - [`site/paths/us-eb1b.html`](site/paths/us-eb1b.html) — 美国 · EB-1B · 杰出教授或研究员雇主赞助绿卡（6 条 ≥ 2 条 + 3 年教研 + permanent offer）
+  - [`site/paths/us-eb5.html`](site/paths/us-eb5.html) — 美国 · EB-5 · 投资移民（RIA 2022 · CLPR → I-829 → 永久绿卡）
   - [`site/paths/sg-one-pass.html`](site/paths/sg-one-pass.html) — 新加坡 · ONE Pass · 工签 → PR → Citizenship
   - [`site/paths/ca-gts.html`](site/paths/ca-gts.html) — 加拿大 · Global Talent Stream · 2 周工签 → Express Entry PR → 入籍
   - [`site/paths/au-gtv.html`](site/paths/au-gtv.html) — 澳大利亚 · National Innovation Visa（NIV · 前 GTV · Subclass 858）· 一步到位永居 → 入籍
@@ -88,17 +103,24 @@
 
 ### 待补路径清单
 
-当前 `site/paths/jp-hsp.html` 与 `site/paths/us-l1b.html` 的 § 备选切换小节共有如下 `class="pending"` 占位。建立目标页后须全站搜索并替换为真实链接：
+全站仍以 `class="pending"` 占位的去处（建立目标页后须全站搜索替换）：
 
 | 建议 slug | 目标文件 | 出现于 |
 | --- | --- | --- |
-| `jp-hsp-1a` | `site/paths/jp-hsp-1a.html` | jp-hsp.html § 5（研究系） |
-| `jp-hsp-2` | `site/paths/jp-hsp-2.html` | jp-hsp.html § 5 |
-| `jp-gijinkoku` | `site/paths/jp-gijinkoku.html` | jp-hsp.html § 5（技術・人文知識・国際業務） |
-| `ca-gts` | `site/paths/ca-gts.html` | 两个路径页的跨国切换段 |
+| `uk-skilled-worker` | `site/paths/uk-skilled-worker.html` | uk-global-talent.html § 8 |
+| `uk-hpi` | `site/paths/uk-hpi.html` | uk-global-talent.html § 8 |
+| `uk-innovator-founder` | `site/paths/uk-innovator-founder.html` | uk-global-talent.html § 8 |
+| `ca-pnp-tech` | `site/paths/ca-pnp-tech.html` | ca-gts.html § 8 |
+| `ca-suv` | `site/paths/ca-suv.html` | ca-gts.html § 8 |
+| `ca-ict` | `site/paths/ca-ict.html` | ca-gts.html § 8 |
+| `au-189` | `site/paths/au-189.html` | au-gtv.html § 8 |
+| `au-190-491` | `site/paths/au-190-491.html` | au-gtv.html § 8 |
+| `au-482` | `site/paths/au-482.html` | au-gtv.html § 8 |
+| `ae-golden-visa` | `site/paths/ae-golden-visa.html` | sg-one-pass.html § 8 |
 
+`jp-hsp.html` § 5 的 1 号イ / 1 号ロ→HSP 2 号 / 技人国 / 経営管理 条目当前并无 `class="pending"`——它们是写死的外链标签。建立对应路径页时同样须全站搜索并把这些外链改为本站内链（保留官方 fallback 链接）。
 
-优先级建议：`us-eb1b`（杰出教研）与 EB-1A 同享 EB-1 排期池、是 tenure / tenure-track / 企业 R&D 岗位的自然备选；`us-eb5`（投资移民）是独立排期池的资本路径。两条都是 L-1A / O-1 / H-1B / EB-1A / NIW 路径页 § 8 的下一个待补占位。
+优先级建议：`uk-skilled-worker`（英国 SW 大类，Global Talent 页 § 8 多处引用）与 `au-189`（澳大利亚 得分类技术移民，AU NIV 页 § 8 的自然降档）。
 
 已完成、从本清单拿掉的：
 
@@ -108,18 +130,19 @@
 - ~~重写 JP HSP 为完整工签→永住→帰化 + 家庭 + 备选切换~~（2026-04-19）
 - ~~为 L-1B 补家庭双保险 + 备选切换~~（2026-04-19）
 - ~~把 `us-l1b-family.html` 重命名为 `us-l1b.html`~~（2026-04-19）
-- ~~过 JP HSP 页正文 + 修正 ISA 失效 URL~~（2026-04-19，本次）
-- ~~下载 JP HSP 官方原件到 `data/archive/jp/hsp/` 并在页面 § 7 表补「本地归档」列~~（2026-04-19，本次）
+- ~~过 JP HSP 页正文 + 修正 ISA 失效 URL~~（2026-04-19）
+- ~~下载 JP HSP 官方原件到 `data/archive/jp/hsp/` 并在页面 § 7 表补「本地归档」列~~（2026-04-19）
 - ~~US L-1B 页 § 10 四张子表补「本地归档」列~~（2026-04-19）
+- ~~新增 US H-1B 路径 + 归档 + 首页更新 + 交叉链接~~（2026-04-19）
 - ~~新增 US O-1 杰出人才路径 + 官方原件归档 + 跨页链接替换~~（2026-04-20）
-- ~~新增 US H-1B 路径 + 归档 + 首页更新 + 交叉链接~~（2026-04-19，本次）
-- ~~新增 US L-1A 路径 + 归档 + 四页交叉链接 + 共用段引用 L-1B 页~~（2026-04-20，本次）
-- ~~新增 US EB-1A 杰出人才自荐绿卡页 + Policy Manual Vol 6 Part F Ch 2 归档 + 六页交叉链接~~（2026-04-20，本次）
-- ~~新增 SG ONE Pass 路径 + MOM / ICA / IRAS / AGC 共 10 份官方原件归档 + 六页交叉链接~~（2026-04-20，本次）
-- ~~新增 CA Global Talent Stream 路径 + ESDC / IRCC / Justice Laws 共 13 份官方原件归档 + 六页交叉链接~~（2026-04-20，本次）
-- ~~新增 AU National Innovation Visa（NIV · 前 GTV · Subclass 858）路径 + Home Affairs / legislation.gov.au 共 6 份官方原件归档 + 三页交叉链接~~（2026-04-20，本次）
-- ~~新增 UK Global Talent Visa 路径 + GOV.UK / Immigration Rules / legislation.gov.uk 共 16 份官方原件归档 + 八页交叉链接~~（2026-04-20，本次）
-- ~~新增 US EB-2 NIW 国家利益豁免路径 + USCIS 4 份官方原件（Policy Manual Vol 6 Part F Ch 5 + Matter of Dhanasar 判决 + 2022 STEM Alert + EB-2 overview）归档 + 跨页链接~~（2026-04-20，本次）
+- ~~新增 US L-1A 路径 + 归档 + 四页交叉链接 + 共用段引用 L-1B 页~~（2026-04-20）
+- ~~新增 US EB-1A 杰出人才自荐绿卡页 + Policy Manual Vol 6 Part F Ch 2 归档 + 六页交叉链接~~（2026-04-20）
+- ~~新增 SG ONE Pass 路径 + MOM / ICA / IRAS / AGC 共 10 份官方原件归档 + 六页交叉链接~~（2026-04-20）
+- ~~新增 CA Global Talent Stream 路径 + ESDC / IRCC / Justice Laws 共 13 份官方原件归档 + 六页交叉链接~~（2026-04-20）
+- ~~新增 AU National Innovation Visa（NIV · 前 GTV · Subclass 858）路径 + Home Affairs / legislation.gov.au 共 6 份官方原件归档 + 三页交叉链接~~（2026-04-20）
+- ~~新增 UK Global Talent Visa 路径 + GOV.UK / Immigration Rules / legislation.gov.uk 共 16 份官方原件归档 + 八页交叉链接~~（2026-04-20）
+- ~~新增 US EB-2 NIW 国家利益豁免路径 + USCIS 4 份官方原件归档 + 跨页链接~~（2026-04-20）
+- ~~把 sg-one-pass.html § 8 中 ca-gts 的 pending 占位替换为本站实链~~（2026-04-21）
 
 ## Don't · 别做
 
