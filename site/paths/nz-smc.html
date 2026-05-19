@@ -1,0 +1,678 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>relocate · 路径详情 · 新西兰 SMC · 技术移民 6 分制 · 直接居留 → 入籍（仅供参考 · 非官方）</title>
+<style>
+  :root{
+    --ink:#141414;
+    --ink-soft:#3d3d3d;
+    --ink-faint:#8a8a8a;
+    --rule:#d8d8d8;
+    --rule-soft:#ebebeb;
+    --bg:#fdfbf7;
+    --warn-bg:#fff6e7;
+    --warn-ink:#6a4d00;
+    --inherit-bg:#f1efe9;
+    --branch-bg:#f5f2ea;
+    --serif:Georgia,"Source Han Serif SC","Noto Serif SC","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;
+    --mono:"SFMono-Regular","Menlo",Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  header.top{padding:14px 40px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em;background:#fff}
+  header.top .l{color:var(--ink)}
+  .page{max-width:920px;margin:0 auto;padding:56px 32px 140px}
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 10px}
+  h1{font-size:30px;font-weight:700;line-height:1.25;letter-spacing:-0.005em;margin:0 0 6px}
+  .sub{font-family:var(--sans);font-size:14px;color:var(--ink-soft);margin:0 0 14px;letter-spacing:0.01em}
+  .sub code{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 6px;border-radius:2px;color:var(--ink)}
+  .meta{font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);letter-spacing:0.04em;margin:0 0 28px;padding-bottom:18px;border-bottom:1px solid var(--ink)}
+  .meta span + span::before{content:" · ";margin:0 4px;color:var(--rule)}
+  .caveat{background:var(--warn-bg);border:1px solid var(--warn-ink);padding:14px 20px;margin:0 0 32px;font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--warn-ink)}
+  .caveat strong{color:#3c2a00}
+  .caveat p{margin:0 0 6px}
+  .caveat p:last-child{margin:0}
+  .chip{display:grid;grid-template-columns:repeat(6,1fr);gap:0;background:#fff;border:1px solid var(--ink);font-family:var(--sans);margin:0 0 36px}
+  .chip > div{padding:12px 14px;border-right:1px solid var(--rule)}
+  .chip > div:last-child{border-right:none}
+  .chip dt{font-family:var(--mono);font-size:10px;color:var(--ink-faint);letter-spacing:0.09em;text-transform:uppercase;margin:0 0 3px}
+  .chip dd{margin:0;font-size:13.5px;color:var(--ink);font-weight:600}
+  .chip dd small{display:block;font-weight:400;font-size:11.5px;color:var(--ink-faint);margin-top:2px;font-family:var(--mono)}
+  .stagenav{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:0 0 40px;font-family:var(--sans)}
+  .stagenav a{display:block;padding:10px 12px;background:#fff;border:1px solid var(--ink);text-decoration:none;color:var(--ink)}
+  .stagenav a .lbl{font-family:var(--mono);font-size:10px;color:var(--ink-faint);letter-spacing:0.09em;text-transform:uppercase;display:block;margin-bottom:3px}
+  .stagenav a .t{font-size:14px;font-weight:700;display:block;line-height:1.3}
+  .stagenav a .b{font-size:11.5px;color:var(--ink-soft);display:block;margin-top:3px;font-family:var(--serif);line-height:1.45}
+  section{margin:56px 0 0}
+  section > h2{font-size:20px;font-weight:700;line-height:1.35;margin:0 0 4px}
+  section > h2 .n{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--ink-faint);letter-spacing:0.08em;margin-right:10px}
+  section > h2 .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:0.06em;padding:2px 7px;border:1px solid var(--ink-faint);color:var(--ink-faint);font-weight:400;margin-left:10px;vertical-align:3px}
+  section > .lede{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:15.5px;line-height:1.7;margin:0 0 20px}
+  p{margin:0 0 1em}
+  h3{font-size:15.5px;font-weight:700;margin:26px 0 8px}
+  h3 .n{font-family:var(--mono);font-size:11px;font-weight:400;color:var(--ink-faint);letter-spacing:0.06em;margin-right:8px}
+  h4{font-size:13.5px;font-weight:700;margin:18px 0 6px;font-family:var(--sans)}
+  .node{background:#fff;border:1px solid var(--ink);padding:18px 22px;margin:14px 0 18px;font-family:var(--sans);font-size:13.5px;line-height:1.7}
+  .node .ntop{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:8px;border-bottom:1px solid var(--rule-soft);margin-bottom:12px;font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em}
+  .node .big{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink);line-height:1.35;margin:0 0 6px}
+  .node p{margin:0 0 10px;color:var(--ink-soft)}
+  .node p strong{color:var(--ink);font-weight:700}
+  .node dl.kv{display:grid;grid-template-columns:140px 1fr;gap:6px 14px;font-size:12.5px;color:var(--ink-soft);margin:12px 0 0;padding-top:10px;border-top:1px dashed var(--rule)}
+  .node dl.kv dt{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.06em;text-transform:uppercase;padding-top:2px}
+  .node dl.kv dd{margin:0}
+  .node dl.kv dd code{font-family:var(--mono);font-size:11.5px;background:var(--rule-soft);padding:1px 5px;border-radius:2px;color:var(--ink)}
+  .familytrack{background:#fff;border:1px solid var(--ink);margin:14px 0 18px;font-family:var(--sans);font-size:12.5px}
+  .familytrack .row{display:grid;grid-template-columns:130px 1fr;border-bottom:1px solid var(--rule)}
+  .familytrack .row:last-child{border-bottom:none}
+  .familytrack .row .l{padding:14px;background:var(--rule-soft);border-right:1px solid var(--rule);font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.06em;text-transform:uppercase}
+  .familytrack .row .l small{display:block;font-size:10px;color:var(--ink-faint);margin-top:3px;letter-spacing:0.04em}
+  .familytrack .row .r{padding:14px 18px;color:var(--ink-soft);line-height:1.65}
+  .familytrack .row .r strong{color:var(--ink)}
+  .familytrack .row .r em{font-style:normal;background:var(--rule-soft);padding:1px 6px;font-family:var(--mono);font-size:11px;color:var(--ink);margin-right:4px}
+  .flowchart{background:#fff;border:1px solid var(--ink);padding:22px 24px;margin:10px 0 24px;font-family:var(--mono);font-size:12.5px;line-height:1.8;color:var(--ink);white-space:pre;overflow-x:auto}
+  .flowchart .hi{background:var(--rule-soft);padding:0 4px}
+  .flowchart .br{color:var(--ink-faint)}
+  .reuse{background:var(--inherit-bg);border-left:3px solid var(--ink);padding:12px 18px;margin:14px 0 16px;font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--ink-soft)}
+  .reuse strong{color:var(--ink)}
+  .reuse .h{font-family:var(--mono);font-size:10.5px;letter-spacing:0.08em;color:var(--ink-faint);text-transform:uppercase;display:block;margin-bottom:4px}
+  table.sources{width:100%;border-collapse:collapse;background:#fff;font-family:var(--sans);font-size:12.5px;line-height:1.55;margin:10px 0 16px}
+  table.sources th,table.sources td{padding:8px 10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
+  table.sources thead th{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em;text-transform:uppercase;font-weight:600;border-bottom:1px solid var(--ink);background:var(--rule-soft)}
+  table.sources td.id{width:110px}
+  table.sources td.id code{font-family:var(--mono);font-size:11px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+  table.sources td.iss{width:150px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em}
+  table.sources td a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--ink-faint);text-underline-offset:2px}
+  table.points{width:100%;border-collapse:collapse;background:#fff;font-family:var(--sans);font-size:12.5px;line-height:1.55;margin:10px 0 16px;border:1px solid var(--ink)}
+  table.points th,table.points td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--rule);vertical-align:top}
+  table.points thead th{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em;text-transform:uppercase;font-weight:600;border-bottom:1px solid var(--ink);background:var(--rule-soft)}
+  table.points td.pts{font-family:var(--mono);font-weight:700;color:var(--ink);width:60px;background:var(--rule-soft)}
+  .risk{background:#fff;border:1px solid var(--warn-ink);padding:14px 20px;margin:10px 0 16px;font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--ink)}
+  .risk h4{font-family:var(--mono);font-size:10.5px;color:var(--warn-ink);letter-spacing:0.1em;text-transform:uppercase;margin:0 0 8px;font-weight:600}
+  .risk h4::before{content:"! "}
+  .risk ul{margin:6px 0 0;padding:0 0 0 20px}
+  .risk li{margin:0 0 8px;color:var(--ink-soft)}
+  .risk li strong{color:var(--ink)}
+  .term{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+  .hint{display:block;color:var(--ink-faint);font-size:12px;margin-top:3px;font-style:italic;font-family:var(--serif)}
+  .altlist{margin:10px 0 18px;padding:0;list-style:none}
+  .altlist > li{border-top:1px solid var(--rule-soft);padding:14px 0;display:grid;grid-template-columns:150px 1fr;gap:18px;font-family:var(--sans);font-size:13px;line-height:1.65;color:var(--ink-soft)}
+  .altlist > li:last-child{border-bottom:1px solid var(--rule-soft)}
+  .altlist .tgt{font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.04em;padding-top:2px}
+  .altlist .tgt small{display:block;font-size:10.5px;color:var(--ink-faint);margin-top:3px;text-transform:uppercase;letter-spacing:0.08em}
+  .altlist strong{color:var(--ink)}
+  .altlist .when{color:var(--ink-faint);font-size:12px;display:block;margin-top:4px;font-style:italic;font-family:var(--serif)}
+  .altlist a.pending{color:var(--ink-faint);text-decoration:underline;text-decoration-style:dashed;text-decoration-color:var(--ink-faint);text-underline-offset:3px;cursor:help}
+  footer.btm{margin-top:80px;padding-top:14px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);display:flex;justify-content:space-between;letter-spacing:0.04em}
+  a{color:inherit}
+  .caveat a{color:var(--warn-ink)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <span class="l"><a href="../" style="color:inherit;text-decoration:none">relocate</a> · 路径详情 · 新西兰 · SMC 技术移民居留签</span>
+  <span>仅供参考 · 非官方</span>
+</header>
+
+<main class="page">
+
+  <p class="kicker">路径详情 · 家庭单位 · SMC 一步居留 → PRV → 入籍</p>
+  <h1>新西兰 · Skilled Migrant Category Resident Visa（SMC · 6 分制）· 家庭完整路径</h1>
+  <p class="sub">
+    <code>nz-smc-to-citizenship</code> · 一步到位居留签（不是工签）· 6 分门槛 · 三类得分：职业注册 / 学历 / 收入 · 配偶子女同批 · 2 年后升 PRV · 入籍 5 年 · 允许双重国籍（但与中国《国籍法》§9 仍冲突）
+  </p>
+  <p class="meta">
+    <span>version v0.1</span>
+    <span>最后编辑 2026-05-19</span>
+    <span>家庭单位视角 · 中国大陆出发口径</span>
+    <span><a href="../" style="color:inherit">← 回到 relocate 首页</a></span>
+  </p>
+
+  <div class="caveat">
+    <p><strong>仅供参考 · 非官方：</strong>本页整理自 INZ（Immigration New Zealand）2024 改版的 SMC 6-point system 公开页 + Immigration Act 2009 + Citizenship Act 1977 原文 + DIA（Department of Internal Affairs）入籍页。面向中文读者做路径速览，<strong>不是法律意见、不是 licensed immigration adviser（LIA）建议、不替代律师</strong>。NZ SMC 在 2023 年从老版 160 分制改革为 6 分制（2023-10 生效），积分维度与赋分大幅简化；INZ 仍在持续调整收入档 / 职业注册清单 / EOI 频率，本页所列数字以 2025 年口径为准。</p>
+    <p><strong>本页边界：</strong>本页以 SMC Resident Visa 为起点串通到入籍。NZ 是本站首条 NZ 路径，没有同国上位页可 <span class="term">.reuse</span>，全部内联。下游 PRV 升级 / 入籍 5 年规则 / 双重国籍冲突 / 中国大陆出发 D 签流程均在本页详写；未来 nz-aewv（雇主担保工签）/ nz-green-list（紧缺职业直通）建立时应反 <span class="term">.reuse</span> 本页对应段。</p>
+    <p><strong>数字怎么来的：</strong>每一处门槛、年限、薪资倍数都标了可自行复核的官方出处（见 § 10）。<strong>收入档以"NZ 中位工资倍数"为单位 · 倍数固定 1× / 2× / 3×，对应分别 3 / 4 / 6 分</strong>—— 中位工资本身每年由 INZ 公告刷新（2025 年口径 NZD $35.00/hr），具体阈值看当期 INZ pay-rates 页面。</p>
+  </div>
+
+  <dl class="chip">
+    <div><dt>国家</dt><dd>新西兰 <small>nz · 英语</small></dd></div>
+    <div><dt>起点</dt><dd>SMC Resident Visa <small>一步居留 · 不是工签</small></dd></div>
+    <div><dt>门槛</dt><dd>6 分 <small>三类自由组合</small></dd></div>
+    <div><dt>居留</dt><dd>Resident Visa <small>头 2 年 travel conditions</small></dd></div>
+    <div><dt>PRV</dt><dd>2 年后 <small>无限期回流权</small></dd></div>
+    <div><dt>入籍</dt><dd>PR 后 5 年 <small>240 天 / 年硬要求</small></dd></div>
+  </dl>
+
+  <nav class="stagenav">
+    <a href="#stage-overview"><span class="lbl">§ 0</span><span class="t">全景图</span><span class="b">SMC 是什么 · vs AU NIV / CA SMC</span></a>
+    <a href="#stage-enter"><span class="lbl">§ 1</span><span class="t">6 分制</span><span class="b">职业注册 + 学历 + 收入三类</span></a>
+    <a href="#stage-hold"><span class="lbl">§ 2</span><span class="t">递 EOI → ITA</span><span class="b">线上流程 · 12-18 月</span></a>
+    <a href="#stage-pr"><span class="lbl">§ 3</span><span class="t">居留 → PRV</span><span class="b">travel conditions · 5 条 commitment</span></a>
+    <a href="#stage-citizen"><span class="lbl">§ 4</span><span class="t">升公民</span><span class="b">5 年 · 240 天 / 年</span></a>
+    <a href="#stage-alt"><span class="lbl">§ 7–8</span><span class="t">风险 · 备选</span><span class="b">小经济体 · 距中远</span></a>
+  </nav>
+
+  <!-- ============ § 0 全景 ============ -->
+  <section id="stage-overview">
+    <h2><span class="n">§ 0</span>全景 · SMC 是什么 · 与 AU NIV / CA / IE 的关键差异</h2>
+    <p class="lede">NZ SMC 是 2023 年大改革后的"6 分制一步居留签"——它<em>不是工签</em>，而是直接发居留权的签证。三类积分（职业注册 / 学历 / 收入）自由组合，凑够 6 分递 EOI（Expression of Interest），INZ 拉所有达标人入池审批。在英语国主流移民路径里，它是少数"不需要先在本地工作 / 不需要工签过渡 / 不需要 Job offer 即可一步直拿居留"的口径之一。</p>
+
+<div class="flowchart">
+<span class="br">[ 申请前 · 在海外 · 例：北京 ]</span>
+    自评 6 分制三类得分（任意组合凑 ≥ 6 分）
+                        │
+                        ▼
+              ┌─────────────────────────┐
+              │  <span class="hi">§ 2.1 在 INZ Online 递 EOI</span>   │
+              │  Expression of Interest    │
+              │  自报积分项 + 证据清单     │
+              │  无 Pool 抽签门槛 ·         │
+              │  6+ 分均会被邀                 │
+              └──────────┬──────────────┘
+                         │ Invitation to Apply（ITA）
+                         ▼
+              ┌─────────────────────────┐
+              │  <span class="hi">§ 2.2 递 SMC Resident Visa</span>   │
+              │  申请 · 4 个月内提交完整   │
+              │  文件 · 体检 + 无犯罪 +    │
+              │  英语证明 + 学历认证       │
+              └──────────┬──────────────┘
+                         │ INZ 审理 12–18 个月（旺季更久）
+                         ▼
+              ┌─────────────────────────┐
+              │  <span class="hi">Resident Visa 批准</span>           │
+              │  全家同批 · 配偶 + 22 岁    │
+              │  以下未婚经济依赖子女均派生 │
+              └──────────┬──────────────┘
+                         │ 持 Resident Visa 入境激活
+                         ▼
+              <span class="hi">§ 3 持 Resident Visa 头 2 年 · travel conditions</span>
+              每 12 个月须在 NZ ≥ 184 天 · 或满足例外
+                         │
+                         ▼  满 2 年 + 满足 5 选 1 commitment
+              <span class="hi">§ 3.2 申请 Permanent Resident Visa（PRV）</span>
+              永久居留 · 无限期回流权 · 不受 travel conditions 约束
+                         │
+                         ▼  PR 总累计 ≥ 5 年 · 每年在 NZ ≥ 240 天
+              <span class="hi">§ 4 递入籍申请 · DIA 审 · 入籍仪式</span>
+                         │
+                         ▼
+              <span class="hi">新西兰公民 · 允许双重国籍 · 自动澳大利亚 Special Category Visa（SCV）</span>
+              <span class="br">（中国《国籍法》§9 自动失中国籍 · 注销中国护照 / 户籍）</span>
+</div>
+
+    <h3><span class="n">0.1</span>三个常见混淆点</h3>
+    <div class="node">
+      <div class="big">SMC ≠ 工签 · Resident Visa ≠ PRV · NZ 公民 ≠ AU 公民但接近</div>
+      <p><strong>SMC ≠ 工签：</strong>SMC 直接发<em>居留签</em>——成功的那一刻你已经拿到等同于 PR 的工作权 + 居留权。这是相对 IE CSEP（先 2 年工签再 Stamp 4） / CA CEC（先 1 年加拿大工作再走 EE）/ UK Skilled Worker（5 年工签后 ILR）的根本差异。代价是审理周期长（INZ 12-18 月 vs IE permit 3-12 周），且全靠纸面证据，无 "先来工签再说"  的过渡通道。</p>
+      <p><strong>Resident Visa ≠ PRV：</strong>SMC 拿到的是 <em>Resident Visa</em>——居留权 + 工作权完全等同 PR，但<em>有 travel conditions</em>：头 2 年内每个 12 个月期内必须在 NZ ≥ 184 天，否则下次回 NZ 边境官有权拒入。满 2 年后申 <em>Permanent Resident Visa（PRV）</em>——这才是真正"无限期出入境权"的永久居留身份。这种 2 段式 PR 设计在英语国里是 NZ 独有（AU 一步永居 · UK / IE 居留卡续期机制）。</p>
+      <p><strong>NZ 公民 ≠ AU 公民但接近：</strong>NZ 与澳大利亚有 1973 年 Trans-Tasman Travel Arrangement（TTTA）—— NZ 公民可凭护照入境澳大利亚并自动获 <em>Special Category Visa（SCV）</em>，无限期居留 + 工作 + 学习 · 自 2023-07 起 SCV 持有满 4 年的 NZ 公民可直接申澳大利亚公民（无需先转 PR）。这是 NZ 入籍的<em>独特复利</em>—— 拿到 NZ 护照同时几乎也拿到了澳大利亚的"准 PR"。</p>
+    </div>
+
+    <h3><span class="n">0.2</span>身份层级</h3>
+    <table class="sources">
+      <thead><tr><th>层级</th><th>法源</th><th>授予机构</th><th>工作权 / 居留权</th><th>家属派生</th></tr></thead>
+      <tbody>
+        <tr><td>Resident Visa（SMC）</td><td>Immigration Act 2009 + INZ Operational Manual SM</td><td>INZ</td><td>工作 ✓（任意雇主 / 自雇）· 居留 ✓· 头 2 年 travel conditions</td><td>配偶 + 22 岁以下未婚经济依赖子女同批</td></tr>
+        <tr><td>PRV（Permanent Resident Visa）</td><td>Immigration Act 2009 §11</td><td>INZ</td><td>工作 ✓ · 居留 ✓ · 无限期回流权</td><td>家庭已合并入主申记录</td></tr>
+        <tr><td>Citizenship</td><td>Citizenship Act 1977 §8</td><td>DIA · Minister of Internal Affairs</td><td>全权 · NZ 护照 + 自动 AU SCV · 投票 · 任意进出</td><td>出生子女自动公民 · 配偶另走</td></tr>
+        <tr><td><em>对比：</em>Work Visa（AEWV 等）</td><td>Immigration Act 2009 § 71</td><td>INZ</td><td>工作 ✓（绑雇主）· 居留 ✓（≤ 5 年）</td><td>有限</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">0.3</span>SMC 与三条相邻一步居留 / 工签路径的差异</h3>
+    <table class="sources">
+      <thead><tr><th>维度</th><th>NZ SMC</th><th>AU NIV（前 GTV）</th><th>IE CSEP</th><th>CA Express Entry · CEC</th></tr></thead>
+      <tbody>
+        <tr><td>起点身份</td><td><strong>直接居留</strong></td><td><strong>直接永居</strong>（一步到位）</td><td>工签 2 年 → Stamp 4</td><td>工签 1 年 → EE → PR</td></tr>
+        <tr><td>评估机制</td><td><strong>6 分制</strong> · 三类自由组合</td><td>提名制 + 国际成就 + 提名人 Form 1000</td><td>双门槛薪资 + CSOL</td><td>CRS 600 分制 + Express Entry pool</td></tr>
+        <tr><td>是否需 NZ 雇主</td><td><strong>不需要</strong>（虽然有 NZ offer 可显著加分）</td><td>不需要</td><td>必须</td><td>不强制但 CEC 走通常已有 offer</td></tr>
+        <tr><td>是否需先在本地工作</td><td><strong>不需要</strong></td><td>不需要</td><td>2 年</td><td>1 年</td></tr>
+        <tr><td>处理周期</td><td>12–18 月（旺季更久）</td><td>EOI → Invitation 无 SLA · 之后 6–12 月</td><td>permit 3–12 周 + D 签 4–8 周</td><td>EE 6 月服务标准</td></tr>
+        <tr><td>到入籍</td><td>5 年（含 Resident Visa 期）</td><td>4 年（含 PR 持有期）</td><td>5 年 reckonable</td><td>PR 后 3 年</td></tr>
+        <tr><td>双重国籍</td><td>允许</td><td>允许</td><td>允许</td><td>允许</td></tr>
+        <tr><td>"复利"价值</td><td><strong>NZ 公民自动获 AU SCV + 4 年后可申 AU 籍</strong></td><td>AU 公民可去 NZ 居住但要单独申 NZ PR</td><td>EU 27 + EEA + CH 自由迁徙</td><td>无</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">0.4</span>SMC 的三大结构优势</h3>
+    <div class="node">
+      <div class="big">海外直接居留 · 不绑雇主 · NZ → AU 双国跳板</div>
+      <p><strong>① 不需要先在本地工作：</strong>这是相对 CA / IE 路径最显著的差别——你可以从北京申请，文件齐就批，不需要先用工签过渡积累本地经验。对"完全不想中转、希望一次拿到目的国身份"的家庭最直接。</p>
+      <p><strong>② 不绑雇主：</strong>SMC 拿到的居留签<em>不挂任何雇主</em>——你可以入境后任意找工作 / 自雇 / 创业；甚至已经拿到 offer 时还可以谈条件，因为不依赖雇主担保。</p>
+      <p><strong>③ NZ → AU 跳板：</strong>这是 NZ 路径独有的复利。拿到 NZ 护照那一刻，你与配偶（同步入籍）凭 NZ 护照即可入澳大利亚获 Special Category Visa（SCV）·无限期居住 + 工作 + 学习。2023-07 后<em>持 SCV 满 4 年</em>可直接申澳大利亚公民——意味着<strong>NZ 入籍 + 4 年 = AU 入籍（理论上）</strong>。这把 "AU NIV / 189 路径走不通" 的家庭重新提供了一条迂回通道。</p>
+    </div>
+  </section>
+
+  <!-- ============ § 1 6 分制 ============ -->
+  <section id="stage-enter">
+    <h2><span class="n">§ 1</span>6 分制 · 三类自由组合凑 6 分</h2>
+    <p class="lede">2023 年改革后的 SMC 把原 160 分制大幅简化——只有三类积分（职业注册 / 学历 / 收入），任意组合凑够 6 分即可递 EOI。配偶积分 / 适应性加分 / 年龄分等原 160 分制下的细碎维度<em>全部取消</em>。</p>
+
+    <h3><span class="n">1.1</span>三类积分速查表（2025 口径）</h3>
+
+    <table class="points">
+      <thead><tr><th>分值</th><th>① 职业注册（Occupational Registration）</th><th>② 学历</th><th>③ 收入（NZ 工作）</th></tr></thead>
+      <tbody>
+        <tr><td class="pts">3 分</td><td>注册期 ≥ 2 年 · 通用注册（如 NZ Engineer / Chartered Accountant 等）</td><td>本科 Bachelor's</td><td>≥ 1× 中位工资<br>(2025 ≈ NZD $35.00/hr ≈ $72.8K/年)</td></tr>
+        <tr><td class="pts">4 分</td><td>注册期 ≥ 2 年 · 高资历注册（如 Postgraduate Engineering / Medical Specialist 等）</td><td>硕士 Master's</td><td>≥ 2× 中位工资<br>(2025 ≈ NZD $70.00/hr ≈ $145.6K/年)</td></tr>
+        <tr><td class="pts">5 分</td><td>注册期 ≥ 5 年 · 高资历注册</td><td>博士 PhD</td><td>—</td></tr>
+        <tr><td class="pts">6 分</td><td>注册期 ≥ 5 年 · Specialist-level（最高级专科注册 · 极少数医学专科）</td><td>—</td><td>≥ 3× 中位工资<br>(2025 ≈ NZD $105.00/hr ≈ $218.4K/年)</td></tr>
+      </tbody>
+    </table>
+
+    <p><strong>关键规则：</strong></p>
+    <ul>
+      <li><strong>可以三类全凑：</strong>例如硕士（4 分） + 收入 1×（3 分）= 7 分，已超 6 分门槛——这是中国大陆中等 IT 工程师拿 NZ 中等 offer 后最常见的组合</li>
+      <li><strong>也可以单类满分：</strong>仅靠收入 3× 中位（6 分）或 PhD（5 分） + 收入 1×（3 分）单维度即可</li>
+      <li><strong>不可同维度叠加：</strong>不能"博士 + 硕士"叠加为 4+5 = 9，只能取最高一档</li>
+      <li><strong>"收入分"必须是 NZ 雇主发的 NZ 工资：</strong>不接受中国境内 offer / 远程外资 offer · 必须是已在 NZ 工作或有 NZ 雇主 binding offer</li>
+      <li><strong>"职业注册分"必须是 NZ 当地认可的注册机构：</strong>中国境内的工程师 / 医师 / 律师注册在 NZ 几乎全部需要重新走 NZ 注册流程（医学 / 牙医 / 法律 / 工程 / 会计 / 教师 / 护理等几十种 regulated occupations 各有 NZ 注册管理委员会）</li>
+    </ul>
+
+    <h3><span class="n">1.2</span>典型组合示例（中国大陆出发口径）</h3>
+    <div class="node">
+      <div class="big">最常见 5 种凑分玩法</div>
+      <table class="points">
+        <thead><tr><th>画像</th><th>① 注册</th><th>② 学历</th><th>③ 收入</th><th>合计</th></tr></thead>
+        <tbody>
+          <tr><td><strong>A. 中国软件工程师 + NZ offer NZD $90K</strong></td><td>—</td><td>本科 3</td><td>1× 3</td><td><strong>6</strong></td></tr>
+          <tr><td><strong>B. 中国软件工程师 + NZ offer NZD $150K（资深 / Tech Lead）</strong></td><td>—</td><td>本科 3</td><td>2× 4</td><td><strong>7</strong></td></tr>
+          <tr><td><strong>C. 国内硕士 + 较高 NZ offer NZD $145K</strong></td><td>—</td><td>硕士 4</td><td>2× 4</td><td><strong>8</strong></td></tr>
+          <tr><td><strong>D. PhD + 一般学术 offer NZD $80K</strong></td><td>—</td><td>博士 5</td><td>1× 3</td><td><strong>8</strong></td></tr>
+          <tr><td><strong>E. 国内注册工程师（已转 NZ 注册满 2 年）+ 任意 NZ offer</strong></td><td>3</td><td>本科 3</td><td>—（不要求 offer 但通常需要）</td><td><strong>6</strong></td></tr>
+        </tbody>
+      </table>
+      <p><strong>注：</strong>组合 E 是少见但合规的玩法——若已通过 NZ 境内的 AEWV / WHV / Skilled Engineering Track 拿到 NZ Engineer 注册（NZ Engineering Board）满 2 年，可不依赖当下 offer 凑分。多数中国大陆申请人初次申 SMC 走的是 A / B / C 组合。</p>
+    </div>
+
+    <h3><span class="n">1.3</span>关键基础门槛（凑分外的硬要件）</h3>
+    <ul>
+      <li><strong>年龄 ≤ 55 岁</strong>（递 EOI 时）—— 取消了原 160 分制下的"年龄打分"，但保留了硬上限</li>
+      <li><strong>英语：</strong>IELTS 6.5（学术或一般类）或同等（PTE / TOEFL / OET / CAE）· 部分 OECD 国 + 高学历可豁免（中国大陆本科 / 硕士不豁免）</li>
+      <li><strong>身体健康：</strong>INZ panel physician 体检 · 重大传染病 / 高昂医疗负担会触发 character / health waiver</li>
+      <li><strong>good character：</strong>无犯罪记录证明（中国户籍地 / 居住地公安 + 外交部 + NZ 驻华使馆认证）</li>
+      <li><strong>学历认证：</strong>NZQA（NZ Qualifications Authority）出具 International Qualifications Assessment（IQA）—— 中国本科 / 硕士通常对应 NZQA 8 / 9 级</li>
+    </ul>
+  </section>
+
+  <!-- ============ § 2 EOI → ITA → 居留 ============ -->
+  <section id="stage-hold">
+    <h2><span class="n">§ 2</span>EOI → ITA → Resident Visa · 流程 · 12–18 月</h2>
+    <p class="lede">SMC 流程没有 "工签先入境" 这一步——全程在海外（北京）通过 INZ Online 完成 + VFS 北京 / 上海 / 广州递文件 · 旅签或 Resident Visa 贴签登机。</p>
+
+    <h3><span class="n">2.1</span>EOI（Expression of Interest）</h3>
+    <div class="node">
+      <div class="ntop"><span>§2.1 · INZ Online Skilled Migrant EOI</span></div>
+      <div class="big">线上自评 + 自报 6 分 + 证据 + 费用</div>
+      <ul>
+        <li><strong>账号：</strong>INZ Online <code>www.immigration.govt.nz/secure</code> 注册 RealMe 账号</li>
+        <li><strong>填表：</strong>姓名 / 护照 / 家属 / 学历 / 职业 / 工作经历 / 收入 / 注册 / 英语 / 健康 / 品行 · 自报积分项</li>
+        <li><strong>证据：</strong>NZ offer letter（若有）· 学历 NZQA 报告 · 注册证书 · 英语成绩 · 护照 · 婚姻证明 · 子女出生证</li>
+        <li><strong>费用：</strong>EOI 阶段 NZD $530（含 ITA 出函）</li>
+        <li><strong>无 pool 抽签门槛：</strong>2024 年改革后 INZ 不再 cap 邀请数；所有自评达 ≥ 6 分且证据齐全的 EOI 都会收到 ITA · ITA 通常在 EOI 提交后 1–3 月内出</li>
+      </ul>
+    </div>
+
+    <h3><span class="n">2.2</span>ITA（Invitation to Apply）后的 Resident Visa 申请</h3>
+    <table class="sources">
+      <thead><tr><th>步骤</th><th>谁做</th><th>耗时</th><th>产出</th></tr></thead>
+      <tbody>
+        <tr><td>1. 收 ITA 邮件 · 4 个月窗口</td><td>申请人</td><td>—</td><td>提交完整申请的截止时间</td></tr>
+        <tr><td>2. 准备完整 application：所有 EOI 证据正本 + 体检 + 无犯罪</td><td>申请人 · LIA 协助</td><td>1–3 月</td><td>文件包</td></tr>
+        <tr><td>3. 体检（北京 / 上海 / 广州 INZ panel physician）</td><td>申请人</td><td>1–2 周</td><td>eMedical 报告</td></tr>
+        <tr><td>4. VFS 北京 / 上海 / 广州递护照 + 文件 + 生物识别</td><td>申请人</td><td>1 天</td><td>VFS 提交回执</td></tr>
+        <tr><td>5. INZ 审理（含 RFE 来回）</td><td>INZ</td><td><strong>12–18 月</strong>（旺季可达 24 月）</td><td>Approval in Principle → Resident Visa 贴签</td></tr>
+        <tr><td>6. 登机 · 入境激活</td><td>申请人</td><td>依机票</td><td>NZ 居民身份生效</td></tr>
+      </tbody>
+    </table>
+    <p><strong>费用：</strong>SMC Resident Visa 主申 NZD $4,890 + 配偶 / 子女按家庭 NZD ~ $6,000–8,000 总额（2025 口径，每年微调）</p>
+
+    <h3><span class="n">2.3</span>家属一同入籍 · 配偶 + 22 岁以下子女</h3>
+    <div class="node">
+      <div class="ntop"><span>§2.3 · Family included in principal application</span></div>
+      <div class="big">配偶 + 22 岁以下未婚经济依赖子女自动同批 Resident Visa</div>
+      <ul>
+        <li><strong>配偶 / 民事伴侣 / 同居 ≥ 12 个月的事实伴侣：</strong>同批申请 · 拿到的是<em>同等 Resident Visa</em>（不是派生工签）—— 入境后任意雇主任意工作 / 自雇 / 创业 · 同步累计 240 天 / 年的 PRV 与入籍居住分</li>
+        <li><strong>22 岁以下未婚经济依赖子女：</strong>同批 Resident Visa · 公立 K-12 学校免学费 · 大学按国民学费档</li>
+        <li><strong>同性伴侣：</strong>NZ 承认 · 与异性婚姻同等待遇</li>
+        <li><strong>父母 / 兄弟姐妹：</strong>不能作为派生家属同批 · 父母可后续走 Parent Resident Visa（额度小 · 排队 ≥ 10 年）或 Parent Retirement Resident Visa（投资额 NZD $1M+）</li>
+      </ul>
+      <p><strong>对你的家庭场景：</strong>若一方拿到 NZ tech offer + 双方学历至少本科 · 配偶不需要自己有 offer 即随主申同批入境拿 Resident Visa · 落地后即可任意找工作 · 这与 IE CSEP + Stamp 1G 模式同样宽松，且<em>跳过了 IE 那 2 年工签期</em>。</p>
+    </div>
+
+    <h3><span class="n">2.4</span>入境与初期</h3>
+    <ul>
+      <li><strong>IRD Number（税号）：</strong>入境后须办 IRD Number · 在线申请 + 邮寄护照复印件 · 1–2 周到</li>
+      <li><strong>银行开户 + 房屋租赁：</strong>奥克兰 / 惠灵顿 / 基督城三大城市市场紧 · 主流大行 ANZ / ASB / BNZ / Westpac · 短租 Airbnb 周转 1–2 月通常必要</li>
+      <li><strong>公立医疗（NZ Health）：</strong>Resident Visa 持证者享公立医疗 · 注册当地 GP（家庭医生）</li>
+      <li><strong>子女入学：</strong>公立学校按住址分区 · 国际学校在奥克兰 / 惠灵顿少量</li>
+    </ul>
+  </section>
+
+  <!-- ============ § 3 PRV ============ -->
+  <section id="stage-pr">
+    <h2><span class="n">§ 3</span>升 PRV · 2 年后摘掉 travel conditions · "真正永居"</h2>
+    <p class="lede">SMC Resident Visa 头 2 年带 travel conditions——出境 + 入境节奏要管。满 2 年后申 PRV 才是无限期回流权。</p>
+
+    <h3><span class="n">3.1</span>Travel conditions · 头 2 年</h3>
+    <div class="node">
+      <div class="big">每 12 个月期内须在 NZ ≥ 184 天 · 不满足则下次回 NZ 边境可拒</div>
+      <p>Resident Visa 头 2 年是"试验期"性质——INZ 想确保你真正住在 NZ。规则：</p>
+      <ul>
+        <li><strong>头 24 个月内每个 rolling 12 月期</strong>，<strong>必须在 NZ ≥ 184 天</strong>（约 6 个月）</li>
+        <li>第 1 个 12 月起算自入境激活那天 · 第 2 个 12 月覆盖第 6–18 月</li>
+        <li>不满足 184 天 → travel conditions 失效 → 出境后再回 NZ 时边境官有权拒入</li>
+        <li>例外：随 NZ 公民 / PR 配偶在海外 / 被 NZ 雇主长期外派等可申 Variation of Travel Conditions</li>
+      </ul>
+      <p><strong>实操：</strong>对从北京来的家庭，最大的现实风险是"频繁回国探亲 / 在中国持续工作 + NZ 远程"—— 一年若出境 &gt; 180 天即不满足。多数家庭头 2 年安心在 NZ 本地工作 / 探亲短返。</p>
+    </div>
+
+    <h3><span class="n">3.2</span>PRV 升级 · 5 条 commitment 路径</h3>
+    <div class="node">
+      <div class="ntop"><span>§3.2 · Immigration Act 2009 + INZ PRV pathway</span></div>
+      <div class="big">满足 5 选 1 commitment + 持 Resident Visa ≥ 2 年</div>
+      <p>持 Resident Visa 满 2 年后可申 PRV · 须证明对 NZ 的 commitment · 5 选 1：</p>
+      <ol>
+        <li><strong>Tax Residence：</strong>过去 2 年中累计 NZ 税务居民 ≥ 24 月（核心通道 · 在 NZ 居住 + 工作 / 自雇）</li>
+        <li><strong>Investment：</strong>过去 24 月 NZ 境内投资 ≥ NZD $1M（投资移民 / 高资产家庭）</li>
+        <li><strong>Business establishment：</strong>过去 24 月经营 NZ 企业 + 创造本地就业</li>
+        <li><strong>Time spent：</strong>过去 24 月在 NZ ≥ 41 周（约 9.5 月） + 现在仍在 NZ</li>
+        <li><strong>Skilled employment in regions：</strong>过去 24 月在 NZ 偏远地区有 skilled employment（鼓励向 Auckland 外移居）</li>
+      </ol>
+      <p>主流路径 1（Tax Residence）+ 4（Time spent）几乎涵盖所有正常居住者——只要你<em>真的住在 NZ 工作</em>就大概率满足。</p>
+      <p><strong>PRV 处理周期：</strong>申请费 NZD $260 · INZ 处理 6–9 月 · 批后获 PRV 标签 · 此后<strong>无限期</strong>出入境权，无 184 天硬要求</p>
+    </div>
+
+    <h3><span class="n">3.3</span>"Returning Resident Visa（RRV）" 已废除</h3>
+    <p>NZ 在 2010 年 Immigration Act 2009 生效后取消了原 RRV 概念—— 拿到 PRV 就是终身居留权，离境多久回来都行。这点比 AU PR（5 年内须住 2 年）和 CA PR（5 年内 2 年）更宽松——<em>PRV 一旦拿到，回流权无限期</em>。这是 NZ 路径独有的设计优势。</p>
+
+    <h3><span class="n">3.4</span>家庭维持节奏</h3>
+    <div class="familytrack">
+      <div class="row"><div class="l">主申 RV → PRV <small>2 年</small></div><div class="r"><em>Y0–Y2</em> Resident Visa · travel conditions <em>Y2</em> 申 PRV（满足 5 选 1）<em>PRV 后</em> 无限期回流权</div></div>
+      <div class="row"><div class="l">配偶 RV → PRV <small>同步</small></div><div class="r"><em>Y0</em> 同批 Resident Visa · 任意就业 <em>Y2</em> 同批申 PRV <em>家庭单位一并升级</em></div></div>
+      <div class="row"><div class="l">子女 RV → 公民 <small>同步</small></div><div class="r"><em>K-12</em> 公立学校免学费 <em>21 岁前</em> 随父母同批入籍可免天数要求 <em>在 NZ 出生的</em> 子女若父母至少一方持 RV/PRV 时出生 → 自动 NZ 公民</div></div>
+    </div>
+  </section>
+
+  <!-- ============ § 4 入籍 ============ -->
+  <section id="stage-citizen">
+    <h2><span class="n">§ 4</span>升公民 · 5 年 PR + 240 天 / 年 · 双重国籍 + AU 跳板</h2>
+    <p class="lede">NZ 入籍门槛比 AU（4 年 PR · 12 月连续）严一点，比 IE（5/9 累计 reckonable）相近——但有"自动获 AU SCV + 4 年后可申 AU 籍"这个独家复利。</p>
+
+    <div class="node">
+      <div class="ntop"><span>§4 · Citizenship Act 1977 §8 · Grant in the standard way</span></div>
+      <div class="big">法定门槛 · 5 年居住 · 每年 240 天 · good character + 英语</div>
+      <ul>
+        <li><strong>身份：</strong>申请前累计持 Resident Visa / PRV ≥ <strong>5 年</strong></li>
+        <li><strong>居住天数：</strong>申请前 <strong>每个 12 月期内在 NZ ≥ 240 天</strong>（即 5 × 240 = 1,200 天累计 · 比 AU 4 年 = 1,460 天更宽松）</li>
+        <li><strong>且 5 年总累计 ≥ 1,350 天</strong>（约 3.7 年）</li>
+        <li><strong>Good character：</strong>无犯罪 + 税务合规 + 无重大违规</li>
+        <li><strong>英语：</strong>能用英语交流（实务 ≈ CEFR B1）· 部分情况要参加 informal interview</li>
+        <li><strong>Intention to continue residing：</strong>递申请时陈述</li>
+        <li><strong>宣誓：</strong>Oath of allegiance to King Charles III · 由地方议会或 DIA 集中仪式举行（每年若干次）</li>
+      </ul>
+      <p><strong>处理时间：</strong>递申请 → DIA 审理 12 月 · 仪式宣誓 1–3 月后</p>
+      <p><strong>费用：</strong>申请费 NZD $470.20（每人）+ 仪式费 0（含在内）</p>
+      <dl class="kv">
+        <dt>法律</dt><dd><a href="../../data/archive/nz/smc/laws/citizenship-act-1977.html" target="_blank" rel="noopener">Citizenship Act 1977 · DLM443684</a></dd>
+        <dt>实务</dt><dd><a href="../../data/archive/nz/smc/dia/citizenship-overview.html" target="_blank" rel="noopener">govt.nz · NZ Citizenship 总览</a> · <a href="../../data/archive/nz/smc/dia/citizenship-index.html" target="_blank" rel="noopener">DIA · Citizenship Index</a></dd>
+      </dl>
+    </div>
+
+    <h3><span class="n">4.1</span>未成年子女与配偶捷径</h3>
+    <ul>
+      <li><strong>未成年子女随父母：</strong>父母至少一方入籍 + 子女持 Resident Visa / PRV → 通常 1 年内可随父母同批入籍 · 无 240 天 / 5 年硬要求 · 免英语</li>
+      <li><strong>在 NZ 出生的子女：</strong>若出生时父母至少一方为 NZ 公民 / PR → 子女自动 NZ 公民</li>
+      <li><strong>配偶捷径：</strong>NZ <em>没有</em>"配偶减免年限"——配偶仍须独立累 5 年 / 240 天（这与 IE 的 3 年配偶捷径不同）</li>
+    </ul>
+
+    <h3><span class="n">4.2</span>中国籍同步处理</h3>
+    <ul>
+      <li><strong>NZ 侧：</strong>Citizenship Act 1977 §17（自 2005 年废除单一国籍要求）允许双重 / 多重国籍 · 宣誓无放弃原国籍条款</li>
+      <li><strong>中国侧：</strong>《中华人民共和国国籍法》§9 独立生效——加入 NZ 籍即自动失中国籍</li>
+      <li><strong>实务：</strong>宣誓后持 NZ 公民证书向中国驻 NZ 使馆办护照注销 / 退籍证明 · 回中国须持 NZ 护照 + 中国签证</li>
+    </ul>
+
+    <h3><span class="n">4.3</span>NZ 公民的"复利" · 自动 AU SCV + 4 年后 AU 入籍</h3>
+    <div class="node">
+      <div class="big">Trans-Tasman Travel Arrangement · NZ → AU 跳板</div>
+      <p>这是 NZ 路径独有的入籍后红利，多数读者低估：</p>
+      <ul>
+        <li><strong>持 NZ 护照入境 AU 自动获 Special Category Visa（SCV）：</strong>居住 + 工作 + 学习 + 在 AU 任意时长 · 不需要单独签证 · 仅须护照 + 健康声明 + 品行声明</li>
+        <li><strong>SCV 是事实上的"准 AU PR"：</strong>除部分福利（如新生儿补贴 / 失业救济头 4 年）+ 投票权外，工作 / 居住 / 子女上学权与 AU PR 等同</li>
+        <li><strong>2023-07 起：</strong>持 SCV 在 AU 连续居住 ≥ 4 年的 NZ 公民可<em>直接申 AU 公民</em>（不需要先转 AU PR）</li>
+        <li><strong>叠加效应：</strong>"NZ 入籍后立即移居 AU + 住 4 年" 即可拿 AU 护照——这给"想去 AU 但 NIV / 189 走不通"的家庭一条迂回通道</li>
+        <li><strong>限制：</strong>NZ 公民的孩子若在 AU 出生不自动获 AU 公民（除非 NZ 公民父母已转 AU PR）</li>
+      </ul>
+      <p><strong>权衡：</strong>这条复利的代价是 NZ 入籍后中国籍已经失效（双国籍设定下你已是 NZ-only 公民）· 之后即使转 AU 籍，也回不到中国籍。</p>
+    </div>
+  </section>
+
+  <!-- ============ § 5 家庭玩法 ============ -->
+  <section id="stage-family">
+    <h2><span class="n">§ 5</span>家庭玩法 · 一步全家居留 · 双线 / NZ→AU 跳板</h2>
+    <p class="lede">SMC + 配偶同批 Resident Visa 是 IE CSEP + Stamp 1G / CA ICT + OWP 的更激进版本——没有"配偶派生 / 派生签"概念，配偶直接拿同等居留签。</p>
+
+    <h3><span class="n">5.1</span>主线 · 主申 + 配偶同批 SMC</h3>
+    <div class="node">
+      <div class="big">一份 EOI 全家居留 · 配偶任意就业</div>
+      <p>最经典：一方主申（拿到 NZ tech / 教研 offer 凑 6 分）+ 配偶 + 子女同批申 SMC · 一次性 12–18 月审理周期 · 一份 visa fee 包含全家。</p>
+      <p>落地后：配偶<em>不需另递任何身份转换</em>，立即可在任意 NZ 雇主就业 / 自雇 / 创业 / 读 PG 学位拿 PSWV（毕业工签）。</p>
+      <p><strong>对中国双职业家庭：</strong>这是英语国主流路径里最"无缝"的一种——AU NIV 偏精英 + IE CSEP 偏雇主驱动 + CA ICT 配偶仍是"派生 OWP"性质，<strong>只有 NZ SMC 让配偶直接拿同等居留签</strong>。</p>
+    </div>
+
+    <h3><span class="n">5.2</span>双线 · 夫妻分别凑 6 分递两份 EOI</h3>
+    <div class="node">
+      <div class="big">谁先拿到 ITA 谁主申 · 另一方派生 · 双倍速度</div>
+      <p>若夫妻双方都各自拿到 NZ offer + 学历都 ≥ 本科，双方各自都可凑 6 分独立递 EOI——谁先拿到 ITA 谁做主申，另一方作为派生家属。但通常一份 EOI 足够，因为 SMC 处理周期已经较长，递两份相当于排两条队浪费时间。</p>
+      <p><strong>实操价值：</strong>在 INZ 审理拒绝 / RFE 风险高的高峰期递双 EOI 是常见保险——若主申那条因证据问题被卡，另一条已经走到了 ITA 阶段。但费用翻倍。</p>
+    </div>
+
+    <h3><span class="n">5.3</span>NZ → AU 跳板路径（家庭层面规划）</h3>
+    <div class="node">
+      <div class="big">5 年 NZ 入籍 → 全家移居 AU → 4 年后 AU 入籍 = 9 年拿"AU + 已弃中"</div>
+      <p>若长期目标是 AU 但 AU NIV / 189 走不通（NIV 需国际成就提名 · 189 SkillSelect 高分难拿），SMC + TTTA 是迂回路径：</p>
+      <ul>
+        <li><strong>Y0–Y5：</strong>主申 + 配偶 + 子女走 SMC → Resident Visa → PRV → NZ 入籍</li>
+        <li><strong>Y5–Y9：</strong>持 NZ 护照入境 AU 获 SCV → 在 Sydney / Melbourne / Brisbane 工作 4 年</li>
+        <li><strong>Y9：</strong>申 AU 公民</li>
+      </ul>
+      <p><strong>价值：</strong>5 + 4 = 9 年到 AU 公民 vs 直接 AU 189 的 4 年 PR + 1 年 = 5 年 · NZ 路径多花 4 年但门槛<em>低很多</em>（不需要技术移民达 65 分 / 189 invitation round）。</p>
+      <p><strong>代价：</strong>① 子女如果在 NZ 入籍前已是 18 岁以上 · 需 9 年间确保维持 NZ 公民资格；② 这条路决定了中国籍在 Y5 即失效，不可逆。</p>
+    </div>
+  </section>
+
+  <!-- ============ § 6 家庭三线图 ============ -->
+  <section id="stage-timeline">
+    <h2><span class="n">§ 6</span>家庭三线图 · 典型 5–6 年到入籍</h2>
+
+<div class="flowchart">
+<span class="br">Y0</span>     自评 6 分制 · 凑分组合（学历 + NZ offer 收入）· 准备文件
+<span class="br">Y0+2M</span>  在 INZ Online 递 EOI · NZD $530 · 自动入池
+<span class="br">Y0+4M</span>  收 ITA · 4 个月窗口准备完整 Resident Visa 申请
+<span class="br">Y0+6M</span>  VFS 北京递文件 + 体检 + 无犯罪 · INZ 审理开始
+<span class="br">Y1.5–2</span> <span class="hi">Resident Visa 批 · 全家入境激活 · 配偶任意就业 · 子女入学</span>
+<span class="br">Y2.5</span>   完成头 12 月 ≥ 184 天 travel conditions · IRD Number · GP 注册
+<span class="br">Y3.5</span>   持 Resident Visa 满 2 年 · <span class="hi">递 PRV 申请</span>
+<span class="br">Y4</span>     PRV 批 · 无限期回流权 · 摘掉 travel conditions
+<span class="br">Y4–Y7</span>  累计 5 年 PR + 每年 240 天硬要求 · 中位累 ~ 1,350 天
+<span class="br">Y7</span>     <span class="hi">递入籍申请 · DIA 审 12 月</span>
+<span class="br">Y8</span>     入籍仪式宣誓 · 拿 NZ 护照
+                <span class="br">（中国国籍法 §9 自动失中国籍 · 注销中国护照 / 户籍）</span>
+<span class="br">Y8+</span>    NZ 公民 · 凭护照可去澳大利亚获 SCV · 居住 4 年后可申 AU 籍
+</div>
+
+    <p class="hint">注：上图 Y7 入籍 假设主申 PRV 后能持续满足 240 天 / 年。INZ 审理周期与 DIA 入籍审理共加，实操中"从北京递 EOI 到拿 NZ 护照"约 7–8 年是常见时长——比 IE CSEP（5–6 年）+ AU NIV（4–5 年）都慢，但门槛低、家庭单位更紧凑。</p>
+  </section>
+
+  <!-- ============ § 7 风险 ============ -->
+  <section id="stage-risk">
+    <h2><span class="n">§ 7</span>核心风险点</h2>
+
+    <div class="risk">
+      <h4>SMC 申请阶段的结构性风险</h4>
+      <ul>
+        <li><strong>6 分制是新制度，赋分细则仍在调整：</strong>2024 年 INZ 已经做过收入档微调 · 之后 5 年内可能上调中位工资倍数或上调分项门槛</li>
+        <li><strong>"收入分"严格按 NZ offer 算：</strong>没有 NZ offer 的纯学历 PhD 5 分申请人很难单独达 6 分 · 还需 ≥ 1 年 NZ skilled work（自动加分）—— 这把 "完全在海外申请人" 实质上推向 "必须先拿到 NZ offer"</li>
+        <li><strong>NZQA 学历认证：</strong>中国大陆部分二本 / 三本 / 自考学历可能 NZQA 评估只到 7 级（大专），不给本科分</li>
+        <li><strong>注册路径门槛高：</strong>NZ Engineer / Medical 注册体系对境外学历严苛 · 国内工程师转 NZ Engineer 注册多数要补 Washington Accord 认证 + 经验认证 + 面试</li>
+        <li><strong>INZ 处理周期长且漂浮：</strong>2024 旺季 RV 处理时间从公告的 6 月拉到 18 月以上 · 期间不能换工作 / 婚姻状态</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>身份维持阶段的风险</h4>
+      <ul>
+        <li><strong>头 2 年 184 天硬约束：</strong>若公司 / 家庭原因频繁回国 · 容易触线失效 · 失效后 PRV 升级链断</li>
+        <li><strong>5 年 240 天 / 年硬要求：</strong>NZ 入籍居住天数比 IE 5 年 reckonable 实际更严（IE 末 12 月 6 周离境上限 vs NZ 全程每年 240 天）</li>
+        <li><strong>税务双重申报：</strong>NZ 公民 / PR 全球收入征税 · 中国境内股权 / 房产 / 理财不在 IRD 申报对接系统 · 但若审计 IRD 可要求披露</li>
+        <li><strong>子女 22 岁前未独立入籍：</strong>若 SMC 时子女接近 22 岁 · 后续个别 stage 可能脱队（22 岁后不再算依赖家属，需独立路径）</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>跨境 / 文化 / 经济风险（北京特别提醒）</h4>
+      <ul>
+        <li><strong>距中国远 + 时差：</strong>NZ 与北京 4–6 时差 · 直飞 12 小时 · 回国成本明显高于澳 / 港 / 新</li>
+        <li><strong>经济规模小：</strong>NZ 人口 510 万 · 整个国家 GDP 仅澳 1/8 · 大型 tech / 金融 / 制药 employer 极少 · 主流 IT 雇主 Xero / Datacom / Trade Me / Vend / 政府机构 / 几家银行 · 跳槽选项远少于澳 / 加 / 英 / 爱</li>
+        <li><strong>奥克兰房价：</strong>2025 奥克兰中位房价 NZD 1.05M · 租金 NZD $700-900/周 · 3 房别墅可达 NZD $1,200+/周 · 占可支配收入比远高于 IE 都柏林</li>
+        <li><strong>气候 / 地理：</strong>奥克兰雨季长 · 南北岛地震 + 火山活跃区</li>
+        <li><strong>子女教育：</strong>中学水平相对 AU / UK 略低 · 顶尖大学（University of Auckland / Otago）在全球排名约 100–150 区间 · 子女将来回亚洲 / 北美深造常见</li>
+        <li><strong>NZ tax + KiwiSaver：</strong>个人所得税顶档 39%（≥ NZD $180K）· KiwiSaver 退休金体系强制选退（默认 3%）· 中 NZ 无双边社保协定</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 8 备选 ============ -->
+  <section id="stage-alt">
+    <h2><span class="n">§ 8</span>备选切换 · 这条走不通怎么办</h2>
+
+    <ul class="altlist">
+      <li>
+        <span class="tgt">NZ · AEWV（Accredited Employer Work Visa）<small>工签过渡</small></span>
+        <div>
+          <strong>门槛：</strong>NZ 认可雇主 + 岗位达对应工资门槛 + 雇主完成劳动力市场测试。<strong>何时考虑：</strong>SMC 6 分凑不齐 · 但有 NZ offer · 希望先入境工作再走 SMC。<strong>价值：</strong>5 年最长 · 期间在 NZ 工作 1 年起加 SMC 收入分。
+          <span class="when">占位：<a class="pending" href="#" title="待建：nz-aewv">本站 · NZ AEWV</a>（未建）· 官方：<a href="https://www.immigration.govt.nz/visas/accredited-employer-work-visa/" target="_blank" rel="noopener">INZ · AEWV</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">NZ · Green List 紧缺职业直通 / Work to Residence<small>紧缺职业</small></span>
+        <div>
+          <strong>门槛：</strong>岗位在 Green List Tier 1（直通 PR）或 Tier 2（24 月工签后 PR）· 含许多 ICT / 工程 / 医疗职业。<strong>何时考虑：</strong>SMC 6 分凑不齐 + 岗位恰在 Green List。<strong>价值：</strong>Tier 1 直接入境即 Resident Visa · Tier 2 工作 24 月后无 6 分要求即可申 PR。
+          <span class="when">占位：<a class="pending" href="#" title="待建：nz-green-list">本站 · NZ Green List</a>（未建）· 官方：<a href="https://www.immigration.govt.nz/visas/green-list-occupations/" target="_blank" rel="noopener">INZ · Green List Occupations</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">AU · National Innovation Visa<small>澳大利亚 NIV · 一步永居</small></span>
+        <div>
+          <strong>门槛：</strong>国际公认成就 + AU 提名人 Form 1000 + 薪资达 FWHIT。<strong>何时考虑：</strong>已在领域内有国际声誉 · 偏好 AU 经济规模与城市质量。<strong>价值：</strong>一步永居 · 不需要先工签 · 入籍 4 年。
+          <span class="when">详情：<a href="au-gtv.html">本站 · AU NIV</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">CA · Express Entry（CEC / FSW）<small>加拿大技术移民</small></span>
+        <div>
+          <strong>门槛：</strong>CEC 需 1 年 NZ 工作经验先；FSW 海外 1 年工作 + 67/100 初筛分 + CRS 跨 cutoff。<strong>何时考虑：</strong>同样想要英语国 PR 但偏好 CA 距离更近（中国 ↔ 温哥华 11 小时直飞）+ 经济规模更大。
+          <span class="when">详情：<a href="ca-gts.html">本站 · CA Global Talent Stream</a> · <a href="ca-ict.html">本站 · CA ICT</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">IE · Critical Skills Employment Permit<small>爱尔兰雇主担保</small></span>
+        <div>
+          <strong>门槛：</strong>CSOL 内岗位 + €38K（或非清单 €64K）· 雇主认可 + 50/50。<strong>何时考虑：</strong>偏好欧盟英语国 + 大厂 EMEA 总部 + 终局 EU 护照。<strong>价值：</strong>2 年到 Stamp 4 · 比 NZ SMC 快 · 但是工签先行而非直接 PR。
+          <span class="when">详情：<a href="ie-csep.html">本站 · IE CSEP</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">UK · Global Talent<small>英国背书制</small></span>
+        <div>
+          <strong>门槛：</strong>经指定背书机构 endorsement（Research / Digital / Arts 三赛道 + Prestigious Prize 免背书）。<strong>价值：</strong>不依赖雇主 · 3–5 年 ILR · 终局英国护照。
+          <span class="when">详情：<a href="uk-global-talent.html">本站 · UK Global Talent</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">UK · Skilled Worker<small>英国雇主担保</small></span>
+        <div>
+          <strong>门槛：</strong>Sponsor licence 雇主 + £38,700 / going rate + 英语 B1。<strong>何时考虑：</strong>大厂同时给伦敦 offer + 偏好欧洲。
+          <span class="when">占位：<a class="pending" href="#" title="待建：uk-skilled-worker">本站 · UK Skilled Worker</a>（未建）· 官方：<a href="https://www.gov.uk/skilled-worker-visa" target="_blank" rel="noopener">GOV.UK · Skilled Worker visa</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">SG · ONE Pass<small>新加坡高薪</small></span>
+        <div>
+          <strong>门槛：</strong>月薪 ≥ SGD 30k 或国际成就。<strong>何时考虑：</strong>亚洲枢纽 + 低税 + 距中国近。
+          <span class="when">详情：<a href="sg-one-pass.html">本站 · SG ONE Pass</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">JP · HSP 1 号ロ / イ<small>日本高度専門職</small></span>
+        <div>
+          <strong>门槛：</strong>积分制 ≥ 70 分。<strong>何时考虑：</strong>偏好东京 / 大阪 + 距中近 + 年薪 JPY 10M+。<strong>价值：</strong>80 分 1 年即可永住。
+          <span class="when">详情：<a href="jp-hsp.html">本站 · JP HSP 1 号ロ</a> · <a href="jp-hsp-1a.html">本站 · JP HSP 1 号イ</a></span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ § 10 官方文件总表 ============ -->
+  <section id="stage-sources">
+    <h2><span class="n">§ 10</span>官方文件总表 <span class="tag">含本地归档</span></h2>
+    <p class="lede">本表列出 SMC 路径上引用的官方原件，均在 <a href="../../data/archive/nz/smc/" target="_blank" rel="noopener"><code>data/archive/nz/smc/</code></a> 下有快照。<strong>注：</strong>immigration.govt.nz 与 dia.govt.nz 在境内可直连；legislation.govt.nz 启用 AWS WAF challenge 拒非浏览器 UA，本仓库归档通过 <code>web.archive.org/web/2025id_/</code> 模式取 2025 原始内容。</p>
+
+    <h3><span class="n">10.1</span>政策页 · INZ（Immigration New Zealand）</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布 / 出处</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>smc-ov</code></td><td>INZ · Skilled Migrant Category Resident Visa 主页（6 分概念 / 费用 / 家属 / 申请入口）</td><td class="iss">INZ immigration.govt.nz</td><td><a href="../../data/archive/nz/smc/inz/smc-overview.html" target="_blank" rel="noopener">inz/smc-overview.html</a></td></tr>
+        <tr><td class="id"><code>smc-pw</code></td><td>INZ · SMC pathway to residence（6 分门槛 + EOI/Invitation 流程）</td><td class="iss">INZ immigration.govt.nz</td><td><a href="../../data/archive/nz/smc/inz/smc-pathway.html" target="_blank" rel="noopener">inz/smc-pathway.html</a></td></tr>
+        <tr><td class="id"><code>smc-occ</code></td><td>INZ · 从职业注册（occupational registration）取得 3 / 4 / 5 / 6 分的细则</td><td class="iss">INZ immigration.govt.nz</td><td><a href="../../data/archive/nz/smc/inz/smc-points-occupational.html" target="_blank" rel="noopener">inz/smc-points-occupational.html</a></td></tr>
+        <tr><td class="id"><code>smc-pay</code></td><td>INZ · SMC 收入档（中位工资 1×/2×/3× → 3/4/6 分）</td><td class="iss">INZ immigration.govt.nz</td><td><a href="../../data/archive/nz/smc/inz/smc-pay-rates.html" target="_blank" rel="noopener">inz/smc-pay-rates.html</a></td></tr>
+        <tr><td class="id"><code>rv-cond</code></td><td>INZ · Resident Visa 头 2 年的 travel conditions（184 天 / 12 月口径）</td><td class="iss">INZ immigration.govt.nz</td><td><a href="../../data/archive/nz/smc/inz/resident-visa-conditions.html" target="_blank" rel="noopener">inz/resident-visa-conditions.html</a></td></tr>
+        <tr><td class="id"><code>prv-ov</code></td><td>INZ · Permanent Resident Visa 主页（无限期回流权 · 申请条件）</td><td class="iss">INZ immigration.govt.nz</td><td><a href="../../data/archive/nz/smc/inz/prv-overview.html" target="_blank" rel="noopener">inz/prv-overview.html</a></td></tr>
+        <tr><td class="id"><code>prv-pw</code></td><td>INZ · 如何从 Resident Visa 升 PRV（5 选 1 commitment 路径）</td><td class="iss">INZ immigration.govt.nz</td><td><a href="../../data/archive/nz/smc/inz/prv-pathway.html" target="_blank" rel="noopener">inz/prv-pathway.html</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.2</span>政策页 · DIA（Department of Internal Affairs）+ govt.nz</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布 / 出处</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>cit-idx</code></td><td>DIA · Citizenship 服务总览（grant / descent / birth 三入口）</td><td class="iss">DIA dia.govt.nz</td><td><a href="../../data/archive/nz/smc/dia/citizenship-index.html" target="_blank" rel="noopener">dia/citizenship-index.html</a></td></tr>
+        <tr><td class="id"><code>cit-ov</code></td><td>govt.nz · NZ Citizenship 消费者向总览（5 年 / 240 天 / 双国籍）</td><td class="iss">DIA via govt.nz</td><td><a href="../../data/archive/nz/smc/dia/citizenship-overview.html" target="_blank" rel="noopener">dia/citizenship-overview.html</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.3</span>法律 · NZ Legislation</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布 / 出处</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>IA-2009</code></td><td>Immigration Act 2009 · SMC / Resident Visa / PRV 的法律基础（DLM1440303）</td><td class="iss">Act 51 of 2009</td><td><a href="../../data/archive/nz/smc/laws/immigration-act-2009.html" target="_blank" rel="noopener">laws/immigration-act-2009.html</a></td></tr>
+        <tr><td class="id"><code>CA-1977</code></td><td>Citizenship Act 1977 · 入籍 5 年 + 240 天 / 年 + good character + intention to reside（DLM443684）</td><td class="iss">Act 61 of 1977</td><td><a href="../../data/archive/nz/smc/laws/citizenship-act-1977.html" target="_blank" rel="noopener">laws/citizenship-act-1977.html</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.4</span>其他外部参考（不做本地归档）</h3>
+    <ul>
+      <li><a href="https://www.immigration.govt.nz/about-us/research-and-statistics/statistics/" target="_blank" rel="noopener">INZ · Statistics</a>（年度签证发放数据 · 国籍分布）</li>
+      <li><a href="https://www.nzqa.govt.nz/qualifications-standards/international-qualifications/" target="_blank" rel="noopener">NZQA · International Qualifications Assessment</a>（境外学历认证入口）</li>
+      <li><a href="https://www.ird.govt.nz/" target="_blank" rel="noopener">IRD · Inland Revenue</a>（税务）</li>
+      <li><a href="https://www.kiwisaver.govt.nz/" target="_blank" rel="noopener">KiwiSaver</a>（NZ 强制退休金）</li>
+      <li><a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/special-category-visa-444" target="_blank" rel="noopener">AU Home Affairs · SCV (Subclass 444)</a>（NZ 公民赴澳的 Trans-Tasman 通道）</li>
+    </ul>
+
+    <p class="hint">本表"本地归档"指向的是仓库内 <code>data/archive/nz/smc/</code> 下已下载的官方原件快照。若本地文件缺失，请在仓库根下运行 <code>bash data/archive/nz/smc/download.sh</code> 重新拉取。</p>
+  </section>
+
+  <footer class="btm">
+    <span>relocate · nz-smc · v0.1</span>
+    <span>© 本站非商用 · 内容引自官方公开条款与法律原文</span>
+  </footer>
+
+</main>
+</body>
+</html>

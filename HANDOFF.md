@@ -7,6 +7,11 @@
 
 ## Now · 在哪
 
+- **2026-05-19 · 新增 NZ SMC（新西兰·技术移民 6 分制居留签）路径 + INZ / DIA / NZ Legislation 原件归档**（commit 待写）：
+  - [`site/paths/nz-smc.html`](site/paths/nz-smc.html) — 2023 改革后 6 分制（职业注册 / 学历 / 收入三类自由组合）· 一步直授居留签（不是工签）· 配偶 + 22 岁以下未婚子女同批 Resident Visa·Y0–2 头 travel conditions · Y2 升 PRV · § 4 入籍 5 年 + 每年 240 天 + 总 1,350 天 · § 4.3 NZ→AU 独家复利（TTTA · NZ 公民自动获 SCV · 4 年后可申 AU 公民）· § 5.3 "NZ 跨板 AU” 迂回路径（8 Y 拿 NZ 护照 + 4 Y AU = 9 Y 拿 AU 护照）
+  - 本页为 NZ 首条路径，没有同国上位页可 <span class="term">.reuse</span>；全内联。未来 nz-aewv / nz-green-list 反向 reuse 本页
+  - [`data/archive/nz/smc/`](data/archive/nz/smc/) · 11 份：INZ 7（smc-overview / pathway / occupational-points / pay-rates / RV-conditions / PRV-overview / PRV-pathway）+ DIA / govt.nz 兣2（citizenship index + overview）+ Laws 2（Immigration Act 2009 / Citizenship Act 1977）。immigration.govt.nz / dia.govt.nz 直连；legislation.govt.nz 启用 AWS WAF challenge 拒非浏览器 UA（连续 202 空响应），两部法律走 web.archive.org id_ 获取
+  - 跨链接：[`site/index.html`](site/index.html) 路径列表新增 NZ SMC 条目（紧随 IE CSEP）；[`site/paths/au-gtv.html`](site/paths/au-gtv.html) § 8 新增 NZ SMC 条目作为 NIV 走不通的迂回通道；[`sitemap.xml`](sitemap.xml) 新增 nz-smc；[SOURCES.md](SOURCES.md) § 1 新增 nz / smc 登记段
 - **2026-05-19 · 新增 IE CSEP（爱尔兰·紧缺技能工签）路径 + Irish Statute Book / DETE 原件归档**（commit 待写）：
   - [`site/paths/ie-csep.html`](site/paths/ie-csep.html) — Employment Permits Act 2024 · 双门槛（CSOL €38K / 非清单 €64K）· 雇主 50/50 + Trusted Partner · 中国大陆申请路径（DETE EPOS → VFS 北京 / 上海 D 类雇佣签证）· § 3 二年后 Stamp 4 Support Letter 脱离许可制（CSEP 路径最大结构优势）· § 4 入籍 5/9 reckonable + 末 12 月连续 + Declaration of Fidelity · § 5 家庭玩法重点写中国大陆双职业家庭 "主申 CSEP + 配偶 Stamp 1G 免许可" · § 4.3 EU 护照终局价值（30+ 国自由迁徙）· § 7 风险重点讲 CSOL 季度浮动 + Stamp 2 不计 reckonable + ISD 审理积压 18-30 个月 + 都柏林房价 + 中爱无双边社保协定
   - 本页为 IE 首条路径，没有可 <span class="term">.reuse</span> 的同国上位页；全部内联。未来 ie-gep / ie-step 件合理反向 reuse 本页不重复
@@ -104,6 +109,7 @@
   - [`site/paths/us-niw.html`](site/paths/us-niw.html) — 美国 · EB-2 NIW · 国家利益豁免（不是签证 · 绿卡分类页 · Matter of Dhanasar 三要素）
   - [`site/paths/ca-ict.html`](site/paths/ca-ict.html) — 加拿大 · ICT 跨国公司内部调动 · IRPR §205(a) · C12 · 三档落档 · 配偶 OWP · 达 CEC 后接 ca-gts § 3 同口径 · 中国大陆出发专门写
   - [`site/paths/ie-csep.html`](site/paths/ie-csep.html) — 爱尔兰 · Critical Skills Employment Permit · Employment Permits Act 2024 · 双门槛 €38K / €64K · 2 年转 Stamp 4 免许可 · 配偶 Stamp 1G · 5 年入籍 → EU 护照
+  - [`site/paths/nz-smc.html`](site/paths/nz-smc.html) — 新西兰 · Skilled Migrant Category Resident Visa · 6 分制（2023 改革）· 一步到居留 · 配偶子女同批 · 5 年入籍 · NZ 公民 → AU SCV 跳板（4 年后可转 AU 公民）
 
 ## Next · 下一步
 
@@ -119,7 +125,7 @@
 
 | 建议 slug | 目标文件 | 出现于 |
 | --- | --- | --- |
-| `uk-skilled-worker` | `site/paths/uk-skilled-worker.html` | uk-global-talent.html § 8 · ie-csep.html § 8 |
+| `uk-skilled-worker` | `site/paths/uk-skilled-worker.html` | uk-global-talent.html § 8 · ie-csep.html § 8 · nz-smc.html § 8 |
 | `uk-hpi` | `site/paths/uk-hpi.html` | uk-global-talent.html § 8 |
 | `uk-innovator-founder` | `site/paths/uk-innovator-founder.html` | uk-global-talent.html § 8 |
 | `ca-pnp-tech` | `site/paths/ca-pnp-tech.html` | ca-gts.html § 8 · ca-ict.html § 8 |
@@ -134,6 +140,8 @@
 | `ie-gep` | `site/paths/ie-gep.html` | ie-csep.html § 8 |
 | `ie-step` | `site/paths/ie-step.html` | ie-csep.html § 8 |
 | `nl-highly-skilled-migrant` | `site/paths/nl-highly-skilled-migrant.html` | ie-csep.html § 8 |
+| `nz-aewv` | `site/paths/nz-aewv.html` | nz-smc.html § 8 |
+| `nz-green-list` | `site/paths/nz-green-list.html` | nz-smc.html § 8 |
 
 **尚未在任何已建页 § 8 / § 5 出现、但已识别值得做的国家与路径**（2026-05-19 增补；建立时按维度 C 在对应已建页加占位 + 加入上表）：
 
@@ -143,11 +151,11 @@
 | `nz-aewv` | `site/paths/nz-aewv.html` | 新西兰 · Accredited Employer Work Visa（2022 改革后主流雇主担保工签） |
 | `nz-green-list` | `site/paths/nz-green-list.html` | 新西兰 · Green List Tier 1 / Tier 2（紧缺职业直通 PR / 工作 24 月后 PR） |
 
-> NZ 不是空白调研：pivot 前的早期视觉 / 结构探索 [`design/coverage-survey.html`](design/coverage-survey.html) 中已粗梳理过工签 / 永居 / 入籍框架与候选路径名单，可作为开建时的快速起点。该草稿仅为历史留痕（pivot 前的 Tier A/B/C 分层机制已废弃，[RULES.md](RULES.md) § 6），所列具体数字 / 评级不可直接采信，须按 path-authoring.md 重新核源。（IE 各路径同样在 coverage-survey 中有粗梳理，ie-csep 已在 2026-05-19 完成；ie-gep / ie-step 未来开建时可参考。）
+> NZ 不是空白调研：pivot 前的早期视觉 / 结构探索 [`design/coverage-survey.html`](design/coverage-survey.html) 中已粗梳理过工签 / 永居 / 入籍框架与候选路径名单，可作为开建时的快速起点。该草稿仅为历史留痕（pivot 前的 Tier A/B/C 分层机制已废弃，[RULES.md](RULES.md) § 6），所列具体数字 / 评级不可直接采信，须按 path-authoring.md 重新核源。（IE 各路径同样在 coverage-survey 中有粗梳理，ie-csep 已在 2026-05-19 完成；nz-smc 同日完成；ie-gep / ie-step / nz-aewv / nz-green-list 未来开建时可参考。）
 
 `jp-hsp.html` § 5 的 1 号イ / 1 号ロ→HSP 2 号 / 技人国 / 経営管理 条目已统一转为 `class="pending"` 占位 + 官方 fallback 链接（2026-05-19）。建立对应路径页时，全站搜索 pending slug 替换为本站实链（保留官方 fallback）。
 
-优先级建议（更新于 2026-05-19）：`uk-skilled-worker`（UK 板块从 1 条变 2 条 · 被 uk-global-talent + ie-csep 两页 § 8 出现）→ `ca-pnp-tech`（ca-gts / ca-ict 共同 plan B）→ `nz-smc`（NZ 板块从 0 → 1 + 与 AU NIV 对照）→ `au-189`（AU 第二条）。
+优先级建议（更新于 2026-05-19）：`uk-skilled-worker`（UK 板块从 1 条变 2 条 · 被 uk-global-talent + ie-csep + nz-smc 三页 § 8 出现）→ `ca-pnp-tech`（ca-gts / ca-ict 共同 plan B）→ `au-189`（AU 板块第二条）。
 
 已完成、从本清单拿掉的：
 
@@ -172,6 +180,7 @@
 - ~~把 sg-one-pass.html § 8 中 ca-gts 的 pending 占位替换为本站实链~~（2026-04-21）
 - ~~新增 CA ICT（跨国公司内部调动）路径 + IRCC IMP R205(a) 归档 + ca-gts § 8 占位换本站实链~~（2026-05-19）
 - ~~新增 IE CSEP（爱尔兰·紧缺技能工签）路径 + Irish Statute Book / DETE 共 6 份官方原件归档 + ca-ict § 8 新增 IE 条目~~（2026-05-19）
+- ~~新增 NZ SMC（新西兰·技术移民 6 分制居留签）路径 + INZ / DIA / NZ Legislation 共 11 份官方原件归档 + au-gtv § 8 新增 NZ 条目~~（2026-05-19）
 
 ## Don't · 别做
 

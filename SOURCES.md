@@ -80,3 +80,18 @@ pivot 后允许以"二手"身份引用律所 / 博客 / 论坛的整理，但在
 注：irishimmigration.ie（ISD）启用 Akamai Bot Manager，对非浏览器 UA 一律返 403；Wayback 同样不可获取。本路径页以 1956 Nationality Act + 2024 Permits Act + 2004 Immigration Act 三部法律原文作为佝证主轴，ISD 消费向页仅作页中外链。
 
 DETE Critical Skills Occupations List 与季度统计页因 2024 年站点重构 URL 不稳定，本项目不强制存档以避免本地快照与官方不同步。
+
+### nz / smc（2026-05-19）
+
+对应 [`site/paths/nz-smc.html`](site/paths/nz-smc.html) SMC 专属一手源。
+
+- 归档位置：[`data/archive/nz/smc/`](data/archive/nz/smc/)
+- 完整 URL 见 [`download.sh`](data/archive/nz/smc/download.sh)
+
+涉及发布机关：
+
+- **INZ**（Immigration New Zealand）— SMC overview / pathway / occupational registration points / pay rates / Resident Visa conditions / PRV overview / PRV pathway 共 7 页
+- **DIA**（Department of Internal Affairs）+ **govt.nz** — Citizenship 服务总览 + 消费者向总览共 2 页
+- **NZ Legislation** — Immigration Act 2009（DLM1440303）· Citizenship Act 1977（DLM443684）
+
+注：immigration.govt.nz / dia.govt.nz 在境内可直连；legislation.govt.nz 启用 AWS WAF challenge 拒非浏览器 UA（连续返 202 空响应），两部法律走 `web.archive.org/web/2025id_/` 获取。INZ 网站 2024 年重构，原 `/new-zealand-visas/` URL 结构多 301 重定向到新的 `/visas/` 与 `/live/` 路径，本项目直接采新结构 URL。
