@@ -103,8 +103,8 @@
 
 - [ ] **消化"待补路径"清单**（见下文）：按能力逐条建立，每建一条全站搜 `class="pending"` 替换
 - [ ] **选定最终站点名**（或继续用 `relocate` 到真正公开那天）
-- [ ] **决定部署目标**：GitHub Pages (source=`/site`) / Netlify / Cloudflare Pages，选定后写入 [docs/engineering.md](docs/engineering.md)
-- [ ] **License 落定** — 内容 CC BY-SA 4.0 + 代码 MIT（倾向），写回 [README.md](README.md)
+- [x] ~~决定部署目标~~ — **已部署到 Cloudflare Pages**（[docs/engineering.md](docs/engineering.md) 推荐方案落地）；正式域名仍待选定
+- [ ] **License 落定** — 内容 CC BY-SA 4.0 + 代码 MIT（倾向），写回 [README.md](README.md) + 根目录加 `LICENSE`
 - [ ] **favicon / OG 图**（上线前）
 
 ### 待补路径清单
@@ -122,8 +122,11 @@
 | `au-190-491` | `site/paths/au-190-491.html` | au-gtv.html § 8 |
 | `au-482` | `site/paths/au-482.html` | au-gtv.html § 8 |
 | `ae-golden-visa` | `site/paths/ae-golden-visa.html` | sg-one-pass.html § 8 |
+| `jp-hsp-2` | `site/paths/jp-hsp-2.html` | jp-hsp.html § 5 |
+| `jp-gijinkoku` | `site/paths/jp-gijinkoku.html` | jp-hsp.html § 5 |
+| `jp-business-manager` | `site/paths/jp-business-manager.html` | jp-hsp.html § 5 |
 
-`jp-hsp.html` § 5 的 1 号イ / 1 号ロ→HSP 2 号 / 技人国 / 経営管理 条目当前并无 `class="pending"`——它们是写死的外链标签。建立对应路径页时同样须全站搜索并把这些外链改为本站内链（保留官方 fallback 链接）。
+`jp-hsp.html` § 5 的 1 号イ / 1 号ロ→HSP 2 号 / 技人国 / 経営管理 条目已统一转为 `class="pending"` 占位 + 官方 fallback 链接（2026-05-19）。建立对应路径页时，全站搜索 pending slug 替换为本站实链（保留官方 fallback）。
 
 优先级建议：`uk-skilled-worker`（英国 SW 大类，Global Talent 页 § 8 多处引用）与 `au-189`（澳大利亚 得分类技术移民，AU NIV 页 § 8 的自然降档）。
 
