@@ -51,3 +51,16 @@ pivot 后允许以"二手"身份引用律所 / 博客 / 论坛的整理，但在
 总计 48 条目（45 份离线文件 + 3 份在线表单 `.url` 占位）。
 
 注：pivot 前这批文件曾存于 `archive/garden-experiment-2026-04-19/design/sources/us-l1b-family/`，归档原因是当时 RULES § 2.1.1 要求独立 PR 登记。pivot 后该约束放宽，文件直接挪入 `data/archive/`。详见 [`archive/garden-experiment-2026-04-19/README.md`](archive/garden-experiment-2026-04-19/README.md)。
+
+### ca / ict（2026-05-19）
+
+对应 [`site/paths/ca-ict.html`](site/paths/ca-ict.html) ICT 专属一手源。
+
+- 归档位置：[`data/archive/ca/ict/`](data/archive/ca/ict/)（仅 ICT 专属页；上位法 / Express Entry / 入籍系列沿用 `data/archive/ca/gts/`）
+- 完整 URL 见 [`download.sh`](data/archive/ca/ict/download.sh)
+
+涉及发布机关：
+
+- **IRCC**（Immigration, Refugees and Citizenship Canada）— International Mobility Program · Significant benefit · Intra-company transferees · R205(a) 单页（含 Executive / Senior Manager / Specialized Knowledge 三档评估细则、qualifying relationship、C12 / C61 / C62 / C63 国别协定、累计期上限、"new office" 1 年首签变体、ESDC prevailing wage）
+
+注：2025 年 IRCC 已把原先按 "C12 / 专门知识 / 高管 / qualifying relationship" 拆开的多个 IMP 子页合并到上述单一 R205(a) 页；这是 ICT 路径上最权威的单一来源。

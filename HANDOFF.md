@@ -7,6 +7,11 @@
 
 ## Now · 在哪
 
+- **2026-05-19 · 新增 CA ICT（跨国公司内部调动）路径 + IRCC IMP 原件归档**（commit 待写）：
+  - [`site/paths/ca-ict.html`](site/paths/ca-ict.html) — LMIA-exempt · IRPR §205(a) · C12 通用档（中国大陆护照唯一适用，C61 / C62 / C63 仅限特定协定国公民）· 三档落档（Executive 7 年 · Senior Manager 7 年 含 function manager · Specialized Knowledge 5 年 + 2014 后双要素 advanced + proprietary）· qualifying relationship（parent / subsidiary / branch / affiliate）· "过去 3 年内连续 1 年" 硬卡 · "新办公室" 1 年首签变体 · BOWP 解除累计期上限 · § 5 家庭玩法重点写中国大陆双职业家庭 "主申 ICT + 配偶 OWP 双线攒 CEC" · § 7 风险重点讲 SK 档 2024 后审查趋严 + 中加无双边社保协定 + T1135 外资产报表
+  - 按"共用则引用不复制"原则：ca-ict § 0.1 身份层级 / § 2.2 BOWP / § 2.4 税务 / § 3 Express Entry CEC + CRS / § 4 入籍 3·5 全部 `.reuse` 引 ca-gts 对应段，不重复
+  - [`data/archive/ca/ict/`](data/archive/ca/ict/)（IRCC IMP · R205(a) Intra-company transferees 单页：IRCC 已把原 SK / Exec / Qualifying relationship 多个子页合并到这一页 · 是 ICT 最权威的单一来源）+ README + download.sh；其余 IRPA / IRPR / Citizenship Act / Express Entry / CEC / CRS / Work Permit / Citizenship 系列共 9 份沿用 `data/archive/ca/gts/`。canada.ca 仍走 web.archive.org `id_` 模式（同 ca-gts 口径）
+  - 跨链接：[`site/index.html`](site/index.html) 路径列表新增 CA ICT 条目（紧随 CA GTS）；[`site/paths/ca-gts.html`](site/paths/ca-gts.html) § 8 的 ca-ict pending 占位改为本站实链；[`sitemap.xml`](sitemap.xml) 新增 ca-ict；[SOURCES.md](SOURCES.md) § 1 新增 ca / ict 登记段
 - **2026-04-21 · 新增 US EB-1B 杰出教研 + US EB-5 投资移民双绿卡分类页 + 官方原件归档**（commit 待写）：
   - [`site/paths/us-eb1b.html`](site/paths/us-eb1b.html) — 绿卡分类页 · INA §203(b)(1)(B) · 8 CFR 204.5(i) · 三大硬要件（国际承认 + ≥ 3 年教研经验 + tenure / tenure-track / permanent research 岗位 offer）· 6 条证据 ≥ 2 条 + Kazarian 两段论（引用 us-eb1a § 3 不重复）· 合格雇主三形态（大学 / 研究机构 / 企业 R&D ≥ 3 名全职研究员）· permanent position 争议点（按年续聘 / grant funded / visiting / postdoc 都不算）· AC21 跳槽 portability 受限（必须仍为教研 permanent 岗位）· § 7 从 H-1B / O-1A / J-1（212(e) 坑）/ F-1 / 境外切入 · § 8 并行 EB-1A / NIW / PERM EB-2/3 / EB-1C / EB-5 / 跨国 · § 9 EB-1B 专属高频 RFE 七条
   - [`site/paths/us-eb5.html`](site/paths/us-eb5.html) — 绿卡分类页 · INA §203(b)(5) + §216A · 8 CFR 204.6 + 216.6 · **RIA 2022（PubL 117-103 Div BB）**六大要点（投资额 $800K/$1.05M + TEA 由 DHS 统一裁定 + 20%/10%/2% set-aside 独立排期 + I-485 并递 + RC 授权至 2027 + Good-faith 保护）· 两种投资形态（直接投资 I-526 vs 区域中心 I-526E）· SoF 中国大陆专项（外管 5 万换汇 / 流水链条 / 父母赠与）· RC due diligence 九项清单 · 两步绿卡（I-526E → CLPR 2 年 → I-829 → 永久 LPR）· CLPR 期间 48 个月 I-829 pending 自动延期 · good-faith 重投 2 年窗口 · § 5 家属 E-51/E-52/E-53 + CSPA（EB-5 保护最强）· § 6 境内 H-1B/L-1/E-2/F-1 或境外切入 + 并行 EB-1A/NIW/L-1A→EB-1C/EB-1B/跨国 SUV/GIP/Innovator · § 7 资金 / 项目 / 移民 三层风险
@@ -92,6 +97,7 @@
   - [`site/paths/au-gtv.html`](site/paths/au-gtv.html) — 澳大利亚 · National Innovation Visa（NIV · 前 GTV · Subclass 858）· 一步到位永居 → 入籍
   - [`site/paths/uk-global-talent.html`](site/paths/uk-global-talent.html) — 英国 · Global Talent Visa · 背书驱动 · Stage 1 + Stage 2 → ILR → 入籍
   - [`site/paths/us-niw.html`](site/paths/us-niw.html) — 美国 · EB-2 NIW · 国家利益豁免（不是签证 · 绿卡分类页 · Matter of Dhanasar 三要素）
+  - [`site/paths/ca-ict.html`](site/paths/ca-ict.html) — 加拿大 · ICT 跨国公司内部调动 · IRPR §205(a) · C12 · 三档落档 · 配偶 OWP · 达 CEC 后接 ca-gts § 3 同口径 · 中国大陆出发专门写
 
 ## Next · 下一步
 
@@ -110,9 +116,8 @@
 | `uk-skilled-worker` | `site/paths/uk-skilled-worker.html` | uk-global-talent.html § 8 |
 | `uk-hpi` | `site/paths/uk-hpi.html` | uk-global-talent.html § 8 |
 | `uk-innovator-founder` | `site/paths/uk-innovator-founder.html` | uk-global-talent.html § 8 |
-| `ca-pnp-tech` | `site/paths/ca-pnp-tech.html` | ca-gts.html § 8 |
-| `ca-suv` | `site/paths/ca-suv.html` | ca-gts.html § 8 |
-| `ca-ict` | `site/paths/ca-ict.html` | ca-gts.html § 8 |
+| `ca-pnp-tech` | `site/paths/ca-pnp-tech.html` | ca-gts.html § 8 · ca-ict.html § 8 |
+| `ca-suv` | `site/paths/ca-suv.html` | ca-gts.html § 8 · ca-ict.html § 8 |
 | `au-189` | `site/paths/au-189.html` | au-gtv.html § 8 |
 | `au-190-491` | `site/paths/au-190-491.html` | au-gtv.html § 8 |
 | `au-482` | `site/paths/au-482.html` | au-gtv.html § 8 |
@@ -143,6 +148,7 @@
 - ~~新增 UK Global Talent Visa 路径 + GOV.UK / Immigration Rules / legislation.gov.uk 共 16 份官方原件归档 + 八页交叉链接~~（2026-04-20）
 - ~~新增 US EB-2 NIW 国家利益豁免路径 + USCIS 4 份官方原件归档 + 跨页链接~~（2026-04-20）
 - ~~把 sg-one-pass.html § 8 中 ca-gts 的 pending 占位替换为本站实链~~（2026-04-21）
+- ~~新增 CA ICT（跨国公司内部调动）路径 + IRCC IMP R205(a) 归档 + ca-gts § 8 占位换本站实链~~（2026-05-19）
 
 ## Don't · 别做
 
