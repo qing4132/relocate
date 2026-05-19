@@ -64,3 +64,19 @@ pivot 后允许以"二手"身份引用律所 / 博客 / 论坛的整理，但在
 - **IRCC**（Immigration, Refugees and Citizenship Canada）— International Mobility Program · Significant benefit · Intra-company transferees · R205(a) 单页（含 Executive / Senior Manager / Specialized Knowledge 三档评估细则、qualifying relationship、C12 / C61 / C62 / C63 国别协定、累计期上限、"new office" 1 年首签变体、ESDC prevailing wage）
 
 注：2025 年 IRCC 已把原先按 "C12 / 专门知识 / 高管 / qualifying relationship" 拆开的多个 IMP 子页合并到上述单一 R205(a) 页；这是 ICT 路径上最权威的单一来源。
+
+### ie / csep（2026-05-19）
+
+对应 [`site/paths/ie-csep.html`](site/paths/ie-csep.html) CSEP 专属一手源。
+
+- 归档位置：[`data/archive/ie/csep/`](data/archive/ie/csep/)
+- 完整 URL 见 [`download.sh`](data/archive/ie/csep/download.sh)
+
+涉及发布机关：
+
+- **DETE**（Department of Enterprise, Trade and Employment）— CSEP Overview · 通用资格页（雇主认可 / 50/50 / 工时 / 薪资）
+- **Irish Statute Book / revisedacts.lawreform.ie**：Employment Permits Act 2024（五类许可合并法）· Employment Permits Act 2006（含 2014 / 2018 修订的综合版）· Irish Nationality and Citizenship Act 1956（综合版）· Immigration Act 2004
+
+注：irishimmigration.ie（ISD）启用 Akamai Bot Manager，对非浏览器 UA 一律返 403；Wayback 同样不可获取。本路径页以 1956 Nationality Act + 2024 Permits Act + 2004 Immigration Act 三部法律原文作为佝证主轴，ISD 消费向页仅作页中外链。
+
+DETE Critical Skills Occupations List 与季度统计页因 2024 年站点重构 URL 不稳定，本项目不强制存档以避免本地快照与官方不同步。

@@ -7,6 +7,11 @@
 
 ## Now · 在哪
 
+- **2026-05-19 · 新增 IE CSEP（爱尔兰·紧缺技能工签）路径 + Irish Statute Book / DETE 原件归档**（commit 待写）：
+  - [`site/paths/ie-csep.html`](site/paths/ie-csep.html) — Employment Permits Act 2024 · 双门槛（CSOL €38K / 非清单 €64K）· 雇主 50/50 + Trusted Partner · 中国大陆申请路径（DETE EPOS → VFS 北京 / 上海 D 类雇佣签证）· § 3 二年后 Stamp 4 Support Letter 脱离许可制（CSEP 路径最大结构优势）· § 4 入籍 5/9 reckonable + 末 12 月连续 + Declaration of Fidelity · § 5 家庭玩法重点写中国大陆双职业家庭 "主申 CSEP + 配偶 Stamp 1G 免许可" · § 4.3 EU 护照终局价值（30+ 国自由迁徙）· § 7 风险重点讲 CSOL 季度浮动 + Stamp 2 不计 reckonable + ISD 审理积压 18-30 个月 + 都柏林房价 + 中爱无双边社保协定
+  - 本页为 IE 首条路径，没有可 <span class="term">.reuse</span> 的同国上位页；全部内联。未来 ie-gep / ie-step 件合理反向 reuse 本页不重复
+  - [`data/archive/ie/csep/`](data/archive/ie/csep/) · 6 份：DETE CSEP overview / DETE permit-eligibility / Employment Permits Act 2024 / Employment Permits Act 2006 修订版 / Irish Nationality and Citizenship Act 1956 修订版 / Immigration Act 2004 · 以 1956+2024+2004 三部法律原文为佝证主轴·irishimmigration.ie（ISD）启用 Akamai Bot Manager 拒非浏览器 UA（Wayback 同样谢绝），五页消费向仅外链不归档·DETE CSOL / 统计页因季度刷新不独立归档以避免快照过期
+  - 跨链接：[`site/index.html`](site/index.html) 路径列表新增 IE CSEP 条目（紧随 UK Global Talent）；[`site/paths/ca-ict.html`](site/paths/ca-ict.html) § 8 新增 IE CSEP 条目作为 MSFT/Google/Meta EMEA 内部调动的天然对位；[`sitemap.xml`](sitemap.xml) 新增 ie-csep；[SOURCES.md](SOURCES.md) § 1 新增 ie / csep 登记段
 - **2026-05-19 · 新增 CA ICT（跨国公司内部调动）路径 + IRCC IMP 原件归档**（commit 待写）：
   - [`site/paths/ca-ict.html`](site/paths/ca-ict.html) — LMIA-exempt · IRPR §205(a) · C12 通用档（中国大陆护照唯一适用，C61 / C62 / C63 仅限特定协定国公民）· 三档落档（Executive 7 年 · Senior Manager 7 年 含 function manager · Specialized Knowledge 5 年 + 2014 后双要素 advanced + proprietary）· qualifying relationship（parent / subsidiary / branch / affiliate）· "过去 3 年内连续 1 年" 硬卡 · "新办公室" 1 年首签变体 · BOWP 解除累计期上限 · § 5 家庭玩法重点写中国大陆双职业家庭 "主申 ICT + 配偶 OWP 双线攒 CEC" · § 7 风险重点讲 SK 档 2024 后审查趋严 + 中加无双边社保协定 + T1135 外资产报表
   - 按"共用则引用不复制"原则：ca-ict § 0.1 身份层级 / § 2.2 BOWP / § 2.4 税务 / § 3 Express Entry CEC + CRS / § 4 入籍 3·5 全部 `.reuse` 引 ca-gts 对应段，不重复
@@ -98,6 +103,7 @@
   - [`site/paths/uk-global-talent.html`](site/paths/uk-global-talent.html) — 英国 · Global Talent Visa · 背书驱动 · Stage 1 + Stage 2 → ILR → 入籍
   - [`site/paths/us-niw.html`](site/paths/us-niw.html) — 美国 · EB-2 NIW · 国家利益豁免（不是签证 · 绿卡分类页 · Matter of Dhanasar 三要素）
   - [`site/paths/ca-ict.html`](site/paths/ca-ict.html) — 加拿大 · ICT 跨国公司内部调动 · IRPR §205(a) · C12 · 三档落档 · 配偶 OWP · 达 CEC 后接 ca-gts § 3 同口径 · 中国大陆出发专门写
+  - [`site/paths/ie-csep.html`](site/paths/ie-csep.html) — 爱尔兰 · Critical Skills Employment Permit · Employment Permits Act 2024 · 双门槛 €38K / €64K · 2 年转 Stamp 4 免许可 · 配偶 Stamp 1G · 5 年入籍 → EU 护照
 
 ## Next · 下一步
 
@@ -113,7 +119,7 @@
 
 | 建议 slug | 目标文件 | 出现于 |
 | --- | --- | --- |
-| `uk-skilled-worker` | `site/paths/uk-skilled-worker.html` | uk-global-talent.html § 8 |
+| `uk-skilled-worker` | `site/paths/uk-skilled-worker.html` | uk-global-talent.html § 8 · ie-csep.html § 8 |
 | `uk-hpi` | `site/paths/uk-hpi.html` | uk-global-talent.html § 8 |
 | `uk-innovator-founder` | `site/paths/uk-innovator-founder.html` | uk-global-talent.html § 8 |
 | `ca-pnp-tech` | `site/paths/ca-pnp-tech.html` | ca-gts.html § 8 · ca-ict.html § 8 |
@@ -125,6 +131,9 @@
 | `jp-hsp-2` | `site/paths/jp-hsp-2.html` | jp-hsp.html § 5 |
 | `jp-gijinkoku` | `site/paths/jp-gijinkoku.html` | jp-hsp.html § 5 |
 | `jp-business-manager` | `site/paths/jp-business-manager.html` | jp-hsp.html § 5 |
+| `ie-gep` | `site/paths/ie-gep.html` | ie-csep.html § 8 |
+| `ie-step` | `site/paths/ie-step.html` | ie-csep.html § 8 |
+| `nl-highly-skilled-migrant` | `site/paths/nl-highly-skilled-migrant.html` | ie-csep.html § 8 |
 
 **尚未在任何已建页 § 8 / § 5 出现、但已识别值得做的国家与路径**（2026-05-19 增补；建立时按维度 C 在对应已建页加占位 + 加入上表）：
 
@@ -133,15 +142,12 @@
 | `nz-smc` | `site/paths/nz-smc.html` | 新西兰 · Skilled Migrant Category Resident Visa（2023 改版 6 分制 · 直接指向 PR） |
 | `nz-aewv` | `site/paths/nz-aewv.html` | 新西兰 · Accredited Employer Work Visa（2022 改革后主流雇主担保工签） |
 | `nz-green-list` | `site/paths/nz-green-list.html` | 新西兰 · Green List Tier 1 / Tier 2（紧缺职业直通 PR / 工作 24 月后 PR） |
-| `ie-csep` | `site/paths/ie-csep.html` | 爱尔兰 · Critical Skills Employment Permit（欧盟内英语国 · MSFT / Google / Meta EMEA 内部调动天然链路 · 与 ca-ict 互补） |
-| `ie-gep` | `site/paths/ie-gep.html` | 爱尔兰 · General Employment Permit（非紧缺职业雇主担保） |
-| `ie-step` | `site/paths/ie-step.html` | 爱尔兰 · Start-up Entrepreneur Programme（5 万欧元创业 · 与 ca-suv / uk-innovator-founder 同类） |
 
-> NZ / IE 不是空白调研：pivot 前的早期视觉 / 结构探索 [`design/coverage-survey.html`](design/coverage-survey.html) 中已粗梳理过两国的工签 / 永居 / 入籍框架与候选路径名单，可作为开建时的快速起点。该草稿仅为历史留痕（pivot 前的 Tier A/B/C 分层机制已废弃，[RULES.md](RULES.md) § 6），所列具体数字 / 评级不可直接采信，须按 path-authoring.md 重新核源。
+> NZ 不是空白调研：pivot 前的早期视觉 / 结构探索 [`design/coverage-survey.html`](design/coverage-survey.html) 中已粗梳理过工签 / 永居 / 入籍框架与候选路径名单，可作为开建时的快速起点。该草稿仅为历史留痕（pivot 前的 Tier A/B/C 分层机制已废弃，[RULES.md](RULES.md) § 6），所列具体数字 / 评级不可直接采信，须按 path-authoring.md 重新核源。（IE 各路径同样在 coverage-survey 中有粗梳理，ie-csep 已在 2026-05-19 完成；ie-gep / ie-step 未来开建时可参考。）
 
 `jp-hsp.html` § 5 的 1 号イ / 1 号ロ→HSP 2 号 / 技人国 / 経営管理 条目已统一转为 `class="pending"` 占位 + 官方 fallback 链接（2026-05-19）。建立对应路径页时，全站搜索 pending slug 替换为本站实链（保留官方 fallback）。
 
-优先级建议（更新于 2026-05-19）：`uk-skilled-worker`（UK 板块从 1 条变 2 条）→ `ie-csep`（欧盟英语国空白 + 与 ca-ict 形成 MSFT 内部调动场景的双选项）→ `ca-pnp-tech`（ca-gts / ca-ict 共同 plan B）→ `nz-smc`（NZ 板块从 0 → 1 + 与 AU NIV 对照）→ `au-189`（AU 第二条）。
+优先级建议（更新于 2026-05-19）：`uk-skilled-worker`（UK 板块从 1 条变 2 条 · 被 uk-global-talent + ie-csep 两页 § 8 出现）→ `ca-pnp-tech`（ca-gts / ca-ict 共同 plan B）→ `nz-smc`（NZ 板块从 0 → 1 + 与 AU NIV 对照）→ `au-189`（AU 第二条）。
 
 已完成、从本清单拿掉的：
 
@@ -165,6 +171,7 @@
 - ~~新增 US EB-2 NIW 国家利益豁免路径 + USCIS 4 份官方原件归档 + 跨页链接~~（2026-04-20）
 - ~~把 sg-one-pass.html § 8 中 ca-gts 的 pending 占位替换为本站实链~~（2026-04-21）
 - ~~新增 CA ICT（跨国公司内部调动）路径 + IRCC IMP R205(a) 归档 + ca-gts § 8 占位换本站实链~~（2026-05-19）
+- ~~新增 IE CSEP（爱尔兰·紧缺技能工签）路径 + Irish Statute Book / DETE 共 6 份官方原件归档 + ca-ict § 8 新增 IE 条目~~（2026-05-19）
 
 ## Don't · 别做
 
