@@ -126,9 +126,22 @@
 | `jp-gijinkoku` | `site/paths/jp-gijinkoku.html` | jp-hsp.html § 5 |
 | `jp-business-manager` | `site/paths/jp-business-manager.html` | jp-hsp.html § 5 |
 
+**尚未在任何已建页 § 8 / § 5 出现、但已识别值得做的国家与路径**（2026-05-19 增补；建立时按维度 C 在对应已建页加占位 + 加入上表）：
+
+| 建议 slug | 目标文件 | 国家 / 路径 |
+| --- | --- | --- |
+| `nz-smc` | `site/paths/nz-smc.html` | 新西兰 · Skilled Migrant Category Resident Visa（2023 改版 6 分制 · 直接指向 PR） |
+| `nz-aewv` | `site/paths/nz-aewv.html` | 新西兰 · Accredited Employer Work Visa（2022 改革后主流雇主担保工签） |
+| `nz-green-list` | `site/paths/nz-green-list.html` | 新西兰 · Green List Tier 1 / Tier 2（紧缺职业直通 PR / 工作 24 月后 PR） |
+| `ie-csep` | `site/paths/ie-csep.html` | 爱尔兰 · Critical Skills Employment Permit（欧盟内英语国 · MSFT / Google / Meta EMEA 内部调动天然链路 · 与 ca-ict 互补） |
+| `ie-gep` | `site/paths/ie-gep.html` | 爱尔兰 · General Employment Permit（非紧缺职业雇主担保） |
+| `ie-step` | `site/paths/ie-step.html` | 爱尔兰 · Start-up Entrepreneur Programme（5 万欧元创业 · 与 ca-suv / uk-innovator-founder 同类） |
+
+> NZ / IE 不是空白调研：pivot 前的早期视觉 / 结构探索 [`design/coverage-survey.html`](design/coverage-survey.html) 中已粗梳理过两国的工签 / 永居 / 入籍框架与候选路径名单，可作为开建时的快速起点。该草稿仅为历史留痕（pivot 前的 Tier A/B/C 分层机制已废弃，[RULES.md](RULES.md) § 6），所列具体数字 / 评级不可直接采信，须按 path-authoring.md 重新核源。
+
 `jp-hsp.html` § 5 的 1 号イ / 1 号ロ→HSP 2 号 / 技人国 / 経営管理 条目已统一转为 `class="pending"` 占位 + 官方 fallback 链接（2026-05-19）。建立对应路径页时，全站搜索 pending slug 替换为本站实链（保留官方 fallback）。
 
-优先级建议：`uk-skilled-worker`（英国 SW 大类，Global Talent 页 § 8 多处引用）与 `au-189`（澳大利亚 得分类技术移民，AU NIV 页 § 8 的自然降档）。
+优先级建议（更新于 2026-05-19）：`uk-skilled-worker`（UK 板块从 1 条变 2 条）→ `ie-csep`（欧盟英语国空白 + 与 ca-ict 形成 MSFT 内部调动场景的双选项）→ `ca-pnp-tech`（ca-gts / ca-ict 共同 plan B）→ `nz-smc`（NZ 板块从 0 → 1 + 与 AU NIV 对照）→ `au-189`（AU 第二条）。
 
 已完成、从本清单拿掉的：
 
