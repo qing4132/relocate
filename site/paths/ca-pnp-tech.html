@@ -1,0 +1,635 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>relocate · 路径详情 · 加拿大 PNP Tech · 省提名科技通道 → PR → 入籍（仅供参考 · 非官方）</title>
+<style>
+  :root{
+    --ink:#141414;
+    --ink-soft:#3d3d3d;
+    --ink-faint:#8a8a8a;
+    --rule:#d8d8d8;
+    --rule-soft:#ebebeb;
+    --bg:#fdfbf7;
+    --warn-bg:#fff6e7;
+    --warn-ink:#6a4d00;
+    --inherit-bg:#f1efe9;
+    --branch-bg:#f5f2ea;
+    --serif:Georgia,"Source Han Serif SC","Noto Serif SC","Times New Roman",serif;
+    --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Helvetica Neue",Arial,sans-serif;
+    --mono:"SFMono-Regular","Menlo",Consolas,monospace;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--serif);font-size:16.5px;line-height:1.78;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+  header.top{padding:14px 40px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:baseline;font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em;background:#fff}
+  header.top .l{color:var(--ink)}
+  .page{max-width:920px;margin:0 auto;padding:56px 32px 140px}
+  .kicker{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-faint);margin:0 0 10px}
+  h1{font-size:30px;font-weight:700;line-height:1.25;letter-spacing:-0.005em;margin:0 0 6px}
+  .sub{font-family:var(--sans);font-size:14px;color:var(--ink-soft);margin:0 0 14px;letter-spacing:0.01em}
+  .sub code{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 6px;border-radius:2px;color:var(--ink)}
+  .meta{font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);letter-spacing:0.04em;margin:0 0 28px;padding-bottom:18px;border-bottom:1px solid var(--ink)}
+  .meta span + span::before{content:" · ";margin:0 4px;color:var(--rule)}
+  .caveat{background:var(--warn-bg);border:1px solid var(--warn-ink);padding:14px 20px;margin:0 0 32px;font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--warn-ink)}
+  .caveat strong{color:#3c2a00}
+  .caveat p{margin:0 0 6px}
+  .caveat p:last-child{margin:0}
+  .chip{display:grid;grid-template-columns:repeat(6,1fr);gap:0;background:#fff;border:1px solid var(--ink);font-family:var(--sans);margin:0 0 36px}
+  .chip > div{padding:12px 14px;border-right:1px solid var(--rule)}
+  .chip > div:last-child{border-right:none}
+  .chip dt{font-family:var(--mono);font-size:10px;color:var(--ink-faint);letter-spacing:0.09em;text-transform:uppercase;margin:0 0 3px}
+  .chip dd{margin:0;font-size:13.5px;color:var(--ink);font-weight:600}
+  .chip dd small{display:block;font-weight:400;font-size:11.5px;color:var(--ink-faint);margin-top:2px;font-family:var(--mono)}
+  .stagenav{display:grid;grid-template-columns:repeat(6,1fr);gap:6px;margin:0 0 40px;font-family:var(--sans)}
+  .stagenav a{display:block;padding:10px 12px;background:#fff;border:1px solid var(--ink);text-decoration:none;color:var(--ink)}
+  .stagenav a .lbl{font-family:var(--mono);font-size:10px;color:var(--ink-faint);letter-spacing:0.09em;text-transform:uppercase;display:block;margin-bottom:3px}
+  .stagenav a .t{font-size:14px;font-weight:700;display:block;line-height:1.3}
+  .stagenav a .b{font-size:11.5px;color:var(--ink-soft);display:block;margin-top:3px;font-family:var(--serif);line-height:1.45}
+  section{margin:56px 0 0}
+  section > h2{font-size:20px;font-weight:700;line-height:1.35;margin:0 0 4px}
+  section > h2 .n{font-family:var(--mono);font-size:12px;font-weight:400;color:var(--ink-faint);letter-spacing:0.08em;margin-right:10px}
+  section > h2 .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:0.06em;padding:2px 7px;border:1px solid var(--ink-faint);color:var(--ink-faint);font-weight:400;margin-left:10px;vertical-align:3px}
+  section > .lede{font-family:var(--serif);font-style:italic;color:var(--ink-soft);font-size:15.5px;line-height:1.7;margin:0 0 20px}
+  p{margin:0 0 1em}
+  h3{font-size:15.5px;font-weight:700;margin:26px 0 8px}
+  h3 .n{font-family:var(--mono);font-size:11px;font-weight:400;color:var(--ink-faint);letter-spacing:0.06em;margin-right:8px}
+  h4{font-size:13.5px;font-weight:700;margin:18px 0 6px;font-family:var(--sans)}
+  .node{background:#fff;border:1px solid var(--ink);padding:18px 22px;margin:14px 0 18px;font-family:var(--sans);font-size:13.5px;line-height:1.7}
+  .node .ntop{display:flex;justify-content:space-between;align-items:baseline;padding-bottom:8px;border-bottom:1px solid var(--rule-soft);margin-bottom:12px;font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em}
+  .node .big{font-family:var(--serif);font-size:19px;font-weight:700;color:var(--ink);line-height:1.35;margin:0 0 6px}
+  .node p{margin:0 0 10px;color:var(--ink-soft)}
+  .node p strong{color:var(--ink);font-weight:700}
+  .node dl.kv{display:grid;grid-template-columns:140px 1fr;gap:6px 14px;font-size:12.5px;color:var(--ink-soft);margin:12px 0 0;padding-top:10px;border-top:1px dashed var(--rule)}
+  .node dl.kv dt{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.06em;text-transform:uppercase;padding-top:2px}
+  .node dl.kv dd{margin:0}
+  .node dl.kv dd code{font-family:var(--mono);font-size:11.5px;background:var(--rule-soft);padding:1px 5px;border-radius:2px;color:var(--ink)}
+  .familytrack{background:#fff;border:1px solid var(--ink);margin:14px 0 18px;font-family:var(--sans);font-size:12.5px}
+  .familytrack .row{display:grid;grid-template-columns:130px 1fr;border-bottom:1px solid var(--rule)}
+  .familytrack .row:last-child{border-bottom:none}
+  .familytrack .row .l{padding:14px;background:var(--rule-soft);border-right:1px solid var(--rule);font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.06em;text-transform:uppercase}
+  .familytrack .row .l small{display:block;font-size:10px;color:var(--ink-faint);margin-top:3px;letter-spacing:0.04em}
+  .familytrack .row .r{padding:14px 18px;color:var(--ink-soft);line-height:1.65}
+  .familytrack .row .r strong{color:var(--ink)}
+  .familytrack .row .r em{font-style:normal;background:var(--rule-soft);padding:1px 6px;font-family:var(--mono);font-size:11px;color:var(--ink);margin-right:4px}
+  .flowchart{background:#fff;border:1px solid var(--ink);padding:22px 24px;margin:10px 0 24px;font-family:var(--mono);font-size:12.5px;line-height:1.8;color:var(--ink);white-space:pre;overflow-x:auto}
+  .flowchart .hi{background:var(--rule-soft);padding:0 4px}
+  .flowchart .br{color:var(--ink-faint)}
+  .reuse{background:var(--inherit-bg);border-left:3px solid var(--ink);padding:12px 18px;margin:14px 0 16px;font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--ink-soft)}
+  .reuse strong{color:var(--ink)}
+  .reuse .h{font-family:var(--mono);font-size:10.5px;letter-spacing:0.08em;color:var(--ink-faint);text-transform:uppercase;display:block;margin-bottom:4px}
+  table.sources{width:100%;border-collapse:collapse;background:#fff;font-family:var(--sans);font-size:12.5px;line-height:1.55;margin:10px 0 16px}
+  table.sources th,table.sources td{padding:8px 10px;text-align:left;vertical-align:top;border-bottom:1px solid var(--rule)}
+  table.sources thead th{font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:0.08em;text-transform:uppercase;font-weight:600;border-bottom:1px solid var(--ink);background:var(--rule-soft)}
+  table.sources td.id{width:110px}
+  table.sources td.id code{font-family:var(--mono);font-size:11px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+  table.sources td.iss{width:150px;font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:0.04em}
+  table.sources td a{color:var(--ink);text-decoration:underline;text-decoration-color:var(--ink-faint);text-underline-offset:2px}
+  .risk{background:#fff;border:1px solid var(--warn-ink);padding:14px 20px;margin:10px 0 16px;font-family:var(--sans);font-size:13px;line-height:1.7;color:var(--ink)}
+  .risk h4{font-family:var(--mono);font-size:10.5px;color:var(--warn-ink);letter-spacing:0.1em;text-transform:uppercase;margin:0 0 8px;font-weight:600}
+  .risk h4::before{content:"! "}
+  .risk ul{margin:6px 0 0;padding:0 0 0 20px}
+  .risk li{margin:0 0 8px;color:var(--ink-soft)}
+  .risk li strong{color:var(--ink)}
+  .term{font-family:var(--mono);font-size:12.5px;background:var(--rule-soft);padding:1px 5px;color:var(--ink)}
+  .hint{display:block;color:var(--ink-faint);font-size:12px;margin-top:3px;font-style:italic;font-family:var(--serif)}
+  .altlist{margin:10px 0 18px;padding:0;list-style:none}
+  .altlist > li{border-top:1px solid var(--rule-soft);padding:14px 0;display:grid;grid-template-columns:150px 1fr;gap:18px;font-family:var(--sans);font-size:13px;line-height:1.65;color:var(--ink-soft)}
+  .altlist > li:last-child{border-bottom:1px solid var(--rule-soft)}
+  .altlist .tgt{font-family:var(--mono);font-size:11px;color:var(--ink);letter-spacing:0.04em;padding-top:2px}
+  .altlist .tgt small{display:block;font-size:10.5px;color:var(--ink-faint);margin-top:3px;text-transform:uppercase;letter-spacing:0.08em}
+  .altlist strong{color:var(--ink)}
+  .altlist .when{color:var(--ink-faint);font-size:12px;display:block;margin-top:4px;font-style:italic;font-family:var(--serif)}
+  .altlist a.pending{color:var(--ink-faint);text-decoration:underline;text-decoration-style:dashed;text-decoration-color:var(--ink-faint);text-underline-offset:3px;cursor:help}
+  footer.btm{margin-top:80px;padding-top:14px;border-top:1px solid var(--rule);font-family:var(--mono);font-size:10.5px;color:var(--ink-faint);display:flex;justify-content:space-between;letter-spacing:0.04em}
+  a{color:inherit}
+  .caveat a{color:var(--warn-ink)}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <span class="l"><a href="../" style="color:inherit;text-decoration:none">relocate</a> · 路径详情 · 加拿大 · PNP 科技通道</span>
+  <span>仅供参考 · 非官方</span>
+</header>
+
+<main class="page">
+
+  <p class="kicker">路径详情 · 家庭单位 · PNP Tech → +600 CRS → PR → 入籍</p>
+  <h1>加拿大 · 省提名 · 科技通道（PNP Tech）· 家庭完整路径</h1>
+  <p class="sub">
+    <code>ca-pnp-tech-to-citizenship</code> · 联邦 IRPA §87 + 各省独立项目 · BC PNP / OINP / AAIP 三大常用通道 · Enhanced PNP +600 CRS · 几乎锁 EE ITA · 工签 / PR / 入籍仍走 IRCC 同口径
+  </p>
+  <p class="meta">
+    <span>version v0.1</span>
+    <span>最后编辑 2026-05-19</span>
+    <span>家庭单位视角 · 中国大陆出发口径</span>
+    <span><a href="../" style="color:inherit">← 回到 relocate 首页</a></span>
+  </p>
+
+  <div class="caveat">
+    <p><strong>仅供参考 · 非官方：</strong>本页整理自 IRCC 联邦 PNP 总览 + BC PNP welcomebc.ca + OINP ontario.ca + AAIP alberta.ca 公开页面。面向中文读者做路径速览，<strong>不是法律意见、不是 RCIC 建议、不替代律师</strong>。PNP 是<em>13 个省 / 地区各自独立的项目</em>，规则与配额每月都可能变动；本页只覆盖中国大陆专业人才最常用的<em>BC / Ontario / Alberta 三省 Tech 通道</em>。其余省 / 地区（SK / MB / NS / NB / NL / PE / YT 等）思路相近但门槛与处理周期差异大。</p>
+    <p><strong>本页边界：</strong>本页以 PNP 拿到省提名 + Express Entry 路径下游获 PR 为主轴。下游 Express Entry 提交 / CRS 打分 / PR 维持 / 入籍 3·5 / 双重国籍冲突全部与 <a href="ca-gts.html">ca-gts</a> / <a href="ca-ict.html">ca-ict</a> 完全一致，本页用 <span class="term">.reuse</span> 卡片引用 ca-gts 对应段不重复。本页专属内容集中在 § 1（PNP 是什么 + Enhanced/Base 区别）与 § 2（BC / OINP / AAIP 三大通道并列对比）。</p>
+    <p><strong>数字怎么来的：</strong>NOC 代码 / 各省 draw 频率 / 工资底线均标了可自行复核的官方出处（见 § 10）。<strong>PNP 与 IRCC 配额博弈强：</strong>2024 年 IRCC 把 PNP 总配额砍半（从 110K 降到 ~ 55K），各省随之收紧；本页所列数字以 2025 年口径为准，实际拉满变动节奏看各省门户当周公告。</p>
+  </div>
+
+  <dl class="chip">
+    <div><dt>国家</dt><dd>加拿大 <small>ca · 联邦 + 省</small></dd></div>
+    <div><dt>起点</dt><dd>省提名 <small>BC / OINP / AAIP 三选一</small></dd></div>
+    <div><dt>核心机制</dt><dd>+600 CRS <small>Enhanced PNP · 锁 EE ITA</small></dd></div>
+    <div><dt>是否要工签</dt><dd>各省不同 <small>OINP 不强制 · BC / AAIP 通常要</small></dd></div>
+    <div><dt>PR 总时长</dt><dd>1.5–2.5 年 <small>从递省提名到 COPR</small></dd></div>
+    <div><dt>入籍</dt><dd>PR 后 3 年 <small>同 ca-gts § 4</small></dd></div>
+  </dl>
+
+  <nav class="stagenav">
+    <a href="#stage-overview"><span class="lbl">§ 0</span><span class="t">全景图</span><span class="b">PNP 是什么 · Enhanced vs Base</span></a>
+    <a href="#stage-streams"><span class="lbl">§ 1–2</span><span class="t">三大通道</span><span class="b">BC PNP · OINP · AAIP</span></a>
+    <a href="#stage-process"><span class="lbl">§ 3</span><span class="t">申请流程</span><span class="b">省提名 → EE → PR</span></a>
+    <a href="#stage-pr-cit"><span class="lbl">§ 4</span><span class="t">PR 维持 + 入籍</span><span class="b">引 ca-gts</span></a>
+    <a href="#stage-family"><span class="lbl">§ 5</span><span class="t">家庭玩法</span><span class="b">PNP + 配偶 OWP / EE</span></a>
+    <a href="#stage-alt"><span class="lbl">§ 7–8</span><span class="t">风险 · 备选</span><span class="b">配额砍半 + 居住承诺</span></a>
+  </nav>
+
+  <!-- ============ § 0 全景 ============ -->
+  <section id="stage-overview">
+    <h2><span class="n">§ 0</span>全景 · PNP 是什么 · Enhanced vs Base · 与 EE 的关系</h2>
+    <p class="lede">PNP（Provincial Nominee Program）是 IRPA §87 之下的<em>联邦 + 省双层</em>程序：联邦把"经济类移民"配额按"人口 + 经济需求"分配给各省；各省<em>自己设计</em>提名标准（如紧缺职业 / 工资门槛 / 在省居住等）；申请人拿到省提名（Provincial Nomination Certificate）后 → 联邦 IRCC 仍是 PR 的最终发签机构。</p>
+
+<div class="flowchart">
+<span class="br">[ 联邦 / 省 / 申请人三方关系 ]</span>
+
+    IRCC（联邦 · IRPA §87）
+       │  分配年度配额给各省
+       ▼
+   13 个省 / 地区各自的 PNP（13 + 1 含 Yukon）
+       │  自定 streams / NOC / 门槛 / 配额
+       ▼
+   申请人 提交 Expression of Interest（EOI 或类似）
+       │
+       ▼
+       ┌────────────────────┴───────────────────┐
+       │                                         │
+       ▼  <span class="hi">Enhanced PNP</span>                    ▼  <span class="hi">Base PNP</span>
+   走 Express Entry pool                      不走 Express Entry
+   省提名 +600 CRS → 几乎必拿 ITA            直接递 IRCC paper-based PR
+   PR 处理 6 月 · 配偶子女同批 LPR           PR 处理 12-22 月 · 较慢
+                            │
+                            ▼
+                  <span class="hi">COPR · 登陆 PR</span>
+                            │  3 年 / 5 年 居住
+                            ▼
+                  <span class="hi">入籍（同 ca-gts § 4）</span>
+</div>
+
+    <h3><span class="n">0.1</span>Enhanced vs Base · 一图区分</h3>
+    <table class="sources">
+      <thead><tr><th>维度</th><th>Enhanced PNP</th><th>Base PNP</th></tr></thead>
+      <tbody>
+        <tr><td>是否走 Express Entry</td><td><strong>是</strong></td><td>否（paper-based 单独递）</td></tr>
+        <tr><td>"奖励"</td><td>+600 CRS 几乎必拿 ITA</td><td>无 CRS 加分 · 但走独立通道</td></tr>
+        <tr><td>PR 处理周期</td><td>~ 6 个月（IRCC EE 服务标准）</td><td>12–22 个月（base 通道）</td></tr>
+        <tr><td>典型代表</td><td>OINP Tech Draws · BC PNP Skills Immigration Express Entry · AAIP Alberta Express Entry Stream</td><td>OINP Employer Job Offer · BC PNP "non-EE" · AAIP Alberta Opportunity Stream</td></tr>
+        <tr><td>申请人前置</td><td>已有 EE 档案 + 6 大因子打分</td><td>无 EE 要求 · 各省独立判</td></tr>
+        <tr><td>本页重点</td><td><strong>本页所讲三大 Tech 通道全部是 Enhanced</strong></td><td>Base 仅作 § 7 备选简述</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">0.2</span>身份层级（与 ca-gts / ca-ict 完全一致）</h3>
+    <div class="reuse">
+      <span class="h">引用 · ca-gts § 0.1</span>
+      四个关键身份的层级（TRV + WP / PR / Citizenship / 访客）的法源、授予机构、工作权与派生权与 GTS 完全一致，详见 <a href="ca-gts.html#stage-overview">ca-gts § 0.1</a>。<br>
+      <strong>PNP 专属：</strong>"省提名"本身不是身份——它只是<em>通往 PR 的资格证</em>。拿到省提名 → 还要走 IRCC 的 PR 申请流程才会真正成为 PR；省提名期间申请人若已在加 hold 工签则继续以工签身份居留。
+    </div>
+
+    <h3><span class="n">0.3</span>PNP 在 IRCC 配额博弈中的位置</h3>
+    <div class="node">
+      <div class="big">2024 年 PNP 总配额砍半 · 各省随之缩水</div>
+      <p>2024 年下半年，IRCC 把 PNP 年度总配额从 ~ 110,000 砍到 ~ 55,000；2025–2027 年保持低位。这对申请人意味着：</p>
+      <ul>
+        <li>各省 draw 频率与每次邀请数显著下降</li>
+        <li>OINP / BC PNP / AAIP 的 cutoff 普遍上调（OINP Tech Draw 历史最低 CRS 421，2024 下半年起多次升到 460+）</li>
+        <li>部分原本"几乎必中"的省提名通道（如曼省、萨省 EOI 排队）变成"分数游戏"</li>
+        <li>PNP 时间窗口越来越宝贵——"先工签后省提名"路径比"裸 PNP"更可控</li>
+      </ul>
+      <p>这条<em>政治背景</em>是 2025 起规划 PNP 路径时无法忽视的现实约束。本页以下所讲的"凑分玩法 / 通道选择 / 风险点"全部假设这一基本面。</p>
+    </div>
+  </section>
+
+  <!-- ============ § 1–2 三大通道 ============ -->
+  <section id="stage-streams">
+    <h2><span class="n">§ 1–2</span>三大常用 Tech 通道 · BC PNP / OINP / AAIP 并列对比</h2>
+    <p class="lede">三个省加起来占中国大陆专业人才 PNP Tech 申请的 90%+。各通道的<em>结构性差异</em>决定了"该不该选这个省"。</p>
+
+    <h3><span class="n">1.1</span>三省通道速查表</h3>
+    <table class="sources">
+      <thead><tr><th>维度</th><th>BC PNP · Skills Immigration（含 Tech 优先 draw）</th><th>OINP · Tech Draws（Human Capital Priorities Tech）</th><th>AAIP · Alberta Express Entry Stream</th></tr></thead>
+      <tbody>
+        <tr><td>是否需 Job Offer</td><td><strong>必须</strong>（BC 雇主 · 永久 / 1 年+）</td><td><strong>不需要</strong>（如已在 EE pool 满足 NOC + CRS 即可）</td><td>不需要（但通常加分）</td></tr>
+        <tr><td>是否需 EE 档案前置</td><td>不需要（也有 EE-aligned 子流）</td><td><strong>必须</strong>（先在 EE pool）</td><td><strong>必须</strong>（EE pool 内）</td></tr>
+        <tr><td>核心 NOC 清单</td><td>34 个 Tech 优先 NOC 走每周专项 draw</td><td>10 个 Tech NOC：20012 / 21211 / 21223 / 21230 / 21231 / 21232 / 21233 / 21234 / 21311 / 21468</td><td>无 Tech 专项 · 全 NOC 0/1/2/3 · 但已在 AB 工作加分高</td></tr>
+        <tr><td>工资 / 收入门槛</td><td>BC 同岗位 median wage · 由 BC 公告</td><td>无显式门槛 · 看 EE 档案</td><td>无显式门槛 · 看 EE 档案</td></tr>
+        <tr><td>是否要先在该省居住 / 工作</td><td>通常要（有省工签 / Job offer）</td><td>不必</td><td>通常需在 AB 工作（境外 EE 候选也可被邀但较少）</td></tr>
+        <tr><td>draw 频率</td><td>每周（Tech 周二 · General 周四）</td><td>不定期（2024–25 多次月度 Tech-only draw）</td><td>不定期月度（CRS 阈值 300+ 起 · 实际 cutoff 高得多）</td></tr>
+        <tr><td>提名后 +600 CRS</td><td>是 · 进 EE pool 通过 Enhanced 通道</td><td>是 · OINP Tech Draws 通过 EE</td><td>是 · AAIP Alberta Express Entry</td></tr>
+        <tr><td>居住承诺（道德层面）</td><td>有 · 落地后通常需在 BC 一段时间</td><td>有 · OINP 要求"在 Ontario 长期居住"</td><td>有 · AB 同上</td></tr>
+        <tr><td>本省 Tech 雇主集中度</td><td>Vancouver Tech / SAP / Amazon / Salesforce / Slack / Microsoft</td><td>Toronto Tech / Shopify / Google / MSFT / RBC / 五大行</td><td>Calgary / Edmonton · 能源 + 新兴 Tech · 较窄</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">1.2</span>BC PNP · Skills Immigration 详细</h3>
+    <div class="node">
+      <div class="ntop"><span>§1.2 · welcomebc.ca · Skills Immigration</span></div>
+      <div class="big">BC PNP · Skills Immigration（含 Tech 周二专项 draw）</div>
+      <p><strong>子流：</strong>2024-2025 BC PNP 已把原"Tech Pilot"并入 Skills Immigration 主程序，但<em>保留 Tech-only 周二 draw</em>—— 即 BC 雇主提供 offer 的 Tech 申请人在每周二有独立 cutoff。</p>
+      <p><strong>资格：</strong>① BC 持有有效 Job Offer（永久 / 1 年+）· ② 岗位 NOC 在 Tech 优先名单 · ③ 工资 ≥ BC 同岗位 median wage · ④ 雇主在 BC 真实运营 · ⑤ 申请人本人 CLB ≥ 4（基础英语）。</p>
+      <p><strong>子档：</strong></p>
+      <ul>
+        <li><strong>Skilled Worker</strong>（最常用）· NOC TEER 0/1/2/3 · 任意 BC 行业</li>
+        <li><strong>International Graduate</strong>· BC 加拿大公立大学应届毕业</li>
+        <li><strong>Health Authority</strong>· BC Health Authority 直雇</li>
+        <li><strong>Entry-Level Semi-Skilled</strong>· TEER 4/5 旅游 / 食服 / 长卡车司机等</li>
+      </ul>
+      <p><strong>"Tech 优先" NOC 名单（部分）：</strong>20012 / 21211 / 21223 / 21230 / 21231 / 21232 / 21233 / 21234 / 21311 / 21468 / 22220 / 22222 + 一些工程 / 数字媒体岗位。完整名单每周由 BC PNP 在 invitations-to-apply 页面公告。</p>
+      <p><strong>申请费：</strong>主申 CAD $1,750 · 配偶 CAD $500（2025 口径）</p>
+      <dl class="kv">
+        <dt>权威</dt><dd><a href="../../data/archive/ca/pnp-tech/bc/skills-immigration.html" target="_blank" rel="noopener">BC PNP · Skills Immigration</a> · <a href="../../data/archive/ca/pnp-tech/bc/invitations-to-apply.html" target="_blank" rel="noopener">BC PNP · Invitations to Apply</a>（每周 draw cutoff 历史）</dd>
+      </dl>
+    </div>
+
+    <h3><span class="n">2.1</span>OINP · Tech Draws 详细</h3>
+    <div class="node">
+      <div class="ntop"><span>§2.1 · ontario.ca · OINP Tech Draws</span></div>
+      <div class="big">OINP · Human Capital Priorities Tech Draws</div>
+      <p><strong>独特机制：</strong>OINP Tech Draw 是<em>不需要 Job offer</em>的 PNP 通道 —— 这点在 13 个省的 PNP 里非常少见。条件：</p>
+      <ul>
+        <li>已在<strong>联邦 Express Entry pool</strong> 持有有效档案</li>
+        <li>EE 档案中 NOC 在 <strong>10 个 Tech NOC 之一</strong>：<br>20012（CIS managers）· 21211（Data scientists）· 21223（Database analysts）· 21230（Computer systems developers）· 21231（Software engineers）· 21232（Software developers）· 21233（Web designers）· 21234（Web developers）· 21311（Computer engineers, non-software）· 21468（Computer and network operators · 部分包含）</li>
+        <li>CRS ≥ OINP Tech Draw cutoff（2024–25 浮动 425–460）</li>
+        <li>过去 5 年内累计 1 年 NOC 相关工作经验</li>
+        <li>"打算居住在 Ontario"（陈述）</li>
+        <li>英语 / 法语 CLB 7（NOC 0/1）或 CLB 5（NOC 2/3）</li>
+      </ul>
+      <p><strong>流程：</strong>OINP 在 EE pool 内主动发 Notification of Interest（NOI）给符合条件的候选人 → 申请人接受 NOI 后 14 天内向 OINP 递省提名申请 → OINP 审 60–90 天 → 提名信 → EE 系统自动加 +600 CRS → 几乎必拿 ITA → 走 IRCC 完成 PR。</p>
+      <p><strong>价值：</strong>"裸 EE 进池 + 等 NOI" 是中国大陆专业人才不需要先去加工作即可拿 PR 的少数路径之一 —— 但等 NOI 的随机性高（2024 全年仅个位数次 Tech 专项 draw）。</p>
+      <dl class="kv">
+        <dt>权威</dt><dd><a href="../../data/archive/ca/pnp-tech/on/oinp-tech-draws.html" target="_blank" rel="noopener">OINP · Tech Draws</a> · <a href="../../data/archive/ca/pnp-tech/on/oinp-2024-updates.html" target="_blank" rel="noopener">OINP · 2024 项目更新</a></dd>
+      </dl>
+    </div>
+
+    <h3><span class="n">2.2</span>AAIP · Alberta Express Entry Stream 详细</h3>
+    <div class="node">
+      <div class="ntop"><span>§2.2 · alberta.ca · AAIP Express Entry Stream</span></div>
+      <div class="big">AAIP · Alberta Express Entry Stream</div>
+      <p><strong>独特机制：</strong>AAIP EE Stream 也是<em>不需要 Job offer</em>的（但有则显著加分）· 由 AAIP 主动从 EE pool 邀请。条件：</p>
+      <ul>
+        <li>已在 EE pool 持有效档案（CEC / FSW / FST 均可）</li>
+        <li>NOC TEER 0/1/2/3（不限 Tech 专项 · 全行业 · 但 Tech / 工程 / 医疗加分高）</li>
+        <li>CRS ≥ 当期 cutoff（2025 浮动 300–400 · 比 OINP 低一档）</li>
+        <li>"intention to reside in Alberta"（陈述）</li>
+        <li>有 AB 工作 / AB 学历 / 配偶在 AB 等可加分</li>
+      </ul>
+      <p><strong>流程：</strong>同 OINP · AAIP 主动发 NOI → 申请人 30 天内接受并递 AAIP 申请 → AAIP 审 6 个月 → 省提名 → EE +600 → ITA → IRCC PR。</p>
+      <p><strong>价值：</strong>CRS cutoff 比 OINP / BC PNP 低 30–80 分 · 适合 CRS 自评 380-430 区间的申请人。</p>
+      <dl class="kv">
+        <dt>权威</dt><dd><a href="../../data/archive/ca/pnp-tech/ab/aaip-express-entry-stream.html" target="_blank" rel="noopener">AAIP · Express Entry Stream</a> · <a href="../../data/archive/ca/pnp-tech/ab/aaip-opportunity-stream.html" target="_blank" rel="noopener">AAIP · Opportunity Stream（base 通道，已在 AB 工作者）</a></dd>
+      </dl>
+    </div>
+
+    <h3><span class="n">2.3</span>三省怎么选 · 决策矩阵</h3>
+    <div class="node">
+      <div class="big">按"是否已在加 / 是否有 offer / CRS 自评"三维度决定</div>
+      <table class="sources">
+        <thead><tr><th>你的情况</th><th>建议首选</th><th>备选</th></tr></thead>
+        <tbody>
+          <tr><td>有 BC 雇主 offer · 岗位 Tech NOC</td><td><strong>BC PNP Skilled Worker（Tech 优先）</strong></td><td>OINP Tech Draws（若 CRS 高）· AAIP（若同时在 AB 有 offer）</td></tr>
+          <tr><td>有 ON 雇主 offer · 岗位 Tech NOC</td><td><strong>OINP Employer Job Offer Foreign Worker</strong></td><td>OINP Tech Draws（同期 EE pool）</td></tr>
+          <tr><td>有 AB 雇主 offer · NOC 0/1/2/3</td><td><strong>AAIP Express Entry Stream</strong></td><td>AAIP Alberta Opportunity Stream（已在 AB 工作）</td></tr>
+          <tr><td>无加方 offer · 中国境内远程 · CRS 自评 ≥ 440</td><td><strong>OINP Tech Draws</strong>（10 NOC 内）</td><td>AAIP Express Entry Stream（无 NOC 限制）· 走 ca-gts / ca-ict 拿工签再申</td></tr>
+          <tr><td>无加方 offer · 中国境内远程 · CRS 自评 380–430</td><td><strong>AAIP Express Entry Stream</strong>（cutoff 较低）</td><td>SK / MB / NB 等小省（本页未覆盖）</td></tr>
+          <tr><td>已持 BC / ON / AB 工签满 1 年（如 GTS / ICT）</td><td><strong>当地 PNP base 通道 + Enhanced 双线</strong></td><td>同时走 EE CEC（PR 双保险）</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============ § 3 流程 ============ -->
+  <section id="stage-process">
+    <h2><span class="n">§ 3</span>申请流程 · 省提名 → EE +600 → ITA → PR</h2>
+    <p class="lede">三大省 Enhanced 通道的流程框架高度一致——差异在于"省提名前是否需要 Job offer"与"省提名审理时长"。</p>
+
+    <h3><span class="n">3.1</span>典型流程（以 OINP Tech Draw 为例）</h3>
+    <table class="sources">
+      <thead><tr><th>步骤</th><th>谁做</th><th>耗时</th><th>产出</th></tr></thead>
+      <tbody>
+        <tr><td>1. 准备 EE 档案：CRS 6 大因子 · 英语 IELTS · 学历 ECA · 工作经验</td><td>申请人</td><td>1–3 月</td><td>EE pool 内有效档案</td></tr>
+        <tr><td>2. 等 OINP 在 EE 内发 NOI（Notification of Interest）</td><td>OINP 主动</td><td>不定期 · 2024-25 全年 1–6 次 Tech draw</td><td>NOI 邮件</td></tr>
+        <tr><td>3. 接受 NOI · 14 天内向 OINP 递省提名申请</td><td>申请人</td><td>14 天</td><td>OINP 申请号 + 文件包</td></tr>
+        <tr><td>4. OINP 审理</td><td>OINP</td><td>60–90 天</td><td>Nomination Certificate</td></tr>
+        <tr><td>5. 回 EE 系统接受省提名 · 自动加 +600 CRS</td><td>申请人</td><td>1 天</td><td>更新后的 EE 档案</td></tr>
+        <tr><td>6. 收 EE ITA（几乎必中）· 60 天递 e-APR</td><td>申请人</td><td>~ 1–2 个月</td><td>完整 PR 申请</td></tr>
+        <tr><td>7. IRCC 审理 + 体检 + 背调</td><td>IRCC</td><td>6 个月服务标准（PNP 通道有时更慢 ~ 9 月）</td><td>COPR</td></tr>
+        <tr><td>8. 全家登陆 / 在境内 eCOPR</td><td>申请人</td><td>依机票</td><td>PR 身份生效</td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">3.2</span>BC PNP / AAIP 流程的差异点</h3>
+    <ul>
+      <li><strong>BC PNP：</strong>不是 OINP "等 NOI" 模式 · 而是<em>主动注册 BC PNP profile</em>（独立于 EE）→ 提交 EOI → BC PNP 每周二 / 四发 Invitation to Apply（ITA-BC，不是联邦 ITA）→ 拿到 BC ITA 后 30 天递省提名 → 60–120 天审 → 拿到 Nomination → 再回 EE 加分。<strong>关键差异：</strong>BC PNP 流程"前置"在 BC 而非 IRCC EE。</li>
+      <li><strong>AAIP Express Entry：</strong>同 OINP "等 NOI" 模式 · 但 NOI cutoff 更低 · 邀请频率类似。审理 6 个月（vs OINP 60-90 天 · vs BC 60-120 天 · AAIP 实务上最慢）。</li>
+    </ul>
+
+    <h3><span class="n">3.3</span>家属同步</h3>
+    <ul>
+      <li><strong>配偶 / 同居伴侣 / 22 岁以下未婚子女</strong>都作为 PR 申请的<em>派生家属</em>，与主申同批审理 · 同批 COPR · 同期登陆</li>
+      <li><strong>已在加持工签的配偶</strong>（如 OWP / SP）继续保持工签身份直至 PR 落地</li>
+      <li><strong>境外配偶</strong>登陆 PR 一次即生效，之后不再需要工签转换</li>
+    </ul>
+
+    <h3><span class="n">3.4</span>"等省提名期间"的工签桥梁</h3>
+    <div class="node">
+      <div class="big">PNP-Work Permit Support Letter · 等待期工签</div>
+      <p>若拿到省提名但 PR 还未批，且急需在该省入境工作，可向省 PNP 申请 Support Letter → 凭此向 IRCC 申 LMIA-exempt 工签（雇主代码 A75 / C50 等）· 通常 1–3 年 · 与 GTS / ICT 工签并列同一类。</p>
+      <p>这对"国内已没工作 + 拿到 OINP 提名 + 等 IRCC PR 6 月"的家庭有用 —— 直接拿 Support 工签全家先过去，PR 落地后转。</p>
+    </div>
+  </section>
+
+  <!-- ============ § 4 PR 维持 + 入籍 ============ -->
+  <section id="stage-pr-cit">
+    <h2><span class="n">§ 4</span>PR 维持 + 入籍 · 引用 ca-gts § 3–§ 4</h2>
+    <p class="lede">拿到 PR 之后的剧本与 ca-gts / ca-ict 完全一致——本节用 <span class="term">.reuse</span> 直接引，不重复。</p>
+
+    <div class="reuse">
+      <span class="h">引用 · ca-gts § 3.4</span>
+      <strong>PR 维持：</strong>PR 卡有效期 5 年 · 必须在 5 年窗口内在加拿大物理存在 ≥ 730 天（2 年）· 长期返中工作 / 加方雇主派驻 / PR 配偶随加公民海外生活等可计天数。详见 <a href="ca-gts.html#stage-pr">ca-gts § 3.4</a>。<br>
+      <strong>PNP 专属补充：</strong>多省 PNP（OINP / BC / AAIP / SINP / MPNP 等）在提名时要求申请人陈述"打算在该省长期居住"——<em>这是道德义务而非法律强制</em>，但若 PR 拿到后立即跨省（如 OINP 后搬去 BC）下次续 PR 卡时可能被询问 · 严重者 OINP 可向 IRCC 报告"misrepresentation"。建议至少在该省居住 1–2 年再考虑迁移。
+    </div>
+
+    <div class="reuse">
+      <span class="h">引用 · ca-gts § 4</span>
+      <strong>入籍：</strong>Citizenship Act §5 五条门槛——18 岁 / 5 年内累计 1,095 天物理存在 / 5 年内 3 次报税 / 入籍考试 / 18–54 岁 CLB 4 语言 / 无重大犯罪 / 宣誓。处理 12–18 个月。详见 <a href="ca-gts.html#stage-citizen">ca-gts § 4</a> 全段。<br>
+      <strong>中国国籍法 §9 同步触发：</strong>加入加籍即自动失中国籍 · 注销中国护照 / 户籍。
+    </div>
+
+    <h3><span class="n">4.1</span>PNP 路径入籍时间线推算</h3>
+    <ul>
+      <li>Y0 拿到 EE 档案 + 等 / 申省提名</li>
+      <li>Y0.5 拿到省提名（OINP 60–90 天 · BC 60–120 天 · AAIP 6 月）</li>
+      <li>Y1 EE +600 CRS · 拿 ITA · 递 e-APR</li>
+      <li>Y1.5–Y2 PR 批 · COPR · 全家登陆</li>
+      <li>Y2–Y5 持 PR 累 3 年物理存在</li>
+      <li>Y5 申入籍（处理 12–18 月）</li>
+      <li>Y6 入籍仪式 · 拿加拿大护照</li>
+    </ul>
+    <p>总时长 ~ 6 年 · 与 ca-gts（GTS 工签 → CEC → PR）/ ca-ict 节奏相近。<strong>"裸 PNP" 无工签前置时</strong>整个流程都在 IRCC 文件审核里 · 比 GTS 那种"先 2 周入境工作"路径心理压力大（住房 / 落地 / 子女学校的时间都得等 COPR）。</p>
+  </section>
+
+  <!-- ============ § 5 家庭玩法 ============ -->
+  <section id="stage-family">
+    <h2><span class="n">§ 5</span>家庭玩法 · PNP + 工签 / 双 EE / Support Letter</h2>
+    <p class="lede">PNP 路径的家庭维度比 GTS / ICT 简单——一份省提名申请 + 一份 PR 申请就覆盖全家 · 没有"派生工签 / 家庭双线"的额外复杂性。但有一些独特玩法值得说。</p>
+
+    <h3><span class="n">5.1</span>主线 · 主申 PNP + 全家同批 PR</h3>
+    <div class="node">
+      <div class="big">最常见 · 一份省提名 → 一份 PR → 全家登陆</div>
+      <p>主申拿到省提名 → 递 PR 时配偶 + 22 岁以下未婚子女作为派生家属同批申请 · 一次性 COPR 全家 PR · 一次登陆全家身份生效。</p>
+      <p>这是 PNP 路径相对 GTS / ICT 最大的<em>简化</em>—— 没有 "配偶 OWP / 子女 SP" 这种 "工签时代的派生" 步骤，直接跳到 PR。</p>
+    </div>
+
+    <h3><span class="n">5.2</span>双线 · 主申 PNP + 配偶独立 EE</h3>
+    <div class="node">
+      <div class="big">两人都有 EE 档案 · 谁先拿到 ITA 谁主申</div>
+      <p>若夫妻双方都各自满足 EE 资格（CEC 通常需先有 1 年加拿大经验 · FSW 海外 1 年即可），可<em>双方各自建 EE 档案</em>：</p>
+      <ul>
+        <li>主申方申 PNP · 拿到省提名 +600 几乎必中 ITA</li>
+        <li>配偶方独立 EE pool 等 NOI / 一般 draw cutoff（无 +600 · 须靠自身 CRS）</li>
+        <li>主申拿到 ITA → 配偶作为派生家属一同入 PR · <em>无需自己单独走 PR</em></li>
+      </ul>
+      <p><strong>价值：</strong>配偶的独立 EE 档案是 plan B —— 若主申 PNP 申请失败（如 NOC 不在清单 / 工资不达 / OINP 改革等），配偶的 EE 档案可直接顶上（自身 CRS 高时也能拿 ITA）。</p>
+    </div>
+
+    <h3><span class="n">5.3</span>三线 · 工签先行 + PNP Support Letter</h3>
+    <div class="node">
+      <div class="big">PR 等待期不空窗 · 全家先入境工作</div>
+      <p>对"国内已没工作 + 已拿省提名 + 不想在国内等 6 月" 的家庭，最实操的玩法：</p>
+      <ul>
+        <li>拿到省提名后立即向省 PNP 申 <strong>Work Permit Support Letter</strong></li>
+        <li>凭 Support Letter 向 IRCC 申 LMIA-exempt 工签（代码 A75 PNP / C50 trade agreement）· 1–3 年 · 配偶 OWP 派生</li>
+        <li>全家持工签先入境 · 落地后等 PR 审理完成</li>
+        <li>PR 落地后所有工签自动结束 · 切换到 PR 身份</li>
+      </ul>
+      <p>这把 "PNP 6–9 月 PR 等待"变成 "落地工作中等"，对子女教育衔接尤其重要。</p>
+    </div>
+  </section>
+
+  <!-- ============ § 6 家庭三线图 ============ -->
+  <section id="stage-timeline">
+    <h2><span class="n">§ 6</span>家庭三线图 · 典型 5–6 年到入籍</h2>
+
+<div class="flowchart">
+<span class="br">Y0</span>     准备 EE 档案 · CRS 自评 · IELTS · 学历 ECA
+<span class="br">Y0+1M</span>  进 EE pool · 或同时投 BC PNP / OINP / AAIP profile
+<span class="br">Y0+3–6M</span>收 NOI / BC ITA · 递省提名申请
+<span class="br">Y0+6–12M</span> 拿到 Nomination Certificate · EE +600 CRS
+<span class="br">Y0+9M</span> （可选）申 Support Letter 工签 · 全家先入境
+<span class="br">Y1</span>     收 EE ITA · 60 天递 e-APR · 全家文件同批
+<span class="br">Y1.5</span>   <span class="hi">COPR · 全家登陆 PR</span> · 工签自动转 PR
+<span class="br">Y1.5–Y4.5</span> 持 PR 累 3 年物理存在
+<span class="br">Y4.5</span>   <span class="hi">递入籍 · 入籍考试 · 宣誓</span>
+<span class="br">Y5–Y6</span>  拿加拿大护照
+                <span class="br">（中国国籍法 §9 自动失中国籍 · 注销中国护照 / 户籍）</span>
+</div>
+
+    <p class="hint">注：上图假设"裸 PNP" 主线 + Y0+9M 起 Support Letter 工签辅线。若选 OINP Tech Draws 但等不到 NOI · 时间线可能拉长 2–3 年；最坏情况须切到 ca-gts / ca-ict 工签先行重走。</p>
+  </section>
+
+  <!-- ============ § 7 风险 ============ -->
+  <section id="stage-risk">
+    <h2><span class="n">§ 7</span>核心风险点</h2>
+
+    <div class="risk">
+      <h4>PNP 申请阶段的结构性风险</h4>
+      <ul>
+        <li><strong>2024 起 PNP 总配额砍半：</strong>各省 draw 频率与每次邀请数显著下降 · 2024-25 OINP Tech Draw 全年仅 1–6 次（vs 2022-23 每月）· cutoff 上移 30+ 分</li>
+        <li><strong>NOC 清单浮动：</strong>BC PNP / OINP Tech NOC 每年由各省刷新 · 部分 NOC（如 22220 网络技术员）可能被剔除</li>
+        <li><strong>申请人 EE 档案过期：</strong>EE 档案有效期 12 个月 · 期间未拿 ITA 须重交 · 期间英语 / 学历认证证书也可能过期</li>
+        <li><strong>"打算在该省居住"陈述：</strong>OINP / BC / AAIP 在提名审理与 PR 接收时各审一次 · 申请人若已被发现在另一省找过工作 / 看过房 / 持有 lease，提名可能被撤销</li>
+        <li><strong>跨省迁移道德风险：</strong>提名 1 年内跨省迁移可能在 PR 卡续期 / 入籍审理时被质询</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>Express Entry / PR 阶段的风险（与 ca-gts / ca-ict 共有）</h4>
+      <ul>
+        <li><strong>PNP 通道 PR 处理慢：</strong>PNP-Enhanced PR 处理 6–9 月（vs CEC-only EE 6 月）· 不可加急</li>
+        <li><strong>Medical / Criminal 背调：</strong>既往健康问题 / 其他国家刑事记录可能 RFE 甚至拒批</li>
+        <li><strong>家属同步：</strong>申请期间家属婚姻状态 / 健康状态变化 → 必须如实报告</li>
+      </ul>
+    </div>
+
+    <div class="risk">
+      <h4>PR 维持与入籍阶段（与 ca-gts / ca-ict 共有 · 北京特别提醒）</h4>
+      <ul>
+        <li><strong>Residency Obligation：</strong>5 年内不足 730 天物理存在 → PR 可撤销 · 最常见坑：PR 登陆后被中国雇主重新雇佣长期回去</li>
+        <li><strong>跨境社保切割：</strong>中加无双边社保协定 · 详见 ca-ict § 2.4</li>
+        <li><strong>子女兵役 / 学籍同步：</strong>父母失中国籍后子女户籍 / 学籍需同步处理</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ § 8 备选 ============ -->
+  <section id="stage-alt">
+    <h2><span class="n">§ 8</span>备选切换 · 这条走不通怎么办</h2>
+
+    <ul class="altlist">
+      <li>
+        <span class="tgt">CA · GTS（Global Talent Stream）<small>2 周工签 + 后续 EE</small></span>
+        <div>
+          <strong>门槛：</strong>雇主走 Cat A（referral）/ Cat B（14 NOC 清单）· 雇主 LMBP。<strong>何时考虑：</strong>PNP cutoff 跨不过 / 等不到 NOI · 但有加拿大雇主愿走 GTS。<strong>价值：</strong>2 周入境工作 · 满 1 年 CEC + 不依赖省提名 · GTS 工签期间也可叠加 PNP（双保险）。
+          <span class="when">详情：<a href="ca-gts.html">本站 · CA Global Talent Stream</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">CA · ICT（Intra-Company Transferee）<small>跨国公司内部调动</small></span>
+        <div>
+          <strong>门槛：</strong>原雇主 ≥ 1 年 + Executive / Senior Manager / Specialized Knowledge 三档 · LMIA-exempt。<strong>何时考虑：</strong>已在 MSFT / Google / Amazon 等跨国公司工作 · 偏好"工签先行 + CEC 路径"。<strong>价值：</strong>免 LMIA · 配偶 OWP · 期间可叠加 PNP。
+          <span class="when">详情：<a href="ca-ict.html">本站 · CA ICT</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">CA · FSW（Federal Skilled Worker）<small>纯海外申 EE 无 PNP</small></span>
+        <div>
+          <strong>门槛：</strong>海外 1 年 NOC 经验 · 67/100 初筛 · CLB 7。<strong>何时考虑：</strong>PNP 等不到 NOI 且 CRS 自评 ≥ 480 · 直接靠 general draw 拿 ITA。<strong>价值：</strong>不绑省 · 完全靠 CRS 打分。<strong>劣势：</strong>2025 general draw cutoff 通常 500+ · 中国大陆出生 30+ 岁普通申请人极难够到。
+          <span class="when">详情：<a href="ca-gts.html#stage-pr">ca-gts § 3</a> 内 FSW 子节</span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">CA · Start-Up Visa<small>创业一步永居</small></span>
+        <div>
+          <strong>门槛：</strong>designated organization Letter of Support · 团队 ≤ 5 人。<strong>何时考虑：</strong>不打算靠雇主 + 有创业项目。
+          <span class="when">占位：<a class="pending" href="#" title="待建：ca-suv">本站 · CA Start-Up Visa</a>（未建）· 官方：IRCC · Start-Up Visa</span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">CA · 其他省 PNP（小省 SK / MB / NB / NS）<small>本页未单独覆盖</small></span>
+        <div>
+          <strong>门槛：</strong>SINP / MPNP / NBPNP / NSNIP 各省自定。<strong>何时考虑：</strong>BC / ON / AB 三省 cutoff 高 + 你不挑大城市 · 愿意去 Saskatoon / Winnipeg / Halifax 等中小城市。<strong>价值：</strong>cutoff 普遍更低 + 一些省（如 SK Occupations In-Demand）甚至不需要 Job offer。<strong>劣势：</strong>"在该省居住"要求更严 · 跨省迁移道德义务更高。
+          <span class="when">官方：各省 PNP 门户 · 本站未单独建路径页</span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">UK · Skilled Worker<small>英国雇主担保</small></span>
+        <div>
+          <strong>门槛：</strong>Sponsor licence 雇主 + 一般档 £41,700 / ISL £33,400。<strong>何时考虑：</strong>同时有英国 offer · 偏好伦敦薪资水位 + 英国护照。
+          <span class="when">详情：<a href="uk-skilled-worker.html">本站 · UK Skilled Worker</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">IE · CSEP<small>爱尔兰 EU 替代</small></span>
+        <div>
+          <strong>门槛：</strong>CSOL 内岗位 + €38K / 非清单 €64K。<strong>价值：</strong>2 年 Stamp 4 + 5 年入籍 + EU 护照终局。
+          <span class="when">详情：<a href="ie-csep.html">本站 · IE CSEP</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">NZ · SMC<small>新西兰一步直发居留</small></span>
+        <div>
+          <strong>门槛：</strong>6 分制三类组合。<strong>价值：</strong>5 年入籍 + NZ→AU SCV 跳板。
+          <span class="when">详情：<a href="nz-smc.html">本站 · NZ SMC</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">AU · National Innovation Visa<small>澳大利亚一步永居</small></span>
+        <div>
+          <strong>门槛：</strong>国际公认成就 + AU 提名人 Form 1000。<strong>价值：</strong>4 年入籍。
+          <span class="when">详情：<a href="au-gtv.html">本站 · AU NIV</a></span>
+        </div>
+      </li>
+      <li>
+        <span class="tgt">US · H-1B / L-1A / L-1B<small>美国主流工签</small></span>
+        <div>
+          <strong>门槛：</strong>H-1B 抽签 · L-1 跨国 ≥ 1 年。<strong>何时考虑：</strong>偏好美国 TC。<strong>劣势：</strong>EB 排期对中国大陆出生申请人极长。
+          <span class="when">详情：<a href="us-h1b.html">本站 · US H-1B</a> · <a href="us-l1a.html">L-1A</a> · <a href="us-l1b.html">L-1B</a></span>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ § 10 官方文件总表 ============ -->
+  <section id="stage-sources">
+    <h2><span class="n">§ 10</span>官方文件总表 <span class="tag">含本地归档</span></h2>
+    <p class="lede">本表列出 PNP Tech 路径上引用的官方原件。PNP 专属页存于 <a href="../../data/archive/ca/pnp-tech/" target="_blank" rel="noopener"><code>data/archive/ca/pnp-tech/</code></a>；共用件（IRPA / IRPR / Citizenship Act / Express Entry / CEC / CRS grid / Work Permit / Citizenship）沿用 <a href="../../data/archive/ca/gts/" target="_blank" rel="noopener"><code>data/archive/ca/gts/</code></a>。<strong>注：</strong>canada.ca 同口径走 web.archive.org `id_` 模式；welcomebc.ca 直连；ontario.ca / alberta.ca 也走 Wayback 兜底稳定性。</p>
+
+    <h3><span class="n">10.1</span>IRCC · PNP 联邦框架</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布 / 出处</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>pnp-ov</code></td><td>IRCC · Provincial Nominee Program 总览（Enhanced / Base · 各省 · EE 衔接）</td><td class="iss">IRCC canada.ca</td><td><a href="../../data/archive/ca/pnp-tech/ircc/pnp-overview.html" target="_blank" rel="noopener">ircc/pnp-overview.html</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.2</span>BC PNP · welcomebc.ca</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布 / 出处</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>bc-ov</code></td><td>BC PNP · 程序总览（Skills + Entrepreneur 两大类）</td><td class="iss">welcomebc.ca</td><td><a href="../../data/archive/ca/pnp-tech/bc/bc-pnp-overview.html" target="_blank" rel="noopener">bc/bc-pnp-overview.html</a></td></tr>
+        <tr><td class="id"><code>bc-sk</code></td><td>BC PNP · Skills Immigration（含 Tech 优先 draw · NOC 名单 · 工资门槛）</td><td class="iss">welcomebc.ca</td><td><a href="../../data/archive/ca/pnp-tech/bc/skills-immigration.html" target="_blank" rel="noopener">bc/skills-immigration.html</a></td></tr>
+        <tr><td class="id"><code>bc-ita</code></td><td>BC PNP · Invitations to Apply（每周 draw cutoff 历史）</td><td class="iss">welcomebc.ca</td><td><a href="../../data/archive/ca/pnp-tech/bc/invitations-to-apply.html" target="_blank" rel="noopener">bc/invitations-to-apply.html</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.3</span>OINP · Ontario · ontario.ca</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布 / 出处</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>on-2024</code></td><td>OINP · 2024 项目更新（与 IRCC 配额博弈历史）</td><td class="iss">ontario.ca</td><td><a href="../../data/archive/ca/pnp-tech/on/oinp-2024-updates.html" target="_blank" rel="noopener">on/oinp-2024-updates.html</a></td></tr>
+        <tr><td class="id"><code>on-tech</code></td><td>OINP · Tech Draws（10 NOC · CRS cutoff 历史）</td><td class="iss">ontario.ca</td><td><a href="../../data/archive/ca/pnp-tech/on/oinp-tech-draws.html" target="_blank" rel="noopener">on/oinp-tech-draws.html</a></td></tr>
+        <tr><td class="id"><code>on-emp</code></td><td>OINP · Employer Job Offer Foreign Worker Stream（base 通路）</td><td class="iss">ontario.ca</td><td><a href="../../data/archive/ca/pnp-tech/on/oinp-employer-job-offer.html" target="_blank" rel="noopener">on/oinp-employer-job-offer.html</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.4</span>AAIP · Alberta · alberta.ca</h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布 / 出处</th><th>本地归档</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>ab-ee</code></td><td>AAIP · Alberta Express Entry Stream（enhanced · NOI CRS 阈值低）</td><td class="iss">alberta.ca</td><td><a href="../../data/archive/ca/pnp-tech/ab/aaip-express-entry-stream.html" target="_blank" rel="noopener">ab/aaip-express-entry-stream.html</a></td></tr>
+        <tr><td class="id"><code>ab-op</code></td><td>AAIP · Alberta Opportunity Stream（base · 已在 AB 工作）</td><td class="iss">alberta.ca</td><td><a href="../../data/archive/ca/pnp-tech/ab/aaip-opportunity-stream.html" target="_blank" rel="noopener">ab/aaip-opportunity-stream.html</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.5</span>共用件 · 沿用 <code>data/archive/ca/gts/</code></h3>
+    <table class="sources">
+      <thead><tr><th>编号</th><th>中文标题</th><th>颁布 / 出处</th><th>本地归档（gts/ 下）</th></tr></thead>
+      <tbody>
+        <tr><td class="id"><code>IRPA</code></td><td>Immigration and Refugee Protection Act · §87 PNP 联邦法律基础</td><td class="iss">SC 2001, c. 27</td><td><a href="../../data/archive/ca/gts/laws/irpa.html" target="_blank" rel="noopener">gts/laws/irpa.html</a></td></tr>
+        <tr><td class="id"><code>IRPR</code></td><td>Immigration and Refugee Protection Regulations · PNP 实施细则</td><td class="iss">SOR/2002-227</td><td><a href="../../data/archive/ca/gts/laws/irpr.html" target="_blank" rel="noopener">gts/laws/irpr.html</a></td></tr>
+        <tr><td class="id"><code>CA</code></td><td>Citizenship Act · 入籍 3/5 · 双重国籍 · 撤销程序</td><td class="iss">R.S.C. 1985, c. C-29</td><td><a href="../../data/archive/ca/gts/laws/citizenship-act.html" target="_blank" rel="noopener">gts/laws/citizenship-act.html</a></td></tr>
+        <tr><td class="id"><code>ee</code></td><td>IRCC · Express Entry 总览</td><td class="iss">IRCC canada.ca</td><td><a href="../../data/archive/ca/gts/ircc/express-entry.html" target="_blank" rel="noopener">gts/ircc/express-entry.html</a></td></tr>
+        <tr><td class="id"><code>cec</code></td><td>IRCC · Canadian Experience Class 资格</td><td class="iss">IRCC canada.ca</td><td><a href="../../data/archive/ca/gts/ircc/cec.html" target="_blank" rel="noopener">gts/ircc/cec.html</a></td></tr>
+        <tr><td class="id"><code>fsw</code></td><td>IRCC · Federal Skilled Worker 资格</td><td class="iss">IRCC canada.ca</td><td><a href="../../data/archive/ca/gts/ircc/fsw.html" target="_blank" rel="noopener">gts/ircc/fsw.html</a></td></tr>
+        <tr><td class="id"><code>crs</code></td><td>IRCC · CRS criteria grid（六大因子 + Additional Points · 含 PNP +600）</td><td class="iss">IRCC canada.ca</td><td><a href="../../data/archive/ca/gts/ircc/crs-grid.html" target="_blank" rel="noopener">gts/ircc/crs-grid.html</a></td></tr>
+        <tr><td class="id"><code>wp</code></td><td>IRCC · Temporary work permits（含 PNP Support Letter 工签）</td><td class="iss">IRCC canada.ca</td><td><a href="../../data/archive/ca/gts/ircc/work-permit-lmia-exempt.html" target="_blank" rel="noopener">gts/ircc/work-permit-lmia-exempt.html</a></td></tr>
+        <tr><td class="id"><code>cit-ov</code></td><td>IRCC · Become a Canadian citizen 总览</td><td class="iss">IRCC canada.ca</td><td><a href="../../data/archive/ca/gts/ircc/citizenship-become.html" target="_blank" rel="noopener">gts/ircc/citizenship-become.html</a></td></tr>
+        <tr><td class="id"><code>cit-elg</code></td><td>IRCC · Citizenship eligibility（1,095 天 · 税 3 次 · 语言 · 考试）</td><td class="iss">IRCC canada.ca</td><td><a href="../../data/archive/ca/gts/ircc/citizenship-physical-presence.html" target="_blank" rel="noopener">gts/ircc/citizenship-physical-presence.html</a></td></tr>
+      </tbody>
+    </table>
+
+    <h3><span class="n">10.6</span>其他外部参考（不做本地归档）</h3>
+    <ul>
+      <li><a href="https://www.canada.ca/en/immigration-refugees-citizenship/corporate/mandate/policies-operational-instructions-agreements/ministerial-instructions/express-entry-rounds.html" target="_blank" rel="noopener">IRCC · Express Entry Rounds of Invitations</a>（含 PNP-specific draw）</li>
+      <li>各省 PNP 门户（13 + 1 个 · 本页仅覆盖 BC / ON / AB）：SINP（Sask）· MPNP（Man）· NBPNP（NB）· NSNP / NSNIP（NS）· NLPNP（NL）· PEI PNP · YNNP（YT）· NS-NWT（NT）· Nunavut Nominee Program 等</li>
+      <li><a href="https://noc.esdc.gc.ca/" target="_blank" rel="noopener">ESDC · National Occupational Classification（NOC 2021 + TEER）</a></li>
+    </ul>
+
+    <p class="hint">本表"本地归档"指向的是仓库内 <code>data/archive/ca/pnp-tech/</code> 与 <code>data/archive/ca/gts/</code> 下已下载的官方原件快照。若本地文件缺失，请在仓库根下运行 <code>bash data/archive/ca/pnp-tech/download.sh</code>（与 <code>ca/gts/download.sh</code>）重新拉取。</p>
+  </section>
+
+  <footer class="btm">
+    <span>relocate · ca-pnp-tech · v0.1</span>
+    <span>© 本站非商用 · 内容引自官方公开条款与各省 PNP 门户</span>
+  </footer>
+
+</main>
+</body>
+</html>

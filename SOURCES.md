@@ -109,3 +109,19 @@ DETE Critical Skills Occupations List 与季度统计页因 2024 年站点重构
 - **Immigration Rules · Home Office** — Appendix Skilled Worker（SW 1.1–SW 26.7 法定要件）
 
 注：gov.uk 在境内可直连；SW 薪资门槛 2025 年口径一般档 £41,700 / ISL 档 £33,400（8 份原件均为 2026-05-19 抓取）。Sponsor Licence 公开名单 / SOC 2020 going rate 表由于频繁刷新不在本地归档，仅在 § 10.4 外链引用。
+
+### ca / pnp-tech（2026-05-19）
+
+对应 [`site/paths/ca-pnp-tech.html`](site/paths/ca-pnp-tech.html) PNP Tech 专属一手源。
+
+- 归档位置：[`data/archive/ca/pnp-tech/`](data/archive/ca/pnp-tech/)（仅 PNP 专属页；IRPA / IRPR / Citizenship Act / Express Entry / CEC / FSW / CRS / Work Permit / Citizenship 共用件沿用 `data/archive/ca/gts/`）
+- 完整 URL 见 [`download.sh`](data/archive/ca/pnp-tech/download.sh)
+
+涉及发布机关：
+
+- **IRCC**（联邦）— Provincial Nominee Program 总览（Enhanced vs Base · 与 Express Entry 衔接）
+- **BC PNP · welcomebc.ca** — BC PNP 总览 · Skills Immigration（含 Tech 优先 draw）· Invitations to Apply（每周 draw cutoff）
+- **OINP · ontario.ca** — Tech Draws（10 个 Tech NOC）· Employer Job Offer Foreign Worker（base）· 2024 项目更新
+- **AAIP · alberta.ca** — Alberta Express Entry Stream（enhanced）· Alberta Opportunity Stream（base）
+
+注：canada.ca 同 ca/gts 口径走 `web.archive.org/web/2025id_/`；welcomebc.ca 在境内可直连；ontario.ca / alberta.ca 为稳定性也走 Wayback。2024 下半年 IRCC PNP 总配额从 ~ 110K 砍到 ~ 55K，本页 § 0.3 为该局面作了专门说明。

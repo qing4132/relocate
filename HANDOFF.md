@@ -7,6 +7,11 @@
 
 ## Now · 在哪
 
+- **2026-05-19 · 新增 CA PNP Tech（加拿大·省提名科技通道）路径 + IRCC / BC PNP / OINP / AAIP 原件归档**（commit 待写）：
+  - [`site/paths/ca-pnp-tech.html`](site/paths/ca-pnp-tech.html) — IRPA §87 联邦 + 省双层设计 · Enhanced PNP +600 CRS 几乎锁 ITA · Base PNP 不走 EE 独立递 · 本页三大通道主轴：BC PNP Skills Immigration（含 Tech 优先周二 draw）/ OINP Tech Draws（10 个 Tech NOC · 不需 Job offer）/ AAIP Alberta Express Entry Stream（不需 Job offer · cutoff 较低）· § 2.3 三省决策矩阵表 · § 3.4 PNP Support Letter 工签桋梁（省提名后 PR 等待期不空窗）· § 0.3 2024 联邦配额砍半的当代偏压背景
+  - 按"共用则引用不复制"原则：§ 0.2 身份层级 · § 4 PR 维持 + 入籍 3/5 全部用 <span class="term">.reuse</span> 引 ca-gts § 0.1 / § 3.4 / § 4，不重复 Citizenship Act 与 §9 条文
+  - [`data/archive/ca/pnp-tech/`](data/archive/ca/pnp-tech/) · 9 份：IRCC 1（PNP 总览 · Wayback）+ BC PNP 3（总览 / Skills Immigration / Invitations to Apply）+ OINP 3（2024 更新 / Tech Draws / Employer Job Offer）+ AAIP 2（Express Entry / Opportunity Stream）。canada.ca / ontario.ca / alberta.ca 走 Wayback id_ 模式；welcomebc.ca 直连。共用件（IRPA / IRPR / Citizenship Act / Express Entry / CEC / FSW / CRS grid / Work Permit / Citizenship）沿用 ca/gts/
+  - 跨链接：[`site/index.html`](site/index.html) 路径列表新增 CA PNP Tech（紧随 CA ICT）；[`site/paths/ca-gts.html`](site/paths/ca-gts.html) § 8 + [`site/paths/ca-ict.html`](site/paths/ca-ict.html) § 8 两处 ca-pnp-tech pending 占位全部改为本站实链；[`sitemap.xml`](sitemap.xml) 新增 ca-pnp-tech；[SOURCES.md](SOURCES.md) § 1 新增 ca / pnp-tech 登记段
 - **2026-05-19 · 新增 UK Skilled Worker（英国·雇主担保工签）路径 + GOV.UK / Immigration Rules 原件归档**（commit 待写）：
   - [`site/paths/uk-skilled-worker.html`](site/paths/uk-skilled-worker.html) — 脱欧后英国唯一面向第三国国民的主流工签·双薪资门槛（一般档 £41,700 / ISL 档 £33,400 / 新入门档 £33,400 + going rate 70% / PhD STEM 80% / NHS pay scale）· 雇主 Sponsor Licence A-rating + SMS 分配 CoS · Immigration Skills Charge £1,000/年 · § 1.5 5 年家庭费用速算～£ 23K · § 2 BRP/eVisa · 换雇主 12 个月后有条件 · 失业 60 天宽限（vs IE 6 个月 / NZ Variation）· § 3 ILR 5 年 + KoLL + 每 12 月 ≤ 180 天 rolling·§ 4 入籍 ILR + 1 年 = 总 6 年（主流四国最长之一）· § 0.4 三优势 / 三代价对比（伦敦薪资 + 英国护照全球流动 vs 门槛贵 + 6 年最长 + 脱欧后 EU 价值清零）
   - 按"共用则引用不复制"原则：§ 4 入籍段用 <span class="term">.reuse</span> 引 uk-global-talent § 4，不重复 British Nationality Act 1981 详细门槛
@@ -116,6 +121,7 @@
   - [`site/paths/ie-csep.html`](site/paths/ie-csep.html) — 爱尔兰 · Critical Skills Employment Permit · Employment Permits Act 2024 · 双门槛 €38K / €64K · 2 年转 Stamp 4 免许可 · 配偶 Stamp 1G · 5 年入籍 → EU 护照
   - [`site/paths/nz-smc.html`](site/paths/nz-smc.html) — 新西兰 · Skilled Migrant Category Resident Visa · 6 分制（2023 改革）· 一步到居留 · 配偶子女同批 · 5 年入籍 · NZ 公民 → AU SCV 跳板（4 年后可转 AU 公民）
   - [`site/paths/uk-skilled-worker.html`](site/paths/uk-skilled-worker.html) — 英国 · Skilled Worker visa · 雇主担保 · Sponsor Licence + CoS · 一般档 £41,700 / ISL 档 £33,400 · 5 年 → ILR → 1 年 → 入籍（§ 4 reuse uk-global-talent）
+  - [`site/paths/ca-pnp-tech.html`](site/paths/ca-pnp-tech.html) — 加拿大 · PNP · 省提名科技通道 · BC PNP / OINP Tech / AAIP 三大通道 · Enhanced PNP +600 CRS · § 4 reuse ca-gts § 3.4 / § 4
 
 ## Next · 下一步
 
@@ -133,8 +139,7 @@
 | --- | --- | --- |
 | `uk-hpi` | `site/paths/uk-hpi.html` | uk-global-talent.html § 8 · uk-skilled-worker.html § 8 |
 | `uk-innovator-founder` | `site/paths/uk-innovator-founder.html` | uk-global-talent.html § 8 · uk-skilled-worker.html § 8 |
-| `ca-pnp-tech` | `site/paths/ca-pnp-tech.html` | ca-gts.html § 8 · ca-ict.html § 8 |
-| `ca-suv` | `site/paths/ca-suv.html` | ca-gts.html § 8 · ca-ict.html § 8 |
+| `ca-suv` | `site/paths/ca-suv.html` | ca-gts.html § 8 · ca-ict.html § 8 · ca-pnp-tech.html § 8 |
 | `au-189` | `site/paths/au-189.html` | au-gtv.html § 8 |
 | `au-190-491` | `site/paths/au-190-491.html` | au-gtv.html § 8 |
 | `au-482` | `site/paths/au-482.html` | au-gtv.html § 8 |
@@ -160,7 +165,7 @@
 
 `jp-hsp.html` § 5 的 1 号イ / 1 号ロ→HSP 2 号 / 技人国 / 経営管理 条目已统一转为 `class="pending"` 占位 + 官方 fallback 链接（2026-05-19）。建立对应路径页时，全站搜索 pending slug 替换为本站实链（保留官方 fallback）。
 
-优先级建议（更新于 2026-05-19）：`ca-pnp-tech`（ca-gts / ca-ict 共同 plan B）→ `au-189`（AU 板块第二条）→ `uk-hpi`（UK 留学底子路径·被 uk-global-talent + uk-skilled-worker 两页 § 8 出现）。
+优先级建议（更新于 2026-05-19）：`au-189`（AU 板块第二条 · NIV 的自然降档）→ `uk-hpi`（UK 留学底子路径·被 uk-global-talent + uk-skilled-worker 两页 § 8 出现）→ `ca-suv`（加拿大创业·被 ca-gts / ca-ict / ca-pnp-tech 三页 § 8 出现）。
 
 已完成、从本清单拿掉的：
 
@@ -187,6 +192,7 @@
 - ~~新增 IE CSEP（爱尔兰·紧缺技能工签）路径 + Irish Statute Book / DETE 共 6 份官方原件归档 + ca-ict § 8 新增 IE 条目~~（2026-05-19）
 - ~~新增 NZ SMC（新西兰·技术移民 6 分制居留签）路径 + INZ / DIA / NZ Legislation 共 11 份官方原件归档 + au-gtv § 8 新增 NZ 条目~~（2026-05-19）
 - ~~新增 UK Skilled Worker（英国·雇主担保工签）路径 + GOV.UK / Immigration Rules 共 8 份官方原件归档 + uk-global-talent / ie-csep / nz-smc 三页 § 8 占位换本站实链 + § 4 reuse uk-global-talent 入籍段~~（2026-05-19）
+- ~~新增 CA PNP Tech（加拿大·省提名科技通道）路径 + IRCC / BC PNP / OINP / AAIP 共 9 份官方原件归档 + ca-gts / ca-ict 两页 § 8 占位换本站实链 + § 4 reuse ca-gts § 3.4 / § 4~~（2026-05-19）
 
 ## Don't · 别做
 
