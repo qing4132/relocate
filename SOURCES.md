@@ -95,3 +95,17 @@ DETE Critical Skills Occupations List 与季度统计页因 2024 年站点重构
 - **NZ Legislation** — Immigration Act 2009（DLM1440303）· Citizenship Act 1977（DLM443684）
 
 注：immigration.govt.nz / dia.govt.nz 在境内可直连；legislation.govt.nz 启用 AWS WAF challenge 拒非浏览器 UA（连续返 202 空响应），两部法律走 `web.archive.org/web/2025id_/` 获取。INZ 网站 2024 年重构，原 `/new-zealand-visas/` URL 结构多 301 重定向到新的 `/visas/` 与 `/live/` 路径，本项目直接采新结构 URL。
+
+### uk / skilled-worker（2026-05-19）
+
+对应 [`site/paths/uk-skilled-worker.html`](site/paths/uk-skilled-worker.html) SW 专属一手源。
+
+- 归档位置：[`data/archive/uk/skilled-worker/`](data/archive/uk/skilled-worker/)（仅 SW 专属页；British Nationality Act 1981 / Immigration Act 1971 / Life in UK Test / Naturalisation / Citizenship become / Dual citizenship 共用件沿用 [`data/archive/uk/global-talent/`](data/archive/uk/global-talent/)）
+- 完整 URL 见 [`download.sh`](data/archive/uk/skilled-worker/download.sh)
+
+涉及发布机关：
+
+- **GOV.UK · Home Office UKVI** — Skilled Worker visa 总览 / Your Job 子页 / When you can be paid less / Sponsor Licence / Immigration Salary List / ILR 总览 / UK family visa partner 共 7 页
+- **Immigration Rules · Home Office** — Appendix Skilled Worker（SW 1.1–SW 26.7 法定要件）
+
+注：gov.uk 在境内可直连；SW 薪资门槛 2025 年口径一般档 £41,700 / ISL 档 £33,400（8 份原件均为 2026-05-19 抓取）。Sponsor Licence 公开名单 / SOC 2020 going rate 表由于频繁刷新不在本地归档，仅在 § 10.4 外链引用。

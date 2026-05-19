@@ -7,6 +7,11 @@
 
 ## Now · 在哪
 
+- **2026-05-19 · 新增 UK Skilled Worker（英国·雇主担保工签）路径 + GOV.UK / Immigration Rules 原件归档**（commit 待写）：
+  - [`site/paths/uk-skilled-worker.html`](site/paths/uk-skilled-worker.html) — 脱欧后英国唯一面向第三国国民的主流工签·双薪资门槛（一般档 £41,700 / ISL 档 £33,400 / 新入门档 £33,400 + going rate 70% / PhD STEM 80% / NHS pay scale）· 雇主 Sponsor Licence A-rating + SMS 分配 CoS · Immigration Skills Charge £1,000/年 · § 1.5 5 年家庭费用速算～£ 23K · § 2 BRP/eVisa · 换雇主 12 个月后有条件 · 失业 60 天宽限（vs IE 6 个月 / NZ Variation）· § 3 ILR 5 年 + KoLL + 每 12 月 ≤ 180 天 rolling·§ 4 入籍 ILR + 1 年 = 总 6 年（主流四国最长之一）· § 0.4 三优势 / 三代价对比（伦敦薪资 + 英国护照全球流动 vs 门槛贵 + 6 年最长 + 脱欧后 EU 价值清零）
+  - 按"共用则引用不复制"原则：§ 4 入籍段用 <span class="term">.reuse</span> 引 uk-global-talent § 4，不重复 British Nationality Act 1981 详细门槛
+  - [`data/archive/uk/skilled-worker/`](data/archive/uk/skilled-worker/) · 8 份：GOV.UK 7（sw-overview / sw-your-job / sw-paid-less / sponsor-licence / immigration-salary-list / ilr-overview / family-partner）+ Immigration Rules 1（Appendix Skilled Worker）。共用件（British Nationality Act 1981 + Immigration Act 1971 + Life in UK Test + Naturalisation + Citizenship become + Dual citizenship）沿用 `data/archive/uk/global-talent/`。gov.uk 在境内直连 · 无需 Wayback 回落
+  - 跨链接：[`site/index.html`](site/index.html) 路径列表新增 UK Skilled Worker（紧随 UK Global Talent）；[`site/paths/uk-global-talent.html`](site/paths/uk-global-talent.html) § 8 + [`site/paths/ie-csep.html`](site/paths/ie-csep.html) § 8 + [`site/paths/nz-smc.html`](site/paths/nz-smc.html) § 8 三处 uk-skilled-worker pending 占位全部改为本站实链；[`sitemap.xml`](sitemap.xml) 新增 uk-skilled-worker；[SOURCES.md](SOURCES.md) § 1 新增 uk / skilled-worker 登记段
 - **2026-05-19 · 新增 NZ SMC（新西兰·技术移民 6 分制居留签）路径 + INZ / DIA / NZ Legislation 原件归档**（commit 待写）：
   - [`site/paths/nz-smc.html`](site/paths/nz-smc.html) — 2023 改革后 6 分制（职业注册 / 学历 / 收入三类自由组合）· 一步直授居留签（不是工签）· 配偶 + 22 岁以下未婚子女同批 Resident Visa·Y0–2 头 travel conditions · Y2 升 PRV · § 4 入籍 5 年 + 每年 240 天 + 总 1,350 天 · § 4.3 NZ→AU 独家复利（TTTA · NZ 公民自动获 SCV · 4 年后可申 AU 公民）· § 5.3 "NZ 跨板 AU” 迂回路径（8 Y 拿 NZ 护照 + 4 Y AU = 9 Y 拿 AU 护照）
   - 本页为 NZ 首条路径，没有同国上位页可 <span class="term">.reuse</span>；全内联。未来 nz-aewv / nz-green-list 反向 reuse 本页
@@ -110,6 +115,7 @@
   - [`site/paths/ca-ict.html`](site/paths/ca-ict.html) — 加拿大 · ICT 跨国公司内部调动 · IRPR §205(a) · C12 · 三档落档 · 配偶 OWP · 达 CEC 后接 ca-gts § 3 同口径 · 中国大陆出发专门写
   - [`site/paths/ie-csep.html`](site/paths/ie-csep.html) — 爱尔兰 · Critical Skills Employment Permit · Employment Permits Act 2024 · 双门槛 €38K / €64K · 2 年转 Stamp 4 免许可 · 配偶 Stamp 1G · 5 年入籍 → EU 护照
   - [`site/paths/nz-smc.html`](site/paths/nz-smc.html) — 新西兰 · Skilled Migrant Category Resident Visa · 6 分制（2023 改革）· 一步到居留 · 配偶子女同批 · 5 年入籍 · NZ 公民 → AU SCV 跳板（4 年后可转 AU 公民）
+  - [`site/paths/uk-skilled-worker.html`](site/paths/uk-skilled-worker.html) — 英国 · Skilled Worker visa · 雇主担保 · Sponsor Licence + CoS · 一般档 £41,700 / ISL 档 £33,400 · 5 年 → ILR → 1 年 → 入籍（§ 4 reuse uk-global-talent）
 
 ## Next · 下一步
 
@@ -125,9 +131,8 @@
 
 | 建议 slug | 目标文件 | 出现于 |
 | --- | --- | --- |
-| `uk-skilled-worker` | `site/paths/uk-skilled-worker.html` | uk-global-talent.html § 8 · ie-csep.html § 8 · nz-smc.html § 8 |
-| `uk-hpi` | `site/paths/uk-hpi.html` | uk-global-talent.html § 8 |
-| `uk-innovator-founder` | `site/paths/uk-innovator-founder.html` | uk-global-talent.html § 8 |
+| `uk-hpi` | `site/paths/uk-hpi.html` | uk-global-talent.html § 8 · uk-skilled-worker.html § 8 |
+| `uk-innovator-founder` | `site/paths/uk-innovator-founder.html` | uk-global-talent.html § 8 · uk-skilled-worker.html § 8 |
 | `ca-pnp-tech` | `site/paths/ca-pnp-tech.html` | ca-gts.html § 8 · ca-ict.html § 8 |
 | `ca-suv` | `site/paths/ca-suv.html` | ca-gts.html § 8 · ca-ict.html § 8 |
 | `au-189` | `site/paths/au-189.html` | au-gtv.html § 8 |
@@ -155,7 +160,7 @@
 
 `jp-hsp.html` § 5 的 1 号イ / 1 号ロ→HSP 2 号 / 技人国 / 経営管理 条目已统一转为 `class="pending"` 占位 + 官方 fallback 链接（2026-05-19）。建立对应路径页时，全站搜索 pending slug 替换为本站实链（保留官方 fallback）。
 
-优先级建议（更新于 2026-05-19）：`uk-skilled-worker`（UK 板块从 1 条变 2 条 · 被 uk-global-talent + ie-csep + nz-smc 三页 § 8 出现）→ `ca-pnp-tech`（ca-gts / ca-ict 共同 plan B）→ `au-189`（AU 板块第二条）。
+优先级建议（更新于 2026-05-19）：`ca-pnp-tech`（ca-gts / ca-ict 共同 plan B）→ `au-189`（AU 板块第二条）→ `uk-hpi`（UK 留学底子路径·被 uk-global-talent + uk-skilled-worker 两页 § 8 出现）。
 
 已完成、从本清单拿掉的：
 
@@ -181,6 +186,7 @@
 - ~~新增 CA ICT（跨国公司内部调动）路径 + IRCC IMP R205(a) 归档 + ca-gts § 8 占位换本站实链~~（2026-05-19）
 - ~~新增 IE CSEP（爱尔兰·紧缺技能工签）路径 + Irish Statute Book / DETE 共 6 份官方原件归档 + ca-ict § 8 新增 IE 条目~~（2026-05-19）
 - ~~新增 NZ SMC（新西兰·技术移民 6 分制居留签）路径 + INZ / DIA / NZ Legislation 共 11 份官方原件归档 + au-gtv § 8 新增 NZ 条目~~（2026-05-19）
+- ~~新增 UK Skilled Worker（英国·雇主担保工签）路径 + GOV.UK / Immigration Rules 共 8 份官方原件归档 + uk-global-talent / ie-csep / nz-smc 三页 § 8 占位换本站实链 + § 4 reuse uk-global-talent 入籍段~~（2026-05-19）
 
 ## Don't · 别做
 
