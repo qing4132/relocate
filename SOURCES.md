@@ -22,7 +22,20 @@
     第一次使用：2026-XX-XX，用于 design/path-detail-jp-hsp.html 的积分维度表
 ```
 
-## § 0 · 二手源的态度
+## § 0.1 · 关于归档 HTML 中的"密钥"
+
+`data/archive/` 下为各国政府官网页面的**原样镜像**。这些 HTML 可能包含目标网站
+前端自身使用的公开 API key，例如：
+
+- USCIS 站点搜索使用的 Google Custom Search key（如 `apiKey_aao_pm_search`），
+  在 uscis.gov 任意页面的源代码中均可见；
+- 新西兰移民局（INZ）站内搜索使用的 Google API key 等。
+
+这些 key 是对应官方页面源代码中本身公开存在的内容，**不属于本仓库的密钥泄露**，
+也无法、也不应由本仓库吊销。自动化扫描器（GitGuardian 等）若报警，请标记为
+False Positive。
+
+## § 0.2 · 二手源的态度
 
 pivot 后允许以"二手"身份引用律所 / 博客 / 论坛的整理，但在页面上必须显式标"二手"。
 二手源**不需要登记**本文件；只有**官方一手源**才登记。
